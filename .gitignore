@@ -1,0 +1,23 @@
+# giteye
+/.project
+
+# kate
+**/*.*.kate-swp
+**/*.swp.*
+
+# dolphin
+.directory
+
+#texstudio - latex
+**/*.synctex.gz
+**/*.aux
+**/*.lof
+**/*.log
+**/*.lot
+**/*.out
+**/*.toc
+
+**/*.pdf
+
+#cartella immagini (prima fase)
+**/Img/
