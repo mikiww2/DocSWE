@@ -1,0 +1,113 @@
+% Nome del file: Verbale.tex
+% Percorso: template
+% Autore: Vault-Tech
+% Data creazione: 23.12.2015
+% E-mail: vaulttech.swe@gmail.com
+
+
+\documentclass[a4paper]{article}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{Comandi}
+
+%
+% VARIABILI DA DEFINIRE
+%
+\def\DATA{21.12.2015}
+\def\ORA{10:00}
+\def\CITTA{Padova}
+\def\PROVINCIA{PD}
+\def\VIA{via Cittadella, 7}
+\def\SEGRETARIO{Rudy Berton}
+\def\RESPONSABILE{Vassilikì Menarin}
+% NB:basta inserire i nomi qui sopra e poi dentro al documento li mette automaticamente!!!
+
+\begin{document}
+
+\begin{center}
+\includegraphics[scale=0.5]{Img/logo.png}\\
+\vspace{1cm}
+{\Huge \PROGETTO}\\
+\vspace{1cm}
+\section*{Verbale V[\DATA]}
+\end{center}
+
+%
+% INIZIO VERBALE
+%
+\bold{Responsabile:} \RESPONSABILE
+\\ \bold{Segretario:} \SEGRETARIO
+\\
+\subsection*{Presenti}
+Il segretario verbalizzante \SEGRETARIO{} indica come presenti all'appello:
+\begin{itemize}
+\item Giacomo Beltrame;
+\item Rudy Berton;
+\item Simone Boccato;
+\item Michela De Bortoli;
+\item Vassilikì Menarin;
+\item Filippo Tesser;
+\item Miki Violetto;
+\item il proponente rappresentato da Gregorio Piccoli e Serena Lago.
+\end{itemize}
+
+\subsection*{Ordine del giorno}
+Il giorno \DATA{} alle ore \ORA{} presso \CITTA (\PROVINCIA) in \VIA{} il gruppo \AUTORE{} ha tenuto un incontro col proponente per discutere i seguenti punti:
+%NB: se è solo una riunione interna tra noi cambiare la descrizione qua sopra!
+\begin{itemize}
+\item domande generali sul capitolato;
+\item chiarimenti sui requisiti richiesti;
+\item domande sulle tecnologie da utilizzare.
+\end{itemize}
+
+%\subsection*{Interventi}
+%scrivere qui
+%NB: decidere se sia meglio fare a Q/A oppure un riassunto
+\myparagraph{Interventi}
+
+Il proponente ha innanzi tutto chiesto ai membri se avessero domande da porgli. Il gruppo aveva, prima di richiedere l'incontro, stilato una lista di punti critici. Seguono le domande e le relative risposte: 
+
+\bold{D:} Basandoci sulla presentazione del capitolato da Lei fornita in aula, vorremmo dei chiarimenti sui poteri dell'amministratore e sulle differenze tra amministratore e insegnante.
+\\ \bold{R:} L'amministratore ha poteri superiori agli insegnanti. Può rimediare agli errori commessi dagli insegnanti e, in generale, può fare tutto. L'importante è la caratterizzazione tra studente e insegnante, mentre il ruolo dell'amministratore si limita a essere di controllo.
+
+\bold{D:} Allora, per quanto riguarda i permessi, sarebbe desiderabile un sistema aperto, a cui chiunque può iscriversi liberamente, o Lei intende avere delle liste chiuse di studenti che possono iscriversi solo tramite il docente?
+\\ \bold{R:} Il sistema che noi intendiamo progettare deve gestire delle materie che cambiano giorno per giorno; per questo motivo non possiamo utilizzare le tecniche tradizionali di insegnamento. Puntiamo ad avere uno spazio in cui gli iscritti possano trovarsi non solo per rispondere a delle domande, ma anche per discutere. Ovviamente questo deve essere, in una certa misura, certificato. L'idea sarebbe di improntare il tutto in chiave social, quindi permettendo domande aperte a tutti, in cui gli studenti non solo rispondono alle domande, ma possono anche proporle.
+
+\bold{D:} Non ci è chiaro come deve essere utilizzato il \gl{QML}. Quando memorizziamo le domande nel database, queste devono già essere in formato \gl{QML}? O la formattazione avviene dopo?
+\\ \bold{R:} Per chiarire i vostri dubbi vi spiego la funzione del \gl{QML}. Noi vorremmo un linguaggio che tuteli il nostro sistema. Quando l'insegnante inserisce la domanda, il form non può essere in \gl{HTML5}, perché \gl{HTML5} non ha le funzionalità necessarie, per esempio, per far capire qual'è la risposta giusta e se la risposta data dallo studente è corretta o no.
+\newline Il \gl{QML} deve essere un \gl{linguaggio di markup} simile a quello utilizzato da \gl{wikipedia}, che quindi sia un sistema chiuso e limitato per controllare l'input dell'utente.
+Quindi, da un lato il \gl{QML} deve garantire la sicurezza del sistema, impedendo \gl{Cross Site Scripting}, dall'altro vogliamo che, nello scrivere il quiz, ci sia un modo chiaro e semplice per indicare se la domanda è corretta o meno, senza dovere ogni volta interpellare il server.
+Quindi il \gl{QML} sarà un \gl{DSL} (\gl{Domain Specific Language}), molto semplice e limitato, e ci sarà bisogno di un piccolo compilatore per tradurre il \gl{QML} in \gl{HTML5} da presentare all'utente.
+
+A questo punto il proponente ha mostrato al gruppo il proprio prototipo di \gl{QML}, che supporta le domande a scelta multipla e i vero/falso, con eventuale presenza di immagini.
+Viene mostrato come sono implementate le funzioni descritte. 
+Viene suggerita l'implementazione di domande in cui lo studente debba interagire con un'immagine, per esempio andando a collocare nomi su parti specifiche di una foto.
+
+\bold{D:} Quindi noi dobbiamo assumere che l'utilizzatore non conosca \gl{QML}?
+\\ \bold{R:} Lo studente sicuramente no. Per il docente sta a voi decidere quanto codice presentare; ovviamente la soluzione migliore sarebbe rendere l'interfaccia di inserimento domande il più semplice e intuitiva possibile.
+
+\bold{D:} La scelta della tipologia di domande da implementare è libera?
+\\ \bold{R:} Sì, anzi, vorremmo che voi utilizzaste la vostra fantasia per produrre molti tipi di domande originali, anche con la possibilità di inserire immagini, audio, video.
+
+\bold{D:} Per quanto riguarda il lato social del progetto, ci sono delle funzionalità specifiche che desidera o possiamo scegliere noi come organizzarlo?
+\\ \bold{R:} Sarebbe interessante introdurre un sistema di rating di domande e quiz. Altre idee sono: dare la possibilità agli studenti di proporre domande e offrire loro uno spazio di discussione.
+
+\bold{D:} C'è qualche preferenza tra l'uso di \gl{Tomcat} o di \gl{Node.js}?
+\\ \bold{R:} Noi usiamo \gl{Java} e \gl{Tomcat}, ma voi utilizzate quello con cui vi trovate meglio.
+
+\bold{D:} I docenti potranno modificare le domande inserite e, se sì, in che grado?
+\\ \bold{R:} Questi sono aspetti che potete definire a piacere.
+
+Infine, il proponente ha permesso al \gl{team} di provare il proprio prototipo del sistema.
+
+\subsection*{Conclusioni}
+Il gruppo è riuscito a chiarire i propri dubbi iniziali ed è quindi pronto per poter cominciare a raccogliere i requisiti e i casi d'uso. Il proponente ha inoltre  espresso la propria disponibilità per eventuali incontri futuri se fossero necessari altri chiarimenti o delucidazioni.
+Si è deciso di investire per offrire un numero variegato di domande e di impegnarsi per rendere il prodotto finale un prodotto aperto e sociale.
+
+\subsection*{Problemi irrisolti}
+Tutte le domande raccolte prima dell'incontro sono state fatte e hanno ricevuto risposte esaurienti; quindi non si registrano problemi irrisolti.
+
+\vspace{2cm}
+Il responsabile \RESPONSABILE{} approva il verbale.
+
+\end{document}

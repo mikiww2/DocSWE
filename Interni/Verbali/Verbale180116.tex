@@ -1,0 +1,83 @@
+% Nome del file: Verbale.tex
+% Percorso: template
+% Autore: Vault-Tech
+% Data creazione: 23.12.2015
+% E-mail: vaulttech.swe@gmail.com
+
+
+\documentclass[a4paper]{article}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{Comandi}
+
+%
+% VARIABILI DA DEFINIRE
+%
+\def\DATA{18.01.2016}
+\def\ORA{15:30}
+\def\CITTA{Padova}
+\def\PROVINCIA{PD}
+\def\VIA{Via Cittadella,7}
+\def\SEGRETARIO{Rudy Berton}
+\def\RESPONSABILE{Vassilikì Menarin}
+% NB:basta inserire i nomi qui sopra e poi dentro al documento li mette automaticamente!!!
+
+\begin{document}
+
+\begin{center}
+\includegraphics[scale=0.5]{Img/logo.png}\\
+\vspace{1cm}
+{\Huge \PROGETTO}\\
+\vspace{1cm}
+\section*{Verbale V[\DATA]}
+\end{center}
+
+%
+% INIZIO VERBALE
+%
+\bold{Responsabile:} \RESPONSABILE
+\\ \bold{Segretario:} \SEGRETARIO
+\\
+\subsection*{Presenti}
+Il segretario verbalizzante \SEGRETARIO{} indica come presenti all'appello:
+\begin{itemize}
+\item Vassilikì Menarin;
+\item Rudy Berton;
+\item Giacomo Beltrame;
+\item Simone Boccato;
+\item Filippo Tesser;
+\item il proponente rappresentato da Gregorio Piccoli e Serena Lago.
+\end{itemize}
+
+\subsection*{Assenti}
+Il segretario verbalizzante \SEGRETARIO{} indica come assenti all'appello:
+\begin{itemize}
+\item Miki Violetto;
+\item Michela De Bortoli.
+\end{itemize}
+
+\subsection*{Ordine del giorno}
+Il giorno \DATA{} alle ore \ORA{} presso \CITTA (\PROVINCIA) in \VIA{} il gruppo \AUTORE{} ha tenuto un incontro col proponente per discutere i seguenti punti:
+%NB: se è solo una riunione interna tra noi cambiare la descrizione qua sopra!
+\begin{itemize}
+\item discutere e verificare i requisiti ed i casi d'uso realizzati;
+\item ottenere un feedback da parte del proponente sull'analisi sviluppata.
+\end{itemize}
+
+\subsection*{Interventi}
+Sono intervenuti tutti i presenti per chiarire alcuni dubbi sui requisiti analizzati e sviluppati durante questa prima attività.
+\newline In particolare sono stati chiariti i ruoli che ricoprono gli attori all'interno del sistema e come ognuno debba interagire col sistema e in particolare come debba essere gestita l'iscrizione di un utente da parte di un amministratore.
+\newline Il proponente ha proposto l'idea di avere utenti non necessariamente autenticati all'interno del sistema, considerazione prima non presa a carico dal gruppo, ma ora ritenuta positiva; si è deciso pertanto di seguire tale idea dedicando un diverso grado di funzionalità agli utenti a seconda della loro autenticazione o meno.
+\newline Il proponente è risultato molto interessato alla tipologia di domande proposte dal gruppo ed ha apprezzato la diversità, indicando altri possibili modelli da seguire per la creazione di domande e la loro presentazione all'interno del sistema.
+\newline Infine si è passati a discutere sulla raccolta dei dati per la realizzazione delle statistiche riguardanti i questionari: il proponente avrebbe il piacere che anche gli utenti non autenticati potessero portar del valore aggiunto alle statistiche.
+
+\subsection*{Conclusioni}
+L'incontro è stato molto produttivo e soddisfacente per ambedue le parti. Ha permesso al team di comprendere le limitazioni poste al sistema nello sviluppo dell'analisi dei requisiti e di modificare i requisiti e i casi d'uso per ottenere un miglioramento. Allo stesso tempo ha permesso di integrare i suggerimenti fatti dal proponente con idee nuove.
+
+\subsection*{Problemi irrisolti}
+Tutti i problemi sollevati sono stati risolti.
+
+\vspace{2cm}
+Il responsabile \RESPONSABILE{} approva il verbale.
+
+\end{document}

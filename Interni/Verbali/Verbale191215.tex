@@ -1,0 +1,88 @@
+% Nome del file: Verbale.tex
+% Percorso: template
+% Autore: Vault-Tech
+% Data creazione: 19.12.2015
+% E-mail: vaulttech.swe@gmail.com
+
+
+\documentclass[a4paper]{article}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{Comandi}
+
+%
+% VARIABILI DA DEFINIRE
+%
+\def\DATA{19.12.2015}
+\def\ORA{10:30}
+\def\CITTA{Padova}
+\def\PROVINCIA{PD}
+\def\VIA{via Luzzatti}
+\def\SEGRETARIO{Filippo Tesser}
+\def\RESPONSABILE{Vassilikì Menarin}
+% NB:basta inserire i nomi qui sopra e poi dentro al documento li mette automaticamente!!!
+
+\begin{document}
+
+\begin{center}
+\includegraphics[scale=0.5]{Img/logo.png}\\
+\vspace{1cm}
+{\Huge \PROGETTO}\\
+\vspace{1cm}
+\section*{Verbale V[\DATA]}
+\end{center}
+
+%
+% INIZIO VERBALE
+%
+\bold{Responsabile:} \RESPONSABILE
+\\ \bold{Segretario:} \SEGRETARIO
+\\
+\subsection*{Presenti}
+Il segretario verbalizzante \SEGRETARIO{} indica come presenti all'appello:
+\begin{itemize}
+\item Filippo Tesser;
+\item Miki Violetto;
+\item Simone Boccato;
+\item Rudy Berton;
+\item Vassilikì Menarin;
+\item Giacomo Beltrame.
+\end{itemize}
+
+\subsection*{Assenti}
+Il segretario verbalizzante \SEGRETARIO{} indica come assenti all'appello:
+\begin{itemize}
+\item Michela De Bortoli.
+\end{itemize}
+
+\subsection*{Ordine del giorno}
+Il giorno \DATA{} alle ore \ORA{} presso \CITTA (\PROVINCIA) in \VIA{} il gruppo \AUTORE{} ha tenuto una riunione interna per discutere i seguenti punti:
+%NB: se è solo una riunione interna tra noi cambiare la descrizione qua sopra!
+\begin{itemize}
+\item scelta degli strumenti;
+\item organizzazione generale del \gl{team}.
+\end{itemize}
+
+%NB: decidere se sia meglio fare a Q/A oppure un riassunto
+\subsection*{Interventi}
+Tutti gli interventi sono stati rivolti verso la praticità e usabilità degli strumenti da utilizzare.
+Alla fine sono stati scelti i seguenti strumenti di comunicazione in maniera democratica:
+\begin{itemize}
+	\item \gl{Telegram}, per le comunicazioni generali e organizzative;
+	\item \gl{Slack}, per le comunicazioni specifiche ad attività di sviluppo e verifica;
+	\item \gl{TexStudio}, come \gl{IDE} per la redazione dei documenti in \LaTeX;
+	\item \gl{StarUML}, come tool per i diagrammi \gl{UML};
+	\item \gl{Redmine}, come piattaforma di project management.
+\end{itemize}
+Si è infine deciso che eventuali altri strumenti saranno scelti con successive riunioni interne.
+Per l'organizzazione del gruppo si sono concordate alcune regole per venire incontro alle esigenze di alcuni membri del \gl{team}. 
+
+\subsection*{Conclusioni}
+Questo primo incontro è stato sufficientemente produttivo e ha permesso di capire all'intero \gl{team} le modalità di comunicazione e gestione strumenti.
+\subsection*{Problemi irrisolti}
+Non vi sono stati problemi da risolvere per questa riunione.
+
+\vspace{2cm}
+Il responsabile \RESPONSABILE{} approva il verbale.
+
+\end{document}
