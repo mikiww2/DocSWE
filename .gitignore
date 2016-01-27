@@ -17,4 +17,5 @@
 **/*.out
 **/*.toc
 
-**/*.pdf
+# pdf documenti finali (lascia versionati diagrammi UC)
+pdfdoc/**
