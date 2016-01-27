@@ -1,0 +1,166 @@
+% Nome del file: Comandi.sty
+% Percorso: /documenti/template/
+% Autore: Vault-Tech
+% Data creazione: 27.12.2015
+% E-mail: vaulttech.swe@gmail.com
+
+%
+% PACCHETTI
+%
+\usepackage[utf8x]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[table]{xcolor}
+\usepackage[colorlinks,
+linkcolor = black,
+urlcolor  = blue]{hyperref}
+\usepackage{longtable}
+\usepackage[parfill]{parskip}
+\usepackage{eurosym}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{multirow}
+
+
+\emergencystretch=10 em
+
+%
+% FORMATO DATA
+%
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+
+%
+% COMANDI UTILI
+%
+% Testo centrato e spaziato dal resto
+\newcommand{\centra}[1]{\vspace{1em}\\\hspace*{\fill}#1\hspace*{\fill}\vspace{1em}\\}
+%grassetto
+\newcommand{\bold}[1]{\textbf{#1}}
+%corsivo
+\newcommand{\italics}[1]{\textit{#1}}
+% Voce di glossario
+\newcommand{\gl}[1]{\textit{#1}\ped{G}}
+% Standard ISO
+\newcommand{\iso}[1]{$[$#1$]$}
+% Nome di file
+\newcommand{\file}[1]{\textit{#1}}
+% Nome di documento
+\newcommand{\doc}[1]{``\textit{#1}"}
+% Quadratino colorato
+\newcommand\crule[1][black]{\textcolor{#1}{\rule{1em}{1em}}}
+% Formattazione paragrafo e sotto-paragrafo
+\newcommand{\myparagraph}[1]{\paragraph{#1}\hfill\vspace{1em}\\\noindent}
+\newcommand{\mysubparagraph}[1]{\subparagraph{#1}\hfill\vspace{1em}\\\noindent}
+% Nomi di package e classi
+\newcommand{\pkg}[1]{\texttt{#1}}
+\newcommand{\cls}[1]{\texttt{#1}}
+% Titolo paragrafo a due parametri per abbreviare l'indice
+\newcommand{\myparcls}[2]{\paragraph[#2]{#1}\hfill\vspace{1em}\\\noindent}
+
+% Metodi, argomenti, tipi e attributi
+\newcommand{\method}{\texttt}
+\newcommand{\argument}{\texttt}
+\newcommand{\type}{\texttt}
+\newcommand{\attribute}{\texttt}
+
+%
+% COLORI
+%
+% Intestazione tabelle
+\definecolor{I}{HTML}{003153} %{22313D}
+% Righe dispari tabelle
+\definecolor{D}{HTML}{F0F8FF}%{E8EAF6}
+% Righe pari tabelle
+\definecolor{P}{HTML}{A1CAF1}%{7DA7D9}
+% Argomenti metodi
+\definecolor{argument}{HTML}{E32636}
+% Metodi
+\definecolor{method}{HTML}{008000}
+% Tipi
+\definecolor{type}{HTML}{333399}
+
+
+% TABELLE
+%
+% Riga di separazione tra le colonne
+\newcommand{\VRule}{\color{I} \vrule width 1 pt}
+%\newcommand{\VRule}{\arrayrulewidth \color{I} \vrule width 1 pt}
+
+% Ambiente diario
+\newenvironment{diario}
+{
+	\setcounter{table}{-1}
+	\section*{Diario delle modifiche}
+	\def\arraystretch{1.5}
+	\rowcolors{2}{P}{D}
+	\begin{longtable}{l!{\VRule}p{4.5 cm}!{\VRule}l!{\VRule}l!{\VRule}l}
+	\rowcolor{I}
+	\color{white} \textbf{Versione} & \color{white} \textbf{Riepilogo} & \color{white} \textbf{Autore} & \color{white} \textbf{Ruolo} & \color{white} \textbf{Data} \\
+	\endfirsthead
+	\rowcolor{I}
+	\color{white} \textbf{Versione} & \color{white} \textbf{Riepilogo} & \color{white} \textbf{Autore} & \color{white} \textbf{Ruolo} & \color{white} \textbf{Data} \\
+	\endhead
+}{
+	\end{longtable}
+}
+
+% Righe diario
+\newcommand{\recap}[5]{#5 & #1 & #2 & #3 & #4 \\}
+
+% AMBIENTE TABELLE
+\newenvironment{tabella}[1]{
+	\def\arraystretch{1.5}
+	\rowcolors{2}{P}{D}
+	
+	\begin{longtable}{#1}	
+	    \rowcolor{I}
+}{
+
+	\end{longtable}
+	
+}
+
+%
+% RIFERIMENTI COSTANTI
+%
+\def\PROGETTO{Quizzipedia}
+\def\TITOLO{\NOME{} v\VERSIONE}
+\def\AUTORE{Vault-Tech}
+\def\EMAIL{vaulttech.swe@gmail.com}
+\def\PROPONENTE{Zucchetti S.p.a.}
+\def\COMMITTENTE{prof. Tullio Vardanega}
+\def\CARDIN{prof. Riccardo Cardin}
+\def\CAPITOLATO{Quizzipedia: software per la gestione di questionari}
+\def\SCOPO{Il prodotto finale deve permettere la creazione di quiz nell'ambito \gl{Web}, in particolare sarà disposto un archivio di domande e un sistema di test che, pescando da tale archivio, somministrerà all'utente questionari specifici a seconda dell'argomento scelto. Il prodotto sarà sviluppato con tecnologie \gl{Web} (come \gl{HTML5}, \gl{CSS3}, \gl{JavaScript}, etc.) e sarà disponibile sulle piattaforme più comuni spazianti dal desktop al mobile.}
+\def\GLOSSARIO{Al fine di evitare ogni ambiguità nel linguaggio e massimizzare la comprensione dei documenti, i termini tecnici, gli acronimi e le abbreviazioni che necessitano di definizione sono riportati nel documento \doc{Glossario}.
+
+Inoltre ogni occorrenza di un vocabolo presente nel \doc{Glossario} sarà posta in corsivo e seguita da una `g' maiuscola a pedice (p.es. \gl{Parola}).}
+\def\LICENZA{GNU AGPLv3}
+
+%
+% RIFERIMENTI NON COSTANTI A DOCUMENTI
+%
+\def\Gldoc{\doc{Glossario v1.0}}
+\def\NdPdoc{\doc{Norme di Progetto v1.0}}
+\def\SdFdoc{\doc{Studio di Fattibilità v1.0}}
+\def\PdPdoc{\doc{Piano di Progetto v1.0}}
+\def\PdQdoc{\doc{Piano di Qualifica v1.0}}
+\def\ARdoc{\doc{Analisi dei Requisiti v1.0}}
+\def\STdoc{\doc{Specifica Tecnica v1.0}}
+\def\DPdoc{\doc{Definizione di Prodotto v1.0}}
+\def\MUdoc{\doc{Manuale Utente v1.0}}
+
+
+%
+% RIFERIMENTI NON COSTANTI A FILE
+%
+\def\Glfile{\file{Glossario\_v1.0.pdf}}
+\def\NPfile{\file{NormeDiProgetto\_v1.0.pdf}}
+\def\SFfile{\file{StudioDiFattibilita\_v1.0.pdf}}
+\def\PPfile{\file{PianoDiProgetto\_v1.0.pdf}}
+\def\PQfile{\file{PianoDiQualifica\_v1.0.pdf}}
+\def\ARfile{\file{AnalisiDeiRequisiti\_v1.0.pdf}}
+\def\STfile{\file{SpecificaTecnica\_v1.0.pdf}}
+\def\DPfile{\file{DefinizioneDiProdotto\_v1.0.pdf}}
+\def\MUfile{\file{ManualeUtente\_v1.0.pdf}}
+

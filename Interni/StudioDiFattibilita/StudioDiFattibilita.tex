@@ -1,0 +1,283 @@
+% Nome del file: Studio di fattibilità.tex
+% Percorso: \gl{template}
+% Autore: Vault-Tech
+% Data creazione: 19.12.2015
+% E-mail: vaulttech.swe@gmail.comcom
+%
+% Diario delle modifiche: interno al file.
+
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{Stile}
+\usepackage{Comandi}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\def\NOME{Studio di fattibilità}
+\def\VERSIONE{1.0}
+\def\DATA{24.12.2015}
+\def\REDATTORE{Simone Boccato}
+\def\VERIFICATORE{Filippo Tesser}
+\def\RESPONSABILE{Vassilikì Menarin}
+\def\USO{Interno}
+\def\DISTRIBUZIONE{\AUTORE}
+
+\begin{document}
+\pagestyle{fancy}	
+\pagenumbering{Roman}
+\rfoot{Pagina \thepage{} di \pageref{lastromanpage}}
+
+\maketitle
+
+\begin{diario}
+	\recap{Approvazione del documento}{Vassilikì Menarin}{Responsabile}{24.12.2015}{1.0}
+	\recap{Correzione errori}{Simone Boccato}{Analista}{23.12.2015}{0.3}
+	\recap{Verifica del documento}{Filippo Tesser}{Verificatore}{22.12.2015}{0.2}
+	\recap{Stesura del documento}{Simone Boccato}{Analista}{20.12.2015}{0.1}
+\end{diario}
+
+\newpage
+
+\tableofcontents\label{lastromanpage}
+
+\newpage
+\clearpage
+\pagenumbering{arabic}
+\rfoot{Pagina \thepage{} di \pageref*{LastPage}}
+\hypersetup{linkcolor=blue}
+
+\section{Introduzione}
+\subsection{Scopo del Documento}
+Lo scopo di questo documento è descrivere le motivazioni che hanno portato
+alla scelta del capitolato C5. Vengono inoltre riportate le considerazioni
+e le motivazioni per cui non sono stati scelti gli altri capitolati d'appalto.
+
+\subsection{Scopo del prodotto}
+\SCOPO
+
+\subsection{Glossario}
+\GLOSSARIO
+
+\subsection{Riferimenti}
+
+\subsubsection{Normativi}
+\begin{itemize}
+	\item \textbf{Norme di Progetto: }\textit{"Norme di Progetto v1.0"}.
+\end{itemize}
+
+\subsubsection{Informativi}
+\begin{itemize}
+	\item \textbf{Capitolato d'appalto C1:} \textit{Actorbase: a NoSQL DB based on the Actor model} (\href{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C1.pdf}{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C1.pdf})
+	
+	\item \textbf{Capitolato d'appalto C2:} \textit{CLIPS: Communication \& Localisation with Indoor Positioning System} (\href{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C2.pdf}{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C2.pdf})
+	
+	\item \textbf{Capitolato d'appalto C3:} \textit{UMAP: un motore per l'analisi predittiva in ambiente Internet of Things}
+	(\href{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C3.pdf}{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C3.pdf})
+	
+	\item \textbf{Capitolato d'appalto C4:} \textit{MaaS: MondoDB as an admin Service} (\href{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C4.pdf}{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C4.pdf})
+	
+	\item \textbf{Capitolato d'appalto C5:} \textit{Quizzipedia: \gl{software} per la gestione di questionari} (\href{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C5.pdf}{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C5.pdf})
+	
+	\item \textbf{Capitolato d'appalto C6:} \textit{SiVoDiM: Sintesi Vocale per Dispositivi Mobili} (\href{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C6.pdf}{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C6.pdf})
+\end{itemize}
+
+\newpage
+
+\section{Capitolato C5 - Quizzipedia}
+\subsection{Descrizione del capitolato}
+Si è scelto il capitolato proposto dall'azienda Zucchetti S.p.a, chiamato Quizzipedia, riguardante la creazione di un \gl{software} per la produzione di questionari specifici per diversi argomenti. Viene richiesto che tale \gl{software} sia sviluppato in tecnologia \gl{HTML5} e che funzioni su ogni dispositivo desktop, mobile e tablet.
+Le funzionalità minime che il \gl{software} deve soddisfare sono:
+\begin{itemize}
+	\item archiviazione di quiz in un server, suddivisi per argomento;
+	\item creazione di un linguaggio \gl{QML} (Quiz Markup Language) per la realizzazione delle domande;
+	\item traduzione delle domande archiviate da \gl{QML} a HTML;
+	\item gestione, da parte del linguaggio \gl{QML}, delle risposte vero/falso, risposte a scelta multipla, testi e immagini;
+	\item archiviazione di questionari contenenti domande dal primo punto;
+	\item proposta di questionari preconfezionati;
+	\item valutazione delle risposte fornite dall'utente.
+\end{itemize}
+
+\subsection{Studio del dominio}
+Per lo sviluppo del capitolato scelto sono necessarie alcune competenze tecnologiche e la conoscenza del contesto nel quale si inserisce l’applicazione. Di seguito vengono illustrati i domini tecnologici e applicativi ai quali si riferisce il capitolato.
+\subsubsection{Dominio tecnologico}
+Al gruppo viene richiesta la conoscenza nei seguenti campi:
+\begin{itemize}
+	\item \textit{\gl{HTML5}:} il gruppo dispone di una conoscenza basilare di questa tecnologia;
+	\item \textit{\gl{CSS3}:} il gruppo dispone di una conoscenza basilare di questa tecnologia;
+	\item \textit{\gl{JavaScript}:} il gruppo dispone di una conoscenza basilare di questa tecnologia;
+	\item \textit{\gl{Tomcat}:} il gruppo non ha conoscenze riguardanti questa tecnologia;
+	\item \textit{\gl{Node.js}:} il gruppo non ha conoscenze riguardanti questa tecnologia.
+\end{itemize}
+
+Sono state inoltre valutate e considerate le seguenti librerie:
+\begin{itemize}
+	\item \textit{bootstrap:} \href{http://getbootstrap.com/}{http://getbootstrap.com/}.
+\end{itemize}
+
+\subsubsection{Dominio applicativo}
+Per la comprensione del dominio applicativo il gruppo si è basato su alcuni \gl{software} \gl{open source} suggeriti dal Proponente:
+
+\begin{itemize}
+	\item \textit{Moodle:} \href{https://hotpot.uvic.ca/}{https://hotpot.uvic.ca/}
+	\item \textit{Hot Potatoes:} \href{https://hotpot.uvic.ca}{https://hotpot.uvic.ca}
+\end{itemize}
+
+\subsection{Potenziali criticità}
+Le principali criticità provengono dalla mancata esperienza di creazione di un \gl{linguaggio di markup} e dalla scarsa conoscenza di alcune tecnologie di cui si necessita l'utilizzo.
+\subsection{Analisi di mercato}
+La scarsa presenza sul mercato di questi prodotti ha incentivato la partecipazione del gruppo a questo progetto poiché oggigiorno il \gl{web} è molto utilizzato e ci sono pochi \gl{software} di questa categoria, anche se usati ampiamente.
+\subsection{Fattibilità del progetto}
+I principali punti che hanno portato il gruppo a scegliere questo capitolato sono:
+\begin{itemize}
+	\item Requisiti obbligatori e opzionali espressi molto chiaramente;
+	\item Basi di \textit{\gl{HTML5}}, \textit{\gl{JavaScript}} e \textit{\gl{CSS3}} provenienti dagli studi universitari;
+	\item Interesse nel realizzare un'applicazione che funzioni su tutti i dispositivi;
+	\item Interesse nell'apprendere nuove tecnologie ritenute utili per il mondo del lavoro.
+	
+\end{itemize}
+
+
+\newpage
+\section{Altri Capitolati}
+
+\subsection{Capitolato C1 - Actorbase: a NoSQL DB based on the Actor model}
+
+\subsubsection{Descrizione del capitolato}
+Il capitolato proposto dal professor Riccardo Cardin chiede la realizzazione di un \gl{Database} NoSQL Key-value  (p.es. \gl{MongoDB}) utilizzando il modello ad attori.
+Al gruppo viene richiesto lo sviluppo di un insieme di attori:
+\begin{itemize}
+	\item STOREKEEPER
+	\item STOREFINDER
+	\item WAREHOUSEMEN
+\end{itemize}
+e l'implementazione di alcune operazioni sul \gl{database}:
+\begin{itemize}
+	\item Inserimento;
+	\item Cancellazione;
+	\item Aggiornamento (caso particolare di un inserimento con chiave già presente).
+\end{itemize}
+
+Si richiede inoltre la definizione di un \gl{domain specific language} (\gl{DSL}) da utilizzare da riga di comando per poter interagire con il \gl{database}.
+Il progetto dovrà essere sviluppato utilizzando la libreria \gl{Akka} (\href{http://akka.io}{http://akka.io}) per l'implementazione del modello ad attori su \gl{JVM} e il linguaggio da utilizzare può essere scelto tra \gl{Scala} (\href{http://www.scala-lang.org/}{http://www.scala-lang.org/}) o \gl{Java}.
+
+Il progetto dev'essere pubblicato su \gl{GitHub} e far uso delle issue per la segnalazione di eventuali bug.
+
+\subsubsection{Valutazione generale}
+I requisiti del progetto sono stati esposti in modo sufficientemente chiaro. Il gruppo valuta positivamente questo progetto in quanto i \gl{database} NoSQL sono diffusi e sarebbe utile averne un approccio diretto. Inoltre si avrebbe la possibilità di imparare anche un nuovo linguaggio \gl{Scala} e l'utilizzo della libreria \gl{Akka}.
+
+\subsubsection{Potenziali criticità}
+Le principali criticità vengono dalla mancanza di conoscenze riguardati i \gl{database} NoSQL e il modello ad attori. Inoltre nessun elemento del \gl{team} ha esperienza con il linguaggio \gl{Scala} e la libreria \gl{Akka}.
+
+\newpage
+
+\subsection{Capitolato C2 - CLIPS: Communication  Localisation with Indoor Positioning Systems}
+
+\subsubsection{Descrizione del capitolato}
+
+Il capitolato proposto da Miriade richiede la ricerca e la sperimentazione di nuovi scenari per l'implementazione della navigazione indoor applicata a più ambiti.
+L'obiettivo è quello di riuscire ad allestire uno scenario funzionale (interazione, navigazione, broadcasting) e definire l'area indoor che verrà coperta (un'aula, un percorso specifico, etc.). Inoltre sarà necessario scegliere i componenti HW(beacon) e SW (SDK, framework, componenti \gl{open source}, etc.) da utilizzare ed effettuare alcuni test di fattibilità prima di procedere allo sviluppo vero e proprio del prototipo.
+
+Quando sarà sviluppato il \gl{software} il gruppo deve individuare le problematiche lato \gl{hardware} (problemi lato mobile e beacon) e anche \gl{software} (navigazione e comunicazione). Infine è richiesta la presentazione all'utente in modo immediato ed intuitivo dello spazio coperto dalla funzionalità IPS.
+
+Il proponente mette a disposizione diversi strumenti:
+\begin{itemize}
+	\item \gl{Repository} per \gl{versionamento} di sorgenti;
+	\item \gl{Redmine} per il tracciamento dei requisiti;
+	\item Accesso al \gl{database} \gl{Ubiika};
+	\item Un numero di beacons (massimo 50).
+	
+\end{itemize}
+
+Infine il proponente intende che gli sviluppatori del prodotto di questo capitolato ne ritengano il copyright intellettuale e materiale.
+
+\subsubsection{Valutazione generale}
+
+Interessante dominio applicativo, è emerso un interesse sia per l'ambiente di sviluppo \gl{Android}/\gl{iOS}, sia per l'utilizzo dei beacon.
+
+\subsubsection{Potenziali criticità}
+
+Le principali criticità provengono dalle scarse conoscenze del dominio applicativo e tecnologico.
+La partecipazione di altri due gruppi alla gara d'appalto ha scoraggiato la scelta di questo capitolato.
+
+\newpage
+
+\subsection{Capitolato C3 - UMAP: un motore per l'analisi predittiva in ambiente Internet of Things}
+
+\subsubsection{Descrizione del capitolato}
+Il capitolato proposto da Zero12 Innovation Company richiede di creare un algoritmo predittivo in grado di analizzare i dati provenienti da “oggetti”, inseriti in diversi contesti, e fornire delle previsioni su possibili guasti, interazioni con nuovi utenti ed identificare dei pattern di comportamento degli utenti per prevedere le azioni degli stessi su altri oggetti o altri contesti.
+
+L'applicazione \gl{software} sarà composta da:
+\begin{itemize}
+	\item Console \gl{Web} amministrativa per definire regole di apprendimento a seconda del contesto e del tipo di dati;
+	\item Console \gl{Web} amministrativa per le singole aziende;
+	\item Servizi \gl{Web} Restful JSON interrogabili.
+\end{itemize}
+
+Tecnologie da utilizzare:
+\begin{itemize}
+	\item \gl{Amazon \gl{Web} Services};
+	\item \gl{MongoDB} e/o \gl{OrientDB};
+	\item \gl{Java} o \gl{Scala};
+	\item \gl{HTML5}, \gl{CSS3} e \gl{JavaScript} per lo sviluppo dell'interfaccia \gl{Web}.
+\end{itemize}
+
+\subsubsection{Valutazione generale}
+I requisti del progetto non sono stati esposti in modo sufficientemente chiaro. Il gruppo ha familiarità con alcune tecnologie che si dovranno utilizzare.
+
+\subsubsection{Potenziali criticità}
+Le principali criticità provengono dalla scarsa conoscenza del linguaggio \gl{Scala} e dall'assenza di conoscenze sull'utilizzo di \gl{Amazon \gl{Web} Services}, \gl{MongoDB} e \gl{Play framework}.
+Il gruppo ha inoltre ritenuto che lo sviluppo di algoritmi predittivi sia molto oneroso (deve essere efficiente data la grande mole di dati da analizzare) e complesso.
+
+\newpage
+
+\subsection{Capitolato C4 - MaaS: MongoDB as an admin Service}
+
+\subsubsection{Descrizione del capitolato}
+Il capitolato proposto da RedBabel \href{http://redbabel.com/}{(http://redbabel.com/)} richiede di sviluppare un \gl{web} service \textit{Maas (\gl{MongoDB} as an admin Service)} che estenda MaaP in due punti significativi: \textit{SaaS (\gl{Software} as a Service)} e \textit{\gl{DSL}}.
+Inoltre Maas deve essere reso disponibile direttamente via \gl{web} rendendolo usufruibile da molte aziende.
+
+Per lo sviluppo del \gl{software} il proponente richiede:
+\begin{itemize}
+	\item Realizzazione di MaaS;
+	
+	\item Lo sviluppo del sistema utilizzando \gl{Node.js}, però si consiglia fortemente IBM Loopback (\href{http://loopback.io}{http://loopback.io});
+	
+	\item Il sistema deve essere sviluppato per Heroku (\href{http://www.heroku.com}{http://www.heroku.com}), una piattaforma \gl{cloud} che supporta diversi linguaggi di programmazione;
+	
+	\item Il codice sorgente deve essere pubblicato su \gl{GitHub}(\href{www.github.com}{www.github.com}) oppure su \gl{Bitbucket} (\href{www.bitbucket.com}{www.bitbucket.com}).
+	
+\end{itemize}
+
+
+\subsubsection{Valutazione generale}
+I requisti del capitolato non sono stati esposti in modo chiaro; forse risulta il capitolato meno comprensibile e maggiormente difficile rispetto agli altri.
+
+\subsubsection{Potenziali criticità}
+Le principali criticità vengono dalla mancanza di familiarità riguardante i \gl{database} NoSQL, e da alcune tecnologie che il proponente richiede. Inoltre il gruppo prova uno scarso interesse per il dominio applicativo.
+
+\newpage
+
+\subsection{Capitolato C6 - SiVoDiM: Sintesi Vocale per Dispositivi Mobili}
+
+\subsubsection{Descrizione del capitolato}
+
+Il capitolato proposto da MIVOQ S.R.L. richiede la realizzazione di un'applicazione per dispositivi mobili (smartphone e tablet), che sfrutti appieno le potenzialità offerte dal motore di sintesi vocale \gl{Open source} “Flexible and Adaptive Text To Speech” (FA-TTS), in particolare la possibilità di creare la propria voce sintetica e di applicare degli effetti a voci tradizionali.
+
+Per quanto riguarda le tecnologie scelte, si richiede:
+\begin{itemize}
+	\item L'utilizzo del motore di sintesi FA-TTS;
+	\item L'applicativo deve essere realizzato su una o più piattaforme mobili: \gl{Android}, \gl{iOS} o \gl{Windows Phone};
+	\item Se lo si ritiene opportuno, un framework di sviluppo multipiattaforma: \gl{Unity}, \gl{PhoneGap}.
+\end{itemize}
+
+\subsubsection{Valutazione generale}
+
+I requisti del capitolato sono stati esposti in modo chiaro con una moltitudine di esempi.
+Il gruppo ha provato molto interesse per la sintetizzazione vocale, però il capitolato è stato reputato difficile in quanto c'è scarsa familiarità con la sintetizzazione vocale e nessuna esperienza con FA-TTS.
+
+\subsubsection{Potenziali criticità}
+Le principali criticità vengono dalla mancanza di conoscenze riguardanti FA-TTS e da possibili caratteristiche/tecnologie ulteriori che potrebbero rendersi necessarie. Inoltre, la partecipazione di altri due gruppi alla gara d'appalto ha scoraggiato la scelta di questo capitolato.
+
+\end{document}

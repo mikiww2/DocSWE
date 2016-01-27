@@ -1,0 +1,58 @@
+% Nome del file: AnalisiRequisiti.tex
+% Percorso: \gl{template}
+% Autore: Vault-Tech
+% Data creazione: 23.12.2015
+% E-mail: vaulttech.swe@gmail.comcom
+%
+% Diario delle modifiche: interno al file.
+
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{../../Stile}
+\usepackage{../../Comandi}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\def\NOME{Glossario}
+\def\VERSIONE{1.0}
+\def\DATA{29.12.2015}
+\def\REDATTORE{Giacomo Beltrame}
+\def\VERIFICATORE{Rudy Berton}
+\def\RESPONSABILE{Vassiliklì Menarin}
+\def\USO{Esterno}
+\def\DISTRIBUZIONE{\COMMITTENTE \\ & \CARDIN \\ & \PROPONENTE}
+
+
+
+\begin{document}
+\pagestyle{fancy}	
+\pagenumbering{Roman}
+\rfoot{Pagina \thepage{} di \pageref{lastromanpage}}
+
+\maketitle
+
+\begin{diario}
+	\recap{Approvazione del documento}{Vassilikì Menarin}{Responsabile}{18.01.2016}{1.0}
+	\recap{Verifica delle nuove voci inserite}{Rudy Berton}{Verificatore}{17.01.2016}{0.4}
+	\recap{Inserimento voci}{Giacomo Beltrame}{Amministratore}{15.01.2016}{0.3}
+	\recap{Verifica delle prime voci inserite}{Rudy Berton}{Verificatore}{29.12.2015}{0.2}
+	\recap{Inizio inserimento voci}{Giacomo Beltrame}{Amministratore}{24.12.2015}{0.1}
+\end{diario}\label{lastromanpage}
+
+%\newpage
+%\tableofcontents
+%\newpage
+%\listoffigures
+%\newpage
+%\listoftables
+
+\newpage
+\clearpage	
+\pagenumbering{arabic}
+\rfoot{Pagina \thepage{} di \pageref*{LastPage}}
+
+\input{voci}
+
+\end{document}

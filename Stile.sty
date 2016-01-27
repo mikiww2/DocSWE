@@ -1,0 +1,76 @@
+% Nome del file: Stile.sty
+% Percorso: /documenti/template/
+% Autore: Vault-Tech
+% Data creazione: 27.12.2015
+% E-mail: vaulttech.swe@gmail.com
+
+%
+% PACCHETTI
+%
+\usepackage{courier}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+
+%
+% IMPOSTAZIONI GENERALI PACCHETTO ``listings"
+%
+\lstset{
+	basicstyle=\ttfamily,
+	numbersep=5pt,
+	numberstyle=\tiny,
+	literate={Ã }{{\`a}}1 {Ã¨}{{\`e}}1,
+	extendedchars=true,
+	inputencoding=utf8x,
+	frame=single,
+	commentstyle=\textit,
+	keepspaces=true,
+	breaklines=true
+}
+
+%
+% COPERTINA
+%
+\renewcommand{\maketitle}{
+	\begingroup
+	\centering
+	\includegraphics[scale=0.5]{Img/logo.png}\\
+	\vspace{4cm}
+	{\LARGE \PROGETTO}\\
+	\rule{12cm}{0.4pt}\\
+	\vspace{1cm}
+	{\Huge \TITOLO}\\
+	\rule{12cm}{0.4pt}\\
+	\vspace{2cm}	
+	\vfill
+	\begin{table}[h]
+	\centering
+	\begin{tabular}{r|l}
+	\textbf{Nome del documento}     & \NOME          \\
+	\textbf{Versione}               & \VERSIONE      \\
+	\textbf{Data di approvazione}      & \DATA          \\
+	\textbf{Redazione}              & \REDATTORE     \\
+	\textbf{Verifica}               & \VERIFICATORE  \\
+	\textbf{Approvazione}           & \RESPONSABILE  \\
+	\textbf{Uso}                    & \USO           \\
+	\textbf{Lista di distribuzione} & \DISTRIBUZIONE \\
+	\end{tabular}
+	\end{table}
+	\setcounter{page}{0}
+	\thispagestyle{empty}
+	\newpage
+	\clearpage
+	\setcounter{page}{1}
+	\endgroup
+}
+
+%
+% HEADER E FOOTER
+%
+\pagestyle{fancy}
+\lhead{\includegraphics[scale=0.1]{Img/logo.png}}
+\lfoot{\TITOLO}
+\cfoot{\href{mailto:vaulttech.swe@gmail.com}{vaulttech.swe@gmail.com}}
+\rfoot{Pagina \thepage{} di \pageref{LastPage}}
+\renewcommand{\footrulewidth}{0.4pt}

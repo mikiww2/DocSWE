@@ -1,0 +1,283 @@
+% Nome del file: AnalisiRequisiti.tex
+% Percorso: \gl{template}
+% Autore: Vault-Tech
+% Data creazione: 29.12.2015
+% E-mail: vaulttech.swe@gmail.comcom
+%
+% Diario delle modifiche: interno al file.
+
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{float}
+\usepackage{grffile}
+\usepackage{../../Stile}
+\usepackage{../../Comandi}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\def\NOME{Analisi dei Requisiti}
+\def\VERSIONE{1.0}
+\def\DATA{21.01.2016}
+\def\REDATTORE{Miki Violetto \\ & Michela De Bortoli \\ & Simone Boccato}
+\def\VERIFICATORE{Vassilikì Menarin \\ & Rudy Berton \\ & Giacomo Beltrame}
+\def\RESPONSABILE{Vassilikì Menarin}
+\def\USO{Esterno}
+\def\DISTRIBUZIONE{\COMMITTENTE \\ & \CARDIN \\ & \PROPONENTE}
+
+\begin{document}
+\pagestyle{fancy}	
+\pagenumbering{Roman}
+\rfoot{Pagina \thepage{} di \pageref{lastromanpage}}
+
+\maketitle
+
+\begin{diario}
+	\recap{Approvazione del documento}{Vassilikì Menarin}{Responsabile}{21.01.2016}{1.0}
+	\recap{Verifica del documento}{Vassilikì Menarin}{Verificatore}{21.01.2016}{0.12}
+	\recap{Correzione degli errori}{Simone Boccato}{Analista}{20.01.2016}{0.11}
+	\recap{Verifica del documento}{Giacomo Beltrame}{Verificatore}{20.01.2016}{0.10} 
+	\recap{Stesura della sezione Riepilogo}{Simone Boccato}{Analista}{19.01.2016}{0.9}
+	\recap{Stesura sezione Tracciamento e appendice}{Michela De Bortoli}{Analista}{19.01.2016}{0.8}
+	\recap{Completamento stesura Specifica dei casi d'uso}{Miki Violetto}{Analista}{18.01.2016}{0.7}
+	\recap{Inizio stesura Specifica dei casi d'uso}{Simone Boccato}{Analista}{17.01.2016}{0.6}
+	\recap{Completamento stesura della sezione Specifica dei requisiti}{Miki Violetto}{Analista}{12.01.2016}{0.5}
+	\recap{Inizio stesura della sezione Specifica dei requisiti}{Michela De Bortoli}{Analista}{08.01.2016}{0.4}
+	\recap{Stesura sezione Descrizione generale}{Michela De Bortoli}{Analista}{30.12.2015}{0.3}
+	\recap{Stesura sezione Introduzione}{Michela De Bortoli}{Analista}{30.12.2015}{0.2}
+	\recap{Stesura bozza}{Michela De Bortoli}{Analista}{29.12.2015}{0.1}
+\end{diario}
+
+\newpage
+\tableofcontents\label{lastromanpage}
+%\newpage
+%\listoffigures
+%\newpage
+%\listoftables
+
+\newpage
+\clearpage	
+\pagenumbering{arabic}
+\rfoot{Pagina \thepage{} di \pageref*{LastPage}}
+
+\section{Introduzione}
+\subsection{Scopo del documento}
+Lo scopo di questo documento è quello di individuare e descrivere i requisiti necessari per lo svolgimento del progetto Quizzipedia.
+
+\subsection{Scopo del prodotto}
+\SCOPO
+
+\subsection{Glossario}
+\GLOSSARIO
+
+\subsection{Riferimenti}
+\subsubsection{Riferimenti normativi}
+\begin{itemize}
+\item \bold{Norme di Progetto:} \doc{Norme di Progetto v1.0}.
+\end{itemize}
+
+\subsubsection{Riferimenti informativi}
+\begin{itemize}
+\item \bold{Capitolato d'appalto C5:} \italics{Quizzipedia: \gl{software} per la gestione di questionari} (\href{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C5.pdf}{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C5.pdf});
+
+\item \bold{Studio di fattibilità:} \doc{Studio di Fattibilità v1.0};
+
+\item \bold{Glossario:} \doc{Glossario v1.0};
+
+\item \bold{Lezione L06:} \italics{L06: Ingegneria dei requisiti} (\href{http://www.math.unipd.it/~tullio/IS-1/2015/Dispense/L06.pdf}{http://www.math.unipd.it/~tullio/IS-1/2015/Dispense/L06.pdf});
+
+\item \bold{IEEE 830-1998} \italics{Commented IEEE 830-1998} (\href{https://www.cs.purdue.edu/homes/apm/courses/BITSC461-fall03/miller-guidelines/IEEE830-1998.html}{https://www.cs.purdue.edu/homes/apm/courses/BITSC461-fall03/miller-guidelines/IEEE830-1998.html}).
+
+\end{itemize}
+
+\newpage
+
+\section{Descrizione generale}
+\subsection{Contesto d'uso del prodotto}
+\gl{Quizzipedia} si pone l'obiettivo di creare un sistema di gestione di questionari su diversi argomenti, composti da diverse tipologie di domande. Gli utenti potranno sia creare e modificare i questionari, sia svolgerli e ottenere la propria valutazione.
+
+\subsection{Funzionalità del prodotto}
+Il prodotto offrirà agli utenti la possibilità di creare e risolvere questionari, visualizzare i propri risultati e ottenere statistiche di vario tipo. 
+Sono supportate diverse tipologie di domande (vero/falso, risposta multipla, collegamenti, ecc.), categorizzate per argomento e livello di difficoltà. 
+
+\bigskip
+
+Gli utenti non registrati possono: 
+\begin{itemize}
+\item registrarsi;
+\item autenticarsi;
+\item effettuare il recupero della password;
+\item svolgere quiz pubblici.
+\end{itemize}
+
+\bigskip
+
+Gli utenti registrati si dividono in utenti senza ruolo, docenti, studenti e responsabili. 
+
+\bigskip
+
+Gli utenti senza ruolo possono:
+\begin{itemize}
+	\item svolgere quiz pubblici;
+	\item richiedere agli responsabile di assere assegnati a una categoria (studente o docente).
+\end{itemize}
+
+\bigskip
+
+I docenti possono:
+\begin{itemize}
+\item creare quiz selezionando domande esistenti;
+\item svolgere quiz;
+\item creare quiz inserendo nuove domande;
+\item modificare quiz  e domande esistenti;
+\item visualizzare i risultati degli studenti;
+\item visualizzare statistiche (percentuale media di risposte corrette per questionario, numero di studenti che hanno eseguito i singoli questionari, voto medio di un questionario ecc.);
+\item effettuare una richiesta di assegnazione a una classe con il ruolo di docente.
+\end{itemize}
+
+\bigskip
+
+Gli studenti possono:
+\begin{itemize}
+\item risolvere quiz;
+\item visualizzare i propri risultati;
+\item visualizzare il proprio storico dei quiz;
+\item effettuare una richiesta di assegnazione a una classe con il ruolo di studente.
+\end{itemize}
+
+\bigskip
+
+I responsabili possono fare uso di tutte le funzionalità riservate ai docenti, inoltre possono:
+\begin{itemize}
+\item gestire i profili di docenti e studenti;
+\item gestire enti e classi;
+\item gestire le richieste effettuate dagli altri utenti registrati.
+\end{itemize}
+
+\subsection{Caratteristiche degli utenti}
+L'uso del prodotto non richiede conoscenze tecniche particolari, è soltanto necessaria una moderata familiarità con il \gl{web} e la capacità di utilizzare un \gl{browser}.
+
+\subsection{Vincoli generali}
+Per usufruire del prodotto è necessario che gli utenti siano dotati di:
+\begin{itemize}
+\item connessione ad internet;
+\item \gl{browser} supportato con Javascript e \gl{cookies} abilitati;
+\item piattaforma fissa (per docente), piattaforma fissa o mobile (per studenti).
+\end{itemize}
+
+\bigskip
+
+Non è richiesto l'utilizzo di un sistema operativo particolare.
+
+\subsection{Assunzioni e dipendenze}
+La disponibilità dell'\gl{hardware} è un requisito necessario per il corretto funzionamento del prodotto.
+
+\subsection{Distribuzione dei requisiti}
+I requisiti obbligatori e desiderabili dovranno essere individuati nella fase di ingegneria dei requisiti, mentre i requisiti opzionali potranno essere aggiunti o modificati successivamente.
+
+
+\newpage
+
+\section{Specifica dei Casi d'Uso}
+\subsection{Elenco degli attori}
+
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.3]{Img/attori.pdf}}
+	\caption{Gerarchia degli attori}
+\end{figure}
+
+Gli attori si dividono in:
+\begin{itemize}
+
+\item \bold{utente:} utente non registrato, o attore registrato ma non autenticato;
+\item \bold{utente autenticato:} utente registrato che si è già autenticato;
+\item \bold{utente senza ruolo:} utente autenticato a cui non è stato attribuito un ruolo (studente o docente);
+\item \bold{studente:} utente autenticato a cui è stato attribuito il ruolo di studente;
+\item \bold{docente:} utente autenticato a cui è stato attribuito il ruolo di docente;
+\item \bold{responsabile:} docente con privilegi gestionali.
+\end{itemize}
+
+\subsection{Elenco dei casi d'uso}
+I casi d'uso saranno descritti nel seguente modo: UC[id], con id=codice univoco. 
+
+Per ogni caso d'uso saranno specificati:
+\begin{itemize}
+\item titolo;
+\item attori coinvolti;
+\item descrizione;
+\item scenario principale;
+\item scenari alternativi;
+\item inclusioni;
+\item estensioni;
+\item generalizzazioni;
+\item precondizione;
+\item postcondizione.
+\end{itemize}
+
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{0}
+
+\input{auto_casiuso}
+
+\setcounter{secnumdepth}{5} 
+\setcounter{tocdepth}{5} 
+
+\section{Specifica dei requisiti}
+I requisiti saranno descritti nel seguente modo: R[importanza][tipo][id], con importanza=[obbligatorio, desiderabile, opzionale], id=codice univoco, tipo=[funzionale, qualitativo, prestazionale, vincolante].
+
+\bigskip
+
+I requisiti sono stati suddivisi in:
+\begin{itemize}
+\item \bold{obbligatori}: requisiti irrinunciabili per il corretto funzionamento del sistema;
+\item \bold{desiderabili}: requisiti non irrinunciabili ma con un valore aggiunto riconoscibile;
+\item \bold{opzionali}: requisiti di importanza relativa.
+\end{itemize}
+
+\bigskip
+
+Per ogni requisito saranno specificati:
+\begin{itemize}
+\item titolo;
+\item descrizione;
+\item fonte.
+\end{itemize}
+
+\subsection{Requisiti funzionali}
+I requisiti funzionali descrivono la funzionalità e il comportamento del prodotto, e determinano le capacità di calcolo richieste dal sistema. Devono essere verificabili attraverso test, dimostrazioni formali e revisioni.
+
+\input{auto_req_funz}
+
+\subsection{Requisiti non funzionali}
+\subsubsection{Requisiti prestazionali}
+I requisiti prestazionali specificano i limiti nell'utilizzo di risorse a cui il sistema è soggetto, come velocità e volume dei dati. Devono essere verificabili attraverso misurazioni.
+
+\input{auto_req_pres}
+
+\subsubsection{Requisiti qualitativi}
+I requisiti qualitativi specificano affidabilità, usabilità, sicurezza nei confronti di malfunzionamenti e attacchi, portabilità e manutenibilità del sistema. Devono essere verificabili attraverso analisi ad hoc.
+
+\input{auto_req_qual}
+
+\subsubsection{Requisiti vincolanti}
+I requisiti vincolanti (extra-funzionali) fissano ulteriori regole a cui il sistema deve attenersi, come regole fisiche, legali, culturali, ambientali, implementative ecc.
+
+\input{auto_req_vinc}
+
+\newpage
+\section{Riepilogo}
+
+\input{auto_req_summary}
+
+\section{Tracciamento}
+\subsection{Requisiti-Fonte}
+
+\input{auto_track_rf}
+
+\subsection{Fonte-Requisiti}
+
+\input{auto_track_fr}
+
+\end{document}
