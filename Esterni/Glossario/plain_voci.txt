@@ -1,0 +1,162 @@
+Akka
+akka
+Amazon Web Services
+amazon web services
+Android
+android
+Baseline
+baseline
+Bitbucket
+bitbucket
+Browser
+browser
+Cloud
+cloud
+CMM
+cmm
+Cookies
+cookies
+Cross Site Scripting
+cross site scripting
+CSS3
+css3
+Dashboard
+dashboard
+Database
+database
+Design pattern
+design pattern
+Diagramma di Gantt
+diagramma di gantt
+DigitalOcean
+digitalocean
+Domain Specific Language
+domain specific language
+DSL
+dsl
+Git
+git
+GitHub
+github
+Google Chrome
+google chrome
+Google Drive
+google drive
+Hardware
+hardware
+Host
+host
+HTML5
+html5
+Hunspell
+hunspell
+IDE
+ide
+Indice Gulpease
+indice gulpease
+Inspection 
+inspection 
+Internet Explorer/Edge
+internet explorer/edge
+iOS
+ios
+Java
+java
+JavaScript
+javascript
+JVM
+jvm
+LaTex
+latex
+Linguaggio di markup
+linguaggio di markup
+LoopBack
+loopback
+Milestone
+milestone
+Modello incrementale
+modello incrementale
+MongoDB
+mongodb
+Mozilla Firefox
+mozilla firefox
+Node.js
+node.js
+Open source
+open source
+Opera
+opera
+OrientDB
+orientdb
+PDCA
+pdca
+PDF
+pdf
+PhoneGap
+phonegap
+Play framework
+play framework
+PNG
+png
+QML
+qml
+Redmine
+redmine
+Repository
+repository
+Requisito desiderabile
+requisito desiderabile
+Requisito obbligatorio
+requisito obbligatorio
+Requisito opzionale
+requisito opzionale
+Safari
+safari
+Scala
+scala
+Script
+script
+Slack
+slack
+Social
+social
+Software
+software
+StarUML
+staruml
+Team
+team
+Telegram
+telegram
+Template
+template
+TeXstudio
+texstudio
+Ticket
+ticket
+Tomcat
+tomcat
+Tracker
+tracker
+Ubiika
+ubiika
+UML
+uml
+Unity
+unity
+URL
+url
+UTF-8
+utf-8
+Versionamento
+versionamento
+W3C
+w3c
+Walkthrough 
+walkthrough 
+Web
+web
+Wikipedia
+wikipedia
+Windows Phone
+windows phone

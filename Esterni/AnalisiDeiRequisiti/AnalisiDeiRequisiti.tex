@@ -29,7 +29,7 @@
 \begin{document}
 \pagestyle{fancy}	
 \pagenumbering{Roman}
-\rfoot{Pagina \thepage{} di \pageref{lastromanpage}}
+\rfoot{Pagina \thepage{} di \pageref*{lastromanpage}}
 
 \maketitle
 
@@ -50,7 +50,8 @@
 \end{diario}
 
 \newpage
-\tableofcontents\label{lastromanpage}
+
+\tableofcontents
 
 \newpage
 
@@ -59,6 +60,7 @@
 \newpage
 
 \listoftables
+\label{lastromanpage}
 
 \newpage
 \clearpage	
