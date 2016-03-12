@@ -14,16 +14,24 @@ ROF1.4.2 & Funzionale \linebreak obbligatorio & Il sistema richiede di immettere
 ROF1.5 & Funzionale \linebreak obbligatorio & Il sistema notifica l'utente se è avvenuto un errore durante la registrazione & UC1.2 \linebreak interna \\
 ROF11 & Funzionale \linebreak obbligatorio & L'utente ha la possibilità di svolgere i quiz pubblici presenti su Quizzipedia & UC1.7 \linebreak capitolato \\
 ROF11.1 & Funzionale \linebreak obbligatorio & L'utente seleziona il quiz che vuole svolgere tramite la ricerca fornita dal sistema & UC1.7.1 \linebreak interna \\
+ROF11.1.1 & Funzionale \linebreak obbligatorio & L'utente cerca i quiz per argomento & interna \\
+ROF11.1.2 & Funzionale \linebreak obbligatorio & L'utente cerca i quiz per livello di difficoltà
+ & interna \\
+ROF11.1.3 & Funzionale \linebreak obbligatorio & L'utente cerca i quiz per parola chiave
+ & interna \\
 ROF11.2 & Funzionale \linebreak obbligatorio & L'utente conferma la selezione del quiz precedentemente cercato & UC1.7.2 \linebreak interna \\
 ROF11.3 & Funzionale \linebreak obbligatorio & L'utente risolve le domande poste nel quiz. L'utente può risolvere la stessa domanda più volte, sovrascrivendo la risposta precedente. 
 L'utente può spostarsi a piacimento fra le domande del quiz. & UC1.7.3 \linebreak capitolato \\
+ROF11.3.1 & Funzionale \linebreak obbligatorio & L'utente puo risolvere la stessa domanda piu volte, sovrascrivendo la risposta precedente
+ & interna \\
+ROF11.3.2 & Funzionale \linebreak obbligatorio & L'utente puo spostarsi a piacimento fra le domande del quiz & interna \\
 ROF11.4 & Funzionale \linebreak obbligatorio & L'utente conferma la risoluzione del quiz. Dopo la consegna non sarà più possibile modificare le risposte e il quiz sarà valutato & UC1.7.4 \linebreak interna \\
 ROF11.5 & Funzionale \linebreak obbligatorio & L'utente visualizza l'esito del quiz svolto & UC1.7.5 \linebreak interna \\
 ROF12 & Funzionale \linebreak obbligatorio & Il sistema mette a disposizione dell'utente una funzionalità di ricerca quiz e domande & UC1.8 \linebreak interna \\
 ROF12.1 & Funzionale \linebreak obbligatorio & L'utente può affinare la ricerca attraverso dei parametri & UC1.8.1 \linebreak interna \\
 ROF12.1.1 & Funzionale \linebreak obbligatorio & L'utente seleziona il livello di difficoltà del quiz che vuole cercare & UC1.8.1.4 \linebreak interna \\
 ROF12.1.2 & Funzionale \linebreak obbligatorio & L'utente può inserire delle parole chiave relative a quiz o domande & UC1.8.1.5 \linebreak interna \\
-ROF12.2 & Funzionale \linebreak obbligatorio & L'utente può decidere se ricercare solo domande o solo quiz indicando se i quiz che vuole cercare sono pubblici o privati & interna \\
+ROF12.2 & Funzionale \linebreak obbligatorio & L'utente può decidere se ricercare solo domande o solo quiz indicando se i quiz che vuole cercare sono pubblici o privati & UC1.8.1 \linebreak interna \\
 ROF12.3 & Funzionale \linebreak obbligatorio & L'utente seleziona l'argomento della domanda o del quiz che vuole cercare & UC1.8.1.3 \linebreak interna \\
 ROF12.4 & Funzionale \linebreak obbligatorio & L'utente deve poter avviare la ricerca secondo i parametri immessi & UC1.8.2 \linebreak interna \\
 ROF12.5 & Funzionale \linebreak obbligatorio & L'utente visualizza i risultati della ricerca & UC1.8.3 \linebreak interna \\
@@ -60,48 +68,48 @@ ROF15.2.4.2 & Funzionale \linebreak obbligatorio & Il docente può specificare u
 ROF15.2.4.2.1 & Funzionale \linebreak obbligatorio & Il docente può specificare una o più classi a cui permette lo svolgimento del quiz & UC2.2.2.1.2.1 \linebreak interna \\
 ROF15.2.5 & Funzionale \linebreak obbligatorio & il docente deve poter inserire una domanda nel quiz & UC2.2.2.2 \linebreak capitolato \\
 ROF15.2.5.1 & Funzionale \linebreak obbligatorio & Il docente può cercare una domanda esistente e inserirla nel quiz & UC1.8 \linebreak interna \\
-ROF15.2.5.2 & Funzionale \linebreak obbligatorio & Il docente può creare una nuova domanda e inserirla nel quiz & UC2.4.1 \linebreak interna \\
+ROF15.2.5.2 & Funzionale \linebreak obbligatorio & Il docente può creare una nuova domanda e inserirla nel quiz & interna \\
 ROF15.2.6 & Funzionale \linebreak obbligatorio & Il docente deve poter rimuovere una domanda dal quiz & UC2.2.2.3 \linebreak interna \\
 ROF15.2.7 & Funzionale \linebreak obbligatorio & Il sistema notifica l'utente se si è verificato un errore durante la modifica del quiz & UC2.2.3 \linebreak interna \\
 ROF15.3 & Funzionale \linebreak obbligatorio & Il docente deve poter eliminare un quiz & UC2.2.4 \linebreak capitolato \\
 ROF16 & Funzionale \linebreak obbligatorio & Il sistema mette a disposizione del docente funzionalità di gestione delle domande & UC2.4 \linebreak capitolato \\
-ROF16.1 & Funzionale \linebreak obbligatorio & Il docente deve poter creare una nuova domanda & UC2.4.1 \linebreak capitolato \\
-ROF16.1.1 & Funzionale \linebreak obbligatorio & La creazione della domande richiede l'inserimento del titolo della domanda & UC2.4.1.1 \linebreak interna \\
-ROF16.1.2 & Funzionale \linebreak obbligatorio & La creazione della domande richiede l'inserimento del livello di difficoltà della domanda & UC2.4.1.2 \linebreak interna \\
-ROF16.1.3 & Funzionale \linebreak obbligatorio & La creazione della domande richiede la selezione dell'argomento della domanda & UC2.4.1.4 \linebreak interna \\
-ROF16.1.4 & Funzionale \linebreak obbligatorio & La creazione della domande richiede la selezione del tipo della domanda & UC2.4.1.3 \linebreak interna \\
+ROF16.1 & Funzionale \linebreak obbligatorio & Il docente deve poter creare una nuova domanda & capitolato \\
+ROF16.1.1 & Funzionale \linebreak obbligatorio & La creazione della domanda richiede l'inserimento del titolo della domanda & interna \\
+ROF16.1.2 & Funzionale \linebreak obbligatorio & La creazione della domanda richiede l'inserimento del livello di difficoltà della domanda & interna \\
+ROF16.1.3 & Funzionale \linebreak obbligatorio & La creazione della domanda richiede la selezione dell'argomento della domanda & interna \\
+ROF16.1.4 & Funzionale \linebreak obbligatorio & La creazione della domanda richiede la selezione del tipo della domanda & interna \\
 ROF16.1.4.1 & Funzionale \linebreak obbligatorio & Il docente può selezionare come tipo di domanda 'domanda vero o falso' & interna \\
 ROF16.1.4.2 & Funzionale \linebreak obbligatorio & Il docente può selezionare come tipo di domanda 'domanda a risposta multipla' & interna \\
 ROF16.1.4.3 & Funzionale \linebreak obbligatorio & Il docente può selezionare come tipo di domanda 'domanda a risposta aperta' & interna \\
 ROF16.1.4.4 & Funzionale \linebreak obbligatorio & Il docente può selezionare come tipo di domanda 'domanda a collegamenti' & interna \\
 ROF16.1.4.5 & Funzionale \linebreak obbligatorio & Il docente può selezionare come tipo di domanda 'domanda completamento testo' & interna \\
-ROF16.2 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda da lui inserita & UC2.4.8 \linebreak capitolato \\
-ROF16.2.1 & Funzionale \linebreak obbligatorio & Il docente può modificare il titolo della domanda & UC2.4.8.1 \linebreak interna \\
-ROF16.2.2 & Funzionale \linebreak obbligatorio & Il docente può modificare il livello di difficoltà della domanda & UC2.4.8.2 \linebreak interna \\
-ROF16.2.3 & Funzionale \linebreak obbligatorio & Il docente può modificare l'argomento della domanda & UC2.4.8.4 \linebreak interna \\
-ROF16.2.4 & Funzionale \linebreak obbligatorio & Il docente può modificare il testo aggiuntivo della domanda & UC2.4.8.5 \linebreak interna \\
-ROF16.2.5 & Funzionale \linebreak obbligatorio & Il docente può modificare il tipo della domanda & UC2.4.8.3 \linebreak interna \\
-ROF16.2.6 & Funzionale \linebreak obbligatorio & Il docente può inserire un contenitore in varie sezioni della domanda & UC2.4.8.6 \linebreak interna \\
-ROF16.2.6.1 & Funzionale \linebreak obbligatorio & Il docente può inserire un contenitore di tipo casella di testo & UC2.4.8.7 \linebreak interna \\
-ROF16.2.6.2 & Funzionale \linebreak obbligatorio & Il docente può inserire un contenitore di tipo 'allegato' & UC2.4.8.8 \linebreak interna \\
-ROF16.2.6.2.1 & Funzionale \linebreak obbligatorio & Il docente può caricare allegati di tipo 'immagine', 'file audio', 'file video' & UC2.4.8.8.1 \linebreak interna \\
-ROF16.2.7 & Funzionale \linebreak obbligatorio & Il docente può rimuovere un contenitore dalla sezione della domanda in cui è stato inserito & UC2.4.8.9 \linebreak interna \\
+ROF16.2 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda da lui inserita & capitolato \\
+ROF16.2.1 & Funzionale \linebreak obbligatorio & Il docente può modificare il titolo della domanda & interna \\
+ROF16.2.2 & Funzionale \linebreak obbligatorio & Il docente può modificare il livello di difficoltà della domanda & interna \\
+ROF16.2.3 & Funzionale \linebreak obbligatorio & Il docente può modificare l'argomento della domanda & interna \\
+ROF16.2.4 & Funzionale \linebreak obbligatorio & Il docente può modificare il testo aggiuntivo della domanda & interna \\
+ROF16.2.5 & Funzionale \linebreak obbligatorio & Il docente può modificare il tipo della domanda & interna \\
+ROF16.2.6 & Funzionale \linebreak obbligatorio & Il docente può inserire un contenitore in varie sezioni della domanda & interna \\
+ROF16.2.6.1 & Funzionale \linebreak obbligatorio & Il docente può inserire un contenitore di tipo casella di testo & interna \\
+ROF16.2.6.2 & Funzionale \linebreak obbligatorio & Il docente può inserire un contenitore di tipo 'allegato' & interna \\
+ROF16.2.6.2.1 & Funzionale \linebreak obbligatorio & Il docente può caricare allegati di tipo 'immagine', 'file audio', 'file video' & interna \\
+ROF16.2.7 & Funzionale \linebreak obbligatorio & Il docente può rimuovere un contenitore dalla sezione della domanda in cui è stato inserito & interna \\
 ROF16.3 & Funzionale \linebreak obbligatorio & Il docente deve poter eliminare una domanda & UC2.4.7 \linebreak capitolato \\
-ROF16.4 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda di tipo 'vero o falso' & UC2.4.2 \linebreak capitolato \\
-ROF16.4.1 & Funzionale \linebreak obbligatorio & Il docente può modificare la veridicità della domanda, indicando se la risposta corretta è 'vero' o 'falso' & UC2.4.2.1 \linebreak interna \\
-ROF16.5 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda di tipo 'risposta multipla' & UC2.4.3 \linebreak capitolato \\
-ROF16.5.1 & Funzionale \linebreak obbligatorio & Il docente può modificare le risposte attraverso l'inserimento e la rimozione di contenitori & UC2.4.3.1 \linebreak interna \\
-ROF16.5.2 & Funzionale \linebreak obbligatorio & Il docente può selezionare le risposte corrette. Una risposta selezionata è considerata corretta, una risposta non selezionata è considerata errata.  & UC2.4.3.2 \linebreak interna \\
-ROF16.6 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda di tipo 'collegamenti' & UC2.4.4 \linebreak capitolato \\
-ROF16.6.1 & Funzionale \linebreak obbligatorio & Il docente può modificare le risposte della domanda a collegamenti attraverso l'inserimento e la rimozione di contenitori & UC2.4.4.1 \linebreak interna \\
-ROF16.6.2 & Funzionale \linebreak obbligatorio & Il docente può gestire le associazioni fra le risposte. Se due risposte sono associate il loro collegamento è considerato corretto, se due risposte non sono associate il loro collegamento è considerato errato & UC2.4.4.2 \linebreak interna \\
-ROF16.7 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda di tipo 'risposta aperta' & UC2.4.5 \linebreak capitolato \\
-ROF16.7.1 & Funzionale \linebreak obbligatorio & Il docente può gestire la risposta corretta della domanda a risposta aperta, inserendola o modificandola in forma testuale  & UC2.4.5.1 \linebreak interna \\
-ROF16.8 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda di tipo 'completamento testo' & UC2.4.6 \linebreak capitolato \\
-ROF16.8.1 & Funzionale \linebreak obbligatorio & Il docente può inserire uno spazio vuoto nel testo che dovrà essere associato a una risposta & UC2.4.6.1 \linebreak interna \\
-ROF16.8.2 & Funzionale \linebreak obbligatorio & Il docente può rimuovere uno spazio vuoto dal testo & UC2.4.6.2 \linebreak interna \\
-ROF16.8.3 & Funzionale \linebreak obbligatorio & Il docente può modificare le risposte della domanda a completamento testo attraverso l'inserimento e la rimozione di contenitori & UC2.4.6.3 \linebreak interna \\
-ROF16.8.4 & Funzionale \linebreak obbligatorio & Il docente può gestire l'associazione fra spazi e risposte. Se uno spazio e una risposta sono associati, inserire la risposta in quello spazio è considerato corretto. Se uno spazio e una risposta non sono associati, inserire la risposta in quello spazio è considerato errato & UC2.4.6.4 \linebreak interna \\
+ROF16.4 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda di tipo 'vero o falso' & capitolato \\
+ROF16.4.1 & Funzionale \linebreak obbligatorio & Il docente può modificare la veridicità della domanda, indicando se la risposta corretta è 'vero' o 'falso' & interna \\
+ROF16.5 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda di tipo 'risposta multipla' & capitolato \\
+ROF16.5.1 & Funzionale \linebreak obbligatorio & Il docente può modificare le risposte attraverso l'inserimento e la rimozione di contenitori & interna \\
+ROF16.5.2 & Funzionale \linebreak obbligatorio & Il docente può selezionare le risposte corrette. Una risposta selezionata è considerata corretta, una risposta non selezionata è considerata errata.  & interna \\
+ROF16.6 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda di tipo 'collegamenti' & capitolato \\
+ROF16.6.1 & Funzionale \linebreak obbligatorio & Il docente può modificare le risposte della domanda a collegamenti attraverso l'inserimento e la rimozione di contenitori & interna \\
+ROF16.6.2 & Funzionale \linebreak obbligatorio & Il docente può gestire le associazioni fra le risposte. Se due risposte sono associate il loro collegamento è considerato corretto, se due risposte non sono associate il loro collegamento è considerato errato & interna \\
+ROF16.7 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda di tipo 'risposta aperta' & capitolato \\
+ROF16.7.1 & Funzionale \linebreak obbligatorio & Il docente può gestire la risposta corretta della domanda a risposta aperta, inserendola o modificandola in forma testuale  & interna \\
+ROF16.8 & Funzionale \linebreak obbligatorio & Il docente deve poter modificare una domanda di tipo 'completamento testo' & capitolato \\
+ROF16.8.1 & Funzionale \linebreak obbligatorio & Il docente può inserire uno spazio vuoto nel testo che dovrà essere associato a una risposta & interna \\
+ROF16.8.2 & Funzionale \linebreak obbligatorio & Il docente può rimuovere uno spazio vuoto dal testo & interna \\
+ROF16.8.3 & Funzionale \linebreak obbligatorio & Il docente può modificare le risposte della domanda a completamento testo attraverso l'inserimento e la rimozione di contenitori & interna \\
+ROF16.8.4 & Funzionale \linebreak obbligatorio & Il docente può gestire l'associazione fra spazi e risposte. Se uno spazio e una risposta sono associati, inserire la risposta in quello spazio è considerato corretto. Se uno spazio e una risposta non sono associati, inserire la risposta in quello spazio è considerato errato & interna \\
 ROF17 & Funzionale \linebreak obbligatorio & L'utente senza ruolo, lo studente e il docente possono effettuare varie richieste & UC2.6 \linebreak interna \\
 ROF17.1 & Funzionale \linebreak obbligatorio & L'utente senza ruolo può richiedere di assumere il ruolo di docente & UC2.6.1 \linebreak interna \\
 ROF17.2 & Funzionale \linebreak obbligatorio & L'utente senza ruolo può richiedere di assumere il ruolo di studente & UC2.6.2 \linebreak interna \\
@@ -153,8 +161,6 @@ ROF22.5 & Funzionale \linebreak obbligatorio & Il responsabile deve poter visual
 ROF3 & Funzionale \linebreak obbligatorio & Un utente deve poter effettuare una richiesta di recupero password & UC1.5 \linebreak interna \\
 ROF3.1 & Funzionale \linebreak obbligatorio & Il recupero della password richiede l'inserimento dell'indirizzo email dell'utente & UC1.5.1 \linebreak interna \\
 ROF3.2 & Funzionale \linebreak obbligatorio & Il sistema notifica l'utente se è avvenuto un errore durante il recupero della password & UC1.6 \linebreak interna \\
-RDF19.2 & Funzionale \linebreak desiderabile & Il docente deve poter modificare un argomento esistente & UC2.3.2 \linebreak interna \\
-RDF19.2.1 & Funzionale \linebreak desiderabile & La modifica di un argomento richiede l'inserimento del nuovo nome dell'argomento & UC2.3.2.1 \linebreak interna \\
 RDF20.2 & Funzionale \linebreak desiderabile & Il responsabile deve poter modificare un ente esistente & UC2.8.2 \linebreak interna \\
 RDF20.2.1 & Funzionale \linebreak desiderabile & Il responsabile può modificare il nome dell'ente & UC2.8.2.1 \linebreak interna \\
 RDF21.4 & Funzionale \linebreak desiderabile & Il docente deve poter visualizzare le statistiche relative ai docenti & UC2.7.4 \linebreak interna \\
