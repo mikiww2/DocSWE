@@ -641,6 +641,7 @@
 \item Interruzione volontaria della modifica della domanda (UC2.11.11);
 \item Modifica domanda vero o falso (UC2.11.12);
 \item Modifica domanda risposta multipla (UC2.11.13);
+\item Modifica domanda a risposta aperta (UC2.11.14);
 \item Errore numero risposte creazione (UC2.11.2);
 \item Interruzione volontaria della creazione della domanda (UC2.11.3);
 \item Creazione domanda vero o falso (UC2.11.4);
@@ -871,6 +872,25 @@
 \item \textbf{Descrizione}: il docente deve poter eliminare una risposta dalla domanda a risposta multipla da lui creata.
 \item \textbf{Precondizione}: il docente sta modificando una domanda a risposta multipla da lui creata ma non ha ancora eliminato una risposta.
 \item \textbf{Postcondizione}: il docente ha eliminato una risposta dalla domanda che stava modificando.
+\end{itemize}
+\subsubsection{UC2.11.14 Modifica domanda a risposta aperta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Modifica della risposta (UC2.11.14.1).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter modificare una domanda a risposta aperta esistente, da lui creata.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda a risposta aperta esistente, da lui creata.
+\item \textbf{Postcondizione}: il docente ha modificato la domanda a risposta aperta.
+\end{itemize}
+\subsubsection{UC2.11.14.1 Modifica della risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica la risposta corretta alla domanda.
+\item \textbf{Descrizione}: il docente può modificare la risposta corretta alla domanda.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a risposta aperta ma non ha ancora modificato la risposta corretta.
+\item \textbf{Postcondizione}: il docente ha modificato la risposta corretta della domanda a risposta aperta.
 \end{itemize}
 \subsubsection{UC2.11.2 Errore numero risposte creazione}
 \begin{itemize}
