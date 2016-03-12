@@ -896,9 +896,30 @@
 \subsubsection{UC2.11.15 Modifica domanda a completamento testo}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Modifica testo incompleto (UC2.11.15.1);
+\item Modifica parole esistenti (UC2.11.15.2).
+\end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter modificare una domanda a completamento testo da lui creata.
 \item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda a completamento testo da lui creata.
 \item \textbf{Postcondizione}: il docente ha modificato una domanda a completamento testo, esistente, da lui creata.
+\end{itemize}
+\subsubsection{UC2.11.15.1 Modifica testo incompleto}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica il testo incompleto della domanda, specificando gli spazi vuoti nel testo.
+\item \textbf{Descrizione}: il docente deve poter modificare il testo incompleto della domanda, specificando gli spazi vuoti.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a completamento testo ma non ha ancora modificato il testo incompleto della domanda.
+\item \textbf{Postcondizione}: il docente ha modificato il testo incompleto della domanda.
+\end{itemize}
+\subsubsection{UC2.11.15.2 Modifica parole esistenti}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica l'insieme di parole associate al testo incompleto.
+\item \textbf{Descrizione}: il docente deve poter modificare l'insieme di parole associate al testo incompleto.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a completamento testo ma non ha ancora modificato l'insieme di parole associate al testo incompleto.
+\item \textbf{Postcondizione}: il docente ha modificato l'insieme di parole associate al testo incompleto.
 \end{itemize}
 \subsubsection{UC2.11.2 Errore numero risposte creazione}
 \begin{itemize}
