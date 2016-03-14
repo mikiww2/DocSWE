@@ -9,13 +9,18 @@
 \item \textbf{Scenario principale}:
 \begin{enumerate}
 \item Registrazione utente (UC1.1);
+\item Interruzione volontaria dell'autenticazione (UC1.10);
+\item Interruzione volontaria dello svolgimento del quiz (UC1.11);
+\item Interruzione volontaria della ricerca (UC1.12);
+\item Interruzione volontaria del recupero password (UC1.13);
 \item Errore in fase di registrazione (UC1.2);
 \item Autenticazione utente (UC1.3);
 \item Errore in fase di autenticazione (UC1.4);
 \item Recupero password (UC1.5);
 \item Errore in fase di recupero password (UC1.6);
 \item Svolgimento quiz (UC1.7);
-\item Ricerca quiz e domande (UC1.8).
+\item Ricerca quiz e domande (UC1.8);
+\item Interruzione volontaria della registrazione (UC1.9).
 \end{enumerate}
 \item \textbf{Descrizione}: l'utente accede al sito. Può effettuare la registrazione, autenticarsi nel sistema, effettuare il recupero della propria password, cercare quiz e domande, svolgere quiz.
 \item \textbf{Precondizione}: l'utente si è connesso al sito web di Quizzipedia attraverso un browser supportato.
@@ -32,17 +37,22 @@
 \item \textbf{Scenario principale}:
 \begin{enumerate}
 \item Inserimento nome (UC1.1.1);
+\item Password non valida (UC1.1.10);
+\item Conferma password non valida (UC1.1.11);
+\item Indirizzo email già registrato (UC1.1.12);
 \item Inserimento cognome (UC1.1.2);
 \item Inserimento email (UC1.1.3);
 \item Conferma inserimento email (UC1.1.4);
 \item Inserimento password (UC1.1.5);
 \item Conferma inserimento password (UC1.1.6);
-\item Conferma registrazione (UC1.1.7).
+\item Conferma registrazione (UC1.1.7);
+\item Indirizzo email non valido (UC1.1.8);
+\item Conferma indirizzo email non valida (UC1.1.9).
 \end{enumerate}
-\item \textbf{Scenario alternativo}: l'utente interrompe volontariamente la registrazione.
 \item \textbf{Estensioni}:
 \begin{itemize}
-\item Errore in fase di registrazione (UC1.2).
+\item Errore in fase di registrazione (UC1.2);
+\item Interruzione volontaria della registrazione (UC1.9).
 \end{itemize}
 \item \textbf{Descrizione}: l'utente crea un account Quizzipedia per poter usufruire delle funzionalità offerte dal sistema agli utenti registrati.
 \item \textbf{Precondizione}: l'utente si è connesso al sito web di Quizzipedia attraverso un browser supportato e ha scelto di effettuare la registrazione.
@@ -51,13 +61,39 @@
 \subsubsection{UC1.1.1 Inserimento nome}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente inserisce il proprio nome.
 \item \textbf{Descrizione}: per portare a termine la registrazione, l'utente deve inserire il proprio nome.
 \item \textbf{Precondizione}: l'utente si trova nella pagina di registrazione e deve ancora inserire il proprio nome.
 \item \textbf{Postcondizione}: l'utente ha inserito il nome.
 \end{itemize}
+\subsubsection{UC1.1.10 Password non valida}
+\begin{itemize}
+\item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente inserisce nuovamente la password.
+\item \textbf{Descrizione}: la password inserita non è valida e quindi deve essere inserita nuovamente.
+\item \textbf{Precondizione}: l'utente si trova nella pagina di registrazione e ha inserito una password non valida.
+\item \textbf{Postcondizione}: l'utente ha visualizzato un messaggio di errore che indica che la password inserita non è valida.
+\end{itemize}
+\subsubsection{UC1.1.11 Conferma password non valida}
+\begin{itemize}
+\item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente conferma la password nuovamente.
+\item \textbf{Descrizione}: la password non è uguale a quella precedentemente inserita.
+\item \textbf{Precondizione}: l'utente si trova nella pagina di registrazione e ha confermato la password in maniera errata.
+\item \textbf{Postcondizione}: l'utente ha visualizzato un messaggio di errore che indica che la password confermata non è uguale a quella precedentemente inserita.
+\end{itemize}
+\subsubsection{UC1.1.12 Indirizzo email già registrato}
+\begin{itemize}
+\item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente inserisce nuovamente l'indirizzo email.
+\item \textbf{Descrizione}: l'indirizzo email inserito è già registrato.
+\item \textbf{Precondizione}: l'utente sta effettuando la registrazione e ha inserito un indirizzo email già registrato.
+\item \textbf{Postcondizione}: L'utente ha visualizzato un messaggio di errore che indica che l'indirizzo email inserito è già registrato.
+\end{itemize}
 \subsubsection{UC1.1.2 Inserimento cognome}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente inserisce il proprio cognome.
 \item \textbf{Descrizione}: per portare a termine la registrazione, l'utente deve inserire il proprio cognome.
 \item \textbf{Precondizione}: l'utente si trova nella pagina di registrazione e deve ancora inserire il proprio cognome.
 \item \textbf{Postcondizione}: l'utente ha inserito il cognome.
@@ -65,7 +101,11 @@
 \subsubsection{UC1.1.3 Inserimento email}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
-\item \textbf{Scenario alternativo}: l'indirizzo email non è valido e deve essere inserito nuovamente.
+\item \textbf{Scenario principale}: l'utente inserisce il proprio indirizzo email.
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Indirizzo email non valido (UC1.1.8).
+\end{itemize}
 \item \textbf{Descrizione}: per portare a termine la registrazione, l'utente deve inserire il proprio indirizzo email.
 \item \textbf{Precondizione}: l'utente si trova nella pagina di registrazione e deve ancora inserire l'indirizzo email.
 \item \textbf{Postcondizione}: l'utente ha inserito un indirizzo email valido.
@@ -73,7 +113,11 @@
 \subsubsection{UC1.1.4 Conferma inserimento email}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
-\item \textbf{Scenario alternativo}: l'indirizzo email non è uguale a quello precedentemente inserito.
+\item \textbf{Scenario principale}: l'utente conferma l'inserimento del proprio indirizzo email.
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Conferma indirizzo email non valida (UC1.1.9).
+\end{itemize}
 \item \textbf{Descrizione}: per portare a termine la registrazione, l'utente deve confermare il proprio indirizzo email.
 \item \textbf{Precondizione}: l'utente si trova nella pagina di registrazione, ha inserito l'indirizzo email e deve ancora confermarlo.
 \item \textbf{Postcondizione}: l'utente ha confermato un indirizzo email valido e uguale a quello inserito.
@@ -81,7 +125,11 @@
 \subsubsection{UC1.1.5 Inserimento password}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
-\item \textbf{Scenario alternativo}: la password inserita non è valida e quindi deve essere inserita nuovamente.
+\item \textbf{Scenario principale}: l'utente inserisce la propria password.
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Password non valida (UC1.1.10).
+\end{itemize}
 \item \textbf{Descrizione}: per portare a termine la registrazione, l'utente deve inserire la propria password.
 \item \textbf{Precondizione}: l'utente si trova nella pagina di registrazione e deve ancora inserire la password.
 \item \textbf{Postcondizione}: l'utente ha inserito una password valida.
@@ -89,7 +137,11 @@
 \subsubsection{UC1.1.6 Conferma inserimento password}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
-\item \textbf{Scenario alternativo}: la password non è uguale a quella precedentemente inserita.
+\item \textbf{Scenario principale}: l'utente conferma l'inserimento della propria password.
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Conferma password non valida (UC1.1.11).
+\end{itemize}
 \item \textbf{Descrizione}: per portare a termine la registrazione, l'utente deve confermare la propria password.
 \item \textbf{Precondizione}: l'utente si trova nella pagina di registrazione, ha inserito la password e deve ancora confermarla.
 \item \textbf{Postcondizione}: l'utente ha confermato una password valida e uguale a quella inserita.
@@ -97,15 +149,65 @@
 \subsubsection{UC1.1.7 Conferma registrazione}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente conferma la registrazione.
 \item \textbf{Descrizione}: per portare a termine la registrazione, l'utente deve confermare i dati precedentemente inseriti.
 \item \textbf{Precondizione}: l'utente si trova in una pagina del sito web che gli permette di confermare i dati precedentemente inseriti.
 \item \textbf{Postcondizione}: L'utente ha scelto di continuare la registrazione con i dati immessi.
 \end{itemize}
+\subsubsection{UC1.1.8 Indirizzo email non valido}
+\begin{itemize}
+\item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente inserisce nuovamente l'indirizzo email.
+\item \textbf{Descrizione}: l'indirizzo email non è valido e deve essere inserito nuovamente.
+\item \textbf{Precondizione}: L'utente sta effettuando la registrazione e ha inserito un indirizzo email non valido.
+\item \textbf{Postcondizione}: L'utente ha visualizzato un messaggio di errore che indica che l'indirizzo email inserito non è valido.
+\end{itemize}
+\subsubsection{UC1.1.9 Conferma indirizzo email non valida}
+\begin{itemize}
+\item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente conferma nuovamente l'indirizzo email.
+\item \textbf{Descrizione}: l'indirizzo email non è uguale a quello precedentemente inserito.
+\item \textbf{Precondizione}: L'utente sta effettuando la registrazione e ha confermato l'indirizzo email in modo errato.
+\item \textbf{Postcondizione}: L'utente ha visualizzato un messaggio di errore che indica che l'indirizzo email confermato non è uguale a quello precedentemente inserito.
+\end{itemize}
+\subsubsection{UC1.10 Interruzione volontaria dell'autenticazione}
+\begin{itemize}
+\item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente interrompe l'autenticazione.
+\item \textbf{Descrizione}: l'utente interrompe volontariamente l'autenticazione.
+\item \textbf{Precondizione}: L'utente sta svolgendo l'autenticazione.
+\item \textbf{Postcondizione}: L'autenticazione non è stata completata.
+\end{itemize}
+\subsubsection{UC1.11 Interruzione volontaria dello svolgimento del quiz}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente interrompe lo svolgimento del quiz.
+\item \textbf{Descrizione}: l'utente ha interrotto lo svolgimento del quiz.
+\item \textbf{Precondizione}: l'utente sta svolgendo un quiz.
+\item \textbf{Postcondizione}: l'utente non ha completato lo svolgimento del quiz.
+\end{itemize}
+\subsubsection{UC1.12 Interruzione volontaria della ricerca}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente interrompe la ricerca.
+\item \textbf{Descrizione}: l'utente ha interrotto la ricerca.
+\item \textbf{Precondizione}: l'utente sta effettuando una ricerca.
+\item \textbf{Postcondizione}: l'utente non ha portato a termine la ricerca.
+\end{itemize}
+\subsubsection{UC1.13 Interruzione volontaria del recupero password}
+\begin{itemize}
+\item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente interrompe il recupero della password.
+\item \textbf{Descrizione}: L'utente interrompe volontariamente il recupero della password.
+\item \textbf{Precondizione}: l'utente sta effettuando il recupero della password.
+\item \textbf{Postcondizione}: l'utente non ha completato il recupero della password.
+\end{itemize}
 \subsubsection{UC1.2 Errore in fase di registrazione}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
-\item \textbf{Descrizione}: si è verificata una delle seguenti condizioni: l'indirizzo email inserito è già associato ad un account registrato, l'indirizzo email inserito non è in un formato valido, l'indirizzo email di conferma non corrisponde a quello precedentemente inserito, la password inserita non è conforme (troppo corta, troppo semplice), la password di conferma non corrisponde a quella precedentemente inserita.
-\item \textbf{Precondizione}: l'utente ha effettuato un tentativo di registrazione che non è andato a buon termine.
+\item \textbf{Scenario principale}: l'utente visualizza il messaggio di errore.
+\item \textbf{Descrizione}: l'utente visualizza un messaggio di errore che lo avvisa che il tentativo di autenticazione non è andato a buon termine.
+\item \textbf{Precondizione}: si è verificata una delle seguenti condizioni: l'indirizzo email inserito non è associato a un account registrato, oppure la combinazione di indirizzo email e password immessa è errata.
 \item \textbf{Postcondizione}: l'utente ha visualizzato il messaggio di errore.
 \end{itemize}
 \subsubsection{UC1.3 Autenticazione utente}
@@ -122,9 +224,9 @@
 \item Inserimento password (UC1.3.2);
 \item Conferma autenticazione (UC1.3.3).
 \end{enumerate}
-\item \textbf{Scenario alternativo}: l'utente interrompe volontariamente l'autenticazione.
 \item \textbf{Estensioni}:
 \begin{itemize}
+\item Interruzione volontaria dell'autenticazione (UC1.10);
 \item Errore in fase di autenticazione (UC1.4).
 \end{itemize}
 \item \textbf{Descrizione}: l'utente, se in possesso di un account Quizzipedia, deve avere la possibilità di autenticarsi.
@@ -134,13 +236,15 @@
 \subsubsection{UC1.3.1 Inserimento email}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
-\item \textbf{Descrizione}: per portare a termine l'autenticazione, l'utente deve inserire il proprio indirizzo.
+\item \textbf{Scenario principale}: l'utente inserisce il proprio indirizzo email.
+\item \textbf{Descrizione}: per portare a termine l'autenticazione, l'utente deve inserire il proprio indirizzo email.
 \item \textbf{Precondizione}: l'utente si trova in una pagina di autenticazione e deve ancora inserire il proprio indirizzo email.
 \item \textbf{Postcondizione}: l'utente ha inserito il proprio indirizzo email.
 \end{itemize}
 \subsubsection{UC1.3.2 Inserimento password}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente inserisce la propria password.
 \item \textbf{Descrizione}: per portare a termine l'autenticazione, l'utente deve inserire la password.
 \item \textbf{Precondizione}: l'utente si trova in una pagina di autenticazione e deve ancora inserire la password.
 \item \textbf{Postcondizione}: l'utente ha inserito la password.
@@ -148,6 +252,7 @@
 \subsubsection{UC1.3.3 Conferma autenticazione}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente conferma l'autenticazione.
 \item \textbf{Descrizione}: per portare a termine l'autenticazione, l'utente deve confermare l'autenticazione con l'indirizzo email e  la password immessi.
 \item \textbf{Precondizione}: l'utente si trova in una pagina del sito web che gli permette di confermare l'autenticazione.
 \item \textbf{Postcondizione}: l'utente ha scelto di continuare l'autenticazione con i dati immessi.
@@ -155,6 +260,7 @@
 \subsubsection{UC1.4 Errore in fase di autenticazione}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente visualizza il messaggio di errore.
 \item \textbf{Descrizione}: si è verificata una delle seguenti condizioni: l'indirizzo email inserito non è associato a un account registrato, oppure la combinazione di indirizzo email e password immessa è errata.
 \item \textbf{Precondizione}: l'utente ha effettuato un tentativo di autenticazione che non è andato a buon termine.
 \item \textbf{Postcondizione}: l'utente ha visualizzato il messaggio di errore.
@@ -174,15 +280,17 @@
 \end{enumerate}
 \item \textbf{Estensioni}:
 \begin{itemize}
+\item Interruzione volontaria del recupero password (UC1.13);
 \item Errore in fase di recupero password (UC1.6).
 \end{itemize}
-\item \textbf{Descrizione}: l'utente in possesso di un account Quizzipedia deve avere la possibilità di accedere al sistema anche in caso di dimenticanza della propria password, a patto che ricordi l'indirizzo email a cui è associato il suo account.
-\item \textbf{Precondizione}: l'utente si è connesso al sito web di Quizzipedia attraverso un browser supportato e vuole recuperare l'accesso al proprio account Quizzipedia.
-\item \textbf{Postcondizione}: l'utente ha recuperato l'accesso al proprio account Quizzipedia.
+\item \textbf{Descrizione}: l’utente in possesso di un account Quizzipedia deve avere la possibilità di accedere al sistema anche in caso di dimenticanza della propria password, a patto che ricordi l’indirizzo email a cui è associato il suo account.
+\item \textbf{Precondizione}: l'utente si è connesso al sito web di Quizzipedia attraverso un browser supportato e vuole recuperare l‘accesso al proprio account Quizzipedia.
+\item \textbf{Postcondizione}: l’utente ha recuperato l’accesso al proprio account Quizzipedia.
 \end{itemize}
 \subsubsection{UC1.5.1 Inserimento email}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente inserisce il suo indirizzo email.
 \item \textbf{Descrizione}: per portare a termine l'operazione, l'utente deve inserire il proprio indirizzo email. Se l'indirizzo email è associato a un account registrato, gli verrà inviata una password temporanea o un link che consentirà all'utente di scegliere una nuova password senza dover ricordare la vecchia.
 \item \textbf{Precondizione}: l'utente si trova nella pagina di recupero password e deve ancora inserire l'indirizzo email.
 \item \textbf{Postcondizione}: l'utente ha inserito il proprio indirizzo email.
@@ -190,6 +298,7 @@
 \subsubsection{UC1.5.2 Conferma recupero password}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente conferma il recupero della password.
 \item \textbf{Descrizione}: per portare a termine il recupero password, l'utente deve confermare l'operazione con l'indirizzo email immesso.
 \item \textbf{Precondizione}: l'utente si trova in una pagina del sito web che gli permette di confermare il recupero password.
 \item \textbf{Postcondizione}: l'utente ha scelto di continuare il recupero password con l'indirizzo email immesso.
@@ -197,8 +306,9 @@
 \subsubsection{UC1.6 Errore in fase di recupero password}
 \begin{itemize}
 \item \textbf{Attori}: Utente.
-\item \textbf{Descrizione}: si è verificata la seguente condizione: l'indirizzo email inserito non è associato a un account registrato.
-\item \textbf{Precondizione}: l'utente ha effettuato un tentativo di recupero password che non è andato a buon termine.
+\item \textbf{Scenario principale}: l'utente visualizza il messaggio di errore.
+\item \textbf{Descrizione}: l'utente visualizza un messaggio di errore che lo avvisa che il tentativo di recupero password non è andato a buon termine.
+\item \textbf{Precondizione}: si è verificata la seguente condizione: l'indirizzo email inserito non è associato a un account registrato.
 \item \textbf{Postcondizione}: l'utente ha visualizzato il messaggio di errore.
 \end{itemize}
 \subsubsection{UC1.7 Svolgimento quiz}
@@ -217,18 +327,18 @@
 \item Conferma risoluzione quiz (UC1.7.4);
 \item Visualizzazione esito del quiz (UC1.7.5).
 \end{enumerate}
-\item \textbf{Scenario alternativo}: l'utente ha interrotto lo svolgimento del quiz.
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Interruzione volontaria dello svolgimento del quiz (UC1.11).
+\end{itemize}
 \item \textbf{Descrizione}: l'utente deve poter svolgere un quiz conforme ai permessi dell'utente.
-\item \textbf{Precondizione}: l'utente ha scelto di svolgere un quiz.
+\item \textbf{Precondizione}: l'utente è autenticato nel sistema.
 \item \textbf{Postcondizione}: l'utente ha finito di svolgere un quiz.
 \end{itemize}
 \subsubsection{UC1.7.1 Selezione quiz}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Inclusioni}:
-\begin{itemize}
-\item Ricerca quiz e domande (UC1.8).
-\end{itemize}
+\item \textbf{Scenario principale}: l'utente seleziona il quiz da svolgere.
 \item \textbf{Descrizione}: l'utente deve poter selezionare il quiz che intende svolgere.
 \item \textbf{Precondizione}: l'utente ha scelto di svolgere un quiz e vuole selezionarne uno.
 \item \textbf{Postcondizione}: l'utente ha selezionato il quiz.
@@ -236,6 +346,7 @@
 \subsubsection{UC1.7.2 Conferma selezione quiz}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente conferma la selezione del quiz.
 \item \textbf{Descrizione}: l'utente deve confermare la selezione del quiz scelto per iniziarne lo svolgimento.
 \item \textbf{Precondizione}: l'utente ha selezionato il quiz da svolgere e deve confermarlo.
 \item \textbf{Postcondizione}: l'utente ha confermato la selezione del quiz.
@@ -243,6 +354,7 @@
 \subsubsection{UC1.7.3 Risoluzione quiz scelto}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente risolve il quiz scelto.
 \item \textbf{Descrizione}: l'utente deve poter svolgere il quiz che ha selezionato, una domanda alla volta. È possibile spostarsi a piacimento fra le domande e rispondere a una domanda più volte, l'ultima risposta sovrascrive le precedenti.
 \item \textbf{Precondizione}: l'utente ha selezionato e confermato un quiz da svolgere.
 \item \textbf{Postcondizione}: l'utente ha concluso la risoluzione del quiz.
@@ -250,13 +362,15 @@
 \subsubsection{UC1.7.4 Conferma risoluzione quiz}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Descrizione}: l'utente deve poter confermare la risoluzione del quiz, terminandne così lo svolgimento. Una volta confermata la risoluzione non sarà più possibile modificare le risposte.
+\item \textbf{Scenario principale}: l'utente conferma la risoluzione del quiz.
+\item \textbf{Descrizione}: l'utente deve poter confermare la risoluzione del quiz, terminandone così lo svolgimento. Una volta confermata la risoluzione non sarà più possibile modificare le risposte.
 \item \textbf{Precondizione}:  l'utente ha terminato la risoluzione del quiz e vuole riceverne l'esito.
 \item \textbf{Postcondizione}: l'utente ha confermato la risoluzione del quiz con le risposte date.
 \end{itemize}
 \subsubsection{UC1.7.5 Visualizzazione esito del quiz}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente visualizza l'esito del quiz svolto.
 \item \textbf{Descrizione}: l'utente deve poter visualizzare l'esito del quiz svolto. L'esito può comprendere: il voto ricevuto, la soluzione corretta delle domande a cui è stata data una risposta errata.
 \item \textbf{Precondizione}: l'utente ha confermato la risoluzione del quiz svolto.
 \item \textbf{Postcondizione}: l'utente ha visualizzato l'esito.
@@ -275,7 +389,10 @@
 \item Conferma inizio ricerca (UC1.8.2);
 \item Visualizzazione lista risultati (UC1.8.3).
 \end{enumerate}
-\item \textbf{Scenario alternativo}: l'utente ha interrotto la ricerca.
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Interruzione volontaria della ricerca (UC1.12).
+\end{itemize}
 \item \textbf{Descrizione}: l'utente può effettuare una ricerca di quiz e domande presenti nel sistema. La ricerca è personalizzabile attraverso vari parametri di ricerca.
 \item \textbf{Precondizione}: l'utente desidera effettuare una ricerca di quiz e domande.
 \item \textbf{Postcondizione}: l'utente ha effettuato la ricerca.
@@ -296,15 +413,16 @@
 \item Selezione livelli di difficoltà (UC1.8.1.4);
 \item Selezione parole chiave (UC1.8.1.5).
 \end{enumerate}
-\item \textbf{Descrizione}: l'utente deve poter personalizzare la ricerca attraverso diversi parametri.
-\item \textbf{Precondizione}: l'utente ha scelto di effettuare una ricerca.
-\item \textbf{Postcondizione}: l'utente ha selezionato i parametri desiderati.
+\item \textbf{Descrizione}: l’utente deve poter personalizzare la ricerca attraverso diversi parametri.
+\item \textbf{Precondizione}: l’utente ha scelto di effettuare una ricerca.
+\item \textbf{Postcondizione}: l’utente ha selezionato i parametri desiderati.
 \end{itemize}
 \subsubsection{UC1.8.1.1 Selezione solo domande}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona l'opzione 'solo domande'.
 \item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'solo domande', che escluderà i quiz dalla ricerca. Se l'opzione 'solo quiz' è stata selezionata in precedenza, sarà deselezionata automaticamente.
-\item \textbf{Precondizione}: l'utente ha scelto di personalizzare la ricerca attraverso dei parametri.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
 \item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'solo domande'.
 \end{itemize}
 \subsubsection{UC1.8.1.2 Selezione solo quiz}
@@ -318,51 +436,65 @@
 \item \textbf{Scenario principale}:
 \begin{enumerate}
 \item Selezione quiz pubblico (UC1.8.1.2.1);
-\item Selezione quiz privato (UC1.8.1.2.2).
+\item Selezione quiz privato (UC1.8.1.2.2);
+\item Errore permesso di accesso a quiz privati (UC1.8.1.2.3).
 \end{enumerate}
 \item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'solo quiz', che escluderà le domande dalla ricerca. Se l'opzione 'solo domande' è stata selezionata in precedenza, sarà deselezionata automaticamente.
-\item \textbf{Precondizione}: l'utente ha scelto di personalizzare la ricerca attraverso dei parametri.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
 \item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'solo quiz'.
 \end{itemize}
 \subsubsection{UC1.8.1.2.1 Selezione quiz pubblico}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona l'opzione 'quiz pubblico'.
 \item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'quiz pubblico', che escluderà dalla ricerca i quiz privati.
-\item \textbf{Precondizione}: l'utente ha scelto di personalizzare la ricerca attraverso dei parametri.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
 \item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'quiz pubblico'.
 \end{itemize}
 \subsubsection{UC1.8.1.2.2 Selezione quiz privato}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario alternativo}: l'utente non ha il permesso di visualizzare quiz privati e non potrà selezionare l'opzione.
-\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'quiz privato', che escluderà dalla ricerca i quiz privati.
-\item \textbf{Precondizione}: l'utente ha scelto di personalizzare la ricerca attraverso dei parametri.
-\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'quiz pubblico'.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona l'opzione 'quiz privato'.
+\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'quiz privato', che escluderà dalla ricerca i quiz pubblici.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
+\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'quiz privato'.
+\end{itemize}
+\subsubsection{UC1.8.1.2.3 Errore permesso di accesso a quiz privati}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente visualizza il messagio di errore.
+\item \textbf{Descrizione}: l'utente non ha il permesso di visualizzare quiz privati.
+\item \textbf{Precondizione}: l'utente sta selezionando  quiz privati senza averne il permesso.
+\item \textbf{Postcondizione}: l'utente ha visualizzato un messaggio di errore che indica che non ha il permesso di visualizzare quiz privati.
 \end{itemize}
 \subsubsection{UC1.8.1.3 Selezione argomenti nella ricerca}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona gli argomenti.
 \item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare uno o più argomenti, escludendo domande e quiz di argomenti non selezionati dalla ricerca.
-\item \textbf{Precondizione}: l'utente ha scelto di personalizzare la ricerca attraverso dei parametri.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
 \item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato gli argomenti.
 \end{itemize}
 \subsubsection{UC1.8.1.4 Selezione livelli di difficoltà}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona i livelli di difficoltà.
 \item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare uno o più livelli di difficoltà, escludendo domande e quiz di livello di difficoltà non selezionato.
-\item \textbf{Precondizione}: l'utente ha scelto di personalizzare la ricerca attraverso dei parametri.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
 \item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato i livelli di difficoltà.
 \end{itemize}
 \subsubsection{UC1.8.1.5 Selezione parole chiave}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare uno o più parole chiave, escludendo domande e quiz in cui le parole chiave immesse non compaiono nel titolo o nella descrizione.
-\item \textbf{Precondizione}: l'utente ha scelto di personalizzare la ricerca attraverso dei parametri.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona le parole chiave.
+\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare una o più parole chiave, escludendo domande e quiz in cui le parole chiave immesse non compaiono nel titolo o nella descrizione.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
 \item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato le parole chiave.
 \end{itemize}
 \subsubsection{UC1.8.2 Conferma inizio ricerca}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente conferma l'inizio della ricerca.
 \item \textbf{Descrizione}: l'utente deve poter confermare l'inizio della ricerca. Se sono stati inseriti dei parametri, questi dovranno essere tenuti in considerazione.
 \item \textbf{Precondizione}: l'utente ha scelto di effettuare una ricerca e selezionato eventuali parametri.
 \item \textbf{Postcondizione}: l'utente ha confermato l'inizio della ricerca.
@@ -370,21 +502,32 @@
 \subsubsection{UC1.8.3 Visualizzazione lista risultati}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente visualizza la lista dei risultati prodotti dalla ricerca.
 \item \textbf{Descrizione}: l'utente deve poter visualizzare la lista dei risultati prodotti dalla ricerca effettuata.
 \item \textbf{Precondizione}: l'utente ha scelto di effettuare una ricerca, selezionato eventuali parametri e confermato l'avvio della ricerca.
 \item \textbf{Postcondizione}: l'utente ha visualizzato i risultati prodotti dalla ricerca effettuata.
 \end{itemize}
-\subsubsection{UC2 Caso d'uso privato}
+\subsubsection{UC1.9 Interruzione volontaria della registrazione}
+\begin{itemize}
+\item \textbf{Attori}: Utente.
+\item \textbf{Scenario principale}: l'utente interrompe la ricerca.
+\item \textbf{Descrizione}: L'utente può interrompere volontariamente la registrazione.
+\item \textbf{Precondizione}: L'utente sta svolgendo la registrazione.
+\item \textbf{Postcondizione}: La registrazione non è stata completata.
+\end{itemize}
+\subsubsection{UC2 Caso d’uso privato}
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Caso d'uso privato.pdf}}
-\caption{UC2 Caso d'uso privato}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Caso d’uso privato.pdf}}
+\caption{UC2 Caso d’uso privato}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
 \item Logout (UC2.1);
+\item Lista richieste (UC2.10);
+\item Gestione domande (UC2.11);
 \item Gestione quiz (UC2.2);
 \item Gestione argomenti (UC2.3);
 \item Gestione domande (UC2.4);
@@ -392,19 +535,664 @@
 \item Richiesta accettazione (UC2.6);
 \item Visualizzazione statistiche (UC2.7);
 \item Gestione enti (UC2.8);
-\item Gestione classe (UC2.9);
-\item Lista richieste (UC2.10).
+\item Gestione classe (UC2.9).
 \end{enumerate}
-\item \textbf{Descrizione}: l'utente autenticato può accedere ad aree private a seconda dei permessi di cui dispone.
-\item \textbf{Precondizione}: l'utente è in possesso di un account Quizzipedia e si è precedentemente autenticato.
-\item \textbf{Postcondizione}: l'utente ha scelto l'operazione da intraprendere.
+\item \textbf{Descrizione}: l’utente autenticato può accedere ad aree private a seconda dei permessi di cui dispone.
+\item \textbf{Precondizione}: l’utente è in possesso di un account Quizzipedia e si è precedentemente autenticato.
+\item \textbf{Postcondizione}: l’utente ha scelto l’operazione da intraprendere.
 \end{itemize}
 \subsubsection{UC2.1 Logout}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
-\item \textbf{Descrizione}: l'utente può effettuare il logout dall'area privata.
-\item \textbf{Precondizione}: l'utente è in possesso di un account Quizzipedia e si è precedentemente autenticato.
-\item \textbf{Postcondizione}: l'utente ha effettuato il logout e ora non è più autenticato.
+\item \textbf{Descrizione}: l’utente può effettuare il logout dall’area privata.
+\item \textbf{Precondizione}: l’utente è in possesso di un account Quizzipedia e si è precedentemente autenticato.
+\item \textbf{Postcondizione}: l’utente ha effettuato il logout e ora non è più autenticato.
+\end{itemize}
+\subsubsection{UC2.10 Lista richieste}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Lista richieste.pdf}}
+\caption{UC2.10 Lista richieste}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Richieste inserimento nella classe (UC2.10.1);
+\item Richieste ruoli (UC2.10.2).
+\end{enumerate}
+\item \textbf{Descrizione}: il responsabile gestisce le richieste inviate da studenti, docenti ed utenti senza ruolo per accettare o annullare il ruolo richiesto o per accettare e annullare l’inserimento dello studente o docente in una determinata classe.
+\item \textbf{Precondizione}: il responsabile ha i permessi per la gestione delle richieste.
+\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato alcune richieste che ha ricevuto.
+\end{itemize}
+\subsubsection{UC2.10.1 Richieste inserimento nella classe}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Richieste inserimento nella classe.pdf}}
+\caption{UC2.10.1 Richieste inserimento nella classe}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Accettazione della richiesta di inserimento (UC2.10.1.1);
+\item Annullamento della richiesta di inserimento (UC2.10.1.2).
+\end{enumerate}
+\item \textbf{Descrizione}: il responsabile accetta o rifiuta le richieste di inserimento nella classe ricevute dagli studenti e docenti.
+\item \textbf{Precondizione}: il responsabile visualizza la lista di richieste di inserimento nella classe.
+\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato le richieste che ha ricevuto.
+\end{itemize}
+\subsubsection{UC2.10.1.1 Accettazione della richiesta di inserimento}
+\begin{itemize}
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile accetta le richieste di inserimento nella classe.
+\item \textbf{Descrizione}: il responsabile accetta le richieste di inserimento nella classe ricevute dagli studenti e docenti.
+\item \textbf{Precondizione}: il responsabile visualizza lista richieste di inserimento nella classe.
+\item \textbf{Postcondizione}: il responsabile ha accettato le richieste di inserimento nella classe che gli sono pervenute dagli studenti e docenti.
+\end{itemize}
+\subsubsection{UC2.10.1.2 Annullamento della richiesta di inserimento}
+\begin{itemize}
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile rifiuta le richieste di inserimento nella classe.
+\item \textbf{Descrizione}: il responsabile rifiuta le richieste di inserimento nella classe ricevute dagli studenti e docenti.
+\item \textbf{Precondizione}: il responsabile visualizza lista richieste di inserimento nella classe.
+\item \textbf{Postcondizione}: il responsabile ha rifiutato le richieste di inserimento nella classe che gli sono pervenute dagli studenti e docenti.
+\end{itemize}
+\subsubsection{UC2.10.2 Richieste ruoli}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Richieste ruoli.pdf}}
+\caption{UC2.10.2 Richieste ruoli}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Accettazione del ruolo (UC2.10.2.1);
+\item Annullamento richiesta ruolo (UC2.10.2.2).
+\end{enumerate}
+\item \textbf{Descrizione}: il responsabile accetta o rifiuta le richieste  del ruolo che vogliono assumere gli utenti senza ruolo.
+\item \textbf{Precondizione}: il responsabile ha i permessi per la gestione della lista richieste.
+\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato le richieste dei ruoli che gli sono pervenute dagli utenti senza ruolo.
+\end{itemize}
+\subsubsection{UC2.10.2.1 Accettazione del ruolo}
+\begin{itemize}
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile accetta le richieste di ruolo.
+\item \textbf{Descrizione}: il responsabile accetta  le richieste del ruolo che vogliono assumere gli utenti senza ruolo.
+\item \textbf{Precondizione}: il responsabile visualizza la lista richieste ruoli.
+\item \textbf{Postcondizione}: il responsabile ha accettato le richieste del ruolo che gli sono pervenute dagli utenti senza ruolo.
+\end{itemize}
+\subsubsection{UC2.10.2.2 Annullamento richiesta ruolo}
+\begin{itemize}
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile rifiuta le richieste di ruolo.
+\item \textbf{Descrizione}: il responsabile rifiuta le richieste  del ruolo che vogliono assumere gli utenti senza ruolo.
+\item \textbf{Precondizione}: il responsabile visualizza la lista richieste ruoli.
+\item \textbf{Postcondizione}: il responsabile ha rifiutato le richieste del ruolo che gli sono pervenute dagli utenti senza ruolo.
+\end{itemize}
+\subsubsection{UC2.11 Gestione domande}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Creazione domanda (UC2.11.1);
+\item Errore nella modifica della domanda (UC2.11.10);
+\item Interruzione volontaria della modifica della domanda (UC2.11.11);
+\item Modifica domanda vero o falso (UC2.11.12);
+\item Modifica domanda risposta multipla (UC2.11.13);
+\item Modifica domanda a risposta aperta (UC2.11.14);
+\item Modifica domanda a completamento testo (UC2.11.15);
+\item Errore numero risposte creazione (UC2.11.2);
+\item Interruzione volontaria della creazione della domanda (UC2.11.3);
+\item Creazione domanda vero o falso (UC2.11.4);
+\item Creazione domanda risposta multipla (UC2.11.5);
+\item Creazione domanda a collegamenti (UC2.11.6);
+\item Creazione domanda a risposta aperta (UC2.11.7);
+\item UC Creazione domanda a completamento testo (UC2.11.8);
+\item Modifica domanda (UC2.11.9).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter effettuare varie operazioni sulle domande, in particolare creare nuove domande di vario tipo e modificare o eliminare domande esistenti.
+\item \textbf{Precondizione}: il sistema ha riconosciuto il docente e ora può gestire le domande.
+\item \textbf{Postcondizione}: il docente ha completato le operazioni sulle domande con successo.
+\end{itemize}
+\subsubsection{UC2.11.1 Creazione domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Inserimento titolo domanda (UC2.11.1.1);
+\item Descrizione aggiuntiva (UC2.11.1.2);
+\item Selezione argomento della domanda (UC2.11.1.3);
+\item Selezione livello di difficoltà (UC2.11.1.4);
+\item Inserire allegato (UC2.11.1.5).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter creare una nuova domanda.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole creare una nuova domanda.
+\item \textbf{Postcondizione}: il docente ha creato una nuova domanda.
+\end{itemize}
+\subsubsection{UC2.11.1.1 Inserimento titolo domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente deve specificare il titolo della domanda.
+\item \textbf{Descrizione}: il docente deve poter inserire il titolo della domanda.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e non ha ancora inserito il titolo.
+\item \textbf{Postcondizione}: il docente ha inserito il titolo della domanda.
+\end{itemize}
+\subsubsection{UC2.11.1.2 Descrizione aggiuntiva}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente inserisce una descrizione aggiuntiva.
+\item \textbf{Descrizione}: il docente può inserire una descrizione aggiuntiva al titolo della domanda per renderla più comprensibile.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e non ha ancora inserito una descrizione aggiuntiva.
+\item \textbf{Postcondizione}: il docente ha inserito una descrizione aggiuntiva.
+\end{itemize}
+\subsubsection{UC2.11.1.3 Selezione argomento della domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente seleziona l'argomento della domanda.
+\item \textbf{Descrizione}: il docente deve selezionare l'argomento della domanda.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e non ha ancora selezionato l'argomento della domanda.
+\item \textbf{Postcondizione}: il docente ha selezionato l'argomento della domanda.
+\end{itemize}
+\subsubsection{UC2.11.1.4 Selezione livello di difficoltà}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente seleziona il livello di difficoltà della domanda.
+\item \textbf{Descrizione}: il docente deve selezionare il livello di difficoltà della domanda.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e non ha ancora selezionato il livello di difficoltà della domanda.
+\item \textbf{Postcondizione}: il docente ha selezionato il livello di difficoltà della domanda.
+\end{itemize}
+\subsubsection{UC2.11.1.5 Inserire allegato}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Upload allegato (UC2.11.1.5.1).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente può inserire un allegato che può essere una immagine o un video o un file audio.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e non ha ancora inserito l'allegato.
+\item \textbf{Postcondizione}: il docente ha inserito l'allegato.
+\end{itemize}
+\subsubsection{UC2.11.1.5.1 Upload allegato}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente esegue l'upload di una immagine o di un video o di un file audio.
+\item \textbf{Descrizione}: il docente deve poter eseguire l'upload di una immagine o di un video o di un file audio.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e vuole inserire un allegato nella domanda ma non ha ancora fatto l'upload del file multimediale.
+\item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale.
+\end{itemize}
+\subsubsection{UC2.11.10 Errore nella modifica della domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente durante la modifica di una domanda non ha lasciato un numero minimo di risposte valide.
+\item \textbf{Descrizione}: il docente durante la modifica di una domanda non ha lasciato un numero minimo di risposte valide
+.
+\item \textbf{Precondizione}: il docente ha modificato una domanda ed ha un numero di risposte non valido.
+\item \textbf{Postcondizione}: il docente visualizza il messaggio d'errore.
+\end{itemize}
+\subsubsection{UC2.11.11 Interruzione volontaria della modifica della domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente interrompe la modifica della domanda.
+\item \textbf{Descrizione}: il docente sta modificando una domanda, ma interrompe volontariamente la modifica.
+\item \textbf{Precondizione}: il docente sta modificando una domanda.
+\item \textbf{Postcondizione}: la modifica della domanda è stata interrotta.
+\end{itemize}
+\subsubsection{UC2.11.12 Modifica domanda vero o falso}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda vero o falso.pdf}}
+\caption{UC2.11.12 Modifica domanda vero o falso}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Modifica veridicità della domanda (UC2.11.12.1).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter modificare una domanda del tipo vero o falso da lui creata.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda vero o falso da lui creata.
+\item \textbf{Postcondizione}: il docente ha modificato una domanda del tipo vero o falso esistente da lui creata.
+\end{itemize}
+\subsubsection{UC2.11.12.1 Modifica veridicità della domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente deve poter modificare la veridicità della domanda che sta modificando.
+\item \textbf{Descrizione}: il docente può modificare la veridicità della domanda che sta modificando.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda del tipo vero o falso ma non ha ancora modificato la veridicità della domanda.
+\item \textbf{Postcondizione}: il docente ha modificato la veridicità della domanda.
+\end{itemize}
+\subsubsection{UC2.11.13 Modifica domanda risposta multipla}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda risposta multipla.pdf}}
+\caption{UC2.11.13 Modifica domanda risposta multipla}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Aggiungere una risposta (UC2.11.13.1);
+\item Modificare una risposta (UC2.11.13.2);
+\item Eliminare una risposta (UC2.11.13.3).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter modificare una domanda a risposta multipla da lui creata.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda a risposta multipla da lui creata.
+\item \textbf{Postcondizione}: il docente ha modificato una domanda a risposta multipla.
+\end{itemize}
+\subsubsection{UC2.11.13.1 Aggiungere una risposta}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Aggiungere una risposta.pdf}}
+\caption{UC2.11.13.1 Aggiungere una risposta}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Upload file multimediale della risposta (UC2.11.13.1.1);
+\item Inserimento risposta testuale (UC2.11.13.1.2);
+\item Selezione veridicità della risposta (UC2.11.13.1.3).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente può aggiungere una nuova risposta alla domanda che sta modificando.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a risposta multipla ma non ha ancora aggiunto una nuova risposta.
+\item \textbf{Postcondizione}: il docente ha aggiunto la nuova risposta.
+\end{itemize}
+\subsubsection{UC2.11.13.1.1 Upload file multimediale della risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente esegue l'upload di una immagine o di un video o di un file audio.
+\item \textbf{Descrizione}: il docente deve poter eseguire l'upload di una immagine o di un video o di un file audio.
+\item \textbf{Precondizione}: il docente sta inserendo una nuova risposta  ma non ha ancora eseguito l'upload del file multimediale.
+\item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale della risposta.
+\end{itemize}
+\subsubsection{UC2.11.13.1.2 Inserimento risposta testuale}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente inserisce la risposta testuale.
+\item \textbf{Descrizione}: il docente deve poter inserire la risposta testuale.
+\item \textbf{Precondizione}: il docente sta inserendo una nuova risposta ma non ha ancora inserito la risposta testuale.
+\item \textbf{Postcondizione}: il docente ha inserito la risposta testuale.
+\end{itemize}
+\subsubsection{UC2.11.13.1.3 Selezione veridicità della risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente seleziona la veridicità della risposta che ha aggiunto.
+\item \textbf{Descrizione}: il docente deve selezionare la veridicità della risposta che ha aggiunto.
+\item \textbf{Precondizione}: il docente sta inserendo una nuova risposta ma non ha ancora selezionato la veridicità della risposta.
+\item \textbf{Postcondizione}: il docente ha selezionato la veridicità della risposta.
+\end{itemize}
+\subsubsection{UC2.11.13.2 Modificare una risposta}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modificare una risposta.pdf}}
+\caption{UC2.11.13.2 Modificare una risposta}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Upload del file multimediale (UC2.11.13.2.1);
+\item Modifica veridicità risposta (UC2.11.13.2.2);
+\item Modifica testo risposta (UC2.11.13.2.3).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente può modificare una risposta della domanda a risposta multipla.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a risposta multipla ma non ha ancora modificato una risposta.
+\item \textbf{Postcondizione}: il docente ha modificato una risposta della domanda a risposta multipla.
+\end{itemize}
+\subsubsection{UC2.11.13.2.1 Upload del file multimediale}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente sostituisce il file multimediale attuale della risposta con un altro eseguendo un upload del file.
+\item \textbf{Descrizione}: il docente può sostituire il file multimediale attuale della risposta con un altro eseguendo un upload del file
+.
+\item \textbf{Precondizione}: il docente sta modificando una risposta ma non ha ancora sostituito il file multimediale attuale della risposta.
+\item \textbf{Postcondizione}: il docente ha eseguito l'upload sostituendo il file multimediale, della risposta, precedente.
+\end{itemize}
+\subsubsection{UC2.11.13.2.2 Modifica veridicità risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica la veridicità della risposta.
+\item \textbf{Descrizione}: il docente può modificare la veridicità della risposta.
+\item \textbf{Precondizione}: il docente sta modificando una risposta ma non ha ancora cambiato la veridicità della risposta.
+\item \textbf{Postcondizione}: il docente ha modificato la veridicità della risposta.
+\end{itemize}
+\subsubsection{UC2.11.13.2.3 Modifica testo risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica la risposta testuale attuale.
+\item \textbf{Descrizione}: il docente può modificare la risposta testuale attuale.
+\item \textbf{Precondizione}: il docente sta modificando una risposta ma non ha ancora cambiato la risposta testuale.
+\item \textbf{Postcondizione}: il docente ha modificato la risposta testuale.
+\end{itemize}
+\subsubsection{UC2.11.13.3 Eliminare una risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente elimina la risposta della domanda a risposta multipla.
+\item \textbf{Descrizione}: il docente deve poter eliminare una risposta dalla domanda a risposta multipla da lui creata.
+\item \textbf{Precondizione}: il docente sta modificando una domanda a risposta multipla da lui creata ma non ha ancora eliminato una risposta.
+\item \textbf{Postcondizione}: il docente ha eliminato una risposta dalla domanda che stava modificando.
+\end{itemize}
+\subsubsection{UC2.11.14 Modifica domanda a risposta aperta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Modifica della risposta (UC2.11.14.1).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter modificare una domanda a risposta aperta esistente, da lui creata.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda a risposta aperta esistente, da lui creata.
+\item \textbf{Postcondizione}: il docente ha modificato la domanda a risposta aperta.
+\end{itemize}
+\subsubsection{UC2.11.14.1 Modifica della risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica la risposta corretta alla domanda.
+\item \textbf{Descrizione}: il docente può modificare la risposta corretta alla domanda.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a risposta aperta ma non ha ancora modificato la risposta corretta.
+\item \textbf{Postcondizione}: il docente ha modificato la risposta corretta della domanda a risposta aperta.
+\end{itemize}
+\subsubsection{UC2.11.15 Modifica domanda a completamento testo}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Modifica testo incompleto (UC2.11.15.1);
+\item Modifica parole esistenti (UC2.11.15.2).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter modificare una domanda a completamento testo da lui creata.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda a completamento testo da lui creata.
+\item \textbf{Postcondizione}: il docente ha modificato una domanda a completamento testo, esistente, da lui creata.
+\end{itemize}
+\subsubsection{UC2.11.15.1 Modifica testo incompleto}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica il testo incompleto della domanda, specificando gli spazi vuoti nel testo.
+\item \textbf{Descrizione}: il docente deve poter modificare il testo incompleto della domanda, specificando gli spazi vuoti.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a completamento testo ma non ha ancora modificato il testo incompleto della domanda.
+\item \textbf{Postcondizione}: il docente ha modificato il testo incompleto della domanda.
+\end{itemize}
+\subsubsection{UC2.11.15.2 Modifica parole esistenti}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica l'insieme di parole associate al testo incompleto.
+\item \textbf{Descrizione}: il docente deve poter modificare l'insieme di parole associate al testo incompleto.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a completamento testo ma non ha ancora modificato l'insieme di parole associate al testo incompleto.
+\item \textbf{Postcondizione}: il docente ha modificato l'insieme di parole associate al testo incompleto.
+\end{itemize}
+\subsubsection{UC2.11.2 Errore numero risposte creazione}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente non ha inserito il numero minimo di risposte nella domanda.
+\item \textbf{Descrizione}: il docente non ha inserito il numero minimo di risposte nella domanda durante la creazione.
+\item \textbf{Precondizione}: il docente ha creato una domanda con un numero di risposte minimo non valido.
+\item \textbf{Postcondizione}: il docente visualizza il messaggio d'errore.
+\end{itemize}
+\subsubsection{UC2.11.3 Interruzione volontaria della creazione della domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente interrompe la creazione della domanda.
+\item \textbf{Descrizione}: il docente sta creando una domanda, ma interrompe volontariamente la creazione.
+\item \textbf{Precondizione}: il docente sta creando una domanda.
+\item \textbf{Postcondizione}: la creazione della domanda è stata interrotta.
+\end{itemize}
+\subsubsection{UC2.11.4 Creazione domanda vero o falso}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Selezionare veridicità della domanda (UC2.11.4.1).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter creare una nuova domanda del tipo vero o falso.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole creare una nuova domanda del tipo vero o falso.
+\item \textbf{Postcondizione}: il docente ha creato una nuova domanda del tipo vero o falso.
+\end{itemize}
+\subsubsection{UC2.11.4.1 Selezionare veridicità della domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente seleziona la veridicità della domanda che sta creando.
+\item \textbf{Descrizione}: il docente deve indicare la veridicità della domanda.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda del tipo vero o falso e non ha ancora selezionato la veridicità della domanda.
+\item \textbf{Postcondizione}: il docente ha indicato la veridicità della domanda.
+\end{itemize}
+\subsubsection{UC2.11.5 Creazione domanda risposta multipla}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Crea risposta (UC2.11.5.1).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter creare una nuova domanda a riposta multipla.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole creare una nuova domanda a risposta multipla.
+\item \textbf{Postcondizione}: il docente ha creato una nuova domanda a risposta multipla.
+\end{itemize}
+\subsubsection{UC2.11.5.1 Crea risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Upload file multimediale (UC2.11.5.1.1);
+\item Casella di testo (UC2.11.5.1.2);
+\item Selezione veridicità della risposta (UC2.11.5.1.3).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter creare risposte di vario tipo ad esempio: risposte testuali o con immagini o con video o con audio e successivamente indicare quali sono le risposte corrette.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda a risposta multipla e non ha ancora creato le risposte alla domanda.
+\item \textbf{Postcondizione}: il docente ha creato le risposte della domanda a risposta multipla.
+\end{itemize}
+\subsubsection{UC2.11.5.1.1 Upload file multimediale}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente esegue l'upload di una immagine o di un video o di un file audio.
+\item \textbf{Descrizione}: il docente deve poter eseguire l'upload di una immagine o di un video o di un file audio.
+\item \textbf{Precondizione}: il docente ha iniziato a creare le risposte della domanda a risposta multipla ma non ha ancora eseguito l'upload del file multimediale.
+\item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale.
+\end{itemize}
+\subsubsection{UC2.11.5.1.2 Casella di testo}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente scrive la risposta testuale nella casella di testo.
+\item \textbf{Descrizione}: il docente deve poter inserire la risposta testuale nella casella di testo.
+\item \textbf{Precondizione}: il docente ha iniziato a creare le risposte della domanda a risposta multipla ma non ha ancora inserito il testo della risposta.
+\item \textbf{Postcondizione}: il docente ha inserito il testo della risposta.
+\end{itemize}
+\subsubsection{UC2.11.5.1.3 Selezione veridicità della risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente seleziona la veridicità della risposta che sta creando.
+\item \textbf{Descrizione}: il docente deve selezionare la veridicità della risposta che sta creando.
+\item \textbf{Precondizione}: il docente sta creando la risposta della domanda a risposta multipla ma non ha ancora selezionato la veridicità della risposta.
+\item \textbf{Postcondizione}: il docente ha indicato la veridicità della risposta.
+\end{itemize}
+\subsubsection{UC2.11.6 Creazione domanda a collegamenti}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Creazione enupla (UC2.11.6.1).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter creare una nuova domanda a collegamenti.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole creare una nuova domanda a collegamenti.
+\item \textbf{Postcondizione}: il docente ha creato una nuova domanda a collegamenti.
+\end{itemize}
+\subsubsection{UC2.11.6.1 Creazione enupla}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Inserire parte iniziale (UC2.11.6.1.1);
+\item Inserire parte finale (UC2.11.6.1.2).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente può inserire la parte iniziale e finale della risposta oppure può solo inserire la parta finale, lasciando vuota quella iniziale, che corrisponderà a una risposta sbagliata.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione della domanda a collegamenti ma non ha ancora creato l'ennupla della risposta.
+\item \textbf{Postcondizione}: il docente ha inserito l'ennupla della risposta.
+\end{itemize}
+\subsubsection{UC2.11.6.1.1 Inserire parte iniziale}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Upload file della parte iniziale della risposta (UC2.11.6.1.1.1);
+\item Inserire testo della parte iniziale della risposta (UC2.11.6.1.1.2).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente può inserire come parte iniziale della risposta un file multimediale (immagine, video, audio), oppure inserire una risposta testuale.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione della risposta ma non ha ancora inserito la parte iniziale della risposta.
+\item \textbf{Postcondizione}: il docente ha inserito la parte iniziale della risposta.
+\end{itemize}
+\subsubsection{UC2.11.6.1.1.1 Upload file della parte iniziale della risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può inserire il file multimediale della parte iniziale della risposta, facendo l'upload del file.
+\item \textbf{Descrizione}: il docente deve poter inserire il file multimediale della parte iniziale della risposta, eseguendo l'upload del file.
+\item \textbf{Precondizione}: il docente ha iniziato a creare la parte iniziale della risposta ma non ha ancora fatto l'upload del file multimediale.
+\item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale.
+\end{itemize}
+\subsubsection{UC2.11.6.1.1.2 Inserire testo della parte iniziale della risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può inserisce il testo della parte iniziale della risposta.
+\item \textbf{Descrizione}: il docente deve poter inserire il testo della parte iniziale della risposta.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione della parte iniziale della risposta ma non ha ancora inserito il testo della risposta.
+\item \textbf{Postcondizione}: il docente ha inserito il testo della parte iniziale della risposta.
+\end{itemize}
+\subsubsection{UC2.11.6.1.2 Inserire parte finale}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Upload file della parte finale della risposta (UC2.11.6.1.2.1);
+\item Inserire testo della parte finale della risposta (UC2.11.6.1.2.2).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente può inserire come parte finale della risposta un file multimediale (immagine, video, audio), oppure inserire una risposta testuale.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione della risposta ma non ha ancora inserito la parte finale della risposta.
+\item \textbf{Postcondizione}: il docente ha inserito la parte finale della risposta.
+\end{itemize}
+\subsubsection{UC2.11.6.1.2.1 Upload file della parte finale della risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può inserire il file multimediale della parte finale della risposta, facendo l'upload del file.
+\item \textbf{Descrizione}: il docente deve poter inserire il file multimediale della parte finale della risposta, eseguendo l'upload del file.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione della parte finale della risposta ma non ha ancora fatto l'upload del file multimediale.
+\item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale.
+\end{itemize}
+\subsubsection{UC2.11.6.1.2.2 Inserire testo della parte finale della risposta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può inserisce il testo della parte finale della risposta.
+\item \textbf{Descrizione}: il docente deve poter inserire il testo della parte finale della risposta.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione della parte finale della risposta ma non ha ancora inserito il testo della risposta.
+\item \textbf{Postcondizione}: il docente ha inserito il testo della parte finale della risposta.
+\end{itemize}
+\subsubsection{UC2.11.7 Creazione domanda a risposta aperta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Inserire la risposta corretta (UC2.11.7.1).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter creare una nuova domanda a risposta aperta.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole creare una nuova domanda a risposta aperta.
+\item \textbf{Postcondizione}: il docente ha creato una nuova domanda a risposta aperta.
+\end{itemize}
+\subsubsection{UC2.11.7.1 Inserire la risposta corretta}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente specifica la risposta corretta alla domanda.
+\item \textbf{Descrizione}: il docente inserisce la risposta corretta alla domanda.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda a risposta aperta ma non ha ancora specificato la risposta corretta.
+\item \textbf{Postcondizione}: il docente ha inserito la risposta corretta alla domanda.
+\end{itemize}
+\subsubsection{UC2.11.8 UC Creazione domanda a completamento testo}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Inserire testo incompleto (UC2.11.8.1);
+\item Inserire insieme di parole (UC2.11.8.2).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter creare una nuova domanda a completamento testo.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole creare una nuova domanda a completamento testo.
+\item \textbf{Postcondizione}: il docente ha creato una nuova domanda a completamento testo.
+\end{itemize}
+\subsubsection{UC2.11.8.1 Inserire testo incompleto}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente inserisce il testo incompleto della domanda, specificando gli spazi vuoti nel testo.
+\item \textbf{Descrizione}: il docente deve poter inserire il testo incompleto della domanda, specificando gli spazi vuoti.
+\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda a completamento testo ma non ha ancora inserito il testo incompleto della domanda.
+\item \textbf{Postcondizione}: il docente ha inserito il testo incompleto della domanda.
+\end{itemize}
+\subsubsection{UC2.11.8.2 Inserire insieme di parole}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente inserisce un insieme di parole che sono corrette e sbagliate.
+\item \textbf{Descrizione}: il docente deve specificare un insieme di parole che sono corrette e sbagliate.
+\item \textbf{Precondizione}:  il docente ha iniziato la creazione di una domanda a completamento testo ma non ha ancora inserito l'insieme di parole corrette e sbagliate.
+\item \textbf{Postcondizione}: il docente ha inserito l'insieme di parole corrette e sbagliate.
+\end{itemize}
+\subsubsection{UC2.11.9 Modifica domanda}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda.pdf}}
+\caption{UC2.11.9 Modifica domanda}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Modifica titolo domanda
+ (UC2.11.9.1);
+\item Modifica descrizione aggiuntiva (UC2.11.9.2);
+\item Modifica argomento della domanda (UC2.11.9.3);
+\item Modifica livello difficoltà (UC2.11.9.4);
+\item Modifica allegato (UC2.11.9.5).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter modificare una domanda da lui creata.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda da lui creata
+.
+\item \textbf{Postcondizione}: il docente ha modificato una domanda esistente da lui creata.
+\end{itemize}
+\subsubsection{UC2.11.9.1 Modifica titolo domanda
+}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può modificare il titolo della domanda che ha selezionato.
+\item \textbf{Descrizione}: il docente deve poter modificare il titolo della domanda che ha selezionato.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato il titolo
+.
+\item \textbf{Postcondizione}: il docente ha modificato il titolo della domanda.
+\end{itemize}
+\subsubsection{UC2.11.9.2 Modifica descrizione aggiuntiva}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può modificare la descrizione aggiuntiva della domanda selezionata.
+\item \textbf{Descrizione}: il docente deve poter modificare la descrizione aggiuntiva della domanda selezionata.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato la descrizione aggiuntiva.
+\item \textbf{Postcondizione}: il docente ha modificato la descrizione aggiuntiva.
+\end{itemize}
+\subsubsection{UC2.11.9.3 Modifica argomento della domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può modificare l'argomento della domanda selezionata semplicemente selezionando un argomento tra quelli disponibili.
+\item \textbf{Descrizione}: il docente deve poter modificare l'argomento della domanda selezionata semplicemente selezionando un argomento tra quelli disponibili.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato l'argomento della domanda.
+\item \textbf{Postcondizione}: il docente ha modificato l'argomento della domanda selezionata.
+\end{itemize}
+\subsubsection{UC2.11.9.4 Modifica livello difficoltà}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può modificare il livello di difficoltà della domanda selezionata.
+\item \textbf{Descrizione}: il docente deve poter modificare il livello di difficoltà della domanda selezionata.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato il livello di difficoltà.
+\item \textbf{Postcondizione}: il docente ha modificato il livello di difficoltà della domanda selezionata.
+\end{itemize}
+\subsubsection{UC2.11.9.5 Modifica allegato}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può modificare l'allegato della domanda eseguendo l'upload di un file multimediale (immagine, audio, video).
+\item \textbf{Descrizione}: il docente ha la possibilità di modificare l'allegato della domanda eseguendo l'upload di un file multimediale.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato l'allegato della domanda.
+\item \textbf{Postcondizione}: il docente ha modificato l'allegato della domanda.
 \end{itemize}
 \subsubsection{UC2.2 Gestione quiz}
 \begin{figure}[H]
@@ -419,7 +1207,9 @@
 \item Creazione quiz (UC2.2.1);
 \item Modifica quiz (UC2.2.2);
 \item Errore durante la modifica del quiz (UC2.2.3);
-\item Eliminazione quiz (UC2.2.4).
+\item Eliminazione quiz (UC2.2.4);
+\item Interruzione volontaria della creazione del quiz (UC2.2.5);
+\item Interruzione volontaria della modifica del quiz (UC2.2.6).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter effettuare varie operazioni di gestione di quiz, in particolare deve poter creare quiz nuovi e modificare o eliminare quiz esistenti.
 \item \textbf{Precondizione}: il docente è autenticato nel sistema e desidera effettuare operazioni sui quiz.
@@ -440,10 +1230,13 @@
 \item Inserimento descrizione (UC2.2.1.3);
 \item Conferma creazione quiz (UC2.2.1.4).
 \end{enumerate}
-\item \textbf{Scenario alternativo}: il docente interrompe la creazione del quiz.
 \item \textbf{Inclusioni}:
 \begin{itemize}
 \item Modifica quiz (UC2.2.2).
+\end{itemize}
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Interruzione volontaria della creazione del quiz (UC2.2.5).
 \end{itemize}
 \item \textbf{Descrizione}: il docente deve poter creare un nuovo quiz.
 \item \textbf{Precondizione}: il docente è autenticato nel sistema e desidera creare un nuovo quiz.
@@ -452,6 +1245,7 @@
 \subsubsection{UC2.2.1.1 Inserimento titolo}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente inserisce il titolo del quiz.
 \item \textbf{Descrizione}: il docente deve poter inserire il titolo del quiz che sta creando.
 \item \textbf{Precondizione}: il docente sta creando un nuovo quiz e deve ancora inserire il titolo.
 \item \textbf{Postcondizione}: il docente ha inserito il titolo del quiz.
@@ -459,6 +1253,7 @@
 \subsubsection{UC2.2.1.2 Selezione argomento del quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente deleziona l'argomento del quiz.
 \item \textbf{Estensioni}:
 \begin{itemize}
 \item Creazione argomento (UC2.3.1).
@@ -470,6 +1265,7 @@
 \subsubsection{UC2.2.1.3 Inserimento descrizione}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente inserisce la descrizione del quiz.
 \item \textbf{Descrizione}: il docente deve poter inserire la descrizione del quiz che sta creando.
 \item \textbf{Precondizione}: il docente sta creando un nuovo quiz e deve ancora inserire la descrizione.
 \item \textbf{Postcondizione}: il docente ha inserito la descrizione del quiz.
@@ -477,6 +1273,7 @@
 \subsubsection{UC2.2.1.4 Conferma creazione quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente conferma la creazione del quiz.
 \item \textbf{Descrizione}: il docente deve confermare la creazione del nuovo quiz per portarla a termine.
 \item \textbf{Precondizione}: il docente sta creando un nuovo quiz e deve ancora confermare la sua creazione.
 \item \textbf{Postcondizione}: il docente ha confermato la creazione del quiz.
@@ -502,7 +1299,7 @@
 \item \textbf{Estensioni}:
 \begin{itemize}
 \item Errore durante la modifica del quiz (UC2.2.3);
-\item Creazione domanda (UC2.4.1).
+\item Interruzione volontaria della modifica del quiz (UC2.2.6).
 \end{itemize}
 \item \textbf{Descrizione}: il docente deve poter modificare un quiz.
 \item \textbf{Precondizione}: il docente è autenticato nel sistema e desidera modificare un quiz.
@@ -528,6 +1325,7 @@
 \subsubsection{UC2.2.2.1.1 Selezione permesso pubblico}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il docente seleziona il permesso 'pubblico' per il quiz.
 \item \textbf{Descrizione}: il docente ha scelto un permesso 'pubblico' per il quiz, permettendo a tutti gli utenti di svolgerlo senza restrizioni.
 \item \textbf{Precondizione}: il docente sta selezionando il permesso di un quiz.
 \item \textbf{Postcondizione}: il docente ha scelto il permesso 'pubblico'.
@@ -551,6 +1349,7 @@
 \subsubsection{UC2.2.2.1.2.1 Selezione classi}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente seleziona le classi a cui assegnare il quiz privato.
 \item \textbf{Descrizione}: il docente può assegnare il quiz privato a una o più classi di studenti, i cui partecipanti avranno diritto di svolgerlo.
 \item \textbf{Precondizione}: il docente ha selezionato un permesso 'privato' per il quiz.
 \item \textbf{Postcondizione}: il docente ha selezionato le classi a cui assegnare il quiz.
@@ -558,10 +1357,7 @@
 \subsubsection{UC2.2.2.2 Inserimento domanda nel quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Estensioni}:
-\begin{itemize}
-\item Ricerca quiz e domande (UC1.8).
-\end{itemize}
+\item \textbf{Scenario principale}: il docente inserisce una domanda nel quiz.
 \item \textbf{Descrizione}: il docente deve poter inserire una domanda nel quiz.
 \item \textbf{Precondizione}: il docente sta modificando un quiz e vuole inserire una domanda.
 \item \textbf{Postcondizione}: il docente ha inserito la domanda.
@@ -569,6 +1365,7 @@
 \subsubsection{UC2.2.2.3 Rimozione domanda dal quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente rimuove una domanda dal quiz.
 \item \textbf{Descrizione}: il docente deve poter rimuovere una domanda nel quiz (la domanda non sarà cancellata ma soltanto rimossa dal quiz).
 \item \textbf{Precondizione}: il docente sta modificando il quiz e vuole rimuovere una domanda.
 \item \textbf{Postcondizione}: il docente ha rimosso la domanda.
@@ -576,6 +1373,7 @@
 \subsubsection{UC2.2.2.4 Modifica titolo}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica il titolo del quiz.
 \item \textbf{Descrizione}: il docente deve poter modificare il titolo del quiz.
 \item \textbf{Precondizione}: il docente sta modificando un nuovo quiz.
 \item \textbf{Postcondizione}: il docente ha modificato il titolo del quiz.
@@ -588,6 +1386,7 @@
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica l'argomento del quiz.
 \item \textbf{Estensioni}:
 \begin{itemize}
 \item Creazione argomento (UC2.3.1).
@@ -599,6 +1398,7 @@
 \subsubsection{UC2.2.2.6 Modifica descrizione}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica la descrizione del quiz.
 \item \textbf{Descrizione}: il docente deve poter modificare la descrizione del quiz.
 \item \textbf{Precondizione}: il docente sta modificando un quiz.
 \item \textbf{Postcondizione}: il docente ha modificato la descrizione del quiz.
@@ -606,6 +1406,7 @@
 \subsubsection{UC2.2.2.7 Conferma modifica quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente conferma la modifica del quiz.
 \item \textbf{Descrizione}: il docente deve confermare la modifica del quiz per portarla a termine.
 \item \textbf{Precondizione}: il docente sta modificando un quiz e deve ancora confermare la sua modifica.
 \item \textbf{Postcondizione}: il docente ha confermato la modifica del quiz.
@@ -613,6 +1414,7 @@
 \subsubsection{UC2.2.3 Errore durante la modifica del quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente visualizza il messaggio di errore.
 \item \textbf{Descrizione}: si è verificata la seguente condizione: il numero di risposte selezionate è eccessivo o pari a zero.
 \item \textbf{Precondizione}: il docente ha iniziato una modifica del quiz che non è andata a buon termine.
 \item \textbf{Postcondizione}: il docente ha visualizzato l'errore.
@@ -627,18 +1429,44 @@
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item conferma eliminazione del quiz (UC2.2.4.1).
+\item conferma eliminazione del quiz (UC2.2.4.1);
+\item Interruzione volontaria della modifica della domanda (UC2.2.4.2).
 \end{enumerate}
-\item \textbf{Descrizione}: il docente deve poter eliminare un quiz. Questo non causerà l'eliminazione delle domande contenute nel quiz.
+\item \textbf{Descrizione}: il docente deve poter eliminare un quiz. Questo non causerà l’eliminazione delle domande contenute nel quiz.
 \item \textbf{Precondizione}: il docente è autenticato nel sistema e desidera eliminare un quiz esistente.
 \item \textbf{Postcondizione}: il docente ha eliminato il quiz.
 \end{itemize}
 \subsubsection{UC2.2.4.1 conferma eliminazione del quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente conferma l'eliminazione del quiz.
 \item \textbf{Descrizione}: il docente dovrà confermare l'eliminazione del quiz.
 \item \textbf{Precondizione}: il docente ha richiesto l'eliminazione di un quiz e deve ancora effettuare la conferma.
 \item \textbf{Postcondizione}: il docente ha confermato l'eliminazione del quiz.
+\end{itemize}
+\subsubsection{UC2.2.4.2 Interruzione volontaria della modifica della domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente interrompe la modifica della domanda.
+\item \textbf{Descrizione}: Il docente interrompe la modifica della domanda.
+\item \textbf{Precondizione}: Il docente sta modificando una domanda.
+\item \textbf{Postcondizione}: Il docente non ha completato la modifica della domanda.
+\end{itemize}
+\subsubsection{UC2.2.5 Interruzione volontaria della creazione del quiz}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente interrompe la creazione del quiz.
+\item \textbf{Descrizione}: Il docente interrompe la creazione del quiz.
+\item \textbf{Precondizione}: Il docente sta creando un quiz.
+\item \textbf{Postcondizione}: Il docente non completa la creazione del quiz.
+\end{itemize}
+\subsubsection{UC2.2.6 Interruzione volontaria della modifica del quiz}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente interrompe la modifica del quiz.
+\item \textbf{Descrizione}: Il docente interrompe la modifica del quiz.
+\item \textbf{Precondizione}: Il docente sta modificando un quiz.
+\item \textbf{Postcondizione}: Il docente non ha completato la modifica del quiz.
 \end{itemize}
 \subsubsection{UC2.3 Gestione argomenti}
 \begin{figure}[H]
@@ -678,6 +1506,7 @@
 \subsubsection{UC2.3.1.1 Inserimento nome argomento}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente inserisce il nome dell'argomento.
 \item \textbf{Descrizione}: il docente deve poter inserire il nome dell'argomento.
 \item \textbf{Precondizione}: il docente sta creando un nuovo argomento e deve ancora inserire il nome.
 \item \textbf{Postcondizione}: il docente ha inserito il nome dell'argomento.
@@ -685,6 +1514,7 @@
 \subsubsection{UC2.3.1.2 Conferma creazione argomento}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente conferma la creazione dell'argomento.
 \item \textbf{Descrizione}: il docente deve poter confermare la creazione dell'argomento.
 \item \textbf{Precondizione}: il docente ha inserito un nuovo argomento e deve ancora confermare.
 \item \textbf{Postcondizione}: il docente ha confermato il nuovo argomento.
@@ -709,13 +1539,15 @@
 \subsubsection{UC2.3.2.1 Modifica nome argomento}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica il nome dell'argomento.
 \item \textbf{Descrizione}: il docente deve poter modificare il nome dell'argomento.
-\item \textbf{Precondizione}: il docente vuole modificare il nome di un argomento.
+\item \textbf{Precondizione}: il docente è autenticato e sta gestendo un argomento.
 \item \textbf{Postcondizione}: il docente ha modificato il nome di un argomento.
 \end{itemize}
 \subsubsection{UC2.3.2.2 Conferma modifica argomento}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente conferma la modifica dell'argomento.
 \item \textbf{Descrizione}: il docente deve poter confermare la modifica dell'argomento.
 \item \textbf{Precondizione}: il docente ha modificato un argomento e deve confermare la modifica.
 \item \textbf{Postcondizione}: il docente ha confermato la modifica.
@@ -734,11 +1566,12 @@
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter rimuovere un argomento.
 \item \textbf{Precondizione}: il docente è nella gestione degli argomenti e vuole eliminare un argomento.
-\item \textbf{Postcondizione}: il docente ha eliminato l'argomento.
+\item \textbf{Postcondizione}: il docente ha eliminato l’argomento.
 \end{itemize}
 \subsubsection{UC2.3.3.1 Conferma rimozione argomento}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente conferma la creazione dell'argomento.
 \item \textbf{Descrizione}: il docente deve poter confermare la rimozione dell'argomento.
 \item \textbf{Precondizione}: il docente ha selezionato l'argomento da eliminare e deve ancora confermare.
 \item \textbf{Postcondizione}: il docente ha confermato l'argomento da eliminare.
@@ -753,277 +1586,11 @@
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Creazione domanda (UC2.4.1);
-\item Modifica domanda vero o falso (UC2.4.2);
-\item Modifica domanda a risposta multipla (UC2.4.3);
-\item Modifica domanda a collegamenti (UC2.4.4);
-\item Modifica domanda a risposta aperta (UC2.4.5);
-\item Modifica domanda completamento testo (UC2.4.6);
-\item Eliminazione domanda (UC2.4.7);
-\item Modifica domanda (UC2.4.8).
+\item Eliminazione domanda (UC2.4.7).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter effettuare varie operazioni sulle domande, in particolare deve poter creare nuove domande di vario tipo e modificare o eliminare domande esistenti.
 \item \textbf{Precondizione}: il docente è autenticato e desidera gestire le domande.
 \item \textbf{Postcondizione}: il docente ha effettuato le operazioni desiderate sulle domande.
-\end{itemize}
-\subsubsection{UC2.4.1 Creazione domanda}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Creazione domanda.pdf}}
-\caption{UC2.4.1 Creazione domanda}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Inserimento titolo domanda (UC2.4.1.1);
-\item Inserimento livello di difficoltà  (UC2.4.1.2);
-\item Selezione tipo della domanda (UC2.4.1.3);
-\item Selezione argomento della domanda (UC2.4.1.4);
-\item Conferma creazione domanda (UC2.4.1.5).
-\end{enumerate}
-\item \textbf{Scenario alternativo}: il docente ha interrotto la creazione della domanda.
-\item \textbf{Inclusioni}:
-\begin{itemize}
-\item Modifica domanda (UC2.4.8).
-\end{itemize}
-\item \textbf{Descrizione}: il docente deve poter creare una nuova domanda.
-\item \textbf{Precondizione}: il docente desidera creare una nuova domanda.
-\item \textbf{Postcondizione}: il docente ha creato una nuova domanda.
-\end{itemize}
-\subsubsection{UC2.4.1.1 Inserimento titolo domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente deve poter inserire il titolo della domanda.
-\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e non ha ancora inserito il titolo.
-\item \textbf{Postcondizione}: il docente ha inserito il titolo.
-\end{itemize}
-\subsubsection{UC2.4.1.2 Inserimento livello di difficoltà }
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente deve poter inserire il livello di difficoltà della domanda.
-\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e non ha ancora inserito il livello di difficoltà.
-\item \textbf{Postcondizione}: il docente ha inserito il livello di difficoltà.
-\end{itemize}
-\subsubsection{UC2.4.1.3 Selezione tipo della domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente deve poter selezionare il tipo della domanda che sta creando: vero/falso, risposta multipla, collegamenti, risposta aperta, testo a completamento.
-\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e non ha ancora selezionato il tipo della domanda.
-\item \textbf{Postcondizione}: il docente ha selezionato il tipo della domanda.
-\end{itemize}
-\subsubsection{UC2.4.1.4 Selezione argomento della domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Estensioni}:
-\begin{itemize}
-\item Creazione argomento (UC2.3.1).
-\end{itemize}
-\item \textbf{Descrizione}: il docente deve poter selezionare l'argomento della domanda.
-\item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e non ha ancora selezionato l'argomento.
-\item \textbf{Postcondizione}: il docente ha selezionato l'argomento.
-\end{itemize}
-\subsubsection{UC2.4.1.5 Conferma creazione domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente deve poter confermare la creazione della domanda.
-\item \textbf{Precondizione}: il docente sta creando una domanda, ha inserito le informazioni necessarie e vuole confermare la creazione della domanda.
-\item \textbf{Postcondizione}: il docente ha confermato la creazione della domanda.
-\end{itemize}
-\subsubsection{UC2.4.2 Modifica domanda vero o falso}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda vero o falso.pdf}}
-\caption{UC2.4.2 Modifica domanda vero o falso}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Modifica veridicità della domanda (UC2.4.2.1).
-\end{enumerate}
-\item \textbf{Descrizione}: il docente può modificare una domanda di tipo vero/falso, cambiando la dichiarazione della veridicità della domanda. una domanda vero/falso è trattata come una singola domanda e non supporta l'inserimento di ulteriori risposte al suo interno, ma permette l'inserimento di caselle di testo e allegati nella descrizione.
-\item \textbf{Precondizione}: il docente ha deciso di modificare una domanda di tipo vero/falso.
-\item \textbf{Postcondizione}: il docente ha modificato la domanda di tipo vero/falso.
-\item \textbf{Specializzazione di}:
-\begin{enumerate}
-\item Modifica domanda (UC2.4.8).
-\end{enumerate}
-\end{itemize}
-\subsubsection{UC2.4.2.1 Modifica veridicità della domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente deve poter modificare la veridicità della domanda, indicando se la risposta corretta è 'vero' oppure 'falso'.
-\item \textbf{Precondizione}: il docente vuole modificare la veridicità della domanda.
-\item \textbf{Postcondizione}: il docente ha modificato la veridicità della domanda.
-\end{itemize}
-\subsubsection{UC2.4.3 Modifica domanda a risposta multipla}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda a risposta multipla.pdf}}
-\caption{UC2.4.3 Modifica domanda a risposta multipla}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Modifica delle risposte (UC2.4.3.1);
-\item Selezione risposte corrette (UC2.4.3.2).
-\end{enumerate}
-\item \textbf{Descrizione}: il docente può modificare una domanda a risposta multipla.
-\item \textbf{Precondizione}: il docente ha deciso di modificare una domanda a risposta multipla.
-\item \textbf{Postcondizione}: il docente ha modificato la domanda a risposta multipla.
-\item \textbf{Specializzazione di}:
-\begin{enumerate}
-\item Modifica domanda (UC2.4.8).
-\end{enumerate}
-\end{itemize}
-\subsubsection{UC2.4.3.1 Modifica delle risposte}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Inclusioni}:
-\begin{itemize}
-\item Inserimento contenitore (UC2.4.8.6);
-\item Rimozione contenitore (UC2.4.8.9).
-\end{itemize}
-\item \textbf{Descrizione}: il docente può aggiungere o rimuovere le risposte inserite come risposte possibili, sia risposte corrette sia risposte errate. una risposta è rappresentata da un contenitore. L'interfaccia permetterà al docente di posizionare e ordinare le risposte entro i limiti imposti dal layout.
-\item \textbf{Precondizione}: il docente ha deciso di modificare una domanda a risposta multipla.
-\item \textbf{Postcondizione}: il docente ha modificato le risposte.
-\end{itemize}
-\subsubsection{UC2.4.3.2 Selezione risposte corrette}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: l'interfaccia permetterà al docente di selezionare e deselezionare le risposte corrette fra quelle inserite. Selezionare una risposta la renderà corretta e deselezionarla la renderà errata. Il tipo di domanda 'risposta multipla' supporta la selezione di un numero corrette compreso fra 1 e il numero di risposte inserite.
-\item \textbf{Precondizione}: il docente vuole modificare le risposte corrette di una domanda a risposta multipla.
-\item \textbf{Postcondizione}: il docente ha modificato le risposte corrette.
-\end{itemize}
-\subsubsection{UC2.4.4 Modifica domanda a collegamenti}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda a collegamenti.pdf}}
-\caption{UC2.4.4 Modifica domanda a collegamenti}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Modifica delle risposte (UC2.4.4.1);
-\item Gestione associazioni fra le risposte  (UC2.4.4.2).
-\end{enumerate}
-\item \textbf{Descrizione}: il docente può modificare una domanda a collegamenti. Una domanda a collegamenti è caratterizzata dalla possibilità di associare due contenitori, si possono così creare domande che richiedono l'ordinamento delle risposte e l'a creazione di associazioni fra diversi tipi di risposte (caselle di testo, immagini, file audio, file video) in qualsiasi combinazione. Le risposte possono essere ordinate e posizionate a piacere nei limiti consentiti dal layout della domanda.
-\item \textbf{Precondizione}: il docente ha deciso di modificare una domanda a collegamenti.
-\item \textbf{Postcondizione}: il docente ha modificato la domanda a collegamenti.
-\item \textbf{Specializzazione di}:
-\begin{enumerate}
-\item Modifica domanda (UC2.4.8).
-\end{enumerate}
-\end{itemize}
-\subsubsection{UC2.4.4.1 Modifica delle risposte}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Inclusioni}:
-\begin{itemize}
-\item Inserimento contenitore (UC2.4.8.6);
-\item Rimozione contenitore (UC2.4.8.9).
-\end{itemize}
-\item \textbf{Descrizione}: il docente può aggiungere o rimuovere le risposte inserite come risposte possibili, sia risposte corrette sia risposte errate. una risposta è rappresentata da un contenitore. L'interfaccia permetterà al docente di posizionare e ordinare le risposte entro i limiti imposti dal layout.
-\item \textbf{Precondizione}: il docente sta modificando una domanda a collegamenti.
-\item \textbf{Postcondizione}: il docente ha modificato le risposte .
-\end{itemize}
-\subsubsection{UC2.4.4.2 Gestione associazioni fra le risposte }
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: l'interfaccia permette al docente di creare o rimuovere un'associazione fra due risposte o più. Associare due risposte rende il loro collegamento corretto, rimuovere l'associazione rende il collegamento errato.
-\item \textbf{Precondizione}: il docente ha deciso di modificare una domanda a collegamenti.
-\item \textbf{Postcondizione}: il docente ha effettuato la gestione delle associazioni.
-\end{itemize}
-\subsubsection{UC2.4.5 Modifica domanda a risposta aperta}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda a risposta aperta.pdf}}
-\caption{UC2.4.5 Modifica domanda a risposta aperta}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Gestione risposta corretta (UC2.4.5.1).
-\end{enumerate}
-\item \textbf{Descrizione}: il docente può modificare una domanda a risposta aperta. non è possibile creare risposte, verrà creata automaticamente una casella di testo dove lo studente dovrà rispondere alla domanda. L'utilizzo di domande a risposta aperta è consigliato per domande che hanno risposte corte e prevedibili, come singole parole, nomi propri, nomi geografici, date e numeri.
-\item \textbf{Precondizione}: il docente ha deciso di modificare una domanda a risposta aperta.
-\item \textbf{Postcondizione}: il docente ha modificato la domanda a risposta aperta.
-\item \textbf{Specializzazione di}:
-\begin{enumerate}
-\item Modifica domanda (UC2.4.8).
-\end{enumerate}
-\end{itemize}
-\subsubsection{UC2.4.5.1 Gestione risposta corretta}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: l'interfaccia permette al docente di inserire o modificare la risposta corretta in una casella di testo, la risposta dello studente verrà confrontata con questa.
-\item \textbf{Precondizione}: il docente ha deciso di gestire la risposta corretta di una domanda a risposta aperta.
-\item \textbf{Postcondizione}: il docente ha gestito la risposta corretta di una domanda a risposta aperta.
-\end{itemize}
-\subsubsection{UC2.4.6 Modifica domanda completamento testo}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda completamento testo.pdf}}
-\caption{UC2.4.6 Modifica domanda completamento testo}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Inserimento spazio nel testo (UC2.4.6.1);
-\item Rimozione spazio dal testo (UC2.4.6.2);
-\item Modifica delle risposte  (UC2.4.6.3);
-\item Gestione associazioni fra spazi e risposte (UC2.4.6.4).
-\end{enumerate}
-\item \textbf{Inclusioni}:
-\begin{itemize}
-\item Inserimento contenitore (UC2.4.8.6);
-\item Rimozione contenitore (UC2.4.8.9).
-\end{itemize}
-\item \textbf{Descrizione}: il docente può modificare una domanda di tipo 'completamento testo'. La struttura del testo dipende dai contenitori scelti per costruirlo, e può spaziare da una semplice casella di testo intervallata da spazi a una combinazione di testo e allegati.
-\item \textbf{Precondizione}: il docente ha deciso di modificare una domanda di tipo 'completamento testo'.
-\item \textbf{Postcondizione}: il docente ha modificato la domanda di tipo 'completamento testo'.
-\item \textbf{Specializzazione di}:
-\begin{enumerate}
-\item Modifica domanda (UC2.4.8).
-\end{enumerate}
-\end{itemize}
-\subsubsection{UC2.4.6.1 Inserimento spazio nel testo}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: l'interfaccia permette al docente di inserire un nuovo spazio nel testo, nella posizione da lui scelta.
-\item \textbf{Precondizione}: il docente ha deciso di inserire un nuovo spazio nel testo.
-\item \textbf{Postcondizione}: il docente ha inserito lo spazio nel testo.
-\end{itemize}
-\subsubsection{UC2.4.6.2 Rimozione spazio dal testo}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: l'interfaccia permette al docente di rimuovere uno spazio scelto dal testo.
-\item \textbf{Precondizione}: il docente ha deciso di rimuovere uno spazio dal testo.
-\item \textbf{Postcondizione}: il docente ha rimosso lo spazio dal testo.
-\end{itemize}
-\subsubsection{UC2.4.6.3 Modifica delle risposte }
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Inclusioni}:
-\begin{itemize}
-\item Inserimento contenitore (UC2.4.8.6);
-\item Rimozione contenitore (UC2.4.8.9).
-\end{itemize}
-\item \textbf{Descrizione}: il docente può aggiungere o rimuovere risposte. Le risposte possono essere di tipo testuale o allegato (immagine, file audio, file video).
-\item \textbf{Precondizione}: il docente ha deciso di modificare una domanda completamento testo.
-\item \textbf{Postcondizione}: il docente ha modificato le risposte.
-\end{itemize}
-\subsubsection{UC2.4.6.4 Gestione associazioni fra spazi e risposte}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente può creare o rimuovere un'associazione fra una risposta e uno spazio. Se una risposta e uno spazio sono associati, posizionare la risposta nello spazio è considerato corretto o se una risposta e uno spazio non sono associati, posizionare la risposta nello spazio è considerato errato.
-\item \textbf{Precondizione}: il docente ha deciso di modificare una domanda di tipo completamento testo.
-\item \textbf{Postcondizione}: il docente ha effettuato la gestione delle associazioni in una domanda di tipo completamento testo.
 \end{itemize}
 \subsubsection{UC2.4.7 Eliminazione domanda}
 \begin{figure}[H]
@@ -1038,170 +1605,16 @@
 \item Conferma eliminazione domanda (UC2.4.7.1).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente può eliminare una domanda.
-\item \textbf{Precondizione}: il docente vuole eliminare  una domanda.
+\item \textbf{Precondizione}: il docente è autenticato e vuole eliminare  una domanda.
 \item \textbf{Postcondizione}: il docente ha eliminato la domanda.
 \end{itemize}
 \subsubsection{UC2.4.7.1 Conferma eliminazione domanda}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente confermare l'eliminazione della domanda affinchè l'operazione venga portata a termine. I docenti che hanno precedente inserito la domanda nei loro quiz riceveranno una notifica automatica e saranno invitati a controllare i quiz interessati.
-\item \textbf{Precondizione}: il docente vuole eliminare una domanda.
+\item \textbf{Scenario principale}: il docente conferma l'eliminazione della domanda.
+\item \textbf{Descrizione}: il docente conferma l'eliminazione della domanda affinchè l'operazione venga portata a termine. I docenti che hanno precedentemente inserito la domanda nei loro quiz riceveranno una notifica automatica e saranno invitati a controllare i quiz interessati.
+\item \textbf{Precondizione}: il docente è autenticato e sta gestendo le domande.
 \item \textbf{Postcondizione}: il docente ha confermato l'eliminazione della domanda.
-\end{itemize}
-\subsubsection{UC2.4.8 Modifica domanda}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda.pdf}}
-\caption{UC2.4.8 Modifica domanda}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Modifica titolo domanda (UC2.4.8.1);
-\item Modifica livello di difficoltà  (UC2.4.8.2);
-\item Modifica tipo della domanda (UC2.4.8.3);
-\item Modifica argomento della domanda (UC2.4.8.4);
-\item Gestione descrizione aggiuntiva della domanda (UC2.4.8.5);
-\item Inserimento contenitore (UC2.4.8.6);
-\item Inserimento casella di testo (UC2.4.8.7);
-\item Inserimento allegato (UC2.4.8.8);
-\item Rimozione contenitore (UC2.4.8.9);
-\item Errore durante la modifica della domanda (UC2.4.8.10);
-\item Conferma modifica domanda (UC2.4.8.11).
-\end{enumerate}
-\item \textbf{Scenario alternativo}: il docente interrompe la modifica della domanda.
-\item \textbf{Estensioni}:
-\begin{itemize}
-\item Rimozione contenitore (UC2.4.8.9).
-\end{itemize}
-\item \textbf{Generalizzazioni}:
-\begin{itemize}
-\item Modifica domanda vero o falso (UC2.4.2);
-\item Modifica domanda a risposta multipla (UC2.4.3);
-\item Modifica domanda a collegamenti (UC2.4.4);
-\item Modifica domanda a risposta aperta (UC2.4.5);
-\item Modifica domanda completamento testo (UC2.4.6).
-\end{itemize}
-\item \textbf{Descrizione}: il docente deve poter modificare una domanda.
-\item \textbf{Precondizione}: il docente desidera modificare una domanda.
-\item \textbf{Postcondizione}: il docente ha modificato la domanda.
-\end{itemize}
-\subsubsection{UC2.4.8.1 Modifica titolo domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente deve poter modificare il titolo della domanda.
-\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda.
-\item \textbf{Postcondizione}: il docente ha modificato il titolo.
-\end{itemize}
-\subsubsection{UC2.4.8.2 Modifica livello di difficoltà }
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente deve poter modificare il livello di difficoltà della domanda.
-\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda.
-\item \textbf{Postcondizione}: il docente ha modificato il livello di difficoltà.
-\end{itemize}
-\subsubsection{UC2.4.8.3 Modifica tipo della domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente deve poter modificare il tipo della domanda selezionato: vero/falso, risposta multipla, collegamenti, risposta aperta, testo a completamento.
-\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda.
-\item \textbf{Postcondizione}: il docente ha modificato il tipo della domanda.
-\end{itemize}
-\subsubsection{UC2.4.8.4 Modifica argomento della domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Estensioni}:
-\begin{itemize}
-\item Creazione argomento (UC2.3.1).
-\end{itemize}
-\item \textbf{Descrizione}: il docente deve poter modificare l'argomento della domanda.
-\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda.
-\item \textbf{Postcondizione}: il docente ha modificato l'argomento.
-\end{itemize}
-\subsubsection{UC2.4.8.5 Gestione descrizione aggiuntiva della domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Inclusioni}:
-\begin{itemize}
-\item Inserimento contenitore (UC2.4.8.6);
-\item Rimozione contenitore (UC2.4.8.9).
-\end{itemize}
-\item \textbf{Descrizione}: il docente deve poter inserire e successivamente modificare una descrizione aggiuntiva che può contenere un numero variabile di 'contenitori', che possono essere caselle di testo o allegati (immagini, file audio, file video).
-\item \textbf{Precondizione}: il docente sta modificando una domanda.
-\item \textbf{Postcondizione}: il docente ha modificato la descrizione aggiuntiva.
-\end{itemize}
-\subsubsection{UC2.4.8.6 Inserimento contenitore}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Generalizzazioni}:
-\begin{itemize}
-\item Inserimento casella di testo (UC2.4.8.7);
-\item Inserimento allegato (UC2.4.8.8).
-\end{itemize}
-\item \textbf{Descrizione}: il docente può inserire un 'contenitore' in varie sezioni della domanda. Un contenitore può essere una casella di testo o un allegato (immagine, file audio, file video).
-\item \textbf{Precondizione}: il docente sta modificando una domanda e vuole inserire un contenitore in una sezione della domanda.
-\item \textbf{Postcondizione}: il docente ha inserito il contenitore nella sezione desiderata.
-\end{itemize}
-\subsubsection{UC2.4.8.7 Inserimento casella di testo}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente può inserire una casella di testo in varie sezioni della domanda.
-\item \textbf{Precondizione}: il docente sta modificando una domanda e vuole inserire una casella di testo.
-\item \textbf{Postcondizione}: il docente ha inserito la casella di testo nella sezione desiderata.
-\item \textbf{Specializzazione di}:
-\begin{enumerate}
-\item Inserimento contenitore (UC2.4.8.6).
-\end{enumerate}
-\end{itemize}
-\subsubsection{UC2.4.8.8 Inserimento allegato}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Inserimento allegato.pdf}}
-\caption{UC2.4.8.8 Inserimento allegato}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Upload allegato (UC2.4.8.8.1).
-\end{enumerate}
-\item \textbf{Descrizione}: il docente può inserire un allegato (immagine, audio, video) in varie sezioni della domanda.
-\item \textbf{Precondizione}: il docente sta modificando una domanda e vuole inserire un allegato.
-\item \textbf{Postcondizione}: il docente ha inserito l'allegato nella sezione desiderata.
-\item \textbf{Specializzazione di}:
-\begin{enumerate}
-\item Inserimento contenitore (UC2.4.8.6).
-\end{enumerate}
-\end{itemize}
-\subsubsection{UC2.4.8.8.1 Upload allegato}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente può effettuare l'upload dell'allegato, secondo alcuni limiti.
-\item \textbf{Precondizione}: il docente sta modificando una domanda e vuole effettuare l'upload dell'allegato.
-\item \textbf{Postcondizione}: il docente ha inserito la casella di testo nella sezione desiderata.
-\end{itemize}
-\subsubsection{UC2.4.8.9 Rimozione contenitore}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente può rimuovere un contenitore precedentemente inserito.
-\item \textbf{Precondizione}: il docente sta modificando una domanda e vuole rimuovere un contenitore.
-\item \textbf{Postcondizione}: il docente ha rimosso il contenitore.
-\end{itemize}
-\subsubsection{UC2.4.8.10 Errore durante la modifica della domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: la seguente condizione si è verificata: eccessivo numero di contenitori inserito
-.
-\item \textbf{Precondizione}: il docente ha effettuato un tentativo di modifica di una domanda che non è andato a buon fine.
-\item \textbf{Postcondizione}: il docente ha visualizzato l'errore.
-\end{itemize}
-\subsubsection{UC2.4.8.11 Conferma modifica domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente deve poter confermare le modifiche apportate alla domanda, a prescindere dal tipo della domanda.
-\item \textbf{Precondizione}: il docente sta modificando una domanda e vuole confermare la modifica della domanda.
-\item \textbf{Postcondizione}: il docente ha confermato la modifica della domanda.
 \end{itemize}
 \subsubsection{UC2.5 Gestione account}
 \begin{figure}[H]
@@ -1219,9 +1632,10 @@
 \item Eliminazione account utente (UC2.5.4);
 \item Eliminazione account personale (UC2.5.5);
 \item Eliminazione altri account (UC2.5.6);
-\item Conferma eliminazione account (UC2.5.7).
+\item Conferma eliminazione account (UC2.5.7);
+\item Interruzione volontaria della modifica delle informazioni personali (UC2.5.8).
 \end{enumerate}
-\item \textbf{Descrizione}: L'utente autenticato può visualizzare e modificare le sue informazioni personali; visualizzare il proprio profilo quiz e la possibilità di eliminare il proprio account. Il responsabile in aggiunta può eliminare gli account degli utenti.
+\item \textbf{Descrizione}: L'utente autenticato può visualizzare e modificare le sue informazioni personali, visualizzare il proprio profilo quiz e la possibilità di eliminare il proprio account. Il responsabile in aggiunta può eliminare gli account degli utenti.
 \item \textbf{Precondizione}: il responsabile o un utente autorizzato vuole modificare/visualizzare le informazioni del proprio account.
 \item \textbf{Postcondizione}: l'utente autenticato o il responsabile hanno effettuato le modifiche opportune al proprio account.
 \end{itemize}
@@ -1239,30 +1653,33 @@
 \item Visualizzazione cognome (UC2.5.1.2);
 \item Visualizzazione email (UC2.5.1.3).
 \end{enumerate}
-\item \textbf{Descrizione}: l'utente autenticato può visualizzare le sue informazioni personali.
-\item \textbf{Precondizione}: l'utente autenticato ha l'accesso alla gestione dell'account.
-\item \textbf{Postcondizione}: l'utente autenticato ha visualizzato le sue informazioni personali.
+\item \textbf{Descrizione}: l’utente autenticato può visualizzare le sue informazioni personali.
+\item \textbf{Precondizione}: l’utente autenticato ha l’accesso alla gestione dell’account.
+\item \textbf{Postcondizione}: l’utente autenticato ha visualizzato le sue informazioni personali.
 \end{itemize}
 \subsubsection{UC2.5.1.1 Visualizzazione nome}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
-\item \textbf{Descrizione}: l'utente autenticato visualizza il suo nome.
-\item \textbf{Precondizione}: l'utente sta visualizzando le sue informazioni personali.
-\item \textbf{Postcondizione}: l'utente visualizza il proprio nome.
+\item \textbf{Scenario principale}: l'utente autenticato visualizza il proprio nome.
+\item \textbf{Descrizione}: l'utente autenticato può visualizzare il suo nome.
+\item \textbf{Precondizione}: l'utente è autenticato e sta visualizzando le sue informazioni personali.
+\item \textbf{Postcondizione}: l'utente ha visualizzato il proprio nome.
 \end{itemize}
 \subsubsection{UC2.5.1.2 Visualizzazione cognome}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
-\item \textbf{Descrizione}: l'utente autenticato visualizza il suo cognome.
-\item \textbf{Precondizione}: l'utente sta visualizzando le sue informazioni personali.
-\item \textbf{Postcondizione}: l'utente visualizza il proprio cognome.
+\item \textbf{Scenario principale}: l'utente autenticato visualizza il proprio cognome.
+\item \textbf{Descrizione}: l'utente autenticato può visualizzare il suo cognome.
+\item \textbf{Precondizione}: l'utente è autenticato e sta visualizzando le sue informazioni personali.
+\item \textbf{Postcondizione}: l'utente ha visualizzato il proprio cognome.
 \end{itemize}
 \subsubsection{UC2.5.1.3 Visualizzazione email}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
-\item \textbf{Descrizione}: l'utente autenticato visualizza la sua email.
-\item \textbf{Precondizione}: l'utente sta visualizzando le sue informazioni personali.
-\item \textbf{Postcondizione}: l'utente visualizza la propria email.
+\item \textbf{Scenario principale}: l'utente autenticato visualizza il proprio indirizzo email.
+\item \textbf{Descrizione}: l'utente autenticato può visualizzare la sua email.
+\item \textbf{Precondizione}: l'utente è autenticato e sta visualizzando le sue informazioni personali.
+\item \textbf{Postcondizione}: l'utente ha visualizzato la propria email.
 \end{itemize}
 \subsubsection{UC2.5.2 Modifica informazioni personali}
 \begin{figure}[H]
@@ -1280,7 +1697,10 @@
 \item Conferma modifica informazioni personali (UC2.5.2.4);
 \item Errore modifica password (UC2.5.2.5).
 \end{enumerate}
-\item \textbf{Scenario alternativo}: l'utente interrompe la modifica delle sue informazioni personali.
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Interruzione volontaria della modifica delle informazioni personali (UC2.5.8).
+\end{itemize}
 \item \textbf{Descrizione}: l'utente autenticato vuole modificare le sue informazioni personali.
 \item \textbf{Precondizione}: l'utente autenticato può modificare le sue informazioni personali.
 \item \textbf{Postcondizione}: l'utente ha modificato le sue informazioni personali.
@@ -1288,6 +1708,7 @@
 \subsubsection{UC2.5.2.1 Modifica nome}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente autenticato modifica il suo nome.
 \item \textbf{Descrizione}: l'utente autenticato può modificare il suo nome.
 \item \textbf{Precondizione}: l'utente autenticato modifica le sue informazioni personali.
 \item \textbf{Postcondizione}: l'utente ha modificato il suo nome.
@@ -1295,6 +1716,7 @@
 \subsubsection{UC2.5.2.2 Modifica cognome}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente autenticato modifica il suo cognome.
 \item \textbf{Descrizione}: l'utente autenticato può modificare il suo cognome.
 \item \textbf{Precondizione}: l'utente autenticato modifica le sue informazioni personali.
 \item \textbf{Postcondizione}: l'utente ha modificato il suo cognome.
@@ -1325,6 +1747,7 @@
 \subsubsection{UC2.5.2.3.1 Inserimento vecchia password}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente autenticato inserisce la sua vecchia password.
 \item \textbf{Descrizione}: la modifica della password richiede l'inserimento della password corrente o di una password temporanea.
 \item \textbf{Precondizione}: l'utente autenticato ha deciso di modificare la password e deve ancora inserire la vecchia password.
 \item \textbf{Postcondizione}: l'utente autenticato ha inserito la vecchia password.
@@ -1332,6 +1755,7 @@
 \subsubsection{UC2.5.2.3.2 Inserimento nuova password}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente autenticato inserisce la nuova password.
 \item \textbf{Descrizione}: la modifica della password richiede l'inserimento della nuova password.
 \item \textbf{Precondizione}: l'utente autenticato ha deciso di modificare la password e deve ancora inserire la nuova password.
 \item \textbf{Postcondizione}: l'utente autenticato ha inserito la nuova password.
@@ -1339,6 +1763,7 @@
 \subsubsection{UC2.5.2.3.3 Conferma inserimento nuova password}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente autenticato conferma l'inserimento della nuova password.
 \item \textbf{Descrizione}: la modifica della password richiede la conferma dell'inserimento della nuova password.
 \item \textbf{Precondizione}: l'utente autenticato ha deciso di modificare la password e deve ancora confermare l'inserimento della nuova password.
 \item \textbf{Postcondizione}: l'utente autenticato ha confermato l'inserimento della nuova password.
@@ -1346,6 +1771,7 @@
 \subsubsection{UC2.5.2.3.4 Conferma modifica password}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente autenticato conferma la modifica della password.
 \item \textbf{Descrizione}: La modifica della password richiede la conferma della modifica password.
 \item \textbf{Precondizione}: l'utente autenticato ha inserito i campi necessari e deve ancora confermare la modifica della password.
 \item \textbf{Postcondizione}: l'utente autenticato ha confermato la modifica della password.
@@ -1353,6 +1779,7 @@
 \subsubsection{UC2.5.2.4 Conferma modifica informazioni personali}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente autenticato conferma la modifica delle informazioni personali.
 \item \textbf{Descrizione}: l'utente autenticato deve confermare le modifiche effettuate.
 \item \textbf{Precondizione}: l'utente autenticato ha modificato qualche informazione personale.
 \item \textbf{Postcondizione}: l'utente autenticato ha confermato  le nuove informazioni personali.
@@ -1360,6 +1787,7 @@
 \subsubsection{UC2.5.2.5 Errore modifica password}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente visualizza il messaggio di errore.
 \item \textbf{Descrizione}: si è verificato un errore durante la modifica della password.
 \item \textbf{Precondizione}: l'utente autenticato ha inserito una password non valida.
 \item \textbf{Postcondizione}: l'utente visualizza un messaggio di errore.
@@ -1367,6 +1795,7 @@
 \subsubsection{UC2.5.3 Visualizzazione profilo quiz}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente autenticato visualizza il suo storico dei quiz e le risposte.
 \item \textbf{Descrizione}: l'utente autenticato può visualizzare il suo storico dei quiz e rivedere le risposte date.
 \item \textbf{Precondizione}: l'utente autenticato può visualizzare lo storico dei quiz.
 \item \textbf{Postcondizione}: l'utente ha visualizzato il suo profilo quiz.
@@ -1374,6 +1803,7 @@
 \subsubsection{UC2.5.4 Eliminazione account utente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile elimina l'account desiderato.
 \item \textbf{Generalizzazioni}:
 \begin{itemize}
 \item Eliminazione account personale (UC2.5.5);
@@ -1386,39 +1816,64 @@
 \subsubsection{UC2.5.5 Eliminazione account personale}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile, Utente Autenticato.
-\item \textbf{Inclusioni}:
-\begin{itemize}
-\item Conferma eliminazione account (UC2.5.7).
-\end{itemize}
-\item \textbf{Descrizione}: l'utente autenticato e il responsabile possono cancellare il proprio account personale.
-\item \textbf{Precondizione}: l'utente autenticato e il responsabile hanno i permessi per cancellare l'account.
-\item \textbf{Postcondizione}: l'utente autenticato e il responsabile hanno selezionato il loro account per l'eliminazione.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Conferma eliminazione account personale (UC2.5.5.1).
+\end{enumerate}
+\item \textbf{Descrizione}: l’utente autenticato e il responsabile possono cancellare il proprio account personale.
+\item \textbf{Precondizione}: l’utente autenticato e il responsabile hanno i permessi per cancellare l’account.
+\item \textbf{Postcondizione}: l’utente autenticato e il responsabile hanno selezionato il loro account per l’eliminazione.
 \item \textbf{Specializzazione di}:
 \begin{enumerate}
 \item Eliminazione account utente (UC2.5.4).
 \end{enumerate}
+\end{itemize}
+\subsubsection{UC2.5.5.1 Conferma eliminazione account personale}
+\begin{itemize}
+\item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente conferma l'eliminazione del proprio account.
+\item \textbf{Descrizione}: L'utente deve confermare l'eliminazione del proprio account.
+\item \textbf{Precondizione}: L'utente si trova nella pagina di eliminazione del proprio account.
+\item \textbf{Postcondizione}: L'utente ha confermato l'eliminazione del proprio account.
 \end{itemize}
 \subsubsection{UC2.5.6 Eliminazione altri account}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
-\item \textbf{Inclusioni}:
-\begin{itemize}
-\item Conferma eliminazione account (UC2.5.7).
-\end{itemize}
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Conferma eliminazione altri account (UC2.5.6.1).
+\end{enumerate}
 \item \textbf{Descrizione}: il responsabile può cancellare gli account degli altri utenti.
 \item \textbf{Precondizione}: il responsabile ha i permessi di eliminazione altri account.
-\item \textbf{Postcondizione}: il responsabile ha selezionato l'account da eliminare.
+\item \textbf{Postcondizione}: il responsabile ha selezionato l’account da eliminare.
 \item \textbf{Specializzazione di}:
 \begin{enumerate}
 \item Eliminazione account utente (UC2.5.4).
 \end{enumerate}
 \end{itemize}
+\subsubsection{UC2.5.6.1 Conferma eliminazione altri account}
+\begin{itemize}
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile conferma l'eliminazione dell'account.
+\item \textbf{Descrizione}: Il responsabile deve confermare l'eliminazione dell'account di un altro utente.
+\item \textbf{Precondizione}: Il responsabile si trova nella pagina di eliminazione di altri account.
+\item \textbf{Postcondizione}: Il responsabile ha confermato l'eliminazione dell'account dell'utente.
+\end{itemize}
 \subsubsection{UC2.5.7 Conferma eliminazione account}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente conferma l'eliminazione dell'account.
 \item \textbf{Descrizione}: l'utente autenticato e il responsabile confermano l'eliminazione vera e propria dell'account precedentemente selezionato.
 \item \textbf{Precondizione}: l'utente autenticato o il responsabile hanno precedentemente selezionato un account da eliminare.
 \item \textbf{Postcondizione}: l'account precedentemente selezionato è stato eliminato definitivamente.
+\end{itemize}
+\subsubsection{UC2.5.8 Interruzione volontaria della modifica delle informazioni personali}
+\begin{itemize}
+\item \textbf{Attori}: Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente interrompe la modifica delle informazioni personali.
+\item \textbf{Descrizione}: l'utente può interrompere la modifica delle informazioni personali.
+\item \textbf{Precondizione}: l'utente sta modificando le proprie informazioni personali.
+\item \textbf{Postcondizione}: l'utente non ha completato la modifica delle informazioni personali.
 \end{itemize}
 \subsubsection{UC2.6 Richiesta accettazione}
 \begin{figure}[H]
@@ -1436,13 +1891,14 @@
 \item Invio richiesta di accettazione classe come studente (UC2.6.4);
 \item Conferma invio richiesta (UC2.6.5).
 \end{enumerate}
-\item \textbf{Descrizione}: l'utente senza ruolo invia una richiesta per essere studente o docente, mentre studente e docente inviano una richiesta di accettazione per essere inseriti in una determinata classe.
+\item \textbf{Descrizione}: l’utente senza ruolo invia una richiesta per essere studente o docente, mentre studente e docente inviano una richiesta di accettazione per essere inseriti in una determinata classe.
 \item \textbf{Precondizione}: utente senza ruolo, studente e docente possono inviare richieste di accettazione.
-\item \textbf{Postcondizione}: è stata inviata una richesta d'accettazione e sarà notificata al responsabile.
+\item \textbf{Postcondizione}: è stata inviata una richesta d’accettazione e sarà notificata al responsabile.
 \end{itemize}
 \subsubsection{UC2.6.1 Invio richiesta ruolo docente}
 \begin{itemize}
 \item \textbf{Attori}: Utente senza Ruolo.
+\item \textbf{Scenario principale}: l'utente invia la richiesta di ruolo 'docente'.
 \item \textbf{Inclusioni}:
 \begin{itemize}
 \item Conferma invio richiesta (UC2.6.5).
@@ -1454,6 +1910,7 @@
 \subsubsection{UC2.6.2 Invio richiesta ruolo studente}
 \begin{itemize}
 \item \textbf{Attori}: Utente senza Ruolo.
+\item \textbf{Scenario principale}: l'utente invia la richiesta di ruolo 'studente'.
 \item \textbf{Inclusioni}:
 \begin{itemize}
 \item Conferma invio richiesta (UC2.6.5).
@@ -1480,7 +1937,8 @@
 \subsubsection{UC2.6.3.1 Inserimento nome classe}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Descrizione}: il docente seleziona il nome della classe alla quale vuole essere inserito.
+\item \textbf{Scenario principale}: il docente seleziona il nome della classe.
+\item \textbf{Descrizione}: il docente deve poter seleziona il nome della classe alla quale vuole essere inserito.
 \item \textbf{Precondizione}: il docente è nella fase di invio richiesta di accettazione classe come docente.
 \item \textbf{Postcondizione}: il docente ha selezionato il nome della classe.
 \end{itemize}
@@ -1495,21 +1953,23 @@
 \begin{itemize}
 \item Conferma invio richiesta (UC2.6.5).
 \end{itemize}
-\item \textbf{Descrizione}: lo studente compila invia una richiesta al responsabile con il nome della classe per avere il permesso di essere inserito nella classe indicata.
+\item \textbf{Descrizione}: lo studente invia una richiesta al responsabile con il nome della classe per avere il permesso di essere inserito nella classe indicata.
 \item \textbf{Precondizione}: lo studente ha il permesso di inviare questa richiesta.
 \item \textbf{Postcondizione}: lo studente ha compilato la richiesta.
 \end{itemize}
 \subsubsection{UC2.6.4.1 Inserimento nome classe}
 \begin{itemize}
 \item \textbf{Attori}: Studente.
-\item \textbf{Descrizione}: lo studente seleziona il nome della classe alla quale vuole essere inserito.
+\item \textbf{Scenario principale}: l'utente seleziona il nome della classe.
+\item \textbf{Descrizione}: lo studente deve poter selezionare il nome della classe alla quale vuole essere inserito.
 \item \textbf{Precondizione}: lo studente è nella fase di invio di richiesta di accettazione classe come studente.
 \item \textbf{Postcondizione}: lo studente ha selezionato il nome della classe.
 \end{itemize}
 \subsubsection{UC2.6.5 Conferma invio richiesta}
 \begin{itemize}
 \item \textbf{Attori}: Docente, Studente, Utente senza Ruolo.
-\item \textbf{Descrizione}: l'utente senza ruolo, studente e docente confermano l'invio della richiesta  precedentemente compilata.
+\item \textbf{Scenario principale}: l'utente conferma l'invio della richiesta.
+\item \textbf{Descrizione}: l'utente senza ruolo, studente e docente devono poter confermare l'invio della richiesta  precedentemente compilata.
 \item \textbf{Precondizione}: l'utente senza ruolo, docente, studente hanno compilato la richiesta appropriata.
 \item \textbf{Postcondizione}: la richiesta è stata inviata al responsabile con successo.
 \end{itemize}
@@ -1553,6 +2013,7 @@
 \subsubsection{UC2.7.1.1 Visualizzazione numero di svolgimenti}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente visualizza il numero di volte in cui un quiz è stato svolto.
 \item \textbf{Descrizione}: il docente deve poter visualizzare il numero di volte in cui un quiz è stato svolto.
 \item \textbf{Precondizione}: il docente ha deciso di visualizzare le statistiche legate ai quiz.
 \item \textbf{Postcondizione}: il docente ha visualizzato il numero di svolgimenti di un quiz.
@@ -1560,6 +2021,7 @@
 \subsubsection{UC2.7.1.2 Visualizzazione percentuale di superamento del quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente visualizza la percentuale di studenti che hanno svolto il quiz con esito positivo.
 \item \textbf{Descrizione}: il docente deve poter visualizzare la percentuale di studenti che hanno svolto il quiz con esito positivo.
 \item \textbf{Precondizione}: il docente ha deciso di visualizzare le statistiche legate ai quiz.
 \item \textbf{Postcondizione}: il docente ha visualizzato la percentuale di superamento di un quiz.
@@ -1567,6 +2029,7 @@
 \subsubsection{UC2.7.1.3 Visualizzazione risultato medio}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente visualizza il risultato medio ottenuto dagli utenti che hanno svolto il quiz.
 \item \textbf{Descrizione}: il docente deve poter visualizzare il risultato medio ottenuto dagli utenti che hanno svolto il quiz.
 \item \textbf{Precondizione}: il docente ha deciso di visualizzare le statistiche legate ai quiz.
 \item \textbf{Postcondizione}: il docente ha visualizzato il risultato medio di un quiz.
@@ -1591,6 +2054,7 @@
 \subsubsection{UC2.7.2.1 Visualizzazione numero di quiz in cui compare una domanda}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente visualizza il numero di quiz in cui compare la domanda.
 \item \textbf{Descrizione}: il docente deve poter visualizzare il numero di quiz in cui compare la domanda.
 \item \textbf{Precondizione}: il docente ha deciso di visualizzare le statistiche legate alle domande.
 \item \textbf{Postcondizione}: il docente ha visualizzato il numero di quiz in cui compare una domanda.
@@ -1598,6 +2062,7 @@
 \subsubsection{UC2.7.2.2 Visualizzazione percentuale di successo nella risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente visualizza la percentuale di successo nella risposta della domanda.
 \item \textbf{Descrizione}: il docente deve poter visualizzare la percentuale di successo nella risposta della domanda.
 \item \textbf{Precondizione}: il docente ha deciso di visualizzare le statistiche legate alle domande.
 \item \textbf{Postcondizione}: il docente ha visualizzato la percentuale di successo nella risposta a una domanda.
@@ -1621,6 +2086,7 @@
 \subsubsection{UC2.7.3.1 Visualizzazione lista di quiz svolti}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente visualizza una lista dei quiz svolti dallo studente con rispettivo risultato.
 \item \textbf{Descrizione}: il docente deve poter visualizzare una lista dei quiz svolti dallo studente con rispettivo risultato.
 \item \textbf{Precondizione}: il docente ha deciso di visualizzare le statistiche legate agli studenti.
 \item \textbf{Postcondizione}: il docente ha visualizzato la lista dei quiz svolti da uno studente.
@@ -1645,6 +2111,7 @@
 \subsubsection{UC2.7.4.1 Visualizzazione lista di quiz creati}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente visualizza una lista dei quiz creati dal docente.
 \item \textbf{Descrizione}: il docente deve poter visualizzare una lista dei quiz creati dal docente.
 \item \textbf{Precondizione}: il docente ha deciso di visualizzare le statistiche legate ai docenti.
 \item \textbf{Postcondizione}: il docente ha visualizzato la lista dei quiz creati da un docente.
@@ -1652,6 +2119,7 @@
 \subsubsection{UC2.7.4.2 Visualizzazione lista di domande create}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente visualizza una lista delle domande create dal docente.
 \item \textbf{Descrizione}: il docente deve poter visualizzare una lista delle domande create dal docente.
 \item \textbf{Precondizione}: il docente ha deciso di visualizzare le statistiche legate ai docenti.
 \item \textbf{Postcondizione}: il docente ha visualizzato la lista delle domande create da un docente.
@@ -1672,7 +2140,7 @@
 \end{enumerate}
 \item \textbf{Descrizione}: il responsabile ha la completa gestione dell'ente di cui è a capo.
 \item \textbf{Precondizione}: il responsabile ha il permesso di gestire l'ente.
-\item \textbf{Postcondizione}: il responsabile potrebbe aver modificato alcune informazioni riguardante l'ente.
+\item \textbf{Postcondizione}: il responsabile ha completato la modifica delle informazioni desiderate riguardanti l'ente.
 \end{itemize}
 \subsubsection{UC2.8.1 Creazione di un nuovo ente}
 \begin{figure}[H]
@@ -1689,19 +2157,21 @@
 \item Conferma inserimento dati (UC2.8.1.3).
 \end{enumerate}
 \item \textbf{Descrizione}: il responsabile deve poter inserire un nuovo ente.
-\item \textbf{Precondizione}: il responsabile ha il permesso di gestire l'ente.
+\item \textbf{Precondizione}: il responsabile ha il permesso di gestire l’ente.
 \item \textbf{Postcondizione}: il responsabile ha creato un nuovo ente di cui ne è il capo.
 \end{itemize}
 \subsubsection{UC2.8.1.1 Inserimento data di creazione}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
-\item \textbf{Descrizione}: il responsabile deve poter inserisce la data di creazione dell'ente.
+\item \textbf{Scenario principale}: il responsabile inserisce la data di creazione dell'ente.
+\item \textbf{Descrizione}: il responsabile deve poter inserire la data di creazione dell'ente.
 \item \textbf{Precondizione}: il responsabile sta creando l'ente.
 \item \textbf{Postcondizione}: il responsabile ha inserito la data di creazione.
 \end{itemize}
 \subsubsection{UC2.8.1.2 Inserimento nome}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile inserisce il nome dell'ente.
 \item \textbf{Descrizione}:  il responsabile deve poter inserire il nome dell'ente.
 \item \textbf{Precondizione}: il responsabile sta creando l'ente e deve ancora inserire il nome.
 \item \textbf{Postcondizione}: il responsabile ha inserito il nome dell'ente.
@@ -1709,6 +2179,7 @@
 \subsubsection{UC2.8.1.3 Conferma inserimento dati}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile conferma i dati per la creazione dell'ente.
 \item \textbf{Descrizione}: il responsabile conferma i dati precedentemente inseriti per avviare la creazione dell'ente.
 \item \textbf{Precondizione}: il responsabile sta creando l'ente e deve ancora confermare i dati inseriti.
 \item \textbf{Postcondizione}: i dati precedentemente inseriti sono stati confermati e l'ente è stato creato.
@@ -1726,13 +2197,14 @@
 \item Modifica nome ente (UC2.8.2.1);
 \item Conferma modifica ente (UC2.8.2.2).
 \end{enumerate}
-\item \textbf{Descrizione}: il responsabile deve poter modificare i dati dell'ente che ha precedentemente creato.
-\item \textbf{Precondizione}: il responsabile ha il permesso di modificare le informazioni dell'ente.
-\item \textbf{Postcondizione}: il responsabile ha modificato le informazioni dell'ente.
+\item \textbf{Descrizione}: il responsabile deve poter modificare i dati dell’ente che ha precedentemente creato.
+\item \textbf{Precondizione}: il responsabile ha il permesso di modificare le informazioni dell’ente.
+\item \textbf{Postcondizione}: il responsabile ha modificato le informazioni dell’ente.
 \end{itemize}
 \subsubsection{UC2.8.2.1 Modifica nome ente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile modifica il nome dell'ente.
 \item \textbf{Descrizione}: il responsabile deve poter modificare il nome dell'ente.
 \item \textbf{Precondizione}: il responsabile sta modificando i dati dell'ente e vuole modificare il nome.
 \item \textbf{Postcondizione}: il responsabile ha modificato il nome dell'ente.
@@ -1740,6 +2212,7 @@
 \subsubsection{UC2.8.2.2 Conferma modifica ente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile conferma la modifica dell'ente.
 \item \textbf{Descrizione}: il responsabile deve confermare la modifica dell'ente.
 \item \textbf{Precondizione}: il responsabile ha modificando i dati dell'ente e deve ancora confermare le modifiche fatte.
 \item \textbf{Postcondizione}: il responsabile ha confermato le modifiche effettuate.
@@ -1758,11 +2231,12 @@
 \end{enumerate}
 \item \textbf{Descrizione}: il responsabile deve poter eliminare un ente di cui è proprietario.
 \item \textbf{Precondizione}: il responsabile è nella gestione degli enti e vuole eliminare un suo ente.
-\item \textbf{Postcondizione}: il responsabile ha eliminato l'ente.
+\item \textbf{Postcondizione}: il responsabile ha eliminato l’ente.
 \end{itemize}
 \subsubsection{UC2.8.3.1 Conferma eliminazione ente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile conferma l'eliminazione dell'ente.
 \item \textbf{Descrizione}: il responsabile deve confermare l'eliminazione dell'ente.
 \item \textbf{Precondizione}: il responsabile ha scelto un ente da eliminare e deve ancora confermare.
 \item \textbf{Postcondizione}: il responsabile ha confermato l'ente da eliminare.
@@ -1784,7 +2258,7 @@
 \item Visualizza lista docenti della classe (UC2.9.5);
 \item Manutenzione classe (UC2.9.6).
 \end{enumerate}
-\item \textbf{Descrizione}: il responsabile può creare, modificare ed elimanare una classe; inoltre può visualizzare la lista degli studenti e docenti delle classe; può fare manutenzione sulle classi nel caso in cui le richieste di inserimento da parte di studenti e docenti fossero sbagliate; infine gestisce la lista delle richiesta che riceve da parte degli studenti e docenti.
+\item \textbf{Descrizione}: il responsabile può creare, modificare ed eliminare una classe; inoltre può visualizzare la lista degli studenti e docenti della classe; può fare manutenzione sulle classi nel caso in cui le richieste di inserimento da parte di studenti e docenti siano sbagliate; infine gestisce la lista delle richieste che riceve da parte degli studenti e docenti.
 \item \textbf{Precondizione}: il responsabile ha i permessi per gestire le classi.
 \item \textbf{Postcondizione}: il responsabile ha effettuato le operazioni di gestione delle classi.
 \end{itemize}
@@ -1811,20 +2285,23 @@
 \subsubsection{UC2.9.1.1 Inserimento nome}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
-\item \textbf{Descrizione}: il responsabile deve poter inserisce il nome della classe.
+\item \textbf{Scenario principale}: il responsabile inserisce il nome della classe.
+\item \textbf{Descrizione}: il responsabile deve poter inserire il nome della classe.
 \item \textbf{Precondizione}: il responsabile sta creando una classe e deve ancora inserire il nome.
 \item \textbf{Postcondizione}: il responsabile ha inserito il nome della classe.
 \end{itemize}
 \subsubsection{UC2.9.1.2 Inserimento descrizione}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
-\item \textbf{Descrizione}: il responsabile può inserisce una breve descrizione della classe.
+\item \textbf{Scenario principale}: il responsabile inserisce la descrizione della classe.
+\item \textbf{Descrizione}: il responsabile può inserire una breve descrizione della classe.
 \item \textbf{Precondizione}: il responsabile sta creando una classe e deve ancora inserire la descrizione.
 \item \textbf{Postcondizione}: il responsabile ha inserito una breve descrizione della classe.
 \end{itemize}
 \subsubsection{UC2.9.1.3 Selezione ente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile seleziona l'ente proprietario della classe.
 \item \textbf{Descrizione}: il responsabile deve selezionare l'ente che sarà il proprietario della classe.
 \item \textbf{Precondizione}: il responsabile sta creando una classe e deve ancora selezionare l'ente.
 \item \textbf{Postcondizione}: il responsabile ha selezionato l'ente proprietario della classe.
@@ -1832,13 +2309,15 @@
 \subsubsection{UC2.9.1.4 Inserimento anno scolastico}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
-\item \textbf{Descrizione}: il responsabile deve inserisce l'anno scolastico in cui è stata creata la classe.
+\item \textbf{Scenario principale}: il responsabile inserisce l'anno scolastico di creazione della classe.
+\item \textbf{Descrizione}: il responsabile deve inserire l'anno scolastico in cui è stata creata la classe.
 \item \textbf{Precondizione}: il responsabile sta creando una classe e deve ancora inserire l'anno scolastico.
 \item \textbf{Postcondizione}: il responsabile ha inserito l'anno scolastico della classe.
 \end{itemize}
 \subsubsection{UC2.9.1.5 Conferma creazione classe}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile conferma i dati per la creazione della classe.
 \item \textbf{Descrizione}: il responsabile deve confermare i dati precedentemente inseriti.
 \item \textbf{Precondizione}: il responsabile ha inserito una nuova classe e deve ancora confermarla.
 \item \textbf{Postcondizione}: il responsabile ha confermato i dati inseriti e la classe è stata creata.
@@ -1866,6 +2345,7 @@
 \subsubsection{UC2.9.2.1 Modifica nome}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile modifica il nome della classe.
 \item \textbf{Descrizione}: il responsabile deve poter modificare il nome della classe.
 \item \textbf{Precondizione}: il responsabile sta modificando la classe.
 \item \textbf{Postcondizione}: il responsabile ha modificato il nome della classe.
@@ -1873,6 +2353,7 @@
 \subsubsection{UC2.9.2.2 Modifica descrizione}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile modifica la descrizione della classe.
 \item \textbf{Descrizione}: il responsabile deve poter modificare la descrizione della classe.
 \item \textbf{Precondizione}: il responsabile sta modificando la classe.
 \item \textbf{Postcondizione}: il responsabile ha modificato la descrizione della classe.
@@ -1880,6 +2361,7 @@
 \subsubsection{UC2.9.2.3 Modifica ente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile modifica l'ente della classe.
 \item \textbf{Descrizione}: il responsabile deve poter modificare l'ente della classe a cui è associata.
 \item \textbf{Precondizione}: il responsabile sta modificando la classe.
 \item \textbf{Postcondizione}: il responsabile ha modificato l'ente della classe.
@@ -1887,6 +2369,7 @@
 \subsubsection{UC2.9.2.4 Modifica anno scolastico}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile modifica l'anno scolastico di creazione della classe.
 \item \textbf{Descrizione}: il responsabile deve poter modificare l'anno scolastico della creazione della classe.
 \item \textbf{Precondizione}: il responsabile sta modificando la classe.
 \item \textbf{Postcondizione}: il responsabile ha modificato l'anno scolastico della classe.
@@ -1894,6 +2377,7 @@
 \subsubsection{UC2.9.2.5 Conferma modifica classe}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile conferma la modifica della classe.
 \item \textbf{Descrizione}: il responsabile deve confermare le modifiche precedentemente fatte.
 \item \textbf{Precondizione}: il responsabile ha modificato la classe e deve ancora confermare le modifiche.
 \item \textbf{Postcondizione}: il responsabile ha confermato le modifiche.
@@ -1917,21 +2401,24 @@
 \subsubsection{UC2.9.3.1 Conferma eliminazione classe}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile conferma l'eliminazione della classe.
 \item \textbf{Descrizione}: il responsabile deve confermare l'eliminazione della classe.
 \item \textbf{Precondizione}: il responsabile vuole eliminare una classe e deve ancora confermare.
 \item \textbf{Postcondizione}: il responsabile ha confermato l'eliminazione della classe.
 \end{itemize}
 \subsubsection{UC2.9.4 Visualizza lista studenti della classe}
 \begin{itemize}
-\item \textbf{Attori}: Docente, Responsabile.
-\item \textbf{Descrizione}: il responsabile e il docente selezionano il nome della classe e visualizzeranno una lista di studenti associati a quella classe.
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente visualizza la lista degli studenti di una classe.
+\item \textbf{Descrizione}: il docente seleziona il nome della classe e può visualizzare la lista di studenti associati a quella classe.
 \item \textbf{Precondizione}: il responsabile e il docente hanno il permesso di consultare la lista degli studenti.
 \item \textbf{Postcondizione}: vengono visualizzati gli studenti della classe selezionata.
 \end{itemize}
 \subsubsection{UC2.9.5 Visualizza lista docenti della classe}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
-\item \textbf{Descrizione}: il responsabile e il docente selezionano il nome della classe e visualizzeranno una lista di docenti associati a quella classe.
+\item \textbf{Scenario principale}: il responsabile visualizza la lista di docenti di una classe.
+\item \textbf{Descrizione}: il responsabile seleziona il nome della classe e può visualizzare la lista di docenti associati a quella classe.
 \item \textbf{Precondizione}: il responsabile ha il permesso di consultare la lista dei docenti.
 \item \textbf{Postcondizione}: il responsabile visualizza i docenti della classe selezionata.
 \end{itemize}
@@ -1957,6 +2444,7 @@
 \subsubsection{UC2.9.6.1 Inserimento studente nella classe}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile inserisce uno studente nella classe.
 \item \textbf{Descrizione}: il responsabile può inserire uno studente nella classe.
 \item \textbf{Precondizione}: il responsabile ha deciso di effettuare la manutenzione della classe.
 \item \textbf{Postcondizione}: il responsabile ha inserito lo studente nella classe.
@@ -1964,6 +2452,7 @@
 \subsubsection{UC2.9.6.2 Rimozione studente dalla classe}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile rimuove uno studente dalla classe.
 \item \textbf{Descrizione}: il responsabile può rimuovere uno studente dalla classe.
 \item \textbf{Precondizione}: il responsabile ha deciso di effettuare la manutenzione della classe.
 \item \textbf{Postcondizione}: il responsabile ha rimosso lo studente dalla classe.
@@ -1971,6 +2460,7 @@
 \subsubsection{UC2.9.6.3 Inserimento docente nella classe}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile inserisce un docente nella classe.
 \item \textbf{Descrizione}: il responsabile può inserire un docente nella classe.
 \item \textbf{Precondizione}: il responsabile ha deciso di effettuare la manutenzione della classe.
 \item \textbf{Postcondizione}: il responsabile ha inserito il docente nella classe.
@@ -1978,86 +2468,8 @@
 \subsubsection{UC2.9.6.4 Rimozione docente dalla classe}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile rimuove un docente dalla classe.
 \item \textbf{Descrizione}: il responsabile può rimuovere un docente dalla classe.
 \item \textbf{Precondizione}: il responsabile ha deciso di effettuare la modifica della classe.
 \item \textbf{Postcondizione}: il responsabile ha rimosso il docente dalla classe.
-\end{itemize}
-\subsubsection{UC2.10 Lista richieste}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Lista richieste.pdf}}
-\caption{UC2.10 Lista richieste}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Richieste inserimento nella classe (UC2.10.1);
-\item Richieste ruoli (UC2.10.2).
-\end{enumerate}
-\item \textbf{Descrizione}: il responsabile gestisce le richieste inviate da studenti, docenti ed utenti senza ruolo per accettare o annullare il ruolo richiesto o per accettare e annullare l'inserimento dello studente o docente in una determinata classe.
-\item \textbf{Precondizione}: il responsabile ha i permessi per la gestione delle richieste.
-\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato alcune richieste che ha ricevuto.
-\end{itemize}
-\subsubsection{UC2.10.1 Richieste inserimento nella classe}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Richieste inserimento nella classe.pdf}}
-\caption{UC2.10.1 Richieste inserimento nella classe}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Accettazione della richiesta di inserimento (UC2.10.1.1);
-\item Annullamento della richiesta di inserimento (UC2.10.1.2).
-\end{enumerate}
-\item \textbf{Descrizione}: il responsabile accetta o rifiuta le richieste di inserimento nella classe ricevute dagli studenti e docenti.
-\item \textbf{Precondizione}: il responsabile visualizza la lista di richieste di inserimento nella classe.
-\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato le richieste che ha ricevuto.
-\end{itemize}
-\subsubsection{UC2.10.1.1 Accettazione della richiesta di inserimento}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Descrizione}: il responsabile accetta le richieste di inserimento nella classe ricevute dagli studenti e docenti.
-\item \textbf{Precondizione}: il responsabile visualizza lista richieste di inserimento nella classe.
-\item \textbf{Postcondizione}: il responsabile ha accettato le richieste di inserimento nella classe che gli sono pervenute dagli studenti e docenti.
-\end{itemize}
-\subsubsection{UC2.10.1.2 Annullamento della richiesta di inserimento}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Descrizione}: il responsabile rifiuta le richieste di inserimento nella classe ricevute dagli studenti e docenti.
-\item \textbf{Precondizione}: il responsabile visualizza lista richieste di inserimento nella classe.
-\item \textbf{Postcondizione}: il responsabile ha rifiutato le richieste di inserimento nella classe che gli sono pervenute dagli studenti e docenti.
-\end{itemize}
-\subsubsection{UC2.10.2 Richieste ruoli}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Richieste ruoli.pdf}}
-\caption{UC2.10.2 Richieste ruoli}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Accettazione del ruolo (UC2.10.2.1);
-\item Annullamento richiesta ruolo (UC2.10.2.2).
-\end{enumerate}
-\item \textbf{Descrizione}: il responsabile accetta o rifiuta le richieste  del ruolo che vogliono assumere gli utenti senza ruolo.
-\item \textbf{Precondizione}: il responsabile ha i permessi per la gestione della lista richieste.
-\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato le richieste dei ruoli che gli sono pervenute dagli utenti senza ruolo.
-\end{itemize}
-\subsubsection{UC2.10.2.1 Accettazione del ruolo}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Descrizione}: il responsabile accetta  le richieste  del ruolo che vogliono assumere gli utenti senza ruolo.
-\item \textbf{Precondizione}: il responsabile visualizza la lista richieste ruoli.
-\item \textbf{Postcondizione}: il responsabile ha accettato le richieste del ruolo che gli sono pervenute dagli utenti senza ruolo.
-\end{itemize}
-\subsubsection{UC2.10.2.2 Annullamento richiesta ruolo}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Descrizione}: il responsabile rifiuta le richieste  del ruolo che vogliono assumere gli utenti senza ruolo.
-\item \textbf{Precondizione}: il responsabile visualizza la lista richieste ruoli.
-\item \textbf{Postcondizione}: il responsabile ha rifiutato le richieste del ruolo che gli sono pervenute dagli utenti senza ruolo.
 \end{itemize}
