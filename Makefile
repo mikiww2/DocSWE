@@ -4,6 +4,6 @@ job: Comandi.sty Stile.sty Esterni/AnalisiDeiRequisiti/AnalisiDeiRequisiti.tex E
 	@cd /home/mainuser/DocSWE/Esterni/Glossario && make --ignore-errors
 	@cd /home/mainuser/DocSWE/Esterni/PianoDiProgetto && make --ignore-errors
 	@cd /home/mainuser/DocSWE/Esterni/PianoDiQualifica && make --ignore-errors
+	@cd /home/mainuser/DocSWE/Esterni/SpecificaTecnica && make --ignore-errors
 	@cd /home/mainuser/DocSWE/Interni/NormeDiProgetto && make --ignore-errors
-	@cd /home/mainuser/DocSWE/Interni/SpecificaTecnica && make --ignore-errors
 	@date '+%d/%m/%Y %H:%M:%S' >> summary_log.txt
