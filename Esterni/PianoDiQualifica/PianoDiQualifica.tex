@@ -14,7 +14,7 @@
 
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
-a
+
 \def\NOME{Piano di Qualifica}
 \def\VERSIONE{2.0}
 \def\DATA{23.02.2016}
@@ -31,6 +31,7 @@ a
 \rfoot{Pagina \thepage{} di \pageref{lastromanpage}}
 
 \maketitle
+
 \begin{diario}
 	\recap{Approvazione documento}{Miki Violetto}{Responsabile}{23.02.2016}{2.0}
 	\recap{Verifica delle sezioni modificate}{Rudy Berton}{Verificatore}{22.02.2016}{1.2}
@@ -53,7 +54,8 @@ a
 %\newpage
 %\listoffigures 
 \newpage
-\listoftables \label{lastromanpage}
+\listoftables
+\label{lastromanpage}
 
 \newpage
 \clearpage	
@@ -99,7 +101,11 @@ Il presente documento ha lo scopo di descrivere gli obiettivi di qualità, di pr
 \item \bold{ISO 9126:}
 	\newline \url{https://en.wikipedia.org/wiki/ISO/IEC_9126};
 \item \bold{Indice Gulpease:}
-	\newline \url{https://it.wikipedia.org/wiki/Indice_Gulpease}.
+	\newline \url{https://it.wikipedia.org/wiki/Indice_Gulpease};
+\item \bold{Slide del corso Ingegneria del Software - Misurazioni del Software:}
+	\newline \url{http://www.math.unipd.it/~rcardin/sweb/B02.pdf};
+\item \bold{Complessità ciclomatica:}
+	\newline \url{https://it.wikipedia.org/wiki/Complessit%C3%A0_ciclomatica}.2
 \end{itemize}
 
 \newpage
@@ -235,7 +241,6 @@ Per maggiori dettagli sulla metrica si veda la sezione \hyperref[par:web]{Valida
 
 Per maggiori informazioni sullo standard ISO/IEC 9126 si rimanda alla visione dei \hyperref[rifinfo] {riferimenti informativi}.
 
-\newpage
 \section{Gestione della qualità: visione generale di strategia}
 
 \subsection{Tecniche di controllo qualità di processo}
@@ -443,7 +448,7 @@ Viene utilizzata questa unità di misura per verificare quanto un documento risp
 \end{itemize}
 
 \myparagraph{Per i prodotti software}
-In questa sezione si presentano alcune delle metriche di cui il \gl{team} si avvalerà per eseguire le verifiche dei prodotti \gl{software} durante lo sviluppo del progetto. Risulta un po' prematuro, in questa attività iniziale, stabilire con esattezza tutte le metriche che verranno utilizzate dal momento che non è stato realizzato alcun prodotto \gl{software}, pertanto questa sezione verrà certamente aggiornata durante l'attività di progettazione. 
+In questa sezione si presentano alcune delle metriche di cui il \gl{team} si avvalerà per eseguire le verifiche dei prodotti \gl{software} durante lo sviluppo del progetto. Tale sezione potrà subire nelle attività successive un ulteriore incremento di contenuti grazie all'effettiva realizzazione di un qualche prodotto \gl{software}. 
 
 \mysubparagraph{Requisiti rispettati}
 \label{par:req}
@@ -517,6 +522,116 @@ Per valutare la manutenibilità si fa uso di tale metrica che permette di identi
 \item Valore ottimale: un valore inferiore all'1\%.
 \end{itemize}
 
+
+\myparagraph{Per il codice}
+Nella seguente sezione vengono proposte delle metriche che possano valutare al meglio la qualità del codice che verrà scritto nelle attività successive alla Progettazione architetturale.
+
+\mysubparagraph{Linee di codice per metodo}
+\label{par:statement}
+Questa metrica valuta il numero di statement presenti in ogni metodo (escluse le righe di commento). Maggiore sarà tale numero allora maggiore risulterà la complessità di comprensione e di verifica del codice scritto per tale metodo. 
+\\ Pertanto se un metodo deve svolgere diverse azioni complesse, per non appesantirlo eccessivamente è buona norma suddividerlo in un numero maggiore di metodi che possano ad ogni modo portare al medesimo risultato.
+\
+\newline Giudizio dei risultati ottenibili:
+\begin{itemize}
+\item Valore negativo: un numero maggiore di 60 statement.
+\item Valore accettabile: un numero di statement inferiore a 60. 
+\item Valore ottimale: un numero di statement inferiore a 30.
+\end{itemize}
+
+\mysubparagraph{Parametri formali per metodo}
+La complessità di un metodo è determinata, oltre che da altri elementi, anche dal numero di parametri che deve ricevere in ingresso per eseguire nel proprio corpo determinate operazioni. 
+\\ Un metodo ottimale dovrebbe perciò permettere il minor numero possibile di parametri formali al momento della dichiarazione in modo tale che il metodo non debba gestirne troppi al suo interno.
+\
+\newline Giudizio dei risultati ottenibili:
+\begin{itemize}
+\item Valore negativo: un numero di parametri formali maggiore di 5. 
+\item Valore accettabile: un numero di parametri inferiore a 5.
+\item Valore ottimale: un numero inferiore a 3 parametri formali.
+\end{itemize}
+
+\mysubparagraph{Campi dati per classe}
+Questa metrica determina il numero di campi dati presenti all'interno di una classe del programma. \\ Se una classe presenterà molti campi dati da gestire sarà allora maggiore la sua complessità e la difficoltà di riuso del codice in altre classi, oltre che alla scarsa manutenibilità del codice che ne consegue qualora si debbano apportare delle modifiche.
+\
+\newline Giudizio dei risultati ottenibili:
+\begin{itemize}
+\item Valore negativo: un numero di campi dati maggiore di 10. 
+\item Valore accettabile: un numero di campi dati inferiore a 10.
+\item Valore ottimale: un numero inferiore a 5 campi dati.
+\end{itemize}
+
+\mysubparagraph{Complessità ciclomatica}
+La complessità ciclomatica è la metrica che misura il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso del programma, determinandone pertanto la sua complessità.
+\\Il grafo di controllo di flusso, su cui avviene la misurazione, è composto da nodi ed archi. I primi corrispondono a gruppi indivisibili di istruzioni, mentre i secondi connettono due nodi se il secondo gruppo di istruzioni può essere eseguito immediatamente dopo il primo gruppo.
+\\La complessità ciclomatica può essere
+applicata a singole procedure, a moduli, a metodi oppure a classi di un programma.
+Attraverso il suo impiego sarà possibile definire inoltre un limite superiore al numero di test necessari per raggiungere una completa copertura della componente considerata, a seconda della complessità del suo flusso di controllo.
+\
+\newline Giudizio dei risultati ottenibili:
+\begin{itemize}
+\item Valore negativo: un valore maggiore di 10. 
+\item Valore accettabile: una complessità ciclomatica inferiore a 10.
+\item Valore ottimale: un valore minore di 5.
+\end{itemize}
+
+\mysubparagraph{Copertura del codice}
+La copertura del codice è la percentuale degli statement eseguiti correttamente durante lo
+svolgimento dei test. Se il valore risultante è alto ciò sta ad indicare che il codice analizzato potrà presentare eventuali errori con probabilità molto bassa, andando quindi a garantire un maggiore livello di affidabilità del software.
+\
+\newline Giudizio dei risultati ottenibili:
+\begin{itemize}
+\item Valore negativo: un valore minore dell'80\%. 
+\item Valore accettabile: un valore maggiore dell'80\%.
+\item Valore ottimale: un valore maggiore del 95\%.
+\end{itemize}
+
+\mysubparagraph{Livello di annidamento}
+Tale metrica indica nel codice la quantità di volte in cui le strutture di controllo sono innestate una dentro l’altra. Se si ottiene un valore elevato di annidamento il programma considerato presenterà certamente un flusso interno complesso che renderà pertanto difficoltosa la copertura del codice durante l'esecuzione dei test. 
+\
+\newline Giudizio dei risultati ottenibili:
+\begin{itemize}
+\item Valore negativo: un valore maggiore di 5.  
+\item Valore accettabile: un valore inferiore a 5.
+\item Valore ottimale: un valore inferiore a 3.
+\end{itemize}
+
+\mysubparagraph{Grado di accoppiamento}
+Il grado di accoppiamento misura il grado con cui ogni componente di un programma fa affidamento su ciascuna delle altre componenti, dipendendo da esse.
+Un valore basso di questa metrica permetterà al programma di essere maggiormente manutenibile poiché in caso di modifiche all'interno di una sua componente, le altre componenti non necessiteranno di modifiche consequenziali.
+\\ Il grado di accoppiamento viene valutato attraverso il calcolo di due distinti indici:
+\begin{description}
+\item{ Accoppiamento Afferente (Ca):} indica il numero di classi esterne ad un package che dipendono da classi interne ad esso. 
+\\ Un alto valore di tale accoppiamento è indice di un alto grado di dipendenza del resto del software dal package. D'altro canto un valore troppo basso indicherà che il package, con le sue funzionalità interne, non viene sufficientemente sfruttato dal resto del software.
+\item{Accoppiamento Efferente (Ce):} indica il numero di classi interne ad un package che dipendono da classi esterne ad esso. 
+\\Ottenere un basso valore di questo accoppiamento indica che la maggior parte delle funzionalità fornite dal package sono indipendenti dal resto del sistema.
+\end{description}
+\
+\newline Giudizio dei risultati ottenibili:
+\begin{itemize}
+\item Valore negativo: per entrambi gli indici un valore maggiore di 8.   
+\item Valore accettabile: per entrambi gli indici un valore minore di 8.
+\item Valore ottimale: per entrambi gli indici un valore minore di 5.
+\end{itemize}
+
+\mysubparagraph{Grado di instabilità}
+Attraverso i valori degli indici Ca e Ce (accoppiamento afferente ed efferente rispettivamente) ottenuti dalla misurazione della metrica Grado di accoppiamento, è possibile definire il grado di instabilità di una componente del programma. Questa metrica indica la possibilità di effettuare modifiche a tale componente senza influenzarne altre all’interno del programma.
+\newline Formula:
+\begin{displaymath}
+\mbox{Instabilità (I)}=\frac{Ce}{Ca+Ce}*100
+\end{displaymath}
+\
+\
+\newline Giudizio dei risultati ottenibili:
+\begin{itemize}
+\item Valore negativo: un valore maggiore del 90\%.
+\item Valore accettabile: un valore minore del 90\%.
+\item Valore ottimale: un valore minore del 70\%.
+\end{itemize}
+
+
+\newpage
+\section{Specifica dei test}
+\bold{DA FARE}
+
 \newpage
 \section{Attività di Analisi requisiti utente \\\large{resoconto~delle~sottoattività~di~verifica}}
 \label{app:valtest}
@@ -558,7 +673,6 @@ Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui t
 
 \bold{Considerazioni finali:} Per il processo di documentazione il \gl{team} non ha necessitato di ulteriori risorse che potessero aumentare i costi pianificati precedentemente.
 
-\newpage
 \myparagraph{Capability Maturity Model}
 Si è cercato di valutare la qualità del processo di documentazione secondo le metriche stabilite dal modello \gl{CMM} . Ovviamente, quando il progetto è cominciato si era al livello 1 dei livelli di Maturity: le procedure e le norme erano completamente informali, non era presente alcun tipo di documentazione e lo stato risultava caotico, non permettendo alcun tipo di ripetibilità di procedure in modo certo.
 \newline In seguito alla redazione del documento \NdPdoc sono state definite  norme valide per ogni tipo di documentazione, strumenti comuni
@@ -588,7 +702,7 @@ Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance s
 \item{\bold{Schedule Variance finale:}} 0 giorni.
 \\Per il processo di verificazione, in generale, il \gl{team} ha ritardato di 0 giorni rispetto a quanto pianificato nel \doc{Piano di Progetto}. Pur essendoci documenti che sono stati verificati in ritardo, il valore generale ottenuto rientra nella soglia di accettabilità prevista.
 \end{description}
-\newpage
+
 \myparagraph{Cost Variance}
 Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui tempi impiegati nel processo di verificazione:
 \begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
@@ -629,7 +743,6 @@ Il gruppo, attraverso un processo di verifica automatica e manuale, ha individua
 \bold{Considerazioni finali:}
 Per ogni documento il \gl{team} ha svolto un buon lavoro nella correzione degli errori ortografici, anche se non tutti sono stati corretti subito. In ogni caso la percentuale di errori individuati in ogni documento rientra nella soglia di accettabilità prevista dalla metrica.
 
-\newpage
 \myparagraph{Indice Gulpease}
 Ogni documento è stato sottoposto ad uno \gl{script} che ne calcolasse l'\gl{Indice Gulpease} per valutarne il grado di leggibilità.
 \newline Di seguito vengono presentati i dati raccolti:
@@ -656,7 +769,8 @@ Il gruppo ha posto molta attenzione nell'uso di termini, concetti teorici e cont
 \myparagraph{Errori di forma}
 Sono stati segnalati, dai \italics{Verificatori}, diversi errori di forma che non rispettavano le norme descritte nel documento \italics{Norme di Progetto}. La maggior parte sono stati corretti, ma una minima parte è sfuggita durante l'azione di correzione e pertanto sono stati segnalati durante una nuova azione di verifica.
 \newline In ogni caso la percentuale di errori di forma, per come è descritta tale metrica nell'appendice \hyperref[sec:metr]{Misure e metriche}, risulta pari all'1\%; valore che rientra pienamente all'interno della soglia di accettabilità prevista.
-\newpage
+
+
 \subsection {Sommario del resoconto delle sottoattività di verifica}
 
 \begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}}
@@ -686,7 +800,168 @@ Sono stati segnalati, dai \italics{Verificatori}, diversi errori di forma che no
 	
 \end{tabella}
 
+\newpage
+\section{Attività di Progettazione architetturale \\\large{resoconto~delle~sottoattività~di~verifica}}
+%\label{app:valtest}
+\bold{DA FARE}
 
+%\subsection{Verifica dei processi}
+%\subsubsection{Documentazione}
+%\myparagraph{Schedule Variance}
+%Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di stesura di ogni documento:
+%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+%	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
+%	\endfirsthead
+%	Analisi dei Requisiti v3.0 & ???? & ?????? \\
+%	Norme di Progetto v3.0 & ????? & ?????? \\
+%    Piano di Progetto v3.0 &  ?????? &  ??????\\
+%    Piano di Qualifica v3.0 & ?????? & ?????? \\
+%    Glossario v3.0 & ?????? & ??????\\	
+%    Specifica Tecnica v1.0 & ?????? & ?????? \\
+%	\rowcolor{white}  
+%	\caption{Esiti della Schedule Variance - Attività di Progettazione architetturale}	    	
+%\end{tabella}
+%
+%\bold{Considerazioni finali:}
+%\begin{description}
+%\item{\bold{Schedule Variance finale:}} ????.
+%\\ \bold{SPIEGAZIONE}
+%\end{description}
+%
+%
+%\myparagraph{Cost Variance}
+%Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui tempi di stesura di ogni documento:
+%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+%	
+%	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
+%	\endfirsthead
+%	Processo di documentazione & ?????? \% & ??????\\
+%	\rowcolor{white}  
+%	\caption{Esiti della Cost Variance - Attività di Progettazione architetturale}	   	
+%\end{tabella}
+%
+%\bold{Considerazioni finali:}
+%\\ \bold{SPIEGAZIONE}
+%
+%
+%\myparagraph{Capability Maturity Model}
+%\bold{SPIEGAZIONE}
+%
+%\subsubsection{Verificazione}
+%\myparagraph{Schedule Variance}
+%Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di stesura di ogni documento:
+%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+%	
+%	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
+%	\endfirsthead
+%	Analisi dei Requisiti v3.0 & ?????? & ?????? \\
+%	Norme di Progetto v3.0 & ?????? & ?????? \\
+%    Piano di Progetto v3.0 &  ?????? &  ??????\\
+%    Piano di Qualifica v3.0 & ?????? & ?????? \\
+%    Glossario v3.0 & ?????? & ??????\\	
+%   	Specifica Tecnica v1.0 &  ?????? &  ?????? \\
+%	\rowcolor{white}  
+%	\caption{Esiti della Schedule Variance - Attività di Progettazione architetturale}	    	
+%\end{tabella}
+%
+%\bold{Considerazioni finali:}
+%\begin{description}
+%\item{\bold{Schedule Variance finale:}} ??????.
+%\\ \bold{SPIEGAZIONE}
+%\end{description}
+%
+%\myparagraph{Cost Variance}
+%Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui tempi impiegati nel processo di verificazione:
+%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+%	
+%	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
+%	\endfirsthead
+%	Processo di verifica & ?????? \% & ??????\\
+%	\rowcolor{white}  
+%	\caption{Esiti della Cost Variance - Attività di Progettazione architetturale}	  
+%\end{tabella}
+%
+%\bold{Considerazioni finali:}
+%\\ \bold{SPIEGAZIONE}
+%
+%\myparagraph{Capability Maturity Model}
+%\bold{SPIEGAZIONE}
+%
+%\subsection{Verifica dei prodotti}
+%\subsubsection{Documenti}
+%\myparagraph{Errori ortografici}
+%\bold{INTRODUZIONE da fare}
+%\newline Vengono riportati di seguito i valori ottenuti riguardanti la verifica degli errori ortografici:
+%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+%	
+%	\color{white} \bold{Documento} & \color{white} \bold{Errori ortografici} &\color{white} \bold{Giudizio} \\
+%	\endfirsthead
+%	Analisi dei Requisiti v3.0 &  ??????? \% & ???????\\
+%	Norme di Progetto v3.0 & ??????? \% & ???????\\
+%    Piano di Progetto v3.0 & ??????? \% & ??????? \\
+%    Piano di Qualifica 3.0 & ??????? \% & ???????\\
+%    Glossario v3.0 & ??????? \% & ???????\\
+%    Specifica Tecnica v1.0 & ??????? \% &  ??????? \\	
+%	\rowcolor{white}  
+%	\caption{Esiti degli Errori Ortografici - Attività di Progettazione architetturale}	    	
+%\end{tabella}
+%
+%\bold{Considerazioni finali:}
+%\\ \bold{SPIEGAZIONE} 
+%
+%\myparagraph{Indice Gulpease}
+%Ogni documento è stato sottoposto ad uno \gl{script} che ne calcolasse l'\gl{Indice Gulpease} per valutarne il grado di leggibilità.
+%\newline Di seguito vengono presentati i dati raccolti:
+%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+%	
+%	\color{white} \bold{Documento} & \color{white} \bold{\gl{Indice Gulpease}} &\color{white} \bold{Giudizio} \\
+%	\endfirsthead
+%	Analisi dei Requisiti v3.0 & ???? & ???? \\
+%	Norme di Progetto v3.0 & ???? & ????\\
+%    Piano di Progetto v3.0 & ???? & ???? \\
+%    Piano di Qualifica v3.0 & ???? & ????\\
+%    Glossario v3.0 & ???? & ????\\	
+%    Specifica Tecnica v1.0 & ???? & ???? \\
+%	\rowcolor{white}  
+%	\caption{Esiti dell'\gl{Indice Gulpease} - Attività di Progettazione architetturale}	    	
+%\end{tabella}
+%\bold{Considerazioni finali:}
+%\\ \bold{SPIEGAZIONE}
+%
+%\myparagraph{Errori Concettuali}
+%\bold{SPIEGAZIONE}
+%
+%\myparagraph{Errori di forma}
+%\bold{SPIEGAZIONE} 
+%
+%\subsection {Sommario del resoconto delle sottoattività di verifica}
+%
+%\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}}
+%
+%		
+%	
+%	\color{white} \bold{Verifica} & \color{white} \bold{Metrica} & \color{white} \bold{Giudizio finale} \\
+%	\endfirsthead
+%	
+%	\cellcolor{P} & Schedule Variance & ???????\\
+%	\cellcolor{P} & Cost Variance & ??????? \\
+%	\multirow{-3}{*}{\cellcolor{P}Processo di Documentazione}	& Capability Maturity Model & ??????? \\
+%	\hline
+%	
+%	\cellcolor{D} & Schedule Variance & ??????? \\
+%	\cellcolor{D} & Cost Variance & ??????? \\
+%	\multirow{-2}{*}{\cellcolor{D}Processo di Verificazione} & Capability Maturity Model & ??????? \\
+%	\hline
+%	
+%	\cellcolor{P} & Errori Ortografici & ??????? \\
+%	\cellcolor{P} & \gl{Indice Gulpease} & ??????? \\
+%	\multirow{-2}{*}{\cellcolor{P} Documenti} & Errori Concettuali & ??????? \\ & Errori di Forma & ??????? \\
+%	\hline
+%		
+%
+%	\caption{Riassunto del Resoconto delle sottoattività di verifica - Attività di Progettazione architetturale}	     	
+%	
+%\end{tabella}
 
 
 \end{document}
