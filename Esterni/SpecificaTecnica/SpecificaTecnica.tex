@@ -19,13 +19,13 @@
 \setcounter{tocdepth}{5}
 
 \def\NOME{Specifica Tecnica}
-\def\VERSIONE{1.0}
-\def\DATA{17.03.2016}
-\def\REDATTORE{?}
-\def\VERIFICATORE{?}
-\def\RESPONSABILE{?}
+\def\VERSIONE{0.1}
+\def\DATA{05.03.2016}
+\def\REDATTORE{Giacomo Beltrame \\ & Simone Boccato \\ & Michela De Bortoli \\ & Vassilikì Menarin \\ & Miki Violetto}
+\def\VERIFICATORE{Rudy Berton \\ & Filippo Tesser}
+\def\RESPONSABILE{Michela De Bortoli \\ & Filippo Tesser}
 \def\USO{Esterno}
-\def\DISTRIBUZIONE{\COMMITTENTE \\ & \CARDIN \\ & \PROPONENTE}
+\def\DISTRIBUZIONE{\AUTORE}
 
 \begin{document}
 \pagestyle{fancy}	
@@ -35,26 +35,25 @@
 \maketitle
 
 \begin{diario}
-	\recap{Prima modifica}{?}{?}{17.03.2016}{0.1}
+	\recap{Stesura della struttura del documento}{Giacomo Beltrame}{Progettista}{05.03.2016}{0.1}
 \end{diario}
 
 \newpage
 \tableofcontents
 
 \newpage
-\listoffigures
-
-\newpage
-\listoftables\label{lastromanpage}
+\listoffigures \label{lastromanpage}
 
 \newpage
 \clearpage	
 \pagenumbering{arabic}
 \rfoot{Pagina \thepage{} di \pageref*{LastPage}}
+\hypersetup{linkcolor=blue}
 
 \section{Introduzione}
 \subsection{Scopo del documento}
-Lo scopo di questo documento è quello di individuare e descrivere i requisiti necessari per lo svolgimento del progetto Quizzipedia.
+In tale documento verrà definita la progettazione ad alto livello del prodotto Quizzipedia.
+Per tale scopo vengono descritte le componenti, le classi e i design pattern utilizzati per la realizzazione del prodotto. Inoltre viene presentato il tracciamento tra le componenti e i requisiti individuati.
 
 \subsection{Scopo del prodotto}
 \SCOPO
@@ -65,28 +64,23 @@ Lo scopo di questo documento è quello di individuare e descrivere i requisiti n
 \subsection{Riferimenti}
 \subsubsection{Riferimenti normativi}
 \begin{itemize}
-\item \bold{Norme di Progetto:} \doc{Norme di Progetto v1.0}.
+\item \bold{Norme di Progetto:} \NdPdoc.
 \end{itemize}
 
 \subsubsection{Riferimenti informativi}
 \begin{itemize}
 \item \bold{Capitolato d'appalto C5:} \italics{Quizzipedia: \gl{software} per la gestione di questionari} (\href{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C5.pdf}{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C5.pdf});
 
-\item \bold{Studio di fattibilità:} \doc{Studio di Fattibilità v1.0};
+\item \bold{Glossario:} \Gldoc;
 
-\item \bold{Glossario:} \doc{Glossario v1.0};
+\item \bold{Analisi dei requisiti: } \ARdoc;
 
-\item \bold{Lezione L06:} \italics{L06: Ingegneria dei requisiti} (\href{http://www.math.unipd.it/~tullio/IS-1/2015/Dispense/L06.pdf}{http://www.math.unipd.it/~tullio/IS-1/2015/Dispense/L06.pdf});
-
-\item \bold{IEEE 830-1998} \italics{Commented IEEE 830-1998} (\href{https://www.cs.purdue.edu/homes/apm/courses/BITSC461-fall03/miller-guidelines/IEEE830-1998.html}{https://www.cs.purdue.edu/homes/apm/courses/BITSC461-fall03/miller-guidelines/IEEE830-1998.html}).
+\item \bold{INSERIRE QUI I VARI LINK A TECNOLOGIE E DESIGN PATTERN}.
 
 \end{itemize}
 
 \newpage
 
-\section{Descrizione generale}
-\subsection{Contesto d'uso del prodotto}
-Quizzipedia si pone l'obiettivo di creare un sistema di gestione di questionari su diversi argomenti, composti da diverse tipologie di domande. Gli utenti potranno sia creare e modificare i questionari, sia svolgerli e ottenere la propria valutazione.
-
+\section{Processi primari}
 
 \end{document}
