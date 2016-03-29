@@ -353,9 +353,10 @@
 \item \textbf{Attori}: Utente, Utente Autenticato.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Selezione parametri di ricerca (UC1.8.1);
 \item Conferma inizio ricerca (UC1.8.2);
-\item Visualizzazione lista risultati (UC1.8.3).
+\item Visualizzazione lista risultati (UC1.8.3);
+\item Ricerca di domande (UC1.8.4);
+\item Ricerca di quiz (UC1.8.5).
 \end{enumerate}
 \item \textbf{Estensioni}:
 \begin{itemize}
@@ -364,100 +365,6 @@
 \item \textbf{Descrizione}: l'utente può effettuare una ricerca di quiz e domande presenti nel sistema. La ricerca è personalizzabile attraverso vari parametri di ricerca.
 \item \textbf{Precondizione}: l'utente desidera effettuare una ricerca di quiz e domande.
 \item \textbf{Postcondizione}: l'utente ha effettuato la ricerca.
-\end{itemize}
-\subsubsection{UC1.8.1 Selezione parametri di ricerca}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Selezione parametri di ricerca.pdf}}
-\caption{UC1.8.1 Selezione parametri di ricerca}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Selezione solo domande (UC1.8.1.1);
-\item Selezione solo quiz (UC1.8.1.2);
-\item Selezione argomenti nella ricerca (UC1.8.1.3);
-\item Selezione livelli di difficoltà (UC1.8.1.4);
-\item Selezione parole chiave (UC1.8.1.5).
-\end{enumerate}
-\item \textbf{Descrizione}: l’utente deve poter personalizzare la ricerca attraverso diversi parametri.
-\item \textbf{Precondizione}: l’utente ha scelto di effettuare una ricerca.
-\item \textbf{Postcondizione}: l’utente ha selezionato i parametri desiderati.
-\end{itemize}
-\subsubsection{UC1.8.1.1 Selezione solo domande}
-\begin{itemize}
-\item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente seleziona/deseleziona l'opzione 'solo domande'.
-\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'solo domande', che escluderà i quiz dalla ricerca. Se l'opzione 'solo quiz' è stata selezionata in precedenza, sarà deselezionata automaticamente.
-\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
-\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'solo domande'.
-\end{itemize}
-\subsubsection{UC1.8.1.2 Selezione solo quiz}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Selezione solo quiz.pdf}}
-\caption{UC1.8.1.2 Selezione solo quiz}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Selezione quiz pubblico (UC1.8.1.2.1);
-\item Selezione quiz privato (UC1.8.1.2.2);
-\item Errore permesso di accesso a quiz privati (UC1.8.1.2.3).
-\end{enumerate}
-\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'solo quiz', che escluderà le domande dalla ricerca. Se l'opzione 'solo domande' è stata selezionata in precedenza, sarà deselezionata automaticamente.
-\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
-\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'solo quiz'.
-\end{itemize}
-\subsubsection{UC1.8.1.2.1 Selezione quiz pubblico}
-\begin{itemize}
-\item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente seleziona/deseleziona l'opzione 'quiz pubblico'.
-\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'quiz pubblico', che escluderà dalla ricerca i quiz privati.
-\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
-\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'quiz pubblico'.
-\end{itemize}
-\subsubsection{UC1.8.1.2.2 Selezione quiz privato}
-\begin{itemize}
-\item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente seleziona/deseleziona l'opzione 'quiz privato'.
-\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'quiz privato', che escluderà dalla ricerca i quiz pubblici.
-\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
-\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'quiz privato'.
-\end{itemize}
-\subsubsection{UC1.8.1.2.3 Errore permesso di accesso a quiz privati}
-\begin{itemize}
-\item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente visualizza il messagio di errore.
-\item \textbf{Descrizione}: l'utente non ha il permesso di visualizzare quiz privati.
-\item \textbf{Precondizione}: l'utente sta selezionando  quiz privati senza averne il permesso.
-\item \textbf{Postcondizione}: l'utente ha visualizzato un messaggio di errore che indica che non ha il permesso di visualizzare quiz privati.
-\end{itemize}
-\subsubsection{UC1.8.1.3 Selezione argomenti nella ricerca}
-\begin{itemize}
-\item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente seleziona/deseleziona gli argomenti.
-\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare uno o più argomenti, escludendo domande e quiz di argomenti non selezionati dalla ricerca.
-\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
-\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato gli argomenti.
-\end{itemize}
-\subsubsection{UC1.8.1.4 Selezione livelli di difficoltà}
-\begin{itemize}
-\item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente seleziona/deseleziona i livelli di difficoltà.
-\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare uno o più livelli di difficoltà, escludendo domande e quiz di livello di difficoltà non selezionato.
-\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
-\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato i livelli di difficoltà.
-\end{itemize}
-\subsubsection{UC1.8.1.5 Selezione parole chiave}
-\begin{itemize}
-\item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente seleziona/deseleziona le parole chiave.
-\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare una o più parole chiave, escludendo domande e quiz in cui le parole chiave immesse non compaiono nel titolo o nella descrizione.
-\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
-\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato le parole chiave.
 \end{itemize}
 \subsubsection{UC1.8.2 Conferma inizio ricerca}
 \begin{itemize}
@@ -474,6 +381,135 @@
 \item \textbf{Descrizione}: l'utente deve poter visualizzare la lista dei risultati prodotti dalla ricerca effettuata.
 \item \textbf{Precondizione}: l'utente ha scelto di effettuare una ricerca, selezionato eventuali parametri e confermato l'avvio della ricerca.
 \item \textbf{Postcondizione}: l'utente ha visualizzato i risultati prodotti dalla ricerca effettuata.
+\end{itemize}
+\subsubsection{UC1.8.4 Ricerca di domande}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Selezione parametri nella ricerca di domanda (UC1.8.4.1).
+\end{enumerate}
+\item \textbf{Scenario principale}: l'utente cerca delle domande.
+\item \textbf{Descrizione}: l'utente deve poter cercare domande.
+\item \textbf{Precondizione}: l'utente sta effettuando una ricerca.
+\item \textbf{Postcondizione}: l'utente ha effettuato la ricerca di domande.
+\end{itemize}
+\subsubsection{UC1.8.4.1 Selezione parametri nella ricerca di domanda}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Selezione parametri nella ricerca di domanda.pdf}}
+\caption{UC1.8.4.1 Selezione parametri nella ricerca di domanda}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Selezione argomenti nella ricerca delle domande (UC1.8.4.1.3);
+\item Selezione livelli di difficoltà nella ricerca delle domande (UC1.8.4.1.4);
+\item Selezione parole chiave nella ricerca di domande (UC1.8.4.1.5).
+\end{enumerate}
+\item \textbf{Descrizione}: l'utente deve poter personalizzare la ricerca di domande attraverso diversi parametri.
+\item \textbf{Precondizione}: l'utente ha scelto di effettuare una ricerca di domande.
+\item \textbf{Postcondizione}: l'utente ha selezionato i parametri desiderati nella ricerca di domande.
+\end{itemize}
+\subsubsection{UC1.8.4.1.3 Selezione argomenti nella ricerca delle domande}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona gli argomenti delle domande.
+\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare uno o più argomenti, escludendo domande di argomenti non selezionati dalla ricerca.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca di domande attraverso dei parametri.
+\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato gli argomenti delle domande.
+\end{itemize}
+\subsubsection{UC1.8.4.1.4 Selezione livelli di difficoltà nella ricerca delle domande}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona i livelli di difficoltà delle domande.
+\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare uno o più livelli di difficoltà, escludendo domande di livello di difficoltà non selezionato.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca di domande attraverso dei parametri.
+\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato i livelli di difficoltà delle domande.
+\end{itemize}
+\subsubsection{UC1.8.4.1.5 Selezione parole chiave nella ricerca di domande}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona le parole chiave delle domande.
+\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare una o più parole chiave, escludendo le domande in cui le parole chiave immesse non compaiono nel titolo o nella descrizione.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca delle domande attraverso dei parametri.
+\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato le parole chiave delle domande.
+\end{itemize}
+\subsubsection{UC1.8.5 Ricerca di quiz}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Errore permesso di accesso a quiz privati (UC1.8.5.3);
+\item Selezione parametri di ricerca di quiz (UC1.8.5.4).
+\end{enumerate}
+\item \textbf{Descrizione}: l'utente deve poter cercare dei quiz.
+\item \textbf{Precondizione}: l'utente sta effettuando una ricerca.
+\item \textbf{Postcondizione}: l'utente ha effettuato la ricerca di quiz.
+\end{itemize}
+\subsubsection{UC1.8.5.3 Errore permesso di accesso a quiz privati}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente visualizza il messagio di errore.
+\item \textbf{Descrizione}: l'utente non ha il permesso di visualizzare quiz privati.
+\item \textbf{Precondizione}: l'utente sta selezionando  quiz privati senza averne il permesso.
+\item \textbf{Postcondizione}: l'utente ha visualizzato un messaggio di errore che indica che non ha il permesso di visualizzare quiz privati.
+\end{itemize}
+\subsubsection{UC1.8.5.4 Selezione parametri di ricerca di quiz}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Selezione quiz pubblico (UC1.8.5.4.1);
+\item Selezione quiz privato (UC1.8.5.4.2);
+\item Selezione argomenti nella ricerca di quiz (UC1.8.5.4.3);
+\item Selezione livelli di difficoltà nella ricerca di quiz (UC1.8.5.4.4);
+\item Selezione parole chiave nella ricerca di quiz (UC1.8.5.4.5).
+\end{enumerate}
+\item \textbf{Descrizione}: l'utente deve poter personalizzare la ricerca di quiz attraverso diversi parametri.
+\item \textbf{Precondizione}: l'utente ha scelto di effettuare una ricerca di quiz.
+\item \textbf{Postcondizione}: l'utente ha selezionato i parametri desiderati nella ricerca di quiz.
+\end{itemize}
+\subsubsection{UC1.8.5.4.1 Selezione quiz pubblico}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona l'opzione 'quiz pubblico'.
+\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'quiz pubblico', che escluderà dalla ricerca i quiz privati.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
+\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'quiz pubblico'.
+\end{itemize}
+\subsubsection{UC1.8.5.4.2 Selezione quiz privato}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona l'opzione 'quiz privato'.
+\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare l'opzione 'quiz privato', che escluderà dalla ricerca i quiz pubblici.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
+\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'quiz privato'.
+\end{itemize}
+\subsubsection{UC1.8.5.4.3 Selezione argomenti nella ricerca di quiz}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona gli argomenti dei quiz.
+\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare uno o più argomenti, escludento quiz di argomenti non selezionati dalla ricerca.
+\item \textbf{Precondizione}: l'utente sta effettuando una ricerca si quiz.
+\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato gli argomenti dei quiz.
+\end{itemize}
+\subsubsection{UC1.8.5.4.4 Selezione livelli di difficoltà nella ricerca di quiz}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona i livelli di difficoltà dei quiz.
+\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare uno o più livelli di difficoltà, escludento quiz di argomenti non selezionati dalla ricerca.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca di quiz attraverso dei parametri.
+\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato i livelli di difficoltà dei quiz.
+\end{itemize}
+\subsubsection{UC1.8.5.4.5 Selezione parole chiave nella ricerca di quiz}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente seleziona/deseleziona le parole chiave dei quiz.
+\item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare una o più parole chiave, escludento quiz di argomenti non selezionati dalla ricerca.
+\item \textbf{Precondizione}: l'utente sta personalizzando la ricerca dei quiz attraverso dei parametri.
+\item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato le parole chiave dei quiz.
 \end{itemize}
 \subsubsection{UC1.9 Interruzione volontaria della registrazione}
 \begin{itemize}
