@@ -621,7 +621,7 @@
 \item Visualizzazione statistiche (UC2.6);
 \item Gestione enti (UC2.7);
 \item Gestione classe (UC2.8);
-\item Lista richieste (UC2.9);
+\item Gestione richieste (UC2.9);
 \item Gestione domande (UC2.10).
 \end{enumerate}
 \item \textbf{Descrizione}: l'utente autenticato può accedere ad aree private a seconda dei permessi di cui dispone.
@@ -723,9 +723,46 @@
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Selezione permesso pubblico (UC2.2.1.4.1);
+\item Selezione permesso privato (UC2.2.1.4.2).
+\end{enumerate}
 \item \textbf{Descrizione}: il docente deve selezionare il permesso del quiz.
 \item \textbf{Precondizione}: il docente sta creando un nuovo quiz e deve ancora selezionarne il permesso.
 \item \textbf{Postcondizione}: il docente ha selezionato il permesso del quiz.
+\end{itemize}
+\subsubsection{UC2.2.1.4.1 Selezione permesso pubblico}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente seleziona il permesso 'pubblico'.
+\item \textbf{Descrizione}: il docente deve poter selezionare il permesso 'pubblico' per il quiz.
+\item \textbf{Precondizione}: il docente sta selezionando il permesso del quiz che sta creando.
+\item \textbf{Postcondizione}: il docente ha selezionato il permesso 'pubblico'.
+\end{itemize}
+\subsubsection{UC2.2.1.4.2 Selezione permesso privato}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Selezione permesso privato.pdf}}
+\caption{UC2.2.1.4.2 Selezione permesso privato}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Selezione classi (UC2.2.1.4.2.1).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente deve poter selezionare il permesso 'privato' per il quiz.
+\item \textbf{Precondizione}: il docente sta selezionando il permesso del quiz che sta creando.
+\item \textbf{Postcondizione}: il docente ha selezionato il permesso 'privato'.
+\end{itemize}
+\subsubsection{UC2.2.1.4.2.1 Selezione classi}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente seleziona le classi a cui assegnare il quiz privato.
+\item \textbf{Descrizione}: il docente può assegnare il quiz privato a una o più classi di studenti, i cui partecipanti avranno il diritto di svolgerlo.
+\item \textbf{Precondizione}: il docente ha selezionato il permesso 'privato' per il quiz che sta creando.
+\item \textbf{Postcondizione}: il docente ha assegnato le classi a cui assegnare il quiz che sta creando.
 \end{itemize}
 \subsubsection{UC2.2.1.5 Inserimento domanda nel quiz}
 \begin{itemize}
@@ -824,8 +861,8 @@
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente seleziona le classi a cui assegnare il quiz privato.
 \item \textbf{Descrizione}: il docente può assegnare il quiz privato a una o più classi di studenti, i cui partecipanti avranno diritto di svolgerlo.
-\item \textbf{Precondizione}: il docente ha selezionato un permesso 'privato' per il quiz.
-\item \textbf{Postcondizione}: il docente ha selezionato le classi a cui assegnare il quiz.
+\item \textbf{Precondizione}: il docente ha selezionato il permesso 'privato' per il quiz che sta modificando.
+\item \textbf{Postcondizione}: il docente ha selezionato le classi a cui assegnare il quiz che sta modificando.
 \end{itemize}
 \subsubsection{UC2.2.2.2 Inserimento domanda nel quiz}
 \begin{itemize}
@@ -1715,9 +1752,8 @@
 \begin{enumerate}
 \item Inserimento nome (UC2.8.1.1);
 \item Inserimento descrizione (UC2.8.1.2);
-\item Selezione ente (UC2.8.1.3);
-\item Inserimento anno scolastico (UC2.8.1.4);
-\item Conferma creazione classe (UC2.8.1.5).
+\item Inserimento anno scolastico (UC2.8.1.3);
+\item Conferma creazione classe (UC2.8.1.4).
 \end{enumerate}
 \item \textbf{Descrizione}: il responsabile deve poter creare una classe.
 \item \textbf{Precondizione}: il responsabile ha i permessi per creare una classe ed è nella gestione classe.
@@ -1739,15 +1775,7 @@
 \item \textbf{Precondizione}: il responsabile sta creando una classe e deve ancora inserire la descrizione.
 \item \textbf{Postcondizione}: il responsabile ha inserito una breve descrizione della classe.
 \end{itemize}
-\subsubsection{UC2.8.1.3 Selezione ente}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile seleziona l'ente proprietario della classe.
-\item \textbf{Descrizione}: il responsabile deve selezionare l'ente che sarà il proprietario della classe.
-\item \textbf{Precondizione}: il responsabile sta creando una classe e deve ancora selezionare l'ente.
-\item \textbf{Postcondizione}: il responsabile ha selezionato l'ente proprietario della classe.
-\end{itemize}
-\subsubsection{UC2.8.1.4 Inserimento anno scolastico}
+\subsubsection{UC2.8.1.3 Inserimento anno scolastico}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}: il responsabile inserisce l'anno scolastico di creazione della classe.
@@ -1755,7 +1783,7 @@
 \item \textbf{Precondizione}: il responsabile sta creando una classe e deve ancora inserire l'anno scolastico.
 \item \textbf{Postcondizione}: il responsabile ha inserito l'anno scolastico della classe.
 \end{itemize}
-\subsubsection{UC2.8.1.5 Conferma creazione classe}
+\subsubsection{UC2.8.1.4 Conferma creazione classe}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}: il responsabile conferma i dati per la creazione della classe.
@@ -1773,25 +1801,14 @@
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Modifica nome (UC2.8.2.1);
-\item Modifica descrizione (UC2.8.2.2);
-\item Modifica ente (UC2.8.2.3);
-\item Modifica anno scolastico (UC2.8.2.4);
-\item Conferma modifica classe (UC2.8.2.5).
+\item Modifica descrizione (UC2.8.2.1);
+\item Conferma modifica classe (UC2.8.2.2).
 \end{enumerate}
 \item \textbf{Descrizione}: il responsabile deve poter modificare i dati della classe.
 \item \textbf{Precondizione}: il responsabile ha i permessi per modificare una classe.
 \item \textbf{Postcondizione}: il responsabile ha effettuato le modifiche sulla classe.
 \end{itemize}
-\subsubsection{UC2.8.2.1 Modifica nome}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile modifica il nome della classe.
-\item \textbf{Descrizione}: il responsabile deve poter modificare il nome della classe.
-\item \textbf{Precondizione}: il responsabile sta modificando la classe.
-\item \textbf{Postcondizione}: il responsabile ha modificato il nome della classe.
-\end{itemize}
-\subsubsection{UC2.8.2.2 Modifica descrizione}
+\subsubsection{UC2.8.2.1 Modifica descrizione}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}: il responsabile modifica la descrizione della classe.
@@ -1799,23 +1816,7 @@
 \item \textbf{Precondizione}: il responsabile sta modificando la classe.
 \item \textbf{Postcondizione}: il responsabile ha modificato la descrizione della classe.
 \end{itemize}
-\subsubsection{UC2.8.2.3 Modifica ente}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile modifica l'ente della classe.
-\item \textbf{Descrizione}: il responsabile deve poter modificare l'ente della classe a cui è associata.
-\item \textbf{Precondizione}: il responsabile sta modificando la classe.
-\item \textbf{Postcondizione}: il responsabile ha modificato l'ente della classe.
-\end{itemize}
-\subsubsection{UC2.8.2.4 Modifica anno scolastico}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile modifica l'anno scolastico di creazione della classe.
-\item \textbf{Descrizione}: il responsabile deve poter modificare l'anno scolastico della creazione della classe.
-\item \textbf{Precondizione}: il responsabile sta modificando la classe.
-\item \textbf{Postcondizione}: il responsabile ha modificato l'anno scolastico della classe.
-\end{itemize}
-\subsubsection{UC2.8.2.5 Conferma modifica classe}
+\subsubsection{UC2.8.2.2 Conferma modifica classe}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}: il responsabile conferma la modifica della classe.
@@ -1884,19 +1885,19 @@
 \end{itemize}
 \subsubsection{UC2.8.6.1 Inserimento studente nella classe}
 \begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile inserisce uno studente nella classe.
-\item \textbf{Descrizione}: il responsabile può inserire uno studente nella classe.
-\item \textbf{Precondizione}: il responsabile ha deciso di effettuare la manutenzione della classe.
-\item \textbf{Postcondizione}: il responsabile ha inserito lo studente nella classe.
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente inserisce uno studente nella classe.
+\item \textbf{Descrizione}: il docente può inserire uno studente nella classe.
+\item \textbf{Precondizione}: il docente ha deciso di effettuare la manutenzione della classe.
+\item \textbf{Postcondizione}: il docente ha inserito lo studente nella classe.
 \end{itemize}
 \subsubsection{UC2.8.6.2 Rimozione studente dalla classe}
 \begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile rimuove uno studente dalla classe.
-\item \textbf{Descrizione}: il responsabile può rimuovere uno studente dalla classe.
-\item \textbf{Precondizione}: il responsabile ha deciso di effettuare la manutenzione della classe.
-\item \textbf{Postcondizione}: il responsabile ha rimosso lo studente dalla classe.
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente rimuove uno studente dalla classe.
+\item \textbf{Descrizione}: il docente può rimuovere uno studente dalla classe.
+\item \textbf{Precondizione}: il docente ha deciso di effettuare la manutenzione della classe.
+\item \textbf{Postcondizione}: il docente ha rimosso lo studente dalla classe.
 \end{itemize}
 \subsubsection{UC2.8.6.3 Inserimento docente nella classe}
 \begin{itemize}
@@ -1914,88 +1915,156 @@
 \item \textbf{Precondizione}: il responsabile ha deciso di effettuare la modifica della classe.
 \item \textbf{Postcondizione}: il responsabile ha rimosso il docente dalla classe.
 \end{itemize}
-\subsubsection{UC2.9 Lista richieste}
+\subsubsection{UC2.9 Gestione richieste}
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Lista richieste.pdf}}
-\caption{UC2.9 Lista richieste}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Gestione richieste.pdf}}
+\caption{UC2.9 Gestione richieste}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Docente, Responsabile.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Richieste di inserimento di docenti in una classe (UC2.9.1);
+\item Richieste ruolo di docente (UC2.9.2);
+\item Richieste di inserimento di studenti in una classe (UC2.9.3);
+\item Richieste ruolo di studente (UC2.9.4).
+\end{enumerate}
+\item \textbf{Descrizione}: il responsabile gestisce le richieste inviate dai docenti, il docente gestisce le richieste inviate dagli studenti.
+\item \textbf{Precondizione}: il responsabile e il docente sono autenticati.
+\item \textbf{Postcondizione}: il responsabile e il docente hanno gestito le richieste presenti.
+\end{itemize}
+\subsubsection{UC2.9.1 Richieste di inserimento di docenti in una classe}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Richieste di inserimento di docenti in una classe.pdf}}
+\caption{UC2.9.1 Richieste di inserimento di docenti in una classe}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Richieste inserimento nella classe (UC2.9.1);
-\item Richieste ruoli (UC2.9.2).
+\item Accettazione della richiesta di inserimento dei docenti (UC2.9.1.1);
+\item Annullamento della richiesta di inserimento dei docenti (UC2.9.1.2).
 \end{enumerate}
-\item \textbf{Descrizione}: il responsabile gestisce le richieste inviate da studenti, docenti ed utenti senza ruolo per accettare o annullare il ruolo richiesto o per accettare e annullare l’inserimento dello studente o docente in una determinata classe.
-\item \textbf{Precondizione}: il responsabile ha i permessi per la gestione delle richieste.
-\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato alcune richieste che ha ricevuto.
+\item \textbf{Descrizione}: il responsabile accetta o rifiuta le richieste di inserimento in una classe appartenente al proprio ente ricevute dai docenti.
+\item \textbf{Precondizione}: il responsabile visualizza la lista di richieste di inserimento nella classe da parte dei docenti.
+\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato le richieste che ha ricevuto dai docenti.
 \end{itemize}
-\subsubsection{UC2.9.1 Richieste inserimento nella classe}
+\subsubsection{UC2.9.1.1 Accettazione della richiesta di inserimento dei docenti}
+\begin{itemize}
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile accetta le richieste di inserimento nella classe da parte del docente.
+\item \textbf{Descrizione}: il responsabile accetta le richieste di inserimento nella classe ricevute dai docenti.
+\item \textbf{Precondizione}: il responsabile visualizza lista richieste di inserimento nella classe da parte dei docenti.
+\item \textbf{Postcondizione}: il responsabile ha accettato le richieste di inserimento nella classe che gli sono pervenute dai docenti.
+\end{itemize}
+\subsubsection{UC2.9.1.2 Annullamento della richiesta di inserimento dei docenti}
+\begin{itemize}
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile rifiuta le richieste di inserimento nella classe da parte dei docenti.
+\item \textbf{Descrizione}: il responsabile rifiuta le richieste di inserimento nella classe ricevute dai docenti.
+\item \textbf{Precondizione}: il responsabile visualizza lista richieste di inserimento nella classe da parte dei docenti.
+\item \textbf{Postcondizione}: il responsabile ha rifiutato le richieste di inserimento nella classe che gli sono pervenute dai docenti.
+\end{itemize}
+\subsubsection{UC2.9.2 Richieste ruolo di docente}
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Richieste inserimento nella classe.pdf}}
-\caption{UC2.9.1 Richieste inserimento nella classe}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Richieste ruolo di docente.pdf}}
+\caption{UC2.9.2 Richieste ruolo di docente}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Accettazione della richiesta di inserimento (UC2.9.1.1);
-\item Annullamento della richiesta di inserimento (UC2.9.1.2).
+\item Accettazione del ruolo di docente (UC2.9.2.1);
+\item Annullamento richiesta ruolo di docente (UC2.9.2.2).
 \end{enumerate}
-\item \textbf{Descrizione}: il responsabile accetta o rifiuta le richieste di inserimento nella classe ricevute dagli studenti e docenti.
-\item \textbf{Precondizione}: il responsabile visualizza la lista di richieste di inserimento nella classe.
-\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato le richieste che ha ricevuto.
-\end{itemize}
-\subsubsection{UC2.9.1.1 Accettazione della richiesta di inserimento}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile accetta le richieste di inserimento nella classe.
-\item \textbf{Descrizione}: il responsabile accetta le richieste di inserimento nella classe ricevute dagli studenti e docenti.
-\item \textbf{Precondizione}: il responsabile visualizza lista richieste di inserimento nella classe.
-\item \textbf{Postcondizione}: il responsabile ha accettato le richieste di inserimento nella classe che gli sono pervenute dagli studenti e docenti.
-\end{itemize}
-\subsubsection{UC2.9.1.2 Annullamento della richiesta di inserimento}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile rifiuta le richieste di inserimento nella classe.
-\item \textbf{Descrizione}: il responsabile rifiuta le richieste di inserimento nella classe ricevute dagli studenti e docenti.
-\item \textbf{Precondizione}: il responsabile visualizza lista richieste di inserimento nella classe.
-\item \textbf{Postcondizione}: il responsabile ha rifiutato le richieste di inserimento nella classe che gli sono pervenute dagli studenti e docenti.
-\end{itemize}
-\subsubsection{UC2.9.2 Richieste ruoli}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Richieste ruoli.pdf}}
-\caption{UC2.9.2 Richieste ruoli}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Accettazione del ruolo (UC2.9.2.1);
-\item Annullamento richiesta ruolo (UC2.9.2.2).
-\end{enumerate}
-\item \textbf{Descrizione}: il responsabile accetta o rifiuta le richieste  del ruolo che vogliono assumere gli utenti senza ruolo.
+\item \textbf{Descrizione}: il responsabile accetta o rifiuta le richieste del ruolo di docente che vogliono assumere gli utenti senza ruolo.
 \item \textbf{Precondizione}: il responsabile ha i permessi per la gestione della lista richieste.
-\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato le richieste dei ruoli che gli sono pervenute dagli utenti senza ruolo.
+\item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato le richieste del ruolo di docente che gli sono pervenute dagli utenti senza ruolo.
 \end{itemize}
-\subsubsection{UC2.9.2.1 Accettazione del ruolo}
+\subsubsection{UC2.9.2.1 Accettazione del ruolo di docente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile accetta le richieste di ruolo.
-\item \textbf{Descrizione}: il responsabile accetta  le richieste del ruolo che vogliono assumere gli utenti senza ruolo.
-\item \textbf{Precondizione}: il responsabile visualizza la lista richieste ruoli.
-\item \textbf{Postcondizione}: il responsabile ha accettato le richieste del ruolo che gli sono pervenute dagli utenti senza ruolo.
+\item \textbf{Scenario principale}: il responsabile accetta le richieste di ruolo di docente.
+\item \textbf{Descrizione}: il responsabile accetta  le richieste del ruolo di docente.
+\item \textbf{Precondizione}: il responsabile visualizza la lista di richieste del ruolo di docente.
+\item \textbf{Postcondizione}: il responsabile ha accettato le richieste del ruolo di docente.
 \end{itemize}
-\subsubsection{UC2.9.2.2 Annullamento richiesta ruolo}
+\subsubsection{UC2.9.2.2 Annullamento richiesta ruolo di docente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile rifiuta le richieste di ruolo.
-\item \textbf{Descrizione}: il responsabile rifiuta le richieste  del ruolo che vogliono assumere gli utenti senza ruolo.
-\item \textbf{Precondizione}: il responsabile visualizza la lista richieste ruoli.
-\item \textbf{Postcondizione}: il responsabile ha rifiutato le richieste del ruolo che gli sono pervenute dagli utenti senza ruolo.
+\item \textbf{Scenario principale}: il responsabile rifiuta le richieste di ruolo di docente.
+\item \textbf{Descrizione}: il responsabile rifiuta le richieste del ruolo di docente.
+\item \textbf{Precondizione}: il responsabile visualizza la lista di richieste del ruolo di docente.
+\item \textbf{Postcondizione}: il responsabile ha rifiutato le richieste del ruolo di docente.
+\end{itemize}
+\subsubsection{UC2.9.3 Richieste di inserimento di studenti in una classe}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Richieste di inserimento di studenti in una classe.pdf}}
+\caption{UC2.9.3 Richieste di inserimento di studenti in una classe}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Accettazione della richiesta di inserimento degli studenti (UC2.9.3.1);
+\item Annullamento della richiesta di inserimento degli studenti (UC2.9.3.2).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente può accettare o rifiutare le richieste di inserimento in una classe di cui è insegnante ricevute dagli studenti.
+\item \textbf{Precondizione}: il docente visualizza la lista delle richieste di inserimento in una classe effettuate dagli studenti.
+\item \textbf{Postcondizione}: il docente gestisce la richiesta di inserimento nella classe.
+\end{itemize}
+\subsubsection{UC2.9.3.1 Accettazione della richiesta di inserimento degli studenti}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente accetta le richieste di inserimento nella classe da parte degli studenti.
+\item \textbf{Descrizione}: il docente accetta le richieste di inserimento nella classe ricevute dagli studenti.
+\item \textbf{Precondizione}: il docente sta gestendo le richieste di inserimento nelle classi.
+\item \textbf{Postcondizione}: il docente ha accettato le richieste di inserimento nella classe che gli sono pervenute dagli studenti.
+\end{itemize}
+\subsubsection{UC2.9.3.2 Annullamento della richiesta di inserimento degli studenti}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente rifiuta le richieste di inserimento nella classe.
+\item \textbf{Descrizione}: il docente rifiuta le richieste di inserimento nella classe ricevute dagli studenti.
+\item \textbf{Precondizione}: il docente sta gestendo le richieste di inserimento nelle classi.
+\item \textbf{Postcondizione}: il docente ha rifiutato le richieste di inserimento nelle classi che gli sono pervenute dagli studenti.
+\end{itemize}
+\subsubsection{UC2.9.4 Richieste ruolo di studente}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Richieste ruolo di studente.pdf}}
+\caption{UC2.9.4 Richieste ruolo di studente}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Accettazione del ruolo di studente (UC2.9.4.1);
+\item Annullamento richiesta ruolo di studente (UC2.9.4.2).
+\end{enumerate}
+\item \textbf{Descrizione}: il docente accetta o rifiuta le richieste del ruolo di studente pervenute dagli utenti senza ruolo.
+\item \textbf{Precondizione}: il docente sta gestendo le richieste.
+\item \textbf{Postcondizione}: il docente ha gestito le richieste di ruolo di studente che gli sono pervenute dagli utenti senza ruolo.
+\end{itemize}
+\subsubsection{UC2.9.4.1 Accettazione del ruolo di studente}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente rifiuta le richieste di ruolo di studente.
+\item \textbf{Descrizione}: il docente accetta le richieste del ruolo di studente.
+\item \textbf{Precondizione}: il docente sta gestendo le richieste di ruolo di studente.
+\item \textbf{Postcondizione}: il docente ha accettato le richieste di ruolo di studente.
+\end{itemize}
+\subsubsection{UC2.9.4.2 Annullamento richiesta ruolo di studente}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente rifiuta le richieste di ruolo di studente.
+\item \textbf{Descrizione}: il docente rifiuta le richieste di ruolo di studente.
+\item \textbf{Precondizione}: il docente sta gestendo le richieste di ruolo di studente.
+\item \textbf{Postcondizione}: il docente ha rifiutato le richieste di ruolo di studente.
 \end{itemize}
 \subsubsection{UC2.10 Gestione domande}
 \begin{itemize}
