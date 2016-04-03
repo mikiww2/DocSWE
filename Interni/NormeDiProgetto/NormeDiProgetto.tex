@@ -129,7 +129,15 @@ Terminata la stesura dello \doc{Studio di Fattibilità} è compito degli \italic
 Per tale scopo il \gl{team} ha sviluppato una piattaforma \gl{web}-based con cui elencare i requisiti e le loro dipendenze: \gl{Tracker}.
 
 \myparagraph{Specifica Tecnica}
-Questo documento verrà redatto dai \italics{Progettisti} e ha il compito di descrivere l'architettura del prodotto.
+Questo documento verrà redatto dai \italics{Progettisti} e ha il compito di descrivere l'architettura del prodotto. Inoltre saranno progettati opportuni test di integrazione atti a individuare i problemi che si verificano quando due unità si combinano.
+I seguenti diagrammi UML devono essere realizzati:
+\begin{itemize}
+	\item diagrammi delle classi;
+	\item diagrammi dei package;
+	\item diagrammi di attività;
+	\item diagrammi di sequenza.
+\end{itemize}
+Infine devono essere descritti i vari design pattern che verranno utilizzati e il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto.
 
 \subsubsection{Norme}
 
@@ -486,6 +494,28 @@ L'analisi statica è un processo di verifica che consente di trovare le anomalie
 	\item[\gl{Walkthrough}:] l'analisi \gl{walkthrough} viene utilizzata quando non si ha una lista che elenca le anomalie riscontrate in precedenza durante le attività di verifica, chiamata lista di controllo; questa analisi consiste nell'ispezione dell'intero file in cerca di violazioni delle norme e errori.
 	\item[\gl{Inspection}:] l'analisi \gl{inspection} viene utilizzata quando si ha una lista di controllo e permette di fare una ricerca mirata degli errori e delle violazioni delle norme nel codice o nel documento.
 \end{description}
+
+\mysubparagraph{Analisi dinamica}
+L'analisi dinamica può essere svolta solamente sulle componenti software ed è utile a evidenziare anomalie presenti nel codice. Vengono eseguiti dei test su parti di sistema per verificare che ognuna di esse produca il risultato desiderato. Prima di eseguire un qualsiasi test è necessario conoscere la precondizione e postcondizione del sistema per poterne decretare l'esito.
+
+\myparagraph{Test}
+Segue un elenco dei tipi di test che vengono effettuati.
+
+\mysubparagraph{Test di unità}
+Sono test atti a verificare che ogni singola unità di prodotto funzioni nel modo corretto. In questo tipo di test ogni componente del sistema viene verificata isolata dal resto del sistema.
+Il codice identificativo dei test di unità è: \centra{TU[codice univoco]}
+
+\mysubparagraph{Test di integrazione}
+I test di integrazione rappresentano l'estensione logica del test di unità. Il tipo più semplice di test di integrazione consiste nella combinazione di due unità già sottoposte a test in un solo componente e nel test dell'interfaccia presente tra le due. In uno scenario realistico più unità vengono combinate in componenti che, a loro volta, vengono aggregate in parti più grandi del sistema. Alla fine, tutti i moduli che compongono un processo vengono sottoposti al test contemporaneamente.
+Il codice identificativo dei test di integrazione è: \centra{TI[codice univoco]}
+
+\mysubparagraph{Test di sistema}
+Sono test che vengono eseguiti quando si pensa che il prodotto sia giunto a una versione definitiva. In sostanza si controlla che il sistema soddisfi tutti i requisiti.
+Il codice identificativo dei test di sistema è: \centra{TS[tipo requisito][codice requisito]}
+
+\mysubparagraph{Test di validazione}
+Questo tipo di test viene svolto durante la fase di collaudo antecedente il rilascio sotto supervisione del Proponente. Si controlla che il sistema soddisfi almeno tutti i requisiti obbligatori. Se l'esito del test è positivo viene consentito il rilascio del prodotto.
+Il codice identificativo per tale tipo di test è: \centra{TV[tipo requisito][codice requisito]}
 
 \subsubsection{Procedure}
 
