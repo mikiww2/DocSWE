@@ -448,7 +448,7 @@
 \item \textbf{Scenario principale}: il docente visualizza la lista dei risultati prodotti dalla ricerca di domande.
 \item \textbf{Descrizione}: il docente deve poter visualizzare la lista dei risultati prodotti dalla ricerca di domande effettuata.
 \item \textbf{Precondizione}: il docente ha scelto di effettuare una ricerca di domande, selezionato eventuali parametri e confermato l'avvio della ricerca.
-\item \textbf{Postcondizione}: il docente ha visualizzato i risultati prodotti dalla ricerca di domandeeffettuata.
+\item \textbf{Postcondizione}: il docente ha visualizzato i risultati prodotti dalla ricerca di domande effettuata.
 \end{itemize}
 \subsubsection{UC1.8.2 Ricerca di quiz}
 \begin{figure}[H]
@@ -460,42 +460,35 @@
 \item \textbf{Attori}: Utente, Utente Autenticato.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Errore permesso di accesso a quiz privati (UC1.8.2.1);
-\item Selezione parametri di ricerca quiz (UC1.8.2.2).
+\item Selezione parametri di ricerca quiz (UC1.8.2.1);
+\item Conferma inizio ricerca quiz (UC1.8.2.2);
+\item Visualizzazione risultati ricerca quiz (UC1.8.2.3).
 \end{enumerate}
 \item \textbf{Descrizione}: l'utente deve poter cercare dei quiz.
 \item \textbf{Precondizione}: l'utente sta effettuando una ricerca.
 \item \textbf{Postcondizione}: l'utente ha effettuato la ricerca di quiz.
 \end{itemize}
-\subsubsection{UC1.8.2.1 Errore permesso di accesso a quiz privati}
-\begin{itemize}
-\item \textbf{Attori}: Utente, Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente visualizza il messagio di errore.
-\item \textbf{Descrizione}: l'utente non ha il permesso di visualizzare quiz privati.
-\item \textbf{Precondizione}: l'utente sta selezionando  quiz privati senza averne il permesso.
-\item \textbf{Postcondizione}: l'utente ha visualizzato un messaggio di errore che indica che non ha il permesso di visualizzare quiz privati.
-\end{itemize}
-\subsubsection{UC1.8.2.2 Selezione parametri di ricerca quiz}
+\subsubsection{UC1.8.2.1 Selezione parametri di ricerca quiz}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Selezione parametri di ricerca quiz.pdf}}
-\caption{UC1.8.2.2 Selezione parametri di ricerca quiz}
+\caption{UC1.8.2.1 Selezione parametri di ricerca quiz}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Selezione quiz pubblici (UC1.8.2.2.1);
-\item Selezione quiz privati (UC1.8.2.2.2);
-\item Selezione argomenti nella ricerca di quiz (UC1.8.2.2.3);
-\item Selezione livelli di difficoltà nella ricerca di quiz (UC1.8.2.2.4);
-\item Selezione parole chiave nella ricerca di quiz (UC1.8.2.2.5).
+\item Selezione quiz pubblici (UC1.8.2.1.1);
+\item Selezione quiz privati (UC1.8.2.1.2);
+\item Selezione argomenti nella ricerca di quiz (UC1.8.2.1.3);
+\item Selezione livelli di difficoltà nella ricerca di quiz (UC1.8.2.1.4);
+\item Selezione parole chiave nella ricerca di quiz (UC1.8.2.1.5).
 \end{enumerate}
 \item \textbf{Descrizione}: l'utente deve poter personalizzare la ricerca di quiz attraverso diversi parametri.
 \item \textbf{Precondizione}: l'utente ha scelto di effettuare una ricerca di quiz.
 \item \textbf{Postcondizione}: l'utente ha selezionato i parametri desiderati nella ricerca di quiz.
 \end{itemize}
-\subsubsection{UC1.8.2.2.1 Selezione quiz pubblici}
+\subsubsection{UC1.8.2.1.1 Selezione quiz pubblici}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente seleziona/deseleziona l'opzione 'quiz pubblico'.
@@ -503,28 +496,28 @@
 \item \textbf{Precondizione}: l'utente sta personalizzando la ricerca attraverso dei parametri.
 \item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato il parametro 'quiz pubblico'.
 \end{itemize}
-\subsubsection{UC1.8.2.2.2 Selezione quiz privati}
+\subsubsection{UC1.8.2.1.2 Selezione quiz privati}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Selezione quiz privati.pdf}}
-\caption{UC1.8.2.2.2 Selezione quiz privati}
+\caption{UC1.8.2.1.2 Selezione quiz privati}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Studente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Selezione classe nella ricerca di quiz (UC1.8.2.2.2.1).
+\item Selezione classe nella ricerca di quiz (UC1.8.2.1.2.1).
 \end{enumerate}
 \item \textbf{Scenario principale}: lo studente seleziona/deseleziona l'opzione 'quiz privato'.
 \item \textbf{Descrizione}: lo studente deve poter selezionare/deselezionare l'opzione 'quiz privato', che escluderà dalla ricerca i quiz pubblici.
 \item \textbf{Precondizione}: lo studente  sta personalizzando la ricerca attraverso dei parametri.
 \item \textbf{Postcondizione}: lo studente  ha selezionato/deselezionato il parametro 'quiz privato'.
 \end{itemize}
-\subsubsection{UC1.8.2.2.2.1 Selezione classe nella ricerca di quiz}
+\subsubsection{UC1.8.2.1.2.1 Selezione classe nella ricerca di quiz}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Selezione classe nella ricerca di quiz.pdf}}
-\caption{UC1.8.2.2.2.1 Selezione classe nella ricerca di quiz}
+\caption{UC1.8.2.1.2.1 Selezione classe nella ricerca di quiz}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Studente.
@@ -532,7 +525,7 @@
 \item \textbf{Precondizione}: lo studente ha selezionato 'quiz privati' come parametro della sua ricerca.
 \item \textbf{Postcondizione}: lo studente ha selezionato/deselezionato la classe come parametro della sua ricerca di quiz.
 \end{itemize}
-\subsubsection{UC1.8.2.2.3 Selezione argomenti nella ricerca di quiz}
+\subsubsection{UC1.8.2.1.3 Selezione argomenti nella ricerca di quiz}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente seleziona/deseleziona gli argomenti dei quiz.
@@ -540,7 +533,7 @@
 \item \textbf{Precondizione}: l'utente sta effettuando una ricerca si quiz.
 \item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato gli argomenti dei quiz.
 \end{itemize}
-\subsubsection{UC1.8.2.2.4 Selezione livelli di difficoltà nella ricerca di quiz}
+\subsubsection{UC1.8.2.1.4 Selezione livelli di difficoltà nella ricerca di quiz}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente seleziona/deseleziona i livelli di difficoltà dei quiz.
@@ -548,13 +541,29 @@
 \item \textbf{Precondizione}: l'utente sta personalizzando la ricerca di quiz attraverso dei parametri.
 \item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato i livelli di difficoltà dei quiz.
 \end{itemize}
-\subsubsection{UC1.8.2.2.5 Selezione parole chiave nella ricerca di quiz}
+\subsubsection{UC1.8.2.1.5 Selezione parole chiave nella ricerca di quiz}
 \begin{itemize}
 \item \textbf{Attori}: Utente, Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente seleziona/deseleziona le parole chiave dei quiz.
 \item \textbf{Descrizione}: l'utente deve poter selezionare/deselezionare una o più parole chiave, escludento quiz di argomenti non selezionati dalla ricerca.
 \item \textbf{Precondizione}: l'utente sta personalizzando la ricerca dei quiz attraverso dei parametri.
 \item \textbf{Postcondizione}: l'utente ha selezionato/deselezionato le parole chiave dei quiz.
+\end{itemize}
+\subsubsection{UC1.8.2.2 Conferma inizio ricerca quiz}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente conferma l'inizio della ricerca di quiz.
+\item \textbf{Descrizione}: l'utente deve poter confermare l'inizio della ricerca di  quiz. Se sono stati inseriti dei parametri, questi dovranno essere tenuti in considerazione.
+\item \textbf{Precondizione}: l'utente ha scelto di effettuare una ricerca di quiz e selezionato eventuali parametri.
+\item \textbf{Postcondizione}: l'utente ha confermato l'inizio della ricerca dei quiz.
+\end{itemize}
+\subsubsection{UC1.8.2.3 Visualizzazione risultati ricerca quiz}
+\begin{itemize}
+\item \textbf{Attori}: Utente, Utente Autenticato.
+\item \textbf{Scenario principale}: l'utente visualizza la lista dei risultati prodotti dalla ricerca di quiz.
+\item \textbf{Descrizione}: l'utente deve poter visualizzare la lista dei risultati prodotti dalla ricerca di quiz effettuata.
+\item \textbf{Precondizione}: l'utente ha scelto di effettuare una ricerca di quiz, selezionato eventuali parametri e confermato l'avvio della ricerca.
+\item \textbf{Postcondizione}: l'utente ha visualizzato i risultati prodotti dalla ricerca di quiz effettuata.
 \end{itemize}
 \subsubsection{UC1.9 Interruzione volontaria della registrazione}
 \begin{itemize}
