@@ -661,7 +661,8 @@
 \item Selezione permesso (UC2.2.1.4);
 \item Inserimento domanda nel quiz (UC2.2.1.5);
 \item Rimozione domanda dal quiz (UC2.2.1.6);
-\item Conferma creazione quiz (UC2.2.1.7).
+\item Conferma creazione quiz (UC2.2.1.7);
+\item Inserimento parole chiave (UC2.2.1.8).
 \end{enumerate}
 \item \textbf{Inclusioni}:
 \begin{itemize}
@@ -687,10 +688,6 @@
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente deleziona l'argomento del quiz.
-\item \textbf{Estensioni}:
-\begin{itemize}
-\item Creazione argomento (UC2.3.1).
-\end{itemize}
 \item \textbf{Descrizione}: il docente deve poter selezionare l'argomento del quiz da una lista di argomenti, o creare un nuovo argomento se è mancante.
 \item \textbf{Precondizione}: il docente sta creando un nuovo quiz e deve selezionare l'argomento.
 \item \textbf{Postcondizione}: il docente ha selezionato l'argomento del quiz.
@@ -776,6 +773,14 @@
 \item \textbf{Precondizione}: il docente sta creando un nuovo quiz e deve ancora confermare la sua creazione.
 \item \textbf{Postcondizione}: il docente ha confermato la creazione del quiz.
 \end{itemize}
+\subsubsection{UC2.2.1.8 Inserimento parole chiave}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente specifica le parole chiave del quiz.
+\item \textbf{Descrizione}: il docente deve poter specificare le parole chiave del quiz durante la sua creazione.
+\item \textbf{Precondizione}: il docente sta creando un quiz.
+\item \textbf{Postcondizione}: il docente ha specificato le parole chiave del quiz.
+\end{itemize}
 \subsubsection{UC2.2.2 Modifica quiz}
 \begin{figure}[H]
 \centering
@@ -792,7 +797,8 @@
 \item Modifica titolo del quiz (UC2.2.2.4);
 \item Modifica argomento (UC2.2.2.5);
 \item Modifica descrizione (UC2.2.2.6);
-\item Conferma modifica quiz (UC2.2.2.7).
+\item Conferma modifica quiz (UC2.2.2.7);
+\item Modifica parole chiave (UC2.2.2.8).
 \end{enumerate}
 \item \textbf{Estensioni}:
 \begin{itemize}
@@ -909,6 +915,14 @@
 \item \textbf{Precondizione}: il docente sta modificando un quiz e deve ancora confermare la sua modifica.
 \item \textbf{Postcondizione}: il docente ha confermato la modifica del quiz.
 \end{itemize}
+\subsubsection{UC2.2.2.8 Modifica parole chiave}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica le parole chiave del quiz.
+\item \textbf{Descrizione}: il docente deve poter modificare le parole chiave del quiz durante la sua modifica.
+\item \textbf{Precondizione}: il docente sta modificando le parole chiave del quiz.
+\item \textbf{Postcondizione}: il docente ha modificato le parole chiave del quiz.
+\end{itemize}
 \subsubsection{UC2.2.3 Errore durante la modifica del quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
@@ -985,8 +999,7 @@
 \item \textbf{Scenario principale}:
 \begin{enumerate}
 \item Creazione argomento (UC2.3.1);
-\item Modifica argomento (UC2.3.2);
-\item Rimozione argomento (UC2.3.3).
+\item Rimozione argomento (UC2.3.2).
 \end{enumerate}
 \item \textbf{Descrizione}: il responsabile  deve poter gestire gli argomenti di quiz e domande, in particolare può inserire nuovi argomenti e eliminare argomenti esistenti.
 \item \textbf{Precondizione}: il responsabile è autenticato e desidera effettuare operazioni sugli argomenti.
@@ -999,19 +1012,19 @@
 \caption{UC2.3.1 Creazione argomento}
 \end{figure}
 \begin{itemize}
-\item \textbf{Attori}: Docente.
+\item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
 \item Inserimento nome argomento (UC2.3.1.1);
 \item Conferma creazione argomento (UC2.3.1.2).
 \end{enumerate}
-\item \textbf{Descrizione}: il docente deve poter creare un nuovo argomento.
-\item \textbf{Precondizione}: il docente è autenticato e vuole creare un nuovo argomento.
-\item \textbf{Postcondizione}: il docente ha creato il nuovo argomento.
+\item \textbf{Descrizione}: il responsabile deve poter creare un nuovo argomento.
+\item \textbf{Precondizione}: il responsabile è autenticato e vuole creare un nuovo argomento.
+\item \textbf{Postcondizione}: il responsabile ha creato il nuovo argomento.
 \end{itemize}
 \subsubsection{UC2.3.1.1 Inserimento nome argomento}
 \begin{itemize}
-\item \textbf{Attori}: Docente.
+\item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}: il docente inserisce il nome dell'argomento.
 \item \textbf{Descrizione}: il docente deve poter inserire il nome dell'argomento.
 \item \textbf{Precondizione}: il docente sta creando un nuovo argomento e deve ancora inserire il nome.
@@ -1019,68 +1032,35 @@
 \end{itemize}
 \subsubsection{UC2.3.1.2 Conferma creazione argomento}
 \begin{itemize}
-\item \textbf{Attori}: Docente.
+\item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}: il docente conferma la creazione dell'argomento.
 \item \textbf{Descrizione}: il docente deve poter confermare la creazione dell'argomento.
 \item \textbf{Precondizione}: il docente ha inserito un nuovo argomento e deve ancora confermare.
 \item \textbf{Postcondizione}: il docente ha confermato il nuovo argomento.
 \end{itemize}
-\subsubsection{UC2.3.2 Modifica argomento}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica argomento.pdf}}
-\caption{UC2.3.2 Modifica argomento}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Modifica nome argomento (UC2.3.2.1);
-\item Conferma modifica argomento (UC2.3.2.2).
-\end{enumerate}
-\item \textbf{Descrizione}: il docente deve poter modificare un argomento.
-\item \textbf{Precondizione}: il docente vuole modificare un argomento.
-\item \textbf{Postcondizione}: il docente ha modificato un argomento .
-\end{itemize}
-\subsubsection{UC2.3.2.1 Modifica nome argomento}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente modifica il nome dell'argomento.
-\item \textbf{Descrizione}: il docente deve poter modificare il nome dell'argomento.
-\item \textbf{Precondizione}: il docente è autenticato e sta gestendo un argomento.
-\item \textbf{Postcondizione}: il docente ha modificato il nome di un argomento.
-\end{itemize}
-\subsubsection{UC2.3.2.2 Conferma modifica argomento}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente conferma la modifica dell'argomento.
-\item \textbf{Descrizione}: il docente deve poter confermare la modifica dell'argomento.
-\item \textbf{Precondizione}: il docente ha modificato un argomento e deve confermare la modifica.
-\item \textbf{Postcondizione}: il docente ha confermato la modifica.
-\end{itemize}
-\subsubsection{UC2.3.3 Rimozione argomento}
+\subsubsection{UC2.3.2 Rimozione argomento}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Rimozione argomento.pdf}}
-\caption{UC2.3.3 Rimozione argomento}
+\caption{UC2.3.2 Rimozione argomento}
 \end{figure}
 \begin{itemize}
-\item \textbf{Attori}: Docente.
+\item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Conferma rimozione argomento (UC2.3.3.1).
+\item Conferma rimozione argomento (UC2.3.2.1).
 \end{enumerate}
-\item \textbf{Descrizione}: il docente deve poter rimuovere un argomento.
-\item \textbf{Precondizione}: il docente è nella gestione degli argomenti e vuole eliminare un argomento.
-\item \textbf{Postcondizione}: il docente ha eliminato l’argomento.
+\item \textbf{Descrizione}: il responsabile deve poter rimuovere un argomento.
+\item \textbf{Precondizione}: il responsabile è nella gestione degli argomenti e vuole eliminare un argomento.
+\item \textbf{Postcondizione}: il responsabile ha eliminato l'argomento.
 \end{itemize}
-\subsubsection{UC2.3.3.1 Conferma rimozione argomento}
+\subsubsection{UC2.3.2.1 Conferma rimozione argomento}
 \begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente conferma la creazione dell'argomento.
-\item \textbf{Descrizione}: il docente deve poter confermare la rimozione dell'argomento.
-\item \textbf{Precondizione}: il docente ha selezionato l'argomento da eliminare e deve ancora confermare.
-\item \textbf{Postcondizione}: il docente ha confermato l'argomento da eliminare.
+\item \textbf{Attori}: Responsabile.
+\item \textbf{Scenario principale}: il responsabile conferma la rimozione dell'argomento.
+\item \textbf{Descrizione}: il responsabile deve poter confermare la rimozione dell'argomento.
+\item \textbf{Precondizione}: il responsabile ha selezionato l'argomento da eliminare e deve ancora confermare.
+\item \textbf{Postcondizione}: il responsabile ha confermato l'eliminazione dell'argomento.
 \end{itemize}
 \subsubsection{UC2.4 Gestione account}
 \begin{figure}[H]
@@ -2000,10 +1980,6 @@
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente seleziona l'argomento della domanda.
-\item \textbf{Estensioni}:
-\begin{itemize}
-\item Creazione argomento (UC2.3.1).
-\end{itemize}
 \item \textbf{Descrizione}: il docente deve selezionare l'argomento della domanda.
 \item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda e non ha ancora selezionato l'argomento della domanda.
 \item \textbf{Postcondizione}: il docente ha selezionato l'argomento della domanda.
