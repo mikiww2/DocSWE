@@ -508,36 +508,24 @@
 \item \textbf{Attori}: Studente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Selezione ente nella ricerca di quiz (UC1.8.2.2.2.1).
+\item Selezione classe nella ricerca di quiz (UC1.8.2.2.2.1).
 \end{enumerate}
 \item \textbf{Scenario principale}: lo studente seleziona/deseleziona l'opzione 'quiz privato'.
 \item \textbf{Descrizione}: lo studente deve poter selezionare/deselezionare l'opzione 'quiz privato', che escluderà dalla ricerca i quiz pubblici.
 \item \textbf{Precondizione}: lo studente  sta personalizzando la ricerca attraverso dei parametri.
 \item \textbf{Postcondizione}: lo studente  ha selezionato/deselezionato il parametro 'quiz privato'.
 \end{itemize}
-\subsubsection{UC1.8.2.2.2.1 Selezione ente nella ricerca di quiz}
+\subsubsection{UC1.8.2.2.2.1 Selezione classe nella ricerca di quiz}
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Selezione ente nella ricerca di quiz.pdf}}
-\caption{UC1.8.2.2.2.1 Selezione ente nella ricerca di quiz}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Selezione classe nella ricerca di quiz.pdf}}
+\caption{UC1.8.2.2.2.1 Selezione classe nella ricerca di quiz}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Studente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Selezione classe nella ricerca di quiz (UC1.8.2.2.2.1.1).
-\end{enumerate}
-\item \textbf{Descrizione}: lo studente deve poter selezionare/deselezionare un ente a cui appartiene per visualizzarne i quiz disponibili.
+\item \textbf{Descrizione}: lo studente deve poter selezionare/deselezionare una classe a cui appartiene per visualizzarne i quiz disponibili.
 \item \textbf{Precondizione}: lo studente ha selezionato 'quiz privati' come parametro della sua ricerca.
-\item \textbf{Postcondizione}: lo studente ha selezionato/deselezionato l'ente come parametro della sua ricerca di quiz.
-\end{itemize}
-\subsubsection{UC1.8.2.2.2.1.1 Selezione classe nella ricerca di quiz}
-\begin{itemize}
-\item \textbf{Attori}: Studente.
-\item \textbf{Scenario principale}: lo studente seleziona/deseleziona la classe desiderata.
-\item \textbf{Descrizione}: lo studente deve poter selezionare/deselezionare una classe a cui appartiene per poterne visualizzare i quiz disponibili.
-\item \textbf{Precondizione}: lo studente ha selezionato l'ente per cui cercare i quiz.
-\item \textbf{Postcondizione}: lo studente ha selezionato/deselezionato la classe per cui cercare i quiz.
+\item \textbf{Postcondizione}: lo studente ha selezionato/deselezionato la classe come parametro della sua ricerca di quiz.
 \end{itemize}
 \subsubsection{UC1.8.2.2.3 Selezione argomenti nella ricerca di quiz}
 \begin{itemize}
@@ -619,8 +607,8 @@
 \item Gestione account (UC2.4);
 \item Richiesta accettazione (UC2.5);
 \item Visualizzazione statistiche (UC2.6);
-\item Gestione enti (UC2.7);
-\item Gestione classe (UC2.8);
+\item Gestione ente (UC2.7);
+\item Gestione classi (UC2.8);
 \item Gestione richieste (UC2.9);
 \item Gestione domande (UC2.10).
 \end{enumerate}
@@ -993,16 +981,16 @@
 \caption{UC2.3 Gestione argomenti}
 \end{figure}
 \begin{itemize}
-\item \textbf{Attori}: Docente.
+\item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
 \item Creazione argomento (UC2.3.1);
 \item Modifica argomento (UC2.3.2);
 \item Rimozione argomento (UC2.3.3).
 \end{enumerate}
-\item \textbf{Descrizione}: il docente deve poter gestire gli argomenti di quiz e domande, in particolare può inserire nuovi argomenti e modificare o eliminare argomenti esistenti.
-\item \textbf{Precondizione}: il docente è autenticato e desidera effettuare operazioni sugli argomenti.
-\item \textbf{Postcondizione}: il docente ha effettuato le operazioni sugli argomenti.
+\item \textbf{Descrizione}: il responsabile  deve poter gestire gli argomenti di quiz e domande, in particolare può inserire nuovi argomenti e eliminare argomenti esistenti.
+\item \textbf{Precondizione}: il responsabile è autenticato e desidera effettuare operazioni sugli argomenti.
+\item \textbf{Postcondizione}: il responsabile ha effettuato le operazioni sugli argomenti.
 \end{itemize}
 \subsubsection{UC2.3.1 Creazione argomento}
 \begin{figure}[H]
@@ -1107,11 +1095,9 @@
 \item Visualizzazione informazioni personali (UC2.4.1);
 \item Modifica informazioni personali (UC2.4.2);
 \item Visualizzazione profilo quiz (UC2.4.3);
-\item Eliminazione account utente (UC2.4.4);
-\item Eliminazione account personale (UC2.4.5);
-\item Eliminazione altri account (UC2.4.6);
-\item Conferma eliminazione account (UC2.4.7);
-\item Interruzione volontaria della modifica delle informazioni personali (UC2.4.8).
+\item Eliminazione account (UC2.4.4);
+\item Conferma eliminazione account (UC2.4.5);
+\item Interruzione volontaria della modifica delle informazioni personali (UC2.4.6).
 \end{enumerate}
 \item \textbf{Descrizione}: L'utente autenticato può visualizzare e modificare le sue informazioni personali, visualizzare il proprio profilo quiz e la possibilità di eliminare il proprio account. Il responsabile in aggiunta può eliminare gli account degli utenti.
 \item \textbf{Precondizione}: il responsabile o un utente autorizzato vuole modificare/visualizzare le informazioni del proprio account.
@@ -1169,60 +1155,42 @@
 \item \textbf{Attori}: Utente Autenticato.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Modifica nome (UC2.4.2.1);
-\item Modifica cognome (UC2.4.2.2);
-\item Modifica password (UC2.4.2.3);
-\item Errore modifica password (UC2.4.2.4);
-\item Conferma modifica informazioni personali (UC2.4.2.5).
+\item Modifica password (UC2.4.2.1);
+\item Errore modifica password (UC2.4.2.2);
+\item Conferma modifica informazioni personali (UC2.4.2.3).
 \end{enumerate}
 \item \textbf{Estensioni}:
 \begin{itemize}
-\item Interruzione volontaria della modifica delle informazioni personali (UC2.4.8).
+\item Interruzione volontaria della modifica delle informazioni personali (UC2.4.6).
 \end{itemize}
 \item \textbf{Descrizione}: l'utente autenticato vuole modificare le sue informazioni personali.
 \item \textbf{Precondizione}: l'utente autenticato può modificare le sue informazioni personali.
 \item \textbf{Postcondizione}: l'utente ha modificato le sue informazioni personali.
 \end{itemize}
-\subsubsection{UC2.4.2.1 Modifica nome}
-\begin{itemize}
-\item \textbf{Attori}: Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente autenticato modifica il suo nome.
-\item \textbf{Descrizione}: l'utente autenticato può modificare il suo nome.
-\item \textbf{Precondizione}: l'utente autenticato modifica le sue informazioni personali.
-\item \textbf{Postcondizione}: l'utente ha modificato il suo nome.
-\end{itemize}
-\subsubsection{UC2.4.2.2 Modifica cognome}
-\begin{itemize}
-\item \textbf{Attori}: Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente autenticato modifica il suo cognome.
-\item \textbf{Descrizione}: l'utente autenticato può modificare il suo cognome.
-\item \textbf{Precondizione}: l'utente autenticato modifica le sue informazioni personali.
-\item \textbf{Postcondizione}: l'utente ha modificato il suo cognome.
-\end{itemize}
-\subsubsection{UC2.4.2.3 Modifica password}
+\subsubsection{UC2.4.2.1 Modifica password}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica password.pdf}}
-\caption{UC2.4.2.3 Modifica password}
+\caption{UC2.4.2.1 Modifica password}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Inserimento vecchia password (UC2.4.2.3.1);
-\item Inserimento nuova password (UC2.4.2.3.2);
-\item Conferma inserimento nuova password (UC2.4.2.3.3);
-\item Conferma modifica password (UC2.4.2.3.4).
+\item Inserimento vecchia password (UC2.4.2.1.1);
+\item Inserimento nuova password (UC2.4.2.1.2);
+\item Conferma inserimento nuova password (UC2.4.2.1.3);
+\item Conferma modifica password (UC2.4.2.1.4).
 \end{enumerate}
 \item \textbf{Estensioni}:
 \begin{itemize}
-\item Errore modifica password (UC2.4.2.4).
+\item Errore modifica password (UC2.4.2.2).
 \end{itemize}
 \item \textbf{Descrizione}: l'utente autenticato può modificare la sua password.
 \item \textbf{Precondizione}: l'utente autenticato modifica le sue informazioni personali.
 \item \textbf{Postcondizione}: l'utente ha modificato la sua password.
 \end{itemize}
-\subsubsection{UC2.4.2.3.1 Inserimento vecchia password}
+\subsubsection{UC2.4.2.1.1 Inserimento vecchia password}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente autenticato inserisce la sua vecchia password.
@@ -1230,7 +1198,7 @@
 \item \textbf{Precondizione}: l'utente autenticato ha deciso di modificare la password e deve ancora inserire la vecchia password.
 \item \textbf{Postcondizione}: l'utente autenticato ha inserito la vecchia password.
 \end{itemize}
-\subsubsection{UC2.4.2.3.2 Inserimento nuova password}
+\subsubsection{UC2.4.2.1.2 Inserimento nuova password}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente autenticato inserisce la nuova password.
@@ -1238,7 +1206,7 @@
 \item \textbf{Precondizione}: l'utente autenticato ha deciso di modificare la password e deve ancora inserire la nuova password.
 \item \textbf{Postcondizione}: l'utente autenticato ha inserito la nuova password.
 \end{itemize}
-\subsubsection{UC2.4.2.3.3 Conferma inserimento nuova password}
+\subsubsection{UC2.4.2.1.3 Conferma inserimento nuova password}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente autenticato conferma l'inserimento della nuova password.
@@ -1246,7 +1214,7 @@
 \item \textbf{Precondizione}: l'utente autenticato ha deciso di modificare la password e deve ancora confermare l'inserimento della nuova password.
 \item \textbf{Postcondizione}: l'utente autenticato ha confermato l'inserimento della nuova password.
 \end{itemize}
-\subsubsection{UC2.4.2.3.4 Conferma modifica password}
+\subsubsection{UC2.4.2.1.4 Conferma modifica password}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente autenticato conferma la modifica della password.
@@ -1254,7 +1222,7 @@
 \item \textbf{Precondizione}: l'utente autenticato ha inserito i campi necessari e deve ancora confermare la modifica della password.
 \item \textbf{Postcondizione}: l'utente autenticato ha confermato la modifica della password.
 \end{itemize}
-\subsubsection{UC2.4.2.4 Errore modifica password}
+\subsubsection{UC2.4.2.2 Errore modifica password}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente visualizza il messaggio di errore.
@@ -1262,7 +1230,7 @@
 \item \textbf{Precondizione}: l'utente autenticato ha inserito una password non valida.
 \item \textbf{Postcondizione}: l'utente visualizza un messaggio di errore.
 \end{itemize}
-\subsubsection{UC2.4.2.5 Conferma modifica informazioni personali}
+\subsubsection{UC2.4.2.3 Conferma modifica informazioni personali}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente autenticato conferma la modifica delle informazioni personali.
@@ -1278,58 +1246,18 @@
 \item \textbf{Precondizione}: l'utente autenticato può visualizzare lo storico dei quiz.
 \item \textbf{Postcondizione}: l'utente ha visualizzato il suo profilo quiz.
 \end{itemize}
-\subsubsection{UC2.4.4 Eliminazione account utente}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile elimina l'account desiderato.
-\item \textbf{Generalizzazioni}:
-\begin{itemize}
-\item Eliminazione account personale (UC2.4.5);
-\item Eliminazione altri account (UC2.4.6).
-\end{itemize}
-\item \textbf{Descrizione}: il responsabile può eliminare il proprio account e tutti gli account degli utenti.
-\item \textbf{Precondizione}: il responsabile ha il permesso di eliminare gli account utente.
-\item \textbf{Postcondizione}: il responsabile ha eliminato un account di un utente o ha eliminato il suo account.
-\end{itemize}
-\subsubsection{UC2.4.5 Eliminazione account personale}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile, Utente Autenticato.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Conferma eliminazione account personale (UC2.4.5.1).
-\end{enumerate}
-\item \textbf{Descrizione}: l’utente autenticato e il responsabile possono cancellare il proprio account personale.
-\item \textbf{Precondizione}: l’utente autenticato e il responsabile hanno i permessi per cancellare l’account.
-\item \textbf{Postcondizione}: l’utente autenticato e il responsabile hanno selezionato il loro account per l’eliminazione.
-\item \textbf{Specializzazione di}:
-\begin{enumerate}
-\item Eliminazione account utente (UC2.4.4).
-\end{enumerate}
-\end{itemize}
-\subsubsection{UC2.4.5.1 Conferma eliminazione account personale}
-\begin{itemize}
-\item \textbf{Attori}: Utente Autenticato.
-\item \textbf{Scenario principale}: l'utente conferma l'eliminazione del proprio account.
-\item \textbf{Descrizione}: L'utente deve confermare l'eliminazione del proprio account.
-\item \textbf{Precondizione}: L'utente si trova nella pagina di eliminazione del proprio account.
-\item \textbf{Postcondizione}: L'utente ha confermato l'eliminazione del proprio account.
-\end{itemize}
-\subsubsection{UC2.4.6 Eliminazione altri account}
+\subsubsection{UC2.4.4 Eliminazione account}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Conferma eliminazione altri account (UC2.4.6.1).
+\item Conferma eliminazione account (UC2.4.4.1).
 \end{enumerate}
 \item \textbf{Descrizione}: il responsabile può cancellare gli account degli altri utenti.
 \item \textbf{Precondizione}: il responsabile ha i permessi di eliminazione altri account.
-\item \textbf{Postcondizione}: il responsabile ha selezionato l’account da eliminare.
-\item \textbf{Specializzazione di}:
-\begin{enumerate}
-\item Eliminazione account utente (UC2.4.4).
-\end{enumerate}
+\item \textbf{Postcondizione}: il responsabile ha selezionato l'account da eliminare.
 \end{itemize}
-\subsubsection{UC2.4.6.1 Conferma eliminazione altri account}
+\subsubsection{UC2.4.4.1 Conferma eliminazione account}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}: il responsabile conferma l'eliminazione dell'account.
@@ -1337,7 +1265,7 @@
 \item \textbf{Precondizione}: Il responsabile si trova nella pagina di eliminazione di altri account.
 \item \textbf{Postcondizione}: Il responsabile ha confermato l'eliminazione dell'account dell'utente.
 \end{itemize}
-\subsubsection{UC2.4.7 Conferma eliminazione account}
+\subsubsection{UC2.4.5 Conferma eliminazione account}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile, Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente conferma l'eliminazione dell'account.
@@ -1345,7 +1273,7 @@
 \item \textbf{Precondizione}: l'utente autenticato o il responsabile hanno precedentemente selezionato un account da eliminare.
 \item \textbf{Postcondizione}: l'account precedentemente selezionato è stato eliminato definitivamente.
 \end{itemize}
-\subsubsection{UC2.4.8 Interruzione volontaria della modifica delle informazioni personali}
+\subsubsection{UC2.4.6 Interruzione volontaria della modifica delle informazioni personali}
 \begin{itemize}
 \item \textbf{Attori}: Utente Autenticato.
 \item \textbf{Scenario principale}: l'utente interrompe la modifica delle informazioni personali.
@@ -1602,84 +1530,40 @@
 \item \textbf{Precondizione}: il docente ha deciso di visualizzare le statistiche legate ai docenti.
 \item \textbf{Postcondizione}: il docente ha visualizzato la lista delle domande create da un docente.
 \end{itemize}
-\subsubsection{UC2.7 Gestione enti}
+\subsubsection{UC2.7 Gestione ente}
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Gestione enti.pdf}}
-\caption{UC2.7 Gestione enti}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Gestione ente.pdf}}
+\caption{UC2.7 Gestione ente}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Creazione di un nuovo ente (UC2.7.1);
-\item Modifica di un ente esistente (UC2.7.2);
-\item Eliminazione di un ente (UC2.7.3).
+\item Modifica di un ente esistente (UC2.7.1).
 \end{enumerate}
 \item \textbf{Descrizione}: il responsabile ha la completa gestione dell'ente di cui è a capo.
 \item \textbf{Precondizione}: il responsabile ha il permesso di gestire l'ente.
 \item \textbf{Postcondizione}: il responsabile ha completato la modifica delle informazioni desiderate riguardanti l'ente.
 \end{itemize}
-\subsubsection{UC2.7.1 Creazione di un nuovo ente}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Creazione di un nuovo ente.pdf}}
-\caption{UC2.7.1 Creazione di un nuovo ente}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Inserimento data di creazione (UC2.7.1.1);
-\item Inserimento nome (UC2.7.1.2);
-\item Conferma inserimento dati (UC2.7.1.3).
-\end{enumerate}
-\item \textbf{Descrizione}: il responsabile deve poter inserire un nuovo ente.
-\item \textbf{Precondizione}: il responsabile ha il permesso di gestire l’ente.
-\item \textbf{Postcondizione}: il responsabile ha creato un nuovo ente di cui ne è il capo.
-\end{itemize}
-\subsubsection{UC2.7.1.1 Inserimento data di creazione}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile inserisce la data di creazione dell'ente.
-\item \textbf{Descrizione}: il responsabile deve poter inserire la data di creazione dell'ente.
-\item \textbf{Precondizione}: il responsabile sta creando l'ente.
-\item \textbf{Postcondizione}: il responsabile ha inserito la data di creazione.
-\end{itemize}
-\subsubsection{UC2.7.1.2 Inserimento nome}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile inserisce il nome dell'ente.
-\item \textbf{Descrizione}:  il responsabile deve poter inserire il nome dell'ente.
-\item \textbf{Precondizione}: il responsabile sta creando l'ente e deve ancora inserire il nome.
-\item \textbf{Postcondizione}: il responsabile ha inserito il nome dell'ente.
-\end{itemize}
-\subsubsection{UC2.7.1.3 Conferma inserimento dati}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile conferma i dati per la creazione dell'ente.
-\item \textbf{Descrizione}: il responsabile conferma i dati precedentemente inseriti per avviare la creazione dell'ente.
-\item \textbf{Precondizione}: il responsabile sta creando l'ente e deve ancora confermare i dati inseriti.
-\item \textbf{Postcondizione}: i dati precedentemente inseriti sono stati confermati e l'ente è stato creato.
-\end{itemize}
-\subsubsection{UC2.7.2 Modifica di un ente esistente}
+\subsubsection{UC2.7.1 Modifica di un ente esistente}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica di un ente esistente.pdf}}
-\caption{UC2.7.2 Modifica di un ente esistente}
+\caption{UC2.7.1 Modifica di un ente esistente}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Modifica nome ente (UC2.7.2.1);
-\item Conferma modifica ente (UC2.7.2.2).
+\item Modifica nome ente (UC2.7.1.1);
+\item Conferma modifica ente (UC2.7.1.2).
 \end{enumerate}
 \item \textbf{Descrizione}: il responsabile deve poter modificare i dati dell’ente che ha precedentemente creato.
 \item \textbf{Precondizione}: il responsabile ha il permesso di modificare le informazioni dell’ente.
 \item \textbf{Postcondizione}: il responsabile ha modificato le informazioni dell’ente.
 \end{itemize}
-\subsubsection{UC2.7.2.1 Modifica nome ente}
+\subsubsection{UC2.7.1.1 Modifica nome ente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}: il responsabile modifica il nome dell'ente.
@@ -1687,7 +1571,7 @@
 \item \textbf{Precondizione}: il responsabile sta modificando i dati dell'ente e vuole modificare il nome.
 \item \textbf{Postcondizione}: il responsabile ha modificato il nome dell'ente.
 \end{itemize}
-\subsubsection{UC2.7.2.2 Conferma modifica ente}
+\subsubsection{UC2.7.1.2 Conferma modifica ente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}: il responsabile conferma la modifica dell'ente.
@@ -1695,35 +1579,11 @@
 \item \textbf{Precondizione}: il responsabile ha modificando i dati dell'ente e deve ancora confermare le modifiche fatte.
 \item \textbf{Postcondizione}: il responsabile ha confermato le modifiche effettuate.
 \end{itemize}
-\subsubsection{UC2.7.3 Eliminazione di un ente}
+\subsubsection{UC2.8 Gestione classi}
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Eliminazione di un ente.pdf}}
-\caption{UC2.7.3 Eliminazione di un ente}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Conferma eliminazione ente (UC2.7.3.1).
-\end{enumerate}
-\item \textbf{Descrizione}: il responsabile deve poter eliminare un ente di cui è proprietario.
-\item \textbf{Precondizione}: il responsabile è nella gestione degli enti e vuole eliminare un suo ente.
-\item \textbf{Postcondizione}: il responsabile ha eliminato l’ente.
-\end{itemize}
-\subsubsection{UC2.7.3.1 Conferma eliminazione ente}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile conferma l'eliminazione dell'ente.
-\item \textbf{Descrizione}: il responsabile deve confermare l'eliminazione dell'ente.
-\item \textbf{Precondizione}: il responsabile ha scelto un ente da eliminare e deve ancora confermare.
-\item \textbf{Postcondizione}: il responsabile ha confermato l'ente da eliminare.
-\end{itemize}
-\subsubsection{UC2.8 Gestione classe}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Gestione classe.pdf}}
-\caption{UC2.8 Gestione classe}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Gestione classi.pdf}}
+\caption{UC2.8 Gestione classi}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
