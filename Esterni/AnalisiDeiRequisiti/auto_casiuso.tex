@@ -625,7 +625,7 @@
 \item Gestione account (UC2.4);
 \item Richiesta accettazione (UC2.5);
 \item Visualizzazione statistiche (UC2.6);
-\item Gestione ente (UC2.7);
+\item Modifica ente (UC2.7);
 \item Gestione classi (UC2.8);
 \item Gestione richieste (UC2.9);
 \item Gestione domande (UC2.10).
@@ -950,13 +950,13 @@
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item conferma eliminazione del quiz (UC2.2.4.1).
+\item Conferma eliminazione del quiz (UC2.2.4.1).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter eliminare un quiz. Questo non causerà l’eliminazione delle domande contenute nel quiz.
 \item \textbf{Precondizione}: il docente è autenticato nel sistema e desidera eliminare un quiz esistente.
 \item \textbf{Postcondizione}: il docente ha eliminato il quiz.
 \end{itemize}
-\subsubsection{UC2.2.4.1 conferma eliminazione del quiz}
+\subsubsection{UC2.2.4.1 Conferma eliminazione del quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente conferma l'eliminazione del quiz.
@@ -1491,54 +1491,45 @@
 \item \textbf{Precondizione}: il docente ha deciso di visualizzare le statistiche legate ai docenti.
 \item \textbf{Postcondizione}: il docente ha visualizzato la lista delle domande create da un docente.
 \end{itemize}
-\subsubsection{UC2.7 Gestione ente}
+\subsubsection{UC2.7 Modifica ente}
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Gestione ente.pdf}}
-\caption{UC2.7 Gestione ente}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica ente.pdf}}
+\caption{UC2.7 Modifica ente}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Modifica di un ente esistente (UC2.7.1).
+\item Modifica nome ente (UC2.7.1).
 \end{enumerate}
-\item \textbf{Descrizione}: il responsabile ha la completa gestione dell'ente di cui è a capo.
-\item \textbf{Precondizione}: il responsabile ha il permesso di gestire l'ente.
+\item \textbf{Descrizione}: il responsabile deve poter modificare l'ente di cui è a capo.
+\item \textbf{Precondizione}: il responsabile ha il permesso di modificare l'ente.
 \item \textbf{Postcondizione}: il responsabile ha completato la modifica delle informazioni desiderate riguardanti l'ente.
 \end{itemize}
-\subsubsection{UC2.7.1 Modifica di un ente esistente}
+\subsubsection{UC2.7.1 Modifica nome ente}
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica di un ente esistente.pdf}}
-\caption{UC2.7.1 Modifica di un ente esistente}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica nome ente.pdf}}
+\caption{UC2.7.1 Modifica nome ente}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Modifica nome ente (UC2.7.1.1);
-\item Conferma modifica ente (UC2.7.1.2).
+\item Conferma modifica nome ente (UC2.7.1.1).
 \end{enumerate}
-\item \textbf{Descrizione}: il responsabile deve poter modificare i dati dell’ente che ha precedentemente creato.
-\item \textbf{Precondizione}: il responsabile ha il permesso di modificare le informazioni dell’ente.
-\item \textbf{Postcondizione}: il responsabile ha modificato le informazioni dell’ente.
-\end{itemize}
-\subsubsection{UC2.7.1.1 Modifica nome ente}
-\begin{itemize}
-\item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile modifica il nome dell'ente.
-\item \textbf{Descrizione}: il responsabile deve poter modificare il nome dell'ente.
-\item \textbf{Precondizione}: il responsabile sta modificando i dati dell'ente e vuole modificare il nome.
+\item \textbf{Descrizione}: il responsabile deve poter modificare il nome dell'ente che ha precedentemente creato.
+\item \textbf{Precondizione}: il responsabile ha il permesso di modificare il nome dell'ente.
 \item \textbf{Postcondizione}: il responsabile ha modificato il nome dell'ente.
 \end{itemize}
-\subsubsection{UC2.7.1.2 Conferma modifica ente}
+\subsubsection{UC2.7.1.1 Conferma modifica nome ente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile conferma la modifica dell'ente.
-\item \textbf{Descrizione}: il responsabile deve confermare la modifica dell'ente.
-\item \textbf{Precondizione}: il responsabile ha modificando i dati dell'ente e deve ancora confermare le modifiche fatte.
-\item \textbf{Postcondizione}: il responsabile ha confermato le modifiche effettuate.
+\item \textbf{Scenario principale}: il responsabile conferma la modifica del nome dell'ente.
+\item \textbf{Descrizione}: il responsabile deve confermare la modifica del nome dell'ente.
+\item \textbf{Precondizione}: il responsabile sta modificando i dati dell'ente e deve confermarne il nome.
+\item \textbf{Postcondizione}: il responsabile ha confermato la modifica del nome dell'ente.
 \end{itemize}
 \subsubsection{UC2.8 Gestione classi}
 \begin{figure}[H]
@@ -1552,7 +1543,7 @@
 \begin{enumerate}
 \item Creazione classe (UC2.8.1);
 \item Modifica classe (UC2.8.2);
-\item Eliminazione classe esistente (UC2.8.3);
+\item Eliminazione classe (UC2.8.3);
 \item Visualizza lista studenti della classe (UC2.8.4);
 \item Visualizza lista docenti della classe (UC2.8.5);
 \item Manutenzione classe (UC2.8.6).
@@ -1645,11 +1636,11 @@
 \item \textbf{Precondizione}: il responsabile ha modificato la classe e deve ancora confermare le modifiche.
 \item \textbf{Postcondizione}: il responsabile ha confermato le modifiche.
 \end{itemize}
-\subsubsection{UC2.8.3 Eliminazione classe esistente}
+\subsubsection{UC2.8.3 Eliminazione classe}
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Eliminazione classe esistente.pdf}}
-\caption{UC2.8.3 Eliminazione classe esistente}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Eliminazione classe.pdf}}
+\caption{UC2.8.3 Eliminazione classe}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
@@ -1765,28 +1756,28 @@
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Accettazione della richiesta di inserimento dei docenti (UC2.9.1.1);
-\item Annullamento della richiesta di inserimento dei docenti (UC2.9.1.2).
+\item Accettazione richiesta di inserimento di un docente (UC2.9.1.1);
+\item Annullamento richiesta di inserimento di un docente (UC2.9.1.2).
 \end{enumerate}
 \item \textbf{Descrizione}: il responsabile accetta o rifiuta le richieste di inserimento in una classe appartenente al proprio ente ricevute dai docenti.
 \item \textbf{Precondizione}: il responsabile visualizza la lista di richieste di inserimento nella classe da parte dei docenti.
 \item \textbf{Postcondizione}: il responsabile ha accettato o rifiutato le richieste che ha ricevuto dai docenti.
 \end{itemize}
-\subsubsection{UC2.9.1.1 Accettazione della richiesta di inserimento dei docenti}
+\subsubsection{UC2.9.1.1 Accettazione richiesta di inserimento di un docente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
-\item \textbf{Scenario principale}: il responsabile accetta le richieste di inserimento nella classe da parte del docente.
-\item \textbf{Descrizione}: il responsabile accetta le richieste di inserimento nella classe ricevute dai docenti.
-\item \textbf{Precondizione}: il responsabile visualizza lista richieste di inserimento nella classe da parte dei docenti.
-\item \textbf{Postcondizione}: il responsabile ha accettato le richieste di inserimento nella classe che gli sono pervenute dai docenti.
+\item \textbf{Scenario principale}: il responsabile accetta la richiesta di inserimento nella classe da parte del docente.
+\item \textbf{Descrizione}: il responsabile accetta la richiesta di inserimento nella classe ricevute da un docente.
+\item \textbf{Precondizione}: il responsabile visualizza la lista delle richieste di inserimento nella classe da parte dei docenti.
+\item \textbf{Postcondizione}: il responsabile ha accettato la richiesta di inserimento nella classe del docente.
 \end{itemize}
-\subsubsection{UC2.9.1.2 Annullamento della richiesta di inserimento dei docenti}
+\subsubsection{UC2.9.1.2 Annullamento richiesta di inserimento di un docente}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}: il responsabile rifiuta le richieste di inserimento nella classe da parte dei docenti.
-\item \textbf{Descrizione}: il responsabile rifiuta le richieste di inserimento nella classe ricevute dai docenti.
-\item \textbf{Precondizione}: il responsabile visualizza lista richieste di inserimento nella classe da parte dei docenti.
-\item \textbf{Postcondizione}: il responsabile ha rifiutato le richieste di inserimento nella classe che gli sono pervenute dai docenti.
+\item \textbf{Descrizione}: il responsabile rifiuta la richiesta di inserimento nella classe ricevuta da un docente.
+\item \textbf{Precondizione}: il responsabile visualizza la lista delle richieste di inserimento nella classe da parte dei docenti.
+\item \textbf{Postcondizione}: il responsabile ha rifiutato la richiesta di inserimento nella classe del docente.
 \end{itemize}
 \subsubsection{UC2.9.2 Richieste ruolo di docente}
 \begin{figure}[H]
@@ -1831,28 +1822,28 @@
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Accettazione della richiesta di inserimento degli studenti (UC2.9.3.1);
-\item Annullamento della richiesta di inserimento degli studenti (UC2.9.3.2).
+\item Accettazione richiesta di inserimento di uno studente (UC2.9.3.1);
+\item Annullamentorichiesta di inserimento di uno studente (UC2.9.3.2).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente può accettare o rifiutare le richieste di inserimento in una classe di cui è insegnante ricevute dagli studenti.
 \item \textbf{Precondizione}: il docente visualizza la lista delle richieste di inserimento in una classe effettuate dagli studenti.
 \item \textbf{Postcondizione}: il docente gestisce la richiesta di inserimento nella classe.
 \end{itemize}
-\subsubsection{UC2.9.3.1 Accettazione della richiesta di inserimento degli studenti}
+\subsubsection{UC2.9.3.1 Accettazione richiesta di inserimento di uno studente}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente accetta le richieste di inserimento nella classe da parte degli studenti.
-\item \textbf{Descrizione}: il docente accetta le richieste di inserimento nella classe ricevute dagli studenti.
+\item \textbf{Scenario principale}: il docente accetta la richieste di inserimento nella classe da parte dello studente.
+\item \textbf{Descrizione}: il docente accetta la richiesta di inserimento nella classe ricevuta da uno studente.
 \item \textbf{Precondizione}: il docente sta gestendo le richieste di inserimento nelle classi.
-\item \textbf{Postcondizione}: il docente ha accettato le richieste di inserimento nella classe che gli sono pervenute dagli studenti.
+\item \textbf{Postcondizione}: il docente ha accettato la richiesta di inserimento nella classe dello studente.
 \end{itemize}
-\subsubsection{UC2.9.3.2 Annullamento della richiesta di inserimento degli studenti}
+\subsubsection{UC2.9.3.2 Annullamentorichiesta di inserimento di uno studente}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente rifiuta le richieste di inserimento nella classe.
-\item \textbf{Descrizione}: il docente rifiuta le richieste di inserimento nella classe ricevute dagli studenti.
+\item \textbf{Scenario principale}: il docente rifiuta la richiesta di inserimento nella classe.
+\item \textbf{Descrizione}: il docente rifiuta la richiesta di inserimento nella classe ricevute da uno studente.
 \item \textbf{Precondizione}: il docente sta gestendo le richieste di inserimento nelle classi.
-\item \textbf{Postcondizione}: il docente ha rifiutato le richieste di inserimento nelle classi che gli sono pervenute dagli studenti.
+\item \textbf{Postcondizione}: il docente ha rifiutato la richiesta di inserimento nelle classi dello studente.
 \end{itemize}
 \subsubsection{UC2.9.4 Richieste ruolo di studente}
 \begin{figure}[H]
@@ -2034,6 +2025,11 @@
 \item \textbf{Postcondizione}: la creazione della domanda è stata interrotta.
 \end{itemize}
 \subsubsection{UC2.10.4 Creazione domanda vero o falso}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Creazione domanda vero o falso.pdf}}
+\caption{UC2.10.4 Creazione domanda vero o falso}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2057,6 +2053,11 @@
 \item \textbf{Postcondizione}: il docente ha indicato la veridicità della domanda.
 \end{itemize}
 \subsubsection{UC2.10.5 Creazione domanda risposta multipla}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Creazione domanda risposta multipla.pdf}}
+\caption{UC2.10.5 Creazione domanda risposta multipla}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2072,6 +2073,11 @@
 \end{enumerate}
 \end{itemize}
 \subsubsection{UC2.10.5.1 Crea risposta}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Crea risposta.pdf}}
+\caption{UC2.10.5.1 Crea risposta}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2113,6 +2119,11 @@
 \item \textbf{Postcondizione}: il docente ha indicato la veridicità della risposta.
 \end{itemize}
 \subsubsection{UC2.10.6 Creazione domanda a collegamenti}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Creazione domanda a collegamenti.pdf}}
+\caption{UC2.10.6 Creazione domanda a collegamenti}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2128,6 +2139,11 @@
 \end{enumerate}
 \end{itemize}
 \subsubsection{UC2.10.6.1 Creazione ennupla}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Creazione ennupla.pdf}}
+\caption{UC2.10.6.1 Creazione ennupla}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2140,6 +2156,11 @@
 \item \textbf{Postcondizione}: il docente ha inserito l'ennupla della risposta.
 \end{itemize}
 \subsubsection{UC2.10.6.1.1 Inserire parte iniziale}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Inserire parte iniziale.pdf}}
+\caption{UC2.10.6.1.1 Inserire parte iniziale}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2168,6 +2189,11 @@
 \item \textbf{Postcondizione}: il docente ha inserito il testo della parte iniziale della risposta.
 \end{itemize}
 \subsubsection{UC2.10.6.1.2 Inserire parte finale}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Inserire parte finale.pdf}}
+\caption{UC2.10.6.1.2 Inserire parte finale}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2196,6 +2222,11 @@
 \item \textbf{Postcondizione}: il docente ha inserito il testo della parte finale della risposta.
 \end{itemize}
 \subsubsection{UC2.10.7 Creazione domanda a risposta aperta}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Creazione domanda a risposta aperta.pdf}}
+\caption{UC2.10.7 Creazione domanda a risposta aperta}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2219,6 +2250,11 @@
 \item \textbf{Postcondizione}: il docente ha inserito la risposta corretta alla domanda.
 \end{itemize}
 \subsubsection{UC2.10.8 Creazione domanda a completamento testo}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Creazione domanda a completamento testo.pdf}}
+\caption{UC2.10.8 Creazione domanda a completamento testo}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2509,6 +2545,11 @@
 \item \textbf{Postcondizione}: il docente ha eliminato una risposta dalla domanda che stava modificando.
 \end{itemize}
 \subsubsection{UC2.10.14 Modifica domanda a risposta aperta}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda a risposta aperta.pdf}}
+\caption{UC2.10.14 Modifica domanda a risposta aperta}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2532,6 +2573,11 @@
 \item \textbf{Postcondizione}: il docente ha modificato la risposta corretta della domanda a risposta aperta.
 \end{itemize}
 \subsubsection{UC2.10.15 Modifica domanda a completamento testo}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda a completamento testo.pdf}}
+\caption{UC2.10.15 Modifica domanda a completamento testo}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2573,6 +2619,11 @@
 \item \textbf{Postcondizione}: il docente ha eliminato alcune parole associate al testo incompleto.
 \end{itemize}
 \subsubsection{UC2.10.16 Modifica domanda a collegamenti}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda a collegamenti.pdf}}
+\caption{UC2.10.16 Modifica domanda a collegamenti}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2589,6 +2640,11 @@
 \end{enumerate}
 \end{itemize}
 \subsubsection{UC2.10.16.1 Inserire ennupla}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Inserire ennupla.pdf}}
+\caption{UC2.10.16.1 Inserire ennupla}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2601,6 +2657,11 @@
 \item \textbf{Postcondizione}: il docente ha aggiunto l'ennupla (risposta) che ha creato.
 \end{itemize}
 \subsubsection{UC2.10.16.1.1 Aggiungere parte iniziale}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Aggiungere parte iniziale.pdf}}
+\caption{UC2.10.16.1.1 Aggiungere parte iniziale}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -2629,6 +2690,11 @@
 \item \textbf{Postcondizione}: il docente ha inserito il testo nella parte iniziale dell'ennupla.
 \end{itemize}
 \subsubsection{UC2.10.16.1.2 Aggiungere parte finale}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Aggiungere parte finale.pdf}}
+\caption{UC2.10.16.1.2 Aggiungere parte finale}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
