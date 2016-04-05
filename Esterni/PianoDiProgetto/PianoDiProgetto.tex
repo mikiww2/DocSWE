@@ -523,7 +523,7 @@
 		\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
 		\endfirsthead
 		Responsabile & 20 & € 600 \\
-		Amministraore & 17 & € 340\\
+		Amministratore & 17 & € 340\\
 		Analista & 13 & € 325 \\
 		Progettista & 65 & € 1430 \\
 		Programmatore & 0 & € 0 \\
@@ -578,7 +578,7 @@
 		\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
 		\endfirsthead
 		Responsabile & 13 & € 390 \\
-		Amministraore & 16 & € 320\\
+		Amministratore & 16 & € 320\\
 		Analista & 13 & € 325 \\
 		Progettista & 99 & € 2178 \\
 		Programmatore & 140 & € 2100 \\
@@ -633,7 +633,7 @@
 		\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
 		\endfirsthead
 		Responsabile & 25 & € 750 \\
-		Amministraore & 11 & € 220\\
+		Amministratore & 11 & € 220\\
 		Analista & 0 & € 0 \\
 		Progettista & 45 & € 990 \\
 		Programmatore & 23 & € 345 \\
@@ -688,7 +688,7 @@
 		\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
 		\endfirsthead
 		Responsabile & 58 & € 1740 \\
-		Amministraore & 44 & € 880\\
+		Amministratore & 44 & € 880\\
 		Analista & 26 & € 650 \\
 		Progettista & 209 & € 4598 \\
 		Programmatore & 163 & € 2445 \\
@@ -708,7 +708,52 @@
 	
 	\newpage
 	\section{Consuntivo}
-	Questa sezione andrà divisa per fasi a partire dall'attività di progettazione architetturale. Considerare la possibilità di introsurre anche la sezione preventivo a finire.
+	
+	\subsection{Attività di progettazione architetturale}
+	Vengono di seguito riportati i costi effettivi sostenuti in questa fase.
+	
+	\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c}
+		
+		\color{white} \bold{Nome} & \color{white} \bold{Responsabile} &\color{white} \bold{Amm} & \color{white} \bold{An} & \color{white} \bold{Pt} & \color{white} \bold{Pr} & \color{white} \bold{Ver} & \color{white} \bold{Ore totali persona} \\
+		\endfirsthead
+		Giacomo Beltrame & 0 & 0 & 5 (+2) & 20 & 0 & 0 & 25 (+2)\\
+		Rudy Berton & 0 & 10 (-1) & 0 & 0 & 0 & 13 (-2) & 23 (-3)\\
+		Simone Boccato & 0 & 0 & 0 & 5 (+5) & 0 & 20 (-5) & 25\\
+		Michela De Bortoli & 10 (-1) & 0 & 0 & 15 (-2) & 0 & 0 & 25 (-3)\\
+		Vassilikì Menarin & 0 & 0 & 0 & 15 & 0 & 12 & 27\\
+		Filippo Tesser & 10 & 0 & 8 & 0 & 0 & 8 (+2) & 26 (+2)\\
+		Miki Violetto & 0 & 7 & 0 & 10 (+2) & 0 & 6 & 23 (+2)\\   
+		
+		\rowcolor{white}  
+		\caption{Consuntivo orario attività di progettazione architetturale}	    	
+		
+	\end{tabella}	
+	
+	Segue una tabella che illustra come questi cambiamenti impattino i ruoli e i costi:
+	
+	
+\begin{tabella}{l!{\VRule}c!{\VRule}c}
+		
+		\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
+		\endfirsthead
+		Responsabile & 20(-1) & € 570 (600-30) \\
+		Amministratore & 17(-1) & € 320 (340-20) \\
+		Analista & 13(+2) & € 375 (325+50) \\
+		Progettista & 65(+5) & € 1540 (1430+110) \\
+		Programmatore & 0 & € 0 \\
+		Verificatore & 59(-5) & € 810 (885-75)\\
+		\hline
+		Totale Preventivo & 174  & € 3580\\
+		Totale Consuntivo & 174 & € 3615\\
+		Differenza & 0 & + € 35\\
+		
+		\rowcolor{white}  
+		\caption{Consuntivo economico attività di progettazione architetturale}	    	
+		
+	\end{tabella}
+	
+	\subsubsection{Conclusioni}
+		C'è stato un problema protratto di salute di due componenti del team che ha portato a una variazione sul carico di ore degli altri componenti per bilanciare, quantificabile con un aumento di budget di €35. Considerato che la causa è stata per malattia e si è riusciti comunque a recuperare le ore perse, il gruppo ritiene di non dover modificare la pianificazione futura.
 	
 	\newpage
 	\appendix
@@ -717,7 +762,7 @@
 	
 	\subsection{Analisi dei requisiti}
 	
-	\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}}
+	\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
 		%{\centering\arraybackslash}p{2 cm}}
 		%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
 		
@@ -752,18 +797,65 @@
 	\end{tabella}
 	
 	\subsubsection{Problemi personali dei membri}
-	I membri del gruppo hanno avuto dei problemi famigliari mentre altri sono stati impossibilitati a lavorare per malattia. La pianificazione ha permesso di rispettare comunque le scadenze; i membri hanno tempestivamente informto il responsabile e, quando malati, il carico di lavoro è stato ripartito per non rallentare troppo i lavori.
+	I membri del gruppo hanno avuto dei problemi famigliari mentre altri sono stati impossibilitati a lavorare per malattia. La pianificazione ha permesso di rispettare comunque le scadenze; i membri hanno tempestivamente informato il responsabile e, quando malati, il carico di lavoro è stato ripartito per non rallentare troppo i lavori.
 	
 	\subsubsection{Problemi di versionamento}
-	I membri hanno avuto dei problemi a individuare la corretta versione dei documenti, soprattutto quando questi erano modificati da più persone. Il problema è stato più spiccato all'inizio, prima che il gruppo prendesse dimestichezza col tracker, ed è stato definitivamente risolto appena i membri hanno imparato a usarlo correttamente.
+	I membri hanno avuto dei problemi a individuare la corretta versione dei documenti, soprattutto quando questi erano modificati da più persone. Il problema è stato più spiccato all'inizio, prima che il gruppo prendesse dimestichezza con tracker, ed è stato definitivamente risolto appena i membri hanno imparato a usarlo correttamente.
 	
 	\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
-	Come specificato nella sottosezione recedente, i membri hanno avuto una difficoltà iniziale ad usare il tracker. Questo problema, di cui si era comunque tenuto conto, è stato risolto nelle fasi iniziali grazie agli analisti, che hanno fornito precise istruzioni e regole per il corretto ultilizzo dello strumento in questione.
+	Come specificato nella sottosezione recedente, i membri hanno avuto una difficoltà iniziale ad usare tracker. Questo problema, di cui si era comunque tenuto conto, è stato risolto nelle fasi iniziali grazie agli amministratori, che hanno fornito precise istruzioni e regole per il corretto utilizzo dello strumento in questione.
 	
 	\subsubsection{Errata comprensione dei requisiti}
 	Dopo la presentazione del capitolato in aula e in seguito a un primo incontro con il committente, il gruppo ha cominciato a lavorare alla raccolta dei requisiti. Sono emerse delle incomprensioni e dei dubbi sulla correttezza dei requisiti individuati. Avendo programmato un secondo incontro col committente, questi problemi sono stati chiariti e, sul totale, si è rilevato un leggero ritardo nella stesura dell'\doc{Analisi dei requisiti}, comunque compensata dalla fase di slack predisposta.
 	
 	\subsection{Raffinamento dei requisiti}
+	X MIKI
+	
+	
+	
+	
+	
+	\subsection{Progettazione architetturale}
+	
+	\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
+		%{\centering\arraybackslash}p{2 cm}}
+		%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
+		
+		
+		\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
+		\endfirsthead
+		
+		\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
+		\cellcolor{P} & Guasti hardware & No \\
+		\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti software & No \\
+		\hline
+		
+		\cellcolor{D} & Problemi personali dei membri & \bold{Sì} \\
+		\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
+		\hline
+		
+		\cellcolor{P} & Problemi di versionamento & No \\
+		\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
+		\hline
+		
+		\rowcolor{D}
+		Strumenti & Mancante o insufficiente conoscenza degli strumenti & \bold{Sì} \\	
+		\hline	
+		
+		\rowcolor{P}
+		Requisiti & Errata comprensione dei requisiti & No\\
+		\hline
+		
+		\rowcolor{white}  
+		\caption{Attualizzazione dei rischi nell'attività di progettazione architetturale}	    	
+		
+	\end{tabella}
+	
+	\subsubsection{Problemi personali dei membri}
+	Due membri del gruppo sono stati impossibilitati a lavorare per problemi di salute. La pianificazione ha permesso di rispettare comunque le scadenze, i membri hanno tempestivamente informato il responsabile che ha ridistribuito il carico di ore per rimanere dentro le scadenze. Ciò ha permesso di finire il lavoro ma il ritardo accumulato ha portato ad una mancata riunione con il proponente.
+	
+	\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
+	Nelle prime fasi di progettazione sono sorti problemi per la scarsa conoscenza con StarUML per quanto riguarda la creazione dei diagrammi di attività e package. I problemi sono stati risolti nel tempo tramite lettura di guide dedicate da parte dei progettisti.
 	
 	
 	\newpage
@@ -807,7 +899,7 @@
 		\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
 		\endfirsthead
 		Responsabile & 20 & € 600 \\
-		Amministraore & 39 & € 780 \\
+		Amministratore & 39 & € 780 \\
 		Analista & 102 & € 2550 \\
 		Progettista & 0 & € 0 \\
 		Programmatore & 0 & € 0 \\
@@ -852,7 +944,7 @@
 		\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
 		\endfirsthead
 		Responsabile & 20 & € 600 \\
-		Amministraore & 39(+3) & € 840 (780+60) \\
+		Amministratore & 39(+3) & € 840 (780+60) \\
 		Analista & 102(-1) & € 2525 (2550-25) \\
 		Progettista & 0 & € 0 \\
 		Programmatore & 0 & € 0 \\
@@ -907,7 +999,7 @@
 		\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
 		\endfirsthead
 		Responsabile & 12 & € 360 \\
-		Amministraore & 16 & € 320\\
+		Amministratore & 16 & € 320\\
 		Analista & 15 & € 375 \\
 		Progettista & 0 & € 0 \\
 		Programmatore & 0 & € 0 \\
