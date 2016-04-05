@@ -515,11 +515,6 @@
 \item \textbf{Postcondizione}: lo studente  ha selezionato/deselezionato il parametro 'quiz privato'.
 \end{itemize}
 \subsubsection{UC1.8.2.1.2.1 Selezione classe nella ricerca di quiz}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Selezione classe nella ricerca di quiz.pdf}}
-\caption{UC1.8.2.1.2.1 Selezione classe nella ricerca di quiz}
-\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Studente.
 \item \textbf{Descrizione}: lo studente deve poter selezionare/deselezionare una classe a cui appartiene per visualizzarne i quiz disponibili.
@@ -814,7 +809,7 @@
 \item Inserimento domanda nel quiz (UC2.2.2.2);
 \item Rimozione domanda dal quiz (UC2.2.2.3);
 \item Modifica titolo del quiz (UC2.2.2.4);
-\item Modifica argomento (UC2.2.2.5);
+\item Modifica argomento del quiz (UC2.2.2.5);
 \item Modifica descrizione (UC2.2.2.6);
 \item Conferma modifica quiz (UC2.2.2.7);
 \item Modifica parole chiave (UC2.2.2.8).
@@ -901,12 +896,7 @@
 \item \textbf{Precondizione}: il docente sta modificando un nuovo quiz.
 \item \textbf{Postcondizione}: il docente ha modificato il titolo del quiz.
 \end{itemize}
-\subsubsection{UC2.2.2.5 Modifica argomento}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica argomento.pdf}}
-\caption{UC2.2.2.5 Modifica argomento}
-\end{figure}
+\subsubsection{UC2.2.2.5 Modifica argomento del quiz}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente modifica l'argomento del quiz.
@@ -1236,6 +1226,11 @@
 \item \textbf{Postcondizione}: l'utente ha visualizzato il suo profilo quiz.
 \end{itemize}
 \subsubsection{UC2.4.4 Eliminazione account}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Eliminazione account.pdf}}
+\caption{UC2.4.4 Eliminazione account}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Responsabile.
 \item \textbf{Scenario principale}:
@@ -1275,8 +1270,7 @@
 \item Invio richiesta ruolo docente (UC2.5.1);
 \item Invio richiesta ruolo studente (UC2.5.2);
 \item Invio richiesta di accettazione classe come docente (UC2.5.3);
-\item Invio richiesta di accettazione classe come studente (UC2.5.4);
-\item Conferma invio richiesta (UC2.5.5).
+\item Invio richiesta di accettazione classe come studente (UC2.5.4).
 \end{enumerate}
 \item \textbf{Descrizione}: l’utente senza ruolo invia una richiesta per essere studente o docente, mentre studente e docente inviano una richiesta di accettazione per essere inseriti in una determinata classe.
 \item \textbf{Precondizione}: utente senza ruolo, studente e docente possono inviare richieste di accettazione.
@@ -1299,6 +1293,11 @@
 \item \textbf{Postcondizione}: l'utente senza ruolo ha compilato la richiesta di acquisizione ruolo studente.
 \end{itemize}
 \subsubsection{UC2.5.3 Invio richiesta di accettazione classe come docente}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Invio richiesta di accettazione classe come docente.pdf}}
+\caption{UC2.5.3 Invio richiesta di accettazione classe come docente}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
@@ -1318,6 +1317,11 @@
 \item \textbf{Postcondizione}: il docente ha selezionato il nome della classe.
 \end{itemize}
 \subsubsection{UC2.5.4 Invio richiesta di accettazione classe come studente}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Invio richiesta di accettazione classe come studente.pdf}}
+\caption{UC2.5.4 Invio richiesta di accettazione classe come studente}
+\end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Studente.
 \item \textbf{Scenario principale}:
@@ -1335,14 +1339,6 @@
 \item \textbf{Descrizione}: lo studente deve poter selezionare il nome della classe alla quale vuole essere inserito.
 \item \textbf{Precondizione}: lo studente è nella fase di invio di richiesta di accettazione classe come studente.
 \item \textbf{Postcondizione}: lo studente ha selezionato il nome della classe.
-\end{itemize}
-\subsubsection{UC2.5.5 Conferma invio richiesta}
-\begin{itemize}
-\item \textbf{Attori}: Docente, Studente, Utente senza Ruolo.
-\item \textbf{Scenario principale}: l'utente conferma l'invio della richiesta.
-\item \textbf{Descrizione}: l'utente senza ruolo, studente e docente devono poter confermare l'invio della richiesta  precedentemente compilata.
-\item \textbf{Precondizione}: l'utente senza ruolo, docente, studente hanno compilato la richiesta appropriata.
-\item \textbf{Postcondizione}: la richiesta è stata inviata al responsabile con successo.
 \end{itemize}
 \subsubsection{UC2.6 Visualizzazione statistiche}
 \begin{figure}[H]
