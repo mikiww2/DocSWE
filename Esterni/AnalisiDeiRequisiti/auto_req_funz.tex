@@ -16,7 +16,7 @@ ROF2 & Funzionale \linebreak obbligatorio & Un utente registrato deve potersi au
 ROF2.1 & Funzionale \linebreak obbligatorio & L'autenticazione richiede l'inserimento dell'indirizzo email dell'utente & UC1.3.1 \linebreak interna \\
 ROF2.2 & Funzionale \linebreak obbligatorio & L'autenticazione richiede l'inserimento della password dell'utente & UC1.3.2 \linebreak interna \\
 ROF2.3 & Funzionale \linebreak obbligatorio & Il sistema notifica l'utente se è avvenuto un errore durante l'autenticazione & UC1.4 \linebreak interna \\
-ROF3 & Funzionale \linebreak obbligatorio & Un utente deve poter effettuare una richiesta di recupero password & UC1.5 \linebreak interna \\
+ROF3 & Funzionale \linebreak obbligatorio & Un utente deve poter effettuare una richiesta di recupero password, grazie alla quale gli sarà inviata via email una password temporanea & UC1.5 \linebreak interna \\
 ROF3.1 & Funzionale \linebreak obbligatorio & Il recupero della password richiede l'inserimento dell'indirizzo email dell'utente & UC1.5.1 \linebreak interna \\
 ROF3.2 & Funzionale \linebreak obbligatorio & Il sistema notifica l'utente se è avvenuto un errore durante il recupero della password & UC1.6 \linebreak interna \\
 ROF11 & Funzionale \linebreak obbligatorio & L'utente ha la possibilità di svolgere i quiz pubblici presenti su Quizzipedia & UC1.7 \linebreak capitolato \\
@@ -57,13 +57,14 @@ ROF14.3.3.2 & Funzionale \linebreak obbligatorio & La modifica della password ri
 ROF14.3.3.3 & Funzionale \linebreak obbligatorio & La modifica della password richiede di immettere una seconda volta la nuova password & UC2.4.2.1.3 \linebreak interna \\
 ROF14.3.3.4 & Funzionale \linebreak obbligatorio & Il sistema notifica l'utente se è avvenuto un errore durante la modifica della password & UC2.4.2.2 \linebreak interna \\
 ROF14.4 & Funzionale \linebreak obbligatorio & Il sistema mette a disposizione funzionalità di eliminazione degli account & UC2.4.4 \linebreak interna \\
-ROF14.4.1 & Funzionale \linebreak obbligatorio & Il responsabile deve poter eliminare l'account degli utenti da lui gestiti & UC2.4.4 \linebreak interna \\
+ROF14.4.1 & Funzionale \linebreak obbligatorio & Il responsabile deve poter eliminare dal proprio ente gli utenti da lui gestiti & UC2.4.4 \linebreak interna \\
 ROF15 & Funzionale \linebreak obbligatorio & Il sistema mette a disposizione del docente funzionalità di gestione dei quiz & UC2.2 \linebreak capitolato \\
 ROF15.1 & Funzionale \linebreak obbligatorio & Il docente deve poter creare un nuovo quiz & UC2.2.1 \linebreak capitolato \\
 ROF15.1.1 & Funzionale \linebreak obbligatorio & La creazione del quiz richiede l'inserimento del titolo del quiz & UC2.2.1.1 \linebreak interna \\
 ROF15.1.2 & Funzionale \linebreak obbligatorio & La creazione del quiz richiede la selezione dell'argomento del quiz & UC2.2.1.2 \linebreak interna \\
 ROF15.1.3 & Funzionale \linebreak obbligatorio & La creazione del quiz richiede l'inserimento della descrizione del quiz & UC2.2.1.3 \linebreak interna \\
 ROF15.1.4 & Funzionale \linebreak obbligatorio & La creazione del quiz richiede la selezione del permesso del quiz (pubblico o privato) & UC2.2.1.4 \linebreak interna \\
+ROF15.1.4.1 & Funzionale \linebreak obbligatorio & Nel caso il docente scelga il permesso privato per il quiz, egli dovrà poter selezionare le classi a cui riservare lo svolgimento del quiz & UC2.2.1.4.2.1 \linebreak interna \\
 ROF15.1.5 & Funzionale \linebreak obbligatorio & Il docente deve poter inserire domande nel quiz che sta creando & UC2.2.1.5 \linebreak interna \\
 ROF15.1.6 & Funzionale \linebreak obbligatorio & Il docente deve poter rimuovere domande dal quiz che sta creando & UC2.2.1.6 \linebreak interna \\
 ROF15.1.7 & Funzionale \linebreak obbligatorio & La creazione del quiz permette la specifica di parole chiave & UC2.2.1.8 \linebreak interna \\
@@ -82,9 +83,9 @@ ROF15.2.6 & Funzionale \linebreak obbligatorio & Il docente deve poter rimuovere
 ROF15.2.7 & Funzionale \linebreak obbligatorio & Il sistema notifica l'utente se si è verificato un errore durante la modifica del quiz & UC2.2.3 \linebreak interna \\
 ROF15.2.8 & Funzionale \linebreak obbligatorio & Il docente può modificare le parole chiave del quiz & UC2.2.2.8 \linebreak interna \\
 ROF15.3 & Funzionale \linebreak obbligatorio & Il docente deve poter eliminare un quiz & UC2.2.4 \linebreak capitolato \\
-ROF16 & Funzionale \linebreak obbligatorio & L'utente senza ruolo, lo studente e il docente possono effettuare varie richieste & UC2.5 \linebreak interna \\
-ROF16.1 & Funzionale \linebreak obbligatorio & L'utente senza ruolo può richiedere di assumere il ruolo di docente & UC2.5.1 \linebreak interna \\
-ROF16.2 & Funzionale \linebreak obbligatorio & L'utente senza ruolo può richiedere di assumere il ruolo di studente & UC2.5.2 \linebreak interna \\
+ROF16 & Funzionale \linebreak obbligatorio & L'utente senza ruolo, lo studente e il docente possono effettuare varie richieste al responsabile di un ente & UC2.5 \linebreak interna \\
+ROF16.1 & Funzionale \linebreak obbligatorio & L'utente senza ruolo può richiedere di assumere il ruolo di docente in un ente & UC2.5.1 \linebreak interna \\
+ROF16.2 & Funzionale \linebreak obbligatorio & L'utente senza ruolo può richiedere di assumere il ruolo di studente in un ente & UC2.5.2 \linebreak interna \\
 ROF16.3 & Funzionale \linebreak obbligatorio & Il docente può effettuare una richiesta di accettazione di inserimento in una classe & UC2.5.3 \linebreak interna \\
 ROF16.4 & Funzionale \linebreak obbligatorio & Lo studente può effettuare una richiesta di accettazione di inserimento in una classe & UC2.5.4 \linebreak interna \\
 ROF17 & Funzionale \linebreak obbligatorio & Il responsabile e il docente devono poter gestire le richieste effettuate dagli utenti & UC2.9 \linebreak interna \\
@@ -97,10 +98,10 @@ ROF17.2.2 & Funzionale \linebreak obbligatorio & Il responsabile può rifiutare 
 ROF17.3 & Funzionale \linebreak obbligatorio & Il docente può gestire le richieste di inserimento degli studenti in una classe & UC2.9.3 \linebreak interna \\
 ROF17.3.1 & Funzionale \linebreak obbligatorio & Il docente può accettare una richiesta di inserimento in una classe pervenuta da uno studente & UC2.9.3.1 \linebreak interna \\
 ROF17.3.2 & Funzionale \linebreak obbligatorio & Il docente può rifiutare una richiesta di inserimento in una classe pervenuta da uno studente & UC2.9.3.2 \linebreak interna \\
-ROF17.4 & Funzionale \linebreak obbligatorio & Il docente può gestire le richieste di attribuzione del ruolo di studente & UC2.9.4 \linebreak interna \\
-ROF17.4.1 & Funzionale \linebreak obbligatorio & Il docente può accettare la richiesta di attibuzione del ruolo di studente & UC2.9.4.1 \linebreak interna \\
-ROF17.4.2 & Funzionale \linebreak obbligatorio & Il docente può rifiutare la richiesta di attibuzione del ruolo di studente & UC2.9.4.2 \linebreak interna \\
-ROF18 & Funzionale \linebreak obbligatorio & Il sistema deve mettere a disposizione del docente delle funzionalità per la gestione degli argomenti & UC2.3 \linebreak interna \\
+ROF17.4 & Funzionale \linebreak obbligatorio & Il responsabile può gestire le richieste di attribuzione del ruolo di studente & UC2.9.4 \linebreak interna \\
+ROF17.4.1 & Funzionale \linebreak obbligatorio & Il responsabile può accettare la richiesta di attibuzione del ruolo di studente & UC2.9.4.1 \linebreak interna \\
+ROF17.4.2 & Funzionale \linebreak obbligatorio & Il responsabile può rifiutare la richiesta di attibuzione del ruolo di studente & UC2.9.4.2 \linebreak interna \\
+ROF18 & Funzionale \linebreak obbligatorio & Il sistema deve mettere a disposizione del responsabile delle funzionalità per la gestione degli argomenti & UC2.3 \linebreak interna \\
 ROF18.1 & Funzionale \linebreak obbligatorio & Il responsabile deve poter creare un nuovo argomento & UC2.3.1 \linebreak interna \\
 ROF18.1.1 & Funzionale \linebreak obbligatorio & La creazione di un nuovo argomento richiede l'inserimento del nome dell'argomento & UC2.3.1.1 \linebreak interna \\
 ROF18.2 & Funzionale \linebreak obbligatorio & Il responsabile deve poter eliminare un argomento esistente & UC2.3.2 \linebreak interna \\
