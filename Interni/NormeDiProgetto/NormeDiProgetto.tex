@@ -503,19 +503,19 @@ Segue un elenco dei tipi di test che vengono effettuati.
 
 \mysubparagraph{Test di unità}
 Sono test atti a verificare che ogni singola unità di prodotto funzioni nel modo corretto. In questo tipo di test ogni componente del sistema viene verificata isolata dal resto del sistema.
-Il codice identificativo dei test di unità è: \centra{TU[codice univoco]}
+Il codice identificativo dei test di unità è: \centra{TU[codice univoco]}.
 
 \mysubparagraph{Test di integrazione}
 I test di integrazione rappresentano l'estensione logica del test di unità. Il tipo più semplice di test di integrazione consiste nella combinazione di due unità già sottoposte a test in un solo componente e nel test dell'interfaccia presente tra le due. In uno scenario realistico più unità vengono combinate in componenti che, a loro volta, vengono aggregate in parti più grandi del sistema. Alla fine, tutti i moduli che compongono un processo vengono sottoposti al test contemporaneamente.
-Il codice identificativo dei test di integrazione è: \centra{TI[codice univoco]}
+Il codice identificativo dei test di integrazione è: \centra{TI[IDcomponente]} dove IDcomponente rappresenta la componente i cui elementi integrati sono sottoposti al test. 
 
 \mysubparagraph{Test di sistema}
 Sono test che vengono eseguiti quando si pensa che il prodotto sia giunto a una versione definitiva. In sostanza si controlla che il sistema soddisfi tutti i requisiti.
-Il codice identificativo dei test di sistema è: \centra{TS[tipo requisito][codice requisito]}
+Il codice identificativo dei test di sistema è: \centra{TS[CodiceRequisito]} dove CodiceRequisito identifica il codice univoco associato ad ogni requisito descritto nell'\doc{Analisi dei requisiti}.
 
 \mysubparagraph{Test di validazione}
-Questo tipo di test viene svolto durante la fase di collaudo antecedente il rilascio sotto supervisione del Proponente. Si controlla che il sistema soddisfi almeno tutti i requisiti obbligatori. Se l'esito del test è positivo viene consentito il rilascio del prodotto.
-Il codice identificativo per tale tipo di test è: \centra{TV[tipo requisito][codice requisito]}
+Questo tipo di test viene svolto durante la fase di collaudo antecedente il rilascio sotto supervisione del proponente. Si controlla che il sistema soddisfi almeno tutti i requisiti obbligatori. Se l'esito del test è positivo viene consentito il rilascio del prodotto.
+Il codice identificativo per tale tipo di test è: \centra{TV[CodiceRequisito]} dove CodiceRequisito identifica il codice univoco associato ad ogni requisito descritto nell'\doc{Analisi dei requisiti}.
 
 \subsubsection{Procedure}
 
@@ -690,7 +690,7 @@ L'\italics{Amministratore} inoltre è colui che redige il documento \doc{Norme d
 L'\italics{Analista} è il responsabile delle attività di analisi. Ha le seguenti mansioni:
 \begin{itemize}
 	\item comprendere pienamente la natura e la complessità del problema;
-	\item produrre una specifica di progetto che sia motivata in ogni suo punto e al tempo stesso comprensibile sia dal proponente che dal committente e dai progettisti.
+	\item produrre una specifica di progetto che sia motivata in ogni suo punto e al tempo stesso comprensibile sia dal proponente che dal committente e dai \italics{Progettisti}.
 \end{itemize}
 Compito dell'\italics{Analista} è infine redigere il documento \doc{Analisi dei Requisiti} e \doc{Studio di Fattibilità}.
 
