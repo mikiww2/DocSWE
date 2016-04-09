@@ -139,7 +139,7 @@ I seguenti diagrammi UML devono essere realizzati:
 \end{itemize}
 Infine devono essere descritti i vari design pattern che verranno utilizzati e il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto.
 
-\subsubsection{Norme}
+\subsubsection{Procedure}
 
 \myparagraph{Classificazione dei requisiti}
 Ogni requisito individuato durante l'\doc{Analisi dei Requisiti} deve necessariamente, per questioni di tracciabilità, essere univocamente identificato con una stringa nel formato:
@@ -197,6 +197,7 @@ Inoltre per ogni caso d'uso sono specificati:
 
 \myparagraph{Codifica e convenzioni}
 Tutti i file contenente codice o documentazione \LaTeX{} devono essere conformi alla codifica \gl{UTF-8} con carattere di fine riga in stile \gl{Unix LF} e avere una riga vuota al termine.
+Il codice deve seguire le linee guida Google reperibili all'indirizzo \url{https://github.com/google/styleguide}. I nomi delle variabili e classi deve essere in inglese, mentre i commenti in italiano.
 
 \subsubsection{Strumenti}
 
@@ -222,8 +223,6 @@ Nella seguente figura è illustrato il ciclo di vita di un documento.
 	\label{fig:documento}
 \end{figure}
 \newpage
-
-\subsubsection{Norme}
 
 \myparagraph{Template}
 Ogni documento va realizzato a partire dal \gl{template} adatto, i \gl{template} sono disponibili ai membri del \gl{team} in una apposita directory su \gl{Google Drive} e nel \gl{repository} \gl{Github} del \gl{team}.
@@ -508,6 +507,9 @@ Il codice identificativo dei test di unità è: \centra{TU[codice univoco]}.
 \mysubparagraph{Test di integrazione}
 I test di integrazione rappresentano l'estensione logica del test di unità. Il tipo più semplice di test di integrazione consiste nella combinazione di due unità già sottoposte a test in un solo componente e nel test dell'interfaccia presente tra le due. In uno scenario realistico più unità vengono combinate in componenti che, a loro volta, vengono aggregate in parti più grandi del sistema. Alla fine, tutti i moduli che compongono un processo vengono sottoposti al test contemporaneamente.
 Il codice identificativo dei test di integrazione è: \centra{TI[IDcomponente]} dove IDcomponente rappresenta la componente i cui elementi integrati sono sottoposti al test. 
+
+\mysubparagraph{Test di regressione}
+Il test di regressione va eseguito ogni volta che viene modificata un'implementazione del sistema. A tale scopo, è possibile eseguire nuovamente i test esistenti sul codice modificato per stabilire se le modifiche apportate hanno alterato elementi precedentemente funzionanti. Se necessario è anche possibile scrivere nuovi test.
 
 \mysubparagraph{Test di sistema}
 Sono test che vengono eseguiti quando si pensa che il prodotto sia giunto a una versione definitiva. In sostanza si controlla che il sistema soddisfi tutti i requisiti.
