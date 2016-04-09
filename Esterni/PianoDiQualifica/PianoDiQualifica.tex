@@ -16,11 +16,11 @@
 \setcounter{tocdepth}{5}
 
 \def\NOME{Piano di Qualifica}
-\def\VERSIONE{2.0}
-\def\DATA{23.02.2016}
-\def\REDATTORE{Giacomo Beltrame}
-\def\VERIFICATORE{Rudy Berton}
-\def\RESPONSABILE{Miki Violetto}
+\def\VERSIONE{3.0}
+\def\DATA{????.????.2016}
+\def\REDATTORE{??????}
+\def\VERIFICATORE{??????}
+\def\RESPONSABILE{?????}
 \def\USO{Esterno}
 \def\DISTRIBUZIONE{\COMMITTENTE \\ & \CARDIN \\ & \PROPONENTE}
 
@@ -33,6 +33,17 @@
 \maketitle
 
 \begin{diario}
+	\recap{Approvazione del documento}{Filippo Tesser}{Responsabile}{?????}{3.0}
+	\recap{Correzione errori individuati}{Michela De Bortoli}{Analista}{??????}{2.10}
+	\recap{Verifica dell'intero documento}{Rudy Berton}{Verificatore}{??????}{2.9}
+	\recap{Stesura appendice D}{Giacomo Beltrame}{Analista}{??????}{2.8}
+	\recap{Verifica appendici A e B}{Giacomo Beltrame}{Verificatore}{??????}{2.7}
+	\recap{Stesura test di integrazione}{Rudy Berton}{Amministratore}{?????}{2.6}
+	\recap{Stesura test di sistema}{Vassilikì Menarin}{Progettista}{????}{2.5}
+	\recap{Modifica della sezione A.3.0.3 dell'appendice}{Filippo Tesser}{Analista}{?????}{2.4}
+	\recap{Incremento test di accettazione}{Michela De Bortoli}{Progettista}{???????}{2.3}
+	\recap{Inizio stesura specifica dei test (appendice B)}{Michela De Bortoli}{Progettista}{??????}{2.2}
+	\recap{Incremento dell'appendice A}{Filippo Tesser}{Analista}{???????}{2.1}
 	\recap{Approvazione documento}{Miki Violetto}{Responsabile}{23.02.2016}{2.0}
 	\recap{Verifica delle sezioni modificate}{Rudy Berton}{Verificatore}{22.02.2016}{1.2}
 	\recap{Revisione correttiva dei contenuti rispetto alle segnalazioni del committente}{Giacomo Beltrame}{Analista}{20.02.2016}{1.1}
@@ -43,9 +54,9 @@
 	\recap{Verifica del documento}{Filippo Tesser}{Verificatore}{15.01.2016}{0.6}
 	\recap{Stesura appendici A, B e C}{Rudy Berton}{Analista}{11.01.2016}{0.5}
 	\recap{Fine stesura Gestione della qualità e stesura sezione Gestione amministrativa della revisione}{Rudy Berton}{Analista}{08.01.2016}{0.4}
-\recap{Inizio stesura Gestione della qualità}{Rudy Berton}{Analista}{05.01.2016}{0.3}
-\recap{Stesura sezione Obiettivi di qualità}{Rudy Berton}{Analista}{03.01.2016}{0.2}
-\recap{Stesura sezione Introduzione}{Rudy Berton}{Analista}{02.01.2016}{0.1}
+	\recap{Inizio stesura Gestione della qualità}{Rudy Berton}{Analista}{05.01.2016}{0.3}
+	\recap{Stesura sezione Obiettivi di qualità}{Rudy Berton}{Analista}{03.01.2016}{0.2}
+	\recap{Stesura sezione Introduzione}{Rudy Berton}{Analista}{02.01.2016}{0.1}
 \end{diario}
 
 \newpage
@@ -80,7 +91,8 @@ Il presente documento ha lo scopo di descrivere gli obiettivi di qualità, di pr
 \newline \url{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C5.pdf};
 \item \bold{Norme di progetto: } \NdPdoc;
 \item \bold{Analisi dei requisiti: } \ARdoc;
-\item \bold{Piano di progetto: } \PdPdoc.
+\item \bold{Piano di progetto: } \PdPdoc;
+\item \bold{Specifica tecnica:} \STdoc.
 \end{itemize}
 
 \subsubsection{Riferimenti informativi}
@@ -544,9 +556,9 @@ La complessità di un metodo è determinata, oltre che da altri elementi, anche 
 \
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
-\item Valore negativo: un numero di parametri formali maggiore di 5. 
-\item Valore accettabile: un numero di parametri inferiore a 5.
-\item Valore ottimale: un numero inferiore a 3 parametri formali.
+\item Valore negativo: un numero di parametri formali maggiore di 6. 
+\item Valore accettabile: un numero di parametri pari o inferiore a 6.
+\item Valore ottimale: un numero inferiore a 4 parametri formali.
 \end{itemize}
 
 \mysubparagraph{Campi dati per classe}
@@ -630,7 +642,1064 @@ Attraverso i valori degli indici Ca e Ce (accoppiamento afferente ed efferente r
 
 \newpage
 \section{Specifica dei test}
-\bold{DA FARE}
+In questa sezione vengono descritti i test che nelle successive attività verranno implementati in modo tale che, con il loro superamento, possano garantire al sistema software livelli di qualità ottimali, un corretto funzionamento e un riscontro positivo con le aspettative del cliente.
+\newline L'intera sezione potrà subire un ulteriore incremento nelle attività successive con l'aggiunta di nuovi test o la modifica della descrizione di alcuni di essi. La loro implementazione avverrà peraltro nelle attività successive per cui all'attività attuale tutti i test saranno nello stato N.I. (non implementato).
+\newline Per comprendere la sintassi con cui saranno definiti i test è consigliabile consultare la sezione apposita nel documento \doc{Norme di Progetto}.
+
+\subsection{Test di Validazione}
+I test di validazione vengono utilizzati durante l'attività di collaudo finale, per accertarsi che il prodotto realizzato sia conforme alle attese del committente.
+\newline Per ogni test viene specificato il proprio codice univoco, il requisito (o i requisiti) a cui fa riferimento, lo stato di implementazione attuale e la descrizione che indica le operazioni che l'utente deve svolgere per testare i requisiti associati a tale test. 
+\newline Il tracciamento tra i test di validazione e i requisiti correlati è riportato nel documento \doc{Analisi dei Requisiti}.
+
+
+
+\begin{tabella}{!{\VRule}c!{\VRule}p{8cm}!{\VRule}c!{\VRule}c!{\VRule}}
+	\color{white} \bold{Codice test} & \color{white} \bold{Descrizione} & \color{white} \bold{Requisito} & \color{white} \bold{Stato}\\
+	\endfirsthead
+	TV1 & 
+		Un nuovo utente vuole verificare la possibilità di creare un proprio account.
+		\newline \newline 
+		Operazioni:
+		{\begin{enumerate}
+			\item entrare nella pagina di registrazione;
+			\item inserire il nome;
+			\item inserire il cognome;
+			\item inserire l'email;
+			\item inserire l’email di conferma;
+			\item inserire la password;
+			\item inserire la password di conferma;
+			\item verificare la presenza di  un avviso qualora vi siano errori;
+			\item in caso di assenza di errori verificare che la creazione dell’account sia avvenuta correttamente eseguendo un login.
+		\end{enumerate}
+		} 
+	& ROF1 & N.I. 
+	\\
+	TV1.3 & 
+		L'utente desidera verificare che l'inserimento della propria email non provochi alcun problema.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+			\item inserire l'email nell'apposito campo;
+			\item verificare che l’indirizzo email sia univoco all’interno del sistema;
+			\item verificare che l’indirizzo email abbia un formato valido come descritto nell' nell’\ARdoc;
+			\item verificare la segnalazione di errori attraverso degli avvisi qualora uno dei punti precedenti non sia stato eseguito in modo corretto.
+		\end{enumerate}
+		}
+	& ROF1.3 & N.I.
+	\\
+	TV1.3.3 &
+		L’utente deve verificare che l’email di conferma inserita sia uguale a quella precedentemente inserita nel campo sopra.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+			\item inserire l’email per la seconda volta;
+			\item verificare che l’email appena inserita sia uguale a quella inserita nel campo soprastante;
+			\item verificare la presenza di un avviso qualora si verifichi un errore con la email appena inserita.
+		\end{enumerate}
+		}
+	& ROF1.3.3 & N.I.
+	\\
+	TV1.4 &
+		L’utente desidera verificare che l’inserimento della password non provochi problemi.
+		 \newline \newline
+		 Operazioni:
+		 {\begin{enumerate}
+		 	\item inserire la password nell’apposito campo;
+		 	\item verificare che la password rispetti le caratteristiche descritte nell'\ARdoc;
+		 	\item verificare la presenza di un avviso d’errore qualora ci sia stato un problema.
+		\end{enumerate}
+		 }
+	& ROF1.4 & N.I.
+	\\
+	TV1.4.2 &
+		L’utente deve verificare che la password di conferma inserita sia uguale a quella precedentemente digitata nel campo sopra.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+			\item inserire la password per la seconda volta;
+			\item verificare che la password appena inserita sia uguale a quella inserita nel campo soprastante;
+			\item verificare la presenza di un avviso qualora si verifichi un errore con la password appena inserita.
+		\end{enumerate}
+		}
+	& ROF1.4.2 & N.I.
+	\\
+	TV2 &
+		L’utente deve verificare la possibilità di autenticarsi una volta registrato.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+			\item inserire l’email;
+			\item inserire la  password;
+			\item cliccare sul pulsante di accesso;
+			\item verificare la presenza di un avviso in caso ci sia stato un errore durante l’autenticazione;
+			\item verificare la corretta autenticazione nel caso in cui i dati inseriti siano validi e non abbiano causato alcun errore.
+		\end{enumerate}
+		}
+	& ROF2 & N.I.
+	\\
+	TV3 &
+		L’utente vuole verificare la possibilità di recuperare la propria password utilizzando l’ email usata al momento della registrazione.	
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+			\item entrare nella pagina dedicata al recupero della password;
+			\item inserire la propria email nell’appropriato campo;
+			\item cliccare sull’apposito pulsante per eseguire l’operazione;
+			\item verificare che, in caso di errore nel recupero della password, l’utente sia avvisato;
+			\item verificare, qualora non sia avvenuto alcun errore, di aver ricevuto una email con una password temporanea al suo interno.
+		\end{enumerate}
+		}
+	& ROF3 & N.I.
+	\\
+	TV11 &
+		L’utente vuole verificare la possibilità di svolgere i quiz pubblici all’interno del sistema.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+			\item entrare nella pagina d’archivio dei quiz pubblici;
+			\item selezionare il quiz desiderato tramite le operazioni di ricerca descritte nell’\ARdoc;
+			\item confermare la selezione del quiz desiderato cliccandoci sopra;			
+			\item svolgere il quiz rispondendo alle domande secondo le modalità descritte nell’\ARdoc;
+			\item confermare la risoluzione del quiz cliccando il pulsante apposito;
+			\item visualizzare l’esito del quiz svolto.	
+		\end{enumerate}
+		}
+	& ROF11 & N.I.
+	\\
+	TV12.1 &
+		L’utente vuole verificare la possibilità di eseguire una ricerca tra i quiz e visualizzare i risultati ottenuti.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+			\item entrare nella pagina dedicata alla ricerca;
+			\item selezionare i parametri di ricerca (argomento, livello di difficoltà, parole chiave, autore ) per i quiz solamente pubblici;
+			\item premere il pulsante 'Cerca';
+			\item verificare la corretta visualizzazione dei risultati.
+		\end{enumerate}
+		}
+	& ROF12.1 & N.I.
+	\\	
+	TV12.1.1.5 &
+		Lo studente vuole verificare la possibilità di eseguire una ricerca tra i quiz solamente privati.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+			\item entrare nella pagina dedicata alla ricerca;
+			\item selezionare i parametri di ricerca (argomento, livello di difficoltà, parole chiave, autore) per i quiz;
+			\item selezionare la voce 'Privati' per restringere il campo di ricerca ai quiz privati legati alla classe a cui lo studente appartiene;
+			\item premere il pulsante 'Cerca';
+			\item verificare la corretta visualizzazione dei risultati.
+		\end{enumerate}
+		}
+	& ROF12.1.1.5 & N.I.
+	\\
+	TV12.2 &
+		Il docente vuole verificare la possibilità di eseguire una ricerca tra le domande presenti nel sistema.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alla ricerca;
+				\item selezionare i parametri di ricerca (argomento, livello di difficoltà, parole chiave, autore) per le domande;
+				\item premere il pulsante 'Cerca';
+				\item verificare la corretta visualizzazione dei risultati.
+		\end{enumerate}
+		}
+	& ROF12.2 & N.I.
+	\\
+	TV13 &
+		L’utente può verificare l’uscita dal sistema eseguendo il logout.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item l’utente deve essere autenticato;
+				\item premere il pulsante di logout;
+				\item verificare di essere realmente fuori dall’area di autenticazione.
+		\end{enumerate}
+		}
+	& ROF13 & N.I.
+	\\
+	TV14.1 &
+		L’utente vuole verificare di poter visualizzare le proprie informazioni personali.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item l’utente si deve autenticare;
+				\item entrare nella pagina dedicata al profilo;
+				\item visualizzare i propri dati presenti nella pagina come descritto nell’\ARdoc.
+		\end{enumerate}
+		}
+	& ROF14.1 & N.I.
+	\\
+	TV14.2 & 
+		L’utente vuole verificare la possibilità di visualizzare lo storico dei propri quiz.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item l’utente deve essere autenticato;
+				\item entrare nella pagina dedicata allo storico dei quiz;
+				\item verificare la presenza corretta dei propri quiz svolti in precedenza.
+		\end{enumerate}
+		}
+	& ROF14.2 & N.I.
+	\\
+	TV14.3 & 
+		L’utente vuole verificare la disponibilità di modificare i propri dati personali.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item l’utente si deve autenticare;
+				\item entrare nella pagina dedicata al profilo;
+				\item selezionale il tasto 'Modifica' per modificare le proprie informazioni personali;
+				\item confermare le proprie modifiche;
+				\item verificare la corretta modifica del campo/i dati cambiato/i.				
+		\end{enumerate}
+		}
+	& ROF14.3 & N.I.
+	\\
+	TV14.3.3 &
+		L’utente vuole verificare la possibilità di modificare la propria password.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item L’utente si deve autenticare;				
+				\item entrare nella pagina dedicata al profilo;
+				\item selezionare il tasto 'Modifica';
+				\item nello spazio dedicato alla modifica della password, inserire la password corrente o una password temporanea fornita dal sistema;
+				\item inserire la nuova password;
+				\item inserire nuovamente la password nuova;
+				\item confermare la modifica della password;
+				\item verificare che il cambio password sia avvenuto correttamente eseguendo un login;
+				\item verificare la presenza di un avviso in caso sia avvenuto un errore durante il cambio della password.
+		\end{enumerate}
+		}
+	& ROF14.3.3 & N.I
+	\\
+	TV14.4.1 &
+		Il responsabile vuole verificare la possibilità di eliminare dal proprio ente un account da lui gestito.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;				
+				\item entrare nella pagina dedicata alla gestione account;
+				\item selezionare l’account da eliminare dall’ente, tra quelli gestiti da lui stesso;
+				\item premere il pulsante 'Elimina';
+				\item verificare che l’account sia stato eliminato dall’ente correttamente.
+		\end{enumerate}
+		}
+	& ROF14.4.1 & N.I.
+	\\
+	TV15.1 &
+		Il docente vuole verificare la possibilità di creare un quiz.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata ai quiz;
+				\item premere il pulsante 'Crea quiz';
+				\item inserire nel campo apposito il titolo del quiz;
+				\item selezionare l’argomento del quiz;
+				\item inserire la descrizione del quiz;
+				\item specificare, se desiderato, delle parole chiave da associare al quiz;
+				\item selezionare il permesso del quiz (pubblico o privato);
+				\item nel caso sia stato selezionato il permesso 'privato', selezionare le classi a cui il quiz è destinato;
+				\item aggiungere le domande desiderate;
+				\item confermare il salvataggio del quiz;
+				\item verificare che il docente sia attribuito automaticamente come autore del quiz in questione;
+				\item verificare la corretta creazione del quiz.
+		\end{enumerate}
+		}
+	& ROF15.1 & N.I.
+	\\
+	TV15.2 &
+		Il docente vuole modificare un quiz precedentemente creato.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata ai quiz;
+				\item selezionare il quiz che si desidera modificare;
+				\item premere il pulsante 'Modifica';
+				\item modificare il campo desiderato (titolo, argomento, descrizione, permesso, parole chiave);
+				\item aggiungere le domande desiderate;
+				\item rimuovere le domande indesiderate;
+				\item confermare la modifica;
+				\item verificare che la modifica sia stata attuata in modo corretto;
+				\item verificare che venga presentato un avviso in caso si verifichi un errore durante la modifica del quiz.
+		\end{enumerate}
+		}
+	& ROF15.2 & N.I.
+	\\
+	TV15.2.5 &
+		Il docente vuole verificare la possibilità di inserire una domanda all’interno di un quiz.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata ai quiz;
+				\item selezionare il quiz che si desidera modificare;				
+				\item premere il pulsante 'Modifica';
+				\item selezionare la voce 'Aggiungi domanda';
+				\item selezionare una domanda già esistente oppure crearne una nuova;
+				\item confermare l’aggiunta della domanda;
+				\item confermare la modifica del quiz;
+				\item verificare che la modifica sia stata attuata in modo corretto;
+				\item verificare che venga presentato un avviso in caso di errore durante la modifica di un quiz.
+		\end{enumerate}
+		}
+	& ROF15.2.5 & N.I.
+	\\
+	TV15.2.6 &
+		Il docente vuole verificare la possibilità di eliminare una domanda all’interno di un quiz.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;				
+				\item entrare nella pagina dedicata ai quiz;
+				\item selezionare il quiz che si desidera modificare;
+				\item premere il pulsante modifica;
+				\item selezionare le domande che si vogliono eliminare dal quiz;
+				\item selezionare la voce 'Elimina domanda';
+				\item confermare la modifica del quiz;
+				\item verificare che la modifica sia stata attuata in modo corretto;
+				\item verificare che venga presentato un avviso in caso di errore durante la modifica del quiz.
+				
+		\end{enumerate}
+		}
+	& ROF15.2.6 & N.I.
+	\\
+	TV15.3 &
+		Il docente vuole testare la possibilità di eliminare un quiz esistente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata ai quiz;
+				\item selezionare il quiz che si desidera eliminare;
+				\item premere il pulsante 'Elimina';
+				\item confermare l’eliminazione del quiz;
+				\item verificare che l’eliminazione sia stata effettuata in modo corretto.
+			\end{enumerate}
+		}
+	& ROF15.3 & N.I.
+	\\
+	TV16.1/2 &
+		L’utente senza ruolo vuole verificare la possibilità di effettuare una richiesta per ricoprire il ruolo di docente o studente all’interno di un ente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item l’utente senza ruolo deve essere autenticato;
+				\item inviare la richiesta per il ruolo di studente o docente all’interno dell’ente desiderato;
+				\item verificare che la richiesta sia stata accettata oppure negata tramite un avviso;
+				\item verificare che avvenga un messaggio di errore se l’utente possiede già un ruolo all’interno di tale ente e cerca comunque di eseguire una richiesta per un nuovo ruolo per tale ente.
+		\end{enumerate}
+		}
+	&  ROF16.1 - ROF16.2  & N.I.
+	\\
+	TV16.3 &
+		Il docente vuole verificare di poter effettuare una richiesta di inserimento in una classe esistente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item selezionare l’ente contenente la classe alla quale ci si vuole iscrivere;
+				\item selezionare la classe a cui ci si vuole iscrivere;
+				\item premere il pulsante 'Invia richiesta' per richiedere il proprio inserimento in tale classe;
+				\item verificare l’accettazione o la negazione della richiesta inviata;
+				\item verificare che venga segnalato un errore qualora un docente appartenente ad una classe richieda di essere inserito nella medesima classe.
+		\end{enumerate}
+		}
+	& ROF16.3 & N.I.
+	\\
+	TV16.4 &
+		Lo studente vuole verificare di poter effettuare una richiesta di inserimento in una classe esistente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item lo studente deve essere autenticato;
+				\item selezionare l’ente contenente la classe alla quale ci si vuole iscrivere;
+				\item selezionare la classe in cui ci si vuole inserire;
+				\item premere il pulsante 'Invia richiesta' per richiedere il proprio inserimento in tale classe;
+				\item verificare l’accettazione o la negazione della richiesta inviata;
+				\item verificare che venga segnalato un errore qualora uno studente appartenente ad una classe richieda di essere inserito nella medesima classe.
+		\end{enumerate}
+		}
+	& ROF16.4 & N.I.
+	\\
+	TV17.1 & 
+		Il responsabile vuole verificare la possibilità di gestire le richieste eseguite dai docenti per l’inserimento in una classe.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina contenente la lista delle richieste in sospeso;
+				\item selezionare la richiesta ricevuta dal docente;
+				\item accettare o negare la richiesta;
+				\item se accettata, verificare che il docente sia stato inserito correttamente nella classe da lui richiesta.
+		\end{enumerate}
+		}
+	& ROF17.1 & N.I.
+	\\
+	TV17.2 & 
+		Il responsabile vuole verificare la possibilità di gestire le richieste di attribuzione del ruolo di docente ad un utente senza ruolo.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina contenente la lista delle richieste in sospeso;
+				\item selezionare la richiesta di attribuzione del ruolo di docente;
+				\item accettare o rifiutare la richiesta;
+				\item se accettata, verificare che l’utente senza ruolo ora sia in possesso del ruolo di docente all'interno dell'ente gestito da tale responsabile.
+		\end{enumerate}
+		}
+	& ROF17.2 & N.I.
+	\\
+	TV17.3 &
+		Il docente vuole verificare la possibilità di gestire le richieste effettuate da uno studente per il suo inserimento.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina contenente la lista delle richieste in sospeso;
+				\item selezionare la richiesta espressa dallo studente per l’inserimento in una classe;
+				\item accettare o negare la richiesta;
+				\item se accettata, verificare il corretto inserimento dello studente nella classe desiderata.
+		\end{enumerate}
+		}
+	& ROF17.3 & N.I.
+	\\
+	TV17.4 &
+		Il responsabile vuole verificare la possibilità di gestire le richieste di attribuzione del ruolo di studente ad un utente senza ruolo.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina contenente la lista delle richieste in sospeso;
+				\item selezionare la richiesta di attribuzione del ruolo di studente;
+				\item accettare o rifiutare la richiesta;
+				\item se accettata, verificare che l’utente senza ruolo ora sia in possesso del ruolo di studente.
+		\end{enumerate}
+		}
+	& ROF17.4 & N.I.
+	\\
+	TV18.1 &
+		Il responsabile vuole verificare la possibilità di creare un nuovo argomento all’interno del sistema.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina dedicata agli argomenti;
+				\item premere il pulsante 'Nuovo argomento';
+				\item inserire il nome dell’argomento;
+				\item verificare che l’argomento sia stato creato correttamente;
+				\item verificare che venga segnalato un errore qualora il responsabile cerchi di creare un argomento con un nome già assegnato ad un altro argomento.
+		\end{enumerate}
+		}
+	& ROF18.1 & N.I.
+	\\
+	TV18.2 &
+		Il responsabile vuole verificare la disponibilità di eliminare dal sistema un argomento esistente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina dedicata agli argomenti;
+				\item selezionare l’argomento che si desidera eliminare;
+				\item premere il pulsante elimina;
+				\item confermare l’eliminazione dell’argomento;
+				\item verificare che l’argomento sia stato eliminato correttamente.
+		\end{enumerate}
+		}
+	& ROF18.2 & N.I.
+	\\
+	TV19 &
+		Il responsabile verifica la possibilità di modificare il proprio ente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;	
+				\item entrare nella pagina dedicata al proprio ente;
+				\item selezionare 'Modifica ente';
+				\item modificare il nome del proprio ente;
+				\item confermare la modifica;
+				\item verificare la corretta modifica.
+		\end{enumerate}
+		}
+	& ROF19 & N.I.
+	\\				
+	TV20.1 &
+		Il docente vuole verificare la possibilità di visualizzare le statistiche relative ai quiz.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata ai quiz;
+				\item selezionare la voce statistiche al suo interno;
+				\item verificare la corretta visualizzazione delle statistiche come descritto nell’\ARdoc.
+		\end{enumerate}
+		}
+	& ROF20.1 & N.I.
+	\\
+	TV20.2 &
+		Il docente vuole verificare la possibilità di visualizzare le statistiche relative alle domande.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item selezionare la voce statistiche al suo interno;
+				\item verificare la corretta visualizzazione delle statistiche come descritto nell’\ARdoc.
+		\end{enumerate}
+		}
+	& ROF20.2 & N.I.
+	\\ 
+	TV20.3 &
+		Il docente vuole visualizzare le statistiche relative agli studenti.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato; 
+				\item entrare nella pagina dedicata agli studenti;
+				\item eseguire una ricerca per trovare lo studente desiderato; 
+				\item selezionare lo studente di cui si vuole vedere le statistiche;
+				\item verificare la corretta visualizzazione delle statistiche come definito nell’\ARdoc.
+		\end{enumerate}
+		}
+	& ROF20.3 & N.I.
+	\\
+	TV21.1 &
+		Il responsabile vuole verificare la possibilità di creare una classe associata al proprio ente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina dedicata alle classi del proprio ente;
+				\item selezionare il pulsante 'Nuova classe' dal suo interno;
+				\item inserire il nome della classe;
+				\item inserire la descrizione della classe;
+				\item inserire l’anno scolastico;
+				\item confermare la creazione della classe;
+				\item verificare la corretta creazione della classe all’interno del proprio ente.
+				  
+		\end{enumerate}
+		}
+	& ROF21.1 & N.I.
+	\\
+	TV21.2 &
+		Il responsabile vuole verificare la possibilità di modificare una classe esistente all'interno del proprio ente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina dedicata alle classi del proprio ente;
+				\item selezionare la classe che si desidera modificare;
+				\item premere il pulsante 'Modifica';
+				\item eseguire la modifica della descrizione;
+				\item confermare la modifica;
+				\item verificare la corretta modifica della classe.
+		\end{enumerate}
+		}
+	& ROF21.2 & N.I.
+	\\
+	TV21.3 &
+		Il responsabile verifica la possibilità di eliminare una classe appartenente al proprio ente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina dedicata alle classi del proprio ente;
+				\item selezionare la classe che si desidera eliminare;
+				\item premere il pulsante 'Elimina';
+				\item confermare l’eliminazione;
+				\item verificare la corretta rimozione della classe dal sistema.
+		\end{enumerate}
+		}
+	& ROF21.3 & N.I.
+	\\
+	TV21.4 &
+		Il docente deve verificare di poter visualizzare la lista di studenti associati ad una classe.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina dedicata alle classi del proprio ente;
+				\item selezionare la classe di cui si desidera conoscere il contenuto;
+				\item visualizzare la lista degli studenti di cui ne fanno parte.
+		\end{enumerate}
+		}
+	& ROF21.4 & N.I.
+	\\
+	TV21.5 &
+		Il responsabile deve verificare di poter visualizzare la lista di  docenti associati ad una classe.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina dedicata alle classi del proprio ente;
+				\item selezionare la classe di cui si desidera conoscere il contenuto;
+				\item visualizzare la lista  dei docenti di cui ne fanno parte.
+		\end{enumerate}
+		}
+	& ROF21.5 & N.I.
+	\\
+	TV21.6 &
+		Il responsabile vuole verificare la possibilità di gestire una classe esistente all'interno del proprio ente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il responsabile deve essere autenticato;
+				\item entrare nella pagina dedicata alle classi del proprio ente;
+				\item selezionare la classe che si desidera gestire;
+				\item inserire/rimuovere uno studente;
+				\item inserire/rimuovere un docente;
+				\item verificare che l’operazione non abbia prodotto alcun errore.
+		\end{enumerate}
+		}
+	& ROF21.6 & N.I.
+	\\
+	TV31.3 &
+		Il docente vuole verificare la creazione di domande vero o falso.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item premere il pulsante 'Nuova domanda vero o falso';
+				\item inserire il titolo della domanda;
+				\item inserire una descrizione;
+				\item selezionare l’argomento della domanda;
+				\item selezionare il livello di difficoltà;
+				\item inserire le parole chiave;
+				\item inserire facoltativamente un allegato;
+				\item selezionare la risposta vera;
+				\item confermare la creazione della domanda;
+				\item verificare la corretta creazione della domanda.
+		\end{enumerate}
+		}
+	& ROF31.3 & N.I.
+	\\
+	TV31.4 & 
+		Il docente vuole verificare la possibilità di creare una domanda a risposta aperta.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item premere il pulsante 'Nuova domanda a risposta aperta';
+				\item inserire il titolo della domanda;
+				\item inserire una descrizione;
+				\item selezionare l’argomento della domanda;
+				\item selezionare il livello di difficoltà;
+				\item inserire le parole chiave;
+				\item inserire facoltativamente un allegato;
+				\item inserire la risposta corretta;
+				\item confermare la creazione della domanda;
+				\item verificare la corretta creazione della domanda.
+		\end{enumerate}
+		}
+	& ROF31.4 & N.I.
+	\\
+	TV31.5 &
+		Il docente vuole verificare la possibilità di creare una domanda a risposta multipla.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;				  
+				\item entrare nella pagina dedicata alle domande;
+				\item premere il pulsante 'Nuova domanda a risposta multipla';
+				\item inserire il titolo della domanda;
+				\item inserire una descrizione;
+				\item selezionare l’argomento della domanda;
+				\item selezionare il livello di difficoltà;
+				\item inserire le parole chiave;
+				\item inserire facoltativamente un allegato;
+				\item inserire diverse risposte (di tipo multimediale o testuale);
+				\item selezionare le risposte corrette;
+				\item confermare la creazione della domanda;
+				\item verificare la corretta creazione della domanda.
+		\end{enumerate}
+		}
+	& ROF31.5 & N.I.
+	\\
+	TV31.6 &
+		Il docente vuole verificare la possibilità di creare una domanda a completamento testuale.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item premere il pulsante 'Nuova domanda a completamento testo';
+				\item inserire il titolo della domanda;
+				\item inserire una descrizione;
+				\item selezionare l’argomento della domanda;
+				\item selezionare il livello di difficoltà;
+				\item inserire le parole chiave;
+				\item inserire facoltativamente un allegato;
+				\item inserire il testo incompleto della domanda;
+				\item specificare un insieme di parole corrette e sbagliate;
+				\item confermare la creazione della domanda;
+				\item verificare la corretta creazione della domanda.
+				
+				
+		\end{enumerate}
+		}
+	& ROF31.6 & N.I
+	\\
+	TV31.7 &
+		Il docente vuole verificare la creazione di domande a collegamento.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item premere il pulsante 'Nuova domanda a collegamenti';
+				\item inserire il titolo della domanda;
+				\item inserire una descrizione;
+				\item selezionare l’argomento della domanda;
+				\item selezionare il livello di difficoltà;
+				\item inserire le parole chiave;
+				\item inserire facoltativamente un allegato;
+				\item inserire la risposta sotto forma di ennupla secondo le modalità stabilite nell'\ARdoc;
+				\item confermare la creazione della domanda;
+				\item verificare la corretta creazione della domanda.
+		\end{enumerate}
+		}
+	& ROF31.7 & N.I.
+	\\
+	TV31.7.1 &
+		Il docente vuole verificare la possibilità di creare una ennupla per le domande a collegamenti.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item inserire nella parte iniziale dell’ennupla un file multimediale oppure del testo;
+				\item inserire nella parte finale dell’ennupla un file multimediale oppure del testo.
+		\end{enumerate}
+		}
+	& ROF31.7.1 & N.I.
+	\\
+	TV31.2 &
+		Il docente vuole verificare la possibilità di interrompere la creazione di una domanda uscendo dal sistema.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item a seconda della tipologia di domanda che si desidera creare premere il corrispettivo pulsante 'Nuova domanda';				
+				\item durante la creazione della domanda uscire cliccando qualsiasi voce presente nella pagina;
+				\item confermare il desiderio di uscita dalla creazione della domanda premendo il pulsante relativo sull’avviso mostrato dal sistema per chiedere conferma dell’interruzione;
+				\item verificare di essere fuori dalla creazione della domanda e verificare che la domanda non sia mai stata creata.	
+		\end{enumerate}
+		}
+	& ROF31.2 & N.I.
+	\\
+	TV 31.10 &
+		Il docente vuole verificare la possibilità di modificare una domanda di tipo vero o falso esistente.	
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item selezionare la domanda che si desidera modificare tra quelle di tipologia vero o falso;
+				\item premere il pulsante 'Modifica';
+				\item eseguire una modifica alle caratteristiche comuni (titolo, descrizione, argomento, livello di difficoltà, allegato, parole chiave); 
+				\item eseguire una modifica alla veridicità delle risposta;
+				\item confermare la modifica;
+				\item verificare la corretta attuazione della modifica.
+		\end{enumerate}
+		}
+	& ROF31.10 & N.I.
+	\\
+	TV31.11 &
+		Il docente vuole verificare la possibilità di modificare una domanda a risposta multipla esistente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item selezionare la domanda che si desidera modificare tra quelle a risposta multipla;
+				\item premere il pulsante 'Modifica';
+				\item eseguire una modifica alle caratteristiche comuni (titolo, descrizione, argomento, livello di difficoltà, allegato, parole chiave);
+				\item inserire una nuova risposta (testuale o multimediale) e definire la propria veridicità;
+				\item modificare una risposta già esistente secondo le modalità descritte nell’\ARdoc;
+				\item eliminare una risposta già esistente;
+				\item confermare la modifica;
+				\item verificare la corretta attuazione della modifica.
+		\end{enumerate}
+		}
+	& ROF31.11 & N.I.
+	\\
+	TV31.12 &
+		Il docente vuole verificare la possibilità di modificare una domanda a risposta aperta esistente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item selezionare la domanda che si desidera modificare tra quelle a risposta aperta;
+				\item premere il pulsante 'Modifica';
+				\item eseguire una modifica alle caratteristiche comuni (titolo, descrizione, argomento, livello di difficoltà, allegato, parole chiave);
+				\item modificare il testo della risposta esistente;
+				\item confermare la modifica;
+				\item verificare la corretta attuazione della modifica.
+		\end{enumerate}
+		}
+	& ROF31.12 & N.I.
+	\\
+	TV31.13 & 
+		Il docente vuole verificare la possibilità di modificare una domanda a completamento testo esistente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item selezionare la domanda che si desidera modificare tra quelle a completamento testo;
+				\item premere il pulsante 'Modifica';
+				\item eseguire una modifica alle caratteristiche comuni (titolo, descrizione, argomento, livello di difficoltà, allegato, parole chiave);
+				\item modificare il testo incompleto della domanda;
+				\item modificare l’insieme delle risposte possibili;
+				\item eliminare alcune parole tra le risposte possibili;
+				\item confermare la modifica;
+				\item verificare la corretta attuazione della modifica.
+		\end{enumerate}
+		}
+	& ROF31.13 & N.I.
+	\\
+	TV31.14 &
+		Il docente vuole verificare la possibilità di modificare una domanda a collegamenti esistente.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item selezionare la domanda che si desidera modificare tra quelle a collegamenti;
+				\item premere il pulsante 'Modifica';
+				\item eseguire una modifica alle caratteristiche comuni (titolo, descrizione, argomento, livello di difficoltà, allegato, parole chiave);
+				\item aggiungere una risposta secondo le modalità descritte nell'\ARdoc;
+				\item eliminare una risposta;
+				\item confermare la modifica;
+				\item verificare la corretta attuazione della modifica.				
+		\end{enumerate}
+		}
+	& ROF31.14 & N.I.
+	\\
+	TV31.9 &
+		Il docente vuole verificare la possibilità di interrompere la modifica di una domanda uscendo dal sistema.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item selezionare la domanda che si vuole modificare;
+				\item premere il pulsante 'Modifica';
+				\item durante la modifica della domanda uscire cliccando qualsiasi voce presente nella pagina;
+				\item confermare il desiderio di uscita dalla modifica della domanda premendo il pulsante relativo sull’avviso mostrato dal sistema per chiedere conferma dell’interruzione;
+				\item verificare di essere fuori dalla modifica della domanda e verificare che la domanda non abbia subito alcuna modifica.
+		\end{enumerate}
+		}
+	& ROF31.9 & N.I.
+	\\
+	TV31.15 &
+		Il docente vuole verificare la possibilità di eliminare una domanda dal sistema.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata alle domande;
+				\item selezionare la domanda che si desidera eliminare;
+				\item premere il pulsante 'Elimina';
+				\item confermare l’eliminazione;
+				\item verificare la corretta eliminazione della domanda dal sistema.
+		\end{enumerate}
+		}
+	& ROF31.15 & N.I.
+	\\
+	TV20.4 &
+		Il docente vuole verificare di poter visualizzare le statistiche relative ai docenti.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item il docente deve essere autenticato;
+				\item entrare nella pagina dedicata ai docenti;
+				\item selezionare la voce 'Statistiche';
+				\item visualizzare correttamente la lista dei quiz creati da un docente  e la lista delle domande create da ogni docente (docenti che appartengono allo stesso ente di colui che cerca le statistiche).
+		\end{enumerate}
+		}
+	& RDF20.4 & N.I.
+	\\
+	TV23 &
+		Lo studente vuole verificare la possibilità di commentare i quiz e le domande.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item lo studente deve essere autenticato;
+				\item entrare nella pagina dedicata al forum;
+				\item selezionare la voce 'Domande' oppure 'Quiz';
+				\item lasciare un proprio commento relativo ad una domanda o a un quiz;
+				\item verificare che il commento sia visibile nel forum.
+		\end{enumerate}
+		}
+	& RZF23 & N.I.
+	\\
+	TV8 &
+		L’utente, che sia studente, docente oppure responsabile, deve verificare che il sistema funzioni correttamente su una piattaforma desktop.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item l’utente deve disporre di una connessione internet;
+				\item entrare nel sito di Quizzipedia da un computer desktop;
+				\item verificarne il suo corretto funzionamento.
+		\end{enumerate}
+		}
+	& ROV8 & N.I.
+	\\
+	TV9 &
+		Lo studente vuole verificare la possibilità di utilizzare le funzionalità del sistema da dispositivi mobile.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item l’utente deve disporre di una connessione ad internet sul proprio dispositivo mobile;				 
+				\item entrare nel sito di Quizzipedia da un browser del dispositivo;
+				\item verificarne il corretto funzionamento.
+		\end{enumerate}
+		}
+	& ROV9 & N.I.
+	\\
+	TV10 &
+		L’utente vuole verificare il corretto funzionamento del sistema con l’uso di JavaScript e cookies.
+		\newline \newline
+		Operazioni:
+		{\begin{enumerate}
+				\item l’utente deve disporre di una connessione ad internet;
+				\item l’utente deve aprire il browser con cui ha intenzione di accedere a Quizzipedia;
+				\item verificare che nelle impostazioni  del browser Javascript e cookies siano abilitati;
+				\item navigare nel sito di Quizzipedia; 
+		\end{enumerate}
+		}
+	& ROV10 & N.I.
+	\\
+	\rowcolor{white}  
+	\caption{Test di validazione}
+\end{tabella}
+
+
+\newpage
+\subsection{Test di Sistema}
+I seguenti test di sistema servono per verificare il comportamento dinamico complessivo dell'intero sistema in riferimento ai requisiti dichiarati nel documento \doc{Analisi dei Requisiti}.
+\newline Per ogni test viene specificato il proprio codice univoco, il requisito (o i requisiti) a cui fa riferimento, lo stato di implementazione attuale e la sua descrizione.
+\newline Il tracciamento tra i test di sistema e i requisiti correlati è riportato nel documento \doc{Analisi dei Requisiti}.
+
+
+\begin{tabella}{!{\VRule}c!{\VRule}p{8cm}!{\VRule}c!{\VRule}c!{\VRule}}
+	\color{white} \bold{Codice test} & \color{white} \bold{Descrizione} & \color{white} \bold{Requisito} & \color{white} \bold{Stato}\\
+	\endfirsthead
+	TS1 & Viene verificato che il sistema conceda la
+	creazione di un account permettendo di
+	usufruire delle funzionalità del sistema. & ROF1 & N.I.
+	\\
+	TS2 & Viene verificato che il sistema permetta ad ogni utente correttamente registrato di autenticarsi. & ROF2 & N.I.
+	\\
+	TS3 & Viene verificato che il sistema permetta all’utente di recuperare la propria password, attraverso l’invio di una email contenente una password temporanea. & ROF3 & N.I.
+	\\
+	TS11 & Viene verificato che il sistema permetta a qualsiasi utente di svolgere i quiz pubblici all’interno del sistema. & ROF11 & N.I.
+	\\
+	TS12 & Viene verificato che il sistema permetta all’utente di eseguire determinate funzioni di ricerca su quiz e domande. & ROF12 & N.I.
+	\\
+	TS13 & Viene verificato che il sistema garantisca all’utente di uscire dalla navigazione. & ROF13 & N.I.
+	\\
+	TS14 & Viene verificato che il sistema garantisca all’utente delle funzionalità per la gestione dell’account. & ROF14 & N.I.
+	\\
+	TS15 & Viene verificato che il sistema permetta all’utente con il ruolo di docente di gestire i quiz. & ROF15 & N.I.
+	\\
+	TS16 & Viene verificato che il sistema permetta all’utente di eseguire delle richieste di ruolo al responsabile di un ente all’interno del sistema. & ROF16 & N.I.
+	\\
+	TS17 & Viene verificato che sistema permetta ai responsabili e ai docenti di gestire le richieste. & ROF17 & N.I.
+	\\
+	TS18 & Viene verificato che il sistema garantisca al responsabile di poter gestire gli argomenti presenti nel sistema. & ROF18 & N.I.
+	\\
+	TS19 & Viene verificato che il sistema permetta al responsabile di modificare il proprio ente all’interno del sistema. & ROF19 & N.I.
+	\\
+	TS20 & Viene verificato che il sistema permetta la visualizzazione delle statistiche relative ai quiz, alle domande, agli studenti. & ROF20 & N.I.
+	\\
+	TS21 & Viene verificato che il sistema permetta al responsabile di gestire le classi creandole, modificandole oppure eliminandole. & ROF21 & N.I.
+	\\
+	TS31 & Viene verificato che il sistema permetta la gestione delle domande da parte del docente. & ROF31 & N.I.
+	\\
+	TS31.2 & Viene verificato che il sistema permetta l’uscita volontaria del docente dalla creazione di una domanda. & ROF31.2 & N.I.
+	\\
+	TS31.9 & Viene verificato che il sistema permetta al docente l’uscita volontaria dalla modifica in corso di una domanda. & ROF31.9 & N.I.
+	\\
+	TS22 & Viene verificato che il sistema permetta la creazione dei quiz in modo dinamico attraverso la valutazione delle risposte date. & RZF22 & N.I.
+	\\
+	TS23 & Viene verificato che il sistema permetta l’uso di un forum legato ai quiz e alle domande. & RZF23 & N.I.
+	\\
+	TS24 & Viene verificato che il sistema permetta lo svolgimento dei quiz in modalità lezione. & RZF24 & N.I.
+	\\
+	TS25 & Viene verificato che il sistema conceda ad uno studenti di proporre nuove domande da inserire nei questionari. & RZF25 & N.I.
+	\\
+	TS7 & Viene verificato che il sistema conceda ad uno studente di proporre nuove domande da inserire nei questionari. & ROV7 & N.I.
+	\\
+	TS8/9 & Viene verificato che il sistema funzioni correttamente sia su dispositivi mobile sia su piattaforme desktop. & ROV8 - ROV9 & N.I.
+	\\
+	TS10 & Viene verificato che il sistema funzioni correttamente con JavaScript e  cookies abilitati. & ROV10 & N.I.
+	\\
+	TS27 & Viene verificato che il sistema funzioni correttamente sul browser Google Chrome versione 49 e future. & ROV27 & N.I.
+	\\
+	TS28 & Viene verificato che il sistema funzioni correttamente sul browser Mozilla Firefox versione 44. & ROV28 & N.I.
+	\\
+	TS29 & Viene verificato che il sistema funzioni correttamente sul browser Internet Explorer versione 11. & ROV29 & N.I.
+	\\
+	TS30 & Viene verificato che il sistema funzioni correttamente sul browser Safari versione 9. & ROV30 & N.I.
+	\\
+	\rowcolor{white}  
+	\caption{Test di sistema}
+\end{tabella}
+
+\newpage
+\subsection{Test di Integrazione}
+I test di integrazione, che vengono di seguito riportati, servono per verificare la corretta comunicazione tra le diverse componenti del sistema software in modo tale che il funzionamento sia quello atteso.
+\bold{DA FINIRE}
+\\
+\newline Per ogni test viene specificato il proprio codice univoco, la componente o le componenti a cui fa riferimento, lo stato di implementazione attuale e la sua descrizione. 
+
+%La strategia che verrà seguita per la verifica dei moduli sarà bottom-up, ovvero  integrare prima le parti con minore dipendenza funzionale e maggiore funzionalità
+%che corrispondono alle componenti per requisiti obbligatori permettendo, in questo modo, di avere una versione
+%funzionante delle parti obbligatorie dell’applicazione il prima possibile.
+% 
+%Questi test sono stati pensati seguendo una strategia bottom-up, ossia basata sulla logica di rea-
+%lizzare il prodotto G finale a partire dalle singole componenti necessarie per realizzare le funzioni
+%richieste.
+%
+%
+%
+%Verrà utilizzata una strategia di integrazione incrementale per poter sviluppare e
+%verificare più componenti in parallelo. Questo metodo permette di dare priorità ai test
+%relativi alle componenti che vengono ritenute più importanti. In questo modo sarà possibile
+%partire dalle componenti che soddisfano i requisiti obbligatori fino ad integrarli con le
+%componenti che soddisfano i requisiti opzionali.
+%L’ordine di integrazione delle parti è bottom-up: prima di tutto verranno inserite le
+%componenti con minori dipendenze funzionali e maggiori funzionalità, che corrispondono
+%cioè ai requisiti obbligatori. Questi componenti saranno perciò testati molte più volte,
+%per ridurre la possibilità che il prodotto finale contenga difetti, e si otterrà una versione
+%funzionante dell’applicazione nel minor tempo possibile. In seguito si risalirà man mano
+%l’albero delle dipendenze, fino all’inserimento delle componenti più di alto livello.
+%Tale metodo è molto più oneroso rispetto ad altri in quanto richiede che venga
+%generato del codice di supporto, sotto forma di driver e stub, che simuli le componenti
+
+\begin{tabella}{!{\VRule}c!{\VRule}p{8cm}!{\VRule}c!{\VRule}c!{\VRule}}
+	\color{white} \bold{Codice test} & \color{white} \bold{Descrizione} & \color{white} \bold{Requisito} & \color{white} \bold{Stato}\\
+	\endfirsthead
+
+
+
+	\\
+	\rowcolor{white}  
+	\caption{Test di integrazione}
+\end{tabella}
+
+
+\subsection{Test di Unità}
+I test di unità servono per verificare il corretto funzionamento delle singole unità che compongono il sistema, ovvero le classi. 
+\newline Tali test saranno definiti nelle attività successive quando l'architettura del sistema sarà definita in maggior dettaglio.
 
 \newpage
 \section{Attività di Analisi requisiti utente \\\large{resoconto~delle~sottoattività~di~verifica}}
@@ -802,166 +1871,166 @@ Sono stati segnalati, dai \italics{Verificatori}, diversi errori di forma che no
 
 \newpage
 \section{Attività di Progettazione architetturale \\\large{resoconto~delle~sottoattività~di~verifica}}
-%\label{app:valtest}
-\bold{DA FARE}
+\label{app:valtest}
 
-%\subsection{Verifica dei processi}
-%\subsubsection{Documentazione}
-%\myparagraph{Schedule Variance}
-%Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di stesura di ogni documento:
-%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
-%	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
-%	\endfirsthead
-%	Analisi dei Requisiti v3.0 & ???? & ?????? \\
-%	Norme di Progetto v3.0 & ????? & ?????? \\
-%    Piano di Progetto v3.0 &  ?????? &  ??????\\
-%    Piano di Qualifica v3.0 & ?????? & ?????? \\
-%    Glossario v3.0 & ?????? & ??????\\	
-%    Specifica Tecnica v1.0 & ?????? & ?????? \\
-%	\rowcolor{white}  
-%	\caption{Esiti della Schedule Variance - Attività di Progettazione architetturale}	    	
-%\end{tabella}
-%
-%\bold{Considerazioni finali:}
-%\begin{description}
-%\item{\bold{Schedule Variance finale:}} ????.
-%\\ \bold{SPIEGAZIONE}
-%\end{description}
-%
-%
-%\myparagraph{Cost Variance}
-%Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui tempi di stesura di ogni documento:
-%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
-%	
-%	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
-%	\endfirsthead
-%	Processo di documentazione & ?????? \% & ??????\\
-%	\rowcolor{white}  
-%	\caption{Esiti della Cost Variance - Attività di Progettazione architetturale}	   	
-%\end{tabella}
-%
-%\bold{Considerazioni finali:}
-%\\ \bold{SPIEGAZIONE}
-%
-%
-%\myparagraph{Capability Maturity Model}
-%\bold{SPIEGAZIONE}
-%
-%\subsubsection{Verificazione}
-%\myparagraph{Schedule Variance}
-%Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di stesura di ogni documento:
-%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
-%	
-%	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
-%	\endfirsthead
-%	Analisi dei Requisiti v3.0 & ?????? & ?????? \\
-%	Norme di Progetto v3.0 & ?????? & ?????? \\
-%    Piano di Progetto v3.0 &  ?????? &  ??????\\
-%    Piano di Qualifica v3.0 & ?????? & ?????? \\
-%    Glossario v3.0 & ?????? & ??????\\	
-%   	Specifica Tecnica v1.0 &  ?????? &  ?????? \\
-%	\rowcolor{white}  
-%	\caption{Esiti della Schedule Variance - Attività di Progettazione architetturale}	    	
-%\end{tabella}
-%
-%\bold{Considerazioni finali:}
-%\begin{description}
-%\item{\bold{Schedule Variance finale:}} ??????.
-%\\ \bold{SPIEGAZIONE}
-%\end{description}
-%
-%\myparagraph{Cost Variance}
-%Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui tempi impiegati nel processo di verificazione:
-%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
-%	
-%	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
-%	\endfirsthead
-%	Processo di verifica & ?????? \% & ??????\\
-%	\rowcolor{white}  
-%	\caption{Esiti della Cost Variance - Attività di Progettazione architetturale}	  
-%\end{tabella}
-%
-%\bold{Considerazioni finali:}
-%\\ \bold{SPIEGAZIONE}
-%
-%\myparagraph{Capability Maturity Model}
-%\bold{SPIEGAZIONE}
-%
-%\subsection{Verifica dei prodotti}
-%\subsubsection{Documenti}
-%\myparagraph{Errori ortografici}
-%\bold{INTRODUZIONE da fare}
-%\newline Vengono riportati di seguito i valori ottenuti riguardanti la verifica degli errori ortografici:
-%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
-%	
-%	\color{white} \bold{Documento} & \color{white} \bold{Errori ortografici} &\color{white} \bold{Giudizio} \\
-%	\endfirsthead
-%	Analisi dei Requisiti v3.0 &  ??????? \% & ???????\\
-%	Norme di Progetto v3.0 & ??????? \% & ???????\\
-%    Piano di Progetto v3.0 & ??????? \% & ??????? \\
-%    Piano di Qualifica 3.0 & ??????? \% & ???????\\
-%    Glossario v3.0 & ??????? \% & ???????\\
-%    Specifica Tecnica v1.0 & ??????? \% &  ??????? \\	
-%	\rowcolor{white}  
-%	\caption{Esiti degli Errori Ortografici - Attività di Progettazione architetturale}	    	
-%\end{tabella}
-%
-%\bold{Considerazioni finali:}
-%\\ \bold{SPIEGAZIONE} 
-%
-%\myparagraph{Indice Gulpease}
-%Ogni documento è stato sottoposto ad uno \gl{script} che ne calcolasse l'\gl{Indice Gulpease} per valutarne il grado di leggibilità.
-%\newline Di seguito vengono presentati i dati raccolti:
-%\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
-%	
-%	\color{white} \bold{Documento} & \color{white} \bold{\gl{Indice Gulpease}} &\color{white} \bold{Giudizio} \\
-%	\endfirsthead
-%	Analisi dei Requisiti v3.0 & ???? & ???? \\
-%	Norme di Progetto v3.0 & ???? & ????\\
-%    Piano di Progetto v3.0 & ???? & ???? \\
-%    Piano di Qualifica v3.0 & ???? & ????\\
-%    Glossario v3.0 & ???? & ????\\	
-%    Specifica Tecnica v1.0 & ???? & ???? \\
-%	\rowcolor{white}  
-%	\caption{Esiti dell'\gl{Indice Gulpease} - Attività di Progettazione architetturale}	    	
-%\end{tabella}
-%\bold{Considerazioni finali:}
-%\\ \bold{SPIEGAZIONE}
-%
-%\myparagraph{Errori Concettuali}
-%\bold{SPIEGAZIONE}
-%
-%\myparagraph{Errori di forma}
-%\bold{SPIEGAZIONE} 
-%
-%\subsection {Sommario del resoconto delle sottoattività di verifica}
-%
-%\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}}
-%
-%		
-%	
-%	\color{white} \bold{Verifica} & \color{white} \bold{Metrica} & \color{white} \bold{Giudizio finale} \\
-%	\endfirsthead
-%	
-%	\cellcolor{P} & Schedule Variance & ???????\\
-%	\cellcolor{P} & Cost Variance & ??????? \\
-%	\multirow{-3}{*}{\cellcolor{P}Processo di Documentazione}	& Capability Maturity Model & ??????? \\
-%	\hline
-%	
-%	\cellcolor{D} & Schedule Variance & ??????? \\
-%	\cellcolor{D} & Cost Variance & ??????? \\
-%	\multirow{-2}{*}{\cellcolor{D}Processo di Verificazione} & Capability Maturity Model & ??????? \\
-%	\hline
-%	
-%	\cellcolor{P} & Errori Ortografici & ??????? \\
-%	\cellcolor{P} & \gl{Indice Gulpease} & ??????? \\
-%	\multirow{-2}{*}{\cellcolor{P} Documenti} & Errori Concettuali & ??????? \\ & Errori di Forma & ??????? \\
-%	\hline
-%		
-%
-%	\caption{Riassunto del Resoconto delle sottoattività di verifica - Attività di Progettazione architetturale}	     	
-%	
-%\end{tabella}
+
+\subsection{Verifica dei processi}
+\subsubsection{Documentazione}
+\myparagraph{Schedule Variance}
+Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di stesura di ogni documento:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Analisi dei Requisiti v3.0 & ???? & ?????? \\
+	Norme di Progetto v3.0 & ????? & ?????? \\
+    Piano di Progetto v3.0 &  ?????? &  ??????\\
+    Piano di Qualifica v3.0 & ?????? & ?????? \\
+    Glossario v3.0 & ?????? & ??????\\	
+    Specifica Tecnica v1.0 & ?????? & ?????? \\
+	\rowcolor{white}  
+	\caption{Esiti della Schedule Variance - Attività di Progettazione architetturale}	    	
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\begin{description}
+\item{\bold{Schedule Variance finale:}} ????.
+\\ \bold{SPIEGAZIONE}
+\end{description}
+
+
+\myparagraph{Cost Variance}
+Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui tempi di stesura di ogni documento:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Processo di documentazione & ?????? \% & ??????\\
+	\rowcolor{white}  
+	\caption{Esiti della Cost Variance - Attività di Progettazione architetturale}	   	
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\\ \bold{SPIEGAZIONE}
+
+
+\myparagraph{Capability Maturity Model}
+\bold{SPIEGAZIONE}
+
+\subsubsection{Verificazione}
+\myparagraph{Schedule Variance}
+Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di stesura di ogni documento:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Analisi dei Requisiti v3.0 & ?????? & ?????? \\
+	Norme di Progetto v3.0 & ?????? & ?????? \\
+    Piano di Progetto v3.0 &  ?????? &  ??????\\
+    Piano di Qualifica v3.0 & ?????? & ?????? \\
+    Glossario v3.0 & ?????? & ??????\\	
+   	Specifica Tecnica v1.0 &  ?????? &  ?????? \\
+	\rowcolor{white}  
+	\caption{Esiti della Schedule Variance - Attività di Progettazione architetturale}	    	
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\begin{description}
+\item{\bold{Schedule Variance finale:}} ??????.
+\\ \bold{SPIEGAZIONE}
+\end{description}
+
+\myparagraph{Cost Variance}
+Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui tempi impiegati nel processo di verificazione:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Processo di verifica & ?????? \% & ??????\\
+	\rowcolor{white}  
+	\caption{Esiti della Cost Variance - Attività di Progettazione architetturale}	  
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\\ \bold{SPIEGAZIONE}
+
+\myparagraph{Capability Maturity Model}
+\bold{SPIEGAZIONE}
+
+\subsection{Verifica dei prodotti}
+\subsubsection{Documenti}
+\myparagraph{Errori ortografici}
+\bold{INTRODUZIONE da fare}
+\newline Vengono riportati di seguito i valori ottenuti riguardanti la verifica degli errori ortografici:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Documento} & \color{white} \bold{Errori ortografici} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Analisi dei Requisiti v3.0 &  ??????? \% & ???????\\
+	Norme di Progetto v3.0 & ??????? \% & ???????\\
+    Piano di Progetto v3.0 & ??????? \% & ??????? \\
+    Piano di Qualifica 3.0 & ??????? \% & ???????\\
+    Glossario v3.0 & ??????? \% & ???????\\
+    Specifica Tecnica v1.0 & ??????? \% &  ??????? \\	
+	\rowcolor{white}  
+	\caption{Esiti degli Errori Ortografici - Attività di Progettazione architetturale}	    	
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\\ \bold{SPIEGAZIONE} 
+
+\myparagraph{Indice Gulpease}
+Ogni documento è stato sottoposto ad uno \gl{script} che ne calcolasse l'\gl{Indice Gulpease} per valutarne il grado di leggibilità.
+\newline Di seguito vengono presentati i dati raccolti:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Documento} & \color{white} \bold{\gl{Indice Gulpease}} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Analisi dei Requisiti v3.0 & ???? & ???? \\
+	Norme di Progetto v3.0 & ???? & ????\\
+    Piano di Progetto v3.0 & ???? & ???? \\
+    Piano di Qualifica v3.0 & ???? & ????\\
+    Glossario v3.0 & ???? & ????\\	
+    Specifica Tecnica v1.0 & ???? & ???? \\
+	\rowcolor{white}  
+	\caption{Esiti dell'\gl{Indice Gulpease} - Attività di Progettazione architetturale}	    	
+\end{tabella}
+\bold{Considerazioni finali:}
+\\ \bold{SPIEGAZIONE}
+
+\myparagraph{Errori Concettuali}
+\bold{SPIEGAZIONE}
+
+\myparagraph{Errori di forma}
+\bold{SPIEGAZIONE} 
+
+\subsection {Sommario del resoconto delle sottoattività di verifica}
+
+\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}}
+
+		
+	
+	\color{white} \bold{Verifica} & \color{white} \bold{Metrica} & \color{white} \bold{Giudizio finale} \\
+	\endfirsthead
+	
+	\cellcolor{P} & Schedule Variance & ???????\\
+	\cellcolor{P} & Cost Variance & ??????? \\
+	\multirow{-3}{*}{\cellcolor{P}Processo di Documentazione}	& Capability Maturity Model & ??????? \\
+	\hline
+	
+	\cellcolor{D} & Schedule Variance & ??????? \\
+	\cellcolor{D} & Cost Variance & ??????? \\
+	\multirow{-2}{*}{\cellcolor{D}Processo di Verificazione} & Capability Maturity Model & ??????? \\
+	\hline
+	
+	\cellcolor{P} & Errori Ortografici & ??????? \\
+	\cellcolor{P} & \gl{Indice Gulpease} & ??????? \\
+	\multirow{-2}{*}{\cellcolor{P} Documenti} & Errori Concettuali & ??????? \\ & Errori di Forma & ??????? \\
+	\hline
+		
+
+	\caption{Riassunto del Resoconto delle sottoattività di verifica - Attività di Progettazione architetturale}	     	
+	
+\end{tabella}
 
 
 \end{document}
