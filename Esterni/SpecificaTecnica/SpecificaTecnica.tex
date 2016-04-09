@@ -128,102 +128,604 @@ In questa sezione vengono presentate le tecnologie scelte per sviluppare il prog
 \section{Componenti e classi}
 \input{auto_componenti}
 
+\newpage
 \section{Diagrammi di attività}
-Le operazioni permesse agli utenti durante l’utilizzo di Quizzipedia sono descritte da diagrammi di attività. Un diagramma di alto livello è stato creato per ogni tipologia di utente, le operazioni più complesse sono ulteriormente descritte da sotto-diagrammi.
+Questa sezione descriverà le operazioni permesse ai vari tipi di utente durante l’utilizzo di Quizzipedia. Ogni operazione principale sarà accompagnata da un diagramma di attività, le operazioni più complesse sono indicate con un " * " e sfondo bianco e sono ulteriormente descritte da sotto-diagrammi.
 
 \subsection{Attività utente}
 \begin{figure}[H]
 	\centering
-	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/attivita_utente.pdf}}
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.7]{Img/attivita_utente.pdf}}
 	\caption{Diagramma di attività utente}
 \end{figure}
+All’avvio dell’applicazione l’utente non è autenticato nel sistema, e gli è possibile:
+\begin{itemize}
+	\item registrarsi;
+	\item autenticarsi;
+	\item effettuare il recupero della password;
+	\item svolgere quiz pubblici.
+\end{itemize}
+Una volta effettuata un’operazione, l’utente può svolgerne un’altra o interrompere l’utilizzo di Quizzipedia.
 
-
+\newpage
 \subsubsection{Registrazione}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.5]{Img/registrazione.pdf}}
+	\caption{Diagramma di registrazione}
+\end{figure}
+Un utente può registrarsi nel sistema. Per effettuare la registrazione è necessario compilare un apposito form, inserendo:
+\begin{itemize}
+	\item nome;
+	\item cognome;
+	\item indirizzo email;
+	\item conferma dell'indirizzo email;
+	\item password;
+	\item conferma della password.
+\end{itemize}
+Dovrà infine confermare la richiesta di registrazione. 
+Se l’indirizzo email inserito è non valido o corrisponde a un account già esistente, la password non è valida o le conferme di email e password non corrispondono ai valori precedentemente inseriti, la registrazione non sarà completata e verrà visualizzato un messaggio di errore. 
+In caso contrario, la registrazione andrà a buon fine e l’utente otterrà un account a cui potrà accedere autenticandosi con le credenziali fornite. 
 
+\newpage
 \subsubsection{Recupero password}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/recupero_password.pdf}}
+	\caption{Diagramma di recupero password}
+\end{figure}
+L’utente, se non riesce ad autenticarsi, può effettuare il recupero della password. Per recuperare la propria password, l’utente deve inserire il proprio indirizzo email in un apposito form ed effettuare la richiesta di recupero. 
+Se l’indirizzo email corrisponde a un account registrato, una password generata casualmente sarà inviata all’indirizzo email inserito. L’utente potrà poi autenticarsi con quella password al posto di quella dimenticata. Se l’indirizzo email è scorretto verrà visualizzato un messaggio di errore e la password non sarà inviata.
 
+\newpage
 \subsubsection{Autenticazione}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.8]{Img/autenticazione.pdf}}
+	\caption{Diagramma di autenticazione}
+\end{figure}
+Un utente si può autenticare nel sistema. Per autenticarsi l'utente deve inserire il proprio indirizzo email e la propria password in un apposito form di login e premere il pulsante di login. Se i dati sono corretti l'utente sarà autenticato nel sistema e potrà svolgere le attività permesse agli utenti autenticati, altrimenti visualizzerà un messaggio di errore che lo avviserà che le credenziali inserite sono errate. 
 
+\newpage
 \subsubsection{Svolgimento quiz}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.7]{Img/svolgimento_quiz.pdf}}
+	\caption{Diagramma di svolgimento quiz}
+\end{figure}
+Gli utenti possono svolgere dei quiz. Se l’utente è uno studente e fa parte di qualche classe, egli potrà visualizzare i quiz privati disponibili per ogni classe a cui appartiene.
+Utenti di qualsiasi tipo, anche non registrati, possono invece cercare quiz pubblici. 
+L’utente, una volta scelto il quiz da svolgere, dovrà selezionarlo e confermare l’inizio dello svolgimento. Dovrà poi risolvere ogni domanda e confermare il termine dello svolgimento del quiz, e potrà infine visualizzare il proprio esito.
 
+\newpage
 \subsection{Attività utente autenticato}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/attivita_utente_autenticato.pdf}}
+	\caption{Diagramma di attività utente autenticato}
+\end{figure}
+L’utente autenticato è in possesso di un account e si è autenticato nel sistema. Egli può:
+\begin{itemize} 
+	\item cercare e svolgere quiz in base ai propri permessi; 
+	\item visualizzare le proprie informazioni personali;
+	\item modificare la propria password;
+	\item chiedere ulteriori funzionalità al responsabile;
+	\item effettuare il logout.
+\end{itemize} 
+Ogni utente autenticato potrà inoltre svolgere le attività riservate alla sua tipologia (studente, docente, responsabile, utente senza ruolo).
 
+\newpage
 \subsubsection{Modifica password}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.6]{Img/modifica_password.pdf}}
+	\caption{Diagramma di modifica password}
+\end{figure}
+Ogni utente in possesso di un account e autenticato può modificare la propria password. La modifica della password richiede l’inserimento della password correntemente valida (scelta dall’utente o fornita dal sistema grazie al recupero password), seguito dall’inserimento della nuova password e la conferma della nuova password. Se la vecchia password è corretta, la nuova password ha un formato valido e la conferma della nuova password corrisponde a quella precedentemente inserita, la password verrà modificata correttamente, altrimenti l’utente visualizzerà un messaggio di errore.
 
+\newpage
 \subsubsection{Visualizzazione informazioni profilo}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/visualizzazione_info_profilo.pdf}}
+	\caption{Diagramma di visualizzazione informazioni profilo}
+\end{figure}
+Ogni utente autenticato può visualizzare le proprie informazioni personali: 
+\begin{itemize}
+	\item nome;
+	\item cognome;
+	\item indirizzo email.
+\end{itemize}
 
+\newpage
 \subsubsection{Invio richiesta di ruolo}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.6]{Img/invio_richiesta.pdf}}
+	\caption{Diagramma di invio richiesta di ruolo}
+\end{figure}
+Gli utenti autenticati possono effettuare delle richieste. Per prima cosa cercheranno l’ente a cui vogliono appartenere, visualizzeranno i risultati e selezioneranno l’ente. In seguito, se l’utente che sta effettuando la richiesta non ha un ruolo associato all’ente selezionato, egli potrà effettuare una richiesta di ruolo scegliendo fra studente e docente. Se l’utente è già in possesso di un ruolo nell’ente selezionato, egli dovrà cercare una classe interna all’ente e selezionarla per richiedere di essere associato a quella classe secondo il suo ruolo (studente o docente). Una volta selezionati tutti i parametri necessari, l’utente dovrà confermare l’invio della propria richiesta.
 
+\newpage
 \subsection{Attività studente}
 
 \subsubsection{Visualizzazione storico quiz}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/visualizzazione_storico_quiz.pdf}}
+	\caption{Diagramma di visualizzazione storico quiz}
+\end{figure}
+Gli studenti possono accedere a uno storico dei quiz svolti, sia pubblici che privati. Una volta visualizzata la lista dei quiz svolti e selezionato uno dei quiz, lo studente potrà vedere il risultato corrispondente ottenuto. 
 
+\newpage
 \subsection{Attività docente}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/attivita_docente.pdf}}
+	\caption{Diagramma di attività docente}
+\end{figure}
+Al docente è stato approvato il ruolo di docente da parte del responsabile. Un docente può essere docente di classi multiple. La richiesta di associazione a una classe deve essere prima approvata dal responsabile. 
+Un docente può:
+\begin{itemize}
+	\item gestire le proprie domande;
+	\item gestire i propri quiz;
+	\item gestire le richieste degli studenti;
+	\item visualizzare vari tipi di statistiche.
+\end{itemize}
 
+\newpage
 \subsubsection{Gestione quiz}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/gestione_quiz.pdf}}
+	\caption{Diagramma di gestione quiz}
+\end{figure}
+Il docente può creare nuovi quiz e modificare o eliminare i quiz creati in precedenza. Per modificare o eliminare un quiz, il docente deve prima visualizzare la lista dei quiz creati e selezionare il quiz desiderato.
 
+\newpage
 \myparagraph{Creazione quiz}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.67]{Img/creazione_quiz.pdf}}
+	\caption{Diagramma di creazione quiz}
+\end{figure}
+Il docente può creare un quiz, inserendo:
+\begin{itemize}
+	\item il titolo del quiz; 
+	\item l’argomento;
+	\item una descrizione facoltativa;
+	\item le domande (sia proprie che di altri docenti). 
+\end{itemize}
+Per inserire domande di altri docenti è necessario effettuare una ricerca delle domande e selezionare la domanda da inserire fra i risultati. Al termine dell’inserimento delle domande, il docente dovrà specificare il permesso del quiz. Se il docente seleziona il permesso pubblico il quiz sarà accessibile da chiunque, se seleziona il permesso privato dovrà specificare ulteriormente le classi a cui è riservato l’accesso al quiz. Il quiz potrà essere svolto dagli studenti di quelle classi. Se i vari campi sono inseriti correttamente e il numero di domande inserite è corretto, il quiz sarà creato con successo, altrimenti il docente visualizzerà un messaggio di errore.
 
+\newpage
 \myparagraph{Modifica quiz}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/modifica_quiz.pdf}}
+	\caption{Diagramma di modifica quiz}
+\end{figure}
+Il docente può modificare un quiz da lui creato, in particolare potrà modificare:
+\begin{itemize}
+	\item il titolo del quiz;
+	\item l’argomento;
+	\item una descrizione facoltativa;
+	\item le domande (aggiungere domande o rimuoverle);
+	\item il permesso del quiz.
+\end{itemize}
+Se i vari campi sono modificati correttamente e il numero di domande presenti è corretto, il quiz sarà modificato con successo, altrimenti il docente visualizzerà un messaggio di errore.
 
+\newpage
 \subsubsection{Gestione domande}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/gestione_domande.pdf}}
+	\caption{Diagramma di gestione domande}
+\end{figure}
+Il docente può creare nuove domande e modificare o eliminare le domande che ha creato in precedenza. Per modificare o eliminare una domanda, il docente deve prima visualizzare l’elenco di domande create e selezionare la domanda su cui effettuare l’operazione.
 
+\newpage
 \myparagraph{Creazione domanda}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/creazione_domanda.pdf}}
+	\caption{Diagramma di creazione domanda}
+\end{figure}
+Un docente può creare domande di vario tipo:
+\begin{itemize}
+	\item vero o falso;
+	\item a risposta multipla;
+	\item a collegamenti;
+	\item a completamento testo;
+	\item a risposta aperta.
+\end{itemize}
 
+\newpage
 \mysubparagraph{Creazione domanda vero/falso}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.5]{Img/creazione_domanda_vf.pdf}}
+	\caption{Diagramma di creazione domanda vero/falso}
+\end{figure}
+Un docente può creare una domanda vero o falso. Per creare la domanda il docente inserirà in un apposito form:
+\begin{itemize}
+	\item il titolo della domanda;
+	\item una descrizione facoltativa;
+	\item l'argomento della domanda; 
+	\item il livello di difficoltà;
+	\item un allegato (immagine, audio o video) facoltativo;
+	\item delle parole chiave che faciliteranno la ricerca della domanda.
+\end{itemize}
+Il docente dovrà infine specificare la veridicità della domanda (se la risposta corretta è vero o falso). 
+Se i vari campi sono inseriti correttamente, la domanda sarà creata con successo, altrimenti il docente visualizzerà un messaggio di errore.
 
-\mysubparagraph{Creazione domanda a completamento}
+\newpage
+\mysubparagraph{Creazione domanda a completamento testo}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.58]{Img/creazione_domanda_completamento.pdf}}
+	\caption{Diagramma di creazione domanda a completamento testo}
+\end{figure}
+Un docente può creare una domanda completamento testo. Per creare la domanda il docente inserirà in un apposito form:
+\begin{itemize}
+	\item il titolo della domanda;
+	\item una descrizione facoltativa; 
+	\item l'argomento della domanda; 
+	\item il livello di difficoltà;
+	\item un allegato (immagine, audio o video) facoltativo;
+	\item delle parole chiave che faciliteranno la ricerca della domanda;
+	\item il testo incompleto (compreso di spazi dove inserire le parole);
+	\item le parole da inserire. 
+\end{itemize}
+Gli spazi dovranno poi essere collegati con le parole corrette. Se i vari campi sono inseriti correttamente, la domanda sarà creata con successo, altrimenti il docente visualizzerà un messaggio di errore.
 
+\newpage
 \mysubparagraph{Creazione domanda a collegamenti}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.6]{Img/creazione_domanda_collegamenti.pdf}}
+	\caption{Diagramma di creazione domanda a collegamenti}
+\end{figure}
+Un docente può creare una domanda a collegamenti. Per creare la domanda il docente inserirà in un apposito form:
+\begin{itemize} 
+	\item il titolo della domanda;
+	\item una descrizione facoltativa; 
+	\item l'argomento della domanda;
+	\item il livello di difficoltà;
+	\item un allegato (immagine, audio o video) facoltativo;
+	\item delle parole chiave che faciliteranno la ricerca della domanda;
+	\item le ennuple che rappresentano le risposte corrette. 
+\end{itemize}
+Le ennuple sono composte da una parte iniziale e una finale, per ciascuna delle quale si può caricare un file multimediale (immagine, audio, video) o inserire del testo.
+Se i vari campi sono inseriti correttamente, la domanda sarà creata con successo, altrimenti il docente visualizzerà un messaggio di errore.
 
+\newpage
 \mysubparagraph{Creazione domanda a risposta aperta}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.5]{Img/creazione_domanda_risposta_aperta.pdf}}
+	\caption{Diagramma di creazione domanda a risposta aperta}
+\end{figure}
+Un docente può creare una domanda a risèpsta aperta. Per creare la domanda il docente inserirà in un apposito form:
+\begin{itemize}
+	\item il titolo della domanda;
+	\item una descrizione facoltativa;
+	\item l'argomento della domanda;
+	\item il livello di difficoltà;
+	\item un allegato (immagine, audio o video) facoltativo;
+	\item delle parole chiave che faciliteranno la ricerca della domanda;
+	\item la risposta corretta alla domanda.
+\end{itemize}
+Se i vari campi sono inseriti correttamente, la domanda sarà creata con successo, altrimenti il docente visualizzerà un messaggio di errore.
 
+\newpage
 \mysubparagraph{Creazione domanda a risposta multipla}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.57]{Img/creazione_domanda_risposta_multipla.pdf}}
+	\caption{Diagramma di creazione domanda a risposta multipla}
+\end{figure}
+Un docente può creare una domanda a risposta multipla. Per creare la domanda il docente inserirà in un apposito form:
+\begin{itemize}
+	\item il titolo della domanda;
+	\item una descrizione facoltativa;
+	\item l'argomento della domanda;
+	\item il livello di difficoltà;
+	\item un allegato (immagine, audio o video) facoltativo; 
+	\item delle parole chiave che faciliteranno la ricerca della domanda;
+	\item le risposte possibili. 
+\end{itemize}
+Ogni risposta può contenere una casella di testo o un file multimediale (immagine, audio, video). Alla creazione di ogni risposta è necessario specificare se la risposta è corretta. Quando tutte le risposte possibili sono state create, il docente può concludere la creazione della domanda.
+Se i vari campi sono inseriti correttamente e il numero di risposte possibili inserite è corretto, la domanda sarà creata con successo, altrimenti il docente visualizzerà un messaggio di errore.
 
+\newpage
 \myparagraph{Modifica domanda}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/modifica_domanda.pdf}}
+	\caption{Diagramma di modifica domanda}
+\end{figure}
+Il docente può modificare una domanda a collegamenti. In particolare, può modificarne le caratteristiche comuni a tutte le domande:
+\begin{itemize}
+	\item il titolo;
+	\item la descrizione;
+	\item l’argomento;
+	\item il livello di difficoltà;
+	\item le parole chiave;
+	\item l’allegato.
+\end{itemize}
+Può inoltre modificare le ennuple delle risposte, cambiando gli allegati o il testo. 
+Nel caso le modifiche effettuate rendano la domanda non valida, le modifiche non saranno confermate e il docente visualizzerà un messaggio di errore.
 
+\newpage
 \mysubparagraph{Modifica domanda vero/falso}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/modifica_domanda_vf.pdf}}
+	\caption{Diagramma di modifica domanda vero/falso}
+\end{figure}
+Il docente può modificare una domanda vero o falso. In particolare, può modificarne le caratteristiche comuni a tutte le domande:
+\begin{itemize}
+	\item il titolo;
+	\item la descrizione;
+	\item l’argomento;
+	\item il livello di difficoltà;
+	\item le parole chiave;
+	\item l’allegato.
+\end{itemize}
+Può inoltre modificare la veridicità della domanda.
+Nel caso le modifiche effettuate rendano la domanda non valida, le modifiche non saranno confermate e il docente visualizzerà un messaggio di errore.
 
-\mysubparagraph{Modifica domanda a completamento}
+\newpage
+\mysubparagraph{Modifica domanda a completamento testo}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/modifica_domanda_completamento.pdf}}
+	\caption{Diagramma di modifica domanda a completamento testo}
+\end{figure}
+Il docente può modificare una domanda completamento testo. In particolare, può modificarne le caratteristiche comuni a tutte le domande:
+\begin{itemize}
+	\item il titolo;
+	\item la descrizione;
+	\item l’argomento;
+	\item il livello di difficoltà;
+	\item le parole chiave;
+	\item l’allegato.
+\end{itemize}
+Può inoltre:
+\begin{itemize}
+	\item modificare il testo incompleto;
+	\item aggiungere, rimuovere e spostare gli spazi;
+	\item modificare le parole da inserire nel testo incompleto. 
+\end{itemize}
+Nel caso le modifiche effettuate rendano la domanda non valida, le modifiche non saranno confermate e il docente visualizzerà un messaggio di errore.
 
+
+\newpage
 \mysubparagraph{Modifica domanda a collegamenti}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/modifica_domanda_collegamenti.pdf}}
+	\caption{Diagramma di modifica domanda a collegamenti}
+\end{figure}
+Il docente può modificare una domanda a collegamenti. In particolare, può modificarne le caratteristiche comuni a tutte le domande:
+\begin{itemize}
+	\item il titolo;
+	\item la descrizione;
+	\item l’argomento;
+	\item il livello di difficoltà; 
+	\item le parole chiave;
+	\item l’allegato.
+\end{itemize}
+Può inoltre modificare le ennuple delle risposte, cambiando gli allegati o il testo. 
+Nel caso le modifiche effettuate rendano la domanda non valida, le modifiche non saranno confermate e il docente visualizzerà un messaggio di errore.
 
+\newpage
 \mysubparagraph{Modifica domanda a risposta aperta}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/modifica_domanda_risposta_aperta.pdf}}
+	\caption{Diagramma di modifica domanda a risposta aperta}
+\end{figure}
+Il docente può modificare una domanda a risposta aperta. In particolare, può modificarne le caratteristiche comuni a tutte le domande:
+\begin{itemize}
+	\item il titolo; 
+	\item la descrizione;
+	\item l’argomento;
+	\item il livello di difficoltà; 
+	\item le parole chiave;
+	\item l’allegato.
+\end{itemize}
+Può inoltre modificare la risposta corretta alla domanda.
+Nel caso le modifiche effettuate rendano la domanda non valida, le modifiche non saranno confermate e il docente visualizzerà un messaggio di errore.
 
+\newpage
 \mysubparagraph{Modifica domanda a risposta multipla}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/modifica_domanda_risposta_multipla.pdf}}
+	\caption{Diagramma di modifica domanda a risposta multipla}
+\end{figure}
+Il docente può modificare una domanda a risposta multipla. In particolare, può modificarne le caratteristiche comuni a tutte le domande:
+\begin{itemize}
+	\item il titolo;
+	\item la descrizione;
+	\item l’argomento;
+	\item il livello di difficoltà;
+	\item le parole chiave;
+	\item l’allegato.
+\end{itemize}
+Può inoltre:
+\begin{itemize}
+	\item modificare le risposte possibili (e le caselle di testo o allegati corrispondenti), eliminarle e aggiungerne di nuove;
+	\item modificare la correttezza delle risposte inserite.
+\end{itemize}
+Nel caso le modifiche effettuate rendano la domanda non valida, le modifiche non saranno confermate e il docente visualizzerà un messaggio di errore.
 
+\newpage
 \subsubsection{Gestione richieste studenti}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.7]{Img/gestione_richieste_studenti.pdf}}
+	\caption{Diagramma di gestione richieste studenti}
+\end{figure}
+Il docente gestisce le richieste degli studenti. Per prima cosa visualizzerà la lista delle richieste correntemente in sospeso, poi selezionerà la richiesta da gestire e la approverà o rifiuterà. 
 
+\newpage
 \subsubsection{Visualizzazione statistiche}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/visualizzazione_statistiche.pdf}}
+	\caption{Diagramma di visualizzazione statistiche}
+\end{figure}
+Il docente può visualizzare vari tipi di statistiche: relative ai quiz, alle domande, agli studenti e agli altri docenti.
 
+\newpage
 \myparagraph{Visualizzazione statistiche studenti}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/visualizzazione_statistiche_studenti.pdf}}
+	\caption{Diagramma di visualizzazione statistiche studenti}
+\end{figure}
+Il docente può visualizzare le statistiche relative agli studenti: 
+la lista dei quiz svolti e i risultati corrispondenti ottenuti.
 
+\newpage
 \myparagraph{Visualizzazione statistiche quiz}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/visualizzazione_statistiche_quiz.pdf}}
+	\caption{Diagramma di visualizzazione statistiche quiz}
+\end{figure}
+Il docente può visualizzare le statistiche relative ai quiz: 
+\begin{itemize}
+	\item il numero di volte in cui un quiz è stato risolto; 
+	\item la percentuale di superamento da parte degli utenti;
+	\item il risultato medio ottenuto dagli utenti.
+\end{itemize}
 
+\newpage
 \myparagraph{Visualizzazione statistiche domande}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/visualizzazione_statistiche_domande.pdf}}
+	\caption{Diagramma di visualizzazione statistiche domande}
+\end{figure}
+Il docente può visualizzare le statistiche relative alle domande: 
+\begin{itemize}
+	\item il numero di quiz in cui sono state inserite;
+	\item la percentuale di successo degli utenti nella risoluzione della domanda.
+\end{itemize}
 
+\newpage
 \myparagraph{Visualizzazione statistiche docenti}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/visualizzazione_statistiche_docenti.pdf}}
+	\caption{Diagramma di visualizzazione statistiche docenti}
+\end{figure}
+Il docente può visualizzare le statistiche relative agli altri docenti:
+\begin{itemize} 
+	\item la lista dei quiz creati;
+	\item la lista delle domande create.
+\end{itemize}
 
+\newpage
 \subsection{Attività responsabile}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/attivita_responsabile.pdf}}
+	\caption{Diagramma di attività responsabile}
+\end{figure}
+Il responsabile può:
+\begin{itemize}
+	\item gestire le richieste dei docenti;
+	\item gestire il proprio ente e le classi che contiene;
+	\item gestire gli argomenti;
+	\item rimuovere gli utenti del proprio ente. 
+\end{itemize}
 
+\newpage
 \subsubsection{Gestione richieste docenti}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.7]{Img/gestione_richieste_docenti.pdf}}
+	\caption{Diagramma di gestione richieste docenti}
+\end{figure}
+Il responsabile gestisce le richieste dei docenti. Per prima cosa visualizzerà la lista delle richieste correntemente in sospeso, poi selezionerà la richiesta da gestire e la approverà o rifiuterà.
 
-\subsubsection{Gestione ente e classi} x
+\newpage
+\subsubsection{Gestione ente e classi} 
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/gestione_ente_classi.pdf}}
+	\caption{Diagramma di gestione ente e classi}
+\end{figure}
+Il responsabile può modificare la descrizione del proprio ente e gestire le sue classi: in particolare può creare nuove classi e modificare ed eliminare classi esistenti. Per modificare o eliminare una classe, il responsabile deve prima visualizzare la lista delle classi esistenti e selezionare la classe desiderata. 
 
+\newpage
 \myparagraph{Creazione classe}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.8]{Img/creazione_classe.pdf}}
+	\caption{Diagramma di creazione classe}
+\end{figure}
+Il responsabile di un ente può creare una nuova classe all'interno dell'ente. Per creare una nuova classe è necessario inserire il nome della classe e il suo anno di creazione in un apposito form e confermare la creazione della classe. Se i dati sono inseriti correttamente la classe sarà creata, altrimenti il responsabile visualizzerà un apposito messaggio di errore.
 
+\newpage
 \myparagraph{Modifica classe}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/modifica_classe.pdf}}
+	\caption{Diagramma di modifica classe}
+\end{figure}
+Il docente e il responsabile possono modificare gli utenti associati a una classe, in particolare i docenti possono inserire e rimuovere studenti di una classe di cui sono insegnanti, mentre i responsabili possono inserire e rimuovere docenti in ogni classe del proprio ente (senza che venga inviata una richiesta da parte degli utenti). 
 
+\newpage
 \subsubsection{Rimozione utenti}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.7]{Img/rimozione_utenti.pdf}}
+	\caption{Diagramma di rimozione studenti}
+\end{figure}
+Il responsabile di un ente può rimuovere gli utenti che appartengono al suo ente. 
+L’eliminazione dell’utente non comporta la sua completa eliminazione dal sistema ma soltanto la sua rimozione dall’ente. Una volta selezionato l’utente da rimuovere il responsabile dovrà confermare la sua eliminazione, altrimenti l’operazione sarà annullata. Un responsabile non può rimuovere il proprio account.
 
+\newpage
 \subsubsection{Gestione argomenti}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.7]{Img/gestione_argomenti.pdf}}
+	\caption{Diagramma di gestione argomenti}
+\end{figure}
+Il responsabile può gestire gli argomenti all’interno del sistema, creando nuovi argomenti ed eliminando argomenti esistenti.
 
+\newpage
 \subsection{Ricerca quiz}
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.6]{Img/ricerca_quiz.pdf}}
+	\caption{Diagramma di ricerca quiz}
+\end{figure}
+L’utente può cercare quiz nel sistema. Durante la ricerca avrà la possibilità di limitare la ricerca attraverso dei parametri: 
+\begin{itemize}
+	\item argomento;
+	\item parola chiave; 
+	\item livello di difficoltà; 
+	\item autore;
+	\item permesso (pubblico o privato). 
+\end{itemize}
+Solo gli utenti che hanno il ruolo di studente in qualche ente possono vedere i quiz privati delle classi a cui appartengono, e possono limitare ulteriormente la ricerca in base alla classe. I quiz pubblici sono invece accessibili a tutti gli utenti. Una volta selezionato i parametri desiderati, l’utente dovrà confermare l’inizio della ricerca e potrà visualizzare i risultati. 
 
+\newpage
 \subsection{Ricerca domande}
-
-
+\begin{figure}[H]
+	\centering
+	\noindent\makebox[\textwidth]{\includegraphics[scale=0.6]{Img/ricerca_domande.pdf}}
+	\caption{Diagramma di ricerca domande}
+\end{figure}
+Il docente può cercare domande nel sistema. Ha la possibilità di limitare la ricerca attraverso dei parametri: argomento, parola chiave, livello di difficoltà e autore. Una volta selezionato i parametri desiderati, il docente dovrà confermare l’inizio della ricerca e potrà visualizzare i risultati. 
+\newpage
 
 
 \section{Tracciamento}
