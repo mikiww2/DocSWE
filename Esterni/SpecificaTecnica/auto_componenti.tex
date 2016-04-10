@@ -401,12 +401,12 @@ Il package racchiude i modelli necessari alla creazione di domande e quiz, i ser
 \begin{itemize}
 \item Quizzipedia::Server::ModelServer::Services1::Questions1
 \end{itemize}
-\myparagraph{Classe Topics1}
-Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni domanda e a ogni quiz verranno poi associati i relativi argomenti.
+\myparagraph{Classe Info1}
+Riassume le informazioni principali su quiz e domande, necessarie per una presentazione sintetica e puntuale all'utente. È poi possibile risalire alla domanda o al quiz completi.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-modelserver-services1-topics1.pdf}}
-\caption{Schema Componente Quizzipedia::Server::ModelServer::Services1::Topics1}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-modelserver-services1-info1.pdf}}
+\caption{Schema Componente Quizzipedia::Server::ModelServer::Services1::Info1}
 \end{figure}
 \subsubsection{Componente Quizzipedia::Server::ModelServer::Services1::Questions1}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
@@ -414,6 +414,13 @@ Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente pu�
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-modelserver-services1-questions1.pdf}}
 \caption{Schema Componente Quizzipedia::Server::ModelServer::Services1::Questions1}
+\end{figure}
+\myparagraph{Classe Cell1}
+La classe descrive ogni singola riga (quindi ogni opzione) della colonna della domanda a collegamento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-modelserver-services1-questions1-cell1.pdf}}
+\caption{Schema Componente Quizzipedia::Server::ModelServer::Services1::Questions1::Cell1}
 \end{figure}
 \subsubsection{Componente Quizzipedia::Server::ControllerServer}
 Questo package contiene tutti i servizi che ricalcano il pattern architetturale DAO in modo da isolare l'accesso al database relazionale, controllando sempre che l'utente che genera una determinata richiesta al server sia abilitato per farla.
