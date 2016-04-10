@@ -1,23 +1,25 @@
-\subsubsection{Componente Quizzipedia::Client}
+\subsection{Client}
 Racchiude tutte le componenti necessarie per il front-end del prodotto. Visualizza i dati dell'utente e invia richieste al server.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client.pdf}}
 \caption{Schema Componente Quizzipedia::Client}
 \end{figure}
-\myparagraph{Componenti contenute}
-\begin{itemize}
-\item Quizzipedia::Client::ControllerClient
-\item Quizzipedia::Client::ModelClient
-\item Quizzipedia::Client::ViewClient
-\end{itemize}
-\subsection{ModelClient}
+\subsubsection{Componente Quizzipedia::Client::ModelClient}
 Rappresenta il modello dei dati che verranno utilizzati dal sistema lato client.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-modelclient.pdf}}
 \caption{Schema Componente Quizzipedia::Client::ModelClient}
 \end{figure}
+\myparagraph{Componenti contenute}
+\begin{itemize}
+\item Quizzipedia::Client::ModelClient::Organization
+\item Quizzipedia::Client::ModelClient::Requests
+\item Quizzipedia::Client::ModelClient::Services
+\item Quizzipedia::Client::ModelClient::Statistics
+\item Quizzipedia::Client::ModelClient::Users
+\end{itemize}
 \subsubsection{Componente Quizzipedia::Client::ModelClient::Organization}
 La componente gestisce le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema.
 \begin{figure}[H]
@@ -370,20 +372,14 @@ La classe raccoglie i metodi per gestire le informazioni personali di tutti gli 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-controllerclient-ctrlusers.pdf}}
 \caption{Schema Componente Quizzipedia::Client::ControllerClient::CtrlUsers}
 \end{figure}
-\subsubsection{Componente Quizzipedia::Server}
+\subsection{Server}
 Racchiude tutte le componenti necessarie per il back-end del prodotto. Contiene anche le componenti che si occupano del QML.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server.pdf}}
 \caption{Schema Componente Quizzipedia::Server}
 \end{figure}
-\myparagraph{Componenti contenute}
-\begin{itemize}
-\item Quizzipedia::Server::ControllerServer
-\item Quizzipedia::Server::ModelServer
-\item Quizzipedia::Server::RoutingManager
-\end{itemize}
-\subsection{ModelServer}
+\subsubsection{Componente Quizzipedia::Server::ModelServer}
 Rappresenta il modello dei dati che verranno utilizzati dal sistema lato server.
 \begin{figure}[H]
 \centering
