@@ -946,6 +946,7 @@ Questo package contiene tutti i servizi che ricalcano il pattern architetturale 
 \begin{itemize}
 \item Quizzipedia::Server::ControllerServer::AuthenticationManager
 \item Quizzipedia::Server::ControllerServer::ClassManager
+\item Quizzipedia::Server::ControllerServer::CompanyManager
 \item Quizzipedia::Server::ControllerServer::ProfileManager
 \item Quizzipedia::Server::ControllerServer::QuestionsManager
 \item Quizzipedia::Server::ControllerServer::QuizManager
@@ -1058,6 +1059,27 @@ Recupera la lista degli insegnanti relativi ad una determinata classe.
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-classmanager-teachersclassfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher}
+\end{figure}
+\subsubsection{Quizzipedia::Server::ControllerServer::CompanyManager}
+Permette la gestione dell'ente da parte del responsabile.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-companymanager.pdf}}
+\caption{Schema Componente Quizzipedia::Server::ControllerServer::CompanyManager}
+\end{figure}
+\myparagraph{Classe CompanyUpdater}
+Permette la modifica dell'ente da parte del responsabile.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-companymanager-companyupdater.pdf}}
+\caption{Schema Classe Quizzipedia::Server::ControllerServer::CompanyManager::CompanyUpdater}
+\end{figure}
+\myparagraph{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-companymanager-sessioncontroller.pdf}}
+\caption{Schema Classe Quizzipedia::Server::ControllerServer::CompanyManager::SessionController}
 \end{figure}
 \subsubsection{Quizzipedia::Server::ControllerServer::ProfileManager}
 Package che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni personali da parte di un utente autenticato.
@@ -1245,6 +1267,20 @@ Permette la memorizzazione nella base di dati di tutte le richieste da parte deg
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-requestsmanager-insertclassrequestadder.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestAdder}
 \end{figure}
+\myparagraph{Classe RequestsFetcher}
+Permette la visualizzazione di tutte le richieste da parte degli utenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-requestsmanager-requestsfetcher.pdf}}
+\caption{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher}
+\end{figure}
+\myparagraph{Classe RoleAccepter}
+Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utente dopo che ne ha fatto richiesta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-requestsmanager-roleaccepter.pdf}}
+\caption{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter}
+\end{figure}
 \myparagraph{Classe RoleRequestsAdder}
 Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'interno del sistema.
 \begin{figure}[H]
@@ -1391,6 +1427,13 @@ Invocato dal client per interagire con ProfileManager.
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-routingmanager-profilerouter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::RoutingManager::ProfileRouter}
+\end{figure}
+\myparagraph{Classe QuestionRouter}
+Invocato dal client per interagire con QuestionsManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-routingmanager-questionrouter.pdf}}
+\caption{Schema Classe Quizzipedia::Server::RoutingManager::QuestionRouter}
 \end{figure}
 \myparagraph{Classe QuizRouter}
 Invocato dal client per interagire con QuizManager.
