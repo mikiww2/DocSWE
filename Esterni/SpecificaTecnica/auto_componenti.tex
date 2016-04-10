@@ -323,7 +323,8 @@ Racchiude tutte le componenti necessarie per presentare il prodotto all'utente.
 \end{figure}
 \myparagraph{Componenti contenute}
 \begin{itemize}
-\item Quizzipedia::Client::ViewClient::ViewClassManager
+\item Quizzipedia::Client::ViewClient::ViewErrors
+\item Quizzipedia::Client::ViewClient::ViewOrgManager
 \item Quizzipedia::Client::ViewClient::ViewQuestionManager
 \item Quizzipedia::Client::ViewClient::ViewQuizManager
 \item Quizzipedia::Client::ViewClient::ViewQuizSolver
@@ -333,33 +334,75 @@ Racchiude tutte le componenti necessarie per presentare il prodotto all'utente.
 \item Quizzipedia::Client::ViewClient::ViewTopicManager
 \item Quizzipedia::Client::ViewClient::ViewUsers
 \end{itemize}
-\subsubsection{Quizzipedia::Client::ViewClient::ViewClassManager}
-Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi.
+\subsubsection{Quizzipedia::Client::ViewClient::ViewErrors}
+Il package raccoglie tutte le finestre di errore che il sistema può, eventualmente, visualizzare.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewclassmanager.pdf}}
-\caption{Schema Componente Quizzipedia::Client::ViewClient::ViewClassManager}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewerrors.pdf}}
+\caption{Schema Componente Quizzipedia::Client::ViewClient::ViewErrors}
+\end{figure}
+\myparagraph{Classe ViewAuthenticationErr}
+La classe si occupa della visualizzazione del messaggio di errore in fase di autenticazione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewerrors-viewauthenticationerr.pdf}}
+\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewAuthenticationErr}
+\end{figure}
+\myparagraph{Classe ViewModifyPwErr}
+La classe si occupa della visualizzazione del messaggio di errore in fase modifica della password.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewerrors-viewmodifypwerr.pdf}}
+\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyPwErr}
+\end{figure}
+\myparagraph{Classe ViewModifyQuizErr}
+La classe si occupa della visualizzazione del messaggio di errore in fase di modifica di un quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewerrors-viewmodifyquizerr.pdf}}
+\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyQuizErr}
+\end{figure}
+\myparagraph{Classe ViewRecoveryErr}
+La classe si occupa della visualizzazione del messaggio di errore in fase di recupero password.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewerrors-viewrecoveryerr.pdf}}
+\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewRecoveryErr}
+\end{figure}
+\myparagraph{Classe ViewRegistrationErr}
+La classe si occupa della visualizzazione del messaggio di errore in fase di registrazione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewerrors-viewregistrationerr.pdf}}
+\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewRegistrationErr}
+\end{figure}
+\subsubsection{Quizzipedia::Client::ViewClient::ViewOrgManager}
+Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-vieworgmanager.pdf}}
+\caption{Schema Componente Quizzipedia::Client::ViewClient::ViewOrgManager}
 \end{figure}
 \myparagraph{Classe ViewCreateClass}
 Classe responsabile di creare la pagina da cui sarà possibile creare una nuova classe.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewclassmanager-viewcreateclass.pdf}}
-\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewClassManager::ViewCreateClass}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-vieworgmanager-viewcreateclass.pdf}}
+\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewOrgManager::ViewCreateClass}
 \end{figure}
-\myparagraph{Classe ViewModifyClass}
-Presenta all'utente la pagina da cui sarà possibile modificare le informazioni su una classe esistente.
+\myparagraph{Classe ViewModifyOrg}
+Presenta all'utente la pagina da cui sarà possibile modificare le informazioni su una classe o su un ente esistente.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewclassmanager-viewmodifyclass.pdf}}
-\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewClassManager::ViewModifyClass}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-vieworgmanager-viewmodifyorg.pdf}}
+\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewOrgManager::ViewModifyOrg}
 \end{figure}
 \myparagraph{Classe ViewUsersClassList}
 La classe si occupa di presentare una lista degli utenti iscritti alla classe e altre informazioni aggiuntive.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewclassmanager-viewusersclasslist.pdf}}
-\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewClassManager::ViewUsersClassList}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-vieworgmanager-viewusersclasslist.pdf}}
+\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewOrgManager::ViewUsersClassList}
 \end{figure}
 \subsubsection{Quizzipedia::Client::ViewClient::ViewQuestionManager}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le domande.
@@ -547,13 +590,6 @@ Package che gestisce le pagine in cui verranno visualizzate le statistiche.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewstatistics.pdf}}
 \caption{Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics}
 \end{figure}
-\myparagraph{Classe VieewQuizStats}
-Vengono rappresentate le statistiche generali riguardanti i quiz.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewstatistics-vieewquizstats.pdf}}
-\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::VieewQuizStats}
-\end{figure}
 \myparagraph{Classe ViewClassStats}
 Vengono rappresentate le statistiche relative a una singola classe in relazione a un particolare quiz.
 \begin{figure}[H]
@@ -567,6 +603,13 @@ Vengono rappresentate le statistiche generali relative alle domande.
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewstatistics-viewquestionstats.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuestionStats}
+\end{figure}
+\myparagraph{Classe ViewQuizStats}
+Vengono rappresentate le statistiche generali riguardanti i quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-client-viewclient-viewstatistics-viewquizstats.pdf}}
+\caption{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuizStats}
 \end{figure}
 \subsubsection{Quizzipedia::Client::ViewClient::ViewTopicManager}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire gli argomenti di domande e quiz.
@@ -904,6 +947,7 @@ Questo package contiene tutti i servizi che ricalcano il pattern architetturale 
 \item Quizzipedia::Server::ControllerServer::AuthenticationManager
 \item Quizzipedia::Server::ControllerServer::ClassManager
 \item Quizzipedia::Server::ControllerServer::ProfileManager
+\item Quizzipedia::Server::ControllerServer::QuestionsManager
 \item Quizzipedia::Server::ControllerServer::QuizManager
 \item Quizzipedia::Server::ControllerServer::RequestsManager
 \item Quizzipedia::Server::ControllerServer::SearchManager
@@ -1063,6 +1107,41 @@ Effettua il controllo sull'utente per verificare che egli sia in possesso dell'a
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-profilemanager-sessioncontroller.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::SessionController}
+\end{figure}
+\subsubsection{Quizzipedia::Server::ControllerServer::QuestionsManager}
+Pacchetto relativo alla gestione delle domande.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-questionsmanager.pdf}}
+\caption{Schema Componente Quizzipedia::Server::ControllerServer::QuestionsManager}
+\end{figure}
+\myparagraph{Classe QuestionCreator}
+Permette il salvataggio nella base di dati di una nuova domanda.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-questionsmanager-questioncreator.pdf}}
+\caption{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator}
+\end{figure}
+\myparagraph{Classe QuestionEraser}
+Permette la cancellazione di una domanda dalla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-questionsmanager-questioneraser.pdf}}
+\caption{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser}
+\end{figure}
+\myparagraph{Classe QuestionUpdater}
+Permette la modifica di una domanda già esistente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-questionsmanager-questionupdater.pdf}}
+\caption{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater}
+\end{figure}
+\myparagraph{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-questionsmanager-sessioncontroller.pdf}}
+\caption{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::SessionController}
 \end{figure}
 \subsubsection{Quizzipedia::Server::ControllerServer::QuizManager}
 Package che racchiude tutte le funzionalità adibite alla creazione, modifica e al recupero di quiz per lo svolgimento da parte di un utente.
