@@ -286,6 +286,50 @@ Socket.IO è una libreria Javascript che permette comunicazioni real-time bidire
 	\item Essendo una tecnologia di recente creazione, può soffrire ancora di alcuni bug.
 \end{itemize}
 
+\newpage
+	\section{Descrizione architettura}
+	\subsection{Metodo e formalismo di specifica}
+	
+	L'architettura del prodotto sarà presentata con un approccio top-down, descrivendo la struttura dal generale al particolare. Verranno prima trattate le componenti e i package, per passare poi alle classi, di cui si descriveranno la funzione, i metodi principali e le relazioni con le altre classi. La descrizione dell'architettura non includerà classi e metodi nella loro interezza, ma soltanto quelli fondamentali. Le sottoclassi e i metodi rimanenti verranno inclusi nell'attività di Progettazione di Dettaglio.
+	\newline
+	Una volta descritte le componenti e le classi, si illustreranno i design pattern utilizzati nel sistema. 
+	\newline
+	I diagrammi di package, classi e attività inclusi si attengono alla specifica UML 2.0.
+	
+	\subsection{Architettura generale}
+	L'architettura del prodotto ha un'impostazione client-server e segue il design pattern MVC. 
+	\newline
+	L'architettura generale segue il pattern Three-Tier, è quindi suddivisa in tre livelli:
+	\begin{enumerate}
+		\item Client (Presentation Tier).
+		\item Server (Logic Tier).
+		\item Database (Data Tier).
+	\end{enumerate}
+	
+	\subsubsection{Client}
+	La parte client è divisa in Model, View e Controller. È il livello più alto dell'applicazione e interagisce con l'utente finale.
+	\newline
+	AngularJS è utilizzato client-side per rispettare il pattern MVC.
+	
+	\subsubsection{Server}
+	La parte server è divisa in Model e Controller. Gestisce la logica di business e interroga il database per passarne i dati al client.
+	
+	\subsubsection{Database}
+	Il database memorizza i dati e li isola dal resto del sistema. Il database è implementato con PostgreSQL. 
+	
+	\subsection{SOAP}
+	Abbiamo deciso di utilizzare il protocollo SOAP (Simple Object Access Protocol).
+	SOAP utilizza il formato XML per scambiare informazioni e fa uso di protocolli dell'Application Layer, in particolare HTTP e SMTP. La scelta di SOAP è stata influenzata dai seguenti punti:
+	
+	\begin{itemize}
+		\item È indipendente da linguaggio e piattaforma.
+		\item È adatto all'uso in ambienti distribuiti.
+		\item È standardizzato.
+		\item Include ­error handling.
+	\end{itemize}
+	
+\newpage
+
 \section{Componenti e classi}
 \input{auto_componenti}
 
