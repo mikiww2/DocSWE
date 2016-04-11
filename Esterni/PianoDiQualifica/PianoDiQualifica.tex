@@ -17,10 +17,10 @@
 
 \def\NOME{Piano di Qualifica}
 \def\VERSIONE{3.0}
-\def\DATA{????.????.2016}
-\def\REDATTORE{??????}
-\def\VERIFICATORE{??????}
-\def\RESPONSABILE{?????}
+\def\DATA{06.04.2016}
+\def\REDATTORE{Filippo Tesser \\ & Michela De Bortoli \\ & Vassilikì Menarin \\ & Rudy Berton \\ & Giacomo Beltrame}
+\def\VERIFICATORE{Giacomo Beltrame \\ & Rudy Berton}
+\def\RESPONSABILE{Michela De Bortoli}
 \def\USO{Esterno}
 \def\DISTRIBUZIONE{\COMMITTENTE \\ & \CARDIN \\ & \PROPONENTE}
 
@@ -33,17 +33,17 @@
 \maketitle
 
 \begin{diario}
-	\recap{Approvazione del documento}{Filippo Tesser}{Responsabile}{?????}{3.0}
-	\recap{Correzione errori individuati}{Michela De Bortoli}{Analista}{??????}{2.10}
-	\recap{Verifica dell'intero documento}{Rudy Berton}{Verificatore}{??????}{2.9}
-	\recap{Stesura appendice D}{Giacomo Beltrame}{Analista}{??????}{2.8}
-	\recap{Verifica appendici A e B}{Giacomo Beltrame}{Verificatore}{??????}{2.7}
-	\recap{Stesura test di integrazione}{Rudy Berton}{Amministratore}{?????}{2.6}
-	\recap{Stesura test di sistema}{Vassilikì Menarin}{Progettista}{????}{2.5}
-	\recap{Modifica della sezione A.3.0.3 dell'appendice}{Filippo Tesser}{Analista}{?????}{2.4}
-	\recap{Incremento test di accettazione}{Michela De Bortoli}{Progettista}{???????}{2.3}
-	\recap{Inizio stesura specifica dei test (appendice B)}{Michela De Bortoli}{Progettista}{??????}{2.2}
-	\recap{Incremento dell'appendice A}{Filippo Tesser}{Analista}{???????}{2.1}
+	\recap{Approvazione del documento}{Michela De Bortoli}{Responsabile}{06.04.2016}{3.0}
+	\recap{Correzione errori individuati}{Michela De Bortoli}{Analista}{06.04.2016}{2.10}
+	\recap{Verifica dell'intero documento}{Rudy Berton}{Verificatore}{05.04.2016}{2.9}
+	\recap{Stesura appendice D}{Giacomo Beltrame}{Analista}{04.04.2016}{2.8}
+	\recap{Verifica appendici A e B}{Giacomo Beltrame}{Verificatore}{03.04.2016}{2.7}
+	\recap{Stesura test di integrazione}{Rudy Berton}{Amministratore}{02.04.2016}{2.6}
+	\recap{Stesura test di sistema}{Vassilikì Menarin}{Progettista}{02.04.2016}{2.5}
+	\recap{Modifica della sezione A.3.0.3 dell'appendice}{Filippo Tesser}{Analista}{01.04.2016}{2.4}
+	\recap{Incremento test di accettazione}{Michela De Bortoli}{Progettista}{01.04.2016}{2.3}
+	\recap{Inizio stesura specifica dei test (appendice B)}{Michela De Bortoli}{Progettista}{31.03.2016}{2.2}
+	\recap{Incremento dell'appendice A}{Filippo Tesser}{Analista}{31.03.2016}{2.1}
 	\recap{Approvazione documento}{Miki Violetto}{Responsabile}{23.02.2016}{2.0}
 	\recap{Verifica delle sezioni modificate}{Rudy Berton}{Verificatore}{22.02.2016}{1.2}
 	\recap{Revisione correttiva dei contenuti rispetto alle segnalazioni del committente}{Giacomo Beltrame}{Analista}{20.02.2016}{1.1}
@@ -353,7 +353,7 @@ SV= \mbox{data conclusione reale} - \mbox{data conclusione pianificata}
 \\Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: un valore maggiore di 4 giorni rispetto al tempo pianificato.
-\item Valore accettabile: un valore inferiore di 4 giorni rispetto al tempo pianificato.
+\item Valore accettabile: un valore inferiore o uguale a 4 giorni rispetto al tempo pianificato.
 \item Valore ottimale: un valore minore o uguale a 0. Indica che l'attività si è conclusa perfettamente nei tempi stabiliti o addirittura in anticipo. 
 \end{itemize}
 
@@ -376,7 +376,7 @@ CV= \mbox{costo effettivo} - \mbox{costo preventivato}
 \end{displaymath}
 \\ Giudizio dei risultati ottenibili:
 \begin{itemize}
-\item Valore negativo: un valore maggiore del 10\% dei costi pianificati
+\item Valore negativo: un valore maggiore (o uguale) del 10\% dei costi pianificati
 \item Valore accettabile: un valore minore del 10\% rispetto ai costi pianificati.
 \item Valore ottimale: un valore pari allo 0\%. In questo caso il valore indica come il costo preventivato di un processo sia realmente concorde a quanto pianificato. 
 \end{itemize}
@@ -397,7 +397,7 @@ Questa metrica serve per identificare quanto un documento sia corretto dal punto
 \par Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: un valore superiore al 5\%. 
-\item Valore accettabile: un valore inferiore al 5\%.
+\item Valore accettabile: un valore inferiore o uguale al 5\%.
 \item Valore ottimale: un valore pari a 0.
 \end{itemize}
 
@@ -423,7 +423,7 @@ Nella realizzazione del progetto, e nella valutazione dei risultati ottenuti da 
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: un valore inferiore a 40. 
-\item Valore accettabile: un valore superiore a 40.
+\item Valore accettabile: un valore superiore o uguale a 40.
 \item Valore ottimale: un valore compreso tra 70 e 100.
 \end{itemize}
 
@@ -439,7 +439,7 @@ Questa metrica serve ad indicare la correttezza di un documento dal punto di vis
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: un valore superiore al 5\%. 
-\item Valore accettabile: un valore inferiore al 5\%.
+\item Valore accettabile: un valore inferiore o uguale al 5\%.
 \item Valore ottimale: un valore uguale allo 0\%.
 \end{itemize}
 
@@ -455,7 +455,7 @@ Viene utilizzata questa unità di misura per verificare quanto un documento risp
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: un valore superiore al 5\%. 
-\item Valore accettabile: un valore inferiore al 5\%.
+\item Valore accettabile: un valore inferiore o uguale al 5\%.
 \item Valore ottimale: un valore uguale allo 0\%.
 \end{itemize}
 
@@ -502,7 +502,7 @@ Si avvale degli strumenti messi a disposizione dal \gl{W3C} per valutare l'acces
 \
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
-\item Valore negativo: un numero di errori maggiore di 10.
+\item Valore negativo: un numero di errori maggiore (o uguale) di 10.
 \item Valore accettabile: un numero di errori minore di 10.
 \item Valore ottimale: 0 errori riscontrati durante la verifica attraverso gli strumenti forniti.
 \end{itemize}
@@ -530,7 +530,7 @@ Per valutare la manutenibilità si fa uso di tale metrica che permette di identi
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: un valore maggiore del 25\%.
-\item Valore accettabile: un valore inferiore al 25\%.
+\item Valore accettabile: un valore inferiore o uguale al 25\%.
 \item Valore ottimale: un valore inferiore all'1\%.
 \end{itemize}
 
@@ -546,7 +546,7 @@ Questa metrica valuta il numero di statement presenti in ogni metodo (escluse le
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: un numero maggiore di 60 statement.
-\item Valore accettabile: un numero di statement inferiore a 60. 
+\item Valore accettabile: un numero di statement pari o inferiore a 60. 
 \item Valore ottimale: un numero di statement inferiore a 30.
 \end{itemize}
 
@@ -567,7 +567,7 @@ Questa metrica determina il numero di campi dati presenti all'interno di una cla
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: un numero di campi dati maggiore di 10. 
-\item Valore accettabile: un numero di campi dati inferiore a 10.
+\item Valore accettabile: un numero di campi dati pari o inferiore a 10.
 \item Valore ottimale: un numero inferiore a 5 campi dati.
 \end{itemize}
 
@@ -581,7 +581,7 @@ Attraverso il suo impiego sarà possibile definire inoltre un limite superiore a
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: un valore maggiore di 10. 
-\item Valore accettabile: una complessità ciclomatica inferiore a 10.
+\item Valore accettabile: una complessità ciclomatica pari o inferiore a 10.
 \item Valore ottimale: un valore minore di 5.
 \end{itemize}
 
@@ -602,7 +602,7 @@ Tale metrica indica nel codice la quantità di volte in cui le strutture di cont
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: un valore maggiore di 5.  
-\item Valore accettabile: un valore inferiore a 5.
+\item Valore accettabile: un valore pari o inferiore a 5.
 \item Valore ottimale: un valore inferiore a 3.
 \end{itemize}
 
@@ -620,7 +620,7 @@ Un valore basso di questa metrica permetterà al programma di essere maggiorment
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
 \item Valore negativo: per entrambi gli indici un valore maggiore di 8.   
-\item Valore accettabile: per entrambi gli indici un valore minore di 8.
+\item Valore accettabile: per entrambi gli indici un valore minore (o uguale) di 8.
 \item Valore ottimale: per entrambi gli indici un valore minore di 5.
 \end{itemize}
 
@@ -1657,40 +1657,100 @@ I seguenti test di sistema servono per verificare il comportamento dinamico comp
 \newpage
 \subsection{Test di Integrazione}
 I test di integrazione, che vengono di seguito riportati, servono per verificare la corretta comunicazione tra le diverse componenti del sistema software in modo tale che il funzionamento sia quello atteso.
-\bold{DA FINIRE}
-\\
+\newline Tali test sono stati decisi seguendo una strategia bottom-up, basata sulla logica di realizzare il prodotto conclusivo a partire dalle singole componenti necessarie per realizzare  prima di tutto le funzionalità obbligatorie che sono state richieste.
 \newline Per ogni test viene specificato il proprio codice univoco, la componente o le componenti a cui fa riferimento, lo stato di implementazione attuale e la sua descrizione. 
+\newline Il tracciamento tra i test di integrazione e le componenti ad essi associate è riportato nel documento \doc{Specifica Tecnica}.
 
-%La strategia che verrà seguita per la verifica dei moduli sarà bottom-up, ovvero  integrare prima le parti con minore dipendenza funzionale e maggiore funzionalità
-%che corrispondono alle componenti per requisiti obbligatori permettendo, in questo modo, di avere una versione
-%funzionante delle parti obbligatorie dell’applicazione il prima possibile.
-% 
-%Questi test sono stati pensati seguendo una strategia bottom-up, ossia basata sulla logica di rea-
-%lizzare il prodotto G finale a partire dalle singole componenti necessarie per realizzare le funzioni
-%richieste.
-%
-%
-%
-%Verrà utilizzata una strategia di integrazione incrementale per poter sviluppare e
-%verificare più componenti in parallelo. Questo metodo permette di dare priorità ai test
-%relativi alle componenti che vengono ritenute più importanti. In questo modo sarà possibile
-%partire dalle componenti che soddisfano i requisiti obbligatori fino ad integrarli con le
-%componenti che soddisfano i requisiti opzionali.
-%L’ordine di integrazione delle parti è bottom-up: prima di tutto verranno inserite le
-%componenti con minori dipendenze funzionali e maggiori funzionalità, che corrispondono
-%cioè ai requisiti obbligatori. Questi componenti saranno perciò testati molte più volte,
-%per ridurre la possibilità che il prodotto finale contenga difetti, e si otterrà una versione
-%funzionante dell’applicazione nel minor tempo possibile. In seguito si risalirà man mano
-%l’albero delle dipendenze, fino all’inserimento delle componenti più di alto livello.
-%Tale metodo è molto più oneroso rispetto ad altri in quanto richiede che venga
-%generato del codice di supporto, sotto forma di driver e stub, che simuli le componenti
-
-\begin{tabella}{!{\VRule}c!{\VRule}p{8cm}!{\VRule}c!{\VRule}c!{\VRule}}
-	\color{white} \bold{Codice test} & \color{white} \bold{Descrizione} & \color{white} \bold{Requisito} & \color{white} \bold{Stato}\\
+\begin{tabella}{!{\VRule}l!{\VRule}p{2.5cm}!{\VRule}p{5.5cm}c!{\VRule}}
+	\color{white} \bold{Codice test} & \color{white} \bold{Descrizione} & \color{white} \bold{Componente} & \color{white} \bold{Stato}\\
 	\endfirsthead
-
-
-
+	TIQuizzipedia & d01 & Quizzipedia & N.I.  
+	\\
+	TIClient & d02 & Quizzipedia::Client & N.I.
+	\\
+	TIModelClient & d03 & Quizzipedia::Client::ModelClient & N.I.
+	\\
+	TIOrganization & d04 & Quizzipedia::Client::ModelClient::\-Organization & N.I.
+	\\
+	TIRequests & d05 & Quizzipedia::Client::ModelClient::\-Requests & N.I.
+	\\
+	TIServicesClient & d06 & Quizzipedia::Client::ModelClient::\-Services & N.I.
+	\\
+	TIQuestionsClient & d07 & Quizzipedia::Client::ModelClient::\-Services::Questions & N.I.
+	\\
+	TIStatistics & d08 & Quizzipedia::Client::ModelClient::\-Statistics & N.I.
+	\\
+	TIUsers & d09 & Quizzipedia::Client::ModelClient::\-Users & N.I.
+	\\
+	TIViewClient & d10 & Quizzipedia::Client::ViewClient & N.I.
+	\\
+	TIViewOrgManager & d11 & Quizzipedia::Client::ViewClient::\-ViewOrgManager & N.I.
+	\\
+	TIViewQuestionManager & d12 & Quizzipedia::Client::ViewClient::\-ViewQuestionManager & N.I.
+	\\
+	TIViewQuizManager & d13 & Quizzipedia::Client::ViewClient::\-ViewQuizManager & N.I.
+	\\
+	TIViewQuizSolver & d14 & Quizzipedia::Client::ViewClient::\-ViewQuizSolver & N.I.
+	\\
+	TIViewQuestionSolver & d15 & Quizzipedia::Client::ViewClient::\-ViewQuizSolver::ViewQuestionSolver & N.I.
+	\\
+	TIViewRequest & d16 & Quizzipedia::Client::ViewClient::\-ViewRequests & N.I.
+	\\
+	TIViewSearch & d17 & Quizzipedia::Client::ViewClient::\-ViewSearch & N.I.
+	\\
+	TIViewStatistics & d18 & Quizzipedia::Client::ViewClient::\-ViewStatistics & N.I.
+	\\
+	TIViewTopicManager & d19 & Quizzipedia::Client::ViewClient::\-ViewTopicManager & N.I.
+	\\
+	TIViewUsers & d20 & Quizzipedia::Client::ViewClient::\-ViewUsers & N.I.
+	\\
+	TIViewErrors & d21 & Quizzipedia::Client::ViewClient::\-ViewErrors & N.I.
+	\\
+	TIControllerClient & d22 & Quizzipedia::Client::ControllerClient & N.I.
+	\\
+	TICtrlOrganization & d23 & Quizzipedia::Client::ControllerClient::\-CtrlOrganization & N.I.
+	\\
+	TICtrlRequests & d24 & Quizzipedia::Client::ControllerClient::\-CtrlRequests & N.I.
+	\\
+	TICtrlServices & d25 & Quizzipedia::Client::ControllerClient::\-CtrlServices & N.I.
+	\\
+	TICtrlStatistics & d26 & Quizzipedia::Client::ControllerClient::\-CtrlStatistics & N.I.
+	\\
+	TICtrlUsers & d27 & Quizzipedia::Client::ControllerClient::\-CtrlUsers & N.I.
+	\\
+	TIServer & d28 & Quizzipedia::Server & N.I.
+	\\
+	TIControllerServer & d29 & Quizzipedia::Server::ControllerServer & N.I.
+	\\
+	TIAuthenticationManager & d30 & Quizzipedia::Server::ControllerServer::\-AuthenticationManager & N.I.
+	\\
+	TIClassManager & d31 & Quizzipedia::Server::ControllerServer::\-ClassManager & N.I.
+	\\
+	TICompanyManager & d32 & Server::ControllerServer::\-CompanyManager & N.I.
+	\\
+	TIProfileManager & d33 & Quizzipedia::Server::ControllerServer::\-ProfileManager & N.I.
+	\\
+	TIQuestionsManager & d34 & Quizzipedia::Server::ControllerServer::\-QuestionsManager & N.I.
+	\\
+	TIQuizManager & d35 & Quizzipedia::Server::ControllerServer::\-QuizManager & N.I.
+	\\
+	TIQMLAgent & d36 & Quizzipedia::Server::ControllerServer::\-QuizManager::QMLAgent & N.I.
+	\\
+	TIRequestsManager & d37 & Quizzipedia::Server::ControllerServer::\-RequestsManager & N.I.
+	\\
+	TISearchManager & d38 &  Quizzipedia::Server::ControllerServer::\-SearchManager & N.I.
+	\\
+	TIStatisticsManager & d39 &  Quizzipedia::Server::ControllerServer::\-StatisticsManager & N.I.
+	\\
+	TITopicManager & d40 & Quizzipedia::Server::ControllerServer::\-TopicManager & N.I.
+	\\
+	TIModelServer & d41 &  Quizzipedia::Server::ModelServer & N.I.
+	\\
+	TIServicesServer & d42 &  Quizzipedia::Server::ModelServer::\-Services & N.I.
+	\\
+	TIQuestionsServer & d43 & Quizzipedia::Server::ModelServer::\-Services::Questions & N.I.
+	\\
+	TIRoutingManager & d44 & Quizzipedia::Server::RoutingManager & N.I.	
 	\\
 	\rowcolor{white}  
 	\caption{Test di integrazione}
@@ -1751,7 +1811,7 @@ da poter utilizzare e procedure da seguire per effettuare determinate attività.
 
 \subsubsection{Verificazione}
 \myparagraph{Schedule Variance}
-Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di stesura di ogni documento:
+Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di verifica per ogni documento:
 \begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
 	
 	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
@@ -1881,20 +1941,20 @@ Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance s
 \begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
 	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
 	\endfirsthead
-	Analisi dei Requisiti v3.0 & ???? & ?????? \\
-	Norme di Progetto v3.0 & ????? & ?????? \\
-    Piano di Progetto v3.0 &  ?????? &  ??????\\
-    Piano di Qualifica v3.0 & ?????? & ?????? \\
-    Glossario v3.0 & ?????? & ??????\\	
-    Specifica Tecnica v1.0 & ?????? & ?????? \\
+	Analisi dei Requisiti v3.0 & -2 & Ottimale \\
+	Norme di Progetto v3.0 & 0 & Ottimale \\
+    Piano di Progetto v3.0 &  +2 &  Accettabile\\
+    Piano di Qualifica v3.0 & 0 & Ottimale \\
+    Glossario v2.0 & -1 & Ottimale\\	
+    Specifica Tecnica v1.0 & +6 & Negativo \\
 	\rowcolor{white}  
 	\caption{Esiti della Schedule Variance - Attività di Progettazione architetturale}	    	
 \end{tabella}
 
 \bold{Considerazioni finali:}
 \begin{description}
-\item{\bold{Schedule Variance finale:}} ????.
-\\ \bold{SPIEGAZIONE}
+\item{\bold{Schedule Variance finale:}} +5 giorni.
+\\Durante l'attività di Progettazione architetturale il team ha concluso la stesura della documentazione con un ritardo di 5 giorni da quanto riportato nel documento \doc{Piano di Progetto}. Pur essendo un valore non accettabile che fuoriesce dal range assunto in tale metrica, il gruppo non considera necessario assumere delle azioni correttive dal momento che il problema della malattia prolungata di parte del team viene considerato un evento eccezionale che difficilmente si potrà manifestare nuovamente in maniera così gravosa nelle successive attività.
 \end{description}
 
 
@@ -1904,39 +1964,42 @@ Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui t
 	
 	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
 	\endfirsthead
-	Processo di documentazione & ?????? \% & ??????\\
+	Processo di documentazione & 4 \% & Accettabile\\
 	\rowcolor{white}  
 	\caption{Esiti della Cost Variance - Attività di Progettazione architetturale}	   	
 \end{tabella}
 
 \bold{Considerazioni finali:}
-\\ \bold{SPIEGAZIONE}
+\\Per il processo di documentazione il gruppo ha necessitato lo sfruttamento di un maggior numero di risorse (umane) a causa della malattia di alcuni membri del team affinchè venissero ricoperte anche le loro mansioni. Ciò nonostante il valore di cost variance rientra nei parametri di accettazione definiti dal tale metrica.
 
 
 \myparagraph{Capability Maturity Model}
-\bold{SPIEGAZIONE}
+L'attità di Progettazione architetturale è iniziata con un livello di Maturity pari a 2.
+\\ Attraverso l'incremento dei documenti con ad esempio l'individuazione di nuove metriche che possano migliorare la qualità dei processi e grazie all'esperienza accumulata dai componenti del team, i processi e la loro organizzazione sono migliorati portando a raggiungere il livello 3 del modello CMM.
+\\ Tale risultato è accettabile secondo quanto riportato nella corrispettiva metrica, ma il gruppo cercherà di migliorare ulteriormente per le attività successive.
 
 \subsubsection{Verificazione}
 \myparagraph{Schedule Variance}
-Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di stesura di ogni documento:
+Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di verifica per ogni documento:
 \begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
 	
 	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
 	\endfirsthead
-	Analisi dei Requisiti v3.0 & ?????? & ?????? \\
-	Norme di Progetto v3.0 & ?????? & ?????? \\
-    Piano di Progetto v3.0 &  ?????? &  ??????\\
-    Piano di Qualifica v3.0 & ?????? & ?????? \\
-    Glossario v3.0 & ?????? & ??????\\	
-   	Specifica Tecnica v1.0 &  ?????? &  ?????? \\
+	Analisi dei Requisiti v3.0 & +1 & Accettabile \\
+	Norme di Progetto v3.0 & 0 & Ottimale \\
+    Piano di Progetto v3.0 &  0 &  Ottimale\\
+    Piano di Qualifica v3.0 & +1 & Accettabile \\
+    Glossario v2.0 & -2 & Ottimale\\	
+   	Specifica Tecnica v1.0 &  +4 &  Accettabile \\
 	\rowcolor{white}  
 	\caption{Esiti della Schedule Variance - Attività di Progettazione architetturale}	    	
 \end{tabella}
 
 \bold{Considerazioni finali:}
 \begin{description}
-\item{\bold{Schedule Variance finale:}} ??????.
-\\ \bold{SPIEGAZIONE}
+\item{\bold{Schedule Variance finale:}} +4 giorni.
+\\ Per il processo di verificazione il team ha ritardato di 4 giorni rispetto a quanto pianificato, a causa del ritardo provocato dalla stesura della documentazione, come riportato sopra. 
+\\ Il valore rientra in ogni caso nel range accettabile definito per tale metrica, per cui non si necessitano di misure correttive da definire.
 \end{description}
 
 \myparagraph{Cost Variance}
@@ -1945,38 +2008,39 @@ Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui t
 	
 	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
 	\endfirsthead
-	Processo di verifica & ?????? \% & ??????\\
+	Processo di verifica & 0\% & Ottimale\\
 	\rowcolor{white}  
 	\caption{Esiti della Cost Variance - Attività di Progettazione architetturale}	  
 \end{tabella}
 
 \bold{Considerazioni finali:}
-\\ \bold{SPIEGAZIONE}
+\\Per il processo di verificazione il team ha usufruito delle risorse in proprio possesso senza alcuna necessità aggiuntiva. In tal modo i costi pianificati sono stati rispettati perfettamente.
 
 \myparagraph{Capability Maturity Model}
-\bold{SPIEGAZIONE}
+All'inizio dell'attività di Progettazione architetturale il livello di Maturity del processo di verificazione era pari a 2.
+\\ Il team ha migliorato il proprio processo di verifica dei documenti attraverso l'utilizzo delle metriche definite in questo documento, consolidando quanto appreso nell'attività precedente e apportandone valore aggiunto, arrivando in tal modo a raggiungere il livello 3 del modello CMM.
 
 \subsection{Verifica dei prodotti}
 \subsubsection{Documenti}
 \myparagraph{Errori ortografici}
-\bold{INTRODUZIONE da fare}
+Il gruppo, attraverso un processo di verifica automatica e manuale, ha riscontrato pochi errori ortografici nei documenti che hanno subito solo un incremento, mentre parecchi errori nella stesura del documento \STdoc.
 \newline Vengono riportati di seguito i valori ottenuti riguardanti la verifica degli errori ortografici:
 \begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
 	
 	\color{white} \bold{Documento} & \color{white} \bold{Errori ortografici} &\color{white} \bold{Giudizio} \\
 	\endfirsthead
-	Analisi dei Requisiti v3.0 &  ??????? \% & ???????\\
-	Norme di Progetto v3.0 & ??????? \% & ???????\\
-    Piano di Progetto v3.0 & ??????? \% & ??????? \\
-    Piano di Qualifica 3.0 & ??????? \% & ???????\\
-    Glossario v3.0 & ??????? \% & ???????\\
-    Specifica Tecnica v1.0 & ??????? \% &  ??????? \\	
+	Analisi dei Requisiti v3.0 &  1 \% & Accettabile\\
+	Norme di Progetto v3.0 & 0 \% & Ottimale\\
+    Piano di Progetto v3.0 & 1 \% & Accettabile \\
+    Piano di Qualifica 3.0 & 1 \% & Accettabile\\
+    Glossario v2.0 & 0 \% & Ottimale\\
+    Specifica Tecnica v1.0 & 3 \% &  Accettabile \\	
 	\rowcolor{white}  
 	\caption{Esiti degli Errori Ortografici - Attività di Progettazione architetturale}	    	
 \end{tabella}
 
 \bold{Considerazioni finali:}
-\\ \bold{SPIEGAZIONE} 
+\\ Per ogni documento che abbia subito un incremento rispetto alla versione precedente, il team ha svolto un buon lavoro nella correzione degli errori ortografici; solamente nella stesura del documento \STdoc si sono riscontrati maggiori errori che non sono stati corretti subito. Ciò nonostante la percentuale di errori individuati in ogni documento rientra nella soglia di accettabilità prevista da tale metrica.
 
 \myparagraph{Indice Gulpease}
 Ogni documento è stato sottoposto ad uno \gl{script} che ne calcolasse l'\gl{Indice Gulpease} per valutarne il grado di leggibilità.
@@ -1998,10 +2062,12 @@ Ogni documento è stato sottoposto ad uno \gl{script} che ne calcolasse l'\gl{In
 \\ \bold{SPIEGAZIONE}
 
 \myparagraph{Errori Concettuali}
-\bold{SPIEGAZIONE}
+Durante il processo di verificazione dei documenti non è stato riscontrato nessun tipo di errore concettuale all'interno dei documenti. La soglia di accettabilità in tal modo viene rispettata pienamente, ragggiungendo il valore ottimale per tale metrica.
 
 \myparagraph{Errori di forma}
-\bold{SPIEGAZIONE} 
+Avendo consolidato le norme descritte nel documento \doc{Norme di progetto} il gruppo si è attenuto perfettamente alla forma nelle stesura e nell'incremento dei documenti. Pochissimi sono stati gli errori di forma segnalati, che sono stati prontamente corretti da chi di dovere. 	
+\\ La percentuale di errori di forma pertanto è pari allo 0\%, valore ottimale per tale metrica.
+
 
 \subsection {Sommario del resoconto delle sottoattività di verifica}
 
@@ -2012,19 +2078,19 @@ Ogni documento è stato sottoposto ad uno \gl{script} che ne calcolasse l'\gl{In
 	\color{white} \bold{Verifica} & \color{white} \bold{Metrica} & \color{white} \bold{Giudizio finale} \\
 	\endfirsthead
 	
-	\cellcolor{P} & Schedule Variance & ???????\\
-	\cellcolor{P} & Cost Variance & ??????? \\
-	\multirow{-3}{*}{\cellcolor{P}Processo di Documentazione}	& Capability Maturity Model & ??????? \\
+	\cellcolor{P} & Schedule Variance & Negativo\\
+	\cellcolor{P} & Cost Variance & Accettabile \\
+	\multirow{-3}{*}{\cellcolor{P}Processo di Documentazione}	& Capability Maturity Model & Accettabile \\
 	\hline
 	
-	\cellcolor{D} & Schedule Variance & ??????? \\
-	\cellcolor{D} & Cost Variance & ??????? \\
-	\multirow{-2}{*}{\cellcolor{D}Processo di Verificazione} & Capability Maturity Model & ??????? \\
+	\cellcolor{D} & Schedule Variance & Accettabile \\
+	\cellcolor{D} & Cost Variance & Ottimale \\
+	\multirow{-2}{*}{\cellcolor{D}Processo di Verificazione} & Capability Maturity Model & Accettabile \\
 	\hline
 	
-	\cellcolor{P} & Errori Ortografici & ??????? \\
+	\cellcolor{P} & Errori Ortografici & Accettabile\\
 	\cellcolor{P} & \gl{Indice Gulpease} & ??????? \\
-	\multirow{-2}{*}{\cellcolor{P} Documenti} & Errori Concettuali & ??????? \\ & Errori di Forma & ??????? \\
+	\multirow{-2}{*}{\cellcolor{P} Documenti} & Errori Concettuali & Ottimale \\ & Errori di Forma & Ottimale \\
 	\hline
 		
 
