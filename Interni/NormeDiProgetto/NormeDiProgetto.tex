@@ -33,6 +33,15 @@
 \maketitle
 
 \begin{diario}
+	\recap{Approvazione documento}{Filippo Tesser}{Responsabile}{03.03.2016}{3.0}
+	\recap{Verifica del documento}{Simone Boccato}{Verificatore}{02.03.2016}{2.5}
+	\recap{Correzione errori segnalati}{Giacomo Beltrame}{Amministratore}{01.03.2016}{2.4}
+	\recap{Verifica del documento}{Simone Boccato}{Verificatore}{01.03.2016}{2.3}
+	\recap{Incremento del documento}{Giacomo Beltrame}{Amministratore}{28.02.2016}{2.2}
+	\recap{Stesura sezione dei test}{Giacomo Beltrame}{Amministratore}{26.02.2016}{2.1}
+	\recap{Approvazione documento}{Miki Violetto}{Responsabile}{20.02.2016}{2.0}
+	\recap{Verifica documento}{}{Michela De Bortoli}{19.02.2016}{1.2}
+	\recap{Revisione correttiva dei contenuti}{Vassilikì Menarin}{Amministratore}{18.02.2016}{1.1}
 	\recap{Approvazione documento}{Vassilikì Menarin}{Responsabile}{31.12.2015}{1.0}
 	\recap{Correzione errori}{Filippo Tesser}{Amministratore}{31.12.2015}{0.9}
 	\recap{Verifica documento}{Miki Violetto}{Verificatore}{30.12.2015}{0.8}
@@ -506,7 +515,7 @@ Il codice identificativo dei test di unità è: \centra{TU[codice univoco]}.
 
 \mysubparagraph{Test di integrazione}
 I test di integrazione rappresentano l'estensione logica del test di unità. Il tipo più semplice di test di integrazione consiste nella combinazione di due unità già sottoposte a test in un solo componente e nel test dell'interfaccia presente tra le due. In uno scenario realistico più unità vengono combinate in componenti che, a loro volta, vengono aggregate in parti più grandi del sistema. Alla fine, tutti i moduli che compongono un processo vengono sottoposti al test contemporaneamente.
-Il codice identificativo dei test di integrazione è: \centra{TI[IDcomponente]} dove IDcomponente rappresenta la componente i cui elementi integrati sono sottoposti al test. 
+Il codice identificativo dei test di integrazione è: \centra{TI[IDcomponente]} dove IDcomponente rappresenta la componente i cui elementi integrati sono sottoposti al test. Qualora più componenti abbiano lo stesso nome identificativo verrà associato a IDcomponente anche la componente principale che possa identificarli in modo univoco (ad esempio TIServicesClient e TIServicesServer).
 
 \mysubparagraph{Test di regressione}
 Il test di regressione va eseguito ogni volta che viene modificata un'implementazione del sistema. A tale scopo, è possibile eseguire nuovamente i test esistenti sul codice modificato per stabilire se le modifiche apportate hanno alterato elementi precedentemente funzionanti. Se necessario è anche possibile scrivere nuovi test.
