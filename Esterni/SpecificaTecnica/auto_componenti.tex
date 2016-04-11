@@ -3,7 +3,7 @@ Racchiude tutte le componenti necessarie per il front-end del prodotto. Visualiz
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client.pdf}}
-\caption{Schema Componente Quizzipedia::Client}
+\caption[Schema Quizzipedia::Client]{Schema Componente Quizzipedia::Client}
 \end{figure}
 \subsection{Quizzipedia::Client::ModelClient}
 Rappresenta il modello dei dati che verranno utilizzati dal sistema lato client.
@@ -827,7 +827,7 @@ Racchiude tutte le componenti necessarie per il back-end del prodotto. Contiene 
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server.pdf}}
-\caption{Schema Componente Quizzipedia::Server}
+\caption[Schema Quizzipedia::Server]{Schema Componente Quizzipedia::Server}
 \end{figure}
 \subsection{Quizzipedia::Server::ModelServer}
 Rappresenta il modello dei dati che verranno utilizzati dal sistema lato server.
@@ -987,6 +987,10 @@ Permette il recupero della password da parte di un utente in caso di smarrimento
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-passwordrecover.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::AuthenticationManager::SessionController
+\end{itemize}
 \subsubsection{Classe Register}
 Permette la registrazione di un utente nel sistema.
 \begin{figure}[H]
@@ -1015,6 +1019,10 @@ Permette la creazione di una nuova classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classadder.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ClassManager::SessionController
+\end{itemize}
 \subsubsection{Classe ClassDeleter}
 Permette la rimozione delle classi dal sistema.
 \begin{figure}[H]
@@ -1022,6 +1030,10 @@ Permette la rimozione delle classi dal sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classdeleter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassDeleter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ClassManager::SessionController
+\end{itemize}
 \subsubsection{Classe ClassUpdater}
 Permette la modifica delle informazioni di base di una determinata classe.
 \begin{figure}[H]
@@ -1029,6 +1041,10 @@ Permette la modifica delle informazioni di base di una determinata classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classupdater.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassUpdater}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ClassManager::SessionController
+\end{itemize}
 \subsubsection{Classe FromClassRemover}
 Permette la rimozione di un utente da una determinata classe.
 \begin{figure}[H]
@@ -1036,6 +1052,10 @@ Permette la rimozione di un utente da una determinata classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-fromclassremover.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::FromClassRemover}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ClassManager::SessionController
+\end{itemize}
 \subsubsection{Classe InClassAdder}
 Permette l'inserimento di un utente in una specifica classe.
 \begin{figure}[H]
@@ -1043,6 +1063,10 @@ Permette l'inserimento di un utente in una specifica classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-inclassadder.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ClassManager::SessionController
+\end{itemize}
 \subsubsection{Classe SessionController}
 Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
 \begin{figure}[H]
@@ -1057,6 +1081,10 @@ Recupera la lista degli studenti appartenenti ad una determinata classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-studentsclassfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ClassManager::SessionController
+\end{itemize}
 \subsubsection{Classe TeachersClassFetcher}
 Recupera la lista degli insegnanti relativi ad una determinata classe.
 \begin{figure}[H]
@@ -1064,6 +1092,10 @@ Recupera la lista degli insegnanti relativi ad una determinata classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-teachersclassfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ClassManager::SessionController
+\end{itemize}
 \subsection{Quizzipedia::Server::ControllerServer::CompanyManager}
 Permette la gestione dell'ente da parte del responsabile.
 \begin{figure}[H]
@@ -1078,6 +1110,10 @@ Permette la modifica dell'ente da parte del responsabile.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-companymanager-companyupdater.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::CompanyManager::CompanyUpdater}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::CompanyManager::SessionController
+\end{itemize}
 \subsubsection{Classe SessionController}
 Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
 \begin{figure}[H]
@@ -1099,6 +1135,10 @@ Permette la rimozione di un account dal sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-accountdeleter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ProfileManager::SessionController
+\end{itemize}
 \subsubsection{Classe PasswordSetter}
 Permette ad un utente di impostare una nuova password relativa al proprio account.
 \begin{figure}[H]
@@ -1106,6 +1146,10 @@ Permette ad un utente di impostare una nuova password relativa al proprio accoun
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-passwordsetter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ProfileManager::SessionController
+\end{itemize}
 \subsubsection{Classe PersonalDataFetcher}
 Ritorna tutte le informazioni personali riferite all'utente che ne effettua la richiesta.
 \begin{figure}[H]
@@ -1113,6 +1157,10 @@ Ritorna tutte le informazioni personali riferite all'utente che ne effettua la r
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personaldatafetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ProfileManager::SessionController
+\end{itemize}
 \subsubsection{Classe PersonalDataSetter}
 Permette ad un utente la modifica delle informazioni personali.
 \begin{figure}[H]
@@ -1120,6 +1168,10 @@ Permette ad un utente la modifica delle informazioni personali.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personaldatasetter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ProfileManager::SessionController
+\end{itemize}
 \subsubsection{Classe PersonalQuizFetcher}
 Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fino a quel momento.
 \begin{figure}[H]
@@ -1127,6 +1179,10 @@ Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fi
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personalquizfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ProfileManager::SessionController
+\end{itemize}
 \subsubsection{Classe SessionController}
 Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
 \begin{figure}[H]
@@ -1148,6 +1204,10 @@ Permette il salvataggio nella base di dati di una nuova domanda.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questioncreator.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuestionsManager::SessionController
+\end{itemize}
 \subsubsection{Classe QuestionEraser}
 Permette la cancellazione di una domanda dalla base di dati.
 \begin{figure}[H]
@@ -1155,6 +1215,10 @@ Permette la cancellazione di una domanda dalla base di dati.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questioneraser.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuestionsManager::SessionController
+\end{itemize}
 \subsubsection{Classe QuestionUpdater}
 Permette la modifica di una domanda già esistente.
 \begin{figure}[H]
@@ -1162,6 +1226,10 @@ Permette la modifica di una domanda già esistente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questionupdater.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuestionsManager::SessionController
+\end{itemize}
 \subsubsection{Classe SessionController}
 Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
 \begin{figure}[H]
@@ -1187,6 +1255,11 @@ Permette il salvataggio nella base di dati di un nuovo quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizcreator.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLGenerator
+\item Quizzipedia::Server::ControllerServer::QuizManager::SessionController
+\end{itemize}
 \subsubsection{Classe QuizEraser}
 Permette la cancellazione di un quiz dalla base di dati.
 \begin{figure}[H]
@@ -1194,6 +1267,10 @@ Permette la cancellazione di un quiz dalla base di dati.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizeraser.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuizManager::SessionController
+\end{itemize}
 \subsubsection{Classe QuizFetcher}
 Ritorna un determinato quiz pronto per essere svolto da un utente .
 \begin{figure}[H]
@@ -1201,6 +1278,11 @@ Ritorna un determinato quiz pronto per essere svolto da un utente .
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLParser
+\item Quizzipedia::Server::ControllerServer::QuizManager::SessionController
+\end{itemize}
 \subsubsection{Classe QuizUpdater}
 Permette la modifica di un quiz già presente nella base di dati.
 \begin{figure}[H]
@@ -1208,6 +1290,11 @@ Permette la modifica di un quiz già presente nella base di dati.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizupdater.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLGenerator
+\item Quizzipedia::Server::ControllerServer::QuizManager::SessionController
+\end{itemize}
 \subsubsection{Classe ResultsUpdater}
 Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte dei un utente.
 \begin{figure}[H]
@@ -1215,6 +1302,10 @@ Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte dei un u
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-resultsupdater.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuizManager::SessionController
+\end{itemize}
 \subsubsection{Classe SessionController}
 Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
 \begin{figure}[H]
@@ -1229,6 +1320,10 @@ Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-statisticsupdater.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::StatisticsUpdater}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuizManager::SessionController
+\end{itemize}
 \subsection{Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}
 Questo package racchiude i moduli necessari alla traduzione da QML ad un formato comprensibile dal sistema le informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
 \begin{figure}[H]
@@ -1264,6 +1359,10 @@ Permette la memorizzazione delle richieste di creazione di una classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-classrequestsadder.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::ClassRequestsAdder}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::RequestsManager::SessionController
+\end{itemize}
 \subsubsection{Classe InsertClassRequestAdder}
 Permette la memorizzazione nella base di dati di tutte le richieste da parte degli utenti di essere inseriti in una determinata classe.
 \begin{figure}[H]
@@ -1271,6 +1370,10 @@ Permette la memorizzazione nella base di dati di tutte le richieste da parte deg
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-insertclassrequestadder.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestAdder}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::RequestsManager::SessionController
+\end{itemize}
 \subsubsection{Classe RequestsFetcher}
 Permette la visualizzazione di tutte le richieste da parte degli utenti.
 \begin{figure}[H]
@@ -1278,6 +1381,10 @@ Permette la visualizzazione di tutte le richieste da parte degli utenti.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-requestsfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::RequestsManager::SessionController
+\end{itemize}
 \subsubsection{Classe RoleAccepter}
 Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utente dopo che ne ha fatto richiesta.
 \begin{figure}[H]
@@ -1285,6 +1392,10 @@ Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utent
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-roleaccepter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::RequestsManager::SessionController
+\end{itemize}
 \subsubsection{Classe RoleRequestsAdder}
 Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'interno del sistema.
 \begin{figure}[H]
@@ -1292,6 +1403,10 @@ Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-rolerequestsadder.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestsAdder}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::RequestsManager::SessionController
+\end{itemize}
 \subsubsection{Classe SessionController}
 Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
 \begin{figure}[H]
@@ -1313,6 +1428,10 @@ Ritorna una lista di domande che corrispondono ai parametri di ricerca impostati
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-questionsearcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::QuestionSearcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::SearchManager::SessionController
+\end{itemize}
 \subsubsection{Classe QuizSearcher}
 Ritorna una lista di quiz che corrispondono ai parametri di ricerca impostati dall'utente.
 \begin{figure}[H]
@@ -1320,6 +1439,10 @@ Ritorna una lista di quiz che corrispondono ai parametri di ricerca impostati da
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-quizsearcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::SearchManager::SessionController
+\end{itemize}
 \subsubsection{Classe SessionController}
 Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
 \begin{figure}[H]
@@ -1341,6 +1464,10 @@ Ritorna le statistiche personali.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-personalstatisticsfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::PersonalStatisticsFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::StatisticsManager::SessionController
+\end{itemize}
 \subsubsection{Classe QuestionStatisticsFetcher}
 Ritorna le statistiche riferite ad una domanda.
 \begin{figure}[H]
@@ -1348,6 +1475,10 @@ Ritorna le statistiche riferite ad una domanda.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-questionstatisticsfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::QuestionStatisticsFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::StatisticsManager::SessionController
+\end{itemize}
 \subsubsection{Classe QuizStatisticsFetcher}
 Ritorna le statistiche riferite ad un quiz.
 \begin{figure}[H]
@@ -1355,6 +1486,10 @@ Ritorna le statistiche riferite ad un quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-quizstatisticsfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::QuizStatisticsFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::StatisticsManager::SessionController
+\end{itemize}
 \subsubsection{Classe SessionController}
 Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
 \begin{figure}[H]
@@ -1369,6 +1504,10 @@ Ritorna le statistiche riferite ad uno studente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-studentstatisticsfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::StudentStatisticsFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::StatisticsManager::SessionController
+\end{itemize}
 \subsubsection{Classe TeacherStatisticsFetcher}
 Ritorna le statistiche riferite ad un docente.
 \begin{figure}[H]
@@ -1376,6 +1515,10 @@ Ritorna le statistiche riferite ad un docente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-teacherstatisticsfetcher.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::TeacherStatisticsFetcher}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::StatisticsManager::SessionController
+\end{itemize}
 \subsection{Quizzipedia::Server::ControllerServer::TopicManager}
 Package che permette la creazione di un nuovo argomento o l'eliminazione di uno già esistente.
 \begin{figure}[H]
@@ -1397,6 +1540,10 @@ Permette la creazione di un nuovo argomento.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager-topiccreator.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::TopicManager::TopicCreator}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::TopicManager::SessionController
+\end{itemize}
 \subsubsection{Classe TopicEraser}
 Permette l'eliminazione di un argomento.
 \begin{figure}[H]
@@ -1404,6 +1551,10 @@ Permette l'eliminazione di un argomento.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager-topiceraser.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::TopicManager::TopicEraser}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::TopicManager::SessionController
+\end{itemize}
 \subsection{Quizzipedia::Server::RoutingManager}
 Questo pachetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per comunicare con il client tramite socket; esso ha il compito di indirizzare le richieste ai vari services in base alla richiesta da parte dell'utente.
 \begin{figure}[H]
@@ -1429,6 +1580,13 @@ Invocato dal client per interagire con AuthenticationManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-authenticationrouter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::RoutingManager::AuthenticationRouter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn
+\item Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerOut
+\item Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover
+\item Quizzipedia::Server::ControllerServer::AuthenticationManager::Register
+\end{itemize}
 \subsubsection{Classe ClassRouter}
 Invocato dal client per interagire con ClassManager.
 \begin{figure}[H]
@@ -1436,6 +1594,27 @@ Invocato dal client per interagire con ClassManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-classrouter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::RoutingManager::ClassRouter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder
+\item Quizzipedia::Server::ControllerServer::ClassManager::ClassDeleter
+\item Quizzipedia::Server::ControllerServer::ClassManager::ClassUpdater
+\item Quizzipedia::Server::ControllerServer::ClassManager::FromClassRemover
+\item Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder
+\item Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher
+\item Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher
+\end{itemize}
+\subsubsection{Classe CompanyRouter}
+Invocato dal client per i interagire con CompanyManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-companyrouter.pdf}}
+\caption{Schema Classe Quizzipedia::Server::RoutingManager::CompanyRouter}
+\end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::CompanyManager::CompanyUpdater
+\end{itemize}
 \subsubsection{Classe ProfileRouter}
 Invocato dal client per interagire con ProfileManager.
 \begin{figure}[H]
@@ -1443,6 +1622,14 @@ Invocato dal client per interagire con ProfileManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-profilerouter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::RoutingManager::ProfileRouter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter
+\item Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter
+\item Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher
+\item Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter
+\item Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher
+\end{itemize}
 \subsubsection{Classe QuestionRouter}
 Invocato dal client per interagire con QuestionsManager.
 \begin{figure}[H]
@@ -1450,6 +1637,12 @@ Invocato dal client per interagire con QuestionsManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-questionrouter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::RoutingManager::QuestionRouter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator
+\item Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser
+\item Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater
+\end{itemize}
 \subsubsection{Classe QuizRouter}
 Invocato dal client per interagire con QuizManager.
 \begin{figure}[H]
@@ -1457,6 +1650,15 @@ Invocato dal client per interagire con QuizManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-quizrouter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::RoutingManager::QuizRouter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator
+\item Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser
+\item Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher
+\item Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater
+\item Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater
+\item Quizzipedia::Server::ControllerServer::QuizManager::StatisticsUpdater
+\end{itemize}
 \subsubsection{Classe RequestsRouter}
 Invocato dal client per interagire con RequestsManager.
 \begin{figure}[H]
@@ -1464,6 +1666,14 @@ Invocato dal client per interagire con RequestsManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-requestsrouter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::RoutingManager::RequestsRouter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::RequestsManager::ClassRequestsAdder
+\item Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestAdder
+\item Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher
+\item Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter
+\item Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestsAdder
+\end{itemize}
 \subsubsection{Classe SearchRouter}
 Invocato dal client per interagire con SearchManager.
 \begin{figure}[H]
@@ -1471,6 +1681,11 @@ Invocato dal client per interagire con SearchManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-searchrouter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::RoutingManager::SearchRouter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::SearchManager::QuestionSearcher
+\item Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher
+\end{itemize}
 \subsubsection{Classe StatisticsRouter}
 Invocato dal client per interagire con StatisticsManager.
 \begin{figure}[H]
@@ -1478,6 +1693,14 @@ Invocato dal client per interagire con StatisticsManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-statisticsrouter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::RoutingManager::StatisticsRouter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::StatisticsManager::PersonalStatisticsFetcher
+\item Quizzipedia::Server::ControllerServer::StatisticsManager::QuestionStatisticsFetcher
+\item Quizzipedia::Server::ControllerServer::StatisticsManager::QuizStatisticsFetcher
+\item Quizzipedia::Server::ControllerServer::StatisticsManager::StudentStatisticsFetcher
+\item Quizzipedia::Server::ControllerServer::StatisticsManager::TeacherStatisticsFetcher
+\end{itemize}
 \subsubsection{Classe TopicRouter}
 Invocato dal client per interagire con TopicManager.
 \begin{figure}[H]
@@ -1485,3 +1708,8 @@ Invocato dal client per interagire con TopicManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-topicrouter.pdf}}
 \caption{Schema Classe Quizzipedia::Server::RoutingManager::TopicRouter}
 \end{figure}
+\myparagraph{Relazioni con altre classi}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::TopicManager::TopicCreator
+\item Quizzipedia::Server::ControllerServer::TopicManager::TopicEraser
+\end{itemize}
