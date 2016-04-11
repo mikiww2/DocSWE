@@ -4,12 +4,24 @@ Amazon Web Services
 amazon web services
 Android
 android
+AngularJS
+angularjs
+Back-end
+back-end
 Baseline
 baseline
 Bitbucket
 bitbucket
+Bootstrap
+bootstrap
 Browser
 browser
+Builder
+builder
+Canvas
+canvas
+Client
+client
 Cloud
 cloud
 CMM
@@ -18,8 +30,12 @@ Cookies
 cookies
 Cross Site Scripting
 cross site scripting
+CSS
+css
 CSS3
 css3
+DAO
+dao
 Dashboard
 dashboard
 Database
@@ -34,6 +50,14 @@ Domain Specific Language
 domain specific language
 DSL
 dsl
+Express.js
+express.js
+Fabric.js
+fabric.js
+Framework
+framework
+Front-end
+front-end
 Git
 git
 GitHub
@@ -46,6 +70,8 @@ Hardware
 hardware
 Host
 host
+HTML
+html
 HTML5
 html5
 Hunspell
@@ -64,6 +90,8 @@ Java
 java
 JavaScript
 javascript
+JSON
+json
 JVM
 jvm
 LaTex
@@ -72,6 +100,8 @@ Linguaggio di markup
 linguaggio di markup
 LoopBack
 loopback
+Middleware
+middleware
 Milestone
 milestone
 Modello incrementale
@@ -80,6 +110,10 @@ MongoDB
 mongodb
 Mozilla Firefox
 mozilla firefox
+MVC
+mvc
+MVVM
+mvvm
 Node.js
 node.js
 Open source
@@ -88,6 +122,8 @@ Opera
 opera
 OrientDB
 orientdb
+Package
+package
 PDCA
 pdca
 PDF
@@ -98,6 +134,8 @@ Play framework
 play framework
 PNG
 png
+PostgreSQL
+postgresql
 QML
 qml
 Redmine
@@ -116,10 +154,14 @@ Scala
 scala
 Script
 script
+Server
+server
 Slack
 slack
 Social
 social
+Socket.IO
+socket.io
 Software
 software
 StarUML
