@@ -1,4 +1,4 @@
-% Nome del file: SpecificaTecnica.tex
+\left( % Nome del file: SpecificaTecnica.tex
 % Percorso: \gl{template}
 % Autore: Vault-Tech
 % Data creazione: 17.03.2016
@@ -105,185 +105,197 @@ In questa sezione vengono presentate le tecnologie scelte per sviluppare il prog
 AngularJS è un framework Javascript open source, patrocinato da Google, che si ispira al pattern MVC.
 Esso semplifica la realizzazione di applicazioni web, favorendo un approccio dichiarativo allo sviluppo client-side e alla creazione interfacce utente.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item Riduzione della verbosità del codice.
-	\item Ampia documentazione.
-	\item Data binding bidirezionale.
-	\item Dependency injection che permette di isolare componenti e rimpiazzarli facilmente.
-	\item Testing facilitato.
+	\item riduzione della verbosità del codice;
+	\item ampia documentazione;
+	\item data binding bidirezionale;
+	\item dependency injection che permette di isolare componenti e rimpiazzarli facilmente;
+	\item testing facilitato.
 \end{itemize}
 
-\subsubsection{Svantaggi}
+\subsubsection{Svantaggi:}
 
 \begin{itemize}
-	\item Codice articolato.
-	\item Curva di apprendimento più ripida rispetto ad altri framework.
+	\item codice articolato;
+	\item curva di apprendimento più ripida rispetto ad altri framework.
 \end{itemize}
 
 \subsection{Node.js}
 L'utilizzo di Node.js, associato a Tomcat, è stato consigliato dal proponente. Node.js è un sistema run-time crossplatform che utilizza l’engine Google V8 JavaScript per eseguire il codice, e viene utilizzato nello sviluppo di applicazioni real-time, lato server e di rete.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item Fornisce una semplice soluzione per lo sviluppo di programmi scalabili.
-	\item Essendo leggero ed efficiente è particolarmente indicato per applicazioni real-time con uso intensivo di dati.
-	\item Usa un sistema I/O asincrono basato su eventi che permette di sviluppare più facilmente sistemi responsive.
+	\item fornisce una semplice soluzione per lo sviluppo di programmi scalabili;
+	\item essendo leggero ed efficiente è particolarmente indicato per applicazioni real-time con uso intensivo di dati;
+	\item usa un sistema I/O asincrono basato su eventi che permette di sviluppare più facilmente sistemi responsive.
 \end{itemize}
 
-\subsubsection{Svantaggi}
+\subsubsection{Svantaggi}:
 
 \begin{itemize}
-	\item Essendo di recente creazione, alcuni moduli possono essere instabili.
+	\item essendo di recente creazione, alcuni moduli possono essere instabili;
+	\item essendo un linguaggio single-threaded, non è performante in caso di applicazioni con uso
+	intensivo di CPU;
+	\item utilizzando un sistema I/O asincrono, è possibile che l’uso di callback risulti eccessivo.
 \end{itemize}
 
 \subsection{Express.js}
 Express.js è un framework di Node.js che mette a disposizione un middleware utilizzabile per la realizzazione dell’infrastruttura web.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item Permette di estendere il modulo HTTP di Node.js, facilitando la gestione dell’indirizzamento del server, delle risposte, dei cookie e delle richieste di stato HTTP.
+	\item permette di estendere il modulo HTTP di Node.js, facilitando la gestione dell’indirizzamento del server, delle risposte, dei cookie e delle richieste di stato HTTP.
 \end{itemize}
 
-\subsubsection{Svantaggi}
+\subsubsection{Svantaggi:}
 
 \begin{itemize}
-	\item Non sono stati rilevati grossi svantaggi nell'uso di Express.js, che risulta essere un buon framework per estendere il modulo HTTP di Node.js.
+	\item non sono stati rilevati grossi svantaggi nell'uso di Express.js, che risulta essere un buon framework per estendere il modulo HTTP di Node.js.
 \end{itemize}
 
 \subsection{PostgreSQL}
 Si è deciso di utilizzare PostgreSQL come database. PostgreSQL è un avanzato database relazionale ad oggetti, ricco e open source, che pone particolare attenzione a estensibilità e conformità agli standard.
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item Il gruppo ha più familiarità con database relazionali.
-	\item Le query sono più flessibili rispetto a MongoDB.
-	\item Supporto di transazioni.
+	\item il gruppo ha più familiarità con database relazionali;
+	\item le query sono più flessibili rispetto a MongoDB;
+	\item supporto di transazioni.
 \end{itemize}
 
-\subsubsection{Svantaggi}
+\subsubsection{Svantaggi:}
 
 \begin{itemize}
-	\item Relativamente poco performante.
-	\item Non è mai stato usato dai componenti del team in passato.
+	\item relativamente poco performante;
+	\item non è mai stato usato dai componenti del team in passato.
 \end{itemize}
 
 \subsection{HTML5}
 Si è deciso di usare HTML5 come linguaggio di markup per la creazione delle pagine web. HTML5 è la quinta versione dello standard HTML (HyperText Markup Language), il linguaggio di markup standard utilizzato per creare e presentare contenuti nel \gl{Web}.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item Facilità nella creazione di pagine adattabili.
-	\item Maggiore flessibilità rispetto alle versioni precedenti.
-	\item Supporta l'elemento grafico Canvas, che permette di utilizzare Javascript per creare animazioni e grafica.
+	\item facilità nella creazione di pagine adattabili;
+	\item maggiore flessibilità rispetto alle versioni precedenti;
+	\item supporta l'elemento grafico Canvas, che permette di utilizzare Javascript per creare animazioni e grafica.
 \end{itemize}
 
-\subsubsection{Svantaggi}
+\subsubsection{Svantaggi:}
 
 \begin{itemize}
-	\item Tecnologia non pienamente supportata da tutti i browser.
+	\item tecnologia non pienamente supportata da tutti i browser.
 \end{itemize}
 
 \subsection{CSS3}
 Si è deciso di utilizzare CSS3 come linguaggio per la formattazione dei documenti HTML. CSS3 è l'ultima versione dello standard CSS (Cascading Style Sheets), che si occupa della presentazione di contenuti scritti in un linguaggio di markup.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item Separazione fra struttura, contenuti e presentazione.
-	\item Controllo più preciso e completo dell'aspetto grafico.
-	\item La manutenzione grafica del sito risulta molto più facile.
+	\item separazione fra struttura, contenuti e presentazione;
+	\item controllo più preciso e completo dell'aspetto grafico;
+	\item la manutenzione grafica del sito risulta molto più facile.
 \end{itemize}
 
-\subsubsection{Svantaggi}
+\subsubsection{Svantaggi:}
 
 \begin{itemize}
-	\item L’unico svantaggio rilevato dall’uso di CSS3 è dato dal fatto che, essendo un linguaggio ancora in via di sviluppo, è supportato pienamente solo dai web browser più recenti.
+	\item l’unico svantaggio rilevato dall’uso di CSS3 è dato dal fatto che, essendo un linguaggio ancora in via di sviluppo, è supportato pienamente solo dai web browser più recenti;
+	\item non è riconosciuto come standard attuale per cui ci potrebbero essere dei malfunzionamenti nell'uso della propria sintassi. 
 \end{itemize}
 
 \subsection{Bootstrap}
 Bootstrap è uno dei più noti framework per lo sviluppo di interfacce web. Bootstrap contiene modelli di progettazione basati su HTML e CSS, sia per la tipografia che per le varie componenti dell'interfaccia, come moduli, bottoni e navigazione e altri componenti dell'interfaccia, così come alcune estensioni opzionali di Javascript.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item Offre una utile struttura standardizzata.
-	\item Supporta i maggiori browser, diminuendo il rischio di incorrere in problemi di compatibilità.
-	\item É leggero e performante.
-	\item Vari plugin di Javascript sono già inclusi.
-	\item É dotato di una buona documentazione.
+	\item offre una utile struttura standardizzata;
+	\item supporta i maggiori browser, diminuendo il rischio di incorrere in problemi di compatibilità;
+	\item è leggero e performante;
+	\item vari plugin di Javascript sono già inclusi;
+	\item è dotato di una buona documentazione.
 \end{itemize}
 
-\subsubsection{Svantaggi}
+\subsubsection{Svantaggi:}
 
 \begin{itemize}
-	\item Verbosità degli stili.
-	\item I siti hanno un aspetto simile in carenza di customizzazione.
+	\item verbosità degli stili;
+	\item i siti hanno un aspetto simile in carenza di customizzazione.
 \end{itemize}
 
 \subsection{Javascript}
 Javascript è un linguaggio di scripting orientato agli oggetti e agli eventi, comunemente utilizzato nella programmazione Web lato client per ottenere effetti dinamici interattivi in siti e applicazioni web. Gli effetti sono ottenuti tramite funzioni di script invocate da eventi innescati dall'utente nella pagina web in uso.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item La velocità di risposta dell'applicazione è elevata grazie all'esecuzione locale.
-	\item Javascript permette un'elevata libertà espressiva.
-	\item È possibile validare in prima istanza i dati inseriti dall'utente.
-	\item Migliore interazione tra utente e pagine.
-	\item Gestione dei Canvas.
+	\item la velocità di risposta dell'applicazione è elevata grazie all'esecuzione locale;
+	\item Javascript permette un'elevata libertà espressiva;
+	\item è possibile validare in prima istanza i dati inseriti dall'utente;
+	\item migliore interazione tra utente e pagine;
+	\item gestione dei Canvas.
 \end{itemize}
 
-\subsubsection{Svantaggi}
+\subsubsection{Svantaggi:}
 
 \begin{itemize}
-	\item La mancanza di tipizzazione rende gli errori di programmazione potenzialmente più dannosi.
-	\item Difficoltà nella creazione di test.
-	\item Il codice può essere letto da tutti, ciò può comportare problemi di sicurezza.
+	\item la mancanza di tipizzazione rende gli errori di programmazione potenzialmente più dannosi;
+	\item difficoltà nella creazione di test;
+	\item il codice può essere letto da tutti, ciò può comportare problemi di sicurezza.
 \end{itemize}
 
 \subsection{JSON}
 Si è deciso di usare JSON come formato per lo scambio dati tra client e server. JSON (JavaScript Object Notation) è un formato di scambio di dati lightweight e indipendente dal linguaggio di programmazione utilizzato.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item Utilizzare JSON con Javascript è semplice.
-	\item Il parsing è facile nei linguaggi più noti.
+	\item utilizzare JSON con Javascript è semplice;
+	\item il parsing è facile nei linguaggi più noti.
 \end{itemize}
 
-\subsubsection{Svantaggi}
+\subsubsection{Svantaggi:}
+	\begin{itemize}
+	\item è un linguaggio molto verboso e di difficile comprensione dall'uomo.
+	\end{itemize}
 
 \subsection{Fabric.js}
 Si è stabilito di usare Fabric.js per la gestione dei canvas. Fabric.js è una potente libreria grafica basata su HTML5 e Javascript che fornisce un modello interattivo sovrapposto all'elemento Canvas, consentendo la manipolazione di immagini ed elementi grafici.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item Potente e semplice da utilizzare.
-	\item Performance accettabile.
+	\item potente e semplice da utilizzare;
+	\item performance accettabile.
 \end{itemize}
 
-\subsubsection{Svantaggi}
+\subsubsection{Svantaggi:}
+\begin{itemize}
+	\item mostrare lo stesso canvas g con dimensioni diverse da quelle di default è complicato.
+\end{itemize}
+
+
 
 \subsection{Socket.IO}
 Socket.IO è una libreria Javascript che permette comunicazioni real-time bidirezionali e basate su eventi.
 
-\subsubsection{Vantaggi}
+\subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item Permette di creare comunicazioni bidirezionali tra client e server.
-	\item Gestisce la connessione in modo trasparente.
+	\item permette di creare comunicazioni bidirezionali tra client e server;
+	\item gestisce la connessione in modo trasparente.
 \end{itemize}
 
 \subsubsection{Svantaggi}
 
 \begin{itemize}
-	\item Essendo una tecnologia di recente creazione, può soffrire ancora di alcuni bug.
+	\item essendo una tecnologia di recente creazione, può soffrire ancora di alcuni bug.
 \end{itemize}
 
 \newpage
