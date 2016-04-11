@@ -40,7 +40,7 @@
 	\recap{Verifica appendici A e B}{Giacomo Beltrame}{Verificatore}{03.04.2016}{2.7}
 	\recap{Stesura test di integrazione}{Rudy Berton}{Amministratore}{02.04.2016}{2.6}
 	\recap{Stesura test di sistema}{Vassilikì Menarin}{Progettista}{02.04.2016}{2.5}
-	\recap{Modifica della sezione A.3.0.3 dell'appendice}{Filippo Tesser}{Analista}{01.04.2016}{2.4}
+	\recap{Modifica della sezione A.3.3 dell'appendice}{Filippo Tesser}{Analista}{01.04.2016}{2.4}
 	\recap{Incremento test di accettazione}{Michela De Bortoli}{Progettista}{01.04.2016}{2.3}
 	\recap{Inizio stesura specifica dei test (appendice B)}{Michela De Bortoli}{Progettista}{31.03.2016}{2.2}
 	\recap{Incremento dell'appendice A}{Filippo Tesser}{Analista}{31.03.2016}{2.1}
@@ -343,7 +343,7 @@ Per ogni misura effettuata attraverso l'utilizzo di una specifica metrica viene 
 \subsection{Metriche per i processi}
 Le metriche utilizzate dal gruppo per la valutazione della qualità dei processi sono descritte in questa sezione.
 
-\myparagraph{Schedule Variance}
+\subsubsection{Schedule Variance}
 \label{par:SV}
 La Schedule Variance (SV) è un indicatore di efficacia dei processi utilizzato per valutare l'andamento temporale delle attività: se la loro conclusione avviene in ritardo, in anticipo oppure in concordanza coi tempi prefissati nel documento \doc{Piano di Progetto}.
 \newline Formula della Schedule Variance per una attività:
@@ -357,7 +357,7 @@ SV= \mbox{data conclusione reale} - \mbox{data conclusione pianificata}
 \item Valore ottimale: un valore minore o uguale a 0. Indica che l'attività si è conclusa perfettamente nei tempi stabiliti o addirittura in anticipo. 
 \end{itemize}
 
-\myparagraph{Capability Maturity }
+\subsubsection{Capability Maturity }
 \label{par:cmm}
 Questa metrica viene utilizzata come indice principale per la valutazione di un processo che verrà classificato in uno dei cinque livelli previsti dal lo sulla base della Maturity.
 \par Giudizio dei risultati ottenibili:
@@ -367,7 +367,7 @@ Questa metrica viene utilizzata come indice principale per la valutazione di un 
 \item Valore ottimale: livello 4 (Managed) e livello 5 (Optimizing), anche se quest'ultimo è difficilmente raggiungibile.
 \end{itemize}
 
-\myparagraph{Cost Variance}
+\subsubsection{Cost Variance}
 \label{par:CV}
 La Cost Variance (CV) è un indicatore del costo dei processi. Qualora il costo effettivo sia maggiore del preventivo stilato nel documento \doc{Piano di Progetto} si evidenzia che sono state necessarie maggiori risorse nello svolgere le attività rispetto a quanto era stato quantificato inizialmente.
 \\Formula della Cost Variance per un processo:
@@ -383,10 +383,10 @@ CV= \mbox{costo effettivo} - \mbox{costo preventivato}
 
 \subsection{Metriche per i prodotti}
 
-\myparagraph{Per i documenti}
+\subsubsection{Per i documenti}
 Vengono di seguito presentate le metriche che verranno utilizzate nei processi di verifica dei documenti prodotti.
 
-\mysubparagraph{Errori ortografici}
+\myparagraph{Errori ortografici}
 \label{par:errort}
 Questa metrica serve per identificare quanto un documento sia corretto dal punto di vista ortografico. Il suo giudizio si avvale di due controlli: uno di tipo automatico attraverso uno strumento \gl{software} e l'altro di tipo manuale da parte del \italics{Verificatore}, necessario conoscendo la natura fallibile dei correttori automatici.
 \newline Questa metrica misura il numero di errori riscontrati, attraverso le due modalità di verifica, ma non corretti immediatamente.
@@ -401,7 +401,7 @@ Questa metrica serve per identificare quanto un documento sia corretto dal punto
 \item Valore ottimale: un valore pari a 0.
 \end{itemize}
 
-\mysubparagraph{Indice Gulpease}
+\myparagraph{Indice Gulpease}
 \label{par:IG}
 L'\gl{Indice Gulpease} è un indice di leggibilità di un testo tarato sulla lingua italiana che presenta il vantaggio di utilizzare la lunghezza delle parole per facilitarne il calcolo automatico. Si considerano due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere.
 \newline I risultati sono compresi tra 0 (leggibilità bassa) e 100 (leggibilità alta); in generale risulta che testi con un indice
@@ -427,7 +427,7 @@ Nella realizzazione del progetto, e nella valutazione dei risultati ottenuti da 
 \item Valore ottimale: un valore compreso tra 70 e 100.
 \end{itemize}
 
-\mysubparagraph{Errori concettuali}
+\myparagraph{Errori concettuali}
 \label{par:errcon}
 Questa metrica serve ad indicare la correttezza di un documento dal punto di vista del proprio contenuto, se i concetti espressi sono corretti e coerenti in tutto il documento.
 \newline Il valore ottenuto da questa metrica rappresenta il numero di errori concettuali che non sono stati corretti dopo esser stati segnalati dal \italics{Verificatore} durante la precedente verifica del documento.
@@ -443,7 +443,7 @@ Questa metrica serve ad indicare la correttezza di un documento dal punto di vis
 \item Valore ottimale: un valore uguale allo 0\%.
 \end{itemize}
 
-\mysubparagraph{Errori di forma}
+\myparagraph{Errori di forma}
 \label{par:errfor}
 Viene utilizzata questa unità di misura per verificare quanto un documento rispetti le regole strutturali descritte nelle \doc{Norme di Progetto}. 
 \newline La metrica si basa sul numero di errori segnalati dal \italics{Verificatore} che non sono stati corretti successivamente.
@@ -459,10 +459,10 @@ Viene utilizzata questa unità di misura per verificare quanto un documento risp
 \item Valore ottimale: un valore uguale allo 0\%.
 \end{itemize}
 
-\myparagraph{Per i prodotti software}
+\subsubsection{Per i prodotti software}
 In questa sezione si presentano alcune delle metriche di cui il \gl{team} si avvalerà per eseguire le verifiche dei prodotti \gl{software} durante lo sviluppo del progetto. Tale sezione potrà subire nelle attività successive un ulteriore incremento di contenuti grazie all'effettiva realizzazione di un qualche prodotto \gl{software}. 
 
-\mysubparagraph{Requisiti rispettati}
+\myparagraph{Requisiti rispettati}
 \label{par:req}
 Tale metrica permette di identificare il numero di requisiti che sono stati realizzati all'interno del progetto.
 \newline I requisiti si dividono in funzionali, vincolanti, qualitativi e prestazionali; ogni tipo di requisito a sua volta può essere marcato obbligatorio oppure facoltativo. Il gruppo cercherà come primo obiettivo di svolgere tutti i requisiti obbligatori per poi passare a quelli opzionali.
@@ -478,7 +478,7 @@ Tale metrica permette di identificare il numero di requisiti che sono stati real
 \item Valore ottimale: il 100\% dei requisiti, di natura obbligatoria e opzionale, sono stati realizzati.
 \end{itemize}
 
-\mysubparagraph{Output attesi}
+\myparagraph{Output attesi}
 \label{par:out}
 La valutazione di questa metrica permette di giudicare a che livello di affidabilità sia il prodotto durante la fase di verifica.
 Misura pertanto il numero di esecuzioni avvenute con successo, ovvero che hanno prodotto un output corretto concorde alle attese.
@@ -495,7 +495,7 @@ Misura pertanto il numero di esecuzioni avvenute con successo, ovvero che hanno 
 \item Valore ottimale: il 100\% delle esecuzioni producono l'output atteso. Non sarà comunque possibile garantire l'affidabilità completa del sistema in ogni circostanza, sarebbe altrimenti troppo oneroso in qualità di tempo e costi.
 \end{itemize}
 
-\mysubparagraph{Validazione web}
+\myparagraph{Validazione web}
 \label{par:web}
 Tale metrica viene usufruita, all'interno del progetto, per migliorare la qualità nell'usabilità, dal momento che questa risulta un fattore molto soggettivo, l'efficienza e la portabilità di un prodotto.
 Si avvale degli strumenti messi a disposizione dal \gl{W3C} per valutare l'accessibilità, il codice HTML prodotto, etc. segnalando la quantità di errori riscontrati.
@@ -507,7 +507,7 @@ Si avvale degli strumenti messi a disposizione dal \gl{W3C} per valutare l'acces
 \item Valore ottimale: 0 errori riscontrati durante la verifica attraverso gli strumenti forniti.
 \end{itemize}
 
-\mysubparagraph{Grado di efficienza}
+\myparagraph{Grado di efficienza}
 \label{par:greff}
 Questa metrica permette di valutare il grado di efficienza di un prodotto attraverso la misurazione di tempo impiegato nello svolgere una transizione eseguita da un utente su tale prodotto.
 \
@@ -518,7 +518,7 @@ Questa metrica permette di valutare il grado di efficienza di un prodotto attrav
 \item Valore ottimale: attesa massima di 1 secondo. È infatti difficile garantire un'attesa nulla poiché ci sono altri fattori, oltre al prodotto \gl{software}, che possono incidere su tale valore temporale (sistema operativo, risorse \gl{hardware}, etc.). 
 \end{itemize}
 
-\mysubparagraph{Anomalie insufficienti}
+\myparagraph{Anomalie insufficienti}
 \label{par:anins}
 Per valutare la manutenibilità si fa uso di tale metrica che permette di identificare il numero di anomalie che sono state risolte una prima volta ma che necessitano di una seconda correzione per essere archiviate.
 \newline Formula:
@@ -535,10 +535,10 @@ Per valutare la manutenibilità si fa uso di tale metrica che permette di identi
 \end{itemize}
 
 
-\myparagraph{Per il codice}
+\subsubsection{Per il codice}
 Nella seguente sezione vengono proposte delle metriche che possano valutare al meglio la qualità del codice che verrà scritto nelle attività successive alla Progettazione architetturale.
 
-\mysubparagraph{Linee di codice per metodo}
+\myparagraph{Linee di codice per metodo}
 \label{par:statement}
 Questa metrica valuta il numero di statement presenti in ogni metodo (escluse le righe di commento). Maggiore sarà tale numero allora maggiore risulterà la complessità di comprensione e di verifica del codice scritto per tale metodo. 
 \\ Pertanto se un metodo deve svolgere diverse azioni complesse, per non appesantirlo eccessivamente è buona norma suddividerlo in un numero maggiore di metodi che possano ad ogni modo portare al medesimo risultato.
@@ -550,7 +550,7 @@ Questa metrica valuta il numero di statement presenti in ogni metodo (escluse le
 \item Valore ottimale: un numero di statement inferiore a 30.
 \end{itemize}
 
-\mysubparagraph{Parametri formali per metodo}
+\myparagraph{Parametri formali per metodo}
 La complessità di un metodo è determinata, oltre che da altri elementi, anche dal numero di parametri che deve ricevere in ingresso per eseguire nel proprio corpo determinate operazioni. 
 \\ Un metodo ottimale dovrebbe perciò permettere il minor numero possibile di parametri formali al momento della dichiarazione in modo tale che il metodo non debba gestirne troppi al suo interno.
 \
@@ -561,7 +561,7 @@ La complessità di un metodo è determinata, oltre che da altri elementi, anche 
 \item Valore ottimale: un numero inferiore a 4 parametri formali.
 \end{itemize}
 
-\mysubparagraph{Campi dati per classe}
+\myparagraph{Campi dati per classe}
 Questa metrica determina il numero di campi dati presenti all'interno di una classe del programma. \\ Se una classe presenterà molti campi dati da gestire sarà allora maggiore la sua complessità e la difficoltà di riuso del codice in altre classi, oltre che alla scarsa manutenibilità del codice che ne consegue qualora si debbano apportare delle modifiche.
 \
 \newline Giudizio dei risultati ottenibili:
@@ -571,7 +571,7 @@ Questa metrica determina il numero di campi dati presenti all'interno di una cla
 \item Valore ottimale: un numero inferiore a 5 campi dati.
 \end{itemize}
 
-\mysubparagraph{Complessità ciclomatica}
+\myparagraph{Complessità ciclomatica}
 La complessità ciclomatica è la metrica che misura il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso del programma, determinandone pertanto la sua complessità.
 \\Il grafo di controllo di flusso, su cui avviene la misurazione, è composto da nodi ed archi. I primi corrispondono a gruppi indivisibili di istruzioni, mentre i secondi connettono due nodi se il secondo gruppo di istruzioni può essere eseguito immediatamente dopo il primo gruppo.
 \\La complessità ciclomatica può essere
@@ -585,7 +585,7 @@ Attraverso il suo impiego sarà possibile definire inoltre un limite superiore a
 \item Valore ottimale: un valore minore di 5.
 \end{itemize}
 
-\mysubparagraph{Copertura del codice}
+\myparagraph{Copertura del codice}
 La copertura del codice è la percentuale degli statement eseguiti correttamente durante lo
 svolgimento dei test. Se il valore risultante è alto ciò sta ad indicare che il codice analizzato potrà presentare eventuali errori con probabilità molto bassa, andando quindi a garantire un maggiore livello di affidabilità del software.
 \
@@ -596,7 +596,7 @@ svolgimento dei test. Se il valore risultante è alto ciò sta ad indicare che i
 \item Valore ottimale: un valore maggiore del 95\%.
 \end{itemize}
 
-\mysubparagraph{Livello di annidamento}
+\myparagraph{Livello di annidamento}
 Tale metrica indica nel codice la quantità di volte in cui le strutture di controllo sono innestate una dentro l’altra. Se si ottiene un valore elevato di annidamento il programma considerato presenterà certamente un flusso interno complesso che renderà pertanto difficoltosa la copertura del codice durante l'esecuzione dei test. 
 \
 \newline Giudizio dei risultati ottenibili:
@@ -606,7 +606,7 @@ Tale metrica indica nel codice la quantità di volte in cui le strutture di cont
 \item Valore ottimale: un valore inferiore a 3.
 \end{itemize}
 
-\mysubparagraph{Grado di accoppiamento}
+\myparagraph{Grado di accoppiamento}
 Il grado di accoppiamento misura il grado con cui ogni componente di un programma fa affidamento su ciascuna delle altre componenti, dipendendo da esse.
 Un valore basso di questa metrica permetterà al programma di essere maggiormente manutenibile poiché in caso di modifiche all'interno di una sua componente, le altre componenti non necessiteranno di modifiche consequenziali.
 \\ Il grado di accoppiamento viene valutato attraverso il calcolo di due distinti indici:
@@ -624,7 +624,7 @@ Un valore basso di questa metrica permetterà al programma di essere maggiorment
 \item Valore ottimale: per entrambi gli indici un valore minore di 5.
 \end{itemize}
 
-\mysubparagraph{Grado di instabilità}
+\myparagraph{Grado di instabilità}
 Attraverso i valori degli indici Ca e Ce (accoppiamento afferente ed efferente rispettivamente) ottenuti dalla misurazione della metrica Grado di accoppiamento, è possibile definire il grado di instabilità di una componente del programma. Questa metrica indica la possibilità di effettuare modifiche a tale componente senza influenzarne altre all’interno del programma.
 \newline Formula:
 \begin{displaymath}
@@ -639,7 +639,7 @@ Attraverso i valori degli indici Ca e Ce (accoppiamento afferente ed efferente r
 \item Valore ottimale: un valore minore del 70\%.
 \end{itemize}
 
-
+ 
 \newpage
 \section{Specifica dei test}
 In questa sezione vengono descritti i test che nelle successive attività verranno implementati in modo tale che, con il loro superamento, possano garantire al sistema software livelli di qualità ottimali, un corretto funzionamento e un riscontro positivo con le aspettative del cliente.
