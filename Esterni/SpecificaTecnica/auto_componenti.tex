@@ -34,10 +34,6 @@ Contiene informazioni relative alla struttura delle classi.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organization-class.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Organization::Class}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Organization::Institution
-\end{itemize}
 \subsubsection{Classe Institution}
 La classe contiene le informazioni relative alla struttura dell'ente.
 \begin{figure}[H]
@@ -59,10 +55,6 @@ Questa classe gestisce le richieste da parte di Docenti o Studenti per l'assegna
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-classlist.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Requests::ClassList}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Requests::Request
-\end{itemize}
 \subsubsection{Classe Request}
 La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui ha fatto richiesta.
 \begin{figure}[H]
@@ -102,10 +94,6 @@ Include la struttura del quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-quiz.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Services::Quiz}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Services::Topics
-\end{itemize}
 \subsubsection{Classe Topics}
 Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni domanda e a ogni quiz verranno poi associati i relativi argomenti .
 \begin{figure}[H]
@@ -134,10 +122,6 @@ La classe descrive le colonne della domanda a collegamenti.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-column.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::Column}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Services::Questions::Cell
-\end{itemize}
 \subsubsection{Classe CompletionQ}
 Descrive le domande a completamento. Il docente fornirà un testo incompleto e una lista di possibili completamenti; lo studente dovrà inserire le parole adeguate nella giusta posizione.
 \begin{figure}[H]
@@ -152,15 +136,6 @@ Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-genericquestion.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Services::Questions::CompletionQ
-\item Quizzipedia::Client::ModelClient::Services::Questions::MatchingQ
-\item Quizzipedia::Client::ModelClient::Services::Questions::MultipleChoiceQ
-\item Quizzipedia::Client::ModelClient::Services::Questions::ShortAnswerQ
-\item Quizzipedia::Client::ModelClient::Services::Questions::TrueFalseQ
-\item Quizzipedia::Client::ModelClient::Services::Topics
-\end{itemize}
 \subsubsection{Classe MatchingQ}
 La struttura descrive le domande a collegamento. L'utente dovrà formare la risposa collegando entrate da un numero variabile di colonne .
 \begin{figure}[H]
@@ -168,10 +143,6 @@ La struttura descrive le domande a collegamento. L'utente dovrà formare la risp
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-matchingq.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::MatchingQ}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Services::Questions::Column
-\end{itemize}
 \subsubsection{Classe MultipleChoiceQ}
 La struttura descrive le domande a scelta multipla; viene presentata una lista di opzioni tra cui scegliere quelle corrette.
 \begin{figure}[H]
@@ -207,10 +178,6 @@ La classe raccoglie le statistiche riguardanti gli studenti di una classe relati
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-classquiz.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Statistics::ClassQuiz}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Statistics::StudentStatistics
-\end{itemize}
 \subsubsection{Classe QuestionGenerics}
 Le statistiche relative a più domande vengono raccolte e organizzate per permetterne la visualizzazione agli utenti.
 \begin{figure}[H]
@@ -218,10 +185,6 @@ Le statistiche relative a più domande vengono raccolte e organizzate per permet
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-questiongenerics.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Statistics::QuestionGenerics}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Statistics::QuestionStatistics
-\end{itemize}
 \subsubsection{Classe QuestionStatistics}
 La classe raccoglie le statistiche principali riguardanti una singola domanda. Da qui è poi possibile risalire alla domanda.
 \begin{figure}[H]
@@ -236,10 +199,6 @@ Le statistiche relative a più quiz vengono raccolte e organizzate per permetter
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-quizgenerics.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Statistics::QuizGenerics}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Statistics::QuizStatistics
-\end{itemize}
 \subsubsection{Classe QuizStatistics}
 La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qui è poi possibile ottenere il quiz in questione.
 \begin{figure}[H]
@@ -275,10 +234,6 @@ Questa classe gestisce le informazioni di autenticazione comuni a tutti gli uten
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-authenticationdata.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Users::AuthenticationData}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Users::User
-\end{itemize}
 \subsubsection{Classe Director}
 Rappresenta un Responsabile, ovvero colui che gestisce Docenti e Studenti per ogni Ente del sistema.
 \begin{figure}[H]
@@ -314,13 +269,6 @@ Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli ut
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-user.pdf}}
 \caption{Schema Classe Quizzipedia::Client::ModelClient::Users::User}
 \end{figure}
-\myparagraph{Relazioni con altre classi}
-\begin{itemize}
-\item Quizzipedia::Client::ModelClient::Users::Director
-\item Quizzipedia::Client::ModelClient::Users::NoRole
-\item Quizzipedia::Client::ModelClient::Users::Student
-\item Quizzipedia::Client::ModelClient::Users::Teacher
-\end{itemize}
 \subsection{Quizzipedia::Client::ViewClient}
 Racchiude tutte le componenti necessarie per presentare il prodotto all'utente.
 \begin{figure}[H]
