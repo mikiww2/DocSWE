@@ -531,46 +531,20 @@ Racchiude tutte le componenti necessarie per presentare il prodotto all'utente.
 \end{itemize}
 \subsection{Quizzipedia::Client::ViewClient::ViewErrors}
 Il package raccoglie tutte le finestre di errore che il sistema può, eventualmente, visualizzare.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors.pdf}}
-\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewErrors]{Schema Componente Quizzipedia::Client::ViewClient::ViewErrors}
-\end{figure}
 \subsubsection{Classe ViewAuthenticationErr}
 La classe si occupa della visualizzazione del messaggio di errore in fase di autenticazione.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewauthenticationerr.pdf}}
-\caption[Schema Classe ViewAuthenticationErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewAuthenticationErr}
-\end{figure}
 \subsubsection{Classe ViewModifyPwErr}
 La classe si occupa della visualizzazione del messaggio di errore in fase modifica della password.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewmodifypwerr.pdf}}
-\caption[Schema Classe ViewModifyPwErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyPwErr}
-\end{figure}
+
 \subsubsection{Classe ViewModifyQuizErr}
 La classe si occupa della visualizzazione del messaggio di errore in fase di modifica di un quiz.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewmodifyquizerr.pdf}}
-\caption[Schema Classe ViewModifyQuizErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyQuizErr}
-\end{figure}
+
 \subsubsection{Classe ViewRecoveryErr}
 La classe si occupa della visualizzazione del messaggio di errore in fase di recupero password.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewrecoveryerr.pdf}}
-\caption[Schema Classe ViewRecoveryErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewRecoveryErr}
-\end{figure}
+
 \subsubsection{Classe ViewRegistrationErr}
 La classe si occupa della visualizzazione del messaggio di errore in fase di registrazione.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewregistrationerr.pdf}}
-\caption[Schema Classe ViewRegistrationErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewRegistrationErr}
-\end{figure}
+
 \subsection{Quizzipedia::Client::ViewClient::ViewOrgManager}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti.
 \begin{figure}[H]
@@ -705,11 +679,7 @@ Presenta all'utente una pagina da cui è possibile modificare un quiz esistente.
 \end{itemize}
 \subsubsection{Classe ViewQuizList}
 Carica una pagina contenente una lista con informazioni riassuntive sui quiz e un pannello da cui sarà possibile svolgere delle operazioni sugli stessi.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-viewquizlist.pdf}}
-\caption[Schema Classe ViewQuizList]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizManager::ViewQuizList}
-\end{figure}
+
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Uscenti}
 \begin{itemize}
@@ -921,11 +891,6 @@ Raccoglie i metodi necessari alla creazione della pagina da cui sarà possibile 
 \end{itemize}
 \subsection{Quizzipedia::Client::ViewClient::ViewStatistics}
 Package che gestisce le pagine in cui verranno visualizzate le statistiche.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics.pdf}}
-\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics]{Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics}
-\end{figure}
 \subsubsection{Interazioni con altre componenti}
 \myparagraph{Uscenti}
 \begin{itemize}
@@ -933,11 +898,7 @@ Package che gestisce le pagine in cui verranno visualizzate le statistiche.
 \end{itemize}
 \subsubsection{Classe ViewClassStats}
 Vengono rappresentate le statistiche relative a una singola classe in relazione a un particolare quiz.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewclassstats.pdf}}
-\caption[Schema Classe ViewClassStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewClassStats}
-\end{figure}
+
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Uscenti}
 \begin{itemize}
@@ -945,11 +906,7 @@ Vengono rappresentate le statistiche relative a una singola classe in relazione 
 \end{itemize}
 \subsubsection{Classe ViewQuestionStats}
 Vengono rappresentate le statistiche generali relative alle domande.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquestionstats.pdf}}
-\caption[Schema Classe ViewQuestionStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuestionStats}
-\end{figure}
+
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Uscenti}
 \begin{itemize}
@@ -957,11 +914,7 @@ Vengono rappresentate le statistiche generali relative alle domande.
 \end{itemize}
 \subsubsection{Classe ViewQuizStats}
 Vengono rappresentate le statistiche generali riguardanti i quiz.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquizstats.pdf}}
-\caption[Schema Classe ViewQuizStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuizStats}
-\end{figure}
+
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Uscenti}
 \begin{itemize}
@@ -1065,11 +1018,7 @@ La classe presenta all'utente la pagina da cui prendere visione delle proprie in
 \end{itemize}
 \subsubsection{Classe RecoveryPw}
 Da questa pagina sarà possibile inserire i dati per il recupero della password.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-recoverypw.pdf}}
-\caption[Schema Classe RecoveryPw]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::RecoveryPw}
-\end{figure}
+
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Uscenti}
 \begin{itemize}
@@ -2233,11 +2182,7 @@ Questo package permette di effettuare una ricerca nel database di quiz o domande
 \end{figure}
 \subsubsection{Classe QuestionsSearcher}
 Ritorna una lista di domande che corrispondono ai parametri di ricerca impostati dall'utente.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-questionssearcher.pdf}}
-\caption[Schema Classe QuestionsSearcher]{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::QuestionsSearcher}
-\end{figure}
+
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Entranti}
 \begin{itemize}
