@@ -46,7 +46,7 @@
 	\recap{Correzione errori}{Filippo Tesser}{Amministratore}{31.12.2015}{0.9}
 	\recap{Verifica documento}{Miki Violetto}{Verificatore}{30.12.2015}{0.8}
 	\recap{Stesura sezione processi organizzativi}{Filippo Tesser}{Amministratore}{29.12.2015}{0.7}
-	\recap{Stesura paragrafo Tracker}{Giacomo Beltrame}{Amministratore}{29.12.2015}{0.6}
+	\recap{Stesura paragrafo \gl{Tracker}}{Giacomo Beltrame}{Amministratore}{29.12.2015}{0.6}
 	\recap{Aggiornamento della struttura del documento}{Filippo Tesser}{Amministratore}{28.12.2015}{0.5}
 	\recap{Stesura sottosezione processi di verifica}{Giacomo Beltrame}{Amministratore}{28.12.2015}{0.4}
 	\recap{Stesura sezione processi di supporto}{Filippo Tesser}{Amministratore}{27.12.2015}{0.3}
@@ -98,9 +98,9 @@ In particolar modo verranno trattate:
 
 \subsubsection{Informativi}
 \begin{itemize}
-	\item \textbf{Guida utilizzo \gl{Git}}: \url{https://www.atlassian.com/git/tutorials/};
-	\item \textbf{Gitflow Workflow}: \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow};
-	\item \textbf{GNU AGPLv3}: \url{http://www.gnu.org/licenses/agpl-3.0.html}.
+	\item \textbf{Guida utilizzo \gl{Git}}: \\gl{url}{https://www.atlassian.com/\gl{git}/tutorials/};
+	\item \textbf{Gitflow Workflow}: \\gl{url}{https://www.atlassian.com/\gl{git}/tutorials/comparing-workflows/gitflow-workflow};
+	\item \textbf{GNU AGPLv3}: \\gl{url}{http://www.gnu.org/licenses/agpl-3.0.\gl{html}}.
 \end{itemize}
 
 \newpage
@@ -139,14 +139,14 @@ Per tale scopo il \gl{team} ha sviluppato una piattaforma \gl{web}-based con cui
 
 \myparagraph{Specifica Tecnica}
 Questo documento verrà redatto dai \italics{Progettisti} e ha il compito di descrivere l'architettura del prodotto. Inoltre saranno progettati opportuni test di integrazione atti a individuare i problemi che si verificano quando due unità si combinano.
-I seguenti diagrammi UML devono essere realizzati:
+I seguenti diagrammi \gl{UML} devono essere realizzati:
 \begin{itemize}
 	\item diagrammi delle classi;
-	\item diagrammi dei package;
+	\item diagrammi dei \gl{package};
 	\item diagrammi di attività;
 	\item diagrammi di sequenza.
 \end{itemize}
-Infine devono essere descritti i vari design pattern che verranno utilizzati e il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto.
+Infine devono essere descritti i vari \gl{design pattern} che verranno utilizzati e il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto.
 
 \subsubsection{Procedure}
 
@@ -206,7 +206,7 @@ Inoltre per ogni caso d'uso sono specificati:
 
 \myparagraph{Codifica e convenzioni}
 Tutti i file contenente codice o documentazione \LaTeX{} devono essere conformi alla codifica \gl{UTF-8} con carattere di fine riga in stile \gl{Unix LF} e avere una riga vuota al termine.
-Il codice deve seguire le linee guida Google reperibili all'indirizzo \url{https://github.com/google/styleguide}. I nomi delle variabili e classi deve essere in inglese, mentre i commenti in italiano.
+Il codice deve seguire le linee guida Google reperibili all'indirizzo \\gl{url}{https://\gl{github}.com/google/styleguide}. I nomi delle variabili e classi deve essere in inglese, mentre i commenti in italiano.
 
 \subsubsection{Strumenti}
 
@@ -227,7 +227,7 @@ In queste sezioni verrà trattato il modello con il quale la documentazione vien
 Per la formalizzazione di un documento è necessario il consenso del \italics{Responsabile}, in seguito al quale il documento può essere distribuito.
 Nella seguente figura è illustrato il ciclo di vita di un documento.
 \begin{figure}[!h]
-	\includegraphics[width=\textwidth]{Img/docflow.png}
+	\includegraphics[width=\textwidth]{Img/docflow.\gl{png}}
 	\caption{Formalizzazione di un documento}
 	\label{fig:documento}
 \end{figure}
@@ -504,7 +504,7 @@ L'analisi statica è un processo di verifica che consente di trovare le anomalie
 \end{description}
 
 \mysubparagraph{Analisi dinamica}
-L'analisi dinamica può essere svolta solamente sulle componenti software ed è utile a evidenziare anomalie presenti nel codice. Vengono eseguiti dei test su parti di sistema per verificare che ognuna di esse produca il risultato desiderato. Prima di eseguire un qualsiasi test è necessario conoscere la precondizione e postcondizione del sistema per poterne decretare l'esito.
+L'analisi dinamica può essere svolta solamente sulle componenti \gl{software} ed è utile a evidenziare anomalie presenti nel codice. Vengono eseguiti dei test su parti di sistema per verificare che ognuna di esse produca il risultato desiderato. Prima di eseguire un qualsiasi test è necessario conoscere la precondizione e postcondizione del sistema per poterne decretare l'esito.
 
 \myparagraph{Test}
 Segue un elenco dei tipi di test che vengono effettuati.
@@ -595,7 +595,7 @@ Il \italics{Responsabile} ha il compito di aprire e assegnare un \gl{ticket} a u
 
 Devono essere specificati:
 \begin{itemize}
-	\item \textbf{tracker}: ``Formazione'', ``Pianificazione'', ``Analisi'', ``Codifica'', ``Verifica'', ``Correzione'' o ``Amministrazione'';
+	\item \textbf{\gl{tracker}}: ``Formazione'', ``Pianificazione'', ``Analisi'', ``Codifica'', ``Verifica'', ``Correzione'' o ``Amministrazione'';
 	\item \textbf{oggetto};
 	\item \textbf{descrizione};
 	\item \textbf{stato}: all'apertura il \gl{ticket} sarà obbligatoriamente in stato ``Aperto''; gli altri stati in cui un \gl{ticket} può trovarsi sono ``In elaborazione'', ``Sospeso'', ``Risolto'' o ``Abortito'';
@@ -619,7 +619,7 @@ Il \italics{Responsabile} può impostare lo stato di un \gl{ticket} ad ``Abortit
 \newpage
 A seguire sono riportate le procedure che portano alla risoluzione di un \gl{ticket}.
 \begin{figure}[!h]
-	\includegraphics[width=\textwidth]{Img/flowticket.png}
+	\includegraphics[width=\textwidth]{Img/flowticket.\gl{png}}
 	\caption{Risoluzione di \gl{ticket}}
 	\label{fig:documento}
 \end{figure}
@@ -749,7 +749,7 @@ Una cartella principale root che contiene:
 	\begin{itemize}
 		\item interni;
 		\item esterni;
-		\item template, che contiene i \gl{template}, le immagini comuni a tutti i documenti e i file di comandi e stile.
+		\item \gl{template}, che contiene i \gl{template}, le immagini comuni a tutti i documenti e i file di comandi e stile.
 	\end{itemize}
 	\item codice.
 \end{itemize}
@@ -757,10 +757,10 @@ Tutti i file che sono parte di un branch, e quindi di un documento, devono esser
 
 \mysubparagraph{Commit}
 Ogni volta che si terminano le modifiche su un singolo file si deve eseguire una commit con il comando:
-\centra{\texttt{git commit -m \char`\"[oggetto] riepilogo\char`\"{} nomefile}}
+\centra{\texttt{\gl{git} commit -m \char`\"[oggetto] riepilogo\char`\"{} nomefile}}
 Non si deve mai eseguire una commit aggiornando più file contemporaneamente a meno che quei file non siano di tipo binary o strettamente correlati (p.es. quando la mancanza di uno pregiudica la compilazione dell'altro). Il messaggio deve descrivere le modifiche fatte e deve essere chiaro, sintetico e grammaticalmente corretto. Al fine di regolamentare i messaggi di commit è stato distribuito dall'\italics{Amministratore} un file hook denominato \file{commit-msg} che tutti i membri del \gl{team} devono obbligatoriamente installare seguendo queste istruzioni:
 \begin{itemize}
-	\item copiare il file all'interno della cartella del \gl{repository} al percorso \texttt{/.git/hooks/};
+	\item copiare il file all'interno della cartella del \gl{repository} al percorso \texttt{/.\gl{git}/hooks/};
 	\item dare i permessi di esecuzione al file con il comando da terminale \texttt{chmod +x commit-msg}.
 \end{itemize}
 L'hook si attiverà al momento opportuno impedendo l'esecuzione di commit mal formati.
@@ -781,7 +781,7 @@ Ad esempio:
 
 Prima di ogni commit va obbligatoriamente aggiornato il diario delle modifiche.
 
-È buona norma eseguire sempre il comando \texttt{git pull} prima di fare la prima commit.
+È buona norma eseguire sempre il comando \texttt{\gl{git} pull} prima di fare la prima commit.
 
 \myparagraph{Workflow}
 \gl{Git} viene utilizzato seguendo le linee guide e convenzioni del workflow Gitflow. Maggiori informazioni sono contenute nel link tra i riferimenti informativi.
@@ -805,7 +805,7 @@ Con licenza ``education'' fornisce gratuitamente la possibilità di possedere fi
 Il sevizio \gl{cloud} based \gl{Google Drive} viene utilizzato per un rapido scambio di documenti e file non soggetti a \gl{versionamento} che non hanno necessità di risiedere nel \gl{repository}.
 
 \myparagraph{Digital Ocean}
-Per utilizzare \gl{Redmine} e \gl{Tracker} era necessario un server su cui poterle installare. \gl{Digital Ocean}, attraverso il pacchetto ``education'' offerto da \gl{GitHub}, ha permesso ciò.
+Per utilizzare \gl{Redmine} e \gl{Tracker} era necessario un \gl{server} su cui poterle installare. \gl{Digital Ocean}, attraverso il pacchetto ``education'' offerto da \gl{GitHub}, ha permesso ciò.
 
 
 \end{document}
