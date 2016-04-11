@@ -1042,5 +1042,129 @@ Il docente può cercare domande nel sistema. Ha la possibilità di limitare la r
 	\caption{Tracciamento componenti-test di integrazione}
 \end{tabella}
 
+\newpage
+\appendix
+\section{Design Pattern}
+In questa sezione vengono presentati i design pattern che al momento sono stati stabiliti dal team per l'architettura del nostro prodotto.
+
+\subsection{Model-View-Controller (MVC)}
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.50]{Img/MVC.jpg}
+\caption{Design Pattern MVC}
+\label{} 
+\end{figure}
+Il Model-View-Controller (MVC) è un design pattern architetturale utilizzato per dividere il codice in blocchi di funzionalità ben distinte, e viene utilizzato molto frequentemente nelle applicazioni in cui un insieme di informazioni deve essere rappresentato attraverso una interfaccia grafica.
+
+\subsubsection{Componenti}
+MVC è basato sul principio del disaccoppiamento dei tre oggetti di cui è composto, ovvero sulla riduzione del loro grado di dipendenza reciproca, allo scopo di fornire una maggiore robustezza, modularità e manutenibilità al software.
+\newline Di seguito viene riportata una breve descrizione delle sue componenti e delle loro caratteristiche.
+
+\myparagraph{Model}
+Il Model è il nucleo dell’applicazione. Definisce il modello dei dati realizzando la business logic definendo gli oggetti secondo la logica di utilizzo dell’applicazione e indicando inoltre le possibili operazioni effettuabili su di essi.
+\newline Questa componente viene generalmente progettata attraverso tecniche object oriented.
+\newline Nella struttura del pattern MVC, il Model è una componente passiva, che non ha relazioni uscenti forti, ma si occupa di notificare alla View eventuali aggiornamenti attraverso il Controller.
+
+\myparagraph{View}
+La View si occupa di visualizzare i dati contenuti nel Model e fornisce l’interfaccia di interazione con gli utenti che utilizzeranno il sistema.
+Nella struttura del pattern MVC, la View cattura gli input dell’utente e li passa al Controller affinché esegua le corrette operazioni sul Model.
+\newline La View può essere soggetta a due tipi di aggiornamento:
+\begin{description}
+\item{Push model} 
+\\Il Push model viene implementato attraverso il pattern Observer e soltanto quando MVC è usato in un solo ambiente di esecuzione; consiste nel fatto che sia il Model a emettere, senza essere sollecitato, la notifica in seguito alla quale la View verrà aggiornata.
+\item{Pull model}
+\\Il Pull model viene invece implementato quando MVC è usato su diversi ambienti di esecuzione; in questo caso la View richiede al Model se sia necessario un aggiornamento solo al verificarsi di particolari eventi.
+\end{description}
+
+\myparagraph{Controller}
+Il Controller è la componente fondamentale di comunicazione tra la View ed il Model. Si occupa infatti di implementare l’application logic, l’insieme di operazioni eseguibili sul modello dei dati attraverso una particolare vista.
+\newline Poiché potenzialmente possono esistere più View sarà necessario attribuire per ogni View un corrispondente Controller.
+
+\subsubsection{Vantaggi}
+L'utilizzo del design pattern MVC porta la riduzione delle dipendenze tra le componenti dell'architettura, offrendo diversi vantaggi. La modularità ottenuta inoltre permette il riutilizzo del Model in applicazioni con diverse View, oltre a rendere più semplice e rapida l’esecuzione dei test.
+
+\subsubsection{Svantaggi}
+L’utilizzo di MVC nello sviluppo di un software presenta anche degli svantaggi in qualità di costi: la complessità risulta maggiore e si necessita un maggior  numero di aggiornamenti.
+\newline La maggiore complessità è causata dai livelli di indirezione introdotti dal pattern e dall’implementazione ad eventi necessaria per far comunicare le tre componenti.
+\newline La maggiore frequenza degli aggiornamenti, invece, è un effetto collaterale della modularizzazione dal momento che frequenti cambiamenti alla struttura del modello comportano spesso dei cambiamenti nelle View ed anche nei Controller.
+
+\subsection{Model-View-ViewModel (MVVM)}
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.50]{Img/MVVM.png}
+\caption{Design Pattern MVVM}
+\label{} 
+\end{figure}
+L'utilizzo di AngularJS all'interno del progetto porta a non implementare unicamente il design pattern MVC, ma 
+necessita dell'implementazione di una sua variante, il Model-View-ViewModel (MVVM).
+
+\subsubsection{Componenti}
+Segue una breve descrizione delle componenti che caratterizzano il pattern MVVM.
+
+\begin{description}
+\item{Model} 
+\\ Il Model è il dato nell’applicazione, che viene rappresentato tramite un normale oggetto JavaScript.
+\item{ViewModel}
+\\ Il ViewModel fa da intermediario tra la vista e il modello, ed è responsabile per la gestione della logica della vista. In generale interagisce con il modello invocando i metodi presenti nelle sue classi.
+Il ViewModel fornisce quindi i dati dal modello in una forma che la vista possa interpretare facilmente.
+\newline Con Angular il ViewModel sarà rappresentato dall’oggetto \$scope, una specie di variabile globale JavaScript che grazie alle proprie API permetterà di rilevare e trasmette i cambiamenti di stato.
+\item{Controller}
+\\ Il controller è il responsabile dell’impostare lo stato iniziale e aumentare lo \$scope con metodi che controllano il comportamento.
+\item{View}
+\\ La view è l’interfaccia grafica che dovrà visualizzare i dati e su cui interagirà l'utente.
+\end{description}
+
+Lo \$scope ha un riferimento ai dati, il controller definisce il comportamento, la view gestisce il layout e consegna l’interazione al controller per rispondere di conseguenza.
+
+\subsection{Data-Access-Object (DAO)}
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.75]{Img/dao.jpg}
+\caption{Design Pattern DAO}
+\label{}
+\end{figure}
+Il Data-Access-Object è un design pattern strutturale che permette di svolgere delle specifiche operazioni sui dati senza conoscere i dettagli del database. Questa separazione supporta il Principio di singola responsabilità: separa l'accesso a quali dati l'applicazione necessita dal come questi dati vengono reperiti attraverso il database.
+Pertanto questo pattern viene utilizzato per disaccoppiare la logica di business dalla logica di accesso ai dati. 
+
+\subsubsection{Vantaggi}
+Il vantaggio di usare questo pattern è rappresentato dalla sua semplicità e dalla rigorosa separazione tra le due principali parti dell'applicazione che non necessitano di conoscere ogni aspetto l'una dell'altra e che permettono di essere espanse in modo indipendente.
+Tutti i dettagli del salvataggio dei dati sono nascosti dal resto dell'applicazione, in questo modo possono essere cambiati senza influenzare tutto il resto dell'applicazione, ma modificando soltanto una implementazione del DAO.
+\newline Il DAO pertanto funge da intermediario tra l'applicazione e il database.
+
+\subsubsection{Svantaggi}
+Questo pattern, pur essendo pochi, presenta comunque degli svantaggi. Il più importante riguarda la duplicazione di codice che comparirà in ogni singolo DAO presente nell'applicazione. Infatti viene creata un DAO per ogni entità presente nel sistema, che conterrà i metodi necessari per interagire con il database, ad esempio metodi per ricercare, inserire, modificare,rimuovere e aggiornare i dati.
+
+\subsection{Microservices Architecture}
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.75]{Img/microservice.png}
+\caption{Design Pattern Microservices Architecture}
+\label{}
+\end{figure}
+Il Microservice Architecture è un pattern architetturale ancora giovane, il cui pregio maggiore consiste nello sviluppare un'applicazione come una famiglia di piccoli services, ognuno che esegue il proprio processo in modo indipendente l'uno dall'altro, pur mantenendo comunque un minimo di gestione centralizzata di questi services.
+\\ Il difetto principale di tale architettura è la duplicazione di codice che interesserà tutti i diversi services che vengono generati durante la cosifica del sistema.
+
+\subsection{Builder}
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.60]{Img/builder.png}
+\caption{Design Pattern Builder}
+\label{}
+\end{figure}
+Il Builder è un design pattern creazionale utilizzato per separare la costruzione di un oggetto complesso dalla sua effettiva rappresentazione. In tal modo l'algoritmo di costruzione di oggetti di tipi diversi sarà indipendente da i vari step necessari alla loro realizzazione.
+\\ Il vantaggio di ciò è rendere la classe più semplice assegnando il compito ad una classe builder di costruire effettivamente l'oggetto complesso; in tal modo la classe potrà focalizzarsi sul corretto funzionamento degli oggetti creati.
+Inoltre le modifiche apportate alla rappresentazione interna di un prodotto saranno semplificate.
+\\ Tale design pattern verrà successivamente utilizzato per la costruzione del menù nel lato client del sistema.
+
+\subsubsection{Componenti}
+\begin{description}\item{Builder}
+\\ Specifica l'interfaccia astratta che crea le parti dell'oggetto Product.
+\item {ConcreteBuilder} 
+\\Costruisce e assembla le parti del prodotto implementando l'interfaccia Builder; definisce e tiene inoltre traccia della rappresentazione che crea.
+\item{Director} 
+\\Costruisce un oggetto utilizzando l'interfaccia Builder.
+\item{Product} 
+\\Rappresenta l'oggetto complesso e include le classi che definiscono le parti che lo compongono, includendo le interfacce per assemblare le parti nel risultato finale.
+\end{description}
 
 \end{document}
