@@ -117,12 +117,12 @@ Gli utenti senza ruolo possono:
 I docenti possono:
 \begin{itemize}
 \item creare quiz selezionando domande esistenti;
-\item svolgere quiz;
 \item creare quiz inserendo nuove domande;
-\item modificare quiz  e domande esistenti;
+\item modificare quiz e domande esistenti da loro creati;
 \item visualizzare i risultati degli studenti;
 \item visualizzare statistiche (percentuale media di risposte corrette per questionario, numero di studenti che hanno eseguito i singoli questionari, voto medio di un questionario ecc.);
-\item effettuare una richiesta di assegnazione a una classe con il ruolo di docente.
+\item effettuare una richiesta di assegnazione a una classe con il ruolo di docente;
+\item gestire gli studenti di una classe.
 \end{itemize}
 
 \bigskip
@@ -137,11 +137,13 @@ Gli studenti possono:
 
 \bigskip
 
-I responsabili possono fare uso di tutte le funzionalità riservate ai docenti, inoltre possono:
+I responsabili possono:
 \begin{itemize}
-\item gestire i profili di docenti e studenti;
-\item gestire enti e classi;
-\item gestire le richieste effettuate dagli altri utenti registrati.
+\item rimuovere gli utenti dal proprio ente;
+\item gestire il proprio ente e le sue classi;
+\item gestire gli argomenti;
+\item gestire le richieste effettuate dagli altri utenti registrati;
+\item gestire i docenti delle classi del proprio ente.
 \end{itemize}
 
 \subsection{Caratteristiche degli utenti}
@@ -185,7 +187,7 @@ Gli attori si dividono in:
 \item \bold{utente senza ruolo:} utente autenticato a cui non è stato attribuito un ruolo (studente o docente);
 \item \bold{studente:} utente autenticato a cui è stato attribuito il ruolo di studente;
 \item \bold{docente:} utente autenticato a cui è stato attribuito il ruolo di docente;
-\item \bold{responsabile:} docente con privilegi gestionali.
+\item \bold{responsabile:} utente con privilegi gestionali limitati a un singolo ente.
 \end{itemize}
 
 \subsection{Elenco dei casi d'uso}
