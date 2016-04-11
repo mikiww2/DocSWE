@@ -897,4 +897,106 @@ Il docente può cercare domande nel sistema. Ha la possibilità di limitare la r
 \subsection{Requisiti-Componenti}
 \input{auto_track_rc}
 
+\subsection{Componenti-Test}
+
+\begin{tabella}{!{\VRule}p{10.6cm}!{\VRule}p{4cm}!{\VRule}!}
+	\color{white} \bold{Componente} & \color{white} \bold{Test di integrazione}
+	\endfirsthead
+	Quizzipedia & TIQuizzipedia
+	\\
+	Quizzipedia::Client & TIClient
+	\\
+	Quizzipedia::Client::ModelClient & TIModelClient
+	\\
+	Quizzipedia::Client::ModelClient::Organization & TIOrganization
+	\\
+	Quizzipedia::Client::ModelClient::Requests & TIRequests
+	\\
+	Quizzipedia::Client::ModelClient::Services & TIServicesClient
+	\\
+	Quizzipedia::Client::ModelClient::Services::Questions & TIQuestionsClient
+	\\
+	Quizzipedia::Client::ModelClient::Statistics & TIStatistics 
+	\\
+	Quizzipedia::Client::ModelClient::Users & TIUsers
+	\\
+	Quizzipedia::Client::ViewClient & TIViewClient
+	\\
+	Quizzipedia::Client::ViewClient::ViewOrgManager & TIViewOrgManager
+	\\
+	Quizzipedia::Client::ViewClient::ViewQuestionManager & TIViewQuestionManager
+	\\
+	Quizzipedia::Client::ViewClient::ViewQuizManager & TIViewQuizManager
+	\\
+	Quizzipedia::Client::ViewClient::ViewQuizSolver & TIViewQuizSolver
+	\\
+	Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver & TIViewQuestionSolver
+	\\
+	Quizzipedia::Client::ViewClient::ViewRequests & TIViewRequest
+	\\
+	Quizzipedia::Client::ViewClient::ViewSearch & TIViewSearch
+	\\
+	Quizzipedia::Client::ViewClient::ViewStatistics & TIViewStatistics
+	\\
+	Quizzipedia::Client::ViewClient::ViewTopicManager & TIViewTopicManager
+	\\
+	Quizzipedia::Client::ViewClient::ViewUsers & TIViewUsers
+	\\
+	Quizzipedia::Client::ViewClient::ViewErrors & TIViewErrors
+	\\
+	Quizzipedia::Client::ControllerClient & TIControllerClient
+	\\
+	Quizzipedia::Client::ControllerClient::CtrlOrganization & TICtrlOrganization
+	\\
+	Quizzipedia::Client::ControllerClient::CtrlRequests & 
+	TICtrlRequests
+	\\
+	Quizzipedia::Client::ControllerClient::CtrlServices & 
+	TICtrlServices
+	\\
+	Quizzipedia::Client::ControllerClient::CtrlStatistics & TICtrlStatistics
+	\\
+	Quizzipedia::Client::ControllerClient::CtrlUsers & TICtrlUsers
+	\\
+	Quizzipedia::Server & TIServer
+	\\
+	Quizzipedia::Server::ControllerServer & TIControllerServer
+	\\
+	Quizzipedia::Server::ControllerServer::AuthenticationManager & TIAuthenticationManager
+	\\
+	Quizzipedia::Server::ControllerServer::ClassManager & TIClassManager
+	\\
+	Quizzipedia::Server::ControllerServer::CompanyManager & TICompanyManager
+	\\
+	Quizzipedia::Server::ControllerServer::ProfileManager & TIProfileManager
+	\\
+	Quizzipedia::Server::ControllerServer::QuestionsManager & TIQuestionsManager
+	\\
+	Quizzipedia::Server::ControllerServer::QuizManager & 
+	TIQuizManager
+	\\
+	Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent & TIQMLAgent
+	\\
+	Quizzipedia::Server::ControllerServer::RequestsManager & TIRequestsManager
+	\\
+	Quizzipedia::Server::ControllerServer::SearchManager & TISearchManager
+	\\
+	Quizzipedia::Server::ControllerServer::StatisticsManager & TIStatisticsManager
+	\\
+	Quizzipedia::Server::ControllerServer::TopicManager & 
+	TITopicManager
+	\\
+	Quizzipedia::Server::ModelServer & TIModelServer
+	\\
+	Quizzipedia::Server::ModelServer::Services & TIServicesServer
+	\\
+	Quizzipedia::Server::ModelServer::Services::Questions & TIQuestionsServer
+	\\
+	Quizzipedia::Server::RoutingManager & TIRoutingManager
+	\\	
+	\rowcolor{white}  
+	\caption{Tracciamento componenti-test di integrazione}
+\end{tabella}
+
+
 \end{document}
