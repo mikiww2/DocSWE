@@ -1004,12 +1004,12 @@ Package che racchiude tutte le funzionalità adibite al salvataggio e alla visua
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-classmanager.pdf}}
 \caption{Schema Componente Quizzipedia::Server::ControllerServer::ClassManager}
 \end{figure}
-\subsubsection{Classe AddClass}
+\subsubsection{Classe ClassAdder}
 Permette la creazione di una nuova classe.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-classmanager-addclass.pdf}}
-\caption{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::AddClass}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-classmanager-classadder.pdf}}
+\caption{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder}
 \end{figure}
 \subsubsection{Classe ClassDeleter}
 Permette la rimozione delle classi dal sistema.
@@ -1190,12 +1190,12 @@ Permette la cancellazione di un quiz dalla base di dati.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-quizmanager-quizeraser.pdf}}
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser}
 \end{figure}
-\subsubsection{Classe QuizGetter}
+\subsubsection{Classe QuizFetcher}
 Ritorna un determinato quiz pronto per essere svolto da un utente .
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-quizmanager-quizgetter.pdf}}
-\caption{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizGetter}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-controllerserver-quizmanager-quizfetcher.pdf}}
+\caption{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher}
 \end{figure}
 \subsubsection{Classe QuizUpdater}
 Permette la modifica di un quiz già presente nella base di dati.
@@ -1401,7 +1401,7 @@ Permette l'eliminazione di un argomento.
 \caption{Schema Classe Quizzipedia::Server::ControllerServer::TopicManager::TopicEraser}
 \end{figure}
 \subsection{Quizzipedia::Server::RoutingManager}
-Questo pachetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per comunicare con il client tramite socket; esso ha il compito di indirizzare le richieste ai vari services un base alla richiesta da parte dell'utente.
+Questo pachetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per comunicare con il client tramite socket; esso ha il compito di indirizzare le richieste ai vari services in base alla richiesta da parte dell'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{ImgST/quizzipedia-server-routingmanager.pdf}}
