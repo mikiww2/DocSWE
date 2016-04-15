@@ -106,15 +106,15 @@ Il presente documento ha lo scopo di descrivere gli obiettivi di qualità, di pr
 	\newline \url{http://www.colonese.it/00-Manuali_Pubblicatii/08-Metriche%20del%20software_v1.0.pdf};
 \item \bold{The Guide to the \gl{Software} Engineering Body of Knowledge (SWEBOK Guide v3.0) - IEEE Computer Society:} Chapter 10 - \gl{Software} Quality
 	\newline \url{http://www.computer.org/web/swebok/;jsessionid=e21ab6073d3593a8523de74bddd2};
-\item \bold{PDCA:}
+\item \bold{\gl{PDCA}:}
 	\newline \url{https://en.wikipedia.org/wiki/PDCA};
 \item \bold{Capability Maturity Model:}
 	\newline \url{https://en.wikipedia.org/wiki/Capability_Maturity_Model};
 \item \bold{ISO 9126:}
 	\newline \url{https://en.wikipedia.org/wiki/ISO/IEC_9126};
-\item \bold{Indice Gulpease:}
+\item \bold{\gl{Indice Gulpease}:}
 	\newline \url{https://it.wikipedia.org/wiki/Indice_Gulpease};
-\item \bold{Slide del corso Ingegneria del Software - Misurazioni del Software:}
+\item \bold{Slide del corso Ingegneria del \gl{Software} - Misurazioni del \gl{Software}:}
 	\newline \url{http://www.math.unipd.it/~rcardin/sweb/B02.pdf};
 \item \bold{Complessità ciclomatica:}
 	\newline \url{https://it.wikipedia.org/wiki/Complessit%C3%A0_ciclomatica}.2
@@ -498,7 +498,7 @@ Misura pertanto il numero di esecuzioni avvenute con successo, ovvero che hanno 
 \myparagraph{Validazione web}
 \label{par:web}
 Tale metrica viene usufruita, all'interno del progetto, per migliorare la qualità nell'usabilità, dal momento che questa risulta un fattore molto soggettivo, l'efficienza e la portabilità di un prodotto.
-Si avvale degli strumenti messi a disposizione dal \gl{W3C} per valutare l'accessibilità, il codice HTML prodotto, etc. segnalando la quantità di errori riscontrati.
+Si avvale degli strumenti messi a disposizione dal \gl{W3C} per valutare l'accessibilità, il codice \gl{HTML} prodotto, etc. segnalando la quantità di errori riscontrati.
 \
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
@@ -587,7 +587,7 @@ Attraverso il suo impiego sarà possibile definire inoltre un limite superiore a
 
 \myparagraph{Copertura del codice}
 La copertura del codice è la percentuale degli statement eseguiti correttamente durante lo
-svolgimento dei test. Se il valore risultante è alto ciò sta ad indicare che il codice analizzato potrà presentare eventuali errori con probabilità molto bassa, andando quindi a garantire un maggiore livello di affidabilità del software.
+svolgimento dei test. Se il valore risultante è alto ciò sta ad indicare che il codice analizzato potrà presentare eventuali errori con probabilità molto bassa, andando quindi a garantire un maggiore livello di affidabilità del \gl{software}.
 \
 \newline Giudizio dei risultati ottenibili:
 \begin{itemize}
@@ -611,10 +611,10 @@ Il grado di accoppiamento misura il grado con cui ogni componente di un programm
 Un valore basso di questa metrica permetterà al programma di essere maggiormente manutenibile poiché in caso di modifiche all'interno di una sua componente, le altre componenti non necessiteranno di modifiche consequenziali.
 \\ Il grado di accoppiamento viene valutato attraverso il calcolo di due distinti indici:
 \begin{description}
-\item{ Accoppiamento Afferente (Ca):} indica il numero di classi esterne ad un package che dipendono da classi interne ad esso. 
-\\ Un alto valore di tale accoppiamento è indice di un alto grado di dipendenza del resto del software dal package. D'altro canto un valore troppo basso indicherà che il package, con le sue funzionalità interne, non viene sufficientemente sfruttato dal resto del software.
-\item{Accoppiamento Efferente (Ce):} indica il numero di classi interne ad un package che dipendono da classi esterne ad esso. 
-\\Ottenere un basso valore di questo accoppiamento indica che la maggior parte delle funzionalità fornite dal package sono indipendenti dal resto del sistema.
+\item{ Accoppiamento Afferente (Ca):} indica il numero di classi esterne ad un \gl{package} che dipendono da classi interne ad esso. 
+\\ Un alto valore di tale accoppiamento è indice di un alto grado di dipendenza del resto del \gl{software} dal \gl{package}. D'altro canto un valore troppo basso indicherà che il \gl{package}, con le sue funzionalità interne, non viene sufficientemente sfruttato dal resto del \gl{software}.
+\item{Accoppiamento Efferente (Ce):} indica il numero di classi interne ad un \gl{package} che dipendono da classi esterne ad esso. 
+\\Ottenere un basso valore di questo accoppiamento indica che la maggior parte delle funzionalità fornite dal \gl{package} sono indipendenti dal resto del sistema.
 \end{description}
 \
 \newline Giudizio dei risultati ottenibili:
@@ -642,7 +642,7 @@ Attraverso i valori degli indici Ca e Ce (accoppiamento afferente ed efferente r
  
 \newpage
 \section{Specifica dei test}
-In questa sezione vengono descritti i test che nelle successive attività verranno implementati in modo tale che, con il loro superamento, possano garantire al sistema software livelli di qualità ottimali, un corretto funzionamento e un riscontro positivo con le aspettative del cliente.
+In questa sezione vengono descritti i test che nelle successive attività verranno implementati in modo tale che, con il loro superamento, possano garantire al sistema \gl{software} livelli di qualità ottimali, un corretto funzionamento e un riscontro positivo con le aspettative del cliente.
 \newline L'intera sezione potrà subire un ulteriore incremento nelle attività successive con l'aggiunta di nuovi test o la modifica della descrizione di alcuni di essi. La loro implementazione avverrà peraltro nelle attività successive per cui all'attività attuale tutti i test saranno nello stato N.I. (non implementato).
 \newline Per comprendere la sintassi con cui saranno definiti i test è consigliabile consultare la sezione apposita nel documento \doc{Norme di Progetto}.
 
@@ -1558,20 +1558,20 @@ I test di validazione vengono utilizzati durante l'attività di collaudo finale,
 		Operazioni:
 		{\begin{enumerate}
 				\item l’utente deve disporre di una connessione ad internet sul proprio dispositivo mobile;				 
-				\item entrare nel sito di Quizzipedia da un browser del dispositivo;
+				\item entrare nel sito di Quizzipedia da un \gl{browser} del dispositivo;
 				\item verificarne il corretto funzionamento.
 		\end{enumerate}
 		}
 	& ROV9 & N.I.
 	\\
 	TV10 &
-		L’utente vuole verificare il corretto funzionamento del sistema con l’uso di JavaScript e cookies.
+		L’utente vuole verificare il corretto funzionamento del sistema con l’uso di \gl{JavaScript} e \gl{cookies}.
 		\newline \newline
 		Operazioni:
 		{\begin{enumerate}
 				\item l’utente deve disporre di una connessione ad internet;
-				\item l’utente deve aprire il browser con cui ha intenzione di accedere a Quizzipedia;
-				\item verificare che nelle impostazioni  del browser Javascript e cookies siano abilitati;
+				\item l’utente deve aprire il \gl{browser} con cui ha intenzione di accedere a Quizzipedia;
+				\item verificare che nelle impostazioni  del \gl{browser} Javascript e \gl{cookies} siano abilitati;
 				\item navigare nel sito di Quizzipedia; 
 		\end{enumerate}
 		}
@@ -1640,15 +1640,15 @@ I seguenti test di sistema servono per verificare il comportamento dinamico comp
 	\\
 	TS8/9 & Viene verificato che il sistema funzioni correttamente sia su dispositivi mobile sia su piattaforme desktop. & ROV8 - ROV9 & N.I.
 	\\
-	TS10 & Viene verificato che il sistema funzioni correttamente con JavaScript e  cookies abilitati. & ROV10 & N.I.
+	TS10 & Viene verificato che il sistema funzioni correttamente con \gl{JavaScript} e  \gl{cookies} abilitati. & ROV10 & N.I.
 	\\
-	TS27 & Viene verificato che il sistema funzioni correttamente sul browser Google Chrome versione 49 e future. & ROV27 & N.I.
+	TS27 & Viene verificato che il sistema funzioni correttamente sul \gl{browser} \gl{Google Chrome} versione 49 e future. & ROV27 & N.I.
 	\\
-	TS28 & Viene verificato che il sistema funzioni correttamente sul browser Mozilla Firefox versione 44. & ROV28 & N.I.
+	TS28 & Viene verificato che il sistema funzioni correttamente sul \gl{browser} \gl{Mozilla Firefox} versione 44. & ROV28 & N.I.
 	\\
-	TS29 & Viene verificato che il sistema funzioni correttamente sul browser Internet Explorer versione 11. & ROV29 & N.I.
+	TS29 & Viene verificato che il sistema funzioni correttamente sul \gl{browser} Internet Explorer versione 11. & ROV29 & N.I.
 	\\
-	TS30 & Viene verificato che il sistema funzioni correttamente sul browser Safari versione 9. & ROV30 & N.I.
+	TS30 & Viene verificato che il sistema funzioni correttamente sul \gl{browser} \gl{Safari} versione 9. & ROV30 & N.I.
 	\\
 	\rowcolor{white}  
 	\caption{Test di sistema}
@@ -1656,7 +1656,7 @@ I seguenti test di sistema servono per verificare il comportamento dinamico comp
 
 \newpage
 \subsection{Test di Integrazione}
-I test di integrazione, che vengono di seguito riportati, servono per verificare la corretta comunicazione tra le diverse componenti del sistema software in modo tale che il funzionamento sia quello atteso.
+I test di integrazione, che vengono di seguito riportati, servono per verificare la corretta comunicazione tra le diverse componenti del sistema \gl{software} in modo tale che il funzionamento sia quello atteso.
 \newline Tali test sono stati decisi seguendo una strategia bottom-up, basata sulla logica di realizzare il prodotto conclusivo a partire dalle singole componenti necessarie per realizzare  prima di tutto le funzionalità obbligatorie che sono state richieste.
 \newline Per ogni test viene specificato il proprio codice univoco, la componente o le componenti a cui fa riferimento, lo stato di implementazione attuale e la sua descrizione. 
 \newline Il tracciamento tra i test di integrazione e le componenti ad essi associate è riportato nel documento \doc{Specifica Tecnica}.
@@ -1667,13 +1667,13 @@ I test di integrazione, che vengono di seguito riportati, servono per verificare
 	\color{white} \bold{Codice test} & \color{white} \bold{Descrizione} & \color{white} \bold{Componente} & \color{white} \bold{Stato}\\
 	\endfirsthead
 	TIQuizzipedia & Viene verificato che le comunicazioni
-	tra client, server e database funzionino a dovere e
+	tra \gl{client}, \gl{server} e \gl{database} funzionino a dovere e
 	i dati siano passati in modo corretto e sicuro. & Quizzipedia & N.I.  
 	\\
 	TIClient & Viene verificato che il sistema gestisca correttamente il
 	front end del prodotto tra le tre componenti Model, Controller e View. & Quizzipedia::Client & N.I.
 	\\
-	TIClient & Viene verificato che il sistema gestisca correttamente la componente Model relativa al design pattern MVC. Più precisamente, viene verificato che la memorizzazione della struttura dei dati avvenga correttamente. & Quizzipedia::Client::Client & N.I.
+	TIClient & Viene verificato che il sistema gestisca correttamente la componente Model relativa al \gl{design pattern} \gl{MVC}. Più precisamente, viene verificato che la memorizzazione della struttura dei dati avvenga correttamente. & Quizzipedia::Client::Client & N.I.
 	\\
 	TIOrganization & Viene verificato che il sistema gestisca correttamente la memorizzazione della struttura dei dati associati agli enti e alle classi. & Quizzipedia::Client::Client::\-Organization & N.I.
 	\\
@@ -1689,7 +1689,7 @@ I test di integrazione, che vengono di seguito riportati, servono per verificare
 	memorizzazione della struttura dei dati associati ai diversi utenti. & Quizzipedia::Client::Client::\-Users & N.I.
 	\\
 	TIViewClient & Viene verificato che il sistema gestisca correttamente la
-	componente View relativa al pattern MVC. Più precisamente, viene verificato che venga gestita correttamente la rappresentazione del prodotto al cliente. & Quizzipedia::Client::ViewClient & N.I.
+	componente View relativa al pattern \gl{MVC}. Più precisamente, viene verificato che venga gestita correttamente la rappresentazione del prodotto al cliente. & Quizzipedia::Client::ViewClient & N.I.
 	\\
 	TIViewOrgManager & Viene verificato che il sistema gestisca in modo corretto le pagine dedicate alla gestione delle classi e degli enti. & Quizzipedia::Client::ViewClient::\-ViewOrgManager & N.I.
 	\\
@@ -1713,53 +1713,53 @@ I test di integrazione, che vengono di seguito riportati, servono per verificare
 	\\
 	TIViewErrors & Viene verificato che il sistema gestisca correttamente la visualizzazione degli errori ricevuti. & Quizzipedia::Client::ViewClient::\-ViewErrors & N.I.
 	\\
-	TIControllerClient & Viene verificato che il sistema gestisca correttamente la componente Controller relativa al design pattern MVC . Più precisamente, viene verificato che il
+	TIControllerClient & Viene verificato che il sistema gestisca correttamente la componente Controller relativa al \gl{design pattern} \gl{MVC} . Più precisamente, viene verificato che il
 	sistema gestisca le azioni dell’utente, collegando in modo adeguato View e Model. & Quizzipedia::Client::ControllerClient & N.I.
 	\\
-	TICtrlOrganization & Viene verificato che il sistema gestisca ottimamente la comunicazione tra la componente della View relativa alla creazione delle classi e degli enti e la componente Model a cui vengono inviate le informazioni da immagazzinare nel database.  & Quizzipedia::Client::ControllerClient::\-CtrlOrganization & N.I.
+	TICtrlOrganization & Viene verificato che il sistema gestisca ottimamente la comunicazione tra la componente della View relativa alla creazione delle classi e degli enti e la componente Model a cui vengono inviate le informazioni da immagazzinare nel \gl{database}.  & Quizzipedia::Client::ControllerClient::\-CtrlOrganization & N.I.
 	\\
 	TICtrlRequests & Viene verificato che il sistema gestisca correttamente la comunicazione tra View e Model per la gestione delle richieste eseguite dall’utente. & Quizzipedia::Client::ControllerClient::\-CtrlRequests & N.I.
 	\\
-	TICtrlServices & Viene verificato che il sistema gestisca correttamente la comunicazione tra View e Model del client per la creazione, lo svolgimento e la ricerca di quiz e domande. Deve funzionare correttamente anche la comunicazione con il database attraverso il server per il salvataggio/caricamento delle informazioni. & Quizzipedia::Client::ControllerClient::\-CtrlServices & N.I.
+	TICtrlServices & Viene verificato che il sistema gestisca correttamente la comunicazione tra View e Model del \gl{client} per la creazione, lo svolgimento e la ricerca di quiz e domande. Deve funzionare correttamente anche la comunicazione con il \gl{database} attraverso il \gl{server} per il salvataggio/caricamento delle informazioni. & Quizzipedia::Client::ControllerClient::\-CtrlServices & N.I.
 	\\
 	TICtrlStatistics & Viene verificato che sia gestita correttamente dal sistema la comunicazione tra Model e View per la gestione delle statistiche richieste dall’utente. & Quizzipedia::Client::ControllerClient::\-CtrlStatistics & N.I.
 	\\
-	TICtrlUsers & Viene verificato che sia gestita correttamente dal sistema la comunicazione tra la View, il Model e il server per quanto riguarda le informazioni dell’utente e la loro gestione. & Quizzipedia::Client::ControllerClient::\-CtrlUsers & N.I.
+	TICtrlUsers & Viene verificato che sia gestita correttamente dal sistema la comunicazione tra la View, il Model e il \gl{server} per quanto riguarda le informazioni dell’utente e la loro gestione. & Quizzipedia::Client::ControllerClient::\-CtrlUsers & N.I.
 	\\
 	TIServer & Viene verificato che il sistema
-	gestisca correttamente l’interazione tra le componenti del back-end. & Quizzipedia::Server & N.I.
+	gestisca correttamente l’interazione tra le componenti del \gl{back-end}. & Quizzipedia::Server & N.I.
 	\\
-	TIControllerServer & Viene verificato che il sistema gestisca in modo corretto le richieste eseguite lato client. & Quizzipedia::Server::ControllerServer & N.I.
+	TIControllerServer & Viene verificato che il sistema gestisca in modo corretto le richieste eseguite lato \gl{client}. & Quizzipedia::Server::ControllerServer & N.I.
 	\\
-	TIAuthenticationManager & Viene verificato che il sistema gestisca correttamente i servizi di autenticazioni richiesti dal client. & Quizzipedia::Server::ControllerServer::\-AuthenticationManager & N.I.
+	TIAuthenticationManager & Viene verificato che il sistema gestisca correttamente i servizi di autenticazioni richiesti dal \gl{client}. & Quizzipedia::Server::ControllerServer::\-AuthenticationManager & N.I.
 	\\
-	TIClassManager & Viene verificato che il sistema gestisca correttamente le richieste di gestione delle classi provenienti dal client. & Quizzipedia::Server::ControllerServer::\-ClassManager & N.I.
+	TIClassManager & Viene verificato che il sistema gestisca correttamente le richieste di gestione delle classi provenienti dal \gl{client}. & Quizzipedia::Server::ControllerServer::\-ClassManager & N.I.
 	\\
-	TICompanyManager & Viene verificato che il sistema gestisca appropriatamente le richieste di gestione degli enti ricevute dal client. & Quizzipedia::Server::ControllerServer::\-CompanyManager & N.I.
+	TICompanyManager & Viene verificato che il sistema gestisca appropriatamente le richieste di gestione degli enti ricevute dal \gl{client}. & Quizzipedia::Server::ControllerServer::\-CompanyManager & N.I.
 	\\
-	TIProfileManager & Viene verificato che il sistema gestisca appropriatamente le richieste del client per la gestione delle informazioni riguardanti i profili degli utenti autenticati. & Quizzipedia::Server::ControllerServer::\-ProfileManager & N.I.
+	TIProfileManager & Viene verificato che il sistema gestisca appropriatamente le richieste del \gl{client} per la gestione delle informazioni riguardanti i profili degli utenti autenticati. & Quizzipedia::Server::ControllerServer::\-ProfileManager & N.I.
 	\\
-	TIQuestionsManager & Viene verificato che il sistema gestisca in modo corretto la gestione delle domande secondo le richieste ricevute dal client. & Quizzipedia::Server::ControllerServer::\-QuestionsManager & N.I.
+	TIQuestionsManager & Viene verificato che il sistema gestisca in modo corretto la gestione delle domande secondo le richieste ricevute dal \gl{client}. & Quizzipedia::Server::ControllerServer::\-QuestionsManager & N.I.
 	\\
-	TIQuizManager & Viene verificato che il sistema gestisca in modo corretto la gestione dei quiz secondo le richieste ricevute dal client. & Quizzipedia::Server::ControllerServer::\-QuizManager & N.I.
+	TIQuizManager & Viene verificato che il sistema gestisca in modo corretto la gestione dei quiz secondo le richieste ricevute dal \gl{client}. & Quizzipedia::Server::ControllerServer::\-QuizManager & N.I.
 	\\
-	TIQMLAgent & gestisca in modo corretto la traduzione delle informazioni inviate dal client, da linguaggio QML ad un formato corretto per il sistema. Deve essere verificato che avvenga anche il contrario. & Quizzipedia::Server::ControllerServer::\-QuizManager::QMLAgent & N.I.
+	TIQMLAgent & gestisca in modo corretto la traduzione delle informazioni inviate dal \gl{client}, da linguaggio \gl{QML} ad un formato corretto per il sistema. Deve essere verificato che avvenga anche il contrario. & Quizzipedia::Server::ControllerServer::\-QuizManager::QMLAgent & N.I.
 	\\
-	TIRequestsManager & Viene verificato che il sistema gestisca in modo appropriato le richieste degli utenti (di ruolo o di entrata in una classe) inviate dal client. & Quizzipedia::Server::ControllerServer::\-RequestsManager & N.I.
+	TIRequestsManager & Viene verificato che il sistema gestisca in modo appropriato le richieste degli utenti (di ruolo o di entrata in una classe) inviate dal \gl{client}. & Quizzipedia::Server::ControllerServer::\-RequestsManager & N.I.
 	\\
-	TISearchManager & Viene verificato che il sistema gestisca correttamente le informazioni inviate dal client qualora un utente abbia eseguito una ricerca lato client. Deve essere verificata anche la comunicazione della risposta al client. &  Quizzipedia::Server::ControllerServer::\-SearchManager & N.I.
+	TISearchManager & Viene verificato che il sistema gestisca correttamente le informazioni inviate dal \gl{client} qualora un utente abbia eseguito una ricerca lato \gl{client}. Deve essere verificata anche la comunicazione della risposta al \gl{client}. &  Quizzipedia::Server::ControllerServer::\-SearchManager & N.I.
 	\\
-	TIStatisticsManager & Viene verificato che il sistema gestisca correttamente le richieste delle statistiche ricevute dal client, riguardanti quiz, domande e utenti. &  Quizzipedia::Server::ControllerServer::\-StatisticsManager & N.I.
+	TIStatisticsManager & Viene verificato che il sistema gestisca correttamente le richieste delle statistiche ricevute dal \gl{client}, riguardanti quiz, domande e utenti. &  Quizzipedia::Server::ControllerServer::\-StatisticsManager & N.I.
 	\\
-	TITopicManager & Viene verificato che il sistema gestisca correttamente le richieste di creazione e di eliminazione di un argomento da parte del client. & Quizzipedia::Server::ControllerServer::\-TopicManager & N.I.
+	TITopicManager & Viene verificato che il sistema gestisca correttamente le richieste di creazione e di eliminazione di un argomento da parte del \gl{client}. & Quizzipedia::Server::ControllerServer::\-TopicManager & N.I.
 	\\
-	TIServer & Viene verificato che il sistema gestisca correttamente lato server tutti i dati ottenuti dal client.  &  Quizzipedia::Server::Server & N.I.
+	TIServer & Viene verificato che il sistema gestisca correttamente lato \gl{server} tutti i dati ottenuti dal \gl{client}.  &  Quizzipedia::Server::Server & N.I.
 	\\
-	TIServicesServer & Viene verificato che il sistema gestisca correttamente lato server tutti i dati riguardanti le domande e i quiz. &  Quizzipedia::Server::Server::\-Services & N.I.
+	TIServicesServer & Viene verificato che il sistema gestisca correttamente lato \gl{server} tutti i dati riguardanti le domande e i quiz. &  Quizzipedia::Server::Server::\-Services & N.I.
 	\\
-	TIQuestionsServer & Viene verificato che il sistema gestisca correttamente lato server i dati relativi alle diverse tipologie di domande presenti nel sistema. & Quizzipedia::Server::Server::\-Services::Questions & N.I.
+	TIQuestionsServer & Viene verificato che il sistema gestisca correttamente lato \gl{server} i dati relativi alle diverse tipologie di domande presenti nel sistema. & Quizzipedia::Server::Server::\-Services::Questions & N.I.
 	\\
-	TIRoutingManager & Viene verificato che il sistema gestisca in modo adeguato la comunicazione con il client attraverso le API e il socket per indirizzare correttamente le richieste dell’utente ai corretti services. & Quizzipedia::Server::RoutingManager & N.I.	
+	TIRoutingManager & Viene verificato che il sistema gestisca in modo adeguato la comunicazione con il \gl{client} attraverso le API e il socket per indirizzare correttamente le richieste dell’utente ai corretti services. & Quizzipedia::Server::RoutingManager & N.I.	
 	\\
 	\rowcolor{white}  
 	\caption{Test di integrazione}
@@ -1963,7 +1963,7 @@ Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance s
 \bold{Considerazioni finali:}
 \begin{description}
 \item{\bold{Schedule Variance finale:}} +5 giorni.
-\\Durante l'attività di Progettazione architetturale il team ha concluso la stesura della documentazione con un ritardo di 5 giorni da quanto riportato nel documento \doc{Piano di Progetto}. Pur essendo un valore non accettabile che fuoriesce dal range assunto in tale metrica, il gruppo non considera necessario assumere delle azioni correttive dal momento che il problema della malattia prolungata di parte del team viene considerato un evento eccezionale che difficilmente si potrà manifestare nuovamente in maniera così gravosa nelle successive attività.
+\\Durante l'attività di Progettazione architetturale il \gl{team} ha concluso la stesura della documentazione con un ritardo di 5 giorni da quanto riportato nel documento \doc{Piano di Progetto}. Pur essendo un valore non accettabile che fuoriesce dal range assunto in tale metrica, il gruppo non considera necessario assumere delle azioni correttive dal momento che il problema della malattia prolungata di parte del \gl{team} viene considerato un evento eccezionale che difficilmente si potrà manifestare nuovamente in maniera così gravosa nelle successive attività.
 \end{description}
 
 
@@ -1979,12 +1979,12 @@ Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui t
 \end{tabella}
 
 \bold{Considerazioni finali:}
-\\Per il processo di documentazione il gruppo ha necessitato lo sfruttamento di un maggior numero di risorse (umane) a causa della malattia di alcuni membri del team affinchè venissero ricoperte anche le loro mansioni. Ciò nonostante il valore di cost variance rientra nei parametri di accettazione definiti dal tale metrica.
+\\Per il processo di documentazione il gruppo ha necessitato lo sfruttamento di un maggior numero di risorse (umane) a causa della malattia di alcuni membri del \gl{team} affinchè venissero ricoperte anche le loro mansioni. Ciò nonostante il valore di cost variance rientra nei parametri di accettazione definiti dal tale metrica.
 
 
 \myparagraph{Capability Maturity Model}
 L'attità di Progettazione architetturale è iniziata con un livello di Maturity pari a 2.
-\\ Attraverso l'incremento dei documenti con ad esempio l'individuazione di nuove metriche che possano migliorare la qualità dei processi e grazie all'esperienza accumulata dai componenti del team, i processi e la loro organizzazione sono migliorati portando a raggiungere il livello 3 del modello CMM.
+\\ Attraverso l'incremento dei documenti con ad esempio l'individuazione di nuove metriche che possano migliorare la qualità dei processi e grazie all'esperienza accumulata dai componenti del \gl{team}, i processi e la loro organizzazione sono migliorati portando a raggiungere il livello 3 del modello \gl{CMM}.
 \\ Tale risultato è accettabile secondo quanto riportato nella corrispettiva metrica, ma il gruppo cercherà di migliorare ulteriormente per le attività successive.
 
 \subsubsection{Verificazione}
@@ -2007,7 +2007,7 @@ Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance s
 \bold{Considerazioni finali:}
 \begin{description}
 \item{\bold{Schedule Variance finale:}} +4 giorni.
-\\ Per il processo di verificazione il team ha ritardato di 4 giorni rispetto a quanto pianificato, a causa del ritardo provocato dalla stesura della documentazione, come riportato sopra. 
+\\ Per il processo di verificazione il \gl{team} ha ritardato di 4 giorni rispetto a quanto pianificato, a causa del ritardo provocato dalla stesura della documentazione, come riportato sopra. 
 \\ Il valore rientra in ogni caso nel range accettabile definito per tale metrica, per cui non si necessitano di misure correttive da definire.
 \end{description}
 
@@ -2023,11 +2023,11 @@ Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui t
 \end{tabella}
 
 \bold{Considerazioni finali:}
-\\Per il processo di verificazione il team ha usufruito delle risorse in proprio possesso senza alcuna necessità aggiuntiva. In tal modo i costi pianificati sono stati rispettati perfettamente.
+\\Per il processo di verificazione il \gl{team} ha usufruito delle risorse in proprio possesso senza alcuna necessità aggiuntiva. In tal modo i costi pianificati sono stati rispettati perfettamente.
 
 \myparagraph{Capability Maturity Model}
 All'inizio dell'attività di Progettazione architetturale il livello di Maturity del processo di verificazione era pari a 2.
-\\ Il team ha migliorato il proprio processo di verifica dei documenti attraverso l'utilizzo delle metriche definite in questo documento, consolidando quanto appreso nell'attività precedente e apportandone valore aggiunto, arrivando in tal modo a raggiungere il livello 3 del modello CMM.
+\\ Il \gl{team} ha migliorato il proprio processo di verifica dei documenti attraverso l'utilizzo delle metriche definite in questo documento, consolidando quanto appreso nell'attività precedente e apportandone valore aggiunto, arrivando in tal modo a raggiungere il livello 3 del modello \gl{CMM}.
 
 \subsection{Verifica dei prodotti}
 \subsubsection{Documenti}
@@ -2049,7 +2049,7 @@ Il gruppo, attraverso un processo di verifica automatica e manuale, ha riscontra
 \end{tabella}
 
 \bold{Considerazioni finali:}
-\\ Per ogni documento che abbia subito un incremento rispetto alla versione precedente, il team ha svolto un buon lavoro nella correzione degli errori ortografici; solamente nella stesura del documento \STdoc si sono riscontrati maggiori errori che non sono stati corretti subito. Ciò nonostante la percentuale di errori individuati in ogni documento rientra nella soglia di accettabilità prevista da tale metrica.
+\\ Per ogni documento che abbia subito un incremento rispetto alla versione precedente, il \gl{team} ha svolto un buon lavoro nella correzione degli errori ortografici; solamente nella stesura del documento \STdoc si sono riscontrati maggiori errori che non sono stati corretti subito. Ciò nonostante la percentuale di errori individuati in ogni documento rientra nella soglia di accettabilità prevista da tale metrica.
 
 \myparagraph{Indice Gulpease}
 Ogni documento è stato sottoposto ad uno \gl{script} che ne calcolasse l'\gl{Indice Gulpease} per valutarne il grado di leggibilità.
@@ -2067,7 +2067,7 @@ Ogni documento è stato sottoposto ad uno \gl{script} che ne calcolasse l'\gl{In
 	\rowcolor{white}  
 	\caption{Esiti dell'\gl{Indice Gulpease} - Attività di Progettazione architetturale}	    	
 \end{tabella}
-\bold{Considerazioni finali:} Dai risultati ottenuti è possibile stabilire che la maggior parte dei documenti presenta un buon grado di leggibilità. L'unico documento ad aver avuto un giudizio negativo è stata la \doc{Specifica Tecnica}, pertanto il team cercherà nella prossima attività di migliorarne il proprio grado di leggibilità.
+\bold{Considerazioni finali:} Dai risultati ottenuti è possibile stabilire che la maggior parte dei documenti presenta un buon grado di leggibilità. L'unico documento ad aver avuto un giudizio negativo è stata la \doc{Specifica Tecnica}, pertanto il \gl{team} cercherà nella prossima attività di migliorarne il proprio grado di leggibilità.
 
 \myparagraph{Errori Concettuali}
 Durante il processo di verificazione dei documenti non è stato riscontrato nessun tipo di errore concettuale all'interno dei documenti. La soglia di accettabilità in tal modo viene rispettata pienamente, raggiungendo il valore ottimale per tale metrica.
