@@ -50,7 +50,7 @@
 \section{Introduzione}
 \subsection{Scopo del documento}
 In tale documento verrà definita la progettazione ad alto livello del prodotto Quizzipedia.
-Per tale scopo vengono descritte le componenti, le classi e i design pattern utilizzati per la realizzazione del prodotto. Inoltre viene presentato il tracciamento tra le componenti e i requisiti individuati.
+Per tale scopo vengono descritte le componenti, le classi e i \gl{design pattern} utilizzati per la realizzazione del prodotto. Inoltre viene presentato il tracciamento tra le componenti e i requisiti individuati.
 
 \subsection{Scopo del prodotto}
 \SCOPO
@@ -72,27 +72,27 @@ Per tale scopo vengono descritte le componenti, le classi e i design pattern uti
 
 \item \bold{Analisi dei requisiti: } \ARdoc;
 
-\item \bold{HTML5: } \url{https://www.w3.org/TR/html5/};
+\item \bold{\gl{HTML5}: } \url{https://www.w3.org/TR/html5/};
 
-\item \bold{CSS3: } \url{https://www.w3.org/TR/CSS/};
+\item \bold{\gl{CSS3}: } \url{https://www.w3.org/TR/CSS/};
 
-\item \bold{Javascript: } \url{http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf};
+\item \bold{\gl{JavaScript}: } \url{http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf};
 
-\item \bold{PostgreSQL: } \url{http://www.postgresql.org/docs/};
+\item \bold{\gl{PostgreSQL}: } \url{http://www.postgresql.org/docs/};
 
-\item \bold{AngularJS: } \url{https://angular.io/docs/ts/latest/};
+\item \bold{\gl{AngularJS}: } \url{https://angular.io/docs/ts/latest/};
 
-\item \bold{Node.js: } \url{https://nodejs.org/api/};
+\item \bold{\gl{Node.js}: } \url{https://nodejs.org/api/};
 
-\item \bold{Express.js: } \url{http://expressjs.com/en/api.html};
+\item \bold{\gl{Express.js}: } \url{http://expressjs.com/en/api.html};
 
-\item \bold{Bootstrap: } \url{http://getbootstrap.com/css/};
+\item \bold{\gl{Bootstrap}: } \url{http://getbootstrap.com/css/};
 
-\item \bold{JSON: } \url{http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf};
+\item \bold{\gl{JSON}: } \url{http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf};
 
-\item \bold{Fabric.js: } \url{http://fabricjs.com/docs/};
+\item \bold{\gl{Fabric.js}: } \url{http://fabricjs.com/docs/};
 
-\item \bold{Socket.IO: } \url{http://socket.io/docs/}.
+\item \bold{\gl{Socket.IO}: } \url{http://socket.io/docs/}.
 
 \end{itemize}
 
@@ -102,8 +102,8 @@ Per tale scopo vengono descritte le componenti, le classi e i design pattern uti
 In questa sezione vengono presentate le tecnologie scelte per sviluppare il progetto. Per ognuna di esse verrà fornita una breve descrizione, i principali punti a favore e sfavore e, dove necessario, la versione utilizzata.
 
 \subsection{AngularJS 2.0}
-AngularJS è un framework Javascript open source, patrocinato da Google, che si ispira al pattern MVC.
-Esso semplifica la realizzazione di applicazioni web, favorendo un approccio dichiarativo allo sviluppo client-side e alla creazione interfacce utente.
+AngularJS è un \gl{framework} \gl{JavaScript} \gl{open source}, patrocinato da Google, che si ispira al pattern \gl{MVC}.
+Esso semplifica la realizzazione di applicazioni \gl{web}, favorendo un approccio dichiarativo allo sviluppo client-side e alla creazione interfacce utente.
 
 \subsubsection{Vantaggi:}
 
@@ -119,11 +119,11 @@ Esso semplifica la realizzazione di applicazioni web, favorendo un approccio dic
 
 \begin{itemize}
 	\item codice articolato;
-	\item curva di apprendimento più ripida rispetto ad altri framework.
+	\item curva di apprendimento più ripida rispetto ad altri \gl{framework}.
 \end{itemize}
 
 \subsection{Node.js}
-L'utilizzo di Node.js, associato a Tomcat, è stato consigliato dal proponente. Node.js è un sistema run-time crossplatform che utilizza l’engine Google V8 JavaScript per eseguire il codice, e viene utilizzato nello sviluppo di applicazioni real-time, lato server e di rete.
+L'utilizzo di \gl{Node.js}, associato a \gl{Tomcat}, è stato consigliato dal proponente. \gl{Node.js} è un sistema run-time crossplatform che utilizza l’engine Google V8 \gl{JavaScript} per eseguire il codice, e viene utilizzato nello sviluppo di applicazioni real-time, lato \gl{server} e di rete.
 
 \subsubsection{Vantaggi:}
 
@@ -143,27 +143,27 @@ L'utilizzo di Node.js, associato a Tomcat, è stato consigliato dal proponente. 
 \end{itemize}
 
 \subsection{Express.js}
-Express.js è un framework di Node.js che mette a disposizione un middleware utilizzabile per la realizzazione dell’infrastruttura web.
+Express.js è un \gl{framework} di \gl{Node.js} che mette a disposizione un \gl{middleware} utilizzabile per la realizzazione dell’infrastruttura \gl{web}.
 
 \subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item permette di estendere il modulo HTTP di Node.js, facilitando la gestione dell’indirizzamento del server, delle risposte, dei cookie e delle richieste di stato HTTP.
+	\item permette di estendere il modulo HTTP di \gl{Node.js}, facilitando la gestione dell’indirizzamento del \gl{server}, delle risposte, dei cookie e delle richieste di stato HTTP.
 \end{itemize}
 
 \subsubsection{Svantaggi:}
 
 \begin{itemize}
-	\item non sono stati rilevati grossi svantaggi nell'uso di Express.js, che risulta essere un buon framework per estendere il modulo HTTP di Node.js.
+	\item non sono stati rilevati grossi svantaggi nell'uso di \gl{Express.js}, che risulta essere un buon \gl{framework} per estendere il modulo HTTP di \gl{Node.js}.
 \end{itemize}
 
 \subsection{PostgreSQL}
-Si è deciso di utilizzare PostgreSQL come database. PostgreSQL è un avanzato database relazionale ad oggetti, ricco e open source, che pone particolare attenzione a estensibilità e conformità agli standard.
+Si è deciso di utilizzare \gl{PostgreSQL} come \gl{database}. \gl{PostgreSQL} è un avanzato \gl{database} relazionale ad oggetti, ricco e \gl{open source}, che pone particolare attenzione a estensibilità e conformità agli standard.
 \subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item il gruppo ha più familiarità con database relazionali;
-	\item le query sono più flessibili rispetto a MongoDB;
+	\item il gruppo ha più familiarità con \gl{database} relazionali;
+	\item le query sono più flessibili rispetto a \gl{MongoDB};
 	\item supporto di transazioni.
 \end{itemize}
 
@@ -171,28 +171,28 @@ Si è deciso di utilizzare PostgreSQL come database. PostgreSQL è un avanzato d
 
 \begin{itemize}
 	\item relativamente poco performante;
-	\item non è mai stato usato dai componenti del team in passato.
+	\item non è mai stato usato dai componenti del \gl{team} in passato.
 \end{itemize}
 
 \subsection{HTML5}
-Si è deciso di usare HTML5 come linguaggio di markup per la creazione delle pagine web. HTML5 è la quinta versione dello standard HTML (HyperText Markup Language), il linguaggio di markup standard utilizzato per creare e presentare contenuti nel \gl{Web}.
+Si è deciso di usare \gl{HTML5} come \gl{linguaggio di markup} per la creazione delle pagine \gl{web}. \gl{HTML5} è la quinta versione dello standard \gl{HTML} (HyperText Markup Language), il \gl{linguaggio di markup} standard utilizzato per creare e presentare contenuti nel \gl{Web}.
 
 \subsubsection{Vantaggi:}
 
 \begin{itemize}
 	\item facilità nella creazione di pagine adattabili;
 	\item maggiore flessibilità rispetto alle versioni precedenti;
-	\item supporta l'elemento grafico Canvas, che permette di utilizzare Javascript per creare animazioni e grafica.
+	\item supporta l'elemento grafico \gl{Canvas}, che permette di utilizzare \gl{JavaScript} per creare animazioni e grafica.
 \end{itemize}
 
 \subsubsection{Svantaggi:}
 
 \begin{itemize}
-	\item tecnologia non pienamente supportata da tutti i browser.
+	\item tecnologia non pienamente supportata da tutti i \gl{browser}.
 \end{itemize}
 
 \subsection{CSS3}
-Si è deciso di utilizzare CSS3 come linguaggio per la formattazione dei documenti HTML. CSS3 è l'ultima versione dello standard CSS (Cascading Style Sheets), che si occupa della presentazione di contenuti scritti in un linguaggio di markup.
+Si è deciso di utilizzare \gl{CSS3} come linguaggio per la formattazione dei documenti \gl{HTML}. \gl{CSS3} è l'ultima versione dello standard \gl{CSS} (Cascading Style Sheets), che si occupa della presentazione di contenuti scritti in un \gl{linguaggio di markup}.
 
 \subsubsection{Vantaggi:}
 
@@ -205,20 +205,20 @@ Si è deciso di utilizzare CSS3 come linguaggio per la formattazione dei documen
 \subsubsection{Svantaggi:}
 
 \begin{itemize}
-	\item l’unico svantaggio rilevato dall’uso di CSS3 è dato dal fatto che, essendo un linguaggio ancora in via di sviluppo, è supportato pienamente solo dai web browser più recenti;
+	\item l’unico svantaggio rilevato dall’uso di \gl{CSS3} è dato dal fatto che, essendo un linguaggio ancora in via di sviluppo, è supportato pienamente solo dai \gl{web} \gl{browser} più recenti;
 	\item non è riconosciuto come standard attuale per cui ci potrebbero essere dei malfunzionamenti nell'uso della propria sintassi. 
 \end{itemize}
 
 \subsection{Bootstrap}
-Bootstrap è uno dei più noti framework per lo sviluppo di interfacce web. Bootstrap contiene modelli di progettazione basati su HTML e CSS, sia per la tipografia che per le varie componenti dell'interfaccia, come moduli, bottoni e navigazione e altri componenti dell'interfaccia, così come alcune estensioni opzionali di Javascript.
+Bootstrap è uno dei più noti \gl{framework} per lo sviluppo di interfacce \gl{web}. \gl{Bootstrap} contiene modelli di progettazione basati su \gl{HTML} e \gl{CSS}, sia per la tipografia che per le varie componenti dell'interfaccia, come moduli, bottoni e navigazione e altri componenti dell'interfaccia, così come alcune estensioni opzionali di \gl{JavaScript}.
 
 \subsubsection{Vantaggi:}
 
 \begin{itemize}
 	\item offre una utile struttura standardizzata;
-	\item supporta i maggiori browser, diminuendo il rischio di incorrere in problemi di compatibilità;
+	\item supporta i maggiori \gl{browser}, diminuendo il rischio di incorrere in problemi di compatibilità;
 	\item è leggero e performante;
-	\item vari plugin di Javascript sono già inclusi;
+	\item vari plugin di \gl{JavaScript} sono già inclusi;
 	\item è dotato di una buona documentazione.
 \end{itemize}
 
@@ -229,17 +229,17 @@ Bootstrap è uno dei più noti framework per lo sviluppo di interfacce web. Boot
 	\item i siti hanno un aspetto simile in carenza di customizzazione.
 \end{itemize}
 
-\subsection{Javascript}
-Javascript è un linguaggio di scripting orientato agli oggetti e agli eventi, comunemente utilizzato nella programmazione Web lato client per ottenere effetti dinamici interattivi in siti e applicazioni web. Gli effetti sono ottenuti tramite funzioni di script invocate da eventi innescati dall'utente nella pagina web in uso.
+\subsection{JavaScript}
+JavaScript è un linguaggio di scripting orientato agli oggetti e agli eventi, comunemente utilizzato nella programmazione \gl{Web} lato \gl{client} per ottenere effetti dinamici interattivi in siti e applicazioni \gl{web}. Gli effetti sono ottenuti tramite funzioni di \gl{script} invocate da eventi innescati dall'utente nella pagina \gl{web} in uso.
 
 \subsubsection{Vantaggi:}
 
 \begin{itemize}
 	\item la velocità di risposta dell'applicazione è elevata grazie all'esecuzione locale;
-	\item Javascript permette un'elevata libertà espressiva;
+	\item \gl{JavaScript} permette un'elevata libertà espressiva;
 	\item è possibile validare in prima istanza i dati inseriti dall'utente;
 	\item migliore interazione tra utente e pagine;
-	\item gestione dei Canvas.
+	\item gestione dei \gl{Canvas}.
 \end{itemize}
 
 \subsubsection{Svantaggi:}
@@ -251,12 +251,12 @@ Javascript è un linguaggio di scripting orientato agli oggetti e agli eventi, c
 \end{itemize}
 
 \subsection{JSON}
-Si è deciso di usare JSON come formato per lo scambio dati tra client e server. JSON (JavaScript Object Notation) è un formato di scambio di dati lightweight e indipendente dal linguaggio di programmazione utilizzato.
+Si è deciso di usare \gl{JSON} come formato per lo scambio dati tra \gl{client} e \gl{server}. \gl{JSON} (\gl{JavaScript} Object Notation) è un formato di scambio di dati lightweight e indipendente dal linguaggio di programmazione utilizzato.
 
 \subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item utilizzare JSON con Javascript è semplice;
+	\item utilizzare \gl{JSON} con \gl{JavaScript} è semplice;
 	\item il parsing è facile nei linguaggi più noti.
 \end{itemize}
 
@@ -266,7 +266,7 @@ Si è deciso di usare JSON come formato per lo scambio dati tra client e server.
 	\end{itemize}
 
 \subsection{Fabric.js}
-Si è stabilito di usare Fabric.js per la gestione dei canvas. Fabric.js è una potente libreria grafica basata su HTML5 e Javascript che fornisce un modello interattivo sovrapposto all'elemento Canvas, consentendo la manipolazione di immagini ed elementi grafici.
+Si è stabilito di usare \gl{Fabric.js} per la gestione dei \gl{canvas}. \gl{Fabric.js} è una potente libreria grafica basata su \gl{HTML5} e \gl{JavaScript} che fornisce un modello interattivo sovrapposto all'elemento \gl{Canvas}, consentendo la manipolazione di immagini ed elementi grafici.
 
 \subsubsection{Vantaggi:}
 
@@ -277,18 +277,18 @@ Si è stabilito di usare Fabric.js per la gestione dei canvas. Fabric.js è una 
 
 \subsubsection{Svantaggi:}
 \begin{itemize}
-	\item mostrare lo stesso canvas g con dimensioni diverse da quelle di default è complicato.
+	\item mostrare lo stesso \gl{canvas} g con dimensioni diverse da quelle di default è complicato.
 \end{itemize}
 
 
 
 \subsection{Socket.IO}
-Socket.IO è una libreria Javascript che permette comunicazioni real-time bidirezionali e basate su eventi.
+Socket.IO è una libreria \gl{JavaScript} che permette comunicazioni real-time bidirezionali e basate su eventi.
 
 \subsubsection{Vantaggi:}
 
 \begin{itemize}
-	\item permette di creare comunicazioni bidirezionali tra client e server;
+	\item permette di creare comunicazioni bidirezionali tra \gl{client} e \gl{server};
 	\item gestisce la connessione in modo trasparente.
 \end{itemize}
 
@@ -302,32 +302,32 @@ Socket.IO è una libreria Javascript che permette comunicazioni real-time bidire
 	\section{Descrizione architettura}
 	\subsection{Metodo e formalismo di specifica}
 	
-	L'architettura del prodotto sarà presentata con un approccio top-down, descrivendo la struttura dal generale al particolare. Verranno prima trattate le componenti e i package, per passare poi alle classi, di cui si descriveranno la funzione, i metodi principali e le relazioni con le altre classi. La descrizione dell'architettura non includerà classi e metodi nella loro interezza, ma soltanto quelli fondamentali. Le sottoclassi e i metodi rimanenti verranno inclusi nell'attività di Progettazione di Dettaglio.
+	L'architettura del prodotto sarà presentata con un approccio top-down, descrivendo la struttura dal generale al particolare. Verranno prima trattate le componenti e i \gl{package}, per passare poi alle classi, di cui si descriveranno la funzione, i metodi principali e le relazioni con le altre classi. La descrizione dell'architettura non includerà classi e metodi nella loro interezza, ma soltanto quelli fondamentali. Le sottoclassi e i metodi rimanenti verranno inclusi nell'attività di Progettazione di Dettaglio.
 	\newline
-	Una volta descritte le componenti e le classi, si illustreranno i design pattern utilizzati nel sistema. 
+	Una volta descritte le componenti e le classi, si illustreranno i \gl{design pattern} utilizzati nel sistema. 
 	\newline
-	I diagrammi di package, classi e attività inclusi si attengono alla specifica UML 2.0.
+	I diagrammi di \gl{package}, classi e attività inclusi si attengono alla specifica \gl{UML} 2.0.
 	
 	\subsection{Architettura generale}
-	L'architettura del prodotto ha un'impostazione client-server e segue il design pattern MVC. 
+	L'architettura del prodotto ha un'impostazione client-server e segue il \gl{design pattern} \gl{MVC}. 
 	\newline
 	L'architettura generale segue il pattern Three-Tier, è quindi suddivisa in tre livelli:
 	\begin{enumerate}
-		\item Client (Presentation Tier).
-		\item Server (Logic Tier).
-		\item Database (Data Tier).
+		\item \gl{Client} (Presentation Tier).
+		\item \gl{Server} (Logic Tier).
+		\item \gl{Database} (Data Tier).
 	\end{enumerate}
 	
 	\subsubsection{Client}
-	La parte client è divisa in Model, View e Controller. È il livello più alto dell'applicazione e interagisce con l'utente finale.
+	La parte \gl{client} è divisa in Model, View e Controller. È il livello più alto dell'applicazione e interagisce con l'utente finale.
 	\newline
-	AngularJS è utilizzato client-side per rispettare il pattern MVC.
+	AngularJS è utilizzato client-side per rispettare il pattern \gl{MVC}.
 	
 	\subsubsection{Server}
-	La parte server è divisa in Model e Controller. Gestisce la logica di business e interroga il database per passarne i dati al client.
+	La parte \gl{server} è divisa in Model e Controller. Gestisce la logica di business e interroga il \gl{database} per passarne i dati al \gl{client}.
 	
 	\subsubsection{Database}
-	Il database memorizza i dati e li isola dal resto del sistema. Il database è implementato con PostgreSQL. 
+	Il \gl{database} memorizza i dati e li isola dal resto del sistema. Il \gl{database} è implementato con \gl{PostgreSQL}. 
 	
 	\subsection{SOAP}
 	Abbiamo deciso di utilizzare il protocollo SOAP (Simple Object Access Protocol).
@@ -1057,35 +1057,35 @@ Il docente può cercare domande nel sistema. Ha la possibilità di limitare la r
 \newpage
 \appendix
 \section{Design Pattern}
-In questa sezione vengono presentati i design pattern che al momento sono stati stabiliti dal team per l'architettura del nostro prodotto.
+In questa sezione vengono presentati i \gl{design pattern} che al momento sono stati stabiliti dal \gl{team} per l'architettura del nostro prodotto.
 
 \subsection{Model-View-Controller (MVC)}
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=0.50]{Img/MVC.jpg}
-\caption{Design Pattern MVC}
+\caption{Design Pattern \gl{MVC}}
 \label{} 
 \end{figure}
-Il Model-View-Controller (MVC) è un design pattern architetturale utilizzato per dividere il codice in blocchi di funzionalità ben distinte, e viene utilizzato molto frequentemente nelle applicazioni in cui un insieme di informazioni deve essere rappresentato attraverso una interfaccia grafica.
+Il Model-View-Controller (\gl{MVC}) è un \gl{design pattern} architetturale utilizzato per dividere il codice in blocchi di funzionalità ben distinte, e viene utilizzato molto frequentemente nelle applicazioni in cui un insieme di informazioni deve essere rappresentato attraverso una interfaccia grafica.
 
 \subsubsection{Componenti}
-MVC è basato sul principio del disaccoppiamento dei tre oggetti di cui è composto, ovvero sulla riduzione del loro grado di dipendenza reciproca, allo scopo di fornire una maggiore robustezza, modularità e manutenibilità al software.
+MVC è basato sul principio del disaccoppiamento dei tre oggetti di cui è composto, ovvero sulla riduzione del loro grado di dipendenza reciproca, allo scopo di fornire una maggiore robustezza, modularità e manutenibilità al \gl{software}.
 \newline Di seguito viene riportata una breve descrizione delle sue componenti e delle loro caratteristiche.
 
 \myparagraph{Model}
 Il Model è il nucleo dell’applicazione. Definisce il modello dei dati realizzando la business logic definendo gli oggetti secondo la logica di utilizzo dell’applicazione e indicando inoltre le possibili operazioni effettuabili su di essi.
 \newline Questa componente viene generalmente progettata attraverso tecniche object oriented.
-\newline Nella struttura del pattern MVC, il Model è una componente passiva, che non ha relazioni uscenti forti, ma si occupa di notificare alla View eventuali aggiornamenti attraverso il Controller.
+\newline Nella struttura del pattern \gl{MVC}, il Model è una componente passiva, che non ha relazioni uscenti forti, ma si occupa di notificare alla View eventuali aggiornamenti attraverso il Controller.
 
 \myparagraph{View}
 La View si occupa di visualizzare i dati contenuti nel Model e fornisce l’interfaccia di interazione con gli utenti che utilizzeranno il sistema.
-Nella struttura del pattern MVC, la View cattura gli input dell’utente e li passa al Controller affinché esegua le corrette operazioni sul Model.
+Nella struttura del pattern \gl{MVC}, la View cattura gli input dell’utente e li passa al Controller affinché esegua le corrette operazioni sul Model.
 \newline La View può essere soggetta a due tipi di aggiornamento:
 \begin{description}
 \item{Push model} 
-\\Il Push model viene implementato attraverso il pattern Observer e soltanto quando MVC è usato in un solo ambiente di esecuzione; consiste nel fatto che sia il Model a emettere, senza essere sollecitato, la notifica in seguito alla quale la View verrà aggiornata.
+\\Il Push model viene implementato attraverso il pattern Observer e soltanto quando \gl{MVC} è usato in un solo ambiente di esecuzione; consiste nel fatto che sia il Model a emettere, senza essere sollecitato, la notifica in seguito alla quale la View verrà aggiornata.
 \item{Pull model}
-\\Il Pull model viene invece implementato quando MVC è usato su diversi ambienti di esecuzione; in questo caso la View richiede al Model se sia necessario un aggiornamento solo al verificarsi di particolari eventi.
+\\Il Pull model viene invece implementato quando \gl{MVC} è usato su diversi ambienti di esecuzione; in questo caso la View richiede al Model se sia necessario un aggiornamento solo al verificarsi di particolari eventi.
 \end{description}
 
 \myparagraph{Controller}
@@ -1093,10 +1093,10 @@ Il Controller è la componente fondamentale di comunicazione tra la View ed il M
 \newline Poiché potenzialmente possono esistere più View sarà necessario attribuire per ogni View un corrispondente Controller.
 
 \subsubsection{Vantaggi}
-L'utilizzo del design pattern MVC porta la riduzione delle dipendenze tra le componenti dell'architettura, offrendo diversi vantaggi. La modularità ottenuta inoltre permette il riutilizzo del Model in applicazioni con diverse View, oltre a rendere più semplice e rapida l’esecuzione dei test.
+L'utilizzo del \gl{design pattern} \gl{MVC} porta la riduzione delle dipendenze tra le componenti dell'architettura, offrendo diversi vantaggi. La modularità ottenuta inoltre permette il riutilizzo del Model in applicazioni con diverse View, oltre a rendere più semplice e rapida l’esecuzione dei test.
 
 \subsubsection{Svantaggi}
-L’utilizzo di MVC nello sviluppo di un software presenta anche degli svantaggi in qualità di costi: la complessità risulta maggiore e si necessita un maggior  numero di aggiornamenti.
+L’utilizzo di \gl{MVC} nello sviluppo di un \gl{software} presenta anche degli svantaggi in qualità di costi: la complessità risulta maggiore e si necessita un maggior  numero di aggiornamenti.
 \newline La maggiore complessità è causata dai livelli di indirezione introdotti dal pattern e dall’implementazione ad eventi necessaria per far comunicare le tre componenti.
 \newline La maggiore frequenza degli aggiornamenti, invece, è un effetto collaterale della modularizzazione dal momento che frequenti cambiamenti alla struttura del modello comportano spesso dei cambiamenti nelle View ed anche nei Controller.
 
@@ -1104,22 +1104,22 @@ L’utilizzo di MVC nello sviluppo di un software presenta anche degli svantaggi
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=0.50]{Img/MVVM.png}
-\caption{Design Pattern MVVM}
+\caption{Design Pattern \gl{MVVM}}
 \label{} 
 \end{figure}
-L'utilizzo di AngularJS all'interno del progetto porta a non implementare unicamente il design pattern MVC, ma 
-necessita dell'implementazione di una sua variante, il Model-View-ViewModel (MVVM).
+L'utilizzo di \gl{AngularJS} all'interno del progetto porta a non implementare unicamente il \gl{design pattern} \gl{MVC}, ma 
+necessita dell'implementazione di una sua variante, il Model-View-ViewModel (\gl{MVVM}).
 
 \subsubsection{Componenti}
-Segue una breve descrizione delle componenti che caratterizzano il pattern MVVM.
+Segue una breve descrizione delle componenti che caratterizzano il pattern \gl{MVVM}.
 
 \begin{description}
 \item{Model} 
-\\ Il Model è il dato nell’applicazione, che viene rappresentato tramite un normale oggetto JavaScript.
+\\ Il Model è il dato nell’applicazione, che viene rappresentato tramite un normale oggetto \gl{JavaScript}.
 \item{ViewModel}
 \\ Il ViewModel fa da intermediario tra la vista e il modello, ed è responsabile per la gestione della logica della vista. In generale interagisce con il modello invocando i metodi presenti nelle sue classi.
 Il ViewModel fornisce quindi i dati dal modello in una forma che la vista possa interpretare facilmente.
-\newline Con Angular il ViewModel sarà rappresentato dall’oggetto \$scope, una specie di variabile globale JavaScript che grazie alle proprie API permetterà di rilevare e trasmette i cambiamenti di stato.
+\newline Con Angular il ViewModel sarà rappresentato dall’oggetto \$scope, una specie di variabile globale \gl{JavaScript} che grazie alle proprie API permetterà di rilevare e trasmette i cambiamenti di stato.
 \item{Controller}
 \\ Il controller è il responsabile dell’impostare lo stato iniziale e aumentare lo \$scope con metodi che controllano il comportamento.
 \item{View}
@@ -1132,19 +1132,19 @@ Lo \$scope ha un riferimento ai dati, il controller definisce il comportamento, 
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=0.75]{Img/dao.jpg}
-\caption{Design Pattern DAO}
+\caption{Design Pattern \gl{DAO}}
 \label{}
 \end{figure}
-Il Data-Access-Object è un design pattern strutturale che permette di svolgere delle specifiche operazioni sui dati senza conoscere i dettagli del database. Questa separazione supporta il Principio di singola responsabilità: separa l'accesso a quali dati l'applicazione necessita dal come questi dati vengono reperiti attraverso il database.
+Il Data-Access-Object è un \gl{design pattern} strutturale che permette di svolgere delle specifiche operazioni sui dati senza conoscere i dettagli del \gl{database}. Questa separazione supporta il Principio di singola responsabilità: separa l'accesso a quali dati l'applicazione necessita dal come questi dati vengono reperiti attraverso il \gl{database}.
 Pertanto questo pattern viene utilizzato per disaccoppiare la logica di business dalla logica di accesso ai dati. 
 
 \subsubsection{Vantaggi}
 Il vantaggio di usare questo pattern è rappresentato dalla sua semplicità e dalla rigorosa separazione tra le due principali parti dell'applicazione che non necessitano di conoscere ogni aspetto l'una dell'altra e che permettono di essere espanse in modo indipendente.
-Tutti i dettagli del salvataggio dei dati sono nascosti dal resto dell'applicazione, in questo modo possono essere cambiati senza influenzare tutto il resto dell'applicazione, ma modificando soltanto una implementazione del DAO.
-\newline Il DAO pertanto funge da intermediario tra l'applicazione e il database.
+Tutti i dettagli del salvataggio dei dati sono nascosti dal resto dell'applicazione, in questo modo possono essere cambiati senza influenzare tutto il resto dell'applicazione, ma modificando soltanto una implementazione del \gl{DAO}.
+\newline Il \gl{DAO} pertanto funge da intermediario tra l'applicazione e il \gl{database}.
 
 \subsubsection{Svantaggi}
-Questo pattern, pur essendo pochi, presenta comunque degli svantaggi. Il più importante riguarda la duplicazione di codice che comparirà in ogni singolo DAO presente nell'applicazione. Infatti viene creata un DAO per ogni entità presente nel sistema, che conterrà i metodi necessari per interagire con il database, ad esempio metodi per ricercare, inserire, modificare,rimuovere e aggiornare i dati.
+Questo pattern, pur essendo pochi, presenta comunque degli svantaggi. Il più importante riguarda la duplicazione di codice che comparirà in ogni singolo \gl{DAO} presente nell'applicazione. Infatti viene creata un \gl{DAO} per ogni entità presente nel sistema, che conterrà i metodi necessari per interagire con il \gl{database}, ad esempio metodi per ricercare, inserire, modificare,rimuovere e aggiornare i dati.
 
 \subsection{Microservices Architecture}
 \begin{figure}[htp]
@@ -1160,21 +1160,21 @@ Il Microservice Architecture è un pattern architetturale ancora giovane, il cui
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=0.60]{Img/builder.png}
-\caption{Design Pattern Builder}
+\caption{Design Pattern \gl{Builder}}
 \label{}
 \end{figure}
-Il Builder è un design pattern creazionale utilizzato per separare la costruzione di un oggetto complesso dalla sua effettiva rappresentazione. In tal modo l'algoritmo di costruzione di oggetti di tipi diversi sarà indipendente da i vari step necessari alla loro realizzazione.
-\\ Il vantaggio di ciò è rendere la classe più semplice assegnando il compito ad una classe builder di costruire effettivamente l'oggetto complesso; in tal modo la classe potrà focalizzarsi sul corretto funzionamento degli oggetti creati.
+Il \gl{Builder} è un \gl{design pattern} creazionale utilizzato per separare la costruzione di un oggetto complesso dalla sua effettiva rappresentazione. In tal modo l'algoritmo di costruzione di oggetti di tipi diversi sarà indipendente da i vari step necessari alla loro realizzazione.
+\\ Il vantaggio di ciò è rendere la classe più semplice assegnando il compito ad una classe \gl{builder} di costruire effettivamente l'oggetto complesso; in tal modo la classe potrà focalizzarsi sul corretto funzionamento degli oggetti creati.
 Inoltre le modifiche apportate alla rappresentazione interna di un prodotto saranno semplificate.
-\\ Tale design pattern verrà successivamente utilizzato per la costruzione del menù nel lato client del sistema.
+\\ Tale \gl{design pattern} verrà successivamente utilizzato per la costruzione del menù nel lato \gl{client} del sistema.
 
 \subsubsection{Componenti}
-\begin{description}\item{Builder}
+\begin{description}\item{\gl{Builder}}
 \\ Specifica l'interfaccia astratta che crea le parti dell'oggetto Product.
 \item {ConcreteBuilder} 
-\\Costruisce e assembla le parti del prodotto implementando l'interfaccia Builder; definisce e tiene inoltre traccia della rappresentazione che crea.
+\\Costruisce e assembla le parti del prodotto implementando l'interfaccia \gl{Builder}; definisce e tiene inoltre traccia della rappresentazione che crea.
 \item{Director} 
-\\Costruisce un oggetto utilizzando l'interfaccia Builder.
+\\Costruisce un oggetto utilizzando l'interfaccia \gl{Builder}.
 \item{Product} 
 \\Rappresenta l'oggetto complesso e include le classi che definiscono le parti che lo compongono, includendo le interfacce per assemblare le parti nel risultato finale.
 \end{description}
