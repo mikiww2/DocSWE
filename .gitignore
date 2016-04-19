@@ -18,7 +18,12 @@
 **/*.toc
 
 # pdf documenti finali (lascia versionati diagrammi UC)
-*.pdf
+**/AnalisiDeiRequisiti/*.pdf
+**/Glossario/*.pdf
+**/PianoDiProgetto/*.pdf
+**/PianoDiQualifica/*.pdf
+**/NormeDiProgetto/*.pdf
+**/SpecificaTecnica/*.pdf
 pdfdoc
 
 #file di log
