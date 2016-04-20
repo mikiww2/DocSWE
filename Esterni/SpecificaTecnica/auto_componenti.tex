@@ -1,12 +1,12 @@
 \subsection{Quizzipedia::Client}
-Racchiude tutte le componenti necessarie per il \gl{front-end} del prodotto. Visualizza i dati dell'utente e invia richieste al \gl{server}.
+Racchiude tutte le componenti necessarie per il front-end del prodotto. Visualizza i dati dell'utente e invia richieste al server.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client.pdf}}
-\caption[Schema Componente \gl{Client}]{Schema Componente Quizzipedia::Client}
+\caption[Schema Componente Client]{Schema Componente Quizzipedia::Client}
 \end{figure}
 \subsection{Quizzipedia::Client::ModelClient}
-Rappresenta il modello dei dati che verranno utilizzati dal sistema lato \gl{client}.
+Rappresenta il modello dei dati che verranno utilizzati dal sistema lato client.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient.pdf}}
@@ -59,7 +59,7 @@ La classe contiene le informazioni relative alla struttura dell'ente.
 \caption[Schema Classe Institution]{Schema Classe Quizzipedia::Client::ModelClient::Organization::Institution}
 \end{figure}
 \subsection{Quizzipedia::Client::ModelClient::Requests}
-Questo \gl{package} contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti.
+Questo package contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests.pdf}}
@@ -119,7 +119,7 @@ Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo 
 \item Quizzipedia::Client::ModelClient::Users::NoRole
 \end{itemize}
 \subsection{Quizzipedia::Client::ModelClient::Services}
-Il \gl{package} racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
+Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services.pdf}}
@@ -293,7 +293,7 @@ Viene descritta la struttura delle domande che prevedono di decidere la veridici
 \item Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion
 \end{itemize}
 \subsection{Quizzipedia::Client::ModelClient::Statistics}
-Qui sono raccolte le classi con il compito di reperire informazioni sulle statistiche dal \gl{server} e presentarle al'utente finale. Sono disponibili statistiche per le domande, per i quiz e per gli studenti di ogni classe.
+Qui sono raccolte le classi con il compito di reperire informazioni sulle statistiche dal server e presentarle al'utente finale. Sono disponibili statistiche per le domande, per i quiz e per gli studenti di ogni classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics.pdf}}
@@ -530,21 +530,47 @@ Racchiude tutte le componenti necessarie per presentare il prodotto all'utente.
 \item Quizzipedia::Client::ControllerClient
 \end{itemize}
 \subsection{Quizzipedia::Client::ViewClient::ViewErrors}
-Il \gl{package} raccoglie tutte le finestre di errore che il sistema può, eventualmente, visualizzare.
+Il package raccoglie tutte le finestre di errore che il sistema può, eventualmente, visualizzare.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewErrors]{Schema Componente Quizzipedia::Client::ViewClient::ViewErrors}
+\end{figure}
 \subsubsection{Classe ViewAuthenticationErr}
 La classe si occupa della visualizzazione del messaggio di errore in fase di autenticazione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewauthenticationerr.pdf}}
+\caption[Schema Classe ViewAuthenticationErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewAuthenticationErr}
+\end{figure}
 \subsubsection{Classe ViewModifyPwErr}
 La classe si occupa della visualizzazione del messaggio di errore in fase modifica della password.
-
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewmodifypwerr.pdf}}
+\caption[Schema Classe ViewModifyPwErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyPwErr}
+\end{figure}
 \subsubsection{Classe ViewModifyQuizErr}
 La classe si occupa della visualizzazione del messaggio di errore in fase di modifica di un quiz.
-
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewmodifyquizerr.pdf}}
+\caption[Schema Classe ViewModifyQuizErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyQuizErr}
+\end{figure}
 \subsubsection{Classe ViewRecoveryErr}
 La classe si occupa della visualizzazione del messaggio di errore in fase di recupero password.
-
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewrecoveryerr.pdf}}
+\caption[Schema Classe ViewRecoveryErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewRecoveryErr}
+\end{figure}
 \subsubsection{Classe ViewRegistrationErr}
 La classe si occupa della visualizzazione del messaggio di errore in fase di registrazione.
-
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewregistrationerr.pdf}}
+\caption[Schema Classe ViewRegistrationErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewRegistrationErr}
+\end{figure}
 \subsection{Quizzipedia::Client::ViewClient::ViewOrgManager}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti.
 \begin{figure}[H]
@@ -679,14 +705,18 @@ Presenta all'utente una pagina da cui è possibile modificare un quiz esistente.
 \end{itemize}
 \subsubsection{Classe ViewQuizList}
 Carica una pagina contenente una lista con informazioni riassuntive sui quiz e un pannello da cui sarà possibile svolgere delle operazioni sugli stessi.
-
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-viewquizlist.pdf}}
+\caption[Schema Classe ViewQuizList]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizManager::ViewQuizList}
+\end{figure}
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Uscenti}
 \begin{itemize}
 \item Quizzipedia::Client::ControllerClient::CtrlServices::CtrlQuiz
 \end{itemize}
 \subsection{Quizzipedia::Client::ViewClient::ViewQuizSolver}
-Il \gl{package} raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile svolgere quiz.
+Il package raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile svolgere quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver.pdf}}
@@ -714,7 +744,7 @@ La classe ha il compito di costruire la pagina da cui sarà possibile vedere l'e
 \item Quizzipedia::Client::ControllerClient::CtrlServices::CtrlQuiz
 \end{itemize}
 \subsection{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver}
-Il \gl{package} raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile rispondere alle singole domande.
+Il package raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile rispondere alle singole domande.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver.pdf}}
@@ -841,7 +871,7 @@ Classe responsabile della visualizzazione del pannello da cui sarà possibile ge
 \item Quizzipedia::Client::ControllerClient::CtrlRequests::CtrlRequestRole
 \end{itemize}
 \subsection{Quizzipedia::Client::ViewClient::ViewSearch}
-Il \gl{package} contiene le classi responsabili della creazione delle pagine da cui sarà possibile ricercare domande, quiz e classi .
+Il package contiene le classi responsabili della creazione delle pagine da cui sarà possibile ricercare domande, quiz e classi .
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch.pdf}}
@@ -891,6 +921,11 @@ Raccoglie i metodi necessari alla creazione della pagina da cui sarà possibile 
 \end{itemize}
 \subsection{Quizzipedia::Client::ViewClient::ViewStatistics}
 Package che gestisce le pagine in cui verranno visualizzate le statistiche.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics]{Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics}
+\end{figure}
 \subsubsection{Interazioni con altre componenti}
 \myparagraph{Uscenti}
 \begin{itemize}
@@ -898,7 +933,11 @@ Package che gestisce le pagine in cui verranno visualizzate le statistiche.
 \end{itemize}
 \subsubsection{Classe ViewClassStats}
 Vengono rappresentate le statistiche relative a una singola classe in relazione a un particolare quiz.
-
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewclassstats.pdf}}
+\caption[Schema Classe ViewClassStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewClassStats}
+\end{figure}
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Uscenti}
 \begin{itemize}
@@ -906,7 +945,11 @@ Vengono rappresentate le statistiche relative a una singola classe in relazione 
 \end{itemize}
 \subsubsection{Classe ViewQuestionStats}
 Vengono rappresentate le statistiche generali relative alle domande.
-
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquestionstats.pdf}}
+\caption[Schema Classe ViewQuestionStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuestionStats}
+\end{figure}
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Uscenti}
 \begin{itemize}
@@ -914,7 +957,11 @@ Vengono rappresentate le statistiche generali relative alle domande.
 \end{itemize}
 \subsubsection{Classe ViewQuizStats}
 Vengono rappresentate le statistiche generali riguardanti i quiz.
-
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquizstats.pdf}}
+\caption[Schema Classe ViewQuizStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuizStats}
+\end{figure}
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Uscenti}
 \begin{itemize}
@@ -1018,7 +1065,11 @@ La classe presenta all'utente la pagina da cui prendere visione delle proprie in
 \end{itemize}
 \subsubsection{Classe RecoveryPw}
 Da questa pagina sarà possibile inserire i dati per il recupero della password.
-
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-recoverypw.pdf}}
+\caption[Schema Classe RecoveryPw]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::RecoveryPw}
+\end{figure}
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Uscenti}
 \begin{itemize}
@@ -1129,7 +1180,7 @@ Vi sono presenti metodi necessari alla creazione degli enti.
 \item Quizzipedia::Client::ControllerClient::CtrlOrganization::CtrlClass
 \end{itemize}
 \subsection{Quizzipedia::Client::ControllerClient::CtrlRequests}
-Questo \gl{package} contiene classi necessarie alla gestione delle richieste di ruolo o classe.
+Questo package contiene classi necessarie alla gestione delle richieste di ruolo o classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-controllerclient-ctrlrequests.pdf}}
@@ -1299,7 +1350,7 @@ Classe necessaria al caricamento delle statistiche relative ai quiz, alle domand
 \item Quizzipedia::Client::ModelClient::Statistics::GenericQuiz
 \end{itemize}
 \subsection{Quizzipedia::Client::ControllerClient::CtrlUsers}
-Il \gl{package} raccoglie le classi che permettono la comunicazione per quanto riguarda funzioni e dati dell'utente.
+Il package raccoglie le classi che permettono la comunicazione per quanto riguarda funzioni e dati dell'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-controllerclient-ctrlusers.pdf}}
@@ -1350,14 +1401,14 @@ La classe permette agli utenti di gestire il proprio profilo personale.
 \item Quizzipedia::Client::ModelClient::Users::User
 \end{itemize}
 \subsection{Quizzipedia::Server}
-Racchiude tutte le componenti necessarie per il \gl{back-end} del prodotto. Contiene anche le componenti che si occupano del \gl{QML}.
+Racchiude tutte le componenti necessarie per il back-end del prodotto. Contiene anche le componenti che si occupano del QML.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server.pdf}}
-\caption[Schema Componente \gl{Server}]{Schema Componente Quizzipedia::Server}
+\caption[Schema Componente Server]{Schema Componente Quizzipedia::Server}
 \end{figure}
 \subsection{Quizzipedia::Server::ModelServer}
-Rappresenta il modello dei dati che verranno utilizzati dal sistema lato \gl{server}.
+Rappresenta il modello dei dati che verranno utilizzati dal sistema lato server.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver.pdf}}
@@ -1373,7 +1424,7 @@ Rappresenta il modello dei dati che verranno utilizzati dal sistema lato \gl{ser
 \item Quizzipedia::Server::ControllerServer
 \end{itemize}
 \subsection{Quizzipedia::Server::ModelServer::Services}
-Il \gl{package} racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
+Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services.pdf}}
@@ -1468,7 +1519,7 @@ Viene descritta la struttura delle domande che prevedono di decidere la veridici
 \caption[Schema Classe TrueFalseQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::TrueFalseQ}
 \end{figure}
 \subsection{Quizzipedia::Server::ControllerServer}
-Questo \gl{package} contiene tutti i servizi che ricalcano il pattern architetturale \gl{DAO} in modo da isolare l'accesso al \gl{database} relazionale, controllando sempre che l'utente che genera una determinata richiesta al \gl{server} sia abilitato per farla.
+Questo package contiene tutti i servizi che ricalcano il pattern architetturale DAO in modo da isolare l'accesso al database relazionale, controllando sempre che l'utente che genera una determinata richiesta al server sia abilitato per farla.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver.pdf}}
@@ -2039,14 +2090,14 @@ Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte
 \item Quizzipedia::Server::ControllerServer::QuizManager::SessionController
 \end{itemize}
 \subsection{Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}
-Questo \gl{package} racchiude i moduli necessari alla traduzione da \gl{QML} ad un formato comprensibile dal sistema le informazioni estratte dal \gl{database} per la generazione delle pagine \gl{HTML} relative ad un quiz e viceversa.
+Questo package racchiude i moduli necessari alla traduzione da QML ad un formato comprensibile dal sistema le informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent]{Schema Componente Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}
 \end{figure}
 \subsubsection{Classe QMLGenerator}
-Permette la traduzione in formato \gl{QML} di un quiz nel caso si voglia procedere al salvataggio dello stesso all'interno del \gl{database}.
+Permette la traduzione in formato QML di un quiz nel caso si voglia procedere al salvataggio dello stesso all'interno del database.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent-qmlgenerator.pdf}}
@@ -2059,7 +2110,7 @@ Permette la traduzione in formato \gl{QML} di un quiz nel caso si voglia procede
 \item Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater
 \end{itemize}
 \subsubsection{Classe QMLParser}
-Permette la traduzione di un quiz dal formato \gl{QML} ad uno comprensibile dal sistema per la generazione delle relative pagine \gl{HTML}.
+Permette la traduzione di un quiz dal formato QML ad uno comprensibile dal sistema per la generazione delle relative pagine HTML.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent-qmlparser.pdf}}
@@ -2174,7 +2225,7 @@ Effettua il controllo sull'utente per verificare che egli sia in possesso dell'a
 \item Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder
 \end{itemize}
 \subsection{Quizzipedia::Server::ControllerServer::SearchManager}
-Questo \gl{package} permette di effettuare una ricerca nel \gl{database} di quiz o domande richiesti dall'utente e ritornare una lista che corrisponde ai parametri desiderati.
+Questo package permette di effettuare una ricerca nel database di quiz o domande richiesti dall'utente e ritornare una lista che corrisponde ai parametri desiderati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager.pdf}}
@@ -2182,7 +2233,11 @@ Questo \gl{package} permette di effettuare una ricerca nel \gl{database} di quiz
 \end{figure}
 \subsubsection{Classe QuestionsSearcher}
 Ritorna una lista di domande che corrispondono ai parametri di ricerca impostati dall'utente.
-
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-questionssearcher.pdf}}
+\caption[Schema Classe QuestionsSearcher]{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::QuestionsSearcher}
+\end{figure}
 \myparagraph{Relazioni con altre classi}
 \mysubparagraph{Entranti}
 \begin{itemize}
@@ -2222,7 +2277,7 @@ Effettua il controllo sull'utente per verificare che egli sia in possesso dell'a
 \item Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher
 \end{itemize}
 \subsection{Quizzipedia::Server::ControllerServer::StatisticsManager}
-Questo \gl{package} ha il compito di recuperare tutte le informazioni sottoforma di statistiche relative ad un quiz, una domanda in particolare o ad un utente.
+Questo package ha il compito di recuperare tutte le informazioni sottoforma di statistiche relative ad un quiz, una domanda in particolare o ad un utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager.pdf}}
@@ -2377,7 +2432,7 @@ Permette l'eliminazione di un argomento.
 \item Quizzipedia::Server::ControllerServer::TopicManager::SessionController
 \end{itemize}
 \subsection{Quizzipedia::Server::RoutingManager}
-Questo pachetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per comunicare con il \gl{client} tramite socket; esso ha il compito di indirizzare le richieste ai vari services in base alla richiesta da parte dell'utente.
+Questo pachetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per comunicare con il client tramite socket; esso ha il compito di indirizzare le richieste ai vari services in base alla richiesta da parte dell'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager.pdf}}
@@ -2396,7 +2451,7 @@ Classe astratta supertipo delle altre classi del pacchetto.
 \caption[Schema Classe AbstractRouter]{Schema Classe Quizzipedia::Server::RoutingManager::AbstractRouter}
 \end{figure}
 \subsubsection{Classe AuthenticationRouter}
-Invocato dal \gl{client} per interagire con AuthenticationManager.
+Invocato dal client per interagire con AuthenticationManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-authenticationrouter.pdf}}
@@ -2415,7 +2470,7 @@ Invocato dal \gl{client} per interagire con AuthenticationManager.
 \item Quizzipedia::Server::ControllerServer::AuthenticationManager::Register
 \end{itemize}
 \subsubsection{Classe ClassRouter}
-Invocato dal \gl{client} per interagire con ClassManager.
+Invocato dal client per interagire con ClassManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-classrouter.pdf}}
@@ -2433,7 +2488,7 @@ Invocato dal \gl{client} per interagire con ClassManager.
 \item Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher
 \end{itemize}
 \subsubsection{Classe CompanyRouter}
-Invocato dal \gl{client} per i interagire con CompanyManager.
+Invocato dal client per i interagire con CompanyManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-companyrouter.pdf}}
@@ -2445,7 +2500,7 @@ Invocato dal \gl{client} per i interagire con CompanyManager.
 \item Quizzipedia::Server::ControllerServer::CompanyManager::CompanyUpdater
 \end{itemize}
 \subsubsection{Classe ProfileRouter}
-Invocato dal \gl{client} per interagire con ProfileManager.
+Invocato dal client per interagire con ProfileManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-profilerouter.pdf}}
@@ -2461,7 +2516,7 @@ Invocato dal \gl{client} per interagire con ProfileManager.
 \item Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher
 \end{itemize}
 \subsubsection{Classe QuestionRouter}
-Invocato dal \gl{client} per interagire con QuestionsManager.
+Invocato dal client per interagire con QuestionsManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-questionrouter.pdf}}
@@ -2475,7 +2530,7 @@ Invocato dal \gl{client} per interagire con QuestionsManager.
 \item Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater
 \end{itemize}
 \subsubsection{Classe QuizRouter}
-Invocato dal \gl{client} per interagire con QuizManager.
+Invocato dal client per interagire con QuizManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-quizrouter.pdf}}
@@ -2492,7 +2547,7 @@ Invocato dal \gl{client} per interagire con QuizManager.
 \item Quizzipedia::Server::ControllerServer::QuizManager::StatisticsUpdater
 \end{itemize}
 \subsubsection{Classe RequestsRouter}
-Invocato dal \gl{client} per interagire con RequestsManager.
+Invocato dal client per interagire con RequestsManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-requestsrouter.pdf}}
@@ -2508,7 +2563,7 @@ Invocato dal \gl{client} per interagire con RequestsManager.
 \item Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder
 \end{itemize}
 \subsubsection{Classe SearchRouter}
-Invocato dal \gl{client} per interagire con SearchManager.
+Invocato dal client per interagire con SearchManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-searchrouter.pdf}}
@@ -2525,7 +2580,7 @@ Invocato dal \gl{client} per interagire con SearchManager.
 \item Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher
 \end{itemize}
 \subsubsection{Classe StatisticsRouter}
-Invocato dal \gl{client} per interagire con StatisticsManager.
+Invocato dal client per interagire con StatisticsManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-statisticsrouter.pdf}}
@@ -2541,7 +2596,7 @@ Invocato dal \gl{client} per interagire con StatisticsManager.
 \item Quizzipedia::Server::ControllerServer::StatisticsManager::TeacherStatisticsFetcher
 \end{itemize}
 \subsubsection{Classe TopicRouter}
-Invocato dal \gl{client} per interagire con TopicManager.
+Invocato dal client per interagire con TopicManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-topicrouter.pdf}}
