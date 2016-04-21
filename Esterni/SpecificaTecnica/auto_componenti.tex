@@ -244,7 +244,7 @@ Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \item Quizzipedia::Client::ModelClient::Users::Teacher
 \end{itemize}
 \subsubsection{Classe MatchingQ}
-La struttura descrive le domande a collegamento. L'utente dovrà formare la risposa collegando entrate da un numero variabile di colonne .
+La struttura descrive le domande a collegamento. L'utente dovrà formare la risposta collegando le entrate da un numero variabile di colonne .
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-matchingq.pdf}}
@@ -293,7 +293,7 @@ Viene descritta la struttura delle domande che prevedono di decidere la veridici
 \item Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion
 \end{itemize}
 \subsection{Quizzipedia::Client::ModelClient::Statistics}
-Qui sono raccolte le classi con il compito di reperire informazioni sulle statistiche dal server e presentarle al'utente finale. Sono disponibili statistiche per le domande, per i quiz e per gli studenti di ogni classe.
+Qui sono raccolte le classi con il compito di reperire informazioni sulle statistiche dal server e presentarle all'utente finale. Sono disponibili statistiche per le domande, per i quiz e per gli studenti di ogni classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics.pdf}}
@@ -434,7 +434,7 @@ Rappresenta un Responsabile, ovvero colui che gestisce Docenti e Studenti per og
 \item Quizzipedia::Client::ModelClient::Users::User
 \end{itemize}
 \subsubsection{Classe NoRole}
-Rappresenta gli utenti senza ruolo del sistema; ovvero coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
+Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-norole.pdf}}
@@ -544,7 +544,7 @@ La classe si occupa della visualizzazione del messaggio di errore in fase di aut
 \caption[Schema Classe ViewAuthenticationErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewAuthenticationErr}
 \end{figure}
 \subsubsection{Classe ViewModifyPwErr}
-La classe si occupa della visualizzazione del messaggio di errore in fase modifica della password.
+La classe si occupa della visualizzazione del messaggio di errore in fase di modifica della password.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewmodifypwerr.pdf}}
@@ -584,7 +584,7 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \item Quizzipedia::Client::ControllerClient::CtrlOrganization
 \end{itemize}
 \subsubsection{Classe ViewCreateClass}
-Classe responsabile di creare la pagina da cui sarà possibile creare una nuova classe.
+Classe responsabile della creazione della pagina da cui sarà possibile creare una nuova classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager-viewcreateclass.pdf}}
@@ -1040,7 +1040,7 @@ Presenta la pagina necessaria per effettuare il logout dal sistema.
 \item Quizzipedia::Client::ControllerClient::CtrlUsers::CtrlData
 \end{itemize}
 \subsubsection{Classe Menu}
-Presenta all'utente il menu da cui potrà svolgere le proprie funzioni principali.
+Presenta all'utente il menù da cui potrà svolgere le proprie funzioni principali.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-menu.pdf}}
@@ -1265,7 +1265,7 @@ Fornisce i metodi necessari per la comunicazione tra view e model durante la cre
 \item Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion
 \end{itemize}
 \subsubsection{Classe CtrlQuiz}
-Raccoglie i metodi necessari nelle comunicazioni tra view e model richieste per la gestione e lo svolgimento dei quiz.
+Raccoglie i metodi necessari alle comunicazioni tra view e model richieste per la gestione e lo svolgimento dei quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-controllerclient-ctrlservices-ctrlquiz.pdf}}
@@ -1284,7 +1284,7 @@ Raccoglie i metodi necessari nelle comunicazioni tra view e model richieste per 
 \item Quizzipedia::Client::ModelClient::Services::Quiz
 \end{itemize}
 \subsubsection{Classe CtrlSearch}
-La classe contiene i metodi necessari alla comunicazione tra model e view nell'effetuare la ricerca di quiz o domande.
+La classe contiene i metodi necessari alla comunicazione tra model e view nell'effettuare la ricerca di quiz o domande.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-controllerclient-ctrlservices-ctrlsearch.pdf}}
@@ -1491,7 +1491,7 @@ Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \caption[Schema Classe GenericQuestion]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion}
 \end{figure}
 \subsubsection{Classe MatchingQ}
-La struttura descrive le domande a collegamento. L'utente dovrà formare la risposa collegando entrate da un numero variabile di colonne.
+La struttura descrive le domande a collegamento. L'utente dovrà formare la risposta collegando le entrate da un numero variabile di colonne.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-matchingq.pdf}}
@@ -1519,7 +1519,7 @@ Viene descritta la struttura delle domande che prevedono di decidere la veridici
 \caption[Schema Classe TrueFalseQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::TrueFalseQ}
 \end{figure}
 \subsection{Quizzipedia::Server::ControllerServer}
-Questo package contiene tutti i servizi che ricalcano il pattern architetturale DAO in modo da isolare l'accesso al database relazionale, controllando sempre che l'utente che genera una determinata richiesta al server sia abilitato per farla.
+Questo package contiene tutti i servizi che ricalcano il pattern architetturale DAO in modo da isolare l'accesso al database relazionale. Avviene sempre un controllo dell'utente che genera una determinata richiesta al server affinchè sia abilitato per farla.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver.pdf}}
@@ -1548,7 +1548,7 @@ Questo package contiene tutti i servizi che ricalcano il pattern architetturale 
 \item Quizzipedia::Server::ModelServer
 \end{itemize}
 \subsection{Quizzipedia::Server::ControllerServer::AuthenticationManager}
-Package che permette di gestire le funzioni basi per una corretta autenticazione al sistema.
+Package che permette di gestire le funzioni base per una corretta autenticazione al sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager.pdf}}
@@ -2041,7 +2041,7 @@ Permette la modifica di un quiz già presente nella base di dati.
 \item Quizzipedia::Server::ControllerServer::QuizManager::SessionController
 \end{itemize}
 \subsubsection{Classe ResultsUpdater}
-Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte dei un utente.
+Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-resultsupdater.pdf}}
@@ -2090,7 +2090,7 @@ Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte
 \item Quizzipedia::Server::ControllerServer::QuizManager::SessionController
 \end{itemize}
 \subsection{Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}
-Questo package racchiude i moduli necessari alla traduzione da QML ad un formato comprensibile dal sistema le informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
+Questo package racchiude i moduli necessari alla traduzione, da QML ad un formato comprensibile dal sistema, delle informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent.pdf}}
@@ -2145,7 +2145,7 @@ Permette la memorizzazione delle richieste di creazione di una classe.
 \item Quizzipedia::Server::ControllerServer::RequestsManager::SessionController
 \end{itemize}
 \subsubsection{Classe InsertClassRequestsAdder}
-Permette la memorizzazione nella base di dati di tutte le richieste da parte degli utenti di essere inseriti in una determinata classe.
+Permette la memorizzazione nella base di dati di tutte le richieste, fatte da parte degli utenti, di essere inseriti in una determinata classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-insertclassrequestsadder.pdf}}
@@ -2432,7 +2432,7 @@ Permette l'eliminazione di un argomento.
 \item Quizzipedia::Server::ControllerServer::TopicManager::SessionController
 \end{itemize}
 \subsection{Quizzipedia::Server::RoutingManager}
-Questo pachetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per comunicare con il client tramite socket; esso ha il compito di indirizzare le richieste ai vari services in base alla richiesta da parte dell'utente.
+Questo pacchetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per comunicare con il client tramite socket. Esso ha il compito di indirizzare le richieste ai vari services in base alla richiesta da parte dell'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager.pdf}}
@@ -2488,7 +2488,7 @@ Invocato dal client per interagire con ClassManager.
 \item Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher
 \end{itemize}
 \subsubsection{Classe CompanyRouter}
-Invocato dal client per i interagire con CompanyManager.
+Invocato dal client per interagire con CompanyManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-companyrouter.pdf}}
