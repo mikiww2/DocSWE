@@ -24,8 +24,11 @@
 **/PianoDiQualifica/*.pdf
 **/NormeDiProgetto/*.pdf
 **/SpecificaTecnica/*.pdf
+**/StudioDiFattibilita/*.pdf
+**/Verbali/*.pdf
 pdfdoc
 
 #file di log
 log.txt
 summary_log.txt
+backup_versioning_*.txt
