@@ -77,10 +77,15 @@ In particolar modo verranno trattate:
 %\end{itemize}
 
 \subsubsection{Informativi}
+\label{rifinfo}
 \begin{itemize}
 	\item \textbf{Guida utilizzo \gl{Git}}: \url{https://www.atlassian.com/git/tutorials/};
 	\item \textbf{Gitflow Workflow}: \url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow};
-	\item \textbf{GNU AGPLv3}: \url{http://www.gnu.org/licenses/agpl-3.0.html}.
+	\item \textbf{GNU AGPLv3}: \url{http://www.gnu.org/licenses/agpl-3.0.html};
+	\item \textbf{\gl{PDCA}:}
+	\url{https://en.wikipedia.org/wiki/PDCA};
+	\item \textbf{Capability Maturity Model:}
+	\url{https://en.wikipedia.org/wiki/Capability_Maturity_Model}.
 \end{itemize}
 
 \newpage
@@ -509,6 +514,23 @@ Questo tipo di test viene svolto durante la fase di collaudo antecedente il rila
 Il codice identificativo per tale tipo di test è: \centra{TV[CodiceRequisito]} dove CodiceRequisito identifica il codice univoco associato ad ogni requisito descritto nell'\doc{Analisi dei requisiti}.
 
 \subsubsection{Procedure}
+
+\myparagraph{Controllo qualità di processo}
+La qualità di un processo viene raffinata attraverso un miglioramento continuo grazie al modello \gl{PDCA} (Plan-Do-Check-Act) che in modo incrementale apporta ulteriore qualità a quella precedente. Per rendere effettivo il miglioramento è necessario che ogni attività del modello abbia una scrupolosa pianificazione (possibilmente) proattiva ed un'ottima strategia di verifica che, svolta fin dall'inizio, dovrà permettere una serie di iterazioni all'interno di una determinata fase fino al raggiungimento di un grado di qualità accettabile per poter procedere ad un ulteriore incremento.
+\newline La valutazione della qualità di un processo, per poter parlare di un suo possibile miglioramento, dev'essere pertanto quantificata studiando le sue caratteristiche d'interesse; ciò sarà possibile basandosi sul modello \gl{CMM} e sul confronto di performance diverse in momenti differenti.
+\newline Un ulteriore indice di valutazione per i processi può esser assunto dalla qualità dei loro prodotti, dal momento che esiste una forte correlazione diretta tra processo e prodotto.
+
+Si vedano i \hyperref[rifinfo]{riferimenti informativi} riguardanti il \gl{PDCA} e il \gl{Capability Maturity Model} per maggiori chiarimenti sui modelli adottati.
+
+\myparagraph{Controllo qualità di prodotto}
+Il controllo della qualità del prodotto è assicurato da due tipi di processi, quello di verifica e quello di validazione e dal rispetto delle norme.
+\begin{itemize}
+	\item \bold{Verifica:} questo processo si occupa di accertare che l'esecuzione delle attività di processo siano corrette, senza alcun errore. È pertanto un'azione che dev'esser svolta costantemente su ogni attività o risultato che fa progredire il progetto da una \gl{baseline} a quella successiva per poterne assicurare l'assenza di errori.
+	\\
+	\item \bold{Validazione:} tale attività viene svolta come atto conclusivo per accertare che il prodotto risultante rispecchi le aspettative sfruttando un metodo sistematico, disciplinato e quantificabile. Sarà pertanto compito del \gl{team} effettuare alla fine dei test per validare il prodotto da consegnare al committente.
+	\\
+	\item \bold{Norme:} il prodotto dovrà rispettare le norme e l'uso degli strumenti elencati all'interno di questo documento.
+\end{itemize}
 
 \myparagraph{Gestione anomalie}
 Alla risoluzione di ogni \gl{ticket} il \italics{Verificatore} deve procedere alla verifica dell'operato. Ogni anomalia individuata viene annotata all'interno di un elenco. L'elenco delle anomalie è comunicato al \italics{Responsabile} che si occupa di assegnare un \gl{ticket} per la correzione al responsabile di esse.
