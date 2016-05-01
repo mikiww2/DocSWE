@@ -204,8 +204,7 @@ Si è deciso di utilizzare \gl{CSS3} come linguaggio per la formattazione dei do
 \subsection{Bootstrap}
 Bootstrap è uno dei più noti \gl{framework} per lo sviluppo di interfacce \gl{web}. \gl{Bootstrap} contiene modelli di progettazione basati su \gl{HTML} e \gl{CSS}, sia per la tipografia che per le varie componenti dell'interfaccia (moduli, bottoni, navigazione e altri componenti dell'interfaccia), così come alcune estensioni opzionali di \gl{JavaScript}.
 
-\subsubsection{Vantaggi:}
-
+\subsubsection{Vantaggi:} 
 \begin{itemize}
 	\item offre una utile struttura standardizzata;
 	\item supporta i maggiori \gl{browser}, diminuendo il rischio di incorrere in problemi di compatibilità;
@@ -215,7 +214,6 @@ Bootstrap è uno dei più noti \gl{framework} per lo sviluppo di interfacce \gl{
 \end{itemize}
 
 \subsubsection{Svantaggi:}
-
 \begin{itemize}
 	\item verbosità degli stili;
 	\item i siti hanno un aspetto simile in carenza di customizzazione.
@@ -224,8 +222,7 @@ Bootstrap è uno dei più noti \gl{framework} per lo sviluppo di interfacce \gl{
 \subsection{JavaScript}
 JavaScript è un linguaggio di scripting orientato agli oggetti e agli eventi. È comunemente utilizzato nella programmazione \gl{Web} lato \gl{client} per ottenere effetti dinamici interattivi in siti e applicazioni \gl{web}. Gli effetti sono ottenuti tramite funzioni di \gl{script} invocate da eventi innescati dall'utente nella pagina \gl{web} in uso.
 
-\subsubsection{Vantaggi:}
-
+\subsubsection{Vantaggi:} 
 \begin{itemize}
 	\item la velocità di risposta dell'applicazione è elevata grazie all'esecuzione locale;
 	\item \gl{JavaScript} permette un'elevata libertà espressiva;
@@ -234,8 +231,7 @@ JavaScript è un linguaggio di scripting orientato agli oggetti e agli eventi. �
 	\item gestione dei \gl{Canvas}.
 \end{itemize}
 
-\subsubsection{Svantaggi:}
-
+\subsubsection{Svantaggi:} 
 \begin{itemize}
 	\item la mancanza di tipizzazione rende gli errori di programmazione potenzialmente più dannosi;
 	\item difficoltà nella creazione di test;
@@ -245,8 +241,7 @@ JavaScript è un linguaggio di scripting orientato agli oggetti e agli eventi. �
 \subsection{JSON}
 Si è deciso di usare \gl{JSON} come formato per lo scambio dati tra \gl{client} e \gl{server}. \gl{JSON} (\gl{JavaScript} Object Notation) è un formato di scambio di dati lightweight e indipendente dal linguaggio di programmazione utilizzato.
 
-\subsubsection{Vantaggi:}
-
+\subsubsection{Vantaggi:} 
 \begin{itemize}
 	\item utilizzare \gl{JSON} con \gl{JavaScript} è semplice;
 	\item il parsing è facile nei linguaggi più noti.
@@ -272,13 +267,10 @@ Si è stabilito di usare \gl{Fabric.js} per la gestione dei \gl{canvas}. \gl{Fab
 	\item mostrare lo stesso \gl{canvas} con dimensioni diverse da quelle di default è complicato.
 \end{itemize}
 
-
-
 \subsection{Socket.IO}
 Socket.IO è una libreria \gl{JavaScript} che permette comunicazioni real-time bidirezionali e basate su eventi.
 
 \subsubsection{Vantaggi:}
-
 \begin{itemize}
 	\item permette di creare comunicazioni bidirezionali tra \gl{client} e \gl{server};
 	\item gestisce la connessione in modo trasparente.
@@ -291,10 +283,10 @@ Socket.IO è una libreria \gl{JavaScript} che permette comunicazioni real-time b
 \end{itemize}
 
 \newpage
-	\section{Descrizione architettura}
-	\subsection{Metodo e formalismo di specifica}
-	
-	L'architettura del prodotto sarà presentata con un approccio top-down, descrivendo la struttura dal generale al particolare. Verranno prima trattate le componenti e i \gl{package}, per passare poi alle classi, di cui si descriveranno la funzione, i metodi principali e le relazioni con le altre classi. La descrizione dell'architettura non includerà classi e metodi nella loro interezza, ma soltanto quelli fondamentali. Le sottoclassi e i metodi rimanenti verranno inclusi nell'attività di Progettazione di Dettaglio.
+\section{Descrizione architettura}
+
+\subsection{Metodo e formalismo di specifica}
+L'architettura del prodotto sarà presentata con un approccio top-down, descrivendo la struttura dal generale al particolare. Verranno prima trattate le componenti e i \gl{package}, per passare poi alle classi, di cui si descriveranno la funzione, i metodi principali e le relazioni con le altre classi. La descrizione dell'architettura non includerà classi e metodi nella loro interezza, ma soltanto quelli fondamentali. Le sottoclassi e i metodi rimanenti verranno inclusi nell'attività di Progettazione di Dettaglio.
 	\newline
 	Una volta descritte le componenti e le classi, si illustreranno i \gl{design pattern} utilizzati nel sistema. 
 	\newline
