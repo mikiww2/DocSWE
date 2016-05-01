@@ -98,7 +98,6 @@ In particolar modo verranno trattate:
 \subsection{Processo di fornitura}
 A seguire sono riportati gli standard coi quali il \gl{team} deve affrontare le attività di progetto.
 
-
 \subsubsection{Attività}
 
 \myparagraph{Studio di Fattibilità}
@@ -125,19 +124,30 @@ Terminata la stesura dello \doc{Studio di Fattibilità} è compito degli \italic
 
 Per tale scopo il \gl{team} ha sviluppato una piattaforma \gl{web}-based con cui elencare i requisiti e le loro dipendenze: \gl{Tracker}.
 
-\myparagraph{Specifica Tecnica}
-Questo documento verrà redatto dai \italics{Progettisti} e ha il compito di descrivere l'architettura del prodotto. Inoltre saranno progettati opportuni test di integrazione atti a individuare i problemi che si verificano quando due unità si combinano.
-I seguenti diagrammi \gl{UML} devono essere realizzati:
+\myparagraph{Progettazione}
+Durante l'intero arco di tempo dedicato alla progettazione, verrà definita l'architettura finale che identificherà il prodotto che andremo a realizzare. 
+\newline Dapprima verrà stabilita un'architettura ad alto livello all'interno del documento \doc{Specifica Tecnica}, solo in seguito questa verrà raffinata nel dettaglio per la stesura del documento \doc{Definizione di Prodotto}.
+
+\mysubparagraph{Specifica Tecnica}
+Questo documento verrà redatto dai \italics{Progettisti} e ha il compito di descrivere l'architettura del prodotto identificando le componenti al proprio interno. 
+\\ Sarà necessario realizzare i seguenti diagrammi \gl{UML}:
 \begin{itemize}
 	\item diagrammi delle classi;
 	\item diagrammi dei \gl{package};
 	\item diagrammi di attività;
 	\item diagrammi di sequenza.
 \end{itemize}
-Infine devono essere descritti i vari \gl{design pattern} che verranno utilizzati e il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto.
+Inoltre saranno definite tre tipologie di test (test di  integrazione, test di sistema e test di validazione) che permetteranno di verificare il corretto funzionamento dell'intera architettura. In particolare i test di integrazione avranno il compito di individuare i problemi che si potranno verificare nella combinazione di due distinte unità.
+\\ Dovranno essere descritti anche i vari \gl{design pattern} che verranno utilizzati per la strutturazione dell'architettura e il modo che questi impatteranno sulla struttura.
+\\ Infine sarà necessario eseguire il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto.
+
+\mysubparagraph{Definizione di Prodotto}
+\bold{DA FARE}
+
+\myparagraph{Codifica}
+\bold{DA FARE}
 
 \subsubsection{Procedure}
-
 \myparagraph{Classificazione dei requisiti}
 Ogni requisito individuato durante l'\doc{Analisi dei Requisiti} deve necessariamente, per questioni di tracciabilità, essere univocamente identificato con una stringa nel formato:
 \centra{R[importanza][tipo][codice]}
@@ -192,6 +202,45 @@ Inoltre per ogni caso d'uso sono specificati:
 \item \textbf{postcondizione}: le condizioni sempre vere al termine del caso d'uso.
 \end{itemize}
 
+\myparagraph{Definizione dei package}
+L'identificazione dei package, individuati all'interno dell'architettura durante il periodo di progettazione, dovrà essere univoca.
+\\ La stringa dovrà essere nel formato:
+\centra{Quizzipedia::Package::SottoPackage::[...]}
+dove:
+\begin{itemize}
+\item \bold{Quizzipedia} è il nome del prodotto che andremo a realizzare;
+\item \bold{Package} rappresenta il nome di un package padre che racchiuderà all'interno altri package oppure classi;
+\item \bold{SottoPackage} rappresenta il figlio del package padre. Non è detto che ogni package padre contenga un sottopackage, pertanto è un campo opzionale. Al contrario un sottopackage potrebbe a sua volta contenere altri package come figli (sotto-sottopackage) e così via;
+\end{itemize} 
+Per ogni package vengono inoltre definite:
+\begin{itemize}
+\item una breve descrizione della componente in questione;
+\item \bold{componenti contenute:} un elenco delle altre componenti contenute all'interno del proprio package;
+\item \bold{interazioni on altre componenti:} le interazioni del package con le altre componenti, interne oppure uscenti;
+\end{itemize}
+
+\myparagraph{Definizione delle classi}
+Le classi rappresentano il dettaglio massimo raggiungibile all'interno dell'architettura. 
+\newline Anch'esse dovranno presentare un identificativo univoco nel formato:
+\centra{Quizzipedia::Package::SottoPackage::[...]::Classe}
+dove:
+\begin{itemize}
+\item \bold{Quizzipedia, Package, SottoPackage} sono descritti nella sezione precedente;
+\item \bold{Classe} rappresenta la componente più piccola, contenuta nel package, che contiene attributi e metodi.
+\end{itemize}
+
+La definizione di una classe si divide in una descrizione ad alto livello presente all'interno del documento \doc{Specifica Tecnica}, mentre una descrizione più completa viene presentata nel documento \doc{Definizione di Prodotto}.
+\\ In aggiunta vengono pertanto definiti:
+\begin{itemize}
+\item una descrizione della classe in questione;
+\item \bold{relazioni con altre classi:} vengono descritte le relazioni entranti o uscenti che tale classe ha con le altre componenti dell'architettura;
+\item \bold{DA CONTINUARE A SECONDA DI QUELLO CHE VA SCRITTO NELLA DEF DI PROD}
+\end{itemize}
+
+
+\myparagraph{Definizione dei test}
+Si veda la sezione \hyperref[sez:test]{Test} dedicata a tale argomento.
+
 \myparagraph{Codifica e convenzioni}
 Tutti i file contenente codice o documentazione \LaTeX{} devono essere conformi alla codifica \gl{UTF-8} con carattere di fine riga in stile \gl{Unix LF} e avere una riga vuota al termine.
 Il codice deve seguire le linee guida Google reperibili all'indirizzo \url{https://github.com/google/styleguide}. I nomi delle variabili e classi deve essere in inglese, mentre i commenti in italiano.
@@ -201,9 +250,12 @@ Il codice deve seguire le linee guida Google reperibili all'indirizzo \url{https
 \myparagraph{Tracker}
 \gl{Tracker} è lo strumento sviluppato dal \gl{team} a supporto dell'attività di Analisi dei Requisiti. In particolare è stato dotato di una \gl{dashboard} che permette a tutti i membri del \gl{team} di mantenere sotto controllo le varie attività e la loro fase di avanzamento. Esso è inoltre in grado di redigere i documenti \doc{Analisi dei Requisiti} e \doc{Glossario} e di effettuare il tracciamento fonte-requisiti e requisiti-fonte grazie alla base di dati su cui poggia la logica del sistema. In futuro le sue funzionalità verranno estese per fornire ulteriori funzioni
 di supporto per lo sviluppo del progetto e la stesura della successiva documentazione.
+\\
+\newline Nell'attività di progettazione lo strumento Tracker è stato incrementato con nuove funzionalità per la stesura automatica delle componenti dell'architettura  all'interno dei documenti \doc{Specifica Tecnica} e \doc{Definizione di Prodotto}. 
+Anche i test, una volta inseriti nel Tracker, verranno automaticamente scritti all'interno dell'appropriato documento.
+\\ Sia per le singole componenti sia per i test è stato predisposto una propria funzionalità di tracciamento.
 
 \newpage
-
 \section{Processi di supporto}
 
 \subsection{Processi di documentazione}
@@ -495,6 +547,7 @@ L'analisi statica è un processo di verifica che consente di trovare le anomalie
 L'analisi dinamica può essere svolta solamente sulle componenti \gl{software} ed è utile a evidenziare anomalie presenti nel codice. Vengono eseguiti dei test su parti di sistema per verificare che ognuna di esse produca il risultato desiderato. Prima di eseguire un qualsiasi test è necessario conoscere la precondizione e postcondizione del sistema per poterne decretare l'esito.
 
 \myparagraph{Test}
+\label{sez:test}
 Segue un elenco dei tipi di test che vengono effettuati.
 
 \mysubparagraph{Test di unità}
