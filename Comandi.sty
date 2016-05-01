@@ -47,20 +47,9 @@
 % Quadratino colorato
 \newcommand\crule[1][black]{\textcolor{#1}{\rule{1em}{1em}}}
 
-
-
-
 % Formattazione paragrafo e sotto-paragrafo 
-%ORIGINALI:se dopo il titolo c'è del testo
 \newcommand{\myparagraph}[1]{\paragraph{#1}\hfill\vspace{1em}\\\noindent}
 \newcommand{\mysubparagraph}[1]{\subparagraph{#1}\hfill\vspace{1em}\\\noindent}
-
-%NUOVE: se dopo il titolo c'è un elenco puntato (come in ST) oppure subito un altro titolo (subparagraph per esempio) ->serve ad evitare il grande spazio bianco che si crea.
-\newcommand{\autoparagraph}[1]{\paragraph{#1}\noindent}
-\newcommand{\autosubparagraph}[1]{\subparagraph{#1}\noindent}
-
-
-
 
 % Nomi di package e classi
 \newcommand{\pkg}[1]{\texttt{#1}}
