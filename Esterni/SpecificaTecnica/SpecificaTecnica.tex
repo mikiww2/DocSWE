@@ -101,7 +101,7 @@ Per tale scopo vengono descritte le componenti, le classi e i \gl{design pattern
 \section{Tecnologie utilizzate}
 In questa sezione vengono presentate le tecnologie scelte per sviluppare il progetto. Per ognuna di esse verrà fornita una breve descrizione, i principali punti a favore e sfavore e, dove necessario, la versione utilizzata.
 
-\subsection{AngularJS 2.0}
+\subsection{AngularJS 1.5.5}
 AngularJS è un \gl{framework} \gl{JavaScript} \gl{open source}, patrocinato da Google, che si ispira al pattern \gl{MVC}.
 Esso semplifica la realizzazione di applicazioni \gl{web}, favorendo un approccio dichiarativo allo sviluppo client-side e alla creazione di interfacce utente.
 
@@ -133,7 +133,7 @@ L'utilizzo di \gl{Node.js}, associato a \gl{Tomcat}, è stato consigliato dal pr
 \subsubsection{Svantaggi:}
 \begin{itemize}
 	\item essendo di recente creazione, alcuni moduli possono essere instabili;
-	\item essendo un linguaggio single-threaded, non è performante in caso di applicazioni con uso
+	\item essendo un framework single-threaded, non è performante in caso di applicazioni con uso
 	intensivo di CPU;
 	\item utilizzando un sistema I/O asincrono, è possibile che l’uso di callback risulti eccessivo.
 \end{itemize}
@@ -151,21 +151,22 @@ Express.js è un \gl{framework} di \gl{Node.js} che mette a disposizione un \gl{
 	\item non sono stati rilevati grossi svantaggi nell'uso di \gl{Express.js}; risulta essere un buon \gl{framework}.
 \end{itemize}
 
-\subsection{PostgreSQL}
-Si è deciso di utilizzare \gl{PostgreSQL} come \gl{database}. \gl{PostgreSQL} è un avanzato \gl{database} relazionale ad oggetti, ricco e \gl{open source}, che pone particolare attenzione a estensibilità e conformità agli standard.
+\subsection{MongoDB}
+Dalla discussione emersa col committente si è deciso di passare ad utilizzare MongoDB come database. MongoDB è un database non relazionale orientato ai documenti, che appartiene alla tipologia di database NoSQL.
 
 \subsubsection{Vantaggi:}
 \begin{itemize}
-	\item il gruppo ha più familiarità con \gl{database} relazionali;
-	\item le query sono più flessibili rispetto a \gl{MongoDB};
-	\item supporto di transazioni.
+	\item è un database documentale con documenti in JSON;
+	\item essendo un database non relazionale lo schema su cui ci si basa può essere flessibile;
+	\item se utilizzato correttamente è nettamente più performante di un database di tipo relazionale;
+	\item scalabilità.
 \end{itemize}
 
 \subsubsection{Svantaggi:}
-
 \begin{itemize}
-	\item relativamente poco performante;
-	\item non è mai stato usato dai componenti del \gl{team} in passato.
+	\item approccio del team, per la prima volta, ad un database non relazionale;
+	\item meno flessibilità nella scrittura di query (non è supportata la keyword Join ad esempio);
+	\item non supporta le transazioni.
 \end{itemize}
 
 \subsection{HTML5}
@@ -234,8 +235,7 @@ JavaScript è un linguaggio di scripting orientato agli oggetti e agli eventi. �
 \subsubsection{Svantaggi:} 
 \begin{itemize}
 	\item la mancanza di tipizzazione rende gli errori di programmazione potenzialmente più dannosi;
-	\item difficoltà nella creazione di test;
-	\item il codice può essere letto da tutti, ciò può comportare problemi di sicurezza.
+	\item difficoltà nella creazione di test.
 \end{itemize}
 
 \subsection{JSON}
@@ -249,7 +249,8 @@ Si è deciso di usare \gl{JSON} come formato per lo scambio dati tra \gl{client}
 
 \subsubsection{Svantaggi:}
 	\begin{itemize}
-	\item è un linguaggio molto verboso e di difficile comprensione dall'uomo.
+	\item non è molto diffuso come XML;
+	\item non è potente come XML dal momento che non supporta i namespace.
 	\end{itemize}
 
 \subsection{Fabric.js}
