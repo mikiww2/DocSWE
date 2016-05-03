@@ -78,7 +78,7 @@ Per tale scopo vengono descritte le componenti, le classi e i \gl{design pattern
 
 \item \bold{\gl{JavaScript}: } \newline \url{http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf};
 
-\item \bold{\gl{PostgreSQL}: } \newline \url{http://www.postgresql.org/docs/};
+\item \bold{\gl{MongoDB}: } \newline \url{https://docs.mongodb.org/manual/};
 
 \item \bold{\gl{AngularJS}: } \newline \url{https://angular.io/docs/ts/latest/};
 
@@ -296,36 +296,25 @@ L'architettura del prodotto sarà presentata con un approccio top-down, descrive
 	\subsection{Architettura generale}
 	L'architettura del prodotto ha un'impostazione client-server e segue il \gl{design pattern} \gl{MVC}. 
 	\newline
-	L'architettura generale segue il pattern Three-Tier, suddivisa pertanto in tre livelli:
+	L'architettura generale segue il pattern Three-Tier e viene suddivisa nei seguenti tre livelli:
 	\begin{enumerate}
-		\item \gl{Client} (Presentation Tier).
-		\item \gl{Server} (Logic Tier).
-		\item \gl{Database} (Data Tier).
+		\item \gl{Client} 
+		\item \gl{Server} 
+		\item \gl{Database}
 	\end{enumerate}
 	
 	\subsubsection{Client}
-	La parte \gl{client} è divisa in Model, View e Controller. È il livello più alto dell'applicazione e interagisce con l'utente finale.
-	\newline
-	AngularJS è utilizzato client-side per rispettare il pattern \gl{MVC}.
+	La parte \gl{client} è divisa in Model, View e Controller. È il livello più alto dell'applicazione e interagisce con l'utente finale. La componente View è possibile considerarla come il Presentation Tier dell'architettura generale assunta.
+	\newline AngularJS è utilizzato client-side per rispettare il pattern \gl{MVC}.
 	
 	\subsubsection{Server}
-	La parte \gl{server} è divisa in Model e Controller. Gestisce la logica di business e interroga il \gl{database} per passarne i dati al \gl{client}.
+	La parte \gl{server} è divisa in Model e Controller. Gestisce la logica di business e interroga il \gl{database} per passarne i dati al \gl{client}. Per questo nell'architettura Three-Tier rappresenta la Logic Tier.
 	
 	\subsubsection{Database}
-	Il \gl{database} memorizza i dati e li isola dal resto del sistema. Il \gl{database} è implementato con \gl{PostgreSQL}. 
+	Il \gl{database} memorizza i dati e li isola dal resto del sistema. Il \gl{database}, che rappresenta il Data Tier dell'architettura Three-Tier, è implementato con \gl{MongoDB}. 
 	
-	\subsection{SOAP}
-	Abbiamo deciso di utilizzare il protocollo SOAP (Simple Object Access Protocol).
-	SOAP utilizza il formato XML per scambiare informazioni e fa uso di protocolli dell'Application Layer, in particolare HTTP e SMTP.
-	\newline La scelta di SOAP è stata influenzata dai seguenti punti:
-	
-	\begin{itemize}
-		\item è indipendente da linguaggio e piattaforma;
-		\item è adatto all'uso in ambienti distribuiti;
-		\item è standardizzato;
-		\item include error handling.
-	\end{itemize}
-	
+	\subsection{REST}
+
 \newpage
 
 \section{Componenti e classi}
@@ -1133,16 +1122,6 @@ Tutti i dettagli del salvataggio dei dati sono nascosti al resto dell'applicazio
 
 \subsubsection{Svantaggi}
 Questo pattern, pur essendo pochi, presenta comunque degli svantaggi. Il più importante riguarda la duplicazione di codice che comparirà in ogni singolo \gl{DAO} presente nell'applicazione. Infatti viene creato un \gl{DAO} per ogni entità presente nel sistema, che conterrà i metodi necessari per interagire con il \gl{database}, ad esempio metodi per ricercare, inserire, modificare, rimuovere e aggiornare i dati.
-
-\subsection{Microservices Architecture}
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.75]{Img/microservice.png}
-\caption{Design Pattern Microservices Architecture}
-\label{}
-\end{figure}
-Il Microservice Architecture è un pattern architetturale ancora giovane, il cui pregio maggiore consiste nello sviluppare un'applicazione come una famiglia di piccoli services. Ogni services esegue il proprio processo in modo indipendente da un altro, anche se viene mantenuto comunque un minimo di gestione centralizzata di questi diversi services.
-\\ Il difetto principale di tale architettura è la duplicazione di codice che interesserà tutti i services generati durante la codifica del sistema.
 
 \subsection{Builder}
 \begin{figure}[htp]
