@@ -1,0 +1,69 @@
+% Nome del file: ManualeUtente.tex
+% Percorso: \gl{template}
+% Autore: Vault-Tech
+% Data creazione: 10.05.2016
+% E-mail: vaulttech.swe@gmail.comcom
+%
+% Diario delle modifiche: interno al file.
+
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{../../Stile}
+\usepackage{../../Comandi}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\def\NOME{Manuale Utente}
+\def\VERSIONE{1.0}
+\def\DATA{04.04.2016}
+\def\REDATTORE{Michela De Bortoli \\ & Filippo Tesser}
+\def\VERIFICATORE{Simone Boccato \\ & Miki Violetto}
+\def\RESPONSABILE{Giacomo Beltrame}
+\def\USO{Esterno}
+\def\DISTRIBUZIONE{\COMMITTENTE \\ & \CARDIN \\ & \PROPONENTE}
+
+
+\begin{document}
+	
+	\pagestyle{fancy}	
+	\pagenumbering{Roman}
+	\rfoot{Pagina \thepage{} di \pageref{lastromanpage}}
+	
+	\maketitle
+	
+	
+	\newpage
+	\tableofcontents
+	\newpage
+	\listoffigures
+	\newpage
+	\listoftables\label{lastromanpage}
+	
+	\newpage
+	\clearpage	
+	\pagenumbering{arabic}
+	\rfoot{Pagina \thepage{} di \pageref*{LastPage}}
+	%Deve esserci per permettere i riferimenti incrociati di colore blu
+	\hypersetup{linkcolor=blue}
+	
+	\section{Introduzione}
+	\subsection{Scopo del documento}
+	Questo documento ha lo scopo di fornire un aiuto all'utente che si trovi ad utilizzare il software
+	Quizzipedia per le prime volte illustrandone il funzionamento di base dello stesso.
+	
+	\subsection{Scopo del prodotto}
+	\SCOPO
+	
+	\subsection{Riferimenti}	
+	\subsubsection{Riferimenti normativi}
+	\begin{itemize}
+		\item \bold{\gl{Capitolato} d'appalto C5:} Quizzipedia: \gl{software} per la gestione di questionari \newline \url{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C5.pdf};
+		\item \bold {Norme di progetto:} \NdPdoc.
+	\end{itemize}
+	
+	
+	
+	
+\end{document}
