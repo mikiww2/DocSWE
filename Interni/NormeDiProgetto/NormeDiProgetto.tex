@@ -134,18 +134,29 @@ Questo documento verrà redatto dai \italics{Progettisti} e ha il compito di des
 \begin{itemize}
 	\item diagrammi delle classi;
 	\item diagrammi dei \gl{package};
-	\item diagrammi di attività;
-	\item diagrammi di sequenza.
+	\item diagrammi di attività.
 \end{itemize}
 Inoltre saranno definite tre tipologie di test (test di  integrazione, test di sistema e test di validazione) che permetteranno di verificare il corretto funzionamento dell'intera architettura. In particolare i test di integrazione avranno il compito di individuare i problemi che si potranno verificare nella combinazione di due distinte unità.
 \\ Dovranno essere descritti anche i vari \gl{design pattern} che verranno utilizzati per la strutturazione dell'architettura e il modo che questi impatteranno sulla struttura.
 \\ Infine sarà necessario eseguire il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto.
 
 \mysubparagraph{Definizione di Prodotto}
-\bold{DA FARE}
+I \italics{Progettisti} devono redigere la \doc{Definizione di Prodotto}. In essa viene descritta la progettazione di dettaglio del sistema, specificando quanto scritto nella \doc{Specifica Tecnica}. Inoltre opportuni test di unità devono essere definiti per verificare che i componenti del sistema funzionino come previsto.
+I seguenti diagrammi UML devono essere realizzati:
+\begin{itemize}
+	\item diagrammi delle classi,
+	\item diagrammi di sequenza.
+\end{itemize}
+Ogni classe progettata nella \doc{Specifica Tecnica} deve essere descritta all'interno della \doc{Definizione di Prodotto}. Devono essere illustrati lo scopo della classe e la funzionalità da essa modellata. Nella descrizione devono essere inoltre elencati metodi e attributi della classe. Ad ogni classe deve essere associato almeno un requisito in modo tale da poter controllare lo stato di avanzamento nello sviluppo del progetto secondo il modello specificato nel \doc{Piano di Progetto}. L'applicativo Tracker è utilizzato nel tracciamento di tali dipendenze.
 
 \myparagraph{Codifica}
 \bold{DA FARE}
+
+\mysubparagraph{Manuale utente}
+I \italics{Programmatori} devono redigere il \doc{Manuale Utente}. In esso vengono fornite all'utente del prodotto le informazioni principali per aiutarlo nell'utilizzo e fornirgli una rapida spiegazione delle funzionalità dell'applicazione. Deve essere chiaro, diretto e pienamente comprensibile alla base di utenza a cui il prodotto è destinato.
+
+\mysubparagraph{Manuale sviluppatore}
+Redatto dai \italics{Programmatori}, il \doc{Manuale Sviluppatore} ha come destinatari gli incaricati a installare e configurare il prodotto.
 
 \subsubsection{Procedure}
 \myparagraph{Classificazione dei requisiti}
@@ -243,7 +254,29 @@ Si veda la sezione \hyperref[sez:test]{Test} dedicata a tale argomento.
 
 \myparagraph{Codifica e convenzioni}
 Tutti i file contenente codice o documentazione \LaTeX{} devono essere conformi alla codifica \gl{UTF-8} con carattere di fine riga in stile \gl{Unix LF} e avere una riga vuota al termine.
-Il codice deve seguire le linee guida Google reperibili all'indirizzo \url{https://github.com/google/styleguide}. I nomi delle variabili e classi deve essere in inglese, mentre i commenti in italiano.
+Il codice deve seguire le linee guida Google reperibili all'indirizzo \url{https://github.com/google/styleguide}. I nomi delle classi devono essere in inglese.
+
+
+Ogni file sorgente deve contenere dalla prima riga l'intestazione che elenca:
+\begin{itemize}
+	\item nome del file comprensivo di estensione e percorso a partire dalla root del repository;
+	\item autore e data di creazione del file;
+	\item e-mail del team Vault-Tech;
+	\item una breve descrizione sullo scopo del file con la varie dipendenze verso altri file;
+	\item sintetico diario delle modifiche ordinato per data che riporti:
+	\begin{itemize}
+		\item data della modifica,
+		\item breve riepilogo corrispondente al messaggio di commit,
+		\item autore della modifica.
+	\end{itemize}
+\end{itemize}
+
+Per i metodi e attributi delle classi vanno rispettate le seguenti regole:
+\begin{itemize}
+	\item i nomi di variabili e metodi devono essere in inglese;
+	\item i nomi dei metodi sono scritti in lowerCamelCase;
+	\item i commenti devono essere in italiano.
+\end{itemize}
 
 \subsubsection{Strumenti}
 
@@ -255,10 +288,13 @@ di supporto per lo sviluppo del progetto e la stesura della successiva documenta
 Anche i test, una volta inseriti nel Tracker, verranno automaticamente scritti all'interno dell'appropriato documento.
 \\ Sia per le singole componenti sia per i test è stato predisposto una propria funzionalità di tracciamento.
 
+\myparagraph{Webstorm}
+L'IDE JetBrains WebStorm 2016.1.1 è utilizzato dal team per scrivere il codice.
+
 \newpage
 \section{Processi di supporto}
 
-\subsection{Processi di documentazione}
+\subsection{Processo di documentazione}
 In queste sezioni verrà trattato il modello con il quale la documentazione viene prodotta.
 
 \subsubsection{Procedure}
@@ -364,6 +400,7 @@ La struttura delle sezioni dei documenti segue la formattazione standard di \LaT
 		\item \textbf{ST}: Specifica Tecnica;
 		\item \textbf{DP}: Definizione di Prodotto;
 		\item \textbf{MU}: Manuale Utente;
+		\item \textbf{MS}: Manuale Sviluppatore;
 		\item \textbf{RR}: Revisione dei Requisiti;
 		\item \textbf{RP}: Revisione di Progettazione;
 		\item \textbf{RQ}: Revisione di Qualifica;
