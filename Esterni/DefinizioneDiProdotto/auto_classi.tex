@@ -1,0 +1,3078 @@
+\subsection{Quizzipedia::Client}
+Racchiude tutte le componenti necessarie per il front-end del prodotto. Visualizza i dati dell'utente e invia richieste al server che dovrà gestirle e reindirizzare una risposta al client.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client.pdf}}
+\caption[Schema Componente Client]{Schema Componente Quizzipedia::Client}
+\end{figure}
+\subsection{Quizzipedia::Client::ModelClient}
+Rappresenta il modello dei dati che verranno utilizzati dal sistema lato client. Viene utilizzato tale model per facilitare il recupero di alcune informazioni che altrimenti dovrebbero esser recuperate dal server ogni volta che viene svolta una richiesta dall'utente.
+Attraverso l'uso di Angular.js il controller svolge automaticamente le modifiche richieste dalla view nel model in modo tale da tenerlo sempre aggiornato.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ModelClient]{Schema Componente Quizzipedia::Client::ModelClient}
+\end{figure}
+\subsubsection{Componenti contenute}
+\begin{itemize}
+\item Quizzipedia::Client::ModelClient::Organization
+\item Quizzipedia::Client::ModelClient::Requests
+\item Quizzipedia::Client::ModelClient::Services
+\item Quizzipedia::Client::ModelClient::Statistics
+\item Quizzipedia::Client::ModelClient::Users
+\end{itemize}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient per Rappresenta il modello dei dati che verranno utilizzati dal sistema lato client. Viene utilizzato tale model per facilitare il recupero di alcune informazioni che altrimenti dovrebbero esser recuperate dal server ogni volta che viene svolta una richiesta dall'utente.
+Attraverso l'uso di Angular.js il controller svolge automaticamente le modifiche richieste dalla view nel model in modo tale da tenerlo sempre aggiornato
+\end{itemize}
+\subsection{Quizzipedia::Client::ModelClient::Organization}
+La componente gestisce le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organization.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ModelClient::Organization]{Schema Componente Quizzipedia::Client::ModelClient::Organization}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Users per La componente gestisce le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema
+\end{itemize}
+\subsubsection{Classe Class}
+Rappresenta una classe (relativa ad un ente). Memorizza le informazioni che definiscono ogni classe, informazioni che saranno utilizzate per la visualizzazione e per la gestione della classe..
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organization-class.pdf}}
+\caption[Schema Classe Class]{Schema Classe Quizzipedia::Client::ModelClient::Organization::Class}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Organization::Institution per 
+\item usata da Quizzipedia::Client::ModelClient::Services::Quiz per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Users::Director per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Users::User per aggiungi
+\end{itemize}
+\subsubsection{Classe Institution}
+Tale classe rappresenta un ente. Contiene le informazioni relative alla struttura dell'ente che saranno visualizzate dall'utente e gestiste dal controller, come ad esempio la lista delle classi presenti nell'ente, la lista degli studenti e degli insegnati all'interno dell'ente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organization-institution.pdf}}
+\caption[Schema Classe Institution]{Schema Classe Quizzipedia::Client::ModelClient::Organization::Institution}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Organization::Class per 
+\item usa Quizzipedia::Client::ModelClient::Requests::ClassList per 
+\item usa Quizzipedia::Client::ModelClient::Requests::RoleList per 
+\end{itemize}
+\subsection{Quizzipedia::Client::ModelClient::Requests}
+Questo package contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ModelClient::Requests]{Schema Componente Quizzipedia::Client::ModelClient::Requests}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Users per Questo package contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati
+\end{itemize}
+\subsubsection{Classe ClassList}
+Questa classe gestisce le richieste da parte di docenti o studenti per l'assegnazione a una specifica classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-classlist.pdf}}
+\caption[Schema Classe ClassList]{Schema Classe Quizzipedia::Client::ModelClient::Requests::ClassList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Organization::Institution per 
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestClass per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Requests::Request per aggiungi
+\end{itemize}
+\subsubsection{Classe Request}
+La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui ha fatto richiesta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-request.pdf}}
+\caption[Schema Classe Request]{Schema Classe Quizzipedia::Client::ModelClient::Requests::Request}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Requests::ClassList per aggiungi
+\end{itemize}
+\subsubsection{Classe RequestRole}
+La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuole ricoprire.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-requestrole.pdf}}
+\caption[Schema Classe RequestRole]{Schema Classe Quizzipedia::Client::ModelClient::Requests::RequestRole}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Requests::RoleList per 
+\end{itemize}
+\subsubsection{Classe RoleList}
+Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo di studente o docente al responsabile di un ente. Questa classe gestisce tali richieste.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-rolelist.pdf}}
+\caption[Schema Classe RoleList]{Schema Classe Quizzipedia::Client::ModelClient::Requests::RoleList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Organization::Institution per 
+\item usata da Quizzipedia::Client::ModelClient::Users::Director per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Users::NoRole per aggiungi
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestRole per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Requests::RequestRole per 
+\end{itemize}
+\subsection{Quizzipedia::Client::ModelClient::Services}
+Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ModelClient::Services]{Schema Componente Quizzipedia::Client::ModelClient::Services}
+\end{figure}
+\subsubsection{Componenti contenute}
+\begin{itemize}
+\item Quizzipedia::Client::ModelClient::Services::Questions
+\end{itemize}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Users per Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto
+\end{itemize}
+\subsubsection{Classe Quiz}
+Include la struttura del quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-quiz.pdf}}
+\caption[Schema Classe Quiz]{Schema Classe Quizzipedia::Client::ModelClient::Services::Quiz}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Users::Teacher per aggiungi
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Organization::Class per aggiungi
+\item usa Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe Topics}
+Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni domanda e a ogni quiz verranno poi associati i relativi argomenti .
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-topics.pdf}}
+\caption[Schema Classe Topics]{Schema Classe Quizzipedia::Client::ModelClient::Services::Topics}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Users::Director per aggiungi
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlTopics per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ModelClient::Services::Questions}
+Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ModelClient::Services::Questions]{Schema Componente Quizzipedia::Client::ModelClient::Services::Questions}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlServices per Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz
+\end{itemize}
+\subsubsection{Classe Cell}
+La classe descrive ogni singola riga (quindi ogni opzione) della colonna della domanda a collegamento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-cell.pdf}}
+\caption[Schema Classe Cell]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::Cell}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Services::Questions::Column per aggiungi
+\end{itemize}
+\subsubsection{Classe Column}
+La classe descrive le colonne della domanda a collegamenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-column.pdf}}
+\caption[Schema Classe Column]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::Column}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Services::Questions::MatchingQ per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Questions::Cell per aggiungi
+\end{itemize}
+\subsubsection{Classe CompletionQ}
+Descrive le domande a completamento. Il docente fornirà un testo incompleto e una lista di possibili completamenti; lo studente dovrà inserire le parole adeguate nella giusta posizione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-completionq.pdf}}
+\caption[Schema Classe CompletionQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::CompletionQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe GenericQuestion}
+Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-genericquestion.pdf}}
+\caption[Schema Classe GenericQuestion]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Services::Questions::CompletionQ per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Services::Questions::MatchingQ per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Services::Questions::MultipleChoiceQ per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Services::Questions::ShortAnswerQ per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Services::Questions::TrueFalseQ per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Services::Quiz per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Users::Teacher per aggiungi
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe MatchingQ}
+La struttura descrive le domande a collegamento. L'utente dovrà formare la risposta collegando le entrate da un numero variabile di colonne .
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-matchingq.pdf}}
+\caption[Schema Classe MatchingQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::MatchingQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Questions::Column per aggiungi
+\item usa Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe MultipleChoiceQ}
+La struttura descrive le domande a scelta multipla; viene presentata una lista di opzioni tra cui scegliere quelle corrette.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-multiplechoiceq.pdf}}
+\caption[Schema Classe MultipleChoiceQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::MultipleChoiceQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe ShortAnswerQ}
+La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste in un termine o una frase specifici.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-shortanswerq.pdf}}
+\caption[Schema Classe ShortAnswerQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::ShortAnswerQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe TrueFalseQ}
+Viene descritta la struttura delle domande che prevedono di decidere la veridicità di un'affermazione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-truefalseq.pdf}}
+\caption[Schema Classe TrueFalseQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::TrueFalseQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ModelClient::Statistics}
+Qui sono raccolte le classi con il compito di reperire informazioni sulle statistiche dal server e presentarle all'utente finale. Sono disponibili statistiche per le domande, per i quiz e per gli studenti di ogni classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ModelClient::Statistics]{Schema Componente Quizzipedia::Client::ModelClient::Statistics}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Users per Qui sono raccolte le classi con il compito di reperire informazioni sulle statistiche dal server e presentarle all'utente finale. Sono disponibili statistiche per le domande, per i quiz e per gli studenti di ogni classe
+\end{itemize}
+\subsubsection{Classe QuestionStatistics}
+La classe raccoglie le statistiche principali riguardanti una singola domanda. Da qui è poi possibile risalire alla domanda.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-questionstatistics.pdf}}
+\caption[Schema Classe QuestionStatistics]{Schema Classe Quizzipedia::Client::ModelClient::Statistics::QuestionStatistics}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::StatisticsManager::QuestionStatisticsFetcher per 
+\end{itemize}
+\subsubsection{Classe QuizStatistics}
+La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qui è poi possibile ottenere il quiz in questione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-quizstatistics.pdf}}
+\caption[Schema Classe QuizStatistics]{Schema Classe Quizzipedia::Client::ModelClient::Statistics::QuizStatistics}
+\end{figure}
+\subsection{Quizzipedia::Client::ModelClient::Users}
+Raccoglie le classi necessarie a descrivere le diverse tipologie di utente che possono accedere al sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ModelClient::Users]{Schema Componente Quizzipedia::Client::ModelClient::Users}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Organization per Raccoglie le classi necessarie a descrivere le diverse tipologie di utente che possono accedere al sistema
+\item usa Quizzipedia::Client::ModelClient::Requests per Raccoglie le classi necessarie a descrivere le diverse tipologie di utente che possono accedere al sistema
+\item usa Quizzipedia::Client::ModelClient::Services per Raccoglie le classi necessarie a descrivere le diverse tipologie di utente che possono accedere al sistema
+\item usa Quizzipedia::Client::ModelClient::Statistics per Raccoglie le classi necessarie a descrivere le diverse tipologie di utente che possono accedere al sistema
+\end{itemize}
+\subsubsection{Classe AuthenticationData}
+Questa classe gestisce le informazioni di autenticazione comuni a tutti gli utenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-authenticationdata.pdf}}
+\caption[Schema Classe AuthenticationData]{Schema Classe Quizzipedia::Client::ModelClient::Users::AuthenticationData}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Users::User per aggiungi
+\end{itemize}
+\subsubsection{Classe Director}
+Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per ogni ente del sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-director.pdf}}
+\caption[Schema Classe Director]{Schema Classe Quizzipedia::Client::ModelClient::Users::Director}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Organization::Class per aggiungi
+\item usa Quizzipedia::Client::ModelClient::Requests::RoleList per aggiungi
+\item usa Quizzipedia::Client::ModelClient::Services::Topics per aggiungi
+\item usa Quizzipedia::Client::ModelClient::Users::User per aggiungi
+\end{itemize}
+\subsubsection{Classe NoRole}
+Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-norole.pdf}}
+\caption[Schema Classe NoRole]{Schema Classe Quizzipedia::Client::ModelClient::Users::NoRole}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Requests::RoleList per aggiungi
+\item usa Quizzipedia::Client::ModelClient::Users::User per aggiungi
+\end{itemize}
+\subsubsection{Classe Student}
+Rappresenta uno studente del sistema e implementa le sue funzioni specifiche oltre a quelle ereditate da utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-student.pdf}}
+\caption[Schema Classe Student]{Schema Classe Quizzipedia::Client::ModelClient::Users::Student}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestClass per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Users::User per aggiungi
+\end{itemize}
+\subsubsection{Classe Teacher}
+Rappresenta un docente del sistema e ne implementa le funzionalità specifiche in aggiunta a quelle comuni a tutti gli utenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-teacher.pdf}}
+\caption[Schema Classe Teacher]{Schema Classe Quizzipedia::Client::ModelClient::Users::Teacher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestClass per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion per aggiungi
+\item usa Quizzipedia::Client::ModelClient::Services::Quiz per aggiungi
+\item usa Quizzipedia::Client::ModelClient::Users::User per aggiungi
+\end{itemize}
+\subsubsection{Classe User}
+Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli utenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-user.pdf}}
+\caption[Schema Classe User]{Schema Classe Quizzipedia::Client::ModelClient::Users::User}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ModelClient::Users::Director per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Users::NoRole per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Users::Student per aggiungi
+\item usata da Quizzipedia::Client::ModelClient::Users::Teacher per aggiungi
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData per aggiungi
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Organization::Class per aggiungi
+\item usa Quizzipedia::Client::ModelClient::Users::AuthenticationData per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient}
+Racchiude tutte le componenti necessarie per presentare il prodotto all'utente.
+Grazie all'uso di Angular.js ogni modifica svolta dall'utente si ripercuoterà automaticamente a sulla componente model, attraverso il controller, per mantenere sempre le informazioni consistenti e aggiornate.
+Con l'uso invece di Bootstrap e Fabric.js a livello di grafica web risulta semplificata l'impaginazione delle singole pagine web dedicate all'utente e alla gestione di allegati non testuali all'interno di domande.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient]{Schema Componente Quizzipedia::Client::ViewClient}
+\end{figure}
+\subsubsection{Componenti contenute}
+\begin{itemize}
+\item Quizzipedia::Client::ViewClient::ViewErrors
+\item Quizzipedia::Client::ViewClient::ViewOrgManager
+\item Quizzipedia::Client::ViewClient::ViewQuestionManager
+\item Quizzipedia::Client::ViewClient::ViewQuizManager
+\item Quizzipedia::Client::ViewClient::ViewQuizSolver
+\item Quizzipedia::Client::ViewClient::ViewRequests
+\item Quizzipedia::Client::ViewClient::ViewSearch
+\item Quizzipedia::Client::ViewClient::ViewStatistics
+\item Quizzipedia::Client::ViewClient::ViewTopicManager
+\item Quizzipedia::Client::ViewClient::ViewUsers
+\end{itemize}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient per Racchiude tutte le componenti necessarie per presentare il prodotto all'utente.
+Grazie all'uso di Angular.js ogni modifica svolta dall'utente si ripercuoterà automaticamente a sulla componente model, attraverso il controller, per mantenere sempre le informazioni consistenti e aggiornate.
+Con l'uso invece di Bootstrap e Fabric.js a livello di grafica web risulta semplificata l'impaginazione delle singole pagine web dedicate all'utente e alla gestione di allegati non testuali all'interno di domande
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewErrors}
+Il package raccoglie tutte le finestre di errore che il sistema può, eventualmente, visualizzare in caso si verifichi qualche problema durante un'operazione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewErrors]{Schema Componente Quizzipedia::Client::ViewClient::ViewErrors}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlServices per Il package raccoglie tutte le finestre di errore che il sistema può, eventualmente, visualizzare in caso si verifichi qualche problema durante un'operazione
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlUsers per Il package raccoglie tutte le finestre di errore che il sistema può, eventualmente, visualizzare in caso si verifichi qualche problema durante un'operazione
+\end{itemize}
+\subsubsection{Classe ViewAuthenticationErr}
+La classe si occupa della visualizzazione del messaggio di errore in fase di autenticazione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewauthenticationerr.pdf}}
+\caption[Schema Classe ViewAuthenticationErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewAuthenticationErr}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData per 
+\end{itemize}
+\subsubsection{Classe ViewModifyPwErr}
+La classe si occupa della visualizzazione del messaggio di errore in fase di modifica della password.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewmodifypwerr.pdf}}
+\caption[Schema Classe ViewModifyPwErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyPwErr}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager per 
+\end{itemize}
+\subsubsection{Classe ViewModifyQuizErr}
+La classe si occupa della visualizzazione del messaggio di errore in fase di modifica di un quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewmodifyquizerr.pdf}}
+\caption[Schema Classe ViewModifyQuizErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyQuizErr}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz per 
+\end{itemize}
+\subsubsection{Classe ViewRecoveryErr}
+La classe si occupa della visualizzazione del messaggio di errore in fase di recupero password.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewrecoveryerr.pdf}}
+\caption[Schema Classe ViewRecoveryErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewRecoveryErr}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData per 
+\end{itemize}
+\subsubsection{Classe ViewRegistrationErr}
+La classe si occupa della visualizzazione del messaggio di errore in fase di registrazione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewregistrationerr.pdf}}
+\caption[Schema Classe ViewRegistrationErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewRegistrationErr}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData per 
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewOrgManager}
+Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti presenti in Quizzipedia.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewOrgManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewOrgManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlOrganization per Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti presenti in Quizzipedia
+\end{itemize}
+\subsubsection{Classe ViewCreateClass}
+Classe responsabile della creazione della pagina da cui sarà possibile creare una nuova classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager-viewcreateclass.pdf}}
+\caption[Schema Classe ViewCreateClass]{Schema Classe Quizzipedia::Client::ViewClient::ViewOrgManager::ViewCreateClass}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlOrganization::MyClass per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewModifyOrg}
+Presenta all'utente la pagina da cui sarà possibile modificare le informazioni su una classe o su un ente esistente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager-viewmodifyorg.pdf}}
+\caption[Schema Classe ViewModifyOrg]{Schema Classe Quizzipedia::Client::ViewClient::ViewOrgManager::ViewModifyOrg}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlInstitution per 
+\end{itemize}
+\subsubsection{Classe ViewUsersClassList}
+La classe si occupa di presentare una lista degli utenti iscritti alla classe e altre informazioni aggiuntive.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager-viewusersclasslist.pdf}}
+\caption[Schema Classe ViewUsersClassList]{Schema Classe Quizzipedia::Client::ViewClient::ViewOrgManager::ViewUsersClassList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlOrganization::MyClass per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewQuestionManager}
+Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le domande.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuestionManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuestionManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices per Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le domande
+\end{itemize}
+\subsubsection{Classe ViewCreateQuestion}
+Presenta la pagina da cui sarà possibile creare una nuova domanda.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-viewcreatequestion.pdf}}
+\caption[Schema Classe ViewCreateQuestion]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuestionManager::ViewCreateQuestion}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewModifyQuestion}
+Gestisce la visualizzazione della pagina da cui è possibile modificare una domanda esistente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-viewmodifyquestion.pdf}}
+\caption[Schema Classe ViewModifyQuestion]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuestionManager::ViewModifyQuestion}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewQuestionList}
+Presenta all'utente il pannello da cui sarà possibile visualizzare una lista di informazioni riassuntive sulle domande e compiere alcune operazioni su di esse.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-viewquestionlist.pdf}}
+\caption[Schema Classe ViewQuestionList]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuestionManager::ViewQuestionList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewQuizManager}
+Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire i quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuizManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuizManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices per Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire i quiz
+\end{itemize}
+\subsubsection{Classe ViewCreateQuiz}
+Presenta la pagina da cui sarà possibile creare un nuovo quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-viewcreatequiz.pdf}}
+\caption[Schema Classe ViewCreateQuiz]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizManager::ViewCreateQuiz}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewModifyQuiz}
+Presenta all'utente una pagina da cui è possibile modificare un quiz esistente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-viewmodifyquiz.pdf}}
+\caption[Schema Classe ViewModifyQuiz]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizManager::ViewModifyQuiz}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewQuizList}
+Carica una pagina contenente una lista con informazioni riassuntive sui quiz e un pannello da cui sarà possibile svolgere delle operazioni sugli stessi.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-viewquizlist.pdf}}
+\caption[Schema Classe ViewQuizList]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizManager::ViewQuizList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewQuizSolver}
+Il package raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile svolgere quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuizSolver]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuizSolver}
+\end{figure}
+\subsubsection{Componenti contenute}
+\begin{itemize}
+\item Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver
+\end{itemize}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices per Il package raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile svolgere quiz
+\end{itemize}
+\subsubsection{Classe ViewResults}
+La classe ha il compito di costruire la pagina da cui sarà possibile vedere l'esito di un quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewresults.pdf}}
+\caption[Schema Classe ViewResults]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewResults}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver}
+Il package raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile rispondere alle singole domande.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices per Il package raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile rispondere alle singole domande
+\end{itemize}
+\subsubsection{Classe ViewCompletionQ}
+Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a completamento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewcompletionq.pdf}}
+\caption[Schema Classe ViewCompletionQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewCompletionQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewMatchingQ}
+Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a collegamenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewmatchingq.pdf}}
+\caption[Schema Classe ViewMatchingQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMatchingQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewMultipleChoiceQ}
+Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a risposta multipla.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewmultiplechoiceq.pdf}}
+\caption[Schema Classe ViewMultipleChoiceQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMultipleChoiceQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewShortAnswerQ}
+Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a risposta aperta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewshortanswerq.pdf}}
+\caption[Schema Classe ViewShortAnswerQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewShortAnswerQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewTrueFalseQ}
+Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda di tipo vero/falso.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewtruefalseq.pdf}}
+\caption[Schema Classe ViewTrueFalseQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewTrueFalseQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewRequests}
+Qui sono raccolte le pagine che permettono all'utente di gestire le richieste di ruolo e classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewRequests]{Schema Componente Quizzipedia::Client::ViewClient::ViewRequests}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlRequests per Qui sono raccolte le pagine che permettono all'utente di gestire le richieste di ruolo e classe
+\end{itemize}
+\subsubsection{Classe RequestClass}
+Costruisce la pagina da cui l'utente potrà richiedere di entrare in una classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-requestclass.pdf}}
+\caption[Schema Classe RequestClass]{Schema Classe Quizzipedia::Client::ViewClient::ViewRequests::RequestClass}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestClass per aggiungi
+\end{itemize}
+\subsubsection{Classe RequestRole}
+Costruisce la pagina da cui l'utente potrà richiedere un ruolo (studente o docente).
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-requestrole.pdf}}
+\caption[Schema Classe RequestRole]{Schema Classe Quizzipedia::Client::ViewClient::ViewRequests::RequestRole}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestRole per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewClassList}
+Classe responsabile della visualizzazione del pannello da cui sarà possibile gestire le richieste di inserimento in una classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-viewclasslist.pdf}}
+\caption[Schema Classe ViewClassList]{Schema Classe Quizzipedia::Client::ViewClient::ViewRequests::ViewClassList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestClass per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewRolesList}
+Classe responsabile della visualizzazione del pannello da cui sarà possibile gestire le richieste di assegnazione di ruolo.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-viewroleslist.pdf}}
+\caption[Schema Classe ViewRolesList]{Schema Classe Quizzipedia::Client::ViewClient::ViewRequests::ViewRolesList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestRole per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewSearch}
+Il package contiene le classi responsabili della creazione delle pagine da cui sarà possibile ricercare domande, quiz e classi .
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewSearch]{Schema Componente Quizzipedia::Client::ViewClient::ViewSearch}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlOrganization per Il package contiene le classi responsabili della creazione delle pagine da cui sarà possibile ricercare domande, quiz e classi 
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices per Il package contiene le classi responsabili della creazione delle pagine da cui sarà possibile ricercare domande, quiz e classi 
+\end{itemize}
+\subsubsection{Classe ViewSearchClass}
+La classe carica la pagina da cui sarà possibile ricercare classi all'interno di un ente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch-viewsearchclass.pdf}}
+\caption[Schema Classe ViewSearchClass]{Schema Classe Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchClass}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlInstitution per 
+\end{itemize}
+\subsubsection{Classe ViewSearchQuestion}
+Classe che ha il compito di caricare la pagina da cui sarà possibile effettuare la ricerca di domande.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch-viewsearchquestion.pdf}}
+\caption[Schema Classe ViewSearchQuestion]{Schema Classe Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuestion}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearch per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewSearchQuiz}
+Raccoglie i metodi necessari alla creazione della pagina da cui sarà possibile cercare un quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch-viewsearchquiz.pdf}}
+\caption[Schema Classe ViewSearchQuiz]{Schema Classe Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearch per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewStatistics}
+Package che gestisce le pagine in cui verranno visualizzate le statistiche richieste dall'utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics]{Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlStatistics per Package che gestisce le pagine in cui verranno visualizzate le statistiche richieste dall'utente
+\end{itemize}
+\subsubsection{Classe ViewClassStats}
+Vengono rappresentate le statistiche relative a una singola classe in relazione a un particolare quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewclassstats.pdf}}
+\caption[Schema Classe ViewClassStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewClassStats}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlStats per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewQuestionStats}
+Vengono rappresentate le statistiche generali relative alle domande.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquestionstats.pdf}}
+\caption[Schema Classe ViewQuestionStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuestionStats}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlStats per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewQuizStats}
+Vengono rappresentate le statistiche generali riguardanti i quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquizstats.pdf}}
+\caption[Schema Classe ViewQuizStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuizStats}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlStats per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewTopicManager}
+Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire gli argomenti di domande e quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewtopicmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewTopicManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewTopicManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices per Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire gli argomenti di domande e quiz
+\end{itemize}
+\subsubsection{Classe ViewCreateTopic}
+La classe caricherà la pagina da cui sarà possibile creare un nuovo argomento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewtopicmanager-viewcreatetopic.pdf}}
+\caption[Schema Classe ViewCreateTopic]{Schema Classe Quizzipedia::Client::ViewClient::ViewTopicManager::ViewCreateTopic}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlTopics per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewTopicList}
+La classe è responsabile della creazione della pagina da cui sarà possibile vedere la lista degli argomenti disponibili.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewtopicmanager-viewtopiclist.pdf}}
+\caption[Schema Classe ViewTopicList]{Schema Classe Quizzipedia::Client::ViewClient::ViewTopicManager::ViewTopicList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlTopics per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewClient::ViewUsers}
+Raccoglie le classi necessarie a presentare all'utente le pagine da cui visualizzare le informazioni che lo riguardano e compiere le funzioni principali.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewUsers]{Schema Componente Quizzipedia::Client::ViewClient::ViewUsers}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlUsers per Raccoglie le classi necessarie a presentare all'utente le pagine da cui visualizzare le informazioni che lo riguardano e compiere le funzioni principali
+\end{itemize}
+\subsubsection{Classe Login}
+Presenta la pagina necessaria per effettuare il login nel sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-login.pdf}}
+\caption[Schema Classe Login]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::Login}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData per aggiungi
+\end{itemize}
+\subsubsection{Classe Logout}
+Presenta la pagina necessaria per effettuare il logout dal sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-logout.pdf}}
+\caption[Schema Classe Logout]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::Logout}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData per aggiungi
+\end{itemize}
+\subsubsection{Classe Menu}
+Presenta all'utente il menù da cui potrà svolgere le proprie funzioni principali.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-menu.pdf}}
+\caption[Schema Classe Menu]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::Menu}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager per aggiungi
+\end{itemize}
+\subsubsection{Classe PersonalData}
+La classe presenta all'utente la pagina da cui prendere visione delle proprie informazioni personali.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-personaldata.pdf}}
+\caption[Schema Classe PersonalData]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::PersonalData}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager per aggiungi
+\end{itemize}
+\subsubsection{Classe RecoveryPw}
+Da questa pagina sarà possibile inserire i dati per il recupero della password.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-recoverypw.pdf}}
+\caption[Schema Classe RecoveryPw]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::RecoveryPw}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData per aggiungi
+\end{itemize}
+\subsubsection{Classe Registration}
+Presenta la pagina da cui effettuare la  registrazione al sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-registration.pdf}}
+\caption[Schema Classe Registration]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::Registration}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewModifyUser}
+Da qui, grazie ai metodi della classe, l'utente potrà modificare le proprie informazioni personali.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-viewmodifyuser.pdf}}
+\caption[Schema Classe ViewModifyUser]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::ViewModifyUser}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager per aggiungi
+\end{itemize}
+\subsubsection{Classe ViewUsersList}
+Presenta un pannello da cui è possibile visualizzare una lista di utenti e compiere operazioni su di loro.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-viewuserslist.pdf}}
+\caption[Schema Classe ViewUsersList]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::ViewUsersList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewModelClient}
+Raccoglie le classi responsabili della comunicazione tra il model e la view. Ha inoltre il compito di comunicare con il server per elaborare le richieste svolte dall'utente.
+Con Angula.js il controller permette di tenere sempre aggiornato facilmente il model con le modifiche fatte nella view da parte dell'utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewModelClient]{Schema Componente Quizzipedia::Client::ViewModelClient}
+\end{figure}
+\subsubsection{Componenti contenute}
+\begin{itemize}
+\item Quizzipedia::Client::ViewModelClient::CtrlOrganization
+\item Quizzipedia::Client::ViewModelClient::CtrlRequests
+\item Quizzipedia::Client::ViewModelClient::CtrlServices
+\item Quizzipedia::Client::ViewModelClient::CtrlStatistics
+\item Quizzipedia::Client::ViewModelClient::CtrlUsers
+\end{itemize}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient per Raccoglie le classi responsabili della comunicazione tra il model e la view. Ha inoltre il compito di comunicare con il server per elaborare le richieste svolte dall'utente.
+Con Angula.js il controller permette di tenere sempre aggiornato facilmente il model con le modifiche fatte nella view da parte dell'utente
+\end{itemize}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient per Raccoglie le classi responsabili della comunicazione tra il model e la view. Ha inoltre il compito di comunicare con il server per elaborare le richieste svolte dall'utente.
+Con Angula.js il controller permette di tenere sempre aggiornato facilmente il model con le modifiche fatte nella view da parte dell'utente
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewModelClient::CtrlOrganization}
+Raccoglie le classi che si occupano delle comunicazioni necessarie per la creazione e la gestione di enti e classi.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlorganization.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlOrganization]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlOrganization}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewOrgManager per Raccoglie le classi che si occupano delle comunicazioni necessarie per la creazione e la gestione di enti e classi
+\item usata da Quizzipedia::Client::ViewClient::ViewSearch per Raccoglie le classi che si occupano delle comunicazioni necessarie per la creazione e la gestione di enti e classi
+\end{itemize}
+\subsubsection{Classe CtrlInstitution}
+La classe in questione permette di modificare oppure eliminare le classi in un ente presente all'interno del sistema.
+Sono presenti pertanto i metodi necessari a svolgere tali scopi e per eseguire il caricamento o il salvataggio di un ente e delle sue classi.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlorganization-ctrlinstitution.pdf}}
+\caption[Schema Classe CtrlInstitution]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlInstitution}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewOrgManager::ViewModifyOrg per 
+\item usata da Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchClass per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlPagination per visualizzare in modo ordinato e dinamico la lista delle classi. Dalla lista è poi possibile effettuare le operazioni di rimozione e modifica
+\item usa Quizzipedia::Client::ViewModelClient::CtrlOrganization::MyClass per 
+\end{itemize}
+\subsubsection{Classe CtrlPagination}
+Questa classe permette di creare e gestire dinamicamente la paginazione quando viene visualizzata la lista delle classe presenti in un ente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlorganization-ctrlpagination.pdf}}
+\caption[Schema Classe CtrlPagination]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlPagination}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlInstitution per visualizzare in modo ordinato e dinamico la lista delle classi. Dalla lista è poi possibile effettuare le operazioni di rimozione e modifica
+\end{itemize}
+\subsubsection{Classe MyClass}
+Questa classe permette di creare, eliminare, modificare oppure gestire una classe, relativa ad un ente, presente all'interno del sistema.
+Sono presenti i metodi necessari all'inserimento e alla rimozione di uno studente o un docente da una classe, oltre ai metodi necessari alla creazione, eliminazione e modifica di una classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlorganization-myclass.pdf}}
+\caption[Schema Classe MyClass]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlOrganization::MyClass}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewOrgManager::ViewCreateClass per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewOrgManager::ViewUsersClassList per aggiungi
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlInstitution per 
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewModelClient::CtrlRequests}
+Questo package contiene classi necessarie alla gestione delle richieste di ruolo o classe fatte da un utente autenticato.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlrequests.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlRequests]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlRequests}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewRequests per Questo package contiene classi necessarie alla gestione delle richieste di ruolo o classe fatte da un utente autenticato
+\end{itemize}
+\subsubsection{Classe CtrlRequestClass}
+Si occupa delle comunicazioni necessarie per la gestione delle richieste di inserimento in una classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlrequests-ctrlrequestclass.pdf}}
+\caption[Schema Classe CtrlRequestClass]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestClass}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewRequests::RequestClass per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewRequests::ViewClassList per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Requests::ClassList per aggiungi
+\item usa Quizzipedia::Client::ModelClient::Users::Student per 
+\item usa Quizzipedia::Client::ModelClient::Users::Teacher per 
+\end{itemize}
+\subsubsection{Classe CtrlRequestRole}
+Si occupa delle comunicazioni necessarie per la gestione delle richieste di ruolo.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlrequests-ctrlrequestrole.pdf}}
+\caption[Schema Classe CtrlRequestRole]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestRole}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewRequests::RequestRole per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewRequests::ViewRolesList per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Requests::RoleList per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewModelClient::CtrlServices}
+Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlServices]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlServices}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewQuestionManager per Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizManager per Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizSolver per Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver per Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande
+\item usata da Quizzipedia::Client::ViewClient::ViewSearch per Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande
+\item usata da Quizzipedia::Client::ViewClient::ViewTopicManager per Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande
+\end{itemize}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Questions per Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande
+\item usa Quizzipedia::Client::ViewClient::ViewErrors per Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande
+\end{itemize}
+\subsubsection{Classe CtrlQuestion}
+Fornisce i metodi necessari per la comunicazione tra view e model durante la creazione, modifica e svolgimento di una domanda.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestion.pdf}}
+\caption[Schema Classe CtrlQuestion]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewQuestionManager::ViewCreateQuestion per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewQuestionManager::ViewModifyQuestion per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewQuestionManager::ViewQuestionList per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewCompletionQ per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMatchingQ per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMultipleChoiceQ per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewShortAnswerQ per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewTrueFalseQ per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion per aggiungi
+\end{itemize}
+\subsubsection{Classe CtrlQuiz}
+Raccoglie i metodi necessari alle comunicazioni tra view e model richieste per la gestione e lo svolgimento dei quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquiz.pdf}}
+\caption[Schema Classe CtrlQuiz]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizManager::ViewCreateQuiz per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizManager::ViewModifyQuiz per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizManager::ViewQuizList per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewResults per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Quiz per aggiungi
+\item usa Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyQuizErr per 
+\end{itemize}
+\subsubsection{Classe CtrlSearch}
+La classe contiene i metodi necessari alla comunicazione tra model e view nell'effettuare la ricerca di quiz o domande.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlsearch.pdf}}
+\caption[Schema Classe CtrlSearch]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearch}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuestion per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::RoutingManager::SearchRouter per aggiungi
+\end{itemize}
+\subsubsection{Classe CtrlTopics}
+Fornisce i metodi necessari alle comunicazioni richieste per la gestione degli argomenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrltopics.pdf}}
+\caption[Schema Classe CtrlTopics]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlTopics}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewTopicManager::ViewCreateTopic per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewTopicManager::ViewTopicList per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Services::Topics per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewModelClient::CtrlStatistics}
+Raccoglie le classi necessarie a recuperare le statistiche da presentare all'utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlStatistics]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlStatistics}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewStatistics per Raccoglie le classi necessarie a recuperare le statistiche da presentare all'utente
+\end{itemize}
+\subsubsection{Classe CtrlStats}
+Classe necessaria al caricamento delle statistiche relative ai quiz, alle domande e alle classi.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-ctrlstats.pdf}}
+\caption[Schema Classe CtrlStats]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlStats}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewStatistics::ViewClassStats per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuestionStats per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuizStats per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Client::ViewModelClient::CtrlUsers}
+Il package raccoglie le classi che permettono la comunicazione per quanto riguarda funzioni e dati dell'utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlUsers]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlUsers}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewUsers per Il package raccoglie le classi che permettono la comunicazione per quanto riguarda funzioni e dati dell'utente
+\end{itemize}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ViewClient::ViewErrors per Il package raccoglie le classi che permettono la comunicazione per quanto riguarda funzioni e dati dell'utente
+\end{itemize}
+\subsubsection{Classe CtrlData}
+La classe raccoglie i metodi per gestire le informazioni personali di tutti gli utenti autenticati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-ctrldata.pdf}}
+\caption[Schema Classe CtrlData]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewUsers::Login per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewUsers::Logout per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewUsers::RecoveryPw per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewUsers::Registration per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewUsers::ViewUsersList per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Users::User per aggiungi
+\item usa Quizzipedia::Client::ViewClient::ViewErrors::ViewAuthenticationErr per 
+\item usa Quizzipedia::Client::ViewClient::ViewErrors::ViewRecoveryErr per 
+\item usa Quizzipedia::Client::ViewClient::ViewErrors::ViewRegistrationErr per 
+\item usa Quizzipedia::Server::RoutingManager::AuthenticationRouter per aggiungi
+\end{itemize}
+\subsubsection{Classe CtrlUserManager}
+La classe permette agli utenti di gestire il proprio profilo personale.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-ctrlusermanager.pdf}}
+\caption[Schema Classe CtrlUserManager]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewClient::ViewUsers::Menu per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewUsers::PersonalData per aggiungi
+\item usata da Quizzipedia::Client::ViewClient::ViewUsers::ViewModifyUser per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Users::User per aggiungi
+\item usa Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyPwErr per 
+\end{itemize}
+\subsection{Quizzipedia::Server}
+Racchiude tutte le componenti necessarie per il back-end del prodotto. Comunica con il database non relazionale MongoDB per ottenere le informazioni richieste dal client a cui verranno inviate successivamente.
+Contiene inoltre le componenti che si occupano del linguaggio di markup QML.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server.pdf}}
+\caption[Schema Componente Server]{Schema Componente Quizzipedia::Server}
+\end{figure}
+\subsection{Quizzipedia::Server::ModelServer}
+Rappresenta il modello dei dati che verranno utilizzati dal sistema lato server. 
+Il controller del server avrà il compito di interagire col model per ottenere il modello che gli serve a seconda delle richieste fatte dal client.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ModelServer]{Schema Componente Quizzipedia::Server::ModelServer}
+\end{figure}
+\subsubsection{Componenti contenute}
+\begin{itemize}
+\item Quizzipedia::Server::ModelServer::Organization
+\item Quizzipedia::Server::ModelServer::Requests
+\item Quizzipedia::Server::ModelServer::Services
+\item Quizzipedia::Server::ModelServer::Statistics
+\item Quizzipedia::Server::ModelServer::Users
+\end{itemize}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer per Rappresenta il modello dei dati che verranno utilizzati dal sistema lato server. 
+Il controller del server avrà il compito di interagire col model per ottenere il modello che gli serve a seconda delle richieste fatte dal client
+\end{itemize}
+\subsection{Quizzipedia::Server::ModelServer::Organization}
+La componente gestisce, lato server, le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organization.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ModelServer::Organization]{Schema Componente Quizzipedia::Server::ModelServer::Organization}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager per La componente gestisce, lato server, le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema
+\item usata da Quizzipedia::Server::ControllerServer::InstitutionManager per La componente gestisce, lato server, le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema
+\item usata da Quizzipedia::Server::ModelServer::Users per La componente gestisce, lato server, le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema
+\end{itemize}
+\subsubsection{Classe Class}
+Contiene informazioni relative alla struttura delle classi.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organization-class.pdf}}
+\caption[Schema Classe Class]{Schema Classe Quizzipedia::Server::ModelServer::Organization::Class}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder per 
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::ClassDeleter per 
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::ClassUpdater per 
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::FromClassRemover per 
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder per 
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher per 
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher per 
+\item usata da Quizzipedia::Server::ModelServer::Organization::Institution per 
+\item usata da Quizzipedia::Server::ModelServer::Services::Quiz per 
+\item usata da Quizzipedia::Server::ModelServer::Users::Director per 
+\item usata da Quizzipedia::Server::ModelServer::Users::User per 
+\end{itemize}
+\subsubsection{Classe Institution}
+La classe contiene le informazioni relative alla struttura dell'ente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organization-institution.pdf}}
+\caption[Schema Classe Institution]{Schema Classe Quizzipedia::Server::ModelServer::Organization::Institution}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::InstitutionManager::InstitutionUpdater per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\item usa Quizzipedia::Server::ModelServer::Requests::ClassList per 
+\item usa Quizzipedia::Server::ModelServer::Requests::RoleList per 
+\end{itemize}
+\subsection{Quizzipedia::Server::ModelServer::Requests}
+Questo package contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ModelServer::Requests]{Schema Componente Quizzipedia::Server::ModelServer::Requests}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager per Questo package contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati
+\item usata da Quizzipedia::Server::ModelServer::Users per Questo package contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati
+\end{itemize}
+\subsubsection{Classe ClassList}
+Questa classe gestisce le richieste da parte di docenti o studenti per l'assegnazione a una specifica classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-classlist.pdf}}
+\caption[Schema Classe ClassList]{Schema Classe Quizzipedia::Server::ModelServer::Requests::ClassList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::ClassRequestsAdder per 
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestsAdder per 
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher per 
+\item usata da Quizzipedia::Server::ModelServer::Organization::Institution per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Requests::Request per 
+\end{itemize}
+\subsubsection{Classe Request}
+La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui ha fatto richiesta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-request.pdf}}
+\caption[Schema Classe Request]{Schema Classe Quizzipedia::Server::ModelServer::Requests::Request}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ModelServer::Requests::ClassList per 
+\end{itemize}
+\subsubsection{Classe RequestRole}
+La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuole ricoprire.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-requestrole.pdf}}
+\caption[Schema Classe RequestRole]{Schema Classe Quizzipedia::Server::ModelServer::Requests::RequestRole}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ModelServer::Requests::RoleList per 
+\end{itemize}
+\subsubsection{Classe RoleList}
+Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo di studente o docente al responsabile di un ente. Questa classe gestisce tali richieste.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-rolelist.pdf}}
+\caption[Schema Classe RoleList]{Schema Classe Quizzipedia::Server::ModelServer::Requests::RoleList}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher per 
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter per 
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder per 
+\item usata da Quizzipedia::Server::ModelServer::Organization::Institution per 
+\item usata da Quizzipedia::Server::ModelServer::Users::Director per 
+\item usata da Quizzipedia::Server::ModelServer::Users::NoRole per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Requests::RequestRole per 
+\end{itemize}
+\subsection{Quizzipedia::Server::ModelServer::Services}
+Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ModelServer::Services]{Schema Componente Quizzipedia::Server::ModelServer::Services}
+\end{figure}
+\subsubsection{Componenti contenute}
+\begin{itemize}
+\item Quizzipedia::Server::ModelServer::Services::Questions
+\end{itemize}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::QuestionsManager per Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager per Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto
+\item usata da Quizzipedia::Server::ControllerServer::SearchManager per Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto
+\item usata da Quizzipedia::Server::ControllerServer::TopicManager per Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto
+\item usata da Quizzipedia::Server::ModelServer::Users per Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto
+\end{itemize}
+\subsubsection{Classe Quiz}
+Include la struttura del quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-quiz.pdf}}
+\caption[Schema Classe Quiz]{Schema Classe Quizzipedia::Server::ModelServer::Services::Quiz}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher per 
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator per 
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser per 
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher per 
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater per 
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater per 
+\item usata da Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher per 
+\item usata da Quizzipedia::Server::ModelServer::Users::Teacher per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\end{itemize}
+\subsubsection{Classe Topics}
+Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni domanda e a ogni quiz verranno poi associati i relativi argomenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-topics.pdf}}
+\caption[Schema Classe Topics]{Schema Classe Quizzipedia::Server::ModelServer::Services::Topics}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::TopicManager::TopicCreator per 
+\item usata da Quizzipedia::Server::ControllerServer::TopicManager::TopicEraser per 
+\item usata da Quizzipedia::Server::ModelServer::Users::Director per 
+\end{itemize}
+\subsection{Quizzipedia::Server::ModelServer::Services::Questions}
+Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ModelServer::Services::Questions]{Schema Componente Quizzipedia::Server::ModelServer::Services::Questions}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::QuestionsManager per Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz
+\end{itemize}
+\subsubsection{Classe Cell}
+La classe descrive ogni singola riga (quindi ogni opzione) della colonna della domanda a collegamento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-cell.pdf}}
+\caption[Schema Classe Cell]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::Cell}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ModelServer::Services::Questions::Column per 
+\end{itemize}
+\subsubsection{Classe Column}
+La classe descrive le colonne della domanda a collegamenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-column.pdf}}
+\caption[Schema Classe Column]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::Column}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ModelServer::Services::Questions::MatchingQ per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::Cell per 
+\end{itemize}
+\subsubsection{Classe CompletionQ}
+Descrive le domande a completamento. Il docente fornirà un testo incompleto e una lista di possibili completamenti; lo studente dovrà inserire le parole adeguate nella giusta posizione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-completionq.pdf}}
+\caption[Schema Classe CompletionQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::CompletionQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\end{itemize}
+\subsubsection{Classe GenericQuestion}
+Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-genericquestion.pdf}}
+\caption[Schema Classe GenericQuestion]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator per 
+\item usata da Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser per 
+\item usata da Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater per 
+\item usata da Quizzipedia::Server::ControllerServer::SearchManager::QuestionsSearcher per 
+\item usata da Quizzipedia::Server::ModelServer::Services::Questions::CompletionQ per 
+\item usata da Quizzipedia::Server::ModelServer::Services::Questions::MatchingQ per 
+\item usata da Quizzipedia::Server::ModelServer::Services::Questions::MultipleChoiceQ per 
+\item usata da Quizzipedia::Server::ModelServer::Services::Questions::ShortAnswerQ per 
+\item usata da Quizzipedia::Server::ModelServer::Services::Questions::TrueFalseQ per 
+\item usata da Quizzipedia::Server::ModelServer::Services::Quiz per 
+\item usata da Quizzipedia::Server::ModelServer::Users::Teacher per 
+\end{itemize}
+\subsubsection{Classe MatchingQ}
+La struttura descrive le domande a collegamento. L'utente dovrà formare la risposta collegando le entrate da un numero variabile di colonne.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-matchingq.pdf}}
+\caption[Schema Classe MatchingQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::MatchingQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::Column per 
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\end{itemize}
+\subsubsection{Classe MultipleChoiceQ}
+La struttura descrive le domande a scelta multipla; viene presentata una lista di opzioni tra cui scegliere quelle corrette.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-multiplechoiceq.pdf}}
+\caption[Schema Classe MultipleChoiceQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::MultipleChoiceQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\end{itemize}
+\subsubsection{Classe ShortAnswerQ}
+La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste in un termine o una frase specifici.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-shortanswerq.pdf}}
+\caption[Schema Classe ShortAnswerQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::ShortAnswerQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\end{itemize}
+\subsubsection{Classe TrueFalseQ}
+Viene descritta la struttura delle domande che prevedono di decidere la veridicità di un'affermazione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-truefalseq.pdf}}
+\caption[Schema Classe TrueFalseQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::TrueFalseQ}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\end{itemize}
+\subsection{Quizzipedia::Server::ModelServer::Statistics}
+Qui sono raccolte le classi contenenti le informazioni sulle statistiche di domande, quiz e studenti di ogni classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ModelServer::Statistics]{Schema Componente Quizzipedia::Server::ModelServer::Statistics}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::StatisticsManager per Qui sono raccolte le classi contenenti le informazioni sulle statistiche di domande, quiz e studenti di ogni classe
+\item usata da Quizzipedia::Server::ModelServer::Users per Qui sono raccolte le classi contenenti le informazioni sulle statistiche di domande, quiz e studenti di ogni classe
+\end{itemize}
+\subsubsection{Classe QuestionStatistics}
+La classe raccoglie le statistiche principali riguardanti una singola domanda. Da qui è poi possibile risalire alla domanda.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-questionstatistics.pdf}}
+\caption[Schema Classe QuestionStatistics]{Schema Classe Quizzipedia::Server::ModelServer::Statistics::QuestionStatistics}
+\end{figure}
+\subsubsection{Classe QuizStatistics}
+La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qui è poi possibile ottenere il quiz in questione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-quizstatistics.pdf}}
+\caption[Schema Classe QuizStatistics]{Schema Classe Quizzipedia::Server::ModelServer::Statistics::QuizStatistics}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::StatisticsManager::QuizStatisticsFetcher per 
+\end{itemize}
+\subsection{Quizzipedia::Server::ModelServer::Users}
+Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ModelServer::Users]{Schema Componente Quizzipedia::Server::ModelServer::Users}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::AuthenticationManager per Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager per Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema
+\end{itemize}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Organization per Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema
+\item usa Quizzipedia::Server::ModelServer::Requests per Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema
+\item usa Quizzipedia::Server::ModelServer::Services per Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema
+\item usa Quizzipedia::Server::ModelServer::Statistics per Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema
+\end{itemize}
+\subsubsection{Classe AuthenticationData}
+Questa classe gestisce le informazioni di autenticazione comuni a tutti gli utenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-authenticationdata.pdf}}
+\caption[Schema Classe AuthenticationData]{Schema Classe Quizzipedia::Server::ModelServer::Users::AuthenticationData}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn per 
+\item usata da Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerOut per 
+\item usata da Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover per 
+\item usata da Quizzipedia::Server::ControllerServer::AuthenticationManager::Register per 
+\item usata da Quizzipedia::Server::ModelServer::Users::User per 
+\end{itemize}
+\subsubsection{Classe Director}
+Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per ogni ente del sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-director.pdf}}
+\caption[Schema Classe Director]{Schema Classe Quizzipedia::Server::ModelServer::Users::Director}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\item usa Quizzipedia::Server::ModelServer::Requests::RoleList per 
+\item usa Quizzipedia::Server::ModelServer::Services::Topics per 
+\item usa Quizzipedia::Server::ModelServer::Users::User per 
+\end{itemize}
+\subsubsection{Classe NoRole}
+Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-norole.pdf}}
+\caption[Schema Classe NoRole]{Schema Classe Quizzipedia::Server::ModelServer::Users::NoRole}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Requests::RoleList per 
+\item usa Quizzipedia::Server::ModelServer::Users::User per 
+\end{itemize}
+\subsubsection{Classe Student}
+Rappresenta uno studente del sistema e implementa le sue funzioni specifiche oltre a quelle ereditate da utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-student.pdf}}
+\caption[Schema Classe Student]{Schema Classe Quizzipedia::Server::ModelServer::Users::Student}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Users::User per 
+\end{itemize}
+\subsubsection{Classe Teacher}
+Rappresenta un docente del sistema e ne implementa le funzionalità specifiche in aggiunta a quelle comuni a tutti gli utenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-teacher.pdf}}
+\caption[Schema Classe Teacher]{Schema Classe Quizzipedia::Server::ModelServer::Users::Teacher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\item usa Quizzipedia::Server::ModelServer::Services::Quiz per 
+\item usa Quizzipedia::Server::ModelServer::Users::User per 
+\end{itemize}
+\subsubsection{Classe User}
+Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli utenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-user.pdf}}
+\caption[Schema Classe User]{Schema Classe Quizzipedia::Server::ModelServer::Users::User}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter per 
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter per 
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher per 
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter per 
+\item usata da Quizzipedia::Server::ModelServer::Users::Director per 
+\item usata da Quizzipedia::Server::ModelServer::Users::NoRole per 
+\item usata da Quizzipedia::Server::ModelServer::Users::Student per 
+\item usata da Quizzipedia::Server::ModelServer::Users::Teacher per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\item usa Quizzipedia::Server::ModelServer::Users::AuthenticationData per 
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer}
+Questo package contiene tutti i servizi che permettono di isolare il più possibile l'accesso al database non relazionale. Avviene sempre un controllo dell'utente che genera una determinata richiesta al server affinchè sia abilitato per farla. 
+Una volta ottenuta l'informazione richiesta dal database, lo stesso controller si occuperà di inviarla al client richiedente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer]{Schema Componente Quizzipedia::Server::ControllerServer}
+\end{figure}
+\subsubsection{Componenti contenute}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::AuthenticationManager
+\item Quizzipedia::Server::ControllerServer::ClassManager
+\item Quizzipedia::Server::ControllerServer::InstitutionManager
+\item Quizzipedia::Server::ControllerServer::ProfileManager
+\item Quizzipedia::Server::ControllerServer::QuestionsManager
+\item Quizzipedia::Server::ControllerServer::QuizManager
+\item Quizzipedia::Server::ControllerServer::RequestsManager
+\item Quizzipedia::Server::ControllerServer::SearchManager
+\item Quizzipedia::Server::ControllerServer::StatisticsManager
+\item Quizzipedia::Server::ControllerServer::TopicManager
+\end{itemize}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager per Questo package contiene tutti i servizi che permettono di isolare il più possibile l'accesso al database non relazionale. Avviene sempre un controllo dell'utente che genera una determinata richiesta al server affinchè sia abilitato per farla. 
+Una volta ottenuta l'informazione richiesta dal database, lo stesso controller si occuperà di inviarla al client richiedente
+\end{itemize}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer per Questo package contiene tutti i servizi che permettono di isolare il più possibile l'accesso al database non relazionale. Avviene sempre un controllo dell'utente che genera una determinata richiesta al server affinchè sia abilitato per farla. 
+Una volta ottenuta l'informazione richiesta dal database, lo stesso controller si occuperà di inviarla al client richiedente
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::AuthenticationManager}
+Package che permette di gestire le funzioni base per una corretta autenticazione al sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::AuthenticationManager]{Schema Componente Quizzipedia::Server::ControllerServer::AuthenticationManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Users per Package che permette di gestire le funzioni base per una corretta autenticazione al sistema
+\end{itemize}
+\subsubsection{Classe LoggerIn}
+Permette l'autenticazione nel sistema da parte di utenti preventivamente registrati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-loggerin.pdf}}
+\caption[Schema Classe LoggerIn]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::AuthenticationRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Users::AuthenticationData per 
+\end{itemize}
+\subsubsection{Classe LoggerOut}
+Permette l'uscita dal sistema ad utenti autenticati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-loggerout.pdf}}
+\caption[Schema Classe LoggerOut]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerOut}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::AuthenticationRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Users::AuthenticationData per 
+\end{itemize}
+\subsubsection{Classe PasswordRecover}
+Permette il recupero della password da parte di un utente in caso di smarrimento o dimenticanza.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-passwordrecover.pdf}}
+\caption[Schema Classe PasswordRecover]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::AuthenticationRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::AuthenticationManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Users::AuthenticationData per 
+\end{itemize}
+\subsubsection{Classe Register}
+Permette la registrazione di un utente nel sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-register.pdf}}
+\caption[Schema Classe Register]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::Register}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::AuthenticationRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Users::AuthenticationData per 
+\end{itemize}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::SessionController}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::ClassManager}
+Package che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni riguardanti le classi di un ente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::ClassManager]{Schema Componente Quizzipedia::Server::ControllerServer::ClassManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Organization per Package che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni riguardanti le classi di un ente
+\end{itemize}
+\subsubsection{Classe ClassAdder}
+Permette la creazione di una nuova classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classadder.pdf}}
+\caption[Schema Classe ClassAdder]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ClassRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\end{itemize}
+\subsubsection{Classe ClassDeleter}
+Permette la rimozione delle classi dal sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classdeleter.pdf}}
+\caption[Schema Classe ClassDeleter]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassDeleter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ClassRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\end{itemize}
+\subsubsection{Classe ClassUpdater}
+Permette la modifica delle informazioni di base di una determinata classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classupdater.pdf}}
+\caption[Schema Classe ClassUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassUpdater}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ClassRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\end{itemize}
+\subsubsection{Classe FromClassRemover}
+Permette la rimozione di un utente da una determinata classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-fromclassremover.pdf}}
+\caption[Schema Classe FromClassRemover]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::FromClassRemover}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ClassRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\end{itemize}
+\subsubsection{Classe InClassAdder}
+Permette l'inserimento di un utente in una specifica classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-inclassadder.pdf}}
+\caption[Schema Classe InClassAdder]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ClassRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\end{itemize}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::SessionController}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::ClassDeleter per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::ClassUpdater per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::FromClassRemover per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher per aggiungi
+\end{itemize}
+\subsubsection{Classe StudentsClassFetcher}
+Recupera la lista degli studenti appartenenti ad una determinata classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-studentsclassfetcher.pdf}}
+\caption[Schema Classe StudentsClassFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ClassRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\end{itemize}
+\subsubsection{Classe TeachersClassFetcher}
+Recupera la lista degli insegnanti relativi ad una determinata classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-teachersclassfetcher.pdf}}
+\caption[Schema Classe TeachersClassFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ClassRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Organization::Class per 
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::InstitutionManager}
+Contiene le classi che permettono la gestione dell'ente da parte del relativo responsabile.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-institutionmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::InstitutionManager]{Schema Componente Quizzipedia::Server::ControllerServer::InstitutionManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Organization per Contiene le classi che permettono la gestione dell'ente da parte del relativo responsabile
+\end{itemize}
+\subsubsection{Classe InstitutionUpdater}
+Permette la modifica dell'ente da parte del responsabile.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-institutionmanager-institutionupdater.pdf}}
+\caption[Schema Classe InstitutionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::InstitutionManager::InstitutionUpdater}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::InstitutionRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::InstitutionManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Organization::Institution per 
+\end{itemize}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-institutionmanager-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::InstitutionManager::SessionController}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::InstitutionManager::InstitutionUpdater per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::ProfileManager}
+Package che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni personali da parte di un utente autenticato.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::ProfileManager]{Schema Componente Quizzipedia::Server::ControllerServer::ProfileManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Users per Package che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni personali da parte di un utente autenticato
+\end{itemize}
+\subsubsection{Classe AccountDeleter}
+Permette la rimozione di un account dal sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-accountdeleter.pdf}}
+\caption[Schema Classe AccountDeleter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ProfileRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ProfileManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Users::User per 
+\end{itemize}
+\subsubsection{Classe PasswordSetter}
+Permette ad un utente di impostare una nuova password relativa al proprio account.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-passwordsetter.pdf}}
+\caption[Schema Classe PasswordSetter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ProfileRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ProfileManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Users::User per 
+\end{itemize}
+\subsubsection{Classe PersonalDataFetcher}
+Ritorna tutte le informazioni personali riferite all'utente che ne effettua la richiesta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personaldatafetcher.pdf}}
+\caption[Schema Classe PersonalDataFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ProfileRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ProfileManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Users::User per 
+\end{itemize}
+\subsubsection{Classe PersonalDataSetter}
+Permette ad un utente la modifica delle informazioni personali.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personaldatasetter.pdf}}
+\caption[Schema Classe PersonalDataSetter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ProfileRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ProfileManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Users::User per 
+\end{itemize}
+\subsubsection{Classe PersonalQuizFetcher}
+Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fino a quel momento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personalquizfetcher.pdf}}
+\caption[Schema Classe PersonalQuizFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::ProfileRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ProfileManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Quiz per 
+\end{itemize}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::SessionController}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::QuestionsManager}
+Pacchetto relativo alla gestione delle domande, la loro creazione, il loro aggiornamento oppure la loro eliminazione.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::QuestionsManager]{Schema Componente Quizzipedia::Server::ControllerServer::QuestionsManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services per Pacchetto relativo alla gestione delle domande, la loro creazione, il loro aggiornamento oppure la loro eliminazione
+\item usa Quizzipedia::Server::ModelServer::Services::Questions per Pacchetto relativo alla gestione delle domande, la loro creazione, il loro aggiornamento oppure la loro eliminazione
+\end{itemize}
+\subsubsection{Classe QuestionCreator}
+Permette il salvataggio nella base di dati di una nuova domanda.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questioncreator.pdf}}
+\caption[Schema Classe QuestionCreator]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::QuestionRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuestionsManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\end{itemize}
+\subsubsection{Classe QuestionEraser}
+Permette la cancellazione di una domanda dalla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questioneraser.pdf}}
+\caption[Schema Classe QuestionEraser]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::QuestionRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuestionsManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\end{itemize}
+\subsubsection{Classe QuestionUpdater}
+Permette la modifica di una domanda già esistente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questionupdater.pdf}}
+\caption[Schema Classe QuestionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::QuestionRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuestionsManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\end{itemize}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::SessionController}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::QuestionsManager::StatisticsQuestionUpdater per 
+\end{itemize}
+\subsubsection{Classe StatisticsQuestionUpdater}
+Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in esso contenuta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-statisticsquestionupdater.pdf}}
+\caption[Schema Classe StatisticsQuestionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::StatisticsQuestionUpdater}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::QuestionRouter per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuestionsManager::SessionController per 
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::QuizManager}
+Package che racchiude tutte le funzionalità adibite alla creazione, modifica e al recupero di quiz per lo svolgimento da parte di un utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::QuizManager]{Schema Componente Quizzipedia::Server::ControllerServer::QuizManager}
+\end{figure}
+\subsubsection{Componenti contenute}
+\begin{itemize}
+\item Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent
+\end{itemize}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services per Package che racchiude tutte le funzionalità adibite alla creazione, modifica e al recupero di quiz per lo svolgimento da parte di un utente
+\end{itemize}
+\subsubsection{Classe QuizCreator}
+Permette il salvataggio nella base di dati di un nuovo quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizcreator.pdf}}
+\caption[Schema Classe QuizCreator]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::QuizRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLGenerator per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Quiz per 
+\end{itemize}
+\subsubsection{Classe QuizEraser}
+Permette la cancellazione di un quiz dalla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizeraser.pdf}}
+\caption[Schema Classe QuizEraser]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::QuizRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Quiz per 
+\end{itemize}
+\subsubsection{Classe QuizFetcher}
+Ritorna un determinato quiz pronto per essere svolto da un utente .
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizfetcher.pdf}}
+\caption[Schema Classe QuizFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::QuizRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLParser per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Quiz per 
+\end{itemize}
+\subsubsection{Classe QuizUpdater}
+Permette la modifica di un quiz già presente nella base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizupdater.pdf}}
+\caption[Schema Classe QuizUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::QuizRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLGenerator per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Quiz per 
+\end{itemize}
+\subsubsection{Classe ResultsUpdater}
+Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-resultsupdater.pdf}}
+\caption[Schema Classe ResultsUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::QuizRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Quiz per 
+\end{itemize}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::SessionController}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::StatisticsQuizUpdater per aggiungi
+\end{itemize}
+\subsubsection{Classe StatisticsQuizUpdater}
+Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte degli utenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-statisticsquizupdater.pdf}}
+\caption[Schema Classe StatisticsQuizUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::StatisticsQuizUpdater}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::QuizRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::SessionController per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}
+Questo package racchiude i moduli necessari alla traduzione, da QML ad un formato comprensibile dal sistema, delle informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent]{Schema Componente Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}
+\end{figure}
+\subsubsection{Classe QMLGenerator}
+Permette la traduzione in formato QML di un quiz nel caso si voglia procedere al salvataggio dello stesso all'interno del database.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent-qmlgenerator.pdf}}
+\caption[Schema Classe QMLGenerator]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLGenerator}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater per aggiungi
+\end{itemize}
+\subsubsection{Classe QMLParser}
+Permette la traduzione di un quiz dal formato QML ad uno comprensibile dal sistema per la generazione delle relative pagine HTML.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent-qmlparser.pdf}}
+\caption[Schema Classe QMLParser]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLParser}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::RequestsManager}
+Package che si occupa di memorizzare richieste da parte degli utenti, mostrarle al responsabile e permettergli di accettarle o meno.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::RequestsManager]{Schema Componente Quizzipedia::Server::ControllerServer::RequestsManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Requests per Package che si occupa di memorizzare richieste da parte degli utenti, mostrarle al responsabile e permettergli di accettarle o meno
+\end{itemize}
+\subsubsection{Classe ClassRequestsAdder}
+Permette la memorizzazione delle richieste di creazione di una classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-classrequestsadder.pdf}}
+\caption[Schema Classe ClassRequestsAdder]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::ClassRequestsAdder}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::RequestsRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::RequestsManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Requests::ClassList per 
+\end{itemize}
+\subsubsection{Classe InsertClassRequestsAdder}
+Permette la memorizzazione nella base di dati di tutte le richieste, fatte da parte degli utenti, di essere inseriti in una determinata classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-insertclassrequestsadder.pdf}}
+\caption[Schema Classe InsertClassRequestsAdder]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestsAdder}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::RequestsRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::RequestsManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Requests::ClassList per 
+\end{itemize}
+\subsubsection{Classe RequestsFetcher}
+Permette la visualizzazione di tutte le richieste da parte degli utenti.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-requestsfetcher.pdf}}
+\caption[Schema Classe RequestsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::RequestsRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::RequestsManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Requests::ClassList per 
+\item usa Quizzipedia::Server::ModelServer::Requests::RoleList per 
+\end{itemize}
+\subsubsection{Classe RoleAccepter}
+Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utente dopo che ne ha fatto richiesta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-roleaccepter.pdf}}
+\caption[Schema Classe RoleAccepter]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::RequestsRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::RequestsManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Requests::RoleList per 
+\end{itemize}
+\subsubsection{Classe RoleRequestAdder}
+Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'interno del sistema.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-rolerequestadder.pdf}}
+\caption[Schema Classe RoleRequestAdder]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::RequestsRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::RequestsManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Requests::RoleList per 
+\end{itemize}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::SessionController}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::ClassRequestsAdder per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestsAdder per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::SearchManager}
+Questo package permette di effettuare una ricerca nel database di quiz o domande richiesti dall'utente e ritornare una lista che corrisponde ai parametri desiderati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::SearchManager]{Schema Componente Quizzipedia::Server::ControllerServer::SearchManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services per Questo package permette di effettuare una ricerca nel database di quiz o domande richiesti dall'utente e ritornare una lista che corrisponde ai parametri desiderati
+\end{itemize}
+\subsubsection{Classe QuestionsSearcher}
+Ritorna una lista di domande che corrispondono ai parametri di ricerca impostati dall'utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-questionssearcher.pdf}}
+\caption[Schema Classe QuestionsSearcher]{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::QuestionsSearcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::SearchRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::SearchManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion per 
+\end{itemize}
+\subsubsection{Classe QuizSearcher}
+Ritorna una lista di quiz che corrispondono ai parametri di ricerca impostati dall'utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-quizsearcher.pdf}}
+\caption[Schema Classe QuizSearcher]{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::SearchRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::SearchManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Quiz per 
+\end{itemize}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::SessionController}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::SearchManager::QuestionsSearcher per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::StatisticsManager}
+Questo package ha il compito di recuperare tutte le informazioni sottoforma di statistiche relative ad un quiz, una domanda in particolare o ad un utente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::StatisticsManager]{Schema Componente Quizzipedia::Server::ControllerServer::StatisticsManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Statistics per Questo package ha il compito di recuperare tutte le informazioni sottoforma di statistiche relative ad un quiz, una domanda in particolare o ad un utente
+\end{itemize}
+\subsubsection{Classe QuestionStatisticsFetcher}
+Ritorna le statistiche riferite ad una domanda.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-questionstatisticsfetcher.pdf}}
+\caption[Schema Classe QuestionStatisticsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::QuestionStatisticsFetcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::StatisticsRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Client::ModelClient::Statistics::QuestionStatistics per 
+\item usa Quizzipedia::Server::ControllerServer::StatisticsManager::SessionController per aggiungi
+\end{itemize}
+\subsubsection{Classe QuizStatisticsFetcher}
+Ritorna le statistiche riferite ad un quiz.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-quizstatisticsfetcher.pdf}}
+\caption[Schema Classe QuizStatisticsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::QuizStatisticsFetcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::StatisticsRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::StatisticsManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Statistics::QuizStatistics per 
+\end{itemize}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::SessionController}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::StatisticsManager::QuestionStatisticsFetcher per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::StatisticsManager::QuizStatisticsFetcher per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::StatisticsManager::StudentStatisticsFetcher per aggiungi
+\end{itemize}
+\subsubsection{Classe StudentStatisticsFetcher}
+Ritorna le statistiche riferite ad uno studente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-studentstatisticsfetcher.pdf}}
+\caption[Schema Classe StudentStatisticsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::StudentStatisticsFetcher}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::StatisticsRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::StatisticsManager::SessionController per aggiungi
+\end{itemize}
+\subsection{Quizzipedia::Server::ControllerServer::TopicManager}
+Package che permette la creazione di un nuovo argomento o l'eliminazione di uno già esistente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ControllerServer::TopicManager]{Schema Componente Quizzipedia::Server::ControllerServer::TopicManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ModelServer::Services per Package che permette la creazione di un nuovo argomento o l'eliminazione di uno già esistente
+\end{itemize}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::TopicManager::SessionController}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::ControllerServer::TopicManager::TopicCreator per aggiungi
+\item usata da Quizzipedia::Server::ControllerServer::TopicManager::TopicEraser per aggiungi
+\end{itemize}
+\subsubsection{Classe TopicCreator}
+Permette la creazione di un nuovo argomento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager-topiccreator.pdf}}
+\caption[Schema Classe TopicCreator]{Schema Classe Quizzipedia::Server::ControllerServer::TopicManager::TopicCreator}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::TopicRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::TopicManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Topics per 
+\end{itemize}
+\subsubsection{Classe TopicEraser}
+Permette l'eliminazione di un argomento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager-topiceraser.pdf}}
+\caption[Schema Classe TopicEraser]{Schema Classe Quizzipedia::Server::ControllerServer::TopicManager::TopicEraser}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Server::RoutingManager::TopicRouter per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::TopicManager::SessionController per aggiungi
+\item usa Quizzipedia::Server::ModelServer::Services::Topics per 
+\end{itemize}
+\subsection{Quizzipedia::Server::RoutingManager}
+Questo pacchetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per gestire le comunicazioni provenienti dal client tramite Socket.IO. 
+Con l'uso di Express.js le richieste provenienti dal client verranno indirizzate alla corretta classe di questo package, che si occuperà di inviare la richiesta al relativo services per la sua esecuzione..
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager.pdf}}
+\caption[Schema Componente Quizzipedia::Server::RoutingManager]{Schema Componente Quizzipedia::Server::RoutingManager}
+\end{figure}
+\subsubsection{Interazioni con altre componenti}
+\paragraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer per Questo pacchetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per gestire le comunicazioni provenienti dal client tramite Socket.IO. 
+Con l'uso di Express.js le richieste provenienti dal client verranno indirizzate alla corretta classe di questo package, che si occuperà di inviare la richiesta al relativo services per la sua esecuzione.
+\end{itemize}
+\subsubsection{Classe AbstractRouter}
+Classe astratta supertipo delle altre classi del pacchetto.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-abstractrouter.pdf}}
+\caption[Schema Classe AbstractRouter]{Schema Classe Quizzipedia::Server::RoutingManager::AbstractRouter}
+\end{figure}
+\subsubsection{Classe AuthenticationRouter}
+Invocato dal client per interagire con AuthenticationManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-authenticationrouter.pdf}}
+\caption[Schema Classe AuthenticationRouter]{Schema Classe Quizzipedia::Server::RoutingManager::AuthenticationRouter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlData per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerOut per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::AuthenticationManager::Register per aggiungi
+\end{itemize}
+\subsubsection{Classe ClassRouter}
+Invocato dal client per interagire con ClassManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-classrouter.pdf}}
+\caption[Schema Classe ClassRouter]{Schema Classe Quizzipedia::Server::RoutingManager::ClassRouter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::ClassDeleter per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::ClassUpdater per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::FromClassRemover per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher per aggiungi
+\end{itemize}
+\subsubsection{Classe InstitutionRouter}
+Invocato dal client per interagire con CompanyManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-institutionrouter.pdf}}
+\caption[Schema Classe InstitutionRouter]{Schema Classe Quizzipedia::Server::RoutingManager::InstitutionRouter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::InstitutionManager::InstitutionUpdater per aggiungi
+\end{itemize}
+\subsubsection{Classe ProfileRouter}
+Invocato dal client per interagire con ProfileManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-profilerouter.pdf}}
+\caption[Schema Classe ProfileRouter]{Schema Classe Quizzipedia::Server::RoutingManager::ProfileRouter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher per aggiungi
+\end{itemize}
+\subsubsection{Classe QuestionRouter}
+Invocato dal client per interagire con QuestionsManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-questionrouter.pdf}}
+\caption[Schema Classe QuestionRouter]{Schema Classe Quizzipedia::Server::RoutingManager::QuestionRouter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuestionsManager::StatisticsQuestionUpdater per 
+\end{itemize}
+\subsubsection{Classe QuizRouter}
+Invocato dal client per interagire con QuizManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-quizrouter.pdf}}
+\caption[Schema Classe QuizRouter]{Schema Classe Quizzipedia::Server::RoutingManager::QuizRouter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::QuizManager::StatisticsQuizUpdater per aggiungi
+\end{itemize}
+\subsubsection{Classe RequestsRouter}
+Invocato dal client per interagire con RequestsManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-requestsrouter.pdf}}
+\caption[Schema Classe RequestsRouter]{Schema Classe Quizzipedia::Server::RoutingManager::RequestsRouter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::RequestsManager::ClassRequestsAdder per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestsAdder per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder per aggiungi
+\end{itemize}
+\subsubsection{Classe SearchRouter}
+Invocato dal client per interagire con SearchManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-searchrouter.pdf}}
+\caption[Schema Classe SearchRouter]{Schema Classe Quizzipedia::Server::RoutingManager::SearchRouter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearch per aggiungi
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::SearchManager::QuestionsSearcher per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher per aggiungi
+\end{itemize}
+\subsubsection{Classe StatisticsRouter}
+Invocato dal client per interagire con StatisticsManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-statisticsrouter.pdf}}
+\caption[Schema Classe StatisticsRouter]{Schema Classe Quizzipedia::Server::RoutingManager::StatisticsRouter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::StatisticsManager::QuestionStatisticsFetcher per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::StatisticsManager::QuizStatisticsFetcher per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::StatisticsManager::StudentStatisticsFetcher per aggiungi
+\end{itemize}
+\subsubsection{Classe TopicRouter}
+Invocato dal client per interagire con TopicManager.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-topicrouter.pdf}}
+\caption[Schema Classe TopicRouter]{Schema Classe Quizzipedia::Server::RoutingManager::TopicRouter}
+\end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa Quizzipedia::Server::ControllerServer::TopicManager::TopicCreator per aggiungi
+\item usa Quizzipedia::Server::ControllerServer::TopicManager::TopicEraser per aggiungi
+\end{itemize}
