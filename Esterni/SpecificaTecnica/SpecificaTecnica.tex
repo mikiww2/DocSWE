@@ -294,7 +294,7 @@ L'architettura del prodotto sarà presentata con un approccio top-down, descrive
 	I diagrammi di \gl{package}, classi e attività inclusi si attengono alla specifica \gl{UML} 2.0.
 	
 	\subsection{Architettura generale}
-	L'architettura del prodotto ha un'impostazione client-server e segue il \gl{design pattern} \gl{MVC}. 
+	L'architettura del prodotto ha un'impostazione client-server e segue il \gl{design pattern} \gl{MVVM}. 
 	\newline
 	L'architettura generale segue il pattern Three-Tier e viene suddivisa nei seguenti tre livelli:
 	\begin{enumerate}
@@ -304,8 +304,7 @@ L'architettura del prodotto sarà presentata con un approccio top-down, descrive
 	\end{enumerate}
 	
 	\subsubsection{Client}
-	La parte \gl{client} è divisa in Model, View e Controller. È il livello più alto dell'applicazione e interagisce con l'utente finale. La componente View è possibile considerarla come il Presentation Tier dell'architettura generale assunta.
-	\newline AngularJS è utilizzato client-side per rispettare il pattern \gl{MVC}.
+	La parte \gl{client} è divisa in Model, View e ViewModel, applicando il design pattern MVVM dal momento che viene utilizzato AngularJS. È il livello più alto dell'applicazione e interagisce con l'utente finale. La componente View è possibile considerarla come il Presentation Tier dell'architettura generale assunta.
 	
 	\subsubsection{Server}
 	La parte \gl{server} è divisa in Model e Controller. Gestisce la logica di business e interroga il \gl{database} per passarne i dati al \gl{client}. Per questo nell'architettura Three-Tier rappresenta la Logic Tier.
@@ -314,7 +313,15 @@ L'architettura del prodotto sarà presentata con un approccio top-down, descrive
 	Il \gl{database} memorizza i dati e li isola dal resto del sistema. Il \gl{database}, che rappresenta il Data Tier dell'architettura Three-Tier, è implementato con \gl{MongoDB}. 
 	
 	\subsection{REST}
-
+	È stato deciso di utilizzare REST (Representational State Transfer), uno stile architetturale per sistemi di ipertesto distribuiti, al posto del protocollo SOAP (Simple Object Access Protocol), considerato in precedenza.
+	\\ REST ignora i dettagli di implementazione delle componenti e la sintassi del protocollo al fine di concentrarsi sui ruoli delle componenti e i vincoli imposti dalle loro interazioni con altri componenti.
+	\\ REST, che lavora sul protocollo HTTP generalmente, pur lasciando libera l'implementazione delle componenti all'interno dell'architettura, presenta dei vincoli stretti:
+	\begin{itemize}
+	\item separazione delle risorse in client e server in modo tale che i ruoli risultino ben definiti e ogni componente non debba preoccuparsi di altro se non del proprio ruolo, portando beneficio alla portabilità e scalabilità del prodotto;
+	\item la comunicazione client-server dev'essere di tipo stateless, ogni richiesta fatta dal client pertanto dovrà avere tutte le informazioni necessarie perchè il server comprenda la richiesta, senza utilizzare alcun contesto presente nel server;
+	\item i risultati ottenuti da una richiesta client-server devono definirsi cacheable o non cacheable. Qualora i dati risultino cacheable saranno salvati in cache in modo tale da permettere al client di riutilizzarli successivamente senza dover fare una nuova richiesta al server per ottenerli, aumentando l'efficienza e la scalabilità del prodotto;
+	\item è richiesta un'interfaccia omogenea di comunicazione tra client e server per disaccoppiare maggiormente l'architettura.
+	\end{itemize}
 \newpage
 
 \section{Componenti e classi}
@@ -930,110 +937,19 @@ Il docente può cercare domande nel sistema. Ha la possibilità di limitare la r
 \subsection{Requisiti-Componenti}
 \input{auto_track_rc}
 
-\subsection{Componenti-Test}
-
-\begin{tabella}{!{\VRule}p{10.6cm}!{\VRule}p{4cm}!{\VRule}!}
-	\color{white} \bold{Componente} & \color{white} \bold{Test di integrazione}
-	\endfirsthead
-	Quizzipedia & TIQuizzipedia
-	\\
-	Quizzipedia::Client & TIClient
-	\\
-	Quizzipedia::Client::ModelClient & TIModelClient
-	\\
-	Quizzipedia::Client::ModelClient::Organization & TIOrganization
-	\\
-	Quizzipedia::Client::ModelClient::Requests & TIRequests
-	\\
-	Quizzipedia::Client::ModelClient::Services & TIServicesClient
-	\\
-	Quizzipedia::Client::ModelClient::Services::Questions & TIQuestionsClient
-	\\
-	Quizzipedia::Client::ModelClient::Statistics & TIStatistics 
-	\\
-	Quizzipedia::Client::ModelClient::Users & TIUsers
-	\\
-	Quizzipedia::Client::ViewClient & TIViewClient
-	\\
-	Quizzipedia::Client::ViewClient::ViewOrgManager & TIViewOrgManager
-	\\
-	Quizzipedia::Client::ViewClient::ViewQuestionManager & TIViewQuestionManager
-	\\
-	Quizzipedia::Client::ViewClient::ViewQuizManager & TIViewQuizManager
-	\\
-	Quizzipedia::Client::ViewClient::ViewQuizSolver & TIViewQuizSolver
-	\\
-	Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver & TIViewQuestionSolver
-	\\
-	Quizzipedia::Client::ViewClient::ViewRequests & TIViewRequest
-	\\
-	Quizzipedia::Client::ViewClient::ViewSearch & TIViewSearch
-	\\
-	Quizzipedia::Client::ViewClient::ViewStatistics & TIViewStatistics
-	\\
-	Quizzipedia::Client::ViewClient::ViewTopicManager & TIViewTopicManager
-	\\
-	Quizzipedia::Client::ViewClient::ViewUsers & TIViewUsers
-	\\
-	Quizzipedia::Client::ViewClient::ViewErrors & TIViewErrors
-	\\
-	Quizzipedia::Client::ControllerClient & TIControllerClient
-	\\
-	Quizzipedia::Client::ControllerClient::CtrlOrganization & TICtrlOrganization
-	\\
-	Quizzipedia::Client::ControllerClient::CtrlRequests & 
-	TICtrlRequests
-	\\
-	Quizzipedia::Client::ControllerClient::CtrlServices & 
-	TICtrlServices
-	\\
-	Quizzipedia::Client::ControllerClient::CtrlStatistics & TICtrlStatistics
-	\\
-	Quizzipedia::Client::ControllerClient::CtrlUsers & TICtrlUsers
-	\\
-	Quizzipedia::Server & TIServer
-	\\
-	Quizzipedia::Server::ControllerServer & TIControllerServer
-	\\
-	Quizzipedia::Server::ControllerServer::AuthenticationManager & TIAuthenticationManager
-	\\
-	Quizzipedia::Server::ControllerServer::ClassManager & TIClassManager
-	\\
-	Quizzipedia::Server::ControllerServer::CompanyManager & TICompanyManager
-	\\
-	Quizzipedia::Server::ControllerServer::ProfileManager & TIProfileManager
-	\\
-	Quizzipedia::Server::ControllerServer::QuestionsManager & TIQuestionsManager
-	\\
-	Quizzipedia::Server::ControllerServer::QuizManager & 
-	TIQuizManager
-	\\
-	Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent & TIQMLAgent
-	\\
-	Quizzipedia::Server::ControllerServer::RequestsManager & TIRequestsManager
-	\\
-	Quizzipedia::Server::ControllerServer::SearchManager & TISearchManager
-	\\
-	Quizzipedia::Server::ControllerServer::StatisticsManager & TIStatisticsManager
-	\\
-	Quizzipedia::Server::ControllerServer::TopicManager & 
-	TITopicManager
-	\\
-	Quizzipedia::Server::ModelServer & TIModelServer
-	\\
-	Quizzipedia::Server::ModelServer::Services & TIServicesServer
-	\\
-	Quizzipedia::Server::ModelServer::Services::Questions & TIQuestionsServer
-	\\
-	Quizzipedia::Server::RoutingManager & TIRoutingManager
-	\\	
-	\rowcolor{white}  
-	\caption{Tracciamento componenti-test di integrazione}
-\end{tabella}
 
 \newpage
 \appendix
 \section{Design Pattern}
-DA FARE
+In questa sezione vengono presentati i \gl{design pattern} che al momento sono stati stabiliti dal \gl{team} per l'architettura del nostro prodotto.
+
+\subsection{Model-View-ViewModel}
+
+
+\subsection{Facade}
+
+
+\subsection{DAO}
+
 
 \end{document}
