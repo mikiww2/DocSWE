@@ -16,11 +16,11 @@
 \setcounter{tocdepth}{5}
 
 \def\NOME{Norme di Progetto}
-\def\VERSIONE{3.0}
-\def\DATA{03.03.2016}
-\def\REDATTORE{Giacomo Beltrame}
-\def\VERIFICATORE{Simone Boccato}
-\def\RESPONSABILE{Michela De Bortoli \\ & Filippo Tesser}
+\def\VERSIONE{4.0}
+\def\DATA{??????????}
+\def\REDATTORE{Rudy Berton \\ & Filippo Tesser}
+\def\VERIFICATORE{Miki Violetto}
+\def\RESPONSABILE{Giacomo Beltrame}
 \def\USO{Interno}
 \def\DISTRIBUZIONE{\AUTORE}
 %\def\SOMMARIO{Questo documento elenca le norme che i membri del \gl{team} Vault-Tech devono seguire durante lo sviluppo del progetto \CAPITOLATO.}
@@ -142,22 +142,25 @@ Inoltre saranno definite tre tipologie di test (test di  integrazione, test di s
 \\ Infine sarà necessario eseguire il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto.
 
 \mysubparagraph{Definizione di Prodotto}
-I \italics{Progettisti} devono redigere la \doc{Definizione di Prodotto}. In essa viene descritta la progettazione di dettaglio del sistema, specificando quanto scritto nella \doc{Specifica Tecnica}. Inoltre opportuni test di unità devono essere definiti per verificare che i componenti del sistema funzionino come previsto.
-I seguenti diagrammi UML devono essere realizzati:
+I \italics{Progettisti} devono redigere la \doc{Definizione di Prodotto}. In essa viene descritta la progettazione di dettaglio del sistema, specificando maggiormente quanto scritto nella \doc{Specifica Tecnica}. Inoltre opportuni test di unità devono essere definiti per verificare che le singole componenti del sistema funzionino come previsto.
+\\ I seguenti diagrammi UML devono essere realizzati:
 \begin{itemize}
 	\item diagrammi delle classi,
 	\item diagrammi di sequenza.
 \end{itemize}
-Ogni classe progettata nella \doc{Specifica Tecnica} deve essere descritta all'interno della \doc{Definizione di Prodotto}. Devono essere illustrati lo scopo della classe e la funzionalità da essa modellata. Nella descrizione devono essere inoltre elencati metodi e attributi della classe. Ad ogni classe deve essere associato almeno un requisito in modo tale da poter controllare lo stato di avanzamento nello sviluppo del progetto secondo il modello specificato nel \doc{Piano di Progetto}. L'applicativo Tracker è utilizzato nel tracciamento di tali dipendenze.
+Ogni classe individuata nella \doc{Specifica Tecnica} deve essere descritta all'interno della \doc{Definizione di Prodotto}. Devono essere illustrati lo scopo della classe e la funzionalità che ricopre. Nella descrizione devono essere inoltre elencati i metodi e gli attributi della classe, elementi che permetteranno di comprendere meglio le interazioni presenti tra diverse classi all'interno dell'architettura.
+\\ Ad ogni classe deve essere associato almeno un requisito in modo tale da poter controllare lo stato di avanzamento nello sviluppo del progetto secondo il modello specificato nel \doc{Piano di Progetto}. L'applicativo Tracker viene utilizzato nel tracciamento di tali dipendenze.
+\\ Infine i diagrammi di sequenza illustrati all'interno del documento permetteranno di comprendere come un determinato comportamento del prodotto si svolga in funzione dell'interazione tra diversi oggetti che collettivamente lo implementano.
 
 \myparagraph{Codifica}
-\bold{DA FARE}
+A seguito dell'attività di Progettazione, avviene la reale implementazione dell'architettura con la scrittura del codice sorgente da parte dei \italics{Programmatori}. Tale attività si concluderà con il collaudo finale del prodotto e la sua validazione attraverso il superamento dei test, dopo aver corretto tutti i bug esistenti.
+\\ La codifica dovrà seguire le indicazioni presenti nel documento \doc{Definizione di Prodotto} per la realizzazione delle singole componenti presenti. La scrittura del codice dovrà inoltre rispettare le metriche definite all'interno del \doc{Piano di Qualifica} per poter garantire una buona qualità anche al codice.
 
 \mysubparagraph{Manuale utente}
-I \italics{Programmatori} devono redigere il \doc{Manuale Utente}. In esso vengono fornite all'utente del prodotto le informazioni principali per aiutarlo nell'utilizzo e fornirgli una rapida spiegazione delle funzionalità dell'applicazione. Deve essere chiaro, diretto e pienamente comprensibile alla base di utenza a cui il prodotto è destinato.
+I \italics{Programmatori} devono redigere il \doc{Manuale Utente}. In esso vengono fornite all'utilizzatore del prodotto le informazioni principali per aiutarlo nel suo uso e fornirgli una rapida spiegazione delle funzionalità presenti nell'applicazione. Deve essere un documento chiaro, diretto e pienamente comprensibile per il bacino di utenza a cui il prodotto è destinato.
 
 \mysubparagraph{Manuale sviluppatore}
-Redatto dai \italics{Programmatori}, il \doc{Manuale Sviluppatore} ha come destinatari gli incaricati a installare e configurare il prodotto.
+Redatto dai \italics{Programmatori}, il \doc{Manuale Sviluppatore} ha come destinatari gli incaricati a installare e configurare il prodotto, prima del suo reale utilizzo.
 
 \subsubsection{Procedure}
 \myparagraph{Classificazione dei requisiti}
@@ -246,7 +249,8 @@ La definizione di una classe si divide in una descrizione ad alto livello presen
 \begin{itemize}
 \item una descrizione della classe in questione;
 \item \bold{relazioni con altre classi:} vengono descritte le relazioni entranti o uscenti che tale classe ha con le altre componenti dell'architettura;
-\item \bold{DA CONTINUARE A SECONDA DI QUELLO CHE VA SCRITTO NELLA DEF DI PROD}
+\item \bold{attributi:} l'elenco degli attributi che compongono la classe in esame e la spiegazione della loro utilità;
+\item \bold{metodi:} l'elenco dei metodi presenti nella classe e la loro funzione.
 \end{itemize}
 
 
@@ -256,9 +260,8 @@ Si veda la sezione \hyperref[sez:test]{Test} dedicata a tale argomento.
 \myparagraph{Codifica e convenzioni}
 Tutti i file contenente codice o documentazione \LaTeX{} devono essere conformi alla codifica \gl{UTF-8} con carattere di fine riga in stile \gl{Unix LF} e avere una riga vuota al termine.
 Il codice deve seguire le linee guida Google reperibili all'indirizzo \url{https://github.com/google/styleguide}. I nomi delle classi devono essere in inglese.
-
-
-Ogni file sorgente deve contenere dalla prima riga l'intestazione che elenca:
+\\
+\\ Ogni file sorgente deve contenere dalla prima riga l'intestazione che elenca:
 \begin{itemize}
 	\item nome del file comprensivo di estensione e percorso a partire dalla root del repository;
 	\item autore e data di creazione del file;
@@ -296,7 +299,7 @@ Webstorm è stato scelto dal team per le funzionalità e i vantaggi che esso off
 	\item è fruibile gratuitamente tramite licenza studenti;
 	\item permette di automatizzare alcuni dei procedimenti illustrati nelle procedure di sviluppo come l'inserimento automatico dell'intestazione per ogni file di codice sviluppato;
 	\item JSHint, un tool che aiuta a rilevare errori e potenziali problemi nel codice JavaScript;
-	\item diversi plugin già implementati per lavorare con Node e Angular;
+	\item diversi plugin già implementati per lavorare con Node.js e AngularJS;
 	\item è multipiattaforma.
 \end{itemize}
 
@@ -598,7 +601,7 @@ Segue un elenco dei tipi di test che vengono effettuati.
 
 \mysubparagraph{Test di unità}
 Sono test atti a verificare che ogni singola unità di prodotto funzioni nel modo corretto. In questo tipo di test ogni componente del sistema viene verificata isolata dal resto del sistema.
-Il codice identificativo dei test di unità è: \centra{TU[codice univoco]}
+Il codice identificativo dei test di unità è: \centra{TU[codice numerico]} dove il codice numerico è progressivo e determinato dallo strumento Tracker in cui vengono inseriti i test di unità.
 
 \mysubparagraph{Test di integrazione}
 I test di integrazione rappresentano l'estensione logica del test di unità. Il tipo più semplice di test di integrazione consiste nella combinazione di due unità già sottoposte a test in un solo componente e nel test dell'interfaccia presente tra le due. In uno scenario realistico più unità vengono combinate in componenti che, a loro volta, vengono aggregate in parti più grandi del sistema. Alla fine, tutti i moduli che compongono un processo vengono sottoposti al test contemporaneamente.
