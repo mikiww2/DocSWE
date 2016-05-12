@@ -489,7 +489,7 @@
 		\begin{description}
 			\item \bold{Definizione di Prodotto:} si procede alla stesura di \doc{Definizione di Prodotto v1.0}, che definisce la struttura del prodotto che il gruppo intende sviluppare seguendo le direttive della \doc{Specifica Tecnica}.
 			\item \bold{Manuale Utente:} stesura documento \doc{Manuale Utente v1.0}.
-			\item \bold{Manuale Amministratore:} stesura documento \doc{Manuale Amministratore v1.0}.
+			\item \bold{Manuale Sviluppatore:} stesura documento \doc{Manuale Sviluppatore v1.0}.
 		\end{description}	
 		\item \bold{Codifica:} i \italics{Programmatori} hanno il compito di codificare  requisiti seguendo le direttive della \doc{Definizione di prodotto}.		 
 	\end{itemize}
@@ -800,8 +800,54 @@
 	
 	\subsection{Attività di progettazione di dettaglio e codifica}
 	\subsubsection{Consuntivo di periodo}
-	\subsubsection{Consclusioni}
+	Vengono di seguito riportati i costi effettivi sostenuti in questa attività.
+	
+	\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c}
+		
+		\color{white} \bold{Nome} & \color{white} \bold{Responsabile} &\color{white} \bold{Amm} & \color{white} \bold{An} & \color{white} \bold{Pt} & \color{white} \bold{Pr} & \color{white} \bold{Ver} & \color{white} \bold{Ore totali persona} \\
+		\endfirsthead
+		Giacomo Beltrame & 13 & 0 & 6 & 0 & 20(-1) & 18 & 57 (-1)\\
+		Rudy Berton & 0 & 0 & 0 & 30 & 0 & 22 & 52\\
+		Simone Boccato & 0 & 6 & 0 & 17 & 25 & 7 & 55\\
+		Michela De Bortoli & 0 & 10 & 0 & 20 & 25 & 0 & 55\\
+		Vassilikì Menarin & 0 & 0 & 7 & 0 & 26 & 21 (-2) & 54 (-2)\\
+		Filippo Tesser & 0 & 0 & 0 & 20 & 15 & 16 & 51\\
+		Miki Violetto & 0 & 0 & 0 & 12 (+2) & 29 (-3) & 13 & 54 (-1)\\     
+		
+		\rowcolor{white}  
+		\caption{Consuntivo orario attività di progettazione di dettaglio e codifica}	    	
+		
+	\end{tabella}	
+	
+	Segue una tabella che illustra come questi cambiamenti impattino i ruoli e i costi:
+	
+	
+	\begin{tabella}{l!{\VRule}c!{\VRule}c}
+		
+		\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
+		\endfirsthead
+		\endfirsthead
+		Responsabile & 13 & € 390 \\
+		Amministratore & 16 & € 320\\
+		Analista & 13 & € 325 \\
+		Progettista & 99(+2) & € 2178 (+44) \\
+		Programmatore & 140(-4) & € 2100 (-60) \\
+		Verificatore & 97(-2) & € 1455 (-30)\\
+		\hline
+		Totale Preventivo & 378  & € 6768\\
+		Totale Consuntivo & 378 & € 6722\\
+		Differenza & 0 & - € 46\\
+		
+		\rowcolor{white}  
+		\caption{Consuntivo economico attività di progettazione di dettaglio e codifica}	    	
+		
+	\end{tabella}
+
+	\subsubsection{Conclusioni}
+	Gli unici problemi da riportare in questa fase sono state delle incongruenze che riguardano alcuni strumenti utilizzati dal team e le versioni delle tecnologie da usare, problemi che comunque non hanno portato a ritardi. Il \italics{Responsabile} ha deciso di modificare alcune ore di lavoro per far fronte ad esigenze di organizzazione senza però sforare il totale orario del gruppo. Questa variazione di carico di lavoro ha portato una diminuzione del budget quantificabile con €46.
+	
 	\subsubsection{Preventivo a finire}
+	Durante questa attività ci sono stati dei problemi di entità lieve che riguardano i vari strumenti utilizzati dal gruppo. Questo non ha portato a variazioni sul totale orario e quindi il gruppo non ritiene di dover modificare la pianificazione futura. Il \italics{Responsabile} ha variato il carico di ore per persona portando il bilancio di questa attività in positivo di €46, tenendo conto del bilancio della fase precedente di -€35, il bilancio finale attuale è di -35 + 46 = \bold{+€11}.
 	
 	\newpage
 	\appendix
@@ -934,9 +980,51 @@
 	Due membri del gruppo sono stati impossibilitati a lavorare per problemi di salute. La pianificazione ha permesso di rispettare comunque le scadenze, i membri hanno tempestivamente informato il responsabile che ha ridistribuito il carico di ore per rimanere dentro le scadenze. Ciò ha permesso di finire il lavoro ma il ritardo accumulato ha portato ad una mancata riunione con il proponente.
 	
 	\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
-	Nelle prime fasi di progettazione sono sorti problemi per la scarsa conoscenza con \gl{StarUML} per quanto riguarda la creazione dei diagrammi di attività e \gl{package}. I problemi sono stati risolti nel tempo tramite lettura di guide dedicate da parte dei progettisti.
+	Nelle prime fasi di progettazione sono sorti problemi per la scarsa conoscenza con \gl{StarUML} per quanto riguarda la creazione dei diagrammi di attività e \gl{package}. I problemi sono stati risolti nel tempo tramite lettura di guide dedicate da parte dei \italics{Progettisti}.
 	
+	\subsection{Progettazione di dettaglio e codifica}
 	
+	\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
+		%{\centering\arraybackslash}p{2 cm}}
+		%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
+		
+		
+		\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
+		\endfirsthead
+		
+		\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
+		\cellcolor{P} & Guasti \gl{hardware} & No \\
+		\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti \gl{software} & \bold{Sì} \\
+		\hline
+		
+		\cellcolor{D} & Problemi personali dei membri & No \\
+		\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
+		\hline
+		
+		\cellcolor{P} & Problemi di \gl{versionamento} & No \\
+		\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
+		\hline
+		
+		\rowcolor{D}
+		Strumenti & Mancante o insufficiente conoscenza degli strumenti & \bold{Sì} \\	
+		\hline	
+		
+		\rowcolor{P}
+		Requisiti & Errata comprensione dei requisiti & No\\
+		\hline
+		
+		\rowcolor{white}  
+		\caption{Attualizzazione dei rischi nell'attività di progettazione di dettaglio e codifica}	    	
+		
+	\end{tabella}
+	
+	\subsubsection{Malfunzionamenti software}
+	Si sono presentate delle incongruenze tra le varie versioni delle tecnologie scelte. Nel caso piu grave questo ha portato alla riscrittura di alcune parti di codice a causa dell'utilizzo di metodi divenuti obsoleti nelle versioni scelte e che rendevano il funzionamento del prodotto instabile. L'\italics{Amministratore} ha provveduto tempestivamente a fare aggiornare i software dei membri coinvolti. La celerità di questa azione non ha portato a ritardi.
+	
+	\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
+	Alcuni membri non erano a conoscenza dei meccanismi di automatizzazione offerti dall'IDE scelto per la codifica.
+	L'\italics{Amministratore} ha provveduto a configurare ed illustrare tali meccanismi ai membri interessati. La risoluzione tempestiva di questo problema non ha portato ulteriori ritardi.
+		
 	\newpage
 	\section{Attività di investimento} \label{Investimento}
 	Le attività di Analisi dei requisiti utente e di Raffinamento dei requisiti non sono a carico del committente e rappresentano l'investimento iniziale del gruppo. Si è scelto di riscrivere comunque, in questa appendice, i prospetti economici e orari delle fasi in questione per completezza e offrire al committente maggiori informazioni sull'operato del gruppo. Per il preventivo delle fasi rendicontate si veda la \hyperref[Preventivo] {Sezione 6}.
