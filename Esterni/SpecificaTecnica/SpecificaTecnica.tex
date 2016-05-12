@@ -26,6 +26,7 @@
 \def\USO{Esterno}
 \def\DISTRIBUZIONE{\COMMITTENTE \\ & \CARDIN \\ & \PROPONENTE}
 
+\usepackage{graphicx}
 \begin{document}
 \pagestyle{fancy}	
 \pagenumbering{Roman}
@@ -941,15 +942,80 @@ Il docente può cercare domande nel sistema. Ha la possibilità di limitare la r
 \newpage
 \appendix
 \section{Design Pattern}
-In questa sezione vengono presentati i \gl{design pattern} che al momento sono stati stabiliti dal \gl{team} per l'architettura del nostro prodotto.
+In questa sezione vengono presentati i \gl{design pattern} che sono stati stabiliti dal \gl{team} per la progettazione dell'architettura nel nostro prodotto.
 
 \subsection{Model-View-ViewModel}
+L'utilizzo di \gl{AngularJS} all'interno del progetto porta a non implementare l'usuale \gl{design pattern} \gl{MVC}, ma necessita dell'implementazione di una sua variante, il Model-View-ViewModel (\gl{MVVM}).
+\\Tale design pattern permette la divisione delle principali componenti nell'architettura promuovendo il Separation of Concern, il principio per cui ogni componente presenta un ruolo ben distinto dalle altre con cui è in comunicazione.
+\\La peculiarità di questo design pattern architetturale è data dal Two-way data-binding: quando vengono aggiornati i dati presenti nel model automaticamente viene aggiornata anche l'interfaccia grafica e viceversa.
 
+\subsubsection{Componenti}
+Segue una breve descrizione generale delle componenti che caratterizzano il pattern \gl{MVVM}.
+
+\begin{description}
+\item{\bold{Model}} 
+\\ Il Model è il dato nell’applicazione, che viene rappresentato tramite un normale oggetto \gl{JavaScript}.
+\item{\bold{ViewModel}}
+\\ Il ViewModel fa da intermediario tra la vista e il modello, ed è responsabile per la gestione della logica della vista. In generale interagisce con il modello invocando i metodi presenti nelle sue classi.
+Il ViewModel fornisce quindi i dati dal modello in una forma che la vista possa interpretare facilmente.
+\newline Con Angular il ViewModel sarà rappresentato dall’oggetto \$scope, una specie di variabile globale \gl{JavaScript} che grazie alle proprie API permetterà di rilevare e trasmettere i cambiamenti di stato.
+\item{\bold{View}}
+\\ La view è l’interfaccia grafica che dovrà visualizzare i dati e su cui interagirà l'utente.
+\end{description}
+
+\subsubsection{Concretizzazione}
+L'applicazione del design pattern MVVM avviene lato client nella nostra architettura.
+\\
+\\ Le classi presenti all'interno della componente ViewClient ad ogni azione di modifica effettuata dall'utente nell'interfaccia grafica a lui presentata avrà il compito di inviare il cambiamento all'adeguata classe presente nel ViewModelClient che comunicherà il nuovo aggiornamento al ModelClient. Al contrario quando una proprietà del ModelClient viene aggiornata invia una notifica al ViewModelClient che provvede in tempo reale alla visualizzazione nell'interfaccia grafica del cambiamento.
+\\ Ogni classe presente in queste tre componenti conterrà le direttive AngularJS per le comunicazioni degli aggiornamenti che sfruttano il principio del Two-way data-binding.
+\\ Nel nostro caso la componente ViewModelClient avrà inoltre il compito di controller, come nel pattern MVC, per la comunicazione con il server per il reperimento di alcune informazioni dal database.
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.75]{Img/MVVM.pdf}
+\caption{Quizzipedia::Client con il MVVM}
+\label{}
+\end{figure}
 
 \subsection{Facade}
+Il Facade è un design pattern strutturale che fornisce un’ unica interfaccia semplice per un sottosistema complesso in modo tale che la complessità dell'intero sistema risulti minore e siano semplificate le dipendenze tra le componenti che interagiscono.
+\\ Ciò non si verificherebbe, in assenza del Facade, dal momento che una componente client ad esempio, si potrebbe trovare ad interagire direttamente con moltissime componenti lato server ottenendo un elevatissimo numero di dipendenze, maggiormente difficoltose da soddisfare durante l'attività di programmazione del codice.
+\\ Avere un'interfaccia comune che faccia da intermediario pertanto risulta comodo da utilizzare quando se ne presenta la possibilità.
 
+\subsubsection{Concretizzazione}
+Il Facade all'interno della nostra architettura viene rappresentato dalla componente RoutingManager presente nel server, come rappresentato dal diagramma che mostra solo alcune classi a titolo esemplificativo.
+\\
+\\ Il client quando esegue una richiesta od un invio di informazioni al server non parla direttamente con la classe del ControllerServer appropriata; se così fosse per ogni classe del client si avrebbe un numero esagerato di dipendenze verso molte classi del ControllerServer.
+\\L'informazione prima viene filtrata dalla componente adatta presente nel package RoutingManager, la quale poi decide con quale classe del ControllerServer sia più appropriato comunicare.
+\\ Come è possibile notare dal diagramma, quando un utente ad esempio vuole creare un quiz, riempirà i campi necessari dell'interfaccia grafica. Le informazioni inserite verranno inviate al server e giungeranno prima di tutto alla classe concreta QuizRouter presente in RoutingManager (il nostro Facade). Questa classe attraverso i propri metodi avrà il compito di indirizzare le informazioni alla classe QuizCreator presente nel ControllerServer che si occuperà infine del salvataggio nel database e nel model.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.70]{Img/FACADE.pdf}
+\caption{Quizzipedia::Server::RoutingManager con Facade}
+\label{}
+\end{figure}
 
 \subsection{DAO}
+Il Data-Access-Object è un \gl{design pattern} strutturale che permette di svolgere delle specifiche operazioni sui dati senza conoscere i dettagli del \gl{database}. Questa separazione supporta il Principio di singola responsabilità: separa l'accesso a quali dati l'applicazione necessita dal come questi dati vengono reperiti attraverso il \gl{database}.
+Pertanto questo pattern viene utilizzato per disaccoppiare la logica di business dalla logica di accesso ai dati. 
+\\ I punti di forza di questo pattern sono la sua semplicità e la rigorosa separazione tra le due principali parti dell'applicazione che non necessitano di conoscere ogni aspetto l'una dell'altra e che permettono di essere espanse in modo indipendente.
+\\ Tutti i dettagli del salvataggio dei dati sono nascosti al resto dell'applicazione, in questo modo possono essere cambiati senza influenzare tutto il resto, andando a modificare soltanto una implementazione del \gl{DAO}.
+\newline Il \gl{DAO} pertanto funge da intermediario tra l'applicazione e il \gl{database}.
 
+\subsubsection{Concretizzazione}
+Nella nostra architettura il DAO esplica la sua funzione nel controller lato server del nostro prodotto attraverso la comunicazione con il database MongoDB per l'esecuzione delle richieste provenienti dal client.
+\\ Di seguito viene presentato un diagramma semplificato di come è stato applicato il design pattern nel nostro progetto. Quasi tutte le componenti presenti nel ControllerServer utilizzano il pattern DAO, ma per semplicità ne viene considerata solo una nel seguente diagramma.
+\\
+\\ Il client invia una richiesta al server per ottenere delle informazioni. L'informazione verrà indirizzata, attraverso il RoutingManager spiegato nel precedente design pattern, alla classe del ControllerServer predisposta nel portare a termine la richiesta. 
+Come nell'esempio illustrato il client richiede (l'utente fa la richiesta ovviamente attraverso l'interfaccia grafica) di vedere i propri dati personali che si troveranno memorizzati nel database. La richiesta pertanto deve arrivare alla classe adatta a soddisfarla, ovvero PersonalDataFetcher, che attraverso i propri metodi comunicherà col database esterno alla ricerca delle informazioni.
+Nel database MongoDB, una volta individuata l'informazione desiderata con l'esecuzione di una query, questa viene ritornata come oggetto JSON di tipo readonly, rappresentato nel diagramma dalla classe ResultsJSON (pur non essendo una vera classe). Per la classe del controller sarà possibile usare tale informazione per reindirizzarla al destinatario che l'aveva richiesta.
+\\ In tal modo si sfruttano tutte le caratteristiche che offre tale design pattern.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.75]{Img/DAO.pdf}
+\caption{Quizzipedia::Server::ControllerServer con l'utilizzo del DAO}
+\label{}
+\end{figure}
 
 \end{document}
