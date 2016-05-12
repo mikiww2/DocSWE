@@ -13,19 +13,19 @@ Attraverso l'uso di Angular.js il controller svolge automaticamente le modifiche
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ModelClient]{Schema Componente Quizzipedia::Client::ModelClient}
 \end{figure}
-\subsection{Quizzipedia::Client::ModelClient::Organization}
+\subsection{Quizzipedia::Client::ModelClient::Organizations}
 La componente gestisce le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-organization.pdf}}
-\caption[Schema Componente Quizzipedia::Client::ModelClient::Organization]{Schema Componente Quizzipedia::Client::ModelClient::Organization}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-organizations.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ModelClient::Organizations]{Schema Componente Quizzipedia::Client::ModelClient::Organizations}
 \end{figure}
 \subsubsection{Classe Class}
 Rappresenta una classe (relativa ad un ente). Memorizza le informazioni che definiscono ogni classe, informazioni che saranno utilizzate per la visualizzazione e per la gestione della classe..
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organization-class.pdf}}
-\caption[Schema Classe Class]{Schema Classe Quizzipedia::Client::ModelClient::Organization::Class}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organizations-class.pdf}}
+\caption[Schema Classe Class]{Schema Classe Quizzipedia::Client::ModelClient::Organizations::Class}
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
@@ -111,8 +111,8 @@ mail del docente da rimuovere
 Tale classe rappresenta un ente. Contiene le informazioni relative alla struttura dell'ente che saranno visualizzate dall'utente e gestiste dal controller, come ad esempio la lista delle classi presenti nell'ente, la lista degli studenti e degli insegnati all'interno dell'ente.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organization-institution.pdf}}
-\caption[Schema Classe Institution]{Schema Classe Quizzipedia::Client::ModelClient::Organization::Institution}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organizations-institution.pdf}}
+\caption[Schema Classe Institution]{Schema Classe Quizzipedia::Client::ModelClient::Organizations::Institution}
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
@@ -185,7 +185,7 @@ rimuove un docente dagli iscritti presso un istituto
 la mail del docente da rimuovere
 \end{itemize}
 \subsection{Quizzipedia::Client::ModelClient::Requests}
-Questo package contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
+Questo componente contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-requests.pdf}}
@@ -220,7 +220,7 @@ Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo 
 \caption[Schema Classe RoleList]{Schema Classe Quizzipedia::Client::ModelClient::Requests::RoleList}
 \end{figure}
 \subsection{Quizzipedia::Client::ModelClient::Services}
-Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
+Il componente racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-services.pdf}}
@@ -239,6 +239,69 @@ Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni doma
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-topics.pdf}}
 \caption[Schema Classe Topics]{Schema Classe Quizzipedia::Client::ModelClient::Services::Topics}
+\end{figure}
+\subsection{Quizzipedia::Client::ModelClient::Services::Answer}
+Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e delle domande svolte.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-services-answer.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ModelClient::Services::Answer]{Schema Componente Quizzipedia::Client::ModelClient::Services::Answer}
+\end{figure}
+\subsubsection{Classe AnswerColumn}
+Classe utilizzata da AnswerMatchingQ per salvare le risposte della domanda MatchingQ.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answercolumn.pdf}}
+\caption[Schema Classe AnswerColumn]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerColumn}
+\end{figure}
+\subsubsection{Classe AnswerCompletionQ}
+Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answercompletionq.pdf}}
+\caption[Schema Classe AnswerCompletionQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerCompletionQ}
+\end{figure}
+\subsubsection{Classe AnswerMatchingQ}
+Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answermatchingq.pdf}}
+\caption[Schema Classe AnswerMatchingQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerMatchingQ}
+\end{figure}
+\subsubsection{Classe AnswerMultipleChoiceQ}
+Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoiceQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answermultiplechoiceq.pdf}}
+\caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerMultipleChoiceQ}
+\end{figure}
+\subsubsection{Classe AnswerQuestion}
+Classe che si occupa di memorizzare le informazioni di un domanda risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answerquestion.pdf}}
+\caption[Schema Classe AnswerQuestion]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerQuestion}
+\end{figure}
+\subsubsection{Classe AnswerQuiz}
+Classe che si occupa di memorizzare le informazioni di un quiz completato e gestisce la verifica del suo superamento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answerquiz.pdf}}
+\caption[Schema Classe AnswerQuiz]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerQuiz}
+\end{figure}
+\subsubsection{Classe AnswerShortAnswerQ}
+Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answershortanswerq.pdf}}
+\caption[Schema Classe AnswerShortAnswerQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerShortAnswerQ}
+\end{figure}
+\subsubsection{Classe AnswerTrueFalseQ}
+Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answertruefalseq.pdf}}
+\caption[Schema Classe AnswerTrueFalseQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerTrueFalseQ}
 \end{figure}
 \subsection{Quizzipedia::Client::ModelClient::Services::Questions}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
@@ -324,6 +387,13 @@ La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qu
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-quizstatistics.pdf}}
 \caption[Schema Classe QuizStatistics]{Schema Classe Quizzipedia::Client::ModelClient::Statistics::QuizStatistics}
 \end{figure}
+\subsubsection{Classe StudentsStatisticsQuiz}
+Classe usata per visualizzare i studenti che hanno svolto un quiz specifico e il loro voto.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-studentsstatisticsquiz.pdf}}
+\caption[Schema Classe StudentsStatisticsQuiz]{Schema Classe Quizzipedia::Client::ModelClient::Statistics::StudentsStatisticsQuiz}
+\end{figure}
 \subsection{Quizzipedia::Client::ModelClient::Users}
 Raccoglie le classi necessarie a descrivere le diverse tipologie di utente che possono accedere al sistema.
 \begin{figure}[H]
@@ -338,6 +408,42 @@ Questa classe gestisce le informazioni di autenticazione comuni a tutti gli uten
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-authenticationdata.pdf}}
 \caption[Schema Classe AuthenticationData]{Schema Classe Quizzipedia::Client::ModelClient::Users::AuthenticationData}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item firstName : String
+\newline
+contiene il nome dell'utente registrato
+\item lastName : String
+\newline
+contiene il cognome dell'utente registrato
+\item mail : String
+\newline
+contiene la mail dell'utente registrato
+\item password : String
+\newline
+contiene la password criptata dell'utente registrato
+\end{itemize}
+\paragraph{Metodi}
+\subparagraph{getFirstName () : String}
+\newline
+permette di recuperare il nome dell'utente registrato
+\subparagraph{getLastName () : String}
+\newline
+permette di recuperare il cognome dell'utente registrato
+\subparagraph{getMail () : String}
+\newline
+permette di recuperare la mail dell'utente registrato
+\subparagraph{setPassword (oldPsw : String, psw : String) : void}
+\newline
+permette di modificare la password dell'account di un utente registrato
+\begin{itemize}
+\item oldPsw : String
+\newline
+contiene la vecchia password dell'utente registrato, necessaria per cambiarla con la nuova
+\item psw : String
+\newline
+contiene la nuova password dell'utente
+\end{itemize}
 \subsubsection{Classe Director}
 Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per ogni ente del sistema.
 \begin{figure}[H]
@@ -345,6 +451,13 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-director.pdf}}
 \caption[Schema Classe Director]{Schema Classe Quizzipedia::Client::ModelClient::Users::Director}
 \end{figure}
+\paragraph{Metodi}
+\subparagraph{acceptStudent () : void}
+\newline
+permette di inserire uno studente nell'istituzione posseduta dal direttore
+\subparagraph{acceptTeacher () : void}
+\newline
+permette di inserire uno studente nell'istituzione posseduta dal direttore
 \subsubsection{Classe NoRole}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
 \begin{figure}[H]
@@ -381,48 +494,6 @@ Con l'uso invece di Bootstrap e Fabric.js a livello di grafica web risulta sempl
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient]{Schema Componente Quizzipedia::Client::ViewClient}
-\end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewErrors}
-Il package raccoglie tutte le finestre di errore che il sistema può, eventualmente, visualizzare in caso si verifichi qualche problema durante un'operazione.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewerrors.pdf}}
-\caption[Schema Componente Quizzipedia::Client::ViewClient::ViewErrors]{Schema Componente Quizzipedia::Client::ViewClient::ViewErrors}
-\end{figure}
-\subsubsection{Classe ViewAuthenticationErr}
-La classe si occupa della visualizzazione del messaggio di errore in fase di autenticazione.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewauthenticationerr.pdf}}
-\caption[Schema Classe ViewAuthenticationErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewAuthenticationErr}
-\end{figure}
-\subsubsection{Classe ViewModifyPwErr}
-La classe si occupa della visualizzazione del messaggio di errore in fase di modifica della password.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewmodifypwerr.pdf}}
-\caption[Schema Classe ViewModifyPwErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyPwErr}
-\end{figure}
-\subsubsection{Classe ViewModifyQuizErr}
-La classe si occupa della visualizzazione del messaggio di errore in fase di modifica di un quiz.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewmodifyquizerr.pdf}}
-\caption[Schema Classe ViewModifyQuizErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewModifyQuizErr}
-\end{figure}
-\subsubsection{Classe ViewRecoveryErr}
-La classe si occupa della visualizzazione del messaggio di errore in fase di recupero password.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewrecoveryerr.pdf}}
-\caption[Schema Classe ViewRecoveryErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewRecoveryErr}
-\end{figure}
-\subsubsection{Classe ViewRegistrationErr}
-La classe si occupa della visualizzazione del messaggio di errore in fase di registrazione.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewerrors-viewregistrationerr.pdf}}
-\caption[Schema Classe ViewRegistrationErr]{Schema Classe Quizzipedia::Client::ViewClient::ViewErrors::ViewRegistrationErr}
 \end{figure}
 \subsection{Quizzipedia::Client::ViewClient::ViewOrgManager}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti presenti in Quizzipedia.
@@ -509,7 +580,7 @@ Carica una pagina contenente una lista con informazioni riassuntive sui quiz e u
 \caption[Schema Classe ViewQuizList]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizManager::ViewQuizList}
 \end{figure}
 \subsection{Quizzipedia::Client::ViewClient::ViewQuizSolver}
-Il package raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile svolgere quiz.
+Il componente raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile svolgere quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewquizsolver.pdf}}
@@ -523,7 +594,7 @@ La classe ha il compito di costruire la pagina da cui sarà possibile vedere l'e
 \caption[Schema Classe ViewResults]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewResults}
 \end{figure}
 \subsection{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver}
-Il package raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile rispondere alle singole domande.
+Il componente raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile rispondere alle singole domande.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver.pdf}}
@@ -600,7 +671,7 @@ Classe responsabile della visualizzazione del pannello da cui sarà possibile ge
 \caption[Schema Classe ViewRolesList]{Schema Classe Quizzipedia::Client::ViewClient::ViewRequests::ViewRolesList}
 \end{figure}
 \subsection{Quizzipedia::Client::ViewClient::ViewSearch}
-Il package contiene le classi responsabili della creazione delle pagine da cui sarà possibile ricercare domande, quiz e classi .
+Il componente contiene le classi responsabili della creazione delle pagine da cui sarà possibile ricercare domande, quiz e classi.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewsearch.pdf}}
@@ -628,7 +699,7 @@ Raccoglie i metodi necessari alla creazione della pagina da cui sarà possibile 
 \caption[Schema Classe ViewSearchQuiz]{Schema Classe Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz}
 \end{figure}
 \subsection{Quizzipedia::Client::ViewClient::ViewStatistics}
-Package che gestisce le pagine in cui verranno visualizzate le statistiche richieste dall'utente.
+Componente che gestisce le pagine in cui verranno visualizzate le statistiche richieste dall'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewstatistics.pdf}}
@@ -787,7 +858,7 @@ viene chiesto all'utente di inserire la mail una seconda volta per conferma
 viene chiesto all'utente di inserire la password una seconda volta per conferma
 \end{itemize}
 \subsection{Quizzipedia::Client::ViewModelClient::CtrlRequests}
-Questo package contiene classi necessarie alla gestione delle richieste di ruolo o classe fatte da un utente autenticato.
+Questo componente contiene classi necessarie alla gestione delle richieste di ruolo o classe fatte da un utente autenticato.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewmodelclient-ctrlrequests.pdf}}
@@ -886,7 +957,7 @@ Classe necessaria al caricamento delle statistiche relative ai quiz, alle domand
 \caption[Schema Classe CtrlStats]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlStats}
 \end{figure}
 \subsection{Quizzipedia::Client::ViewModelClient::CtrlUsers}
-Il package raccoglie le classi che permettono la comunicazione per quanto riguarda funzioni e dati dell'utente.
+Il componente raccoglie le classi che permettono la comunicazione per quanto riguarda funzioni e dati dell'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewmodelclient-ctrlusers.pdf}}
@@ -1063,7 +1134,7 @@ La classe contiene le informazioni relative alla struttura dell'ente.
 \caption[Schema Classe Institution]{Schema Classe Quizzipedia::Server::ModelServer::Organization::Institution}
 \end{figure}
 \subsection{Quizzipedia::Server::ModelServer::Requests}
-Questo package contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
+Questo componente contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-requests.pdf}}
@@ -1098,7 +1169,7 @@ Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo 
 \caption[Schema Classe RoleList]{Schema Classe Quizzipedia::Server::ModelServer::Requests::RoleList}
 \end{figure}
 \subsection{Quizzipedia::Server::ModelServer::Services}
-Il package racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
+Il componente racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-services.pdf}}
@@ -1252,15 +1323,22 @@ Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli ut
 \caption[Schema Classe User]{Schema Classe Quizzipedia::Server::ModelServer::Users::User}
 \end{figure}
 \subsection{Quizzipedia::Server::ControllerServer}
-Questo package contiene tutti i servizi che permettono di isolare il più possibile l'accesso al database non relazionale. Avviene sempre un controllo dell'utente che genera una determinata richiesta al server affinchè sia abilitato per farla. 
+Questo componente contiene tutti i servizi che permettono di isolare il più possibile l'accesso al database non relazionale. Avviene sempre un controllo dell'utente che genera una determinata richiesta al server affinchè sia abilitato per farla. 
 Una volta ottenuta l'informazione richiesta dal database, lo stesso controller si occuperà di inviarla al client richiedente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer]{Schema Componente Quizzipedia::Server::ControllerServer}
 \end{figure}
+\subsubsection{Classe SessionController}
+Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-sessioncontroller.pdf}}
+\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::SessionController}
+\end{figure}
 \subsection{Quizzipedia::Server::ControllerServer::AuthenticationManager}
-Package che permette di gestire le funzioni base per una corretta autenticazione al sistema.
+Componente che permette di gestire le funzioni base per una corretta autenticazione al sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-authenticationmanager.pdf}}
@@ -1294,15 +1372,8 @@ Permette la registrazione di un utente nel sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-register.pdf}}
 \caption[Schema Classe Register]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::Register}
 \end{figure}
-\subsubsection{Classe SessionController}
-Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-sessioncontroller.pdf}}
-\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::SessionController}
-\end{figure}
 \subsection{Quizzipedia::Server::ControllerServer::ClassManager}
-Package che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni riguardanti le classi di un ente.
+Componente che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni riguardanti le classi di un ente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-classmanager.pdf}}
@@ -1343,13 +1414,6 @@ Permette l'inserimento di un utente in una specifica classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-inclassadder.pdf}}
 \caption[Schema Classe InClassAdder]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder}
 \end{figure}
-\subsubsection{Classe SessionController}
-Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-sessioncontroller.pdf}}
-\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::SessionController}
-\end{figure}
 \subsubsection{Classe StudentsClassFetcher}
 Recupera la lista degli studenti appartenenti ad una determinata classe.
 \begin{figure}[H]
@@ -1378,15 +1442,8 @@ Permette la modifica dell'ente da parte del responsabile.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-institutionmanager-institutionupdater.pdf}}
 \caption[Schema Classe InstitutionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::InstitutionManager::InstitutionUpdater}
 \end{figure}
-\subsubsection{Classe SessionController}
-Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-institutionmanager-sessioncontroller.pdf}}
-\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::InstitutionManager::SessionController}
-\end{figure}
 \subsection{Quizzipedia::Server::ControllerServer::ProfileManager}
-Package che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni personali da parte di un utente autenticato.
+Componente che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni personali da parte di un utente autenticato.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-profilemanager.pdf}}
@@ -1427,13 +1484,6 @@ Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fi
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personalquizfetcher.pdf}}
 \caption[Schema Classe PersonalQuizFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher}
 \end{figure}
-\subsubsection{Classe SessionController}
-Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-sessioncontroller.pdf}}
-\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::SessionController}
-\end{figure}
 \subsection{Quizzipedia::Server::ControllerServer::QuestionsManager}
 Pacchetto relativo alla gestione delle domande, la loro creazione, il loro aggiornamento oppure la loro eliminazione.
 \begin{figure}[H]
@@ -1462,13 +1512,6 @@ Permette la modifica di una domanda già esistente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questionupdater.pdf}}
 \caption[Schema Classe QuestionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater}
 \end{figure}
-\subsubsection{Classe SessionController}
-Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-sessioncontroller.pdf}}
-\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::SessionController}
-\end{figure}
 \subsubsection{Classe StatisticsQuestionUpdater}
 Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in esso contenuta.
 \begin{figure}[H]
@@ -1477,7 +1520,7 @@ Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in e
 \caption[Schema Classe StatisticsQuestionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::StatisticsQuestionUpdater}
 \end{figure}
 \subsection{Quizzipedia::Server::ControllerServer::QuizManager}
-Package che racchiude tutte le funzionalità adibite alla creazione, modifica e al recupero di quiz per lo svolgimento da parte di un utente.
+Componente che racchiude tutte le funzionalità adibite alla creazione, modifica e al recupero di quiz per lo svolgimento da parte di un utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-quizmanager.pdf}}
@@ -1518,13 +1561,6 @@ Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un ut
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-resultsupdater.pdf}}
 \caption[Schema Classe ResultsUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater}
 \end{figure}
-\subsubsection{Classe SessionController}
-Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-sessioncontroller.pdf}}
-\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::SessionController}
-\end{figure}
 \subsubsection{Classe StatisticsQuizUpdater}
 Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte degli utenti.
 \begin{figure}[H]
@@ -1533,7 +1569,7 @@ Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte
 \caption[Schema Classe StatisticsQuizUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::StatisticsQuizUpdater}
 \end{figure}
 \subsection{Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}
-Questo package racchiude i moduli necessari alla traduzione, da QML ad un formato comprensibile dal sistema, delle informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
+Questo componente racchiude i moduli necessari alla traduzione, da QML ad un formato comprensibile dal sistema, delle informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-quizmanager-qmlagent.pdf}}
@@ -1554,18 +1590,11 @@ Permette la traduzione di un quiz dal formato QML ad uno comprensibile dal siste
 \caption[Schema Classe QMLParser]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLParser}
 \end{figure}
 \subsection{Quizzipedia::Server::ControllerServer::RequestsManager}
-Package che si occupa di memorizzare richieste da parte degli utenti, mostrarle al responsabile e permettergli di accettarle o meno.
+Componente che si occupa di memorizzare richieste da parte degli utenti, mostrarle al responsabile e permettergli di accettarle o meno.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-requestsmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::RequestsManager]{Schema Componente Quizzipedia::Server::ControllerServer::RequestsManager}
-\end{figure}
-\subsubsection{Classe ClassRequestsAdder}
-Permette la memorizzazione delle richieste di creazione di una classe.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-classrequestsadder.pdf}}
-\caption[Schema Classe ClassRequestsAdder]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::ClassRequestsAdder}
 \end{figure}
 \subsubsection{Classe InsertClassRequestsAdder}
 Permette la memorizzazione nella base di dati di tutte le richieste, fatte da parte degli utenti, di essere inseriti in una determinata classe.
@@ -1595,15 +1624,8 @@ Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-rolerequestadder.pdf}}
 \caption[Schema Classe RoleRequestAdder]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder}
 \end{figure}
-\subsubsection{Classe SessionController}
-Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-sessioncontroller.pdf}}
-\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::SessionController}
-\end{figure}
 \subsection{Quizzipedia::Server::ControllerServer::SearchManager}
-Questo package permette di effettuare una ricerca nel database di quiz o domande richiesti dall'utente e ritornare una lista che corrisponde ai parametri desiderati.
+Questo componente permette di effettuare una ricerca nel database di quiz o domande richiesti dall'utente e ritornare una lista che corrisponde ai parametri desiderati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-searchmanager.pdf}}
@@ -1623,15 +1645,8 @@ Ritorna una lista di quiz che corrispondono ai parametri di ricerca impostati da
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-quizsearcher.pdf}}
 \caption[Schema Classe QuizSearcher]{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher}
 \end{figure}
-\subsubsection{Classe SessionController}
-Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-sessioncontroller.pdf}}
-\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::SessionController}
-\end{figure}
 \subsection{Quizzipedia::Server::ControllerServer::StatisticsManager}
-Questo package ha il compito di recuperare tutte le informazioni sottoforma di statistiche relative ad un quiz, una domanda in particolare o ad un utente.
+Questo componente ha il compito di recuperare tutte le informazioni sottoforma di statistiche relative ad un quiz, una domanda in particolare o ad un utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-statisticsmanager.pdf}}
@@ -1651,13 +1666,6 @@ Ritorna le statistiche riferite ad un quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-quizstatisticsfetcher.pdf}}
 \caption[Schema Classe QuizStatisticsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::QuizStatisticsFetcher}
 \end{figure}
-\subsubsection{Classe SessionController}
-Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-sessioncontroller.pdf}}
-\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::SessionController}
-\end{figure}
 \subsubsection{Classe StudentStatisticsFetcher}
 Ritorna le statistiche riferite ad uno studente.
 \begin{figure}[H]
@@ -1666,18 +1674,11 @@ Ritorna le statistiche riferite ad uno studente.
 \caption[Schema Classe StudentStatisticsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::StudentStatisticsFetcher}
 \end{figure}
 \subsection{Quizzipedia::Server::ControllerServer::TopicManager}
-Package che permette la creazione di un nuovo argomento o l'eliminazione di uno già esistente.
+Componente che permette la creazione di un nuovo argomento o l'eliminazione di uno già esistente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-topicmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::TopicManager]{Schema Componente Quizzipedia::Server::ControllerServer::TopicManager}
-\end{figure}
-\subsubsection{Classe SessionController}
-Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager-sessioncontroller.pdf}}
-\caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::TopicManager::SessionController}
 \end{figure}
 \subsubsection{Classe TopicCreator}
 Permette la creazione di un nuovo argomento.
@@ -1695,7 +1696,7 @@ Permette l'eliminazione di un argomento.
 \end{figure}
 \subsection{Quizzipedia::Server::RoutingManager}
 Questo pacchetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per gestire le comunicazioni provenienti dal client tramite Socket.IO. 
-Con l'uso di Express.js le richieste provenienti dal client verranno indirizzate alla corretta classe di questo package, che si occuperà di inviare la richiesta al relativo services per la sua esecuzione..
+Con l'uso di Express.js le richieste provenienti dal client verranno indirizzate alla corretta classe di questo componente, che si occuperà di inviare la richiesta al relativo services per la sua esecuzione..
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-routingmanager.pdf}}
