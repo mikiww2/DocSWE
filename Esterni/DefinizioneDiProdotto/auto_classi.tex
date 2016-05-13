@@ -47,7 +47,8 @@ le mail degli studenti iscritti alla classe
 le mail dei docenti associati alla classe
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{addStudent (studentMail : String) : void}}
+\begin{itemize}
+\item \method{addStudent (studentMail : String) : void}
 \newline
 permette di aggiungere uno studente alla classe
 \begin{itemize}
@@ -55,7 +56,7 @@ permette di aggiungere uno studente alla classe
 \newline
 mail dello studente da aggiungere
 \end{itemize}
-\subparagraph{\method{addTeacher (teacherMail : String) : void}}
+\item \method{addTeacher (teacherMail : String) : void}
 \newline
 permette di aggiungere un docente alla classe
 \begin{itemize}
@@ -63,7 +64,7 @@ permette di aggiungere un docente alla classe
 \newline
 mail del docente da aggiungere
 \end{itemize}
-\subparagraph{\method{edit (newDescription : String, newName : String, newYear : String) : void}}
+\item \method{edit (newDescription : String, newName : String, newYear : String) : void}
 \newline
 permette
 di modificare le informazioni base della classe
@@ -78,22 +79,22 @@ il nuovo nome della classe
 \newline
 il nuovo anno della classe
 \end{itemize}
-\subparagraph{\method{getAcademicYear () : String}}
+\item \method{getAcademicYear () : String}
 \newline
 restituisce l'anno accademico della classe
-\subparagraph{\method{getDescription () : String}}
+\item \method{getDescription () : String}
 \newline
 restituisce la descrizione della classe
-\subparagraph{\method{getName () : String}}
+\item \method{getName () : String}
 \newline
 restituisce il nome della classe
-\subparagraph{\method{getStudents () : String[]}}
+\item \method{getStudents () : String[]}
 \newline
 restituisce le mail degli studenti della classe
-\subparagraph{\method{getTeachers () : String[]}}
+\item \method{getTeachers () : String[]}
 \newline
 restituisce le mail dei docenti della classe
-\subparagraph{\method{removeStudent (studentMail : String) : void}}
+\item \method{removeStudent (studentMail : String) : void}
 \newline
 permette di rimuovere uno studente dalla
 classe
@@ -102,7 +103,7 @@ classe
 \newline
 mail dello studente da rimuovere
 \end{itemize}
-\subparagraph{\method{removeTeacher (teacherMail : String) : void}}
+\item \method{removeTeacher (teacherMail : String) : void}
 \newline
 permette di rimuovere un docente dalla
 classe
@@ -110,6 +111,7 @@ classe
 \item \attribute{teacherMail : String}
 \newline
 mail del docente da rimuovere
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Institution}}
 Tale classe rappresenta un ente. Contiene le informazioni relative alla struttura dell'ente che saranno visualizzate dall'utente e gestiste dal controller, come ad esempio la lista delle classi presenti nell'ente, la lista degli studenti e degli insegnati all'interno dell'ente.
@@ -140,7 +142,8 @@ raccoglie le mail di tutti gli studenti registrati presso un ente
 raccoglie le mail di tutti i docenti registrati presso un ente
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{addClass  (objectClass : Class) : void}}
+\begin{itemize}
+\item \method{addClass  (objectClass : Class) : void}
 \newline
 Permette l'aggiunta di una classe all'interno di un instituto
 \begin{itemize}
@@ -148,13 +151,13 @@ Permette l'aggiunta di una classe all'interno di un instituto
 \newline
 viene passata al metodo la classe da inserire
 \end{itemize}
-\subparagraph{\method{addStudent () : void}}
+\item \method{addStudent () : void}
 \newline
 aggiunge uno studente agli utenti iscritti presso un istituto
-\subparagraph{\method{addTeacher () : void}}
+\item \method{addTeacher () : void}
 \newline
 aggiunge un docente agli utenti iscritti presso un istituto
-\subparagraph{\method{removeClass (indexOfClass : int) : void}}
+\item \method{removeClass (indexOfClass : int) : void}
 \newline
 rimuove una classe da un istituto
 \begin{itemize}
@@ -162,12 +165,13 @@ rimuove una classe da un istituto
 \newline
 l'indice della classe da rimuovere dalle classi presenti nell'ente
 \end{itemize}
-\subparagraph{\method{removeStudent () : void}}
+\item \method{removeStudent () : void}
 \newline
 rimuove uno studente dagli iscritti presso un istituto
-\subparagraph{\method{removeTeacher () : void}}
+\item \method{removeTeacher () : void}
 \newline
 rimuove un docente dagli iscritti presso un istituto
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ModelClient::Requests}}
 Questo componente contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
 \begin{figure}[H]
@@ -189,7 +193,8 @@ Questa classe gestisce le richieste da parte di docenti o studenti per l'assegna
 è la lista delle richieste di classe pendenti
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{acceptClassRequest (indexOfRequest : int) : void}}
+\begin{itemize}
+\item \method{acceptClassRequest (indexOfRequest : int) : void}
 \newline
 accetta la richiesta di entrata in una classe dell'utente
 \begin{itemize}
@@ -197,7 +202,7 @@ accetta la richiesta di entrata in una classe dell'utente
 \newline
 è l'indice della richiesta che si intende accettare
 \end{itemize}
-\subparagraph{\method{addClassRequest (mail : String, nameClass : String, year : String) : void}}
+\item \method{addClassRequest (mail : String, nameClass : String, year : String) : void}
 \newline
 aggiunge una richiesta di entrata in una classe alla lista delle richieste pendenti
 \begin{itemize}
@@ -211,13 +216,14 @@ il nome della classe per cui si sta effettuando la richiesta
 \newline
 l'anno della classe per cui si sta effettuando la richiesta
 \end{itemize}
-\subparagraph{\method{removeClassRequest (indexOfRequest : int) : void}}
+\item \method{removeClassRequest (indexOfRequest : int) : void}
 \newline
 rimuove una richiesta di entrata nella classe dalla lista delle richieste pendenti. Di fatto, comporta il rifiuto della richiesta
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
 l'indice della richiesta che si intende rifiutare e rimuovere dalla lista
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RequestClass}}
 La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui la richiesta è stata effettuata.
@@ -236,9 +242,11 @@ la classe per cui è stata effettuata la richiesta
 la mail dell'utente che ha effettuato la richiesta
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{getMail () : String}}
+\begin{itemize}
+\item \method{getMail () : String}
 \newline
 restituisce la mail dell'utente che ha effettuato la richiesta
+\end{itemize}
 \subsubsection{Classe \cls{RequestRole}}
 La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuole ricoprire.
 \begin{figure}[H]
@@ -256,12 +264,14 @@ la mail dell'utente che effettua la richiesta di ruolo
 un messaggio che l'utente può includere alla sua richiesta di ruolo
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{getMail () : String}}
+\begin{itemize}
+\item \method{getMail () : String}
 \newline
 restituisce la mail dell'utente che effettua la richiesta
-\subparagraph{\method{getMessage () : String}}
+\item \method{getMessage () : String}
 \newline
 restituisce il messaggio dell'utente che effettua la richista
+\end{itemize}
 \subsubsection{Classe \cls{RoleList}}
 Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo di studente o docente al responsabile di un ente. Questa classe gestisce tali richieste.
 \begin{figure}[H]
@@ -279,7 +289,8 @@ memorizza la lista delle richieste degli utenti che hanno richiesto di diventare
 memorizza la lista delle richieste degli utenti che hanno richiesto di diventare docenti
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{acceptStudent (indexOfStudent : int) : void}}
+\begin{itemize}
+\item \method{acceptStudent (indexOfStudent : int) : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
 \begin{itemize}
@@ -287,7 +298,7 @@ accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare st
 \newline
 l'indice della richiesta di ruolo che si intende accettare. L'utente diventa uno studente dell'ente
 \end{itemize}
-\subparagraph{\method{acceptTeacher (indexOfTeacher : int) : void}}
+\item \method{acceptTeacher (indexOfTeacher : int) : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare docente
 \begin{itemize}
@@ -295,7 +306,7 @@ accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare do
 \newline
 l'indice della richiesta di ruolo che si intende accettare. L'utente diventa un docente dell'ente
 \end{itemize}
-\subparagraph{\method{addRoleList (mailUser : String, message : String, role : String) : void}}
+\item \method{addRoleList (mailUser : String, message : String, role : String) : void}
 \newline
 il metodo aggiunge una richiesta alla lista corretta delle richieste pendenti
 \begin{itemize}
@@ -309,12 +320,13 @@ il messaggio dell'utente che ha effettuato una richiesta di ruolo
 \newline
 il ruolo per cui l'utente ha fatto domanda
 \end{itemize}
-\subparagraph{\method{removeStudent () : void}}
+\item \method{removeStudent () : void}
 \newline
 rimuove, quindi rifiutandola, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\subparagraph{\method{removeTeacher () : void}}
+\item \method{removeTeacher () : void}
 \newline
 rimuove, quindi rifiutandola, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ModelClient::Services}}
 Il componente racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
 \begin{figure}[H]
@@ -343,7 +355,8 @@ Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni doma
 la lista degli argomenti esistenti
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{addTopics (nameTopic : String) : void}}
+\begin{itemize}
+\item \method{addTopics (nameTopic : String) : void}
 \newline
 permettere di aggiungere un nuovo argomento a quelli esistenti
 \begin{itemize}
@@ -351,13 +364,14 @@ permettere di aggiungere un nuovo argomento a quelli esistenti
 \newline
 il nuovo argomento da aggiungere
 \end{itemize}
-\subparagraph{\method{removeTopic (indexTopic : int) : void}}
+\item \method{removeTopic (indexTopic : int) : void}
 \newline
 permette di rimuovere un argomento da quelli esistenti
 \begin{itemize}
 \item \attribute{indexTopic : int}
 \newline
 l'indice dell'argomento da rimuovere
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ModelClient::Services::Answers}}
 Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e delle domande svolte.
@@ -387,12 +401,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ ri
 la risposta data dall'utente
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{check() () : void}}
+\begin{itemize}
+\item \method{check() () : void}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a completamento
-\subparagraph{\method{getGivenAnswer () : String[]}}
+\item \method{getGivenAnswer () : String[]}
 \newline
 restituisce la risposta data dall'utente
+\end{itemize}
 \subsubsection{Classe \cls{AnswerMatchingQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ risolta.
 \begin{figure}[H]
@@ -408,12 +424,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoice
 \caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerMultipleChoiceQ}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{check () : void}}
+\begin{itemize}
+\item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a acelta multipla
-\subparagraph{\method{getGivenAnswer () : String[]}}
+\item \method{getGivenAnswer () : bool[]}
 \newline
 restituisce la risposta data dall'utente
+\end{itemize}
 \subsubsection{Classe \cls{AnswerQuestion}}
 Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \begin{figure}[H]
@@ -431,15 +449,17 @@ la domanda a cui corrisponde la risposta data
 è l'utente che ha dato la risposta
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{<<abstract>>check () : bool}}
+\begin{itemize}
+\item \method{<<abstract>>check () : bool}
 \newline
 il metodo è astratto e verrà concretizzato nelle sottoclassi. Serve a verificare la correttezza della risposta data per le varie tipologie di domande
-\subparagraph{\method{getQuestion () : GenricQuestion}}
+\item \method{getQuestion () : GenricQuestion}
 \newline
 restituisce la domanda a cui corrisponde la risposta data
-\subparagraph{\method{getSolver () : User}}
+\item \method{getSolver () : User}
 \newline
 restituisce l'utente che ha dato la risposta
+\end{itemize}
 \subsubsection{Classe \cls{AnswerQuiz}}
 Classe che si occupa di memorizzare le informazioni di un quiz completato e gestisce la verifica del suo superamento.
 \begin{figure}[H]
@@ -468,12 +488,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ ris
 la risposta data dall'utente alla domanda di tipo vero/falso
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{check () : bool}}
+\begin{itemize}
+\item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda di tipo vero/falso
-\subparagraph{\method{getGivenAnswer () : bool}}
+\item \method{getGivenAnswer () : bool}
 \newline
 restituisce la risposta data dall'utente
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ModelClient::Services::Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
 \begin{figure}[H]
@@ -595,16 +617,17 @@ contiene la mail dell'utente registrato
 contiene la password criptata dell'utente registrato
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{getFirstName () : String}}
+\begin{itemize}
+\item \method{getFirstName () : String}
 \newline
 permette di recuperare il nome dell'utente registrato
-\subparagraph{\method{getLastName () : String}}
+\item \method{getLastName () : String}
 \newline
 permette di recuperare il cognome dell'utente registrato
-\subparagraph{\method{getMail () : String}}
+\item \method{getMail () : String}
 \newline
 permette di recuperare la mail dell'utente registrato
-\subparagraph{\method{setPassword (oldPsw : String, psw : String) : void}}
+\item \method{setPassword (oldPsw : String, psw : String) : void}
 \newline
 permette di modificare la password dell'account di un utente registrato
 \begin{itemize}
@@ -615,6 +638,7 @@ contiene la vecchia password dell'utente registrato, necessaria per cambiarla co
 \newline
 contiene la nuova password dell'utente
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Director}}
 Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per ogni ente del sistema.
 \begin{figure}[H]
@@ -623,12 +647,14 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \caption[Schema Classe Director]{Schema Classe Quizzipedia::Client::ModelClient::Users::Director}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{acceptStudent () : void}}
+\begin{itemize}
+\item \method{acceptStudent () : void}
 \newline
 permette di inserire uno studente nell'istituzione posseduta dal direttore
-\subparagraph{\method{acceptTeacher () : void}}
+\item \method{acceptTeacher () : void}
 \newline
 permette di inserire uno studente nell'istituzione posseduta dal direttore
+\end{itemize}
 \subsubsection{Classe \cls{NoRole}}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
 \begin{figure}[H]
@@ -1087,7 +1113,8 @@ indica il singolo argomento su cui si desiderano apportare modifiche
 la lista di argomenti esistenti, viene assegnata allo $scope
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{addTopic (name : string) : void}}
+\begin{itemize}
+\item \method{addTopic (name : string) : void}
 \newline
 viene aggiunto un argomento alla lista di quelli esistenti
 \begin{itemize}
@@ -1095,16 +1122,17 @@ viene aggiunto un argomento alla lista di quelli esistenti
 \newline
 è l'argomento che si vuole aggiungere a quelli già esistenti
 \end{itemize}
-\subparagraph{\method{loadTopics () : void}}
+\item \method{loadTopics () : void}
 \newline
 effettua una richiesta al server che mi ritorna un array di topics che verrà poi assegnato allo $scope topicsList
-\subparagraph{\method{removeTopic (indexOfTopic : int) : void}}
+\item \method{removeTopic (indexOfTopic : int) : void}
 \newline
 rimuove l'argomento specificato in locale e invia una richiesta al server
 \begin{itemize}
 \item \attribute{indexOfTopic : int}
 \newline
 l'indice dell'argomento che si desidera eliminare
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ViewModelClient::CtrlStatistics}}
 Raccoglie le classi necessarie a recuperare le statistiche da presentare all'utente.
@@ -1144,7 +1172,8 @@ la mail introdotta dall'utente per effettuare il login
 la password introdotta dall'utente per il login
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{checkLogin (email : string, password : string) : bool}}
+\begin{itemize}
+\item \method{checkLogin (email : string, password : string) : bool}
 \newline
 Il metodo si occupa di verificare le credenziali per per il login
 \begin{itemize}
@@ -1154,6 +1183,7 @@ la mail introdotta dall'utente necessaria per il login
 \item \attribute{password : string}
 \newline
 la password necessaria per il login
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlRecoveryPw}}
 La classe gestisce il recupero della password in caso di smarrimento.
@@ -1169,13 +1199,15 @@ La classe gestisce il recupero della password in caso di smarrimento.
 è l'email a cui la nuova password verrà mandata in caso di smarrimento della precedente
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{sendRecoveryEmail (email : string) : void}}
+\begin{itemize}
+\item \method{sendRecoveryEmail (email : string) : void}
 \newline
 il metodo si occupa di inviare all'indirizzo specificato la nuova password
 \begin{itemize}
 \item \attribute{email : string}
 \newline
 la mail a cui inviare la nuova password
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlRegistration}}
 Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'oggetto MyUser, definito all'interno dello $scope.
@@ -1191,13 +1223,15 @@ Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'og
 user viene definito nello $scope e serve per gestire i dati inseriti dall'utente durante la fase di registrazione
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{sendRegistration (user : MyUser) : void}}
+\begin{itemize}
+\item \method{sendRegistration (user : MyUser) : void}
 \newline
 invia al server le informazioni necessarie per portare a termine la registrazione dell'utente
 \begin{itemize}
 \item \attribute{user : MyUser}
 \newline
 è definito nello $scope e invia al server le informazioni necessarie per memorizzare l'utente
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlUserManager}}
 La classe, tramite variabili definite nello $scope, permette agli utenti di gestire e visualizzare il proprio profilo personale.
@@ -1222,15 +1256,17 @@ per potere modificare la password, l'utente deve prima inserire la vecchia
 è l'utente che intende modificare le proprie informazioni
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{changePsw () : void}}
+\begin{itemize}
+\item \method{changePsw () : void}
 \newline
 metodo che gestisce il cambio della password
-\subparagraph{\method{loadAffiliation () : void}}
+\item \method{loadAffiliation () : void}
 \newline
 carica gli istituti a cui l'utente è iscritto
-\subparagraph{\method{loadUser () : void}}
+\item \method{loadUser () : void}
 \newline
 si occupa di comunicare col server per poter avere le informazioni dell'utente
+\end{itemize}
 \subsubsection{Classe \cls{MyUser}}
 La classe è definita nello $scope e serve a raccogliere le informazioni dell'utente che si sta registrando.
 \begin{figure}[H]
@@ -1254,12 +1290,14 @@ il cognome dell'utente che si sta registrando
 la password dell'utente che si sta registrando
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{\method{checkMail () : bool}}
+\begin{itemize}
+\item \method{checkMail () : bool}
 \newline
 verifica che i due indirizzi mail inseriti coincidano
-\subparagraph{\method{checkPassword () : bool}}
+\item \method{checkPassword () : bool}
 \newline
 verifica che le due password inserite coincidano
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server}}
 Racchiude tutte le componenti necessarie per il back-end del prodotto. Comunica con il database non relazionale MongoDB per ottenere le informazioni richieste dal client a cui verranno inviate successivamente.
 Contiene inoltre le componenti che si occupano del linguaggio di markup QML.
@@ -1516,7 +1554,8 @@ Permette l'autenticazione nel sistema da parte di utenti preventivamente registr
 \caption[Schema Classe LoggerIn]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{login (email : String, password : String) : JSON}}
+\begin{itemize}
+\item \method{login (email : String, password : String) : JSON}
 \newline
 permette l'autenticazione di un utente un Quizzipedia nel caso esso si sia preventivamente registrato
 \begin{itemize}
@@ -1527,6 +1566,7 @@ la email con la quale l'utente si è registrato in Quizzipedia
 \newline
 la password con la quale l'utente si è registrato in Quizzipedia
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{LoggerOut}}
 Permette l'uscita dal sistema ad utenti autenticati.
 \begin{figure}[H]
@@ -1535,9 +1575,11 @@ Permette l'uscita dal sistema ad utenti autenticati.
 \caption[Schema Classe LoggerOut]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerOut}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{logout () : void}}
+\begin{itemize}
+\item \method{logout () : void}
 \newline
 permette l'uscita dal sistema Quizzipedia ad un utente autenticato
+\end{itemize}
 \subsubsection{Classe \cls{PasswordRecover}}
 Permette il recupero della password da parte di un utente in caso di smarrimento o dimenticanza.
 \begin{figure}[H]
@@ -1546,9 +1588,11 @@ Permette il recupero della password da parte di un utente in caso di smarrimento
 \caption[Schema Classe PasswordRecover]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{recoverPassword () : JSON}}
+\begin{itemize}
+\item \method{recoverPassword () : JSON}
 \newline
 permette di impostare una password temporanea e di inviarla all'utente per email nel caso quest'ultimo abbia smarrito la propria
+\end{itemize}
 \subsubsection{Classe \cls{Register}}
 Permette la registrazione di un utente nel sistema.
 \begin{figure}[H]
@@ -1557,7 +1601,8 @@ Permette la registrazione di un utente nel sistema.
 \caption[Schema Classe Register]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::Register}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{register (email : String, firstname : String, lastname : String, password : String) : void}}
+\begin{itemize}
+\item \method{register (email : String, firstname : String, lastname : String, password : String) : void}
 \newline
 permette la registrazione di un utente in Quizzipedia
 \begin{itemize}
@@ -1574,6 +1619,7 @@ il cognome dell'utente
 \newline
 la password scelta dall'utente per autenticarsi
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer::ClassManager}}
 Componente che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni riguardanti le classi di un ente.
 \begin{figure}[H]
@@ -1589,13 +1635,15 @@ Permette la creazione di una nuova classe.
 \caption[Schema Classe ClassAdder]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{adder (classname : String) : void}}
+\begin{itemize}
+\item \method{adder (classname : String) : void}
 \newline
 permette la creazione di una nuova classe
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
 il nome da attribuire alla classe
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ClassDeleter}}
 Permette la rimozione delle classi dal sistema.
@@ -1605,13 +1653,15 @@ Permette la rimozione delle classi dal sistema.
 \caption[Schema Classe ClassDeleter]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassDeleter}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{deleter (classname : String) : void}}
+\begin{itemize}
+\item \method{deleter (classname : String) : void}
 \newline
 permette la rimozione di una classe
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
 il nome della classe da rimuovere
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ClassUpdater}}
 Permette la modifica delle informazioni di base di una determinata classe.
@@ -1628,7 +1678,8 @@ Permette la rimozione di un utente da una determinata classe.
 \caption[Schema Classe FromClassRemover]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::FromClassRemover}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{remover (classname : String, email : String) : void}}
+\begin{itemize}
+\item \method{remover (classname : String, email : String) : void}
 \newline
 permette la rimozione di un utente dalla classe
 \begin{itemize}
@@ -1639,6 +1690,7 @@ classe dalla quale rimuovere l'utente
 \newline
 email dell'utente da rimuovere dalla classe
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{InClassAdder}}
 Permette l'inserimento di un utente in una specifica classe.
 \begin{figure}[H]
@@ -1647,7 +1699,8 @@ Permette l'inserimento di un utente in una specifica classe.
 \caption[Schema Classe InClassAdder]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{adder (classname : String, email : String) : void}}
+\begin{itemize}
+\item \method{adder (classname : String, email : String) : void}
 \newline
 permette l'inserimento di un utente in una classe
 \begin{itemize}
@@ -1658,6 +1711,7 @@ il nome della classe nella quale inserire l'utente
 \newline
 l'email dell'utente da inserire nella classe
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{StudentsClassFetcher}}
 Recupera la lista degli studenti appartenenti ad una determinata classe.
 \begin{figure}[H]
@@ -1666,13 +1720,15 @@ Recupera la lista degli studenti appartenenti ad una determinata classe.
 \caption[Schema Classe StudentsClassFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{getStudents (classname : String) : JSON}}
+\begin{itemize}
+\item \method{getStudents (classname : String) : JSON}
 \newline
 recupera la lista di studenti appartenenti ad una determinata classe
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
 il nome della classe della quale recuperare la lista degli studenti
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{TeachersClassFetcher}}
 Recupera la lista degli insegnanti relativi ad una determinata classe.
@@ -1682,13 +1738,15 @@ Recupera la lista degli insegnanti relativi ad una determinata classe.
 \caption[Schema Classe TeachersClassFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{getTeachers (classname : String) : JSON}}
+\begin{itemize}
+\item \method{getTeachers (classname : String) : JSON}
 \newline
 recupera la lista di docenti relativi ad una determinata classe
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
 il nome della classe della quale recuperare la lista dei docenti
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer::InstitutionManager}}
 Contiene le classi che permettono la gestione dell'ente da parte del relativo responsabile.
@@ -1705,13 +1763,15 @@ Permette la modifica dell'ente da parte del responsabile.
 \caption[Schema Classe InstitutionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::InstitutionManager::InstitutionUpdater}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{update (company : JSON) : void}}
+\begin{itemize}
+\item \method{update (company : JSON) : void}
 \newline
 permette al modifica di un ente
 \begin{itemize}
 \item \attribute{company : JSON}
 \newline
 nome dell'ente da modificare
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer::ProfileManager}}
 Componente che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni personali da parte di un utente autenticato.
@@ -1728,13 +1788,15 @@ Permette la rimozione di un account dal sistema.
 \caption[Schema Classe AccountDeleter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{deleteAccount (email : String) : void}}
+\begin{itemize}
+\item \method{deleteAccount (email : String) : void}
 \newline
 permette la rimozione di un account da Quizzipedia
 \begin{itemize}
 \item \attribute{email : String}
 \newline
 l'email dell'account da eliminare
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{PasswordSetter}}
 Permette ad un utente di impostare una nuova password relativa al proprio account.
@@ -1744,7 +1806,8 @@ Permette ad un utente di impostare una nuova password relativa al proprio accoun
 \caption[Schema Classe PasswordSetter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{setPassword (email : String, password : String) : void}}
+\begin{itemize}
+\item \method{setPassword (email : String, password : String) : void}
 \newline
 permette ad un utente di cambiare la propria password
 \begin{itemize}
@@ -1755,6 +1818,7 @@ email dell'utente che vuole modificare la propria password
 \newline
 la nuova password da impostare
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{PersonalDataFetcher}}
 Ritorna tutte le informazioni personali riferite all'utente che ne effettua la richiesta.
 \begin{figure}[H]
@@ -1763,13 +1827,15 @@ Ritorna tutte le informazioni personali riferite all'utente che ne effettua la r
 \caption[Schema Classe PersonalDataFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{fetchData (email : String) : JSON}}
+\begin{itemize}
+\item \method{fetchData (email : String) : JSON}
 \newline
 ritorna tutte le proprieinformazioni personali
 \begin{itemize}
 \item \attribute{email : String}
 \newline
 email dell'utente che vuole vedere le proprie informazioni personali
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{PersonalDataSetter}}
 Permette ad un utente la modifica delle informazioni personali.
@@ -1779,7 +1845,8 @@ Permette ad un utente la modifica delle informazioni personali.
 \caption[Schema Classe PersonalDataSetter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{setData (data : JSON, email : String) : void}}
+\begin{itemize}
+\item \method{setData (data : JSON, email : String) : void}
 \newline
 permette la modifica delle informazioni personali
 \begin{itemize}
@@ -1790,6 +1857,7 @@ i dati da modificare
 \newline
 email dell'utente che vuole modificare i propri dati personali
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{PersonalQuizFetcher}}
 Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fino a quel momento.
 \begin{figure}[H]
@@ -1798,13 +1866,15 @@ Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fi
 \caption[Schema Classe PersonalQuizFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{fetchQuiz (email : String) : JSON}}
+\begin{itemize}
+\item \method{fetchQuiz (email : String) : JSON}
 \newline
 ritorna i quiz che l'utente ha svolto
 \begin{itemize}
 \item \attribute{email : String}
 \newline
 email dell'utente del quale recuperare i quiz svolti
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer::QuestionsManager}}
 Pacchetto relativo alla gestione delle domande, la loro creazione, il loro aggiornamento oppure la loro eliminazione.
@@ -1821,13 +1891,15 @@ Permette il salvataggio nella base di dati di una nuova domanda.
 \caption[Schema Classe QuestionCreator]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{createQuestion (question : JSON) : void}}
+\begin{itemize}
+\item \method{createQuestion (question : JSON) : void}
 \newline
 permette il salvataggio di una nuova domanda
 \begin{itemize}
 \item \attribute{question : JSON}
 \newline
 contiene la struttura della domanda
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuestionEraser}}
 Permette la cancellazione di una domanda dalla base di dati.
@@ -1837,13 +1909,15 @@ Permette la cancellazione di una domanda dalla base di dati.
 \caption[Schema Classe QuestionEraser]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{eraseQuestion (question : String) : void}}
+\begin{itemize}
+\item \method{eraseQuestion (question : String) : void}
 \newline
 permette la cancellazione di una domanda
 \begin{itemize}
 \item \attribute{question : String}
 \newline
 la domanda da eliminare
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuestionUpdater}}
 Permette la modifica di una domanda già esistente.
@@ -1853,13 +1927,15 @@ Permette la modifica di una domanda già esistente.
 \caption[Schema Classe QuestionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{updateQuestion (question : JSON) : void}}
+\begin{itemize}
+\item \method{updateQuestion (question : JSON) : void}
 \newline
 permette la modifica di una domanda esistente
 \begin{itemize}
 \item \attribute{question : JSON}
 \newline
 i dati della domanda da modificare
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{StatisticsQuestionUpdater}}
 Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in esso contenuta.
@@ -1869,7 +1945,8 @@ Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in e
 \caption[Schema Classe StatisticsQuestionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::StatisticsQuestionUpdater}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{\method{updateStats (question : String, statistics : JSON) : void}}
+\begin{itemize}
+\item \method{updateStats (question : String, statistics : JSON) : void}
 \newline
 aggiorna le statistiche relativa ad una domanda
 \begin{itemize}
@@ -1879,6 +1956,7 @@ la domanda della quale modificare le statistiche
 \item \attribute{statistics : JSON}
 \newline
 le statistiche della domanda da aggiornare
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer::QuizManager}}
 Componente che racchiude tutte le funzionalità adibite alla creazione, modifica e al recupero di quiz per lo svolgimento da parte di un utente.
@@ -1894,6 +1972,17 @@ Permette il salvataggio nella base di dati di un nuovo quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizcreator.pdf}}
 \caption[Schema Classe QuizCreator]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{createQuiz (quiz : JSON) : void}
+\newline
+permette la creazione di un nuovo quiz
+\begin{itemize}
+\item \attribute{quiz : JSON}
+\newline
+struttura contenente i dati del quiz da creare
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuizEraser}}
 Permette la cancellazione di un quiz dalla base di dati.
 \begin{figure}[H]
@@ -1901,6 +1990,17 @@ Permette la cancellazione di un quiz dalla base di dati.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizeraser.pdf}}
 \caption[Schema Classe QuizEraser]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{eraseQuiz (quiz : String) : void}
+\newline
+permette la cancellazione di un quiz
+\begin{itemize}
+\item \attribute{quiz : String}
+\newline
+nome del quiz da eliminare
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuizFetcher}}
 Ritorna un determinato quiz pronto per essere svolto da un utente .
 \begin{figure}[H]
@@ -1908,6 +2008,17 @@ Ritorna un determinato quiz pronto per essere svolto da un utente .
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizfetcher.pdf}}
 \caption[Schema Classe QuizFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{fetchQuiz (quiz : String) : JSON}
+\newline
+ritorna un quiz per essere svolto
+\begin{itemize}
+\item \attribute{quiz : String}
+\newline
+il nome del quiz selezionato dall'utente
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuizUpdater}}
 Permette la modifica di un quiz già presente nella base di dati.
 \begin{figure}[H]
