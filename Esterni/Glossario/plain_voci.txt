@@ -54,6 +54,8 @@ Express.js
 express.js
 Fabric.js
 fabric.js
+Facade
+facade
 Framework
 framework
 Front-end
@@ -82,14 +84,16 @@ Indice Gulpease
 indice gulpease
 Inspection 
 inspection 
-Internet Explorer/Edge
-internet explorer/edge
+Internet Explorer
+internet explorer
 iOS
 ios
 Java
 java
 JavaScript
 javascript
+JetBrains
+jetbrains
 JSON
 json
 JVM
@@ -198,6 +202,8 @@ Walkthrough
 walkthrough 
 Web
 web
+WebStorm
+webstorm
 Wikipedia
 wikipedia
 Windows Phone
