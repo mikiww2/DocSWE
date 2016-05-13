@@ -402,7 +402,7 @@ la risposta data dall'utente
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
-\item \method{check() () : void}
+\item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a completamento
 \item \method{getGivenAnswer () : String[]}
@@ -2026,6 +2026,12 @@ Permette la modifica di un quiz già presente nella base di dati.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizupdater.pdf}}
 \caption[Schema Classe QuizUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{updateQuiz () : void}
+\newline
+permette la modifica di un quiz
+\end{itemize}
 \subsubsection{Classe \cls{ResultsUpdater}}
 Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un utente.
 \begin{figure}[H]
