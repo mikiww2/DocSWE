@@ -1,0 +1,120 @@
+% Nome del file: ManualeSviluppatore.tex
+% Percorso: \gl{template}
+% Autore: Vault-Tech
+% Data creazione: 10.05.2016
+% E-mail: vaulttech.swe@gmail.comcom
+%
+% Diario delle modifiche: interno al file.
+
+\documentclass[a4paper, titlepage]{article}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{../../Stile}
+\usepackage{../../Comandi}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\def\NOME{Manuale Sviluppatore}
+\def\VERSIONE{1.0}
+\def\DATA{???}
+\def\REDATTORE{???}
+\def\VERIFICATORE{???}
+\def\RESPONSABILE{Giacomo Beltrame}
+\def\USO{Esterno}
+\def\DISTRIBUZIONE{\COMMITTENTE \\ & \CARDIN \\ & \PROPONENTE}
+
+
+\begin{document}
+	
+	\pagestyle{fancy}	
+	\pagenumbering{Roman}
+	\rfoot{Pagina \thepage{} di \pageref{lastromanpage}}
+	
+	\maketitle
+	
+	\input{diary}
+	
+	\newpage
+	\tableofcontents
+%	\newpage
+%	\listoffigures
+%	\newpage
+%	\listoftables\label{lastromanpage}
+	
+	\newpage
+	\clearpage	
+	\pagenumbering{arabic}
+	\rfoot{Pagina \thepage{} di \pageref*{LastPage}}
+	%Deve esserci per permettere i riferimenti incrociati di colore blu
+	\hypersetup{linkcolor=blue}
+	
+	\section{Introduzione}
+	\subsection{Scopo del documento}
+	Questo documento ha lo scopo di indicare e spiegare quali sono i comandi da eseguire per installare correttamente l'applicativo Quizzipedia.
+	
+	\subsection{Scopo del prodotto}
+	\SCOPO
+	
+	\subsection{Riferimenti}	
+	\subsubsection{Riferimenti informativi}
+	\begin{itemize}
+		\item \textbf{Manuale utente \gl{Git}:} \url{https://git-scm.com/docs/user-manual.html};
+		\item \textbf{Manuale installazione \gl{Node.js}:} \url{https://docs.npmjs.com/getting-started/installing-node};
+		\item \textbf{Manuale installazione \gl{MongoDB}:} \url{https://docs.mongodb.com/master/installation/};
+		\item \textbf{Front-end package manager Bower}: \url{http://bower.io/};
+		\item \textbf{Grunt JavaScript task runner}: \url{http://gruntjs.com/}.
+	\end{itemize}
+	\newpage
+	
+	\section{Prerequisiti software}
+	Per poter avviare Quizzipedia è richiesta l'installazione dei seguenti software.
+	
+	\subsection{Node.js e npm}
+	Scarica e installa \gl{Node.js} e il package manager npm da \url{https://nodejs.org/en/download/current/}.
+	
+	Verificare che sia visibile la versione installata con i seguenti comandi:
+	
+	\texttt{\$ node -v}
+	
+	\texttt{\$ npm -v}
+
+	\subsection{MongoDB}
+	Scarica e installa \gl{MongoDB} da \url{https://www.mongodb.com/download-center}.
+	
+	Per avviare \gl{MongoDB} sarà necessario dare il seguente comando:
+	
+	\texttt{\$ mongod}
+	
+	\subsection{DA FARE: AGGIUNGERE GLI ALTRI MODULI LATO CLIENT}
+	
+	\section{Requisiti hardware}
+	Il prodotto lato server richiede come requisiti minimi:
+	\begin{itemize}
+		\item processore dual core;
+		\item 2GB di memoria RAM;
+		\item 1GB di spazio libero su disco.
+	\end{itemize}
+	
+	\section{Installazione}
+	
+	\subsection{Ottenere Quizzipedia}
+	DA FARE
+	
+	\subsection{Installazione dipendenze}
+	
+	Una volta ottenuto il codice sorgente, spostarsi all'interno della root del repository, si controlli che sia presente il file package.json.
+	
+	Sempre nella directory corrente eseguire poi il seguente comando da terminale:
+	
+	\texttt{\$ npm install}
+	
+	in questo modo verrano installati automaticamente i moduli di Node.js necessari per l'esecuzione del prodotto.
+	
+	DA FARE: PROCEDIMENTO PER MODULI LATO CLIENT
+	
+	\subsection{Avvio}
+	
+	DA FARE: PROCEDURA PER ESEGUIRE SERVER, EVENTUALI AMBIENTI DI ESECUZIONE, E PROCEDURA PER FARLO ANDARE LOCALMENTE O IN REMOTO
+	
+\end{document}
