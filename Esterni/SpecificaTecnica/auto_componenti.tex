@@ -60,8 +60,6 @@ in cui l'utente vuole essere inserito
 \item usata da \cls{Quizzipedia::Client::ModelClient::Services::Quiz} per tenere traccia delle classi per
 cui il quiz è stato creato. Se un quiz è assegnato a delle classi specifiche, allora è privato e
 accessibile dai soli studenti delle classi
-\item usata da \cls{Quizzipedia::Client::ModelClient::Users::User} per tenere traccia delle classi dell'ente
-a cui l'utente è iscritto, o come docente, o come studente
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlInstitution} per avere
 accesso alla struttura della classe e potere quindi svolgere correttamente operazioni su di
 essa
@@ -211,11 +209,6 @@ Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni doma
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-topics.pdf}}
 \caption[Schema Classe Topics]{Schema Classe Quizzipedia::Client::ModelClient::Services::Topics}
 \end{figure}
-\paragraph{Relazioni con altre classi}
-\subparagraph{Entranti}
-\begin{itemize}
-\item usata da \cls{Quizzipedia::Client::ModelClient::Users::Director} per permettere al responsabile di modificare la lista dei possibili argomenti
-\end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ModelClient::Services::Answers}}
 Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e delle domande svolte.
 \begin{figure}[H]
@@ -308,6 +301,10 @@ Classe che si occupa di memorizzare le informazioni di un quiz completato e gest
 \caption[Schema Classe AnswerQuiz]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuiz}
 \end{figure}
 \paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ModelClient::Users::NoRole} per tenere traccia dei quiz che ha già svolto e del loro esito
+\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuestion} per memorizzare e verificare le risposte date dagli utenti alle domande che compongono il quiz
@@ -518,7 +515,7 @@ Classe usata per visualizzare gli studenti che hanno svolto un quiz specifico e 
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Client::ModelClient::Users::User} per tenere traccia degli utenti a cui le statistiche si riferiscono
+\item usa \cls{Quizzipedia::Client::ModelClient::Users::Student} per tenere traccia degli utenti a cui le statistiche si riferiscono
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ModelClient::Users}}
 Raccoglie le classi necessarie a descrivere le diverse tipologie di utente che possono accedere al sistema.
@@ -564,12 +561,10 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \subparagraph{Entranti}
 \begin{itemize}
 \item usata da \cls{Quizzipedia::Client::ModelClient::Organizations::Institution} per identificare il responsabile dell'ente
-\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager} per caricare un utente del tipo corretto
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Client::ModelClient::Services::Topics} per permettere al responsabile di modificare la lista dei possibili argomenti
-\item usa \cls{Quizzipedia::Client::ModelClient::Users::User} per aggiungi
+\item usa \cls{Quizzipedia::Client::ModelClient::Users::User} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
 \end{itemize}
 \subsubsection{Classe \cls{NoRole}}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
@@ -579,13 +574,10 @@ Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e 
 \caption[Schema Classe NoRole]{Schema Classe Quizzipedia::Client::ModelClient::Users::NoRole}
 \end{figure}
 \paragraph{Relazioni con altre classi}
-\subparagraph{Entranti}
-\begin{itemize}
-\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager} per caricare un utente del tipo corretto
-\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Client::ModelClient::Users::User} per aggiungi
+\item usa \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuiz} per tenere traccia dei quiz che ha già svolto e del loro esito
+\item usa \cls{Quizzipedia::Client::ModelClient::Users::User} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
 \end{itemize}
 \subsubsection{Classe \cls{Student}}
 Rappresenta uno studente del sistema e implementa le sue funzioni specifiche oltre a quelle ereditate da utente.
@@ -597,8 +589,8 @@ Rappresenta uno studente del sistema e implementa le sue funzioni specifiche olt
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ModelClient::Statistics::StudentsStatisticsQuiz} per tenere traccia degli utenti a cui le statistiche si riferiscono
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestClass} per 
-\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager} per caricare un utente del tipo corretto
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -615,7 +607,6 @@ Rappresenta un docente del sistema e ne implementa le funzionalità specifiche i
 \subparagraph{Entranti}
 \begin{itemize}
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestClass} per 
-\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager} per caricare un utente del tipo corretto
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -632,16 +623,14 @@ Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli ut
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Client::ModelClient::Statistics::StudentsStatisticsQuiz} per tenere traccia degli utenti a cui le statistiche si riferiscono
-\item usata da \cls{Quizzipedia::Client::ModelClient::Users::Director} per aggiungi
-\item usata da \cls{Quizzipedia::Client::ModelClient::Users::NoRole} per aggiungi
+\item usata da \cls{Quizzipedia::Client::ModelClient::Users::Director} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
+\item usata da \cls{Quizzipedia::Client::ModelClient::Users::NoRole} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
 \item usata da \cls{Quizzipedia::Client::ModelClient::Users::Student} per aggiungi
 \item usata da \cls{Quizzipedia::Client::ModelClient::Users::Teacher} per aggiungi
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager} per caricare un utente del tipo corretto. A seconda del tipo di utente ne verrà creato uno appropriato tra studente, docente, responsabile o utente senza ruolo
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Client::ModelClient::Organizations::Class} per tenere traccia delle classi dell'ente
-a cui l'utente è iscritto, o come docente, o come studente
 \item usa \cls{Quizzipedia::Client::ModelClient::Users::AuthenticationData} per memorizzare le informazioni di autenticazione comuni a tutti gli utenti registrati
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ViewClient}}
@@ -1546,10 +1535,7 @@ La classe, tramite variabili definite nello $scope, permette agli utenti di gest
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Client::ModelClient::Users::Director} per caricare un utente del tipo corretto
-\item usa \cls{Quizzipedia::Client::ModelClient::Users::NoRole} per caricare un utente del tipo corretto
-\item usa \cls{Quizzipedia::Client::ModelClient::Users::Student} per caricare un utente del tipo corretto
-\item usa \cls{Quizzipedia::Client::ModelClient::Users::Teacher} per caricare un utente del tipo corretto
+\item usa \cls{Quizzipedia::Client::ModelClient::Users::User} per caricare un utente del tipo corretto. A seconda del tipo di utente ne verrà creato uno appropriato tra studente, docente, responsabile o utente senza ruolo
 \end{itemize}
 \subsubsection{Classe \cls{MyUser}}
 La classe è definita nello $scope e serve a raccogliere le informazioni dell'utente che si sta registrando.
@@ -1737,6 +1723,7 @@ Il componente racchiude i modelli necessari alla creazione di domande e quiz, i 
 \end{figure}
 \subsubsection{Componenti contenute}
 \begin{itemize}
+\item \pkg{Quizzipedia::Server::ModelServer::Services::Answers}
 \item \pkg{Quizzipedia::Server::ModelServer::Services::Questions}
 \end{itemize}
 \subsubsection{Interazioni con altre componenti}
@@ -1788,6 +1775,13 @@ Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni doma
 \item usata da \cls{Quizzipedia::Server::ControllerServer::TopicManager::TopicEraser} per 
 \item usata da \cls{Quizzipedia::Server::ModelServer::Users::Director} per 
 \end{itemize}
+\subsection{\pkg{Quizzipedia::Server::ModelServer::Services::Answers}}
+Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e delle domande svolte.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ModelServer::Services::Answers]{Schema Componente Quizzipedia::Server::ModelServer::Services::Answers}
+\end{figure}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Services::Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
 \begin{figure}[H]
