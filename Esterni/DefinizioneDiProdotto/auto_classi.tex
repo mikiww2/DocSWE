@@ -2159,9 +2159,17 @@ Permette la memorizzazione nella base di dati di tutte le richieste, fatte da pa
 \end{figure}
 \paragraph{Metodi}
 \begin{itemize}
-\item \method{add () : void}
+\item \method{add (class : String, email : String) : void}
 \newline
 permette la memorizzazione della richiesta di inserimento in una classe da parte di un utente
+\begin{itemize}
+\item \attribute{class : String}
+\newline
+classe nella quale l'utente fa richiesta di essere inserito
+\item \attribute{email : String}
+\newline
+l'email dell'utente
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RequestsFetcher}}
 Permette la visualizzazione di tutte le richieste da parte degli utenti.
