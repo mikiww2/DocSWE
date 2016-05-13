@@ -423,6 +423,12 @@ Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoice
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answermultiplechoiceq.pdf}}
 \caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerMultipleChoiceQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{givenAnswer : bool[]}
+\newline
+la risposta data dall'utente
+\end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{check () : bool}
@@ -474,6 +480,21 @@ Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ r
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answershortanswerq.pdf}}
 \caption[Schema Classe AnswerShortAnswerQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerShortAnswerQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{givenAnswer : String}
+\newline
+la risposta data dall'utente
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{check () : bool}
+\newline
+concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda aperta
+\item \method{getGivenAnswer () : String}
+\newline
+restituisce la risposta dell'utente
+\end{itemize}
 \subsubsection{Classe \cls{AnswerTrueFalseQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ risolta.
 \begin{figure}[H]
@@ -2028,9 +2049,14 @@ Permette la modifica di un quiz già presente nella base di dati.
 \end{figure}
 \paragraph{Metodi}
 \begin{itemize}
-\item \method{updateQuiz () : void}
+\item \method{updateQuiz (quiz : JSON) : void}
 \newline
 permette la modifica di un quiz
+\begin{itemize}
+\item \attribute{quiz : JSON}
+\newline
+la struttura contenente i dati da aggiornare
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ResultsUpdater}}
 Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un utente.
@@ -2039,6 +2065,20 @@ Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un ut
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-resultsupdater.pdf}}
 \caption[Schema Classe ResultsUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{updateResults (quiz : String, results : JSON) : void}
+\newline
+aggiorna i risultati dei quiz ad ogni svolgimento
+\begin{itemize}
+\item \attribute{quiz : String}
+\newline
+il quiz in questione
+\item \attribute{results : JSON}
+\newline
+la struttura contenente i dati dei risultati da aggiornare
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{StatisticsQuizUpdater}}
 Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte degli utenti.
 \begin{figure}[H]
@@ -2046,6 +2086,20 @@ Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-statisticsquizupdater.pdf}}
 \caption[Schema Classe StatisticsQuizUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::StatisticsQuizUpdater}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{updateStats (quiz : String, statistics : JSON) : void}
+\newline
+aggiorna le statistiche relative al quiz
+\begin{itemize}
+\item \attribute{quiz : String}
+\newline
+il nome del quiz
+\item \attribute{statistics : JSON}
+\newline
+la struttura contenente i dati delle statistiche da aggiornare
+\end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}}
 Questo componente racchiude i moduli necessari alla traduzione, da QML ad un formato comprensibile dal sistema, delle informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
 \begin{figure}[H]
@@ -2060,6 +2114,17 @@ Permette la traduzione in formato QML di un quiz nel caso si voglia procedere al
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent-qmlgenerator.pdf}}
 \caption[Schema Classe QMLGenerator]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLGenerator}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{generate (question : JSON) : String}
+\newline
+traduzione in formato QML di un quiz per procedere con il salvataggio nel database
+\begin{itemize}
+\item \attribute{question : JSON}
+\newline
+la domanda da tradurre
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QMLParser}}
 Permette la traduzione di un quiz dal formato QML ad uno comprensibile dal sistema per la generazione delle relative pagine HTML.
 \begin{figure}[H]
@@ -2067,6 +2132,17 @@ Permette la traduzione di un quiz dal formato QML ad uno comprensibile dal siste
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent-qmlparser.pdf}}
 \caption[Schema Classe QMLParser]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLParser}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{parse (question : String) : JSON}
+\newline
+traduzione del formato QML in formato JSON per la visualizzazione lato client
+\begin{itemize}
+\item \attribute{question : String}
+\newline
+la domanda da tradurre
+\end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer::RequestsManager}}
 Componente che si occupa di memorizzare richieste da parte degli utenti, mostrarle al responsabile e permettergli di accettarle o meno.
 \begin{figure}[H]
@@ -2081,6 +2157,12 @@ Permette la memorizzazione nella base di dati di tutte le richieste, fatte da pa
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-insertclassrequestsadder.pdf}}
 \caption[Schema Classe InsertClassRequestsAdder]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestsAdder}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{add () : void}
+\newline
+permette la memorizzazione della richiesta di inserimento in una classe da parte di un utente
+\end{itemize}
 \subsubsection{Classe \cls{RequestsFetcher}}
 Permette la visualizzazione di tutte le richieste da parte degli utenti.
 \begin{figure}[H]
@@ -2088,6 +2170,12 @@ Permette la visualizzazione di tutte le richieste da parte degli utenti.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-requestsfetcher.pdf}}
 \caption[Schema Classe RequestsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{fetchRequests () : JSON}
+\newline
+ritorna tutte le richieste da parte degli utenti
+\end{itemize}
 \subsubsection{Classe \cls{RoleAccepter}}
 Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utente dopo che ne ha fatto richiesta.
 \begin{figure}[H]
@@ -2095,6 +2183,12 @@ Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utent
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-roleaccepter.pdf}}
 \caption[Schema Classe RoleAccepter]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{accept () : void}
+\newline
+permette l'accettazione o negazione dell'assegnazione di un ruolo ad un utente previa richiesta
+\end{itemize}
 \subsubsection{Classe \cls{RoleRequestAdder}}
 Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'interno del sistema.
 \begin{figure}[H]
@@ -2102,6 +2196,12 @@ Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-rolerequestadder.pdf}}
 \caption[Schema Classe RoleRequestAdder]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{add () : void}
+\newline
+memorizza le richieste da parte di utenti di assumere un determinato ruolo
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer::SearchManager}}
 Questo componente permette di effettuare una ricerca nel database di quiz o domande richiesti dall'utente e ritornare una lista che corrisponde ai parametri desiderati.
 \begin{figure}[H]
