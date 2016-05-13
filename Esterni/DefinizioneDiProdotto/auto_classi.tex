@@ -48,26 +48,14 @@ le mail dei docenti associati alla classe
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
-\item \method{addStudent (studentMail : String) : void}
+\item \method{addStudent () : void}
 \newline
 permette di aggiungere uno studente alla classe
 \newline
-\bold{Parametri} :
-\begin{itemize}
-\item \attribute{studentMail : String}
-\newline
-mail dello studente da aggiungere
-\end{itemize}
-\item \method{addTeacher (teacherMail : String) : void}
+\item \method{addTeacher () : void}
 \newline
 permette di aggiungere un docente alla classe
 \newline
-\bold{Parametri} :
-\begin{itemize}
-\item \attribute{teacherMail : String}
-\newline
-mail del docente da aggiungere
-\end{itemize}
 \item \method{edit (newDescription : String, newName : String, newYear : String) : void}
 \newline
 permette
@@ -140,9 +128,15 @@ Tale classe rappresenta un ente. Contiene le informazioni relative alla struttur
 \item \attribute{classes : Class[]}
 \newline
 raccoglie tutte le classi presenti nell'ente
+\item \attribute{classList : ClassList}
+\newline
+le richieste di ingresso ad una classe dell'istituto
 \item \attribute{creationDate : Date}
 \newline
 indica la data di creazione dell'ente
+\item \attribute{director : Director}
+\newline
+il direttore dell'istituto
 \item \attribute{name : string}
 \newline
 il nome dell'ente
@@ -155,9 +149,32 @@ raccoglie le mail di tutti gli studenti registrati presso un ente
 \item \attribute{teachers : string[]}
 \newline
 raccoglie le mail di tutti i docenti registrati presso un ente
+\item \attribute{topics : Topics}
+\newline
+i topic dell'istituto
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
+\item \method{acceptClassRequest (indexOfRequest : int) : void}
+\newline
+permette di accettare una richiesta di ingresso ad una classe
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfRequest : int}
+\newline
+la posizione della richiesta di ingresso ad una classe da accettare
+\end{itemize}
+\item \method{acceptRequestRole (role : String) : void}
+\newline
+permette di accettare una richiesta di ingresso ad un ruolo dell'istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{role : String}
+\newline
+l'utente da accettare nell'istituto
+\end{itemize}
 \item \method{addClass  (objectClass : Class) : void}
 \newline
 Permette l'aggiunta di una classe all'interno di un instituto
@@ -168,13 +185,37 @@ Permette l'aggiunta di una classe all'interno di un instituto
 \newline
 viene passata al metodo la classe da inserire
 \end{itemize}
-\item \method{addStudent () : void}
+\item \method{getClass () : Class[]}
 \newline
-aggiunge uno studente agli utenti iscritti presso un istituto
+permette di recuperare le classi facenti parte dell'istituto
 \newline
-\item \method{addTeacher () : void}
+\item \method{getCLassList () : ClassList}
 \newline
-aggiunge un docente agli utenti iscritti presso un istituto
+permette di recuperare la lista delle richieste di entrata alle classi
+\newline
+\item \method{getDirector () : Director}
+\newline
+permette di recuperare il direttore dell'istittuto
+\newline
+\item \method{getName () : String}
+\newline
+permette di recuperare il nome dell'istituto
+\newline
+\item \method{getRoleList () : RoleList}
+\newline
+permette di recuperare le richieste di ingresso all'istituto con un appropriato ruolo
+\newline
+\item \method{getStudents () : String[]}
+\newline
+permette di recuperare gli studenti abilitati nell'istituto
+\newline
+\item \method{getTeachers () : String[]}
+\newline
+permette di recuperare gliinsegnanti abilitati nell'istituto
+\newline
+\item \method{getTopics () : Topics}
+\newline
+permette di recuperare i topics dll'istituto
 \newline
 \item \method{removeClass (indexOfClass : int) : void}
 \newline
@@ -186,14 +227,56 @@ rimuove una classe da un istituto
 \newline
 l'indice della classe da rimuovere dalle classi presenti nell'ente
 \end{itemize}
-\item \method{removeStudent () : void}
+\item \method{removeClassRequest (indexOfRequest : int) : void}
+\newline
+permette di rimuovere una richiesta di ingresso ad una classe dell'istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfRequest : int}
+\newline
+la posizione della richiesta da rimuovere
+\end{itemize}
+\item \method{removeStudent (studentMail : String) : void}
 \newline
 rimuove uno studente dagli iscritti presso un istituto
 \newline
-\item \method{removeTeacher () : void}
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{studentMail : String}
+\newline
+lo studente da rimuovere dall'istituto
+\end{itemize}
+\item \method{removeTeacher (teacherMail : String) : void}
 \newline
 rimuove un docente dagli iscritti presso un istituto
 \newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{teacherMail : String}
+\newline
+l'insegnate da rimuovere dall'istituto
+\end{itemize}
+\item \method{setDirector (objectDirector : Director) : void}
+\newline
+permette di modificare il direttore dell'istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{objectDirector : Director}
+\newline
+il nuovo direttore dell'istituto
+\end{itemize}
+\item \method{setName (newName : String) : void}
+\newline
+permette di modificare il nome dell'istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newName : String}
+\newline
+il nuovo nome dell'istituto
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ModelClient::Requests}}
 Questo componente contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
@@ -1487,6 +1570,43 @@ Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-norole.pdf}}
 \caption[Schema Classe NoRole]{Schema Classe Quizzipedia::Client::ModelClient::Users::NoRole}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{quizProfile : AnswerQuiz[]}
+\newline
+è il profilo che raccoglie i quiz già risolti dall'utente e le risposte che l'utente aveva dato
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
+\newline
+aggiunge un quiz svolto e le risposte data dall'utente allo storico dei quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{quiz : AnswerQuiz}
+\newline
+la soluzione che si desidera aggiungere alla lista dei quiz già svolti
+\end{itemize}
+\item \method{getQuizProfile () : AnswerQuiz}
+\newline
+restituisce la list dei quiz svolti dall'utente e delle relative soluzioni
+\newline
+\item \method{loadProfileQuiz () : void}
+\newline
+carica e assegna a quizProfile la lista dei quiz già svolti dall'utente e dei loro esiti
+\newline
+\item \method{removeQuizFromProfile (indexOfQuiz : int) : void}
+\newline
+rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti da un utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfQuiz : int}
+\newline
+l'indice del quiz che si desidera rimuovere dallo storico
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Student}}
 Rappresenta uno studente del sistema e implementa le sue funzioni specifiche oltre a quelle ereditate da utente.
 \begin{figure}[H]
@@ -1501,6 +1621,47 @@ Rappresenta un docente del sistema e ne implementa le funzionalità specifiche i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-teacher.pdf}}
 \caption[Schema Classe Teacher]{Schema Classe Quizzipedia::Client::ModelClient::Users::Teacher}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{ownQuiz : Quiz[]}
+\newline
+la lista dei quiz creati dall'utente
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addQuiz (newQuiz : Quiz) : void}
+\newline
+aggiunge un quiz alla lista dei quiz creati dal docente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newQuiz : Quiz}
+\newline
+il quiz che si intende aggiungere
+\end{itemize}
+\item \method{getOwnQuiz () : Quiz[]}
+\newline
+restituisce la lista dei quiz creati dal docente
+\newline
+\item \method{getQuizStatistics () : QuizStatistics}
+\newline
+restituisce le statistiche generali del quiz richiesto
+\newline
+\item \method{getStudentsStatistics () : StudentsStatisticsQuiz}
+\newline
+restituisce le statistiche degli utenti che hanno risolto il quiz richiesto
+\newline
+\item \method{removeQuiz (indexOfQuiz : int) : void}
+\newline
+rimuove un quiz dalla lista di quiz creati dall'utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfQuiz : int}
+\newline
+l'indice del quiz che si intende rimuovere
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{User}}
 Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli utenti.
 \begin{figure}[H]
@@ -2248,6 +2409,13 @@ Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni doma
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-topics.pdf}}
 \caption[Schema Classe Topics]{Schema Classe Quizzipedia::Server::ModelServer::Services::Topics}
+\end{figure}
+\subsection{\pkg{Quizzipedia::Server::ModelServer::Services::Answers}}
+Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e delle domande svolte.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-services-answers.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ModelServer::Services::Answers]{Schema Componente Quizzipedia::Server::ModelServer::Services::Answers}
 \end{figure}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Services::Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
