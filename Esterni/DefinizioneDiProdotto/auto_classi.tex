@@ -1,11 +1,11 @@
-\subsection{Quizzipedia::Client}
+\subsection{\pkg{Quizzipedia::Client}}
 Racchiude tutte le componenti necessarie per il front-end del prodotto. Visualizza i dati dell'utente e invia richieste al server che dovrà gestirle e reindirizzare una risposta al client.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client.pdf}}
 \caption[Schema Componente Client]{Schema Componente Quizzipedia::Client}
 \end{figure}
-\subsection{Quizzipedia::Client::ModelClient}
+\subsection{\pkg{Quizzipedia::Client::ModelClient}}
 Rappresenta il modello dei dati che verranno utilizzati dal sistema lato client. Viene utilizzato tale model per facilitare il recupero di alcune informazioni che altrimenti dovrebbero esser recuperate dal server ogni volta che viene svolta una richiesta dall'utente.
 Attraverso l'uso di Angular.js il controller svolge automaticamente le modifiche richieste dalla view nel model in modo tale da tenerlo sempre aggiornato.
 \begin{figure}[H]
@@ -13,15 +13,16 @@ Attraverso l'uso di Angular.js il controller svolge automaticamente le modifiche
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ModelClient]{Schema Componente Quizzipedia::Client::ModelClient}
 \end{figure}
-\subsection{Quizzipedia::Client::ModelClient::Organizations}
+\subsection{\pkg{Quizzipedia::Client::ModelClient::Organizations}}
 La componente gestisce le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-organizations.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Organizations]{Schema Componente Quizzipedia::Client::ModelClient::Organizations}
 \end{figure}
-\subsubsection{Classe Class}
-Rappresenta una classe (relativa ad un ente). Memorizza le informazioni che definiscono ogni classe, informazioni che saranno utilizzate per la visualizzazione e per la gestione della classe..
+\subsubsection{Classe \cls{Class}}
+Rappresenta una classe all'interno di un ente. Memorizza le informazioni che definiscono ogni classe,
+informazioni che saranno utilizzate per la visualizzazione e per la gestione della classe stessa.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organizations-class.pdf}}
@@ -29,85 +30,88 @@ Rappresenta una classe (relativa ad un ente). Memorizza le informazioni che defi
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
-\item academicYear : string
+\item \attribute{academicYear : String}
 \newline
 l'anno accademico della classe, per distinguere classi con lo stesso nome
-\item description : string
+\item \attribute{description : String}
 \newline
 una breve descrizione della classe
-\item name : string
+\item \attribute{name : String}
 \newline
 il nome della classe
-\item students : string[]
+\item \attribute{students : String[]}
 \newline
 le mail degli studenti iscritti alla classe
-\item teachers : string[]
+\item \attribute{teachers : String[]}
 \newline
 le mail dei docenti associati alla classe
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{addStudent (studentMail : string) : void}
+\subparagraph{\method{addStudent (studentMail : String) : void}}
 \newline
 permette di aggiungere uno studente alla classe
 \begin{itemize}
-\item studentMail : string
+\item \attribute{studentMail : String}
 \newline
 mail dello studente da aggiungere
 \end{itemize}
-\subparagraph{addTeacher (teacherMail : string) : void}
+\subparagraph{\method{addTeacher (teacherMail : String) : void}}
 \newline
 permette di aggiungere un docente alla classe
 \begin{itemize}
-\item teacherMail : string
+\item \attribute{teacherMail : String}
 \newline
 mail del docente da aggiungere
 \end{itemize}
-\subparagraph{edit (newDescription : string, newName : string, newYear : string) : void}
+\subparagraph{\method{edit (newDescription : String, newName : String, newYear : String) : void}}
 \newline
-permette di modificare le informazioni base della classe
+permette
+di modificare le informazioni base della classe
 \begin{itemize}
-\item newDescription : string
+\item \attribute{newDescription : String}
 \newline
 la nuova descrizione della classe
-\item newName : string
+\item \attribute{newName : String}
 \newline
 il nuovo nome della classe
-\item newYear : string
+\item \attribute{newYear : String}
 \newline
 il nuovo anno della classe
 \end{itemize}
-\subparagraph{getAcademicYear () : string}
+\subparagraph{\method{getAcademicYear () : String}}
 \newline
 restituisce l'anno accademico della classe
-\subparagraph{getDescription () : string}
+\subparagraph{\method{getDescription () : String}}
 \newline
 restituisce la descrizione della classe
-\subparagraph{getName () : string}
+\subparagraph{\method{getName () : String}}
 \newline
 restituisce il nome della classe
-\subparagraph{getStudents () : string[]}
+\subparagraph{\method{getStudents () : String[]}}
 \newline
-restituisce le mail deigli studenti della classe
-\subparagraph{getTeachers () : string[]}
+restituisce le mail degli studenti della classe
+\subparagraph{\method{getTeachers () : String[]}}
 \newline
 restituisce le mail dei docenti della classe
-\subparagraph{removeStudent (studentMail : string) : void}
+\subparagraph{\method{removeStudent (studentMail : String) : void}}
 \newline
-permette di rimuovere uno studente dalla classe
+permette di rimuovere uno studente dalla
+classe
 \begin{itemize}
-\item studentMail : string
+\item \attribute{studentMail : String}
 \newline
 mail dello studente da rimuovere
 \end{itemize}
-\subparagraph{removeTeacher (teacherMail : string) : void}
+\subparagraph{\method{removeTeacher (teacherMail : String) : void}}
 \newline
-permette di rimuovere un docente dalla classe
+permette di rimuovere un docente dalla
+classe
 \begin{itemize}
-\item teacherMail : string
+\item \attribute{teacherMail : String}
 \newline
 mail del docente da rimuovere
 \end{itemize}
-\subsubsection{Classe Institution}
+\subsubsection{Classe \cls{Institution}}
 Tale classe rappresenta un ente. Contiene le informazioni relative alla struttura dell'ente che saranno visualizzate dall'utente e gestiste dal controller, come ad esempio la lista delle classi presenti nell'ente, la lista degli studenti e degli insegnati all'interno dell'ente.
 \begin{figure}[H]
 \centering
@@ -116,292 +120,459 @@ Tale classe rappresenta un ente. Contiene le informazioni relative alla struttur
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
-\item classes : Class[]
+\item \attribute{classes : Class[]}
 \newline
-raccoglie tutte le classi presenti nell'istituto
-\item creationDate : Date
+raccoglie tutte le classi presenti nell'ente
+\item \attribute{creationDate : Date}
 \newline
-indica la data di creazione dell'istituto
-\item name : string
+indica la data di creazione dell'ente
+\item \attribute{name : string}
 \newline
-il nome dell'istituto
-\item roleList : RoleList
+il nome dell'ente
+\item \attribute{roleList : RoleList}
 \newline
-rappresenta una lista di tutte le richieste di ruolo pendenti per il dato istituto
-\item students : string[]
+rappresenta una lista di tutte le richieste di ruolo pendenti per il dato ente
+\item \attribute{students : string[]}
 \newline
-raccoglie le mail di tutti gli studenti registrati presso un istituto
-\item teachers : string[]
+raccoglie le mail di tutti gli studenti registrati presso un ente
+\item \attribute{teachers : string[]}
 \newline
-raccoglie le mail di tutti i docenti registrati presso un istituto
+raccoglie le mail di tutti i docenti registrati presso un ente
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{addClass  (objectClass : Class) : void}
+\subparagraph{\method{addClass  (objectClass : Class) : void}}
 \newline
 Permette l'aggiunta di una classe all'interno di un instituto
 \begin{itemize}
-\item objectClass : Class
+\item \attribute{objectClass : Class}
 \newline
 viene passata al metodo la classe da inserire
 \end{itemize}
-\subparagraph{addStudent (studentMail : string) : void}
+\subparagraph{\method{addStudent () : void}}
 \newline
 aggiunge uno studente agli utenti iscritti presso un istituto
-\begin{itemize}
-\item studentMail : string
-\newline
-la mail dello studente da aggiungere alla classe
-\end{itemize}
-\subparagraph{addTeacher (teacherMail : string) : void}
+\subparagraph{\method{addTeacher () : void}}
 \newline
 aggiunge un docente agli utenti iscritti presso un istituto
-\begin{itemize}
-\item teacherMail : string
-\newline
-la mail del docente da aggiungere alla classe
-\end{itemize}
-\subparagraph{removeClass (indexOfClass : int) : void}
+\subparagraph{\method{removeClass (indexOfClass : int) : void}}
 \newline
 rimuove una classe da un istituto
 \begin{itemize}
-\item indexOfClass : int
+\item \attribute{indexOfClass : int}
 \newline
-l'indice della classe da rimuovere dalle classi presenti nell'istituto
+l'indice della classe da rimuovere dalle classi presenti nell'ente
 \end{itemize}
-\subparagraph{removeStudent (studentMail : string) : void}
+\subparagraph{\method{removeStudent () : void}}
 \newline
 rimuove uno studente dagli iscritti presso un istituto
-\begin{itemize}
-\item studentMail : string
-\newline
-la mail dello studente da rimuovere
-\end{itemize}
-\subparagraph{removeTeacher (teacherMail : string) : void}
+\subparagraph{\method{removeTeacher () : void}}
 \newline
 rimuove un docente dagli iscritti presso un istituto
-\begin{itemize}
-\item teacherMail : string
-\newline
-la mail del docente da rimuovere
-\end{itemize}
-\subsection{Quizzipedia::Client::ModelClient::Requests}
+\subsection{\pkg{Quizzipedia::Client::ModelClient::Requests}}
 Questo componente contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-requests.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Requests]{Schema Componente Quizzipedia::Client::ModelClient::Requests}
 \end{figure}
-\subsubsection{Classe ClassList}
-Questa classe gestisce le richieste da parte di docenti o studenti per l'assegnazione a una specifica classe.
+\subsubsection{Classe \cls{ClassList}}
+Questa classe gestisce le richieste da parte di docenti o studenti per l'assegnazione a una specifica classe. Contiene i metodi da cui è possibile accettare o rifiutare la richiesta dell'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-classlist.pdf}}
 \caption[Schema Classe ClassList]{Schema Classe Quizzipedia::Client::ModelClient::Requests::ClassList}
 \end{figure}
-\subsubsection{Classe Request}
-La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui ha fatto richiesta.
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{classRequest : RequestClass[]}
+\newline
+è la lista delle richieste di classe pendenti
+\end{itemize}
+\paragraph{Metodi}
+\subparagraph{\method{acceptClassRequest (indexOfRequest : int) : void}}
+\newline
+accetta la richiesta di entrata in una classe dell'utente
+\begin{itemize}
+\item \attribute{indexOfRequest : int}
+\newline
+è l'indice della richiesta che si intende accettare
+\end{itemize}
+\subparagraph{\method{addClassRequest (mail : String, nameClass : String, year : String) : void}}
+\newline
+aggiunge una richiesta di entrata in una classe alla lista delle richieste pendenti
+\begin{itemize}
+\item \attribute{mail : String}
+\newline
+la mail dell'utente che effettua la richiesta di entrata nella classe
+\item \attribute{nameClass : String}
+\newline
+il nome della classe per cui si sta effettuando la richiesta
+\item \attribute{year : String}
+\newline
+l'anno della classe per cui si sta effettuando la richiesta
+\end{itemize}
+\subparagraph{\method{removeClassRequest (indexOfRequest : int) : void}}
+\newline
+rimuove una richiesta di entrata nella classe dalla lista delle richieste pendenti. Di fatto, comporta il rifiuto della richiesta
+\begin{itemize}
+\item \attribute{indexOfRequest : int}
+\newline
+l'indice della richiesta che si intende rifiutare e rimuovere dalla lista
+\end{itemize}
+\subsubsection{Classe \cls{RequestClass}}
+La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui la richiesta è stata effettuata.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-request.pdf}}
-\caption[Schema Classe Request]{Schema Classe Quizzipedia::Client::ModelClient::Requests::Request}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-requestclass.pdf}}
+\caption[Schema Classe RequestClass]{Schema Classe Quizzipedia::Client::ModelClient::Requests::RequestClass}
 \end{figure}
-\subsubsection{Classe RequestRole}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{class : Class}
+\newline
+la classe per cui è stata effettuata la richiesta
+\item \attribute{mail : String}
+\newline
+la mail dell'utente che ha effettuato la richiesta
+\end{itemize}
+\paragraph{Metodi}
+\subparagraph{\method{getMail () : String}}
+\newline
+restituisce la mail dell'utente che ha effettuato la richiesta
+\subsubsection{Classe \cls{RequestRole}}
 La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuole ricoprire.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-requestrole.pdf}}
 \caption[Schema Classe RequestRole]{Schema Classe Quizzipedia::Client::ModelClient::Requests::RequestRole}
 \end{figure}
-\subsubsection{Classe RoleList}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{mail : String}
+\newline
+la mail dell'utente che effettua la richiesta di ruolo
+\item \attribute{messagge : String}
+\newline
+un messaggio che l'utente può includere alla sua richiesta di ruolo
+\end{itemize}
+\paragraph{Metodi}
+\subparagraph{\method{getMail () : String}}
+\newline
+restituisce la mail dell'utente che effettua la richiesta
+\subparagraph{\method{getMessage () : String}}
+\newline
+restituisce il messaggio dell'utente che effettua la richista
+\subsubsection{Classe \cls{RoleList}}
 Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo di studente o docente al responsabile di un ente. Questa classe gestisce tali richieste.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-rolelist.pdf}}
 \caption[Schema Classe RoleList]{Schema Classe Quizzipedia::Client::ModelClient::Requests::RoleList}
 \end{figure}
-\subsection{Quizzipedia::Client::ModelClient::Services}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{students : RequesRole[]}
+\newline
+memorizza la lista delle richieste degli utenti che hanno richiesto di diventare studenti
+\item \attribute{teachers : RequestRole[]}
+\newline
+memorizza la lista delle richieste degli utenti che hanno richiesto di diventare docenti
+\end{itemize}
+\paragraph{Metodi}
+\subparagraph{\method{acceptStudent (indexOfStudent : int) : void}}
+\newline
+accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
+\begin{itemize}
+\item \attribute{indexOfStudent : int}
+\newline
+l'indice della richiesta di ruolo che si intende accettare. L'utente diventa uno studente dell'ente
+\end{itemize}
+\subparagraph{\method{acceptTeacher (indexOfTeacher : int) : void}}
+\newline
+accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare docente
+\begin{itemize}
+\item \attribute{indexOfTeacher : int}
+\newline
+l'indice della richiesta di ruolo che si intende accettare. L'utente diventa un docente dell'ente
+\end{itemize}
+\subparagraph{\method{addRoleList (mailUser : String, message : String, role : String) : void}}
+\newline
+il metodo aggiunge una richiesta alla lista corretta delle richieste pendenti
+\begin{itemize}
+\item \attribute{mailUser : String}
+\newline
+la mail dell'utente che ha effettuato una richiesta di ruolo
+\item \attribute{message : String}
+\newline
+il messaggio dell'utente che ha effettuato una richiesta di ruolo
+\item \attribute{role : String}
+\newline
+il ruolo per cui l'utente ha fatto domanda
+\end{itemize}
+\subparagraph{\method{removeStudent () : void}}
+\newline
+rimuove, quindi rifiutandola, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
+\subparagraph{\method{removeTeacher () : void}}
+\newline
+rimuove, quindi rifiutandola, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
+\subsection{\pkg{Quizzipedia::Client::ModelClient::Services}}
 Il componente racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-services.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Services]{Schema Componente Quizzipedia::Client::ModelClient::Services}
 \end{figure}
-\subsubsection{Classe Quiz}
+\subsubsection{Classe \cls{Quiz}}
 Include la struttura del quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-quiz.pdf}}
 \caption[Schema Classe Quiz]{Schema Classe Quizzipedia::Client::ModelClient::Services::Quiz}
 \end{figure}
-\subsubsection{Classe Topics}
+\subsubsection{Classe \cls{Topics}}
 Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni domanda e a ogni quiz verranno poi associati i relativi argomenti .
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-topics.pdf}}
 \caption[Schema Classe Topics]{Schema Classe Quizzipedia::Client::ModelClient::Services::Topics}
 \end{figure}
-\subsection{Quizzipedia::Client::ModelClient::Services::Answer}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{topics : String[]}
+\newline
+la lista degli argomenti esistenti
+\end{itemize}
+\paragraph{Metodi}
+\subparagraph{\method{addTopics (nameTopic : String) : void}}
+\newline
+permettere di aggiungere un nuovo argomento a quelli esistenti
+\begin{itemize}
+\item \attribute{nameTopic : String}
+\newline
+il nuovo argomento da aggiungere
+\end{itemize}
+\subparagraph{\method{removeTopic (indexTopic : int) : void}}
+\newline
+permette di rimuovere un argomento da quelli esistenti
+\begin{itemize}
+\item \attribute{indexTopic : int}
+\newline
+l'indice dell'argomento da rimuovere
+\end{itemize}
+\subsection{\pkg{Quizzipedia::Client::ModelClient::Services::Answers}}
 Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e delle domande svolte.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-services-answer.pdf}}
-\caption[Schema Componente Quizzipedia::Client::ModelClient::Services::Answer]{Schema Componente Quizzipedia::Client::ModelClient::Services::Answer}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-services-answers.pdf}}
+\caption[Schema Componente Quizzipedia::Client::ModelClient::Services::Answers]{Schema Componente Quizzipedia::Client::ModelClient::Services::Answers}
 \end{figure}
-\subsubsection{Classe AnswerColumn}
+\subsubsection{Classe \cls{AnswerColumn}}
 Classe utilizzata da AnswerMatchingQ per salvare le risposte della domanda MatchingQ.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answercolumn.pdf}}
-\caption[Schema Classe AnswerColumn]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerColumn}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answercolumn.pdf}}
+\caption[Schema Classe AnswerColumn]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerColumn}
 \end{figure}
-\subsubsection{Classe AnswerCompletionQ}
+\subsubsection{Classe \cls{AnswerCompletionQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ risolta.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answercompletionq.pdf}}
-\caption[Schema Classe AnswerCompletionQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerCompletionQ}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answercompletionq.pdf}}
+\caption[Schema Classe AnswerCompletionQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerCompletionQ}
 \end{figure}
-\subsubsection{Classe AnswerMatchingQ}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{givenAnswer : String[]}
+\newline
+la risposta data dall'utente
+\end{itemize}
+\paragraph{Metodi}
+\subparagraph{\method{check() () : void}}
+\newline
+concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a completamento
+\subparagraph{\method{getGivenAnswer () : String[]}}
+\newline
+restituisce la risposta data dall'utente
+\subsubsection{Classe \cls{AnswerMatchingQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ risolta.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answermatchingq.pdf}}
-\caption[Schema Classe AnswerMatchingQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerMatchingQ}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answermatchingq.pdf}}
+\caption[Schema Classe AnswerMatchingQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerMatchingQ}
 \end{figure}
-\subsubsection{Classe AnswerMultipleChoiceQ}
+\subsubsection{Classe \cls{AnswerMultipleChoiceQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoiceQ risolta.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answermultiplechoiceq.pdf}}
-\caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerMultipleChoiceQ}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answermultiplechoiceq.pdf}}
+\caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerMultipleChoiceQ}
 \end{figure}
-\subsubsection{Classe AnswerQuestion}
+\paragraph{Metodi}
+\subparagraph{\method{check () : void}}
+\newline
+concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a acelta multipla
+\subparagraph{\method{getGivenAnswer () : String[]}}
+\newline
+restituisce la risposta data dall'utente
+\subsubsection{Classe \cls{AnswerQuestion}}
 Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answerquestion.pdf}}
-\caption[Schema Classe AnswerQuestion]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerQuestion}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answerquestion.pdf}}
+\caption[Schema Classe AnswerQuestion]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuestion}
 \end{figure}
-\subsubsection{Classe AnswerQuiz}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{question : GenericQuestion}
+\newline
+la domanda a cui corrisponde la risposta data
+\item \attribute{solver : User}
+\newline
+è l'utente che ha dato la risposta
+\end{itemize}
+\paragraph{Metodi}
+\subparagraph{\method{<<abstract>>check () : bool}}
+\newline
+il metodo è astratto e verrà concretizzato nelle sottoclassi. Serve a verificare la correttezza della risposta data per le varie tipologie di domande
+\subparagraph{\method{getQuestion () : GenricQuestion}}
+\newline
+restituisce la domanda a cui corrisponde la risposta data
+\subparagraph{\method{getSolver () : User}}
+\newline
+restituisce l'utente che ha dato la risposta
+\subsubsection{Classe \cls{AnswerQuiz}}
 Classe che si occupa di memorizzare le informazioni di un quiz completato e gestisce la verifica del suo superamento.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answerquiz.pdf}}
-\caption[Schema Classe AnswerQuiz]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerQuiz}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answerquiz.pdf}}
+\caption[Schema Classe AnswerQuiz]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuiz}
 \end{figure}
-\subsubsection{Classe AnswerShortAnswerQ}
+\subsubsection{Classe \cls{AnswerShortAnswerQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ risolta.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answershortanswerq.pdf}}
-\caption[Schema Classe AnswerShortAnswerQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerShortAnswerQ}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answershortanswerq.pdf}}
+\caption[Schema Classe AnswerShortAnswerQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerShortAnswerQ}
 \end{figure}
-\subsubsection{Classe AnswerTrueFalseQ}
+\subsubsection{Classe \cls{AnswerTrueFalseQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ risolta.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answer-answertruefalseq.pdf}}
-\caption[Schema Classe AnswerTrueFalseQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answer::AnswerTrueFalseQ}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answertruefalseq.pdf}}
+\caption[Schema Classe AnswerTrueFalseQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerTrueFalseQ}
 \end{figure}
-\subsection{Quizzipedia::Client::ModelClient::Services::Questions}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{givenAnswer : bool}
+\newline
+la risposta data dall'utente alla domanda di tipo vero/falso
+\end{itemize}
+\paragraph{Metodi}
+\subparagraph{\method{check () : bool}}
+\newline
+concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda di tipo vero/falso
+\subparagraph{\method{getGivenAnswer () : bool}}
+\newline
+restituisce la risposta data dall'utente
+\subsection{\pkg{Quizzipedia::Client::ModelClient::Services::Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-services-questions.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Services::Questions]{Schema Componente Quizzipedia::Client::ModelClient::Services::Questions}
 \end{figure}
-\subsubsection{Classe Cell}
+\subsubsection{Classe \cls{Cell}}
 La classe descrive ogni singola riga (quindi ogni opzione) della colonna della domanda a collegamento.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-cell.pdf}}
 \caption[Schema Classe Cell]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::Cell}
 \end{figure}
-\subsubsection{Classe Column}
+\subsubsection{Classe \cls{Column}}
 La classe descrive le colonne della domanda a collegamenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-column.pdf}}
 \caption[Schema Classe Column]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::Column}
 \end{figure}
-\subsubsection{Classe CompletionQ}
+\subsubsection{Classe \cls{CompletionQ}}
 Descrive le domande a completamento. Il docente fornirà un testo incompleto e una lista di possibili completamenti; lo studente dovrà inserire le parole adeguate nella giusta posizione.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-completionq.pdf}}
 \caption[Schema Classe CompletionQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::CompletionQ}
 \end{figure}
-\subsubsection{Classe GenericQuestion}
+\subsubsection{Classe \cls{GenericQuestion}}
 Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-genericquestion.pdf}}
 \caption[Schema Classe GenericQuestion]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion}
 \end{figure}
-\subsubsection{Classe MatchingQ}
+\subsubsection{Classe \cls{MatchingQ}}
 La struttura descrive le domande a collegamento. L'utente dovrà formare la risposta collegando le entrate da un numero variabile di colonne .
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-matchingq.pdf}}
 \caption[Schema Classe MatchingQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::MatchingQ}
 \end{figure}
-\subsubsection{Classe MultipleChoiceQ}
+\subsubsection{Classe \cls{MultipleChoiceQ}}
 La struttura descrive le domande a scelta multipla; viene presentata una lista di opzioni tra cui scegliere quelle corrette.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-multiplechoiceq.pdf}}
 \caption[Schema Classe MultipleChoiceQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::MultipleChoiceQ}
 \end{figure}
-\subsubsection{Classe ShortAnswerQ}
+\subsubsection{Classe \cls{ShortAnswerQ}}
 La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste in un termine o una frase specifici.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-shortanswerq.pdf}}
 \caption[Schema Classe ShortAnswerQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::ShortAnswerQ}
 \end{figure}
-\subsubsection{Classe TrueFalseQ}
+\subsubsection{Classe \cls{TrueFalseQ}}
 Viene descritta la struttura delle domande che prevedono di decidere la veridicità di un'affermazione.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-truefalseq.pdf}}
 \caption[Schema Classe TrueFalseQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Questions::TrueFalseQ}
 \end{figure}
-\subsection{Quizzipedia::Client::ModelClient::Statistics}
+\subsection{\pkg{Quizzipedia::Client::ModelClient::Statistics}}
 Qui sono raccolte le classi con il compito di reperire informazioni sulle statistiche dal server e presentarle all'utente finale. Sono disponibili statistiche per le domande, per i quiz e per gli studenti di ogni classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-statistics.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Statistics]{Schema Componente Quizzipedia::Client::ModelClient::Statistics}
 \end{figure}
-\subsubsection{Classe QuestionStatistics}
+\subsubsection{Classe \cls{QuestionStatistics}}
 La classe raccoglie le statistiche principali riguardanti una singola domanda. Da qui è poi possibile risalire alla domanda.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-questionstatistics.pdf}}
 \caption[Schema Classe QuestionStatistics]{Schema Classe Quizzipedia::Client::ModelClient::Statistics::QuestionStatistics}
 \end{figure}
-\subsubsection{Classe QuizStatistics}
+\subsubsection{Classe \cls{QuizStatistics}}
 La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qui è poi possibile ottenere il quiz in questione.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-quizstatistics.pdf}}
 \caption[Schema Classe QuizStatistics]{Schema Classe Quizzipedia::Client::ModelClient::Statistics::QuizStatistics}
 \end{figure}
-\subsubsection{Classe StudentsStatisticsQuiz}
+\subsubsection{Classe \cls{StudentsStatisticsQuiz}}
 Classe usata per visualizzare i studenti che hanno svolto un quiz specifico e il loro voto.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-studentsstatisticsquiz.pdf}}
 \caption[Schema Classe StudentsStatisticsQuiz]{Schema Classe Quizzipedia::Client::ModelClient::Statistics::StudentsStatisticsQuiz}
 \end{figure}
-\subsection{Quizzipedia::Client::ModelClient::Users}
+\subsection{\pkg{Quizzipedia::Client::ModelClient::Users}}
 Raccoglie le classi necessarie a descrivere le diverse tipologie di utente che possono accedere al sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-modelclient-users.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Users]{Schema Componente Quizzipedia::Client::ModelClient::Users}
 \end{figure}
-\subsubsection{Classe AuthenticationData}
+\subsubsection{Classe \cls{AuthenticationData}}
 Questa classe gestisce le informazioni di autenticazione comuni a tutti gli utenti.
 \begin{figure}[H]
 \centering
@@ -410,41 +581,41 @@ Questa classe gestisce le informazioni di autenticazione comuni a tutti gli uten
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
-\item firstName : String
+\item \attribute{firstName : String}
 \newline
 contiene il nome dell'utente registrato
-\item lastName : String
+\item \attribute{lastName : String}
 \newline
 contiene il cognome dell'utente registrato
-\item mail : String
+\item \attribute{mail : String}
 \newline
 contiene la mail dell'utente registrato
-\item password : String
+\item \attribute{password : String}
 \newline
 contiene la password criptata dell'utente registrato
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{getFirstName () : String}
+\subparagraph{\method{getFirstName () : String}}
 \newline
 permette di recuperare il nome dell'utente registrato
-\subparagraph{getLastName () : String}
+\subparagraph{\method{getLastName () : String}}
 \newline
 permette di recuperare il cognome dell'utente registrato
-\subparagraph{getMail () : String}
+\subparagraph{\method{getMail () : String}}
 \newline
 permette di recuperare la mail dell'utente registrato
-\subparagraph{setPassword (oldPsw : String, psw : String) : void}
+\subparagraph{\method{setPassword (oldPsw : String, psw : String) : void}}
 \newline
 permette di modificare la password dell'account di un utente registrato
 \begin{itemize}
-\item oldPsw : String
+\item \attribute{oldPsw : String}
 \newline
 contiene la vecchia password dell'utente registrato, necessaria per cambiarla con la nuova
-\item psw : String
+\item \attribute{psw : String}
 \newline
 contiene la nuova password dell'utente
 \end{itemize}
-\subsubsection{Classe Director}
+\subsubsection{Classe \cls{Director}}
 Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per ogni ente del sistema.
 \begin{figure}[H]
 \centering
@@ -452,41 +623,41 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \caption[Schema Classe Director]{Schema Classe Quizzipedia::Client::ModelClient::Users::Director}
 \end{figure}
 \paragraph{Metodi}
-\subparagraph{acceptStudent () : void}
+\subparagraph{\method{acceptStudent () : void}}
 \newline
 permette di inserire uno studente nell'istituzione posseduta dal direttore
-\subparagraph{acceptTeacher () : void}
+\subparagraph{\method{acceptTeacher () : void}}
 \newline
 permette di inserire uno studente nell'istituzione posseduta dal direttore
-\subsubsection{Classe NoRole}
+\subsubsection{Classe \cls{NoRole}}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-norole.pdf}}
 \caption[Schema Classe NoRole]{Schema Classe Quizzipedia::Client::ModelClient::Users::NoRole}
 \end{figure}
-\subsubsection{Classe Student}
+\subsubsection{Classe \cls{Student}}
 Rappresenta uno studente del sistema e implementa le sue funzioni specifiche oltre a quelle ereditate da utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-student.pdf}}
 \caption[Schema Classe Student]{Schema Classe Quizzipedia::Client::ModelClient::Users::Student}
 \end{figure}
-\subsubsection{Classe Teacher}
+\subsubsection{Classe \cls{Teacher}}
 Rappresenta un docente del sistema e ne implementa le funzionalità specifiche in aggiunta a quelle comuni a tutti gli utenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-teacher.pdf}}
 \caption[Schema Classe Teacher]{Schema Classe Quizzipedia::Client::ModelClient::Users::Teacher}
 \end{figure}
-\subsubsection{Classe User}
+\subsubsection{Classe \cls{User}}
 Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli utenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-user.pdf}}
 \caption[Schema Classe User]{Schema Classe Quizzipedia::Client::ModelClient::Users::User}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient}
+\subsection{\pkg{Quizzipedia::Client::ViewClient}}
 Racchiude tutte le componenti necessarie per presentare il prodotto all'utente.
 Grazie all'uso di Angular.js ogni modifica svolta dall'utente si ripercuoterà automaticamente a sulla componente model, attraverso il controller, per mantenere sempre le informazioni consistenti e aggiornate.
 Con l'uso invece di Bootstrap e Fabric.js a livello di grafica web risulta semplificata l'impaginazione delle singole pagine web dedicate all'utente e alla gestione di allegati non testuali all'interno di domande.
@@ -495,322 +666,315 @@ Con l'uso invece di Bootstrap e Fabric.js a livello di grafica web risulta sempl
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient]{Schema Componente Quizzipedia::Client::ViewClient}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewOrgManager}
+\subsection{\pkg{Quizzipedia::Client::ViewClient::ViewOrgManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti presenti in Quizzipedia.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-vieworgmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewOrgManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewOrgManager}
 \end{figure}
-\subsubsection{Classe ViewCreateClass}
+\subsubsection{Classe \cls{ViewCreateClass}}
 Classe responsabile della creazione della pagina da cui sarà possibile creare una nuova classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager-viewcreateclass.pdf}}
 \caption[Schema Classe ViewCreateClass]{Schema Classe Quizzipedia::Client::ViewClient::ViewOrgManager::ViewCreateClass}
 \end{figure}
-\subsubsection{Classe ViewModifyOrg}
+\subsubsection{Classe \cls{ViewModifyOrg}}
 Presenta all'utente la pagina da cui sarà possibile modificare le informazioni su una classe o su un ente esistente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager-viewmodifyorg.pdf}}
 \caption[Schema Classe ViewModifyOrg]{Schema Classe Quizzipedia::Client::ViewClient::ViewOrgManager::ViewModifyOrg}
 \end{figure}
-\subsubsection{Classe ViewUsersClassList}
+\subsubsection{Classe \cls{ViewUsersClassList}}
 La classe si occupa di presentare una lista degli utenti iscritti alla classe e altre informazioni aggiuntive.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager-viewusersclasslist.pdf}}
 \caption[Schema Classe ViewUsersClassList]{Schema Classe Quizzipedia::Client::ViewClient::ViewOrgManager::ViewUsersClassList}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewQuestionManager}
+\subsection{\pkg{Quizzipedia::Client::ViewClient::ViewQuestionManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le domande.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewquestionmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuestionManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuestionManager}
 \end{figure}
-\subsubsection{Classe ViewCreateQuestion}
+\subsubsection{Classe \cls{ViewCreateQuestion}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-viewcreatequestion.pdf}}
 \caption[Schema Classe ViewCreateQuestion]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuestionManager::ViewCreateQuestion}
 \end{figure}
-\subsubsection{Classe ViewModifyQuestion}
+\subsubsection{Classe \cls{ViewModifyQuestion}}
 Gestisce la visualizzazione della pagina da cui è possibile modificare una domanda esistente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-viewmodifyquestion.pdf}}
 \caption[Schema Classe ViewModifyQuestion]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuestionManager::ViewModifyQuestion}
 \end{figure}
-\subsubsection{Classe ViewQuestionList}
+\subsubsection{Classe \cls{ViewQuestionList}}
 Presenta all'utente il pannello da cui sarà possibile visualizzare una lista di informazioni riassuntive sulle domande e compiere alcune operazioni su di esse.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-viewquestionlist.pdf}}
 \caption[Schema Classe ViewQuestionList]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuestionManager::ViewQuestionList}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewQuizManager}
+\subsection{\pkg{Quizzipedia::Client::ViewClient::ViewQuizManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire i quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewquizmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuizManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuizManager}
 \end{figure}
-\subsubsection{Classe ViewCreateQuiz}
+\subsubsection{Classe \cls{ViewCreateQuiz}}
 Presenta la pagina da cui sarà possibile creare un nuovo quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-viewcreatequiz.pdf}}
 \caption[Schema Classe ViewCreateQuiz]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizManager::ViewCreateQuiz}
 \end{figure}
-\subsubsection{Classe ViewModifyQuiz}
+\subsubsection{Classe \cls{ViewModifyQuiz}}
 Presenta all'utente una pagina da cui è possibile modificare un quiz esistente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-viewmodifyquiz.pdf}}
 \caption[Schema Classe ViewModifyQuiz]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizManager::ViewModifyQuiz}
 \end{figure}
-\subsubsection{Classe ViewQuizList}
+\subsubsection{Classe \cls{ViewQuizList}}
 Carica una pagina contenente una lista con informazioni riassuntive sui quiz e un pannello da cui sarà possibile svolgere delle operazioni sugli stessi.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-viewquizlist.pdf}}
 \caption[Schema Classe ViewQuizList]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizManager::ViewQuizList}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewQuizSolver}
+\subsection{\pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver}}
 Il componente raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile svolgere quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewquizsolver.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuizSolver]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuizSolver}
 \end{figure}
-\subsubsection{Classe ViewResults}
+\subsubsection{Classe \cls{ViewResults}}
 La classe ha il compito di costruire la pagina da cui sarà possibile vedere l'esito di un quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewresults.pdf}}
 \caption[Schema Classe ViewResults]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewResults}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver}
+\subsection{\pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver}}
 Il componente raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile rispondere alle singole domande.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver}
 \end{figure}
-\subsubsection{Classe ViewCompletionQ}
+\subsubsection{Classe \cls{ViewCompletionQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a completamento.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewcompletionq.pdf}}
 \caption[Schema Classe ViewCompletionQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewCompletionQ}
 \end{figure}
-\subsubsection{Classe ViewMatchingQ}
+\subsubsection{Classe \cls{ViewMatchingQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a collegamenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewmatchingq.pdf}}
 \caption[Schema Classe ViewMatchingQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMatchingQ}
 \end{figure}
-\subsubsection{Classe ViewMultipleChoiceQ}
+\subsubsection{Classe \cls{ViewMultipleChoiceQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a risposta multipla.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewmultiplechoiceq.pdf}}
 \caption[Schema Classe ViewMultipleChoiceQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMultipleChoiceQ}
 \end{figure}
-\subsubsection{Classe ViewShortAnswerQ}
+\subsubsection{Classe \cls{ViewShortAnswerQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a risposta aperta.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewshortanswerq.pdf}}
 \caption[Schema Classe ViewShortAnswerQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewShortAnswerQ}
 \end{figure}
-\subsubsection{Classe ViewTrueFalseQ}
+\subsubsection{Classe \cls{ViewTrueFalseQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda di tipo vero/falso.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewtruefalseq.pdf}}
 \caption[Schema Classe ViewTrueFalseQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewTrueFalseQ}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewRequests}
+\subsection{\pkg{Quizzipedia::Client::ViewClient::ViewRequests}}
 Qui sono raccolte le pagine che permettono all'utente di gestire le richieste di ruolo e classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewrequests.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewRequests]{Schema Componente Quizzipedia::Client::ViewClient::ViewRequests}
 \end{figure}
-\subsubsection{Classe RequestClass}
-Costruisce la pagina da cui l'utente potrà richiedere di entrare in una classe.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-requestclass.pdf}}
-\caption[Schema Classe RequestClass]{Schema Classe Quizzipedia::Client::ViewClient::ViewRequests::RequestClass}
-\end{figure}
-\subsubsection{Classe RequestRole}
+\subsubsection{Classe \cls{RequestRole}}
 Costruisce la pagina da cui l'utente potrà richiedere un ruolo (studente o docente).
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-requestrole.pdf}}
 \caption[Schema Classe RequestRole]{Schema Classe Quizzipedia::Client::ViewClient::ViewRequests::RequestRole}
 \end{figure}
-\subsubsection{Classe ViewClassList}
+\subsubsection{Classe \cls{SendRequests}}
+Costruisce la pagina da cui l'utente potrà richiedere di entrare in una classe.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-sendrequests.pdf}}
+\caption[Schema Classe SendRequests]{Schema Classe Quizzipedia::Client::ViewClient::ViewRequests::SendRequests}
+\end{figure}
+\subsubsection{Classe \cls{ViewClassList}}
 Classe responsabile della visualizzazione del pannello da cui sarà possibile gestire le richieste di inserimento in una classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-viewclasslist.pdf}}
 \caption[Schema Classe ViewClassList]{Schema Classe Quizzipedia::Client::ViewClient::ViewRequests::ViewClassList}
 \end{figure}
-\subsubsection{Classe ViewRolesList}
+\subsubsection{Classe \cls{ViewRolesList}}
 Classe responsabile della visualizzazione del pannello da cui sarà possibile gestire le richieste di assegnazione di ruolo.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-viewroleslist.pdf}}
 \caption[Schema Classe ViewRolesList]{Schema Classe Quizzipedia::Client::ViewClient::ViewRequests::ViewRolesList}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewSearch}
+\subsection{\pkg{Quizzipedia::Client::ViewClient::ViewSearch}}
 Il componente contiene le classi responsabili della creazione delle pagine da cui sarà possibile ricercare domande, quiz e classi.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewsearch.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewSearch]{Schema Componente Quizzipedia::Client::ViewClient::ViewSearch}
 \end{figure}
-\subsubsection{Classe ViewSearchClass}
+\subsubsection{Classe \cls{ViewSearchClass}}
 La classe carica la pagina da cui sarà possibile ricercare classi all'interno di un ente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch-viewsearchclass.pdf}}
 \caption[Schema Classe ViewSearchClass]{Schema Classe Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchClass}
 \end{figure}
-\subsubsection{Classe ViewSearchQuestion}
+\subsubsection{Classe \cls{ViewSearchQuestion}}
 Classe che ha il compito di caricare la pagina da cui sarà possibile effettuare la ricerca di domande.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch-viewsearchquestion.pdf}}
 \caption[Schema Classe ViewSearchQuestion]{Schema Classe Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuestion}
 \end{figure}
-\subsubsection{Classe ViewSearchQuiz}
+\subsubsection{Classe \cls{ViewSearchQuiz}}
 Raccoglie i metodi necessari alla creazione della pagina da cui sarà possibile cercare un quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch-viewsearchquiz.pdf}}
 \caption[Schema Classe ViewSearchQuiz]{Schema Classe Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewStatistics}
+\subsection{\pkg{Quizzipedia::Client::ViewClient::ViewStatistics}}
 Componente che gestisce le pagine in cui verranno visualizzate le statistiche richieste dall'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewstatistics.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics]{Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics}
 \end{figure}
-\subsubsection{Classe ViewClassStats}
+\subsubsection{Classe \cls{ViewClassStats}}
 Vengono rappresentate le statistiche relative a una singola classe in relazione a un particolare quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewclassstats.pdf}}
 \caption[Schema Classe ViewClassStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewClassStats}
 \end{figure}
-\subsubsection{Classe ViewQuestionStats}
+\subsubsection{Classe \cls{ViewQuestionStats}}
 Vengono rappresentate le statistiche generali relative alle domande.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquestionstats.pdf}}
 \caption[Schema Classe ViewQuestionStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuestionStats}
 \end{figure}
-\subsubsection{Classe ViewQuizStats}
+\subsubsection{Classe \cls{ViewQuizStats}}
 Vengono rappresentate le statistiche generali riguardanti i quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquizstats.pdf}}
 \caption[Schema Classe ViewQuizStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuizStats}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewTopicManager}
+\subsection{\pkg{Quizzipedia::Client::ViewClient::ViewTopicManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire gli argomenti di domande e quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewtopicmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewTopicManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewTopicManager}
 \end{figure}
-\subsubsection{Classe ViewCreateTopic}
-La classe caricherà la pagina da cui sarà possibile creare un nuovo argomento.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewtopicmanager-viewcreatetopic.pdf}}
-\caption[Schema Classe ViewCreateTopic]{Schema Classe Quizzipedia::Client::ViewClient::ViewTopicManager::ViewCreateTopic}
-\end{figure}
-\subsubsection{Classe ViewTopicsManager}
-La classe è responsabile della creazione della pagina da cui sarà possibile vedere la lista degli argomenti disponibili.
+\subsubsection{Classe \cls{ViewTopicsManager}}
+La classe è responsabile della creazione della pagina da cui sarà possibile vedere la lista degli argomenti disponibili. Da qui sarà inoltre possibile creare nuovi argomenti o cancellare quelli già inseriti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewtopicmanager-viewtopicsmanager.pdf}}
 \caption[Schema Classe ViewTopicsManager]{Schema Classe Quizzipedia::Client::ViewClient::ViewTopicManager::ViewTopicsManager}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewClient::ViewUsers}
+\subsection{\pkg{Quizzipedia::Client::ViewClient::ViewUsers}}
 Raccoglie le classi necessarie a presentare all'utente le pagine da cui visualizzare le informazioni che lo riguardano e compiere le funzioni principali.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewclient-viewusers.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewUsers]{Schema Componente Quizzipedia::Client::ViewClient::ViewUsers}
 \end{figure}
-\subsubsection{Classe Login}
+\subsubsection{Classe \cls{Login}}
 Presenta la pagina necessaria per effettuare il login nel sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-login.pdf}}
 \caption[Schema Classe Login]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::Login}
 \end{figure}
-\subsubsection{Classe Logout}
+\subsubsection{Classe \cls{Logout}}
 Presenta la pagina necessaria per effettuare il logout dal sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-logout.pdf}}
 \caption[Schema Classe Logout]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::Logout}
 \end{figure}
-\subsubsection{Classe Menu}
+\subsubsection{Classe \cls{Menu}}
 Presenta all'utente il menù da cui potrà svolgere le proprie funzioni principali.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-menu.pdf}}
 \caption[Schema Classe Menu]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::Menu}
 \end{figure}
-\subsubsection{Classe PersonalData}
+\subsubsection{Classe \cls{PersonalData}}
 La classe presenta all'utente la pagina da cui prendere visione delle proprie informazioni personali.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-personaldata.pdf}}
 \caption[Schema Classe PersonalData]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::PersonalData}
 \end{figure}
-\subsubsection{Classe RecoveryPw}
+\subsubsection{Classe \cls{RecoveryPw}}
 Da questa pagina sarà possibile inserire i dati per il recupero della password.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-recoverypw.pdf}}
 \caption[Schema Classe RecoveryPw]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::RecoveryPw}
 \end{figure}
-\subsubsection{Classe Registration}
+\subsubsection{Classe \cls{Registration}}
 Presenta la pagina da cui effettuare la  registrazione al sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-registration.pdf}}
 \caption[Schema Classe Registration]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::Registration}
 \end{figure}
-\subsubsection{Classe ViewModifyPw}
+\subsubsection{Classe \cls{ViewModifyPw}}
 Da qui, grazie ai metodi della classe, l'utente potrà modificare la propria password.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-viewmodifypw.pdf}}
 \caption[Schema Classe ViewModifyPw]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::ViewModifyPw}
 \end{figure}
-\subsubsection{Classe ViewUsersList}
+\subsubsection{Classe \cls{ViewUsersList}}
 Presenta un pannello da cui è possibile visualizzare una lista di utenti e compiere operazioni su di loro.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-viewuserslist.pdf}}
 \caption[Schema Classe ViewUsersList]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::ViewUsersList}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewModelClient}
+\subsection{\pkg{Quizzipedia::Client::ViewModelClient}}
 Raccoglie le classi responsabili della comunicazione tra il model e la view. Ha inoltre il compito di comunicare con il server per elaborare le richieste svolte dall'utente.
 Con Angula.js il controller permette di tenere sempre aggiornato facilmente il model con le modifiche fatte nella view da parte dell'utente.
 \begin{figure}[H]
@@ -818,14 +982,14 @@ Con Angula.js il controller permette di tenere sempre aggiornato facilmente il m
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewmodelclient.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient]{Schema Componente Quizzipedia::Client::ViewModelClient}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewModelClient::CtrlOrganization}
+\subsection{\pkg{Quizzipedia::Client::ViewModelClient::CtrlOrganization}}
 Raccoglie le classi che si occupano delle comunicazioni necessarie per la creazione e la gestione di enti e classi.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewmodelclient-ctrlorganization.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlOrganization]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlOrganization}
 \end{figure}
-\subsubsection{Classe CtrlInstitution}
+\subsubsection{Classe \cls{CtrlInstitution}}
 La classe in questione permette di modificare oppure eliminare le classi in un ente presente all'interno del sistema.
 Sono presenti pertanto i metodi necessari a svolgere tali scopi e per eseguire il caricamento o il salvataggio di un ente e delle sue classi.
 \begin{figure}[H]
@@ -833,14 +997,14 @@ Sono presenti pertanto i metodi necessari a svolgere tali scopi e per eseguire i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlorganization-ctrlinstitution.pdf}}
 \caption[Schema Classe CtrlInstitution]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlInstitution}
 \end{figure}
-\subsubsection{Classe CtrlPagination}
+\subsubsection{Classe \cls{CtrlPagination}}
 Questa classe permette di creare e gestire dinamicamente la paginazione quando viene visualizzata la lista delle classe presenti in un ente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlorganization-ctrlpagination.pdf}}
 \caption[Schema Classe CtrlPagination]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlPagination}
 \end{figure}
-\subsubsection{Classe MyClass}
+\subsubsection{Classe \cls{MyClass}}
 Questa classe permette di creare, eliminare, modificare oppure gestire una classe, relativa ad un ente, presente all'interno del sistema.
 Sono presenti i metodi necessari all'inserimento e alla rimozione di uno studente o un docente da una classe, oltre ai metodi necessari alla creazione, eliminazione e modifica di una classe.
 \begin{figure}[H]
@@ -850,63 +1014,63 @@ Sono presenti i metodi necessari all'inserimento e alla rimozione di uno student
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
-\item cemail : string
+\item \attribute{cemail : string}
 \newline
 viene chiesto all'utente di inserire la mail una seconda volta per conferma
-\item cpassword : string
+\item \attribute{cpassword : string}
 \newline
 viene chiesto all'utente di inserire la password una seconda volta per conferma
 \end{itemize}
-\subsection{Quizzipedia::Client::ViewModelClient::CtrlRequests}
+\subsection{\pkg{Quizzipedia::Client::ViewModelClient::CtrlRequests}}
 Questo componente contiene classi necessarie alla gestione delle richieste di ruolo o classe fatte da un utente autenticato.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewmodelclient-ctrlrequests.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlRequests]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlRequests}
 \end{figure}
-\subsubsection{Classe CtrlRequestClass}
+\subsubsection{Classe \cls{CtrlRequestClass}}
 Si occupa delle comunicazioni necessarie per la gestione delle richieste di inserimento in una classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlrequests-ctrlrequestclass.pdf}}
 \caption[Schema Classe CtrlRequestClass]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestClass}
 \end{figure}
-\subsubsection{Classe CtrlRequestRole}
+\subsubsection{Classe \cls{CtrlRequestRole}}
 Si occupa delle comunicazioni necessarie per la gestione delle richieste di ruolo.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlrequests-ctrlrequestrole.pdf}}
 \caption[Schema Classe CtrlRequestRole]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlRequests::CtrlRequestRole}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewModelClient::CtrlServices}
+\subsection{\pkg{Quizzipedia::Client::ViewModelClient::CtrlServices}}
 Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewmodelclient-ctrlservices.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlServices]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlServices}
 \end{figure}
-\subsubsection{Classe CtrlQuestion}
+\subsubsection{Classe \cls{CtrlQuestion}}
 Fornisce i metodi necessari per la comunicazione tra view e model durante la creazione, modifica e svolgimento di una domanda.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestion.pdf}}
 \caption[Schema Classe CtrlQuestion]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestion}
 \end{figure}
-\subsubsection{Classe CtrlQuiz}
+\subsubsection{Classe \cls{CtrlQuiz}}
 Raccoglie i metodi necessari alle comunicazioni tra view e model richieste per la gestione e lo svolgimento dei quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquiz.pdf}}
 \caption[Schema Classe CtrlQuiz]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz}
 \end{figure}
-\subsubsection{Classe CtrlSearch}
+\subsubsection{Classe \cls{CtrlSearch}}
 La classe contiene i metodi necessari alla comunicazione tra model e view nell'effettuare la ricerca di quiz o domande.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlsearch.pdf}}
 \caption[Schema Classe CtrlSearch]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearch}
 \end{figure}
-\subsubsection{Classe CtrlTopics}
+\subsubsection{Classe \cls{CtrlTopics}}
 Fornisce i metodi necessari alle comunicazioni richieste per la gestione degli argomenti.
 \begin{figure}[H]
 \centering
@@ -915,55 +1079,55 @@ Fornisce i metodi necessari alle comunicazioni richieste per la gestione degli a
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
-\item topicName : string
+\item \attribute{topicName : string}
 \newline
 indica il singolo argomento su cui si desiderano apportare modifiche
-\item topicsList : string[]
+\item \attribute{topicsList : string[]}
 \newline
 la lista di argomenti esistenti, viene assegnata allo $scope
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{addTopic (name : string) : void}
+\subparagraph{\method{addTopic (name : string) : void}}
 \newline
 viene aggiunto un argomento alla lista di quelli esistenti
 \begin{itemize}
-\item name : string
+\item \attribute{name : string}
 \newline
 è l'argomento che si vuole aggiungere a quelli già esistenti
 \end{itemize}
-\subparagraph{loadTopics () : void}
+\subparagraph{\method{loadTopics () : void}}
 \newline
 effettua una richiesta al server che mi ritorna un array di topics che verrà poi assegnato allo $scope topicsList
-\subparagraph{removeTopic (indexOfTopic : int) : void}
+\subparagraph{\method{removeTopic (indexOfTopic : int) : void}}
 \newline
 rimuove l'argomento specificato in locale e invia una richiesta al server
 \begin{itemize}
-\item indexOfTopic : int
+\item \attribute{indexOfTopic : int}
 \newline
 l'indice dell'argomento che si desidera eliminare
 \end{itemize}
-\subsection{Quizzipedia::Client::ViewModelClient::CtrlStatistics}
+\subsection{\pkg{Quizzipedia::Client::ViewModelClient::CtrlStatistics}}
 Raccoglie le classi necessarie a recuperare le statistiche da presentare all'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewmodelclient-ctrlstatistics.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlStatistics]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlStatistics}
 \end{figure}
-\subsubsection{Classe CtrlStats}
+\subsubsection{Classe \cls{CtrlStats}}
 Classe necessaria al caricamento delle statistiche relative ai quiz, alle domande e alle classi.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-ctrlstats.pdf}}
 \caption[Schema Classe CtrlStats]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlStats}
 \end{figure}
-\subsection{Quizzipedia::Client::ViewModelClient::CtrlUsers}
+\subsection{\pkg{Quizzipedia::Client::ViewModelClient::CtrlUsers}}
 Il componente raccoglie le classi che permettono la comunicazione per quanto riguarda funzioni e dati dell'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewmodelclient-ctrlusers.pdf}}
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlUsers]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlUsers}
 \end{figure}
-\subsubsection{Classe CtrlLogin}
+\subsubsection{Classe \cls{CtrlLogin}}
 Gestisce la comunicazione necessaria per l'autenticazione dell'utente in fase di login.
 \begin{figure}[H]
 \centering
@@ -972,26 +1136,26 @@ Gestisce la comunicazione necessaria per l'autenticazione dell'utente in fase di
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
-\item email : string
+\item \attribute{email : string}
 \newline
 la mail introdotta dall'utente per effettuare il login
-\item password : string
+\item \attribute{password : string}
 \newline
 la password introdotta dall'utente per il login
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{checkLogin (email : string, password : string) : bool}
+\subparagraph{\method{checkLogin (email : string, password : string) : bool}}
 \newline
 Il metodo si occupa di verificare le credenziali per per il login
 \begin{itemize}
-\item email : string
+\item \attribute{email : string}
 \newline
 la mail introdotta dall'utente necessaria per il login
-\item password : string
+\item \attribute{password : string}
 \newline
 la password necessaria per il login
 \end{itemize}
-\subsubsection{Classe CtrlRecoveryPw}
+\subsubsection{Classe \cls{CtrlRecoveryPw}}
 La classe gestisce il recupero della password in caso di smarrimento.
 \begin{figure}[H]
 \centering
@@ -1000,20 +1164,20 @@ La classe gestisce il recupero della password in caso di smarrimento.
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
-\item email : string
+\item \attribute{email : string}
 \newline
 è l'email a cui la nuova password verrà mandata in caso di smarrimento della precedente
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{sendRecoveryEmail (email : string) : void}
+\subparagraph{\method{sendRecoveryEmail (email : string) : void}}
 \newline
 il metodo si occupa di inviare all'indirizzo specificato la nuova password
 \begin{itemize}
-\item email : string
+\item \attribute{email : string}
 \newline
 la mail a cui inviare la nuova password
 \end{itemize}
-\subsubsection{Classe CtrlRegistration}
+\subsubsection{Classe \cls{CtrlRegistration}}
 Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'oggetto MyUser, definito all'interno dello $scope.
 \begin{figure}[H]
 \centering
@@ -1022,20 +1186,20 @@ Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'og
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
-\item user : MyUser
+\item \attribute{user : MyUser}
 \newline
 user viene definito nello $scope e serve per gestire i dati inseriti dall'utente durante la fase di registrazione
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{sendRegistration (user : MyUser) : void}
+\subparagraph{\method{sendRegistration (user : MyUser) : void}}
 \newline
 invia al server le informazioni necessarie per portare a termine la registrazione dell'utente
 \begin{itemize}
-\item user : MyUser
+\item \attribute{user : MyUser}
 \newline
 è definito nello $scope e invia al server le informazioni necessarie per memorizzare l'utente
 \end{itemize}
-\subsubsection{Classe CtrlUserManager}
+\subsubsection{Classe \cls{CtrlUserManager}}
 La classe, tramite variabili definite nello $scope, permette agli utenti di gestire e visualizzare il proprio profilo personale.
 \begin{figure}[H]
 \centering
@@ -1044,30 +1208,30 @@ La classe, tramite variabili definite nello $scope, permette agli utenti di gest
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
-\item cNewPsw : string
+\item \attribute{cNewPsw : string}
 \newline
 l'utente deve confermare la nuova password. Poi si verificherà che la nuova password coincida
-\item newPsw : string
+\item \attribute{newPsw : string}
 \newline
 la nuova password dell'utente
-\item oldPsw : string
+\item \attribute{oldPsw : string}
 \newline
 per potere modificare la password, l'utente deve prima inserire la vecchia
-\item user : User
+\item \attribute{user : User}
 \newline
 è l'utente che intende modificare le proprie informazioni
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{changePsw () : void}
+\subparagraph{\method{changePsw () : void}}
 \newline
 metodo che gestisce il cambio della password
-\subparagraph{loadAffiliation () : void}
+\subparagraph{\method{loadAffiliation () : void}}
 \newline
 carica gli istituti a cui l'utente è iscritto
-\subparagraph{loadUser () : void}
+\subparagraph{\method{loadUser () : void}}
 \newline
 si occupa di comunicare col server per poter avere le informazioni dell'utente
-\subsubsection{Classe MyUser}
+\subsubsection{Classe \cls{MyUser}}
 La classe è definita nello $scope e serve a raccogliere le informazioni dell'utente che si sta registrando.
 \begin{figure}[H]
 \centering
@@ -1076,27 +1240,27 @@ La classe è definita nello $scope e serve a raccogliere le informazioni dell'ut
 \end{figure}
 \paragraph{Attributi}
 \begin{itemize}
-\item email : string
+\item \attribute{email : string}
 \newline
 l'indirizzo e-mail dell'utente che si sta registrando
-\item firstName : string
+\item \attribute{firstName : string}
 \newline
 il nome proprio dell'utente che si sta registrando
-\item lastName : string
+\item \attribute{lastName : string}
 \newline
 il cognome dell'utente che si sta registrando
-\item password : string
+\item \attribute{password : string}
 \newline
 la password dell'utente che si sta registrando
 \end{itemize}
 \paragraph{Metodi}
-\subparagraph{checkMail () : bool}
+\subparagraph{\method{checkMail () : bool}}
 \newline
 verifica che i due indirizzi mail inseriti coincidano
-\subparagraph{checkPassword () : bool}
+\subparagraph{\method{checkPassword () : bool}}
 \newline
 verifica che le due password inserite coincidano
-\subsection{Quizzipedia::Server}
+\subsection{\pkg{Quizzipedia::Server}}
 Racchiude tutte le componenti necessarie per il back-end del prodotto. Comunica con il database non relazionale MongoDB per ottenere le informazioni richieste dal client a cui verranno inviate successivamente.
 Contiene inoltre le componenti che si occupano del linguaggio di markup QML.
 \begin{figure}[H]
@@ -1104,7 +1268,7 @@ Contiene inoltre le componenti che si occupano del linguaggio di markup QML.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server.pdf}}
 \caption[Schema Componente Server]{Schema Componente Quizzipedia::Server}
 \end{figure}
-\subsection{Quizzipedia::Server::ModelServer}
+\subsection{\pkg{Quizzipedia::Server::ModelServer}}
 Rappresenta il modello dei dati che verranno utilizzati dal sistema lato server. 
 Il controller del server avrà il compito di interagire col model per ottenere il modello che gli serve a seconda delle richieste fatte dal client.
 \begin{figure}[H]
@@ -1112,217 +1276,217 @@ Il controller del server avrà il compito di interagire col model per ottenere i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ModelServer]{Schema Componente Quizzipedia::Server::ModelServer}
 \end{figure}
-\subsection{Quizzipedia::Server::ModelServer::Organization}
+\subsection{\pkg{Quizzipedia::Server::ModelServer::Organizations}}
 La componente gestisce, lato server, le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-organization.pdf}}
-\caption[Schema Componente Quizzipedia::Server::ModelServer::Organization]{Schema Componente Quizzipedia::Server::ModelServer::Organization}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-organizations.pdf}}
+\caption[Schema Componente Quizzipedia::Server::ModelServer::Organizations]{Schema Componente Quizzipedia::Server::ModelServer::Organizations}
 \end{figure}
-\subsubsection{Classe Class}
+\subsubsection{Classe \cls{Class}}
 Contiene informazioni relative alla struttura delle classi.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organization-class.pdf}}
-\caption[Schema Classe Class]{Schema Classe Quizzipedia::Server::ModelServer::Organization::Class}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organizations-class.pdf}}
+\caption[Schema Classe Class]{Schema Classe Quizzipedia::Server::ModelServer::Organizations::Class}
 \end{figure}
-\subsubsection{Classe Institution}
+\subsubsection{Classe \cls{Institution}}
 La classe contiene le informazioni relative alla struttura dell'ente.
 \begin{figure}[H]
 \centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organization-institution.pdf}}
-\caption[Schema Classe Institution]{Schema Classe Quizzipedia::Server::ModelServer::Organization::Institution}
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organizations-institution.pdf}}
+\caption[Schema Classe Institution]{Schema Classe Quizzipedia::Server::ModelServer::Organizations::Institution}
 \end{figure}
-\subsection{Quizzipedia::Server::ModelServer::Requests}
+\subsection{\pkg{Quizzipedia::Server::ModelServer::Requests}}
 Questo componente contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-requests.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Requests]{Schema Componente Quizzipedia::Server::ModelServer::Requests}
 \end{figure}
-\subsubsection{Classe ClassList}
+\subsubsection{Classe \cls{ClassList}}
 Questa classe gestisce le richieste da parte di docenti o studenti per l'assegnazione a una specifica classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-classlist.pdf}}
 \caption[Schema Classe ClassList]{Schema Classe Quizzipedia::Server::ModelServer::Requests::ClassList}
 \end{figure}
-\subsubsection{Classe Request}
+\subsubsection{Classe \cls{Request}}
 La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui ha fatto richiesta.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-request.pdf}}
 \caption[Schema Classe Request]{Schema Classe Quizzipedia::Server::ModelServer::Requests::Request}
 \end{figure}
-\subsubsection{Classe RequestRole}
+\subsubsection{Classe \cls{RequestRole}}
 La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuole ricoprire.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-requestrole.pdf}}
 \caption[Schema Classe RequestRole]{Schema Classe Quizzipedia::Server::ModelServer::Requests::RequestRole}
 \end{figure}
-\subsubsection{Classe RoleList}
+\subsubsection{Classe \cls{RoleList}}
 Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo di studente o docente al responsabile di un ente. Questa classe gestisce tali richieste.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-rolelist.pdf}}
 \caption[Schema Classe RoleList]{Schema Classe Quizzipedia::Server::ModelServer::Requests::RoleList}
 \end{figure}
-\subsection{Quizzipedia::Server::ModelServer::Services}
+\subsection{\pkg{Quizzipedia::Server::ModelServer::Services}}
 Il componente racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-services.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Services]{Schema Componente Quizzipedia::Server::ModelServer::Services}
 \end{figure}
-\subsubsection{Classe Quiz}
+\subsubsection{Classe \cls{Quiz}}
 Include la struttura del quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-quiz.pdf}}
 \caption[Schema Classe Quiz]{Schema Classe Quizzipedia::Server::ModelServer::Services::Quiz}
 \end{figure}
-\subsubsection{Classe Topics}
+\subsubsection{Classe \cls{Topics}}
 Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni domanda e a ogni quiz verranno poi associati i relativi argomenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-topics.pdf}}
 \caption[Schema Classe Topics]{Schema Classe Quizzipedia::Server::ModelServer::Services::Topics}
 \end{figure}
-\subsection{Quizzipedia::Server::ModelServer::Services::Questions}
+\subsection{\pkg{Quizzipedia::Server::ModelServer::Services::Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-services-questions.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Services::Questions]{Schema Componente Quizzipedia::Server::ModelServer::Services::Questions}
 \end{figure}
-\subsubsection{Classe Cell}
+\subsubsection{Classe \cls{Cell}}
 La classe descrive ogni singola riga (quindi ogni opzione) della colonna della domanda a collegamento.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-cell.pdf}}
 \caption[Schema Classe Cell]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::Cell}
 \end{figure}
-\subsubsection{Classe Column}
+\subsubsection{Classe \cls{Column}}
 La classe descrive le colonne della domanda a collegamenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-column.pdf}}
 \caption[Schema Classe Column]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::Column}
 \end{figure}
-\subsubsection{Classe CompletionQ}
+\subsubsection{Classe \cls{CompletionQ}}
 Descrive le domande a completamento. Il docente fornirà un testo incompleto e una lista di possibili completamenti; lo studente dovrà inserire le parole adeguate nella giusta posizione.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-completionq.pdf}}
 \caption[Schema Classe CompletionQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::CompletionQ}
 \end{figure}
-\subsubsection{Classe GenericQuestion}
+\subsubsection{Classe \cls{GenericQuestion}}
 Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-genericquestion.pdf}}
 \caption[Schema Classe GenericQuestion]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion}
 \end{figure}
-\subsubsection{Classe MatchingQ}
+\subsubsection{Classe \cls{MatchingQ}}
 La struttura descrive le domande a collegamento. L'utente dovrà formare la risposta collegando le entrate da un numero variabile di colonne.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-matchingq.pdf}}
 \caption[Schema Classe MatchingQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::MatchingQ}
 \end{figure}
-\subsubsection{Classe MultipleChoiceQ}
+\subsubsection{Classe \cls{MultipleChoiceQ}}
 La struttura descrive le domande a scelta multipla; viene presentata una lista di opzioni tra cui scegliere quelle corrette.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-multiplechoiceq.pdf}}
 \caption[Schema Classe MultipleChoiceQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::MultipleChoiceQ}
 \end{figure}
-\subsubsection{Classe ShortAnswerQ}
+\subsubsection{Classe \cls{ShortAnswerQ}}
 La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste in un termine o una frase specifici.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-shortanswerq.pdf}}
 \caption[Schema Classe ShortAnswerQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::ShortAnswerQ}
 \end{figure}
-\subsubsection{Classe TrueFalseQ}
+\subsubsection{Classe \cls{TrueFalseQ}}
 Viene descritta la struttura delle domande che prevedono di decidere la veridicità di un'affermazione.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-truefalseq.pdf}}
 \caption[Schema Classe TrueFalseQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::TrueFalseQ}
 \end{figure}
-\subsection{Quizzipedia::Server::ModelServer::Statistics}
+\subsection{\pkg{Quizzipedia::Server::ModelServer::Statistics}}
 Qui sono raccolte le classi contenenti le informazioni sulle statistiche di domande, quiz e studenti di ogni classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-statistics.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Statistics]{Schema Componente Quizzipedia::Server::ModelServer::Statistics}
 \end{figure}
-\subsubsection{Classe QuestionStatistics}
+\subsubsection{Classe \cls{QuestionStatistics}}
 La classe raccoglie le statistiche principali riguardanti una singola domanda. Da qui è poi possibile risalire alla domanda.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-questionstatistics.pdf}}
 \caption[Schema Classe QuestionStatistics]{Schema Classe Quizzipedia::Server::ModelServer::Statistics::QuestionStatistics}
 \end{figure}
-\subsubsection{Classe QuizStatistics}
+\subsubsection{Classe \cls{QuizStatistics}}
 La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qui è poi possibile ottenere il quiz in questione.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-quizstatistics.pdf}}
 \caption[Schema Classe QuizStatistics]{Schema Classe Quizzipedia::Server::ModelServer::Statistics::QuizStatistics}
 \end{figure}
-\subsection{Quizzipedia::Server::ModelServer::Users}
+\subsection{\pkg{Quizzipedia::Server::ModelServer::Users}}
 Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-users.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Users]{Schema Componente Quizzipedia::Server::ModelServer::Users}
 \end{figure}
-\subsubsection{Classe AuthenticationData}
+\subsubsection{Classe \cls{AuthenticationData}}
 Questa classe gestisce le informazioni di autenticazione comuni a tutti gli utenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-authenticationdata.pdf}}
 \caption[Schema Classe AuthenticationData]{Schema Classe Quizzipedia::Server::ModelServer::Users::AuthenticationData}
 \end{figure}
-\subsubsection{Classe Director}
+\subsubsection{Classe \cls{Director}}
 Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per ogni ente del sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-director.pdf}}
 \caption[Schema Classe Director]{Schema Classe Quizzipedia::Server::ModelServer::Users::Director}
 \end{figure}
-\subsubsection{Classe NoRole}
+\subsubsection{Classe \cls{NoRole}}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-norole.pdf}}
 \caption[Schema Classe NoRole]{Schema Classe Quizzipedia::Server::ModelServer::Users::NoRole}
 \end{figure}
-\subsubsection{Classe Student}
+\subsubsection{Classe \cls{Student}}
 Rappresenta uno studente del sistema e implementa le sue funzioni specifiche oltre a quelle ereditate da utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-student.pdf}}
 \caption[Schema Classe Student]{Schema Classe Quizzipedia::Server::ModelServer::Users::Student}
 \end{figure}
-\subsubsection{Classe Teacher}
+\subsubsection{Classe \cls{Teacher}}
 Rappresenta un docente del sistema e ne implementa le funzionalità specifiche in aggiunta a quelle comuni a tutti gli utenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-teacher.pdf}}
 \caption[Schema Classe Teacher]{Schema Classe Quizzipedia::Server::ModelServer::Users::Teacher}
 \end{figure}
-\subsubsection{Classe User}
+\subsubsection{Classe \cls{User}}
 Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli utenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-user.pdf}}
 \caption[Schema Classe User]{Schema Classe Quizzipedia::Server::ModelServer::Users::User}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer}}
 Questo componente contiene tutti i servizi che permettono di isolare il più possibile l'accesso al database non relazionale. Avviene sempre un controllo dell'utente che genera una determinata richiesta al server affinchè sia abilitato per farla. 
 Una volta ottenuta l'informazione richiesta dal database, lo stesso controller si occuperà di inviarla al client richiedente.
 \begin{figure}[H]
@@ -1330,371 +1494,575 @@ Una volta ottenuta l'informazione richiesta dal database, lo stesso controller s
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer]{Schema Componente Quizzipedia::Server::ControllerServer}
 \end{figure}
-\subsubsection{Classe SessionController}
+\subsubsection{Classe \cls{SessionController}}
 Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-sessioncontroller.pdf}}
 \caption[Schema Classe SessionController]{Schema Classe Quizzipedia::Server::ControllerServer::SessionController}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::AuthenticationManager}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::AuthenticationManager}}
 Componente che permette di gestire le funzioni base per una corretta autenticazione al sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-authenticationmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::AuthenticationManager]{Schema Componente Quizzipedia::Server::ControllerServer::AuthenticationManager}
 \end{figure}
-\subsubsection{Classe LoggerIn}
+\subsubsection{Classe \cls{LoggerIn}}
 Permette l'autenticazione nel sistema da parte di utenti preventivamente registrati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-loggerin.pdf}}
 \caption[Schema Classe LoggerIn]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn}
 \end{figure}
-\subsubsection{Classe LoggerOut}
+\paragraph{Metodi}
+\subparagraph{\method{login (email : String, password : String) : JSON}}
+\newline
+permette l'autenticazione di un utente un Quizzipedia nel caso esso si sia preventivamente registrato
+\begin{itemize}
+\item \attribute{email : String}
+\newline
+la email con la quale l'utente si è registrato in Quizzipedia
+\item \attribute{password : String}
+\newline
+la password con la quale l'utente si è registrato in Quizzipedia
+\end{itemize}
+\subsubsection{Classe \cls{LoggerOut}}
 Permette l'uscita dal sistema ad utenti autenticati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-loggerout.pdf}}
 \caption[Schema Classe LoggerOut]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerOut}
 \end{figure}
-\subsubsection{Classe PasswordRecover}
+\paragraph{Metodi}
+\subparagraph{\method{logout () : void}}
+\newline
+permette l'uscita dal sistema Quizzipedia ad un utente autenticato
+\subsubsection{Classe \cls{PasswordRecover}}
 Permette il recupero della password da parte di un utente in caso di smarrimento o dimenticanza.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-passwordrecover.pdf}}
 \caption[Schema Classe PasswordRecover]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover}
 \end{figure}
-\subsubsection{Classe Register}
+\paragraph{Metodi}
+\subparagraph{\method{recoverPassword () : JSON}}
+\newline
+permette di impostare una password temporanea e di inviarla all'utente per email nel caso quest'ultimo abbia smarrito la propria
+\subsubsection{Classe \cls{Register}}
 Permette la registrazione di un utente nel sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-register.pdf}}
 \caption[Schema Classe Register]{Schema Classe Quizzipedia::Server::ControllerServer::AuthenticationManager::Register}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::ClassManager}
+\paragraph{Metodi}
+\subparagraph{\method{register (email : String, firstname : String, lastname : String, password : String) : void}}
+\newline
+permette la registrazione di un utente in Quizzipedia
+\begin{itemize}
+\item \attribute{email : String}
+\newline
+l'email dell'utente
+\item \attribute{firstname : String}
+\newline
+il nome dell'utente
+\item \attribute{lastname : String}
+\newline
+il cognome dell'utente
+\item \attribute{password : String}
+\newline
+la password scelta dall'utente per autenticarsi
+\end{itemize}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::ClassManager}}
 Componente che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni riguardanti le classi di un ente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-classmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::ClassManager]{Schema Componente Quizzipedia::Server::ControllerServer::ClassManager}
 \end{figure}
-\subsubsection{Classe ClassAdder}
+\subsubsection{Classe \cls{ClassAdder}}
 Permette la creazione di una nuova classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classadder.pdf}}
 \caption[Schema Classe ClassAdder]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder}
 \end{figure}
-\subsubsection{Classe ClassDeleter}
+\paragraph{Metodi}
+\subparagraph{\method{adder (classname : String) : void}}
+\newline
+permette la creazione di una nuova classe
+\begin{itemize}
+\item \attribute{classname : String}
+\newline
+il nome da attribuire alla classe
+\end{itemize}
+\subsubsection{Classe \cls{ClassDeleter}}
 Permette la rimozione delle classi dal sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classdeleter.pdf}}
 \caption[Schema Classe ClassDeleter]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassDeleter}
 \end{figure}
-\subsubsection{Classe ClassUpdater}
+\paragraph{Metodi}
+\subparagraph{\method{deleter (classname : String) : void}}
+\newline
+permette la rimozione di una classe
+\begin{itemize}
+\item \attribute{classname : String}
+\newline
+il nome della classe da rimuovere
+\end{itemize}
+\subsubsection{Classe \cls{ClassUpdater}}
 Permette la modifica delle informazioni di base di una determinata classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classupdater.pdf}}
 \caption[Schema Classe ClassUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::ClassUpdater}
 \end{figure}
-\subsubsection{Classe FromClassRemover}
+\subsubsection{Classe \cls{FromClassRemover}}
 Permette la rimozione di un utente da una determinata classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-fromclassremover.pdf}}
 \caption[Schema Classe FromClassRemover]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::FromClassRemover}
 \end{figure}
-\subsubsection{Classe InClassAdder}
+\paragraph{Metodi}
+\subparagraph{\method{remover (classname : String, email : String) : void}}
+\newline
+permette la rimozione di un utente dalla classe
+\begin{itemize}
+\item \attribute{classname : String}
+\newline
+classe dalla quale rimuovere l'utente
+\item \attribute{email : String}
+\newline
+email dell'utente da rimuovere dalla classe
+\end{itemize}
+\subsubsection{Classe \cls{InClassAdder}}
 Permette l'inserimento di un utente in una specifica classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-inclassadder.pdf}}
 \caption[Schema Classe InClassAdder]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder}
 \end{figure}
-\subsubsection{Classe StudentsClassFetcher}
+\paragraph{Metodi}
+\subparagraph{\method{adder (classname : String, email : String) : void}}
+\newline
+permette l'inserimento di un utente in una classe
+\begin{itemize}
+\item \attribute{classname : String}
+\newline
+il nome della classe nella quale inserire l'utente
+\item \attribute{email : String}
+\newline
+l'email dell'utente da inserire nella classe
+\end{itemize}
+\subsubsection{Classe \cls{StudentsClassFetcher}}
 Recupera la lista degli studenti appartenenti ad una determinata classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-studentsclassfetcher.pdf}}
 \caption[Schema Classe StudentsClassFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher}
 \end{figure}
-\subsubsection{Classe TeachersClassFetcher}
+\paragraph{Metodi}
+\subparagraph{\method{getStudents (classname : String) : JSON}}
+\newline
+recupera la lista di studenti appartenenti ad una determinata classe
+\begin{itemize}
+\item \attribute{classname : String}
+\newline
+il nome della classe della quale recuperare la lista degli studenti
+\end{itemize}
+\subsubsection{Classe \cls{TeachersClassFetcher}}
 Recupera la lista degli insegnanti relativi ad una determinata classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-teachersclassfetcher.pdf}}
 \caption[Schema Classe TeachersClassFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::InstitutionManager}
+\paragraph{Metodi}
+\subparagraph{\method{getTeachers (classname : String) : JSON}}
+\newline
+recupera la lista di docenti relativi ad una determinata classe
+\begin{itemize}
+\item \attribute{classname : String}
+\newline
+il nome della classe della quale recuperare la lista dei docenti
+\end{itemize}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::InstitutionManager}}
 Contiene le classi che permettono la gestione dell'ente da parte del relativo responsabile.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-institutionmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::InstitutionManager]{Schema Componente Quizzipedia::Server::ControllerServer::InstitutionManager}
 \end{figure}
-\subsubsection{Classe InstitutionUpdater}
+\subsubsection{Classe \cls{InstitutionUpdater}}
 Permette la modifica dell'ente da parte del responsabile.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-institutionmanager-institutionupdater.pdf}}
 \caption[Schema Classe InstitutionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::InstitutionManager::InstitutionUpdater}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::ProfileManager}
+\paragraph{Metodi}
+\subparagraph{\method{update (company : JSON) : void}}
+\newline
+permette al modifica di un ente
+\begin{itemize}
+\item \attribute{company : JSON}
+\newline
+nome dell'ente da modificare
+\end{itemize}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::ProfileManager}}
 Componente che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni personali da parte di un utente autenticato.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-profilemanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::ProfileManager]{Schema Componente Quizzipedia::Server::ControllerServer::ProfileManager}
 \end{figure}
-\subsubsection{Classe AccountDeleter}
+\subsubsection{Classe \cls{AccountDeleter}}
 Permette la rimozione di un account dal sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-accountdeleter.pdf}}
 \caption[Schema Classe AccountDeleter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter}
 \end{figure}
-\subsubsection{Classe PasswordSetter}
+\paragraph{Metodi}
+\subparagraph{\method{deleteAccount (email : String) : void}}
+\newline
+permette la rimozione di un account da Quizzipedia
+\begin{itemize}
+\item \attribute{email : String}
+\newline
+l'email dell'account da eliminare
+\end{itemize}
+\subsubsection{Classe \cls{PasswordSetter}}
 Permette ad un utente di impostare una nuova password relativa al proprio account.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-passwordsetter.pdf}}
 \caption[Schema Classe PasswordSetter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter}
 \end{figure}
-\subsubsection{Classe PersonalDataFetcher}
+\paragraph{Metodi}
+\subparagraph{\method{setPassword (email : String, password : String) : void}}
+\newline
+permette ad un utente di cambiare la propria password
+\begin{itemize}
+\item \attribute{email : String}
+\newline
+email dell'utente che vuole modificare la propria password
+\item \attribute{password : String}
+\newline
+la nuova password da impostare
+\end{itemize}
+\subsubsection{Classe \cls{PersonalDataFetcher}}
 Ritorna tutte le informazioni personali riferite all'utente che ne effettua la richiesta.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personaldatafetcher.pdf}}
 \caption[Schema Classe PersonalDataFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher}
 \end{figure}
-\subsubsection{Classe PersonalDataSetter}
+\paragraph{Metodi}
+\subparagraph{\method{fetchData (email : String) : JSON}}
+\newline
+ritorna tutte le proprieinformazioni personali
+\begin{itemize}
+\item \attribute{email : String}
+\newline
+email dell'utente che vuole vedere le proprie informazioni personali
+\end{itemize}
+\subsubsection{Classe \cls{PersonalDataSetter}}
 Permette ad un utente la modifica delle informazioni personali.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personaldatasetter.pdf}}
 \caption[Schema Classe PersonalDataSetter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter}
 \end{figure}
-\subsubsection{Classe PersonalQuizFetcher}
+\paragraph{Metodi}
+\subparagraph{\method{setData (data : JSON, email : String) : void}}
+\newline
+permette la modifica delle informazioni personali
+\begin{itemize}
+\item \attribute{data : JSON}
+\newline
+i dati da modificare
+\item \attribute{email : String}
+\newline
+email dell'utente che vuole modificare i propri dati personali
+\end{itemize}
+\subsubsection{Classe \cls{PersonalQuizFetcher}}
 Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fino a quel momento.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personalquizfetcher.pdf}}
 \caption[Schema Classe PersonalQuizFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::QuestionsManager}
+\paragraph{Metodi}
+\subparagraph{\method{fetchQuiz (email : String) : JSON}}
+\newline
+ritorna i quiz che l'utente ha svolto
+\begin{itemize}
+\item \attribute{email : String}
+\newline
+email dell'utente del quale recuperare i quiz svolti
+\end{itemize}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::QuestionsManager}}
 Pacchetto relativo alla gestione delle domande, la loro creazione, il loro aggiornamento oppure la loro eliminazione.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-questionsmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::QuestionsManager]{Schema Componente Quizzipedia::Server::ControllerServer::QuestionsManager}
 \end{figure}
-\subsubsection{Classe QuestionCreator}
+\subsubsection{Classe \cls{QuestionCreator}}
 Permette il salvataggio nella base di dati di una nuova domanda.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questioncreator.pdf}}
 \caption[Schema Classe QuestionCreator]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator}
 \end{figure}
-\subsubsection{Classe QuestionEraser}
+\paragraph{Metodi}
+\subparagraph{\method{createQuestion (question : JSON) : void}}
+\newline
+permette il salvataggio di una nuova domanda
+\begin{itemize}
+\item \attribute{question : JSON}
+\newline
+contiene la struttura della domanda
+\end{itemize}
+\subsubsection{Classe \cls{QuestionEraser}}
 Permette la cancellazione di una domanda dalla base di dati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questioneraser.pdf}}
 \caption[Schema Classe QuestionEraser]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser}
 \end{figure}
-\subsubsection{Classe QuestionUpdater}
+\paragraph{Metodi}
+\subparagraph{\method{eraseQuestion (question : String) : void}}
+\newline
+permette la cancellazione di una domanda
+\begin{itemize}
+\item \attribute{question : String}
+\newline
+la domanda da eliminare
+\end{itemize}
+\subsubsection{Classe \cls{QuestionUpdater}}
 Permette la modifica di una domanda già esistente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questionupdater.pdf}}
 \caption[Schema Classe QuestionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater}
 \end{figure}
-\subsubsection{Classe StatisticsQuestionUpdater}
+\paragraph{Metodi}
+\subparagraph{\method{updateQuestion (question : JSON) : void}}
+\newline
+permette la modifica di una domanda esistente
+\begin{itemize}
+\item \attribute{question : JSON}
+\newline
+i dati della domanda da modificare
+\end{itemize}
+\subsubsection{Classe \cls{StatisticsQuestionUpdater}}
 Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in esso contenuta.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-statisticsquestionupdater.pdf}}
 \caption[Schema Classe StatisticsQuestionUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuestionsManager::StatisticsQuestionUpdater}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::QuizManager}
+\paragraph{Metodi}
+\subparagraph{\method{updateStats (question : String, statistics : JSON) : void}}
+\newline
+aggiorna le statistiche relativa ad una domanda
+\begin{itemize}
+\item \attribute{question : String}
+\newline
+la domanda della quale modificare le statistiche
+\item \attribute{statistics : JSON}
+\newline
+le statistiche della domanda da aggiornare
+\end{itemize}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::QuizManager}}
 Componente che racchiude tutte le funzionalità adibite alla creazione, modifica e al recupero di quiz per lo svolgimento da parte di un utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-quizmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::QuizManager]{Schema Componente Quizzipedia::Server::ControllerServer::QuizManager}
 \end{figure}
-\subsubsection{Classe QuizCreator}
+\subsubsection{Classe \cls{QuizCreator}}
 Permette il salvataggio nella base di dati di un nuovo quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizcreator.pdf}}
 \caption[Schema Classe QuizCreator]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator}
 \end{figure}
-\subsubsection{Classe QuizEraser}
+\subsubsection{Classe \cls{QuizEraser}}
 Permette la cancellazione di un quiz dalla base di dati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizeraser.pdf}}
 \caption[Schema Classe QuizEraser]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser}
 \end{figure}
-\subsubsection{Classe QuizFetcher}
+\subsubsection{Classe \cls{QuizFetcher}}
 Ritorna un determinato quiz pronto per essere svolto da un utente .
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizfetcher.pdf}}
 \caption[Schema Classe QuizFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher}
 \end{figure}
-\subsubsection{Classe QuizUpdater}
+\subsubsection{Classe \cls{QuizUpdater}}
 Permette la modifica di un quiz già presente nella base di dati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizupdater.pdf}}
 \caption[Schema Classe QuizUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater}
 \end{figure}
-\subsubsection{Classe ResultsUpdater}
+\subsubsection{Classe \cls{ResultsUpdater}}
 Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-resultsupdater.pdf}}
 \caption[Schema Classe ResultsUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater}
 \end{figure}
-\subsubsection{Classe StatisticsQuizUpdater}
+\subsubsection{Classe \cls{StatisticsQuizUpdater}}
 Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte degli utenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-statisticsquizupdater.pdf}}
 \caption[Schema Classe StatisticsQuizUpdater]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::StatisticsQuizUpdater}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}}
 Questo componente racchiude i moduli necessari alla traduzione, da QML ad un formato comprensibile dal sistema, delle informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-quizmanager-qmlagent.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent]{Schema Componente Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}
 \end{figure}
-\subsubsection{Classe QMLGenerator}
+\subsubsection{Classe \cls{QMLGenerator}}
 Permette la traduzione in formato QML di un quiz nel caso si voglia procedere al salvataggio dello stesso all'interno del database.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent-qmlgenerator.pdf}}
 \caption[Schema Classe QMLGenerator]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLGenerator}
 \end{figure}
-\subsubsection{Classe QMLParser}
+\subsubsection{Classe \cls{QMLParser}}
 Permette la traduzione di un quiz dal formato QML ad uno comprensibile dal sistema per la generazione delle relative pagine HTML.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent-qmlparser.pdf}}
 \caption[Schema Classe QMLParser]{Schema Classe Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLParser}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::RequestsManager}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::RequestsManager}}
 Componente che si occupa di memorizzare richieste da parte degli utenti, mostrarle al responsabile e permettergli di accettarle o meno.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-requestsmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::RequestsManager]{Schema Componente Quizzipedia::Server::ControllerServer::RequestsManager}
 \end{figure}
-\subsubsection{Classe InsertClassRequestsAdder}
+\subsubsection{Classe \cls{InsertClassRequestsAdder}}
 Permette la memorizzazione nella base di dati di tutte le richieste, fatte da parte degli utenti, di essere inseriti in una determinata classe.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-insertclassrequestsadder.pdf}}
 \caption[Schema Classe InsertClassRequestsAdder]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestsAdder}
 \end{figure}
-\subsubsection{Classe RequestsFetcher}
+\subsubsection{Classe \cls{RequestsFetcher}}
 Permette la visualizzazione di tutte le richieste da parte degli utenti.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-requestsfetcher.pdf}}
 \caption[Schema Classe RequestsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher}
 \end{figure}
-\subsubsection{Classe RoleAccepter}
+\subsubsection{Classe \cls{RoleAccepter}}
 Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utente dopo che ne ha fatto richiesta.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-roleaccepter.pdf}}
 \caption[Schema Classe RoleAccepter]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter}
 \end{figure}
-\subsubsection{Classe RoleRequestAdder}
+\subsubsection{Classe \cls{RoleRequestAdder}}
 Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'interno del sistema.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-rolerequestadder.pdf}}
 \caption[Schema Classe RoleRequestAdder]{Schema Classe Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::SearchManager}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::SearchManager}}
 Questo componente permette di effettuare una ricerca nel database di quiz o domande richiesti dall'utente e ritornare una lista che corrisponde ai parametri desiderati.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-searchmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::SearchManager]{Schema Componente Quizzipedia::Server::ControllerServer::SearchManager}
 \end{figure}
-\subsubsection{Classe QuestionsSearcher}
+\subsubsection{Classe \cls{QuestionsSearcher}}
 Ritorna una lista di domande che corrispondono ai parametri di ricerca impostati dall'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-questionssearcher.pdf}}
 \caption[Schema Classe QuestionsSearcher]{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::QuestionsSearcher}
 \end{figure}
-\subsubsection{Classe QuizSearcher}
+\subsubsection{Classe \cls{QuizSearcher}}
 Ritorna una lista di quiz che corrispondono ai parametri di ricerca impostati dall'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-quizsearcher.pdf}}
 \caption[Schema Classe QuizSearcher]{Schema Classe Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::StatisticsManager}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::StatisticsManager}}
 Questo componente ha il compito di recuperare tutte le informazioni sottoforma di statistiche relative ad un quiz, una domanda in particolare o ad un utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-statisticsmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::StatisticsManager]{Schema Componente Quizzipedia::Server::ControllerServer::StatisticsManager}
 \end{figure}
-\subsubsection{Classe QuestionStatisticsFetcher}
+\subsubsection{Classe \cls{QuestionStatisticsFetcher}}
 Ritorna le statistiche riferite ad una domanda.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-questionstatisticsfetcher.pdf}}
 \caption[Schema Classe QuestionStatisticsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::QuestionStatisticsFetcher}
 \end{figure}
-\subsubsection{Classe QuizStatisticsFetcher}
+\subsubsection{Classe \cls{QuizStatisticsFetcher}}
 Ritorna le statistiche riferite ad un quiz.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-quizstatisticsfetcher.pdf}}
 \caption[Schema Classe QuizStatisticsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::QuizStatisticsFetcher}
 \end{figure}
-\subsubsection{Classe StudentStatisticsFetcher}
+\subsubsection{Classe \cls{StudentStatisticsFetcher}}
 Ritorna le statistiche riferite ad uno studente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-studentstatisticsfetcher.pdf}}
 \caption[Schema Classe StudentStatisticsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::StudentStatisticsFetcher}
 \end{figure}
-\subsection{Quizzipedia::Server::ControllerServer::TopicManager}
+\subsubsection{Classe \cls{TeacherStatisticsFetcher}}
+Ritorna le statistiche riferite ad un docente.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-teacherstatisticsfetcher.pdf}}
+\caption[Schema Classe TeacherStatisticsFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::StatisticsManager::TeacherStatisticsFetcher}
+\end{figure}
+\subsection{\pkg{Quizzipedia::Server::ControllerServer::TopicManager}}
 Componente che permette la creazione di un nuovo argomento o l'eliminazione di uno già esistente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-controllerserver-topicmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::TopicManager]{Schema Componente Quizzipedia::Server::ControllerServer::TopicManager}
 \end{figure}
-\subsubsection{Classe TopicCreator}
+\subsubsection{Classe \cls{TopicCreator}}
 Permette la creazione di un nuovo argomento.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager-topiccreator.pdf}}
 \caption[Schema Classe TopicCreator]{Schema Classe Quizzipedia::Server::ControllerServer::TopicManager::TopicCreator}
 \end{figure}
-\subsubsection{Classe TopicEraser}
+\subsubsection{Classe \cls{TopicEraser}}
 Permette l'eliminazione di un argomento.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager-topiceraser.pdf}}
 \caption[Schema Classe TopicEraser]{Schema Classe Quizzipedia::Server::ControllerServer::TopicManager::TopicEraser}
 \end{figure}
-\subsection{Quizzipedia::Server::RoutingManager}
+\subsection{\pkg{Quizzipedia::Server::RoutingManager}}
 Questo pacchetto costituisce lo strato superiore a ControllerServer e contiene tutte le API necessarie per gestire le comunicazioni provenienti dal client tramite Socket.IO. 
 Con l'uso di Express.js le richieste provenienti dal client verranno indirizzate alla corretta classe di questo componente, che si occuperà di inviare la richiesta al relativo services per la sua esecuzione..
 \begin{figure}[H]
@@ -1702,77 +2070,77 @@ Con l'uso di Express.js le richieste provenienti dal client verranno indirizzate
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-routingmanager.pdf}}
 \caption[Schema Componente Quizzipedia::Server::RoutingManager]{Schema Componente Quizzipedia::Server::RoutingManager}
 \end{figure}
-\subsubsection{Classe AbstractRouter}
+\subsubsection{Classe \cls{AbstractRouter}}
 Classe astratta supertipo delle altre classi del pacchetto.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-abstractrouter.pdf}}
 \caption[Schema Classe AbstractRouter]{Schema Classe Quizzipedia::Server::RoutingManager::AbstractRouter}
 \end{figure}
-\subsubsection{Classe AuthenticationRouter}
+\subsubsection{Classe \cls{AuthenticationRouter}}
 Invocato dal client per interagire con AuthenticationManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-authenticationrouter.pdf}}
 \caption[Schema Classe AuthenticationRouter]{Schema Classe Quizzipedia::Server::RoutingManager::AuthenticationRouter}
 \end{figure}
-\subsubsection{Classe ClassRouter}
+\subsubsection{Classe \cls{ClassRouter}}
 Invocato dal client per interagire con ClassManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-classrouter.pdf}}
 \caption[Schema Classe ClassRouter]{Schema Classe Quizzipedia::Server::RoutingManager::ClassRouter}
 \end{figure}
-\subsubsection{Classe InstitutionRouter}
+\subsubsection{Classe \cls{InstitutionRouter}}
 Invocato dal client per interagire con CompanyManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-institutionrouter.pdf}}
 \caption[Schema Classe InstitutionRouter]{Schema Classe Quizzipedia::Server::RoutingManager::InstitutionRouter}
 \end{figure}
-\subsubsection{Classe ProfileRouter}
+\subsubsection{Classe \cls{ProfileRouter}}
 Invocato dal client per interagire con ProfileManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-profilerouter.pdf}}
 \caption[Schema Classe ProfileRouter]{Schema Classe Quizzipedia::Server::RoutingManager::ProfileRouter}
 \end{figure}
-\subsubsection{Classe QuestionRouter}
+\subsubsection{Classe \cls{QuestionRouter}}
 Invocato dal client per interagire con QuestionsManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-questionrouter.pdf}}
 \caption[Schema Classe QuestionRouter]{Schema Classe Quizzipedia::Server::RoutingManager::QuestionRouter}
 \end{figure}
-\subsubsection{Classe QuizRouter}
+\subsubsection{Classe \cls{QuizRouter}}
 Invocato dal client per interagire con QuizManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-quizrouter.pdf}}
 \caption[Schema Classe QuizRouter]{Schema Classe Quizzipedia::Server::RoutingManager::QuizRouter}
 \end{figure}
-\subsubsection{Classe RequestsRouter}
+\subsubsection{Classe \cls{RequestsRouter}}
 Invocato dal client per interagire con RequestsManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-requestsrouter.pdf}}
 \caption[Schema Classe RequestsRouter]{Schema Classe Quizzipedia::Server::RoutingManager::RequestsRouter}
 \end{figure}
-\subsubsection{Classe SearchRouter}
+\subsubsection{Classe \cls{SearchRouter}}
 Invocato dal client per interagire con SearchManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-searchrouter.pdf}}
 \caption[Schema Classe SearchRouter]{Schema Classe Quizzipedia::Server::RoutingManager::SearchRouter}
 \end{figure}
-\subsubsection{Classe StatisticsRouter}
+\subsubsection{Classe \cls{StatisticsRouter}}
 Invocato dal client per interagire con StatisticsManager.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-statisticsrouter.pdf}}
 \caption[Schema Classe StatisticsRouter]{Schema Classe Quizzipedia::Server::RoutingManager::StatisticsRouter}
 \end{figure}
-\subsubsection{Classe TopicRouter}
+\subsubsection{Classe \cls{TopicRouter}}
 Invocato dal client per interagire con TopicManager.
 \begin{figure}[H]
 \centering
