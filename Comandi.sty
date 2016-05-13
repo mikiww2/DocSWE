@@ -57,11 +57,9 @@
 % Titolo paragrafo a due parametri per abbreviare l'indice
 \newcommand{\myparcls}[2]{\paragraph[#2]{#1}\hfill\vspace{1em}\\\noindent}
 
-% Metodi, argomenti, tipi e attributi
-\newcommand{\method}{\texttt}
-\newcommand{\argument}{\texttt}
-\newcommand{\type}{\texttt}
-\newcommand{\attribute}{\texttt}
+% Metodi e attributi
+\newcommand{\method}[1]{\bold{\texttt{#1}}}
+\newcommand{\attribute}[1]{\bold{\texttt{#1}}}
 
 %
 % COLORI
@@ -72,12 +70,10 @@
 \definecolor{D}{HTML}{F0F8FF}%{E8EAF6}
 % Righe pari tabelle
 \definecolor{P}{HTML}{A1CAF1}%{7DA7D9}
-% Argomenti metodi
-\definecolor{argument}{HTML}{E32636}
 % Metodi
 \definecolor{method}{HTML}{008000}
-% Tipi
-\definecolor{type}{HTML}{333399}
+% Attributi
+\definecolor{attribute}{HTML}{333399}
 
 
 % TABELLE
