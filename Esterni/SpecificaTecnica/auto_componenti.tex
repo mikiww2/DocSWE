@@ -22,9 +22,11 @@ Attraverso l'uso di Angular.js il controller svolge automaticamente le modifiche
 \item \pkg{Quizzipedia::Client::ModelClient::Users}
 \end{itemize}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ViewModelClient} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ModelClient::Organizations}}
 La componente gestisce le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema.
@@ -34,9 +36,11 @@ La componente gestisce le classi e gli enti, ovvero il sistema in base a cui son
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Organizations]{Schema Componente Quizzipedia::Client::ModelClient::Organizations}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ModelClient::Users} per organizzare gli utenti all'interno di enti e classi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Class}}
 Rappresenta una classe all'interno di un ente. Memorizza le informazioni che definiscono ogni classe,
@@ -89,9 +93,11 @@ Questo componente contiene le classi necessarie a gestire le richieste di ruolo 
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Requests]{Schema Componente Quizzipedia::Client::ModelClient::Requests}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ModelClient::Users} per permettere agli utenti di effettuare richieste. Le richieste possono essere di ruolo o di classe
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ClassList}}
 Questa classe gestisce le richieste da parte di docenti o studenti per l'assegnazione a una specifica classe. Contiene i metodi da cui è possibile accettare o rifiutare la richiesta dell'utente.
@@ -169,9 +175,11 @@ Il componente racchiude i modelli necessari alla creazione di domande e quiz, i 
 \item \pkg{Quizzipedia::Client::ModelClient::Services::Questions}
 \end{itemize}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ModelClient::Users} per Permettere agli utenti di tenere traccia dello storico dei quiz svolti
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Quiz}}
 Include la struttura del quiz.
@@ -213,9 +221,11 @@ Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Services::Answers]{Schema Componente Quizzipedia::Client::ModelClient::Services::Answers}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ModelClient::Services::Questions} per associare le risposte date dall'utente alla domanda giusta
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AnswerColumn}}
 Classe utilizzata da AnswerMatchingQ per salvare le risposte della domanda MatchingQ.
@@ -234,7 +244,7 @@ Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ ri
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuestion} per per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a completamento
+\item usa \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuestion} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a completamento
 \end{itemize}
 \subsubsection{Classe \cls{AnswerMatchingQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ risolta.
@@ -250,6 +260,11 @@ Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoice
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answermultiplechoiceq.pdf}}
 \caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerMultipleChoiceQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuestion} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a scelta multipla
+\end{itemize}
 \subsubsection{Classe \cls{AnswerQuestion}}
 Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \begin{figure}[H]
@@ -260,7 +275,9 @@ Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerCompletionQ} per per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a completamento
+\item usata da \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerCompletionQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a completamento
+\item usata da \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerMultipleChoiceQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a scelta multipla
+\item usata da \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerShortAnswerQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda aperta
 \item usata da \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerTrueFalseQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda di tipo vero/falso
 \end{itemize}
 \subparagraph{Uscenti}
@@ -282,6 +299,11 @@ Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ r
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answershortanswerq.pdf}}
 \caption[Schema Classe AnswerShortAnswerQ]{Schema Classe Quizzipedia::Client::ModelClient::Services::Answers::AnswerShortAnswerQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuestion} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda aperta
+\end{itemize}
 \subsubsection{Classe \cls{AnswerTrueFalseQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ risolta.
 \begin{figure}[H]
@@ -302,10 +324,12 @@ Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente pu�
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Services::Questions]{Schema Componente Quizzipedia::Client::ModelClient::Services::Questions}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ModelClient::Services::Answers} per associare le risposte date dall'utente alla domanda giusta
 \item usata da \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Cell}}
 La classe descrive ogni singola riga (quindi ogni opzione) della colonna della domanda a collegamento.
@@ -424,9 +448,11 @@ Qui sono raccolte le classi con il compito di reperire informazioni sulle statis
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Statistics]{Schema Componente Quizzipedia::Client::ModelClient::Statistics}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ModelClient::Users} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuestionStatistics}}
 La classe raccoglie le statistiche principali riguardanti una singola domanda. Da qui è poi possibile risalire alla domanda.
@@ -462,16 +488,18 @@ Raccoglie le classi necessarie a descrivere le diverse tipologie di utente che p
 \caption[Schema Componente Quizzipedia::Client::ModelClient::Users]{Schema Componente Quizzipedia::Client::ModelClient::Users}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ViewModelClient::CtrlUsers} per avere accesso alla struttura dei vari tipi di utente. In questo modo potrà compiere operazioni di modifica e manutenzione
 \end{itemize}
-\paragraph{Uscenti}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ModelClient::Organizations} per organizzare gli utenti all'interno di enti e classi
 \item usa \pkg{Quizzipedia::Client::ModelClient::Requests} per permettere agli utenti di effettuare richieste. Le richieste possono essere di ruolo o di classe
 \item usa \pkg{Quizzipedia::Client::ModelClient::Services} per Permettere agli utenti di tenere traccia dello storico dei quiz svolti
 \item usa \pkg{Quizzipedia::Client::ModelClient::Statistics} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AuthenticationData}}
 Questa classe gestisce le informazioni di autenticazione comuni a tutti gli utenti.
@@ -598,9 +626,11 @@ Con l'uso invece di Bootstrap e Fabric.js a livello di grafica web risulta sempl
 \item \pkg{Quizzipedia::Client::ViewClient::ViewUsers}
 \end{itemize}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ViewClient::ViewOrgManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti presenti in Quizzipedia.
@@ -610,9 +640,11 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewOrgManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewOrgManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlOrganization} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewCreateClass}}
 Classe responsabile della creazione della pagina da cui sarà possibile creare una nuova classe.
@@ -648,9 +680,11 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuestionManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuestionManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewCreateQuestion}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda.
@@ -696,9 +730,11 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuizManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuizManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewCreateQuiz}}
 Presenta la pagina da cui sarà possibile creare un nuovo quiz.
@@ -748,9 +784,11 @@ Il componente raccoglie le classi necessarie alla visualizzazione delle pagine d
 \item \pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver}
 \end{itemize}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewResults}}
 La classe ha il compito di costruire la pagina da cui sarà possibile vedere l'esito di un quiz.
@@ -772,9 +810,11 @@ Il componente raccoglie le classi necessarie alla visualizzazione delle pagine d
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver]{Schema Componente Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewCompletionQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a completamento.
@@ -844,9 +884,11 @@ Qui sono raccolte le pagine che permettono all'utente di gestire le richieste di
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewRequests]{Schema Componente Quizzipedia::Client::ViewClient::ViewRequests}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlRequests} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RequestRole}}
 Costruisce la pagina da cui l'utente potrà richiedere un ruolo (studente o docente).
@@ -904,10 +946,12 @@ Il componente contiene le classi responsabili della creazione delle pagine da cu
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewSearch]{Schema Componente Quizzipedia::Client::ViewClient::ViewSearch}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlOrganization} per aggiungi
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewSearchClass}}
 La classe carica la pagina da cui sarà possibile ricercare classi all'interno di un ente.
@@ -953,9 +997,11 @@ Componente che gestisce le pagine in cui verranno visualizzate le statistiche ri
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics]{Schema Componente Quizzipedia::Client::ViewClient::ViewStatistics}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlStatistics} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewClassStats}}
 Vengono rappresentate le statistiche relative a una singola classe in relazione a un particolare quiz.
@@ -1001,9 +1047,11 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewTopicManager]{Schema Componente Quizzipedia::Client::ViewClient::ViewTopicManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewTopicsManager}}
 La classe è responsabile della creazione della pagina da cui sarà possibile vedere la lista degli argomenti disponibili. Da qui sarà inoltre possibile creare nuovi argomenti o cancellare quelli già inseriti.
@@ -1025,9 +1073,11 @@ Raccoglie le classi necessarie a presentare all'utente le pagine da cui visualiz
 \caption[Schema Componente Quizzipedia::Client::ViewClient::ViewUsers]{Schema Componente Quizzipedia::Client::ViewClient::ViewUsers}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlUsers} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Login}}
 Presenta la pagina necessaria per effettuare il login nel sistema.
@@ -1132,13 +1182,15 @@ Con Angula.js il controller permette di tenere sempre aggiornato facilmente il m
 \item \pkg{Quizzipedia::Client::ViewModelClient::CtrlUsers}
 \end{itemize}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ViewClient} per aggiungi
 \end{itemize}
-\paragraph{Uscenti}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ModelClient} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ViewModelClient::CtrlOrganization}}
 Raccoglie le classi che si occupano delle comunicazioni necessarie per la creazione e la gestione di enti e classi.
@@ -1148,10 +1200,12 @@ Raccoglie le classi che si occupano delle comunicazioni necessarie per la creazi
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlOrganization]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlOrganization}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewOrgManager} per aggiungi
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewSearch} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlInstitution}}
 La classe in questione permette di modificare oppure eliminare le classi in un ente presente all'interno del sistema.
@@ -1209,9 +1263,11 @@ Questo componente contiene classi necessarie alla gestione delle richieste di ru
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlRequests]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlRequests}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewRequests} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlRequestClass}}
 Si occupa delle comunicazioni necessarie per la gestione delle richieste di inserimento in una classe.
@@ -1257,7 +1313,8 @@ Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlServices]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlServices}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuestionManager} per aggiungi
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizManager} per aggiungi
@@ -1266,9 +1323,10 @@ Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewSearch} per aggiungi
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewTopicManager} per aggiungi
 \end{itemize}
-\paragraph{Uscenti}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ModelClient::Services::Questions} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlQuestion}}
 Fornisce i metodi necessari per la comunicazione tra view e model durante la creazione, modifica e svolgimento di una domanda.
@@ -1349,9 +1407,11 @@ Raccoglie le classi necessarie a recuperare le statistiche da presentare all'ute
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlStatistics]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlStatistics}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewStatistics} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlStats}}
 Classe necessaria al caricamento delle statistiche relative ai quiz, alle domande e alle classi.
@@ -1375,13 +1435,15 @@ Il componente raccoglie le classi che permettono la comunicazione per quanto rig
 \caption[Schema Componente Quizzipedia::Client::ViewModelClient::CtrlUsers]{Schema Componente Quizzipedia::Client::ViewModelClient::CtrlUsers}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewUsers} per aggiungi
 \end{itemize}
-\paragraph{Uscenti}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Client::ModelClient::Users} per avere accesso alla struttura dei vari tipi di utente. In questo modo potrà compiere operazioni di modifica e manutenzione
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlLogin}}
 Gestisce la comunicazione necessaria per l'autenticazione dell'utente in fase di login.
@@ -1486,9 +1548,11 @@ Il controller del server avrà il compito di interagire col model per ottenere i
 \item \pkg{Quizzipedia::Server::ModelServer::Users}
 \end{itemize}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::ControllerServer} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Organizations}}
 La componente gestisce, lato server, le classi e gli enti, ovvero il sistema in base a cui sono organizzati gli utenti nel sistema.
@@ -1498,11 +1562,13 @@ La componente gestisce, lato server, le classi e gli enti, ovvero il sistema in 
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Organizations]{Schema Componente Quizzipedia::Server::ModelServer::Organizations}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::ClassManager} per 
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::InstitutionManager} per 
 \item usata da \pkg{Quizzipedia::Server::ModelServer::Users} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Class}}
 Contiene informazioni relative alla struttura delle classi.
@@ -1552,10 +1618,12 @@ Questo componente contiene le classi necessarie a gestire le richieste di ruolo 
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Requests]{Schema Componente Quizzipedia::Server::ModelServer::Requests}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::RequestsManager} per 
 \item usata da \pkg{Quizzipedia::Server::ModelServer::Users} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ClassList}}
 Questa classe gestisce le richieste da parte di docenti o studenti per l'assegnazione a una specifica classe.
@@ -1632,13 +1700,15 @@ Il componente racchiude i modelli necessari alla creazione di domande e quiz, i 
 \item \pkg{Quizzipedia::Server::ModelServer::Services::Questions}
 \end{itemize}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::QuestionsManager} per 
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::QuizManager} per 
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::SearchManager} per 
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::TopicManager} per 
 \item usata da \pkg{Quizzipedia::Server::ModelServer::Users} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Quiz}}
 Include la struttura del quiz.
@@ -1686,9 +1756,11 @@ Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente pu�
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Services::Questions]{Schema Componente Quizzipedia::Server::ModelServer::Services::Questions}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::QuestionsManager} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Cell}}
 La classe descrive ogni singola riga (quindi ogni opzione) della colonna della domanda a collegamento.
@@ -1809,10 +1881,12 @@ Qui sono raccolte le classi contenenti le informazioni sulle statistiche di doma
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Statistics]{Schema Componente Quizzipedia::Server::ModelServer::Statistics}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::StatisticsManager} per 
 \item usata da \pkg{Quizzipedia::Server::ModelServer::Users} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuestionStatistics}}
 La classe raccoglie le statistiche principali riguardanti una singola domanda. Da qui è poi possibile risalire alla domanda.
@@ -1841,17 +1915,19 @@ Raccoglie le classi necessarie a descrivere le diverse tipologie di utente prese
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Users]{Schema Componente Quizzipedia::Server::ModelServer::Users}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::AuthenticationManager} per 
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::ProfileManager} per 
 \end{itemize}
-\paragraph{Uscenti}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Organizations} per 
 \item usa \pkg{Quizzipedia::Server::ModelServer::Requests} per 
 \item usa \pkg{Quizzipedia::Server::ModelServer::Services} per 
 \item usa \pkg{Quizzipedia::Server::ModelServer::Statistics} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AuthenticationData}}
 Questa classe gestisce le informazioni di autenticazione comuni a tutti gli utenti.
@@ -1969,13 +2045,15 @@ Una volta ottenuta l'informazione richiesta dal database, lo stesso controller s
 \item \pkg{Quizzipedia::Server::ControllerServer::TopicManager}
 \end{itemize}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Entranti}
+\begin{itemize}
+\item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::RoutingManager} per aggiungi
 \end{itemize}
-\paragraph{Uscenti}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{SessionController}}
 Effettua il controllo sull'utente per verificare che egli sia in possesso dell'autorizzazione necessaria per compiere determinate richieste alla base di dati.
@@ -2018,9 +2096,11 @@ Componente che permette di gestire le funzioni base per una corretta autenticazi
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::AuthenticationManager]{Schema Componente Quizzipedia::Server::ControllerServer::AuthenticationManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Users} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{LoggerIn}}
 Permette l'autenticazione nel sistema da parte di utenti preventivamente registrati.
@@ -2094,9 +2174,11 @@ Componente che racchiude tutte le funzionalità adibite al salvataggio e alla vi
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::ClassManager]{Schema Componente Quizzipedia::Server::ControllerServer::ClassManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Organizations} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ClassAdder}}
 Permette la creazione di una nuova classe.
@@ -2225,9 +2307,11 @@ Contiene le classi che permettono la gestione dell'ente da parte del relativo re
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::InstitutionManager]{Schema Componente Quizzipedia::Server::ControllerServer::InstitutionManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Organizations} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{InstitutionUpdater}}
 Permette la modifica dell'ente da parte del responsabile.
@@ -2254,9 +2338,11 @@ Componente che racchiude tutte le funzionalità adibite al salvataggio e alla vi
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::ProfileManager]{Schema Componente Quizzipedia::Server::ControllerServer::ProfileManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Users} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AccountDeleter}}
 Permette la rimozione di un account dal sistema.
@@ -2346,10 +2432,12 @@ Pacchetto relativo alla gestione delle domande, la loro creazione, il loro aggio
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::QuestionsManager]{Schema Componente Quizzipedia::Server::ControllerServer::QuestionsManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Services} per 
 \item usa \pkg{Quizzipedia::Server::ModelServer::Services::Questions} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuestionCreator}}
 Permette il salvataggio nella base di dati di una nuova domanda.
@@ -2426,9 +2514,11 @@ Componente che racchiude tutte le funzionalità adibite alla creazione, modifica
 \item \pkg{Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent}
 \end{itemize}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Services} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuizCreator}}
 Permette il salvataggio nella base di dati di un nuovo quiz.
@@ -2568,9 +2658,11 @@ Componente che si occupa di memorizzare richieste da parte degli utenti, mostrar
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::RequestsManager]{Schema Componente Quizzipedia::Server::ControllerServer::RequestsManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Requests} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{InsertClassRequestsAdder}}
 Permette la memorizzazione nella base di dati di tutte le richieste, fatte da parte degli utenti, di essere inseriti in una determinata classe.
@@ -2647,9 +2739,11 @@ Questo componente permette di effettuare una ricerca nel database di quiz o doma
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::SearchManager]{Schema Componente Quizzipedia::Server::ControllerServer::SearchManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Services} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuestionsSearcher}}
 Ritorna una lista di domande che corrispondono ai parametri di ricerca impostati dall'utente.
@@ -2691,9 +2785,11 @@ Questo componente ha il compito di recuperare tutte le informazioni sottoforma d
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::StatisticsManager]{Schema Componente Quizzipedia::Server::ControllerServer::StatisticsManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Statistics} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuestionStatisticsFetcher}}
 Ritorna le statistiche riferite ad una domanda.
@@ -2765,9 +2861,11 @@ Componente che permette la creazione di un nuovo argomento o l'eliminazione di u
 \caption[Schema Componente Quizzipedia::Server::ControllerServer::TopicManager]{Schema Componente Quizzipedia::Server::ControllerServer::TopicManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ModelServer::Services} per 
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{TopicCreator}}
 Permette la creazione di un nuovo argomento.
@@ -2812,9 +2910,11 @@ Con l'uso di Express.js le richieste provenienti dal client verranno indirizzate
 \caption[Schema Componente Quizzipedia::Server::RoutingManager]{Schema Componente Quizzipedia::Server::RoutingManager}
 \end{figure}
 \subsubsection{Interazioni con altre componenti}
-\paragraph{Uscenti}
+\begin{itemize}
+\item \bold{Uscenti}
 \begin{itemize}
 \item usa \pkg{Quizzipedia::Server::ControllerServer} per aggiungi
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AbstractRouter}}
 Classe astratta supertipo delle altre classi del pacchetto.
