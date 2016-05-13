@@ -1,0 +1,71 @@
+% Nome del file: Verbale.tex
+% Percorso: template
+% Autore: Vault-Tech
+% Data creazione: 22.04.2016
+% E-mail: vaulttech.swe@gmail.com
+
+
+\documentclass[a4paper]{article}
+
+\usepackage[margin=3cm]{geometry}
+\usepackage{../../Comandi}
+
+%
+% VARIABILI DA DEFINIRE
+%
+\def\DATA{26.04.2016}
+\def\ORA{10:00}
+\def\CITTA{Padova}
+\def\PROVINCIA{PD}
+\def\VIA{Via Trieste, 63}
+\def\SEGRETARIO{Rudy Berton}
+\def\RESPONSABILE{Giacomo Beltrame}
+% NB:basta inserire i nomi qui sopra e poi dentro al documento li mette automaticamente!!!
+
+\begin{document}
+
+\begin{center}
+\includegraphics[scale=0.5]{Img/logo.png}\\
+\vspace{1cm}
+{\Huge \PROGETTO}\\
+\vspace{1cm}
+\section*{Verbale V[\DATA]}
+\end{center}
+
+%
+% INIZIO VERBALE
+%
+\bold{Responsabile:} \RESPONSABILE
+\\ \bold{Segretario:} \SEGRETARIO
+\\
+\subsection*{Presenti}
+Il segretario verbalizzante \SEGRETARIO{} indica come presenti all'appello:
+\begin{itemize}
+\item Giacomo Beltrame;
+\item Rudy Berton;
+\item Simone Boccato;
+\item Michela De Bortoli;
+\item Vassilikì Menarin;
+\item Filippo Tesser;
+\item Miki Violetto.
+\end{itemize}
+
+\subsection*{Ordine del giorno}
+Il giorno \DATA{} alle ore \ORA{} presso \CITTA (\PROVINCIA) in \VIA{} il gruppo \AUTORE{} ha tenuto un incontro per discutere i seguenti punti:
+%NB: se è solo una riunione interna tra noi cambiare la descrizione qua sopra!
+\begin{itemize}
+\item possibile cambiamento di database;
+\item possibile cambiamento per la realizzazione di web services
+
+\end{itemize}
+
+\myparagraph{Scelte prese}
+Dai riscontri ottenuti durante la presentazione della Revisione di Progettazione e dai giudizi relativi ad essa, il team ha deciso di riconsiderare le proprie scelte prese in merito al database da utilizzarsi e al servizio per la realizzazione del web service.
+\\ La prima discussione ha riportato in dubbio la scelta iniziale di utilizzare PostgreSQL, un database relazione, al posto del database non relazionale MongoDB. Attraverso consigli provenienti da terzi e navigazioni in internet per valutare i punti di forza di uno e dell'altro, il gruppo è giunto alla decisione di passare all'uso di MongoDB.
+\\
+\\ Per quanto riguarda invece l'utilizzo iniziale di SOAP (Simple Object Access Protocol) come protocollo, ci è stato segnalato come non adeguato al tipo di architettura presentata nel documento \doc{Specifica Tecnica} e pertanto il team ha deciso di indirizzare la propria scelta su REST (Representational State Transfer), che pur non essendo standard come SOAP, si rivela ottimo per gli scopi del progetto.
+
+\vspace{1cm}
+Il responsabile \RESPONSABILE{} approva il verbale.
+
+\end{document}
