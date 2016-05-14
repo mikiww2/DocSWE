@@ -2384,6 +2384,94 @@ Contiene informazioni relative alla struttura delle classi.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organizations-class.pdf}}
 \caption[Schema Classe Class]{Schema Classe Quizzipedia::Server::ModelServer::Organizations::Class}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{academicYear : String}
+\newline
+l'anno accademico della classe, per distinguere classi con lo stesso nome
+\item \attribute{description : String}
+\newline
+una breve descrizione della classe
+\item \attribute{name : String}
+\newline
+il nome della classe
+\item \attribute{students : String[]}
+\newline
+le mail degli studenti iscritti alla classe
+\item \attribute{teachers : String[]}
+\newline
+le mail dei docenti associati alla classe
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addStudent () : void}
+\newline
+permette di aggiungere uno studente alla classe
+\newline
+\item \method{addTeacher () : void}
+\newline
+permette di aggiungere un docente alla classe
+\newline
+\item \method{edit (newDescription : String, newName : String, newYear : String) : void}
+\newline
+permette
+di modificare le informazioni base della classe
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newDescription : String}
+\newline
+la nuova descrizione della classe
+\item \attribute{newName : String}
+\newline
+il nuovo nome della classe
+\item \attribute{newYear : String}
+\newline
+il nuovo anno della classe
+\end{itemize}
+\item \method{getAcademicYear () : String}
+\newline
+restituisce l'anno accademico della classe
+\newline
+\item \method{getDescription () : String}
+\newline
+restituisce la descrizione della classe
+\newline
+\item \method{getName () : String}
+\newline
+restituisce il nome della classe
+\newline
+\item \method{getStudents () : String[]}
+\newline
+restituisce le mail degli studenti della classe
+\newline
+\item \method{getTeachers () : String[]}
+\newline
+restituisce le mail dei docenti della classe
+\newline
+\item \method{removeStudent (studentMail : String) : void}
+\newline
+permette di rimuovere uno studente dalla
+classe
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{studentMail : String}
+\newline
+mail dello studente da rimuovere
+\end{itemize}
+\item \method{removeTeacher (teacherMail : String) : void}
+\newline
+permette di rimuovere un docente dalla
+classe
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{teacherMail : String}
+\newline
+mail del docente da rimuovere
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Institution}}
 La classe contiene le informazioni relative alla struttura dell'ente.
 \begin{figure}[H]
@@ -2391,6 +2479,161 @@ La classe contiene le informazioni relative alla struttura dell'ente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organizations-institution.pdf}}
 \caption[Schema Classe Institution]{Schema Classe Quizzipedia::Server::ModelServer::Organizations::Institution}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{classes : Class[]}
+\newline
+raccoglie tutte le classi presenti nell'ente
+\item \attribute{classList : ClassList}
+\newline
+le richieste di ingresso ad una classe dell'istituto
+\item \attribute{creationDate : Date}
+\newline
+indica la data di creazione dell'ente
+\item \attribute{director : Director}
+\newline
+il direttore dell'istituto
+\item \attribute{name : string}
+\newline
+il nome dell'ente
+\item \attribute{roleList : RoleList}
+\newline
+rappresenta una lista di tutte le richieste di ruolo pendenti per il dato ente
+\item \attribute{students : string[]}
+\newline
+raccoglie le mail di tutti gli studenti registrati presso un ente
+\item \attribute{teachers : string[]}
+\newline
+raccoglie le mail di tutti i docenti registrati presso un ente
+\item \attribute{topics : Topics}
+\newline
+i topic dell'istituto
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{acceptClassRequest (indexOfRequest : int) : void}
+\newline
+permette di accettare una richiesta di ingresso ad una classe
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfRequest : int}
+\newline
+la posizione della richiesta di ingresso ad una classe da accettare
+\end{itemize}
+\item \method{acceptRequestRole (role : String) : void}
+\newline
+permette di accettare una richiesta di ingresso ad un ruolo dell'istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{role : String}
+\newline
+l'utente da accettare nell'istituto
+\end{itemize}
+\item \method{addClass  (objectClass : Class) : void}
+\newline
+Permette l'aggiunta di una classe all'interno di un instituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{objectClass : Class}
+\newline
+viene passata al metodo la classe da inserire
+\end{itemize}
+\item \method{getClass () : Class[]}
+\newline
+permette di recuperare le classi facenti parte dell'istituto
+\newline
+\item \method{getCLassList () : ClassList}
+\newline
+permette di recuperare la lista delle richieste di entrata alle classi
+\newline
+\item \method{getDirector () : Director}
+\newline
+permette di recuperare il direttore dell'istittuto
+\newline
+\item \method{getName () : String}
+\newline
+permette di recuperare il nome dell'istituto
+\newline
+\item \method{getRoleList () : RoleList}
+\newline
+permette di recuperare le richieste di ingresso all'istituto con un appropriato ruolo
+\newline
+\item \method{getStudents () : String[]}
+\newline
+permette di recuperare gli studenti abilitati nell'istituto
+\newline
+\item \method{getTeachers () : String[]}
+\newline
+permette di recuperare gliinsegnanti abilitati nell'istituto
+\newline
+\item \method{getTopics () : Topics}
+\newline
+permette di recuperare i topics dll'istituto
+\newline
+\item \method{removeClass (indexOfClass : int) : void}
+\newline
+rimuove una classe da un istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfClass : int}
+\newline
+l'indice della classe da rimuovere dalle classi presenti nell'ente
+\end{itemize}
+\item \method{removeClassRequest (indexOfRequest : int) : void}
+\newline
+permette di rimuovere una richiesta di ingresso ad una classe dell'istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfRequest : int}
+\newline
+la posizione della richiesta da rimuovere
+\end{itemize}
+\item \method{removeStudent (studentMail : String) : void}
+\newline
+rimuove uno studente dagli iscritti presso un istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{studentMail : String}
+\newline
+lo studente da rimuovere dall'istituto
+\end{itemize}
+\item \method{removeTeacher (teacherMail : String) : void}
+\newline
+rimuove un docente dagli iscritti presso un istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{teacherMail : String}
+\newline
+l'insegnate da rimuovere dall'istituto
+\end{itemize}
+\item \method{setDirector (objectDirector : Director) : void}
+\newline
+permette di modificare il direttore dell'istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{objectDirector : Director}
+\newline
+il nuovo direttore dell'istituto
+\end{itemize}
+\item \method{setName (newName : String) : void}
+\newline
+permette di modificare il nome dell'istituto
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newName : String}
+\newline
+il nuovo nome dell'istituto
+\end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Requests}}
 Questo componente contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
 \begin{figure}[H]
@@ -2405,6 +2648,51 @@ Questa classe gestisce le richieste da parte di docenti o studenti per l'assegna
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-classlist.pdf}}
 \caption[Schema Classe ClassList]{Schema Classe Quizzipedia::Server::ModelServer::Requests::ClassList}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{classRequest : RequestClass[]}
+\newline
+è la lista delle richieste di classe pendenti
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{acceptClassRequest (indexOfRequest : int) : void}
+\newline
+accetta la richiesta di entrata in una classe dell'utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfRequest : int}
+\newline
+è l'indice della richiesta che si intende accettare
+\end{itemize}
+\item \method{addClassRequest (mail : String, nameClass : String, year : String) : void}
+\newline
+aggiunge una richiesta di entrata in una classe alla lista delle richieste pendenti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{mail : String}
+\newline
+la mail dell'utente che effettua la richiesta di entrata nella classe
+\item \attribute{nameClass : String}
+\newline
+il nome della classe per cui si sta effettuando la richiesta
+\item \attribute{year : String}
+\newline
+l'anno della classe per cui si sta effettuando la richiesta
+\end{itemize}
+\item \method{removeClassRequest (indexOfRequest : int) : void}
+\newline
+rimuove una richiesta di entrata nella classe dalla lista delle richieste pendenti. Di fatto, comporta il rifiuto della richiesta
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfRequest : int}
+\newline
+l'indice della richiesta che si intende rifiutare e rimuovere dalla lista
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{RequestClass}}
 La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui ha fatto richiesta.
 \begin{figure}[H]
@@ -2412,6 +2700,22 @@ La classe memorizza l'utente che invia la richiesta di inserimento in una classe
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-requestclass.pdf}}
 \caption[Schema Classe RequestClass]{Schema Classe Quizzipedia::Server::ModelServer::Requests::RequestClass}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{class : Class}
+\newline
+la classe per cui è stata effettuata la richiesta
+\item \attribute{mail : String}
+\newline
+la mail dell'utente che ha effettuato la richiesta
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{getMail () : String}
+\newline
+restituisce la mail dell'utente che ha effettuato la richiesta
+\newline
+\end{itemize}
 \subsubsection{Classe \cls{RequestRole}}
 La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuole ricoprire.
 \begin{figure}[H]
@@ -2419,6 +2723,26 @@ La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuo
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-requestrole.pdf}}
 \caption[Schema Classe RequestRole]{Schema Classe Quizzipedia::Server::ModelServer::Requests::RequestRole}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{mail : String}
+\newline
+la mail dell'utente che effettua la richiesta di ruolo
+\item \attribute{messagge : String}
+\newline
+un messaggio che l'utente può includere alla sua richiesta di ruolo
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{getMail () : String}
+\newline
+restituisce la mail dell'utente che effettua la richiesta
+\newline
+\item \method{getMessage () : String}
+\newline
+restituisce il messaggio dell'utente che effettua la richista
+\newline
+\end{itemize}
 \subsubsection{Classe \cls{RoleList}}
 Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo di studente o docente al responsabile di un ente. Questa classe gestisce tali richieste.
 \begin{figure}[H]
@@ -2426,6 +2750,62 @@ Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-rolelist.pdf}}
 \caption[Schema Classe RoleList]{Schema Classe Quizzipedia::Server::ModelServer::Requests::RoleList}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{students : RequesRole[]}
+\newline
+memorizza la lista delle richieste degli utenti che hanno richiesto di diventare studenti
+\item \attribute{teachers : RequestRole[]}
+\newline
+memorizza la lista delle richieste degli utenti che hanno richiesto di diventare docenti
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{acceptStudent (indexOfStudent : int) : void}
+\newline
+accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfStudent : int}
+\newline
+l'indice della richiesta di ruolo che si intende accettare. L'utente diventa uno studente dell'ente
+\end{itemize}
+\item \method{acceptTeacher (indexOfTeacher : int) : void}
+\newline
+accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare docente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfTeacher : int}
+\newline
+l'indice della richiesta di ruolo che si intende accettare. L'utente diventa un docente dell'ente
+\end{itemize}
+\item \method{addRoleList (mailUser : String, message : String, role : String) : void}
+\newline
+il metodo aggiunge una richiesta alla lista corretta delle richieste pendenti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{mailUser : String}
+\newline
+la mail dell'utente che ha effettuato una richiesta di ruolo
+\item \attribute{message : String}
+\newline
+il messaggio dell'utente che ha effettuato una richiesta di ruolo
+\item \attribute{role : String}
+\newline
+il ruolo per cui l'utente ha fatto domanda
+\end{itemize}
+\item \method{removeStudent () : void}
+\newline
+rimuove, quindi rifiutandola, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
+\newline
+\item \method{removeTeacher () : void}
+\newline
+rimuove, quindi rifiutandola, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
+\newline
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Services}}
 Il componente racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
 \begin{figure}[H]
@@ -2440,6 +2820,144 @@ Include la struttura del quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-quiz.pdf}}
 \caption[Schema Classe Quiz]{Schema Classe Quizzipedia::Server::ModelServer::Services::Quiz}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{author : String}
+\newline
+la mail del docente che ha creato il quiz
+\item \attribute{classes : Class[]}
+\newline
+la lista delle classi per cui il quiz è stato creato
+\item \attribute{creationDate : Date}
+\newline
+la data di creazione del quiz
+\item \attribute{description : String}
+\newline
+la descrizione del quiz
+\item \attribute{keywords : String[]}
+\newline
+le keyword che identificano il quiz
+\item \attribute{questions : GenericQuestion[]}
+\newline
+La lista delle domande che compongono il quiz
+\item \attribute{title : String}
+\newline
+il titolo del quiz
+\item \attribute{topics : String[]}
+\newline
+gli argomenti coperti dal quiz
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addClass (class : Class) : void}
+\newline
+aggiunge una classe alla lista delle classi che hanno accesso al quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{class : Class}
+\newline
+la classe che si intende aggiungere
+\end{itemize}
+\item \method{addKeyword (keyword : String) : void}
+\newline
+aggiunge una parola chiave per identificare il quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{keyword : String}
+\newline
+la parola chiave da aggiungere
+\end{itemize}
+\item \method{addQuestion (question : GenericQuestion) : void}
+\newline
+aggiunge una domanda al quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{question : GenericQuestion}
+\newline
+la domanda da aggiungere al quiz
+\end{itemize}
+\item \method{addTopic (topic : String) : void}
+\newline
+aggiunge un argomento agli argomenti del quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{topic : String}
+\newline
+l'argomento da aggiungere
+\end{itemize}
+\item \method{createStatisticsQuiz () : QuizStatistics}
+\newline
+restituisce un oggetto contenente le statistiche generali del quiz
+\newline
+\item \method{createStatisticsStudents () : StudentsStatisticsQuiz}
+\newline
+ritorna un oggetto contenente le statistiche degli utenti che hanno risolto il quiz
+\newline
+\item \method{removeClass (indexOfClass : int) : void}
+\newline
+rimuove una classe da quelle che hanno accesso al quiz. Rimuovendo tutte le classi il quiz diventa pubblico
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfClass : int}
+\newline
+l'indice della classe da rimuovere
+\end{itemize}
+\item \method{removeKeyword (indexOfKeyword : int) : void}
+\newline
+rimuove una parola chiave da quelle che identificano il quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfKeyword : int}
+\newline
+l'indice della parola chiave da rimuovere
+\end{itemize}
+\item \method{removeQuestion (indexOfQuestion : int) : void}
+\newline
+rimuove una domanda dal quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfQuestion : int}
+\newline
+l'indice della domanda da rimuovere
+\end{itemize}
+\item \method{removeTopic (indexOfTopic : int) : void}
+\newline
+rimuove un argomento da quelli che identificano il quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfTopic : int}
+\newline
+l'indice della classe da rimuovere
+\end{itemize}
+\item \method{setDescription (newDescr : String) : void}
+\newline
+imposta la descrizione del quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newDescr : String}
+\newline
+la nuova descrizione del quiz
+\end{itemize}
+\item \method{setTitle (newTitle : String) : void}
+\newline
+imposta il titolo del quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newTitle : String}
+\newline
+il nuovo titolo del quiz
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Topics}}
 Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni domanda e a ogni quiz verranno poi associati i relativi argomenti.
 \begin{figure}[H]
@@ -2447,6 +2965,35 @@ Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni doma
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-topics.pdf}}
 \caption[Schema Classe Topics]{Schema Classe Quizzipedia::Server::ModelServer::Services::Topics}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{topics : String[]}
+\newline
+la lista degli argomenti esistenti
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addTopics (nameTopic : String) : void}
+\newline
+permettere di aggiungere un nuovo argomento a quelli esistenti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{nameTopic : String}
+\newline
+il nuovo argomento da aggiungere
+\end{itemize}
+\item \method{removeTopic (indexTopic : int) : void}
+\newline
+permette di rimuovere un argomento da quelli esistenti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexTopic : int}
+\newline
+l'indice dell'argomento da rimuovere
+\end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Services::Answers}}
 Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e delle domande svolte.
 \begin{figure}[H]
@@ -2454,6 +3001,252 @@ Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-server-modelserver-services-answers.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Services::Answers]{Schema Componente Quizzipedia::Server::ModelServer::Services::Answers}
 \end{figure}
+\subsubsection{Classe \cls{AnswerColumn}}
+Classe utilizzata da AnswerMatchingQ per salvare le risposte della domanda MatchingQ.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answercolumn.pdf}}
+\caption[Schema Classe AnswerColumn]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerColumn}
+\end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{givenAnswerCell : int[]}
+\newline
+le risposte date dall'utente in una colonna della domanda a collegamenti
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{checkColumn () : bool}
+\newline
+verifica l correttezza di una colonna data la risposta a una domanda a collegamenti
+\newline
+\item \method{getGivenAnswerCell () : int[]}
+\newline
+restituisce le risposte date dall'utente in una colonna della domanda a collegamento
+\newline
+\item \method{setGivenAnswerCell (answer : int[]) : void}
+\newline
+imposta, memorizzando correttamente, le risposte date dall'utente in una colonna della domanda a collegamenti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : int[]}
+\newline
+la risposta data dall'utente che verrà memorizzata
+\end{itemize}
+\end{itemize}
+\subsubsection{Classe \cls{AnswerCompletionQ}}
+Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answercompletionq.pdf}}
+\caption[Schema Classe AnswerCompletionQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerCompletionQ}
+\end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{givenAnswer : String[]}
+\newline
+la risposta data dall'utente
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{check () : bool}
+\newline
+concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a completamento
+\newline
+\item \method{getGivenAnswer () : String[]}
+\newline
+restituisce la risposta data dall'utente
+\newline
+\end{itemize}
+\subsubsection{Classe \cls{AnswerMatchingQ}}
+Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answermatchingq.pdf}}
+\caption[Schema Classe AnswerMatchingQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerMatchingQ}
+\end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{givenAnswerColumn : AnswerColumn[]}
+\newline
+le risposte data dall'utente per le varie colonne della domanda a collegamenti
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{check () : bool}
+\newline
+concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a collegamenti
+\newline
+\item \method{getGivenAnswerColumn () : AnswerColumn}
+\newline
+restituisce le risposte date dall'utente per una delle colonne della domanda a collegamenti
+\newline
+\item \method{setGivenAnswerColumn (answer : AnswerColumn) : void}
+\newline
+imposta le risposte date dall'utente per una delle colonne della domanda a collegamenti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : AnswerColumn}
+\newline
+le risposte date dall'utente per una delle colonne della domanda a collegnamenti
+\end{itemize}
+\end{itemize}
+\subsubsection{Classe \cls{AnswerMultipleChoiceQ}}
+Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoiceQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answermultiplechoiceq.pdf}}
+\caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerMultipleChoiceQ}
+\end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{givenAnswer : bool[]}
+\newline
+la risposta data dall'utente
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{check () : bool}
+\newline
+concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a acelta multipla
+\newline
+\item \method{getGivenAnswer () : bool[]}
+\newline
+restituisce la risposta data dall'utente
+\newline
+\end{itemize}
+\subsubsection{Classe \cls{AnswerQuestion}}
+Classe che si occupa di memorizzare le informazioni di un domanda risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answerquestion.pdf}}
+\caption[Schema Classe AnswerQuestion]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuestion}
+\end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{question : GenericQuestion}
+\newline
+la domanda a cui corrisponde la risposta data
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{<<abstract>>check () : bool}
+\newline
+il metodo è astratto e verrà concretizzato nelle sottoclassi. Serve a verificare la correttezza della risposta data per le varie tipologie di domande
+\newline
+\item \method{getQuestion () : GenricQuestion}
+\newline
+restituisce la domanda a cui corrisponde la risposta data
+\newline
+\end{itemize}
+\subsubsection{Classe \cls{AnswerQuiz}}
+Classe che si occupa di memorizzare le informazioni di un quiz completato e gestisce la verifica del suo superamento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answerquiz.pdf}}
+\caption[Schema Classe AnswerQuiz]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuiz}
+\end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{answerQuestion : AnswerQuestion[]}
+\newline
+sono le risposte date alle singole domande che compongono il quiz
+\item \attribute{completionDate : Date}
+\newline
+la data di risoluzione del quiz
+\item \attribute{quiz : Quiz}
+\newline
+è il Quiz a cui sono associate le risposte date dall'utente
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addAnswer (answer : AnswerQuestion) : void}
+\newline
+aggiunge la risposta a una delle domande del quiz alla lista delle risposte per il quiz corrente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : AnswerQuestion}
+\newline
+la risposta da aggiungere alla lista delle risposte del quiz
+\end{itemize}
+\item \method{check () : bool}
+\newline
+verifica la correttezza del quiz, confrontando le risposte date dall'utente con quelle corrette
+\newline
+\item \method{getAnswerQuestion () : AnswerQuestion}
+\newline
+restituisce la lista delle risposte alle varie domande del quiz
+\newline
+\item \method{getDate () : Date}
+\newline
+restituisce la data in cui il quiz è stato risolto
+\newline
+\item \method{getQuiz () : Quiz}
+\newline
+restituisce il Quiz che l'utente sta risolvendo
+\newline
+\item \method{removeAnswer (indexOfAnswer : int) : void}
+\newline
+rimuove la risposta data dall'utente a una domanda dalla lista delle risposte alle domande del quiz corrente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfAnswer : int}
+\newline
+l'indice della risposta da rimuovere dalla lista di risposte alle domande del quiz
+\end{itemize}
+\end{itemize}
+\subsubsection{Classe \cls{AnswerShortAnswerQ}}
+Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answershortanswerq.pdf}}
+\caption[Schema Classe AnswerShortAnswerQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerShortAnswerQ}
+\end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{givenAnswer : String}
+\newline
+la risposta data dall'utente
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{check () : bool}
+\newline
+concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda aperta
+\newline
+\item \method{getGivenAnswer () : String}
+\newline
+restituisce la risposta dell'utente
+\newline
+\end{itemize}
+\subsubsection{Classe \cls{AnswerTrueFalseQ}}
+Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answertruefalseq.pdf}}
+\caption[Schema Classe AnswerTrueFalseQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerTrueFalseQ}
+\end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{givenAnswer : bool}
+\newline
+la risposta data dall'utente alla domanda di tipo vero/falso
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{check () : bool}
+\newline
+concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda di tipo vero/falso
+\newline
+\item \method{getGivenAnswer () : bool}
+\newline
+restituisce la risposta data dall'utente
+\newline
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Services::Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
 \begin{figure}[H]
@@ -2468,6 +3261,63 @@ La classe descrive ogni singola riga (quindi ogni opzione) della colonna della d
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-cell.pdf}}
 \caption[Schema Classe Cell]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::Cell}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{attachment : String}
+\newline
+l'allegato contenuto nella cella
+\item \attribute{position : int}
+\newline
+la posizione corretta della cella
+\item \attribute{text : String}
+\newline
+il testo contenuto nella cella
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{getAttachment () : String}
+\newline
+permette di recuperare l'allegato della cella
+\newline
+\item \method{getPosition () : int}
+\newline
+permette di recuperare la posizione corretta della cella
+\newline
+\item \method{getText () : String}
+\newline
+permette di recuperare il testo della cella
+\newline
+\item \method{setAttachment (newAttachment : String) : void}
+\newline
+permette di sostituire l'allegato della cella
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newAttachment : String}
+\newline
+il nuovo allegato da inserire nella cella
+\end{itemize}
+\item \method{setPosition (position : int) : void}
+\newline
+permette di modificare la posizione corretta della cella
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{position : int}
+\newline
+la nuova posizione da dare alla cella
+\end{itemize}
+\item \method{setText (newText : String) : void}
+\newline
+permette di modificare il testo della cella
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newText : String}
+\newline
+il nuovo test da inserire nella cella
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Column}}
 La classe descrive le colonne della domanda a collegamenti.
 \begin{figure}[H]
@@ -2475,6 +3325,62 @@ La classe descrive le colonne della domanda a collegamenti.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-column.pdf}}
 \caption[Schema Classe Column]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::Column}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{correctAnswer : int[]}
+\newline
+il corretto ordinamento delle celle della colonna
+\item \attribute{text : Cell[]}
+\newline
+celle che compongono la colonna
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addCell (attachment : String, position : int, text : String) : void}
+\newline
+permette di aggiungere una nuova cella alla colonna di celle
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{attachment : String}
+\newline
+l'allegato della nuova cella da aggiungere
+\item \attribute{position : int}
+\newline
+la posizione della nuova cella da aggiungere
+\item \attribute{text : String}
+\newline
+il testo della nuova cella da aggiungere
+\end{itemize}
+\item \method{getCorrectAnswer () : int[]}
+\newline
+permette di recuperare l'ordine corretto delle celle della colonna
+\newline
+\item \method{getText () : Cell[]}
+\newline
+permette di recuperare le celle che compongono la colonna
+\newline
+\item \method{setCorrectAnswer (answer : int[]) : void}
+\newline
+permette di aggiornare il corretto ordinamento delle celle
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : int[]}
+\newline
+il corretto ordinamento delle celle della colonna
+\end{itemize}
+\item \method{setText (newText : Cell[]) : void}
+\newline
+permette di rimpiazzare completamente tutte le celle con delle celle nuove
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newText : Cell[]}
+\newline
+le nuove celle che sostituiranno le vecchie nella colonna
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CompletionQ}}
 Descrive le domande a completamento. Il docente fornirà un testo incompleto e una lista di possibili completamenti; lo studente dovrà inserire le parole adeguate nella giusta posizione.
 \begin{figure}[H]
@@ -2482,6 +3388,75 @@ Descrive le domande a completamento. Il docente fornirà un testo incompleto e u
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-completionq.pdf}}
 \caption[Schema Classe CompletionQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::CompletionQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{correctAnswer : String[]}
+\newline
+le risposte corrette della domanda CompletionQ
+\item \attribute{suggestions : String[]}
+\newline
+i suggerimenti della domanda CompletionQ
+\item \attribute{text : String}
+\newline
+il testo della domanda CompletionQ
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{createAnswerQuestion (answer : String[]) : AnswerCompletionQ}
+\newline
+permette di creare una AnswerCompletionQ che rappresenta una CompletionQ risolta da un utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : String[]}
+\newline
+le risposte dell'utente a questa domanda
+\end{itemize}
+\item \method{getSuggestion () : String[]}
+\newline
+permette di recuperare i suggerimenti della domanda CompletionQ
+\newline
+\item \method{removeSuggestion (index : int) : void}
+\newline
+permette di rimuovere un suggerimento della domanda
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{index : int}
+\newline
+la posizione del suggerimento da rimuovere
+\end{itemize}
+\item \method{setCorrectAnswer (correctAnswer : String[]) : void}
+\newline
+permette di aggiornare la risposta corretta della domanda CompletionQ
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{correctAnswer : String[]}
+\newline
+le nuove risposte corrette della domanda
+\end{itemize}
+\item \method{setSuggestion (suggestions : String[]) : void}
+\newline
+permette di inserire dei suggerimenti alla domanda CompletionQ
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{suggestions : String[]}
+\newline
+i nuovi suggerimenti della domanda
+\end{itemize}
+\item \method{setText (newText : String) : void}
+\newline
+permette di modificare il test della domanda CompletionQ
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newText : String}
+\newline
+il nuovo testo della domanda
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{GenericQuestion}}
 Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \begin{figure}[H]
@@ -2489,6 +3464,97 @@ Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-genericquestion.pdf}}
 \caption[Schema Classe GenericQuestion]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{author : Teacher}
+\newline
+l'autore della domanda
+\item \attribute{description : String}
+\newline
+la descrizione della domanda
+\item \attribute{difficulty : int}
+\newline
+la difficoltà della domanda
+\item \attribute{keywords : String[]}
+\newline
+le parole chiave della domanda
+\item \attribute{questionAttachment : String}
+\newline
+l'allegato della domanda
+\item \attribute{title : String}
+\newline
+il titolo della domanda
+\item \attribute{topic : String}
+\newline
+il topic della domanda
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{createStatisticsQuestion () : QuestionStatistics}
+\newline
+permette di creare un QuestionStatistics con le statistiche della domanda
+\newline
+\item \method{setDescription (newDescription : String) : void}
+\newline
+permette la modifica della descrizione della domanda
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newDescription : String}
+\newline
+la nuova descrizione della domanda
+\end{itemize}
+\item \method{setDifficulty (difficulty : int) : void}
+\newline
+permette la modifica della difficoltà della domanda
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{difficulty : int}
+\newline
+la nuova difficoltà della domanda
+\end{itemize}
+\item \method{setKeyword (keyword : String) : void}
+\newline
+permette di aggiungere una parola chiave alla domanda
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{keyword : String}
+\newline
+la nuova parola chiave della domanda
+\end{itemize}
+\item \method{setQuestionAttachment (attachment : String) : void}
+\newline
+permette di aggiungere un allegato alla domanda
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{attachment : String}
+\newline
+il nuovo allegato della domanda
+\end{itemize}
+\item \method{setTitle (newTitle : String) : void}
+\newline
+permette di modificare il titolo della domanda
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newTitle : String}
+\newline
+il nuovo titolo della domanda
+\end{itemize}
+\item \method{setTopic (newTopic : String) : void}
+\newline
+permette l'aggiunta di un topic alla domanda
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newTopic : String}
+\newline
+il nuovo topic della domanda
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MatchingQ}}
 La struttura descrive le domande a collegamento. L'utente dovrà formare la risposta collegando le entrate da un numero variabile di colonne.
 \begin{figure}[H]
@@ -2496,6 +3562,49 @@ La struttura descrive le domande a collegamento. L'utente dovrà formare la risp
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-matchingq.pdf}}
 \caption[Schema Classe MatchingQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::MatchingQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{column : Column[]}
+\newline
+le colonne della domanda
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addColumn (newColumn : Column) : void}
+\newline
+permette di aggiungere una coonna alla domanda MatchingQ
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newColumn : Column}
+\newline
+la nuova colonna della domanda
+\end{itemize}
+\item \method{createAnswerQuestion (answerColumn : AnswerColumn[]) : AnswerMatchingQ}
+\newline
+permette il salvataggio delle risposte dell'utente, sotto forma di AnswerMatchingQ
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answerColumn : AnswerColumn[]}
+\newline
+le AnswerColumn contenenti le risposte alla domanda
+\end{itemize}
+\item \method{getColumns () : Column[]}
+\newline
+permette di ottenere tutte le colonne della domanda
+\newline
+\item \method{setColumns (newColumn : Column[]) : void}
+\newline
+permette di sostituire tutte le colonne della domanda MatchingQ con delle nuove colonne
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newColumn : Column[]}
+\newline
+le nuove colonne della domanda che andranno a sostituire le vecchie
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MultipleChoiceQ}}
 La struttura descrive le domande a scelta multipla; viene presentata una lista di opzioni tra cui scegliere quelle corrette.
 \begin{figure}[H]
@@ -2503,6 +3612,71 @@ La struttura descrive le domande a scelta multipla; viene presentata una lista d
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-multiplechoiceq.pdf}}
 \caption[Schema Classe MultipleChoiceQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::MultipleChoiceQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{answerAttachments : String[]}
+\newline
+gli allegati delle risposte della domanda
+\item \attribute{answers : String[]}
+\newline
+le risposte della domanda
+\item \attribute{correctAnswer : bool[]}
+\newline
+le soluzione della domanda
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{createAnswerQuestion (answer : bool[]) : AnswerMultipleChoicheQ}
+\newline
+permette di creare un AnswerMultipleChoicheQ con le risposte dell'utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : bool[]}
+\newline
+le risposte dell'utente alla domanda
+\end{itemize}
+\item \method{getAttachment () : String[]}
+\newline
+permette di recuperare gli allegati della domanda MultipleChoiceQ
+\newline
+\item \method{setAnswer (answer : String, position : int) : void}
+\newline
+permette di modificare una risposta corretta della domanda MultipleChoiceQ
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : String}
+\newline
+il testo della risposta
+\item \attribute{position : int}
+\newline
+la posizione della risposta
+\end{itemize}
+\item \method{setAttachment (attachment : String, position : int) : void}
+\newline
+permette di aggiungere un allegato alla domanda MultipleChoiceQ
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{attachment : String}
+\newline
+il nuovo allegato
+\item \attribute{position : int}
+\newline
+la posizione del nuovo allegato
+\end{itemize}
+\item \method{setCorrectAnswer (correctAnswers : bool[]) : void}
+\newline
+permette di inserire le nuove risposte corrette alla domanda MultipleChoiceQ che sostituiranno le vecchie
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{correctAnswers : bool[]}
+\newline
+le nuove risposte corrette
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{ShortAnswerQ}}
 La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste in un termine o una frase specifici.
 \begin{figure}[H]
@@ -2510,6 +3684,35 @@ La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-shortanswerq.pdf}}
 \caption[Schema Classe ShortAnswerQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::ShortAnswerQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{correctAnswer : String}
+\newline
+la risposta corretta della domanda ShortAnswerQ
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{createAnswerQuestion (answer : String) : AnswerShortAnswerQ}
+\newline
+permette di creare un AnswerShortAnswerQ con le risposte dell'utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : String}
+\newline
+la risposta alla domanda ShortAnswerQ dell'utente
+\end{itemize}
+\item \method{setCorrectAnswer (newCorrectAnswer : String) : void}
+\newline
+permette di modificare la risposta corretta della domanda ShortAnswerQ
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newCorrectAnswer : String}
+\newline
+la nuova risposta corretta della domanda ShortAnswerQ
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{TrueFalseQ}}
 Viene descritta la struttura delle domande che prevedono di decidere la veridicità di un'affermazione.
 \begin{figure}[H]
@@ -2517,6 +3720,35 @@ Viene descritta la struttura delle domande che prevedono di decidere la veridici
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-truefalseq.pdf}}
 \caption[Schema Classe TrueFalseQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Questions::TrueFalseQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{correctAnswer : bool}
+\newline
+la risposta corretta alla domanda TrueFalseQ
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{createAnswerQuestion (answer : bool) : AnswerTrueFalseQ}
+\newline
+permette di creare la AnswerTrueFalseQ che contiene la risposta dell'utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : bool}
+\newline
+la risposta dell'utente alla domanda TrueFalseQ
+\end{itemize}
+\item \method{setCorrectAnswer (answer : bool) : void}
+\newline
+permette di modificare la risposta corretta della domanda TrueFalseQ
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : bool}
+\newline
+la nuova risposta corretta della domanda TrueFalseQ
+\end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Statistics}}
 Qui sono raccolte le classi contenenti le informazioni sulle statistiche di domande, quiz e studenti di ogni classe.
 \begin{figure}[H]
@@ -2531,6 +3763,26 @@ La classe raccoglie le statistiche principali riguardanti una singola domanda. D
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-questionstatistics.pdf}}
 \caption[Schema Classe QuestionStatistics]{Schema Classe Quizzipedia::Server::ModelServer::Statistics::QuestionStatistics}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{quizNumber : int}
+\newline
+il numero di quiz in cui è presente la domanda
+\item \attribute{successRate : double}
+\newline
+la percentuale di utenti che rispondono correttamente alla domanda
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{getQuizNumber () : int}
+\newline
+restituisce il numero di quiz in cui la domanda è presente
+\newline
+\item \method{getSuccessRate () : double}
+\newline
+restituisce la percentuale di utenti che risponde correttamente a questa domanda
+\newline
+\end{itemize}
 \subsubsection{Classe \cls{QuizStatistics}}
 La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qui è poi possibile ottenere il quiz in questione.
 \begin{figure}[H]
@@ -2538,6 +3790,60 @@ La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qu
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-quizstatistics.pdf}}
 \caption[Schema Classe QuizStatistics]{Schema Classe Quizzipedia::Server::ModelServer::Statistics::QuizStatistics}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{averageResult : double}
+\newline
+il risultato medio ottenuto da chi ha già risolto il quiz
+\item \attribute{successRate : double}
+\newline
+la percentuale di utenti che ha risolto il quiz con successo
+\item \attribute{timesSolved : int}
+\newline
+il numero di volte che il quiz è stato svolto
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{getAverageResult () : double}
+\newline
+restituisce il risultato medio degli utenti che hanno già svolto il quiz
+\newline
+\item \method{getSuccessRate () : double}
+\newline
+restituisce la percentuale di utenti che ha risolto correttamente il quiz
+\newline
+\item \method{getTimesSolved () : int}
+\newline
+restituisce il numero di volte che un quiz è stato svolto
+\newline
+\end{itemize}
+\subsubsection{Classe \cls{StudentsStatisticsQuiz}}
+Classe usata per visualizzare gli studenti che hanno svolto un quiz specifico e i loro voti per il quiz stesso.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-studentsstatisticsquiz.pdf}}
+\caption[Schema Classe StudentsStatisticsQuiz]{Schema Classe Quizzipedia::Server::ModelServer::Statistics::StudentsStatisticsQuiz}
+\end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{results : double[]}
+\newline
+i risultati ottenuti dagli studenti che hanno risolto il quiz
+\item \attribute{students : Student[]}
+\newline
+gli studenti che hanno svolto il quiz
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{getResults () : double[]}
+\newline
+restituisce la lista dei risultati degli studenti che hanno svolto il quiz
+\newline
+\item \method{getStudents () : Student[]}
+\newline
+ottiene la lista degli studenti che hanno svolto il quiz
+\newline
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Users}}
 Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema.
 \begin{figure}[H]
@@ -2552,6 +3858,49 @@ Questa classe gestisce le informazioni di autenticazione comuni a tutti gli uten
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-authenticationdata.pdf}}
 \caption[Schema Classe AuthenticationData]{Schema Classe Quizzipedia::Server::ModelServer::Users::AuthenticationData}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{firstName : String}
+\newline
+contiene il nome dell'utente registrato
+\item \attribute{lastName : String}
+\newline
+contiene il cognome dell'utente registrato
+\item \attribute{mail : String}
+\newline
+contiene la mail dell'utente registrato
+\item \attribute{password : String}
+\newline
+contiene la password criptata dell'utente registrato
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{getFirstName () : String}
+\newline
+permette di recuperare il nome dell'utente registrato
+\newline
+\item \method{getLastName () : String}
+\newline
+permette di recuperare il cognome dell'utente registrato
+\newline
+\item \method{getMail () : String}
+\newline
+permette di recuperare la mail dell'utente registrato
+\newline
+\item \method{setPassword (newPsw : String, oldPsw : String) : void}
+\newline
+permette di modificare la password dell'account di un utente registrato
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newPsw : String}
+\newline
+contiene la nuova password dell'utente
+\item \attribute{oldPsw : String}
+\newline
+contiene la vecchia password dell'utente registrato, necessaria per cambiarla con la nuova
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Director}}
 Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per ogni ente del sistema.
 \begin{figure}[H]
@@ -2559,6 +3908,17 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-director.pdf}}
 \caption[Schema Classe Director]{Schema Classe Quizzipedia::Server::ModelServer::Users::Director}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{acceptStudent () : void}
+\newline
+permette di inserire uno studente nell'istituzione posseduta dal direttore
+\newline
+\item \method{acceptTeacher () : void}
+\newline
+permette di inserire uno studente nell'istituzione posseduta dal direttore
+\newline
+\end{itemize}
 \subsubsection{Classe \cls{NoRole}}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
 \begin{figure}[H]
@@ -2566,6 +3926,43 @@ Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-norole.pdf}}
 \caption[Schema Classe NoRole]{Schema Classe Quizzipedia::Server::ModelServer::Users::NoRole}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{quizProfile : AnswerQuiz[]}
+\newline
+è il profilo che raccoglie i quiz già risolti dall'utente e le risposte che l'utente aveva dato
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
+\newline
+aggiunge un quiz svolto e le risposte data dall'utente allo storico dei quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{quiz : AnswerQuiz}
+\newline
+la soluzione che si desidera aggiungere alla lista dei quiz già svolti
+\end{itemize}
+\item \method{getQuizProfile () : AnswerQuiz}
+\newline
+restituisce la list dei quiz svolti dall'utente e delle relative soluzioni
+\newline
+\item \method{loadProfileQuiz () : void}
+\newline
+carica e assegna a quizProfile la lista dei quiz già svolti dall'utente e dei loro esiti
+\newline
+\item \method{removeQuizFromProfile (indexOfQuiz : int) : void}
+\newline
+rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti da un utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfQuiz : int}
+\newline
+l'indice del quiz che si desidera rimuovere dallo storico
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Student}}
 Rappresenta uno studente del sistema e implementa le sue funzioni specifiche oltre a quelle ereditate da utente.
 \begin{figure}[H]
@@ -2573,6 +3970,43 @@ Rappresenta uno studente del sistema e implementa le sue funzioni specifiche olt
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-student.pdf}}
 \caption[Schema Classe Student]{Schema Classe Quizzipedia::Server::ModelServer::Users::Student}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{quizProfile : AnswerQuiz}
+\newline
+lo storico dei quiz svolti con relativa soluzione
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
+\newline
+aggiunge un quiz e la relativa soluzione allo storico dei quiz svolti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{quiz : AnswerQuiz}
+\newline
+il quiz che si intende aggiungere allo storico
+\end{itemize}
+\item \method{getQuizProfile () : AnswerQuiz[]}
+\newline
+restituisce lo storico dei quiz svolti dall'utente con relative soluzioni
+\newline
+\item \method{loadQuizProfile () : void}
+\newline
+carica lo storico dei quiz svolti dall'utente e dei loro esiti
+\newline
+\item \method{removeQuizFromProfile (indexOfQuiz : int) : void}
+\newline
+rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfQuiz : int}
+\newline
+l'indice del quiz che si intende rimuovere dallo storico
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Teacher}}
 Rappresenta un docente del sistema e ne implementa le funzionalità specifiche in aggiunta a quelle comuni a tutti gli utenti.
 \begin{figure}[H]
@@ -2580,6 +4014,47 @@ Rappresenta un docente del sistema e ne implementa le funzionalità specifiche i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-teacher.pdf}}
 \caption[Schema Classe Teacher]{Schema Classe Quizzipedia::Server::ModelServer::Users::Teacher}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{ownQuiz : Quiz[]}
+\newline
+la lista dei quiz creati dall'utente
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addQuiz (newQuiz : Quiz) : void}
+\newline
+aggiunge un quiz alla lista dei quiz creati dal docente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{newQuiz : Quiz}
+\newline
+il quiz che si intende aggiungere
+\end{itemize}
+\item \method{getOwnQuiz () : Quiz[]}
+\newline
+restituisce la lista dei quiz creati dal docente
+\newline
+\item \method{getQuizStatistics () : QuizStatistics}
+\newline
+restituisce le statistiche generali del quiz richiesto
+\newline
+\item \method{getStudentsStatistics () : StudentsStatisticsQuiz}
+\newline
+restituisce le statistiche degli utenti che hanno risolto il quiz richiesto
+\newline
+\item \method{removeQuiz (indexOfQuiz : int) : void}
+\newline
+rimuove un quiz dalla lista di quiz creati dall'utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfQuiz : int}
+\newline
+l'indice del quiz che si intende rimuovere
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{User}}
 Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli utenti.
 \begin{figure}[H]
@@ -2587,6 +4062,23 @@ Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli ut
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-user.pdf}}
 \caption[Schema Classe User]{Schema Classe Quizzipedia::Server::ModelServer::Users::User}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{authenticationData : AuthenticationData}
+\newline
+raccoglie le informazioni di base dell'utente, necessarie alla sua autenticazione. Sono comuni in tutta la gerarchia
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{getAuthenticationData () : AuthenticationData}
+\newline
+restituisce i dati necessari all'autenticazione dell'utente
+\newline
+\item \method{getMail () : String}
+\newline
+restituisce la mail dell'utente, che è univoca
+\newline
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer}}
 Questo componente contiene tutti i servizi che permettono di isolare il più possibile l'accesso al database non relazionale. Avviene sempre un controllo dell'utente che genera una determinata richiesta al server affinchè sia abilitato per farla. 
 Una volta ottenuta l'informazione richiesta dal database, lo stesso controller si occuperà di inviarla al client richiedente.
@@ -2705,12 +4197,15 @@ Permette la creazione di una nuova classe.
 \end{figure}
 \paragraph{Metodi}
 \begin{itemize}
-\item \method{adder (classname : String) : void}
+\item \method{adder (class : JSON, classname : String) : void}
 \newline
 permette la creazione di una nuova classe
 \newline
 \bold{Parametri} :
 \begin{itemize}
+\item \attribute{class : JSON}
+\newline
+struttura contenente le informazioni della classe
 \item \attribute{classname : String}
 \newline
 il nome da attribuire alla classe
@@ -2745,18 +4240,18 @@ Permette la modifica delle informazioni di base di una determinata classe.
 \end{figure}
 \paragraph{Metodi}
 \begin{itemize}
-\item \method{updater (class : JSON, classname : String) : void}
+\item \method{updater (classname : String, description : String) : void}
 \newline
 permette la modifica delle informazioni di una classe
 \newline
 \bold{Parametri} :
 \begin{itemize}
-\item \attribute{class : JSON}
-\newline
-struttura dati contenente le informazioni da modificare
 \item \attribute{classname : String}
 \newline
-il nome della classe damodificare
+la classe da modificare
+\item \attribute{description : String}
+\newline
+la descrizione da modificare
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{FromClassRemover}}
@@ -2861,15 +4356,18 @@ Permette la modifica dell'ente da parte del responsabile.
 \end{figure}
 \paragraph{Metodi}
 \begin{itemize}
-\item \method{update (company : JSON) : void}
+\item \method{update (companyname : String, newname : String) : void}
 \newline
-permette al modifica di un ente
+permette la modifica del nome di un ente
 \newline
 \bold{Parametri} :
 \begin{itemize}
-\item \attribute{company : JSON}
+\item \attribute{companyname : String}
 \newline
 nome dell'ente da modificare
+\item \attribute{newname : String}
+\newline
+nuovo nome da assegnare all'ente
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer::ProfileManager}}
@@ -2940,29 +4438,6 @@ ritorna tutte le proprieinformazioni personali
 \item \attribute{email : String}
 \newline
 email dell'utente che vuole vedere le proprie informazioni personali
-\end{itemize}
-\end{itemize}
-\subsubsection{Classe \cls{PersonalDataSetter}}
-Permette ad un utente la modifica delle informazioni personali.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personaldatasetter.pdf}}
-\caption[Schema Classe PersonalDataSetter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter}
-\end{figure}
-\paragraph{Metodi}
-\begin{itemize}
-\item \method{setData (data : JSON, email : String) : void}
-\newline
-permette la modifica delle informazioni personali
-\newline
-\bold{Parametri} :
-\begin{itemize}
-\item \attribute{data : JSON}
-\newline
-i dati da modificare
-\item \attribute{email : String}
-\newline
-email dell'utente che vuole modificare i propri dati personali
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{PersonalQuizFetcher}}
