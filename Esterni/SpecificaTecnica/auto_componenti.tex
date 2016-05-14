@@ -1808,6 +1808,62 @@ Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Services::Answers]{Schema Componente Quizzipedia::Server::ModelServer::Services::Answers}
 \end{figure}
+\subsubsection{Classe \cls{AnswerColumn}}
+Classe utilizzata da AnswerMatchingQ per salvare le risposte della domanda MatchingQ.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answercolumn.pdf}}
+\caption[Schema Classe AnswerColumn]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerColumn}
+\end{figure}
+\subsubsection{Classe \cls{AnswerCompletionQ}}
+Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answercompletionq.pdf}}
+\caption[Schema Classe AnswerCompletionQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerCompletionQ}
+\end{figure}
+\subsubsection{Classe \cls{AnswerMatchingQ}}
+Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answermatchingq.pdf}}
+\caption[Schema Classe AnswerMatchingQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerMatchingQ}
+\end{figure}
+\subsubsection{Classe \cls{AnswerMultipleChoiceQ}}
+Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoiceQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answermultiplechoiceq.pdf}}
+\caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerMultipleChoiceQ}
+\end{figure}
+\subsubsection{Classe \cls{AnswerQuestion}}
+Classe che si occupa di memorizzare le informazioni di un domanda risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answerquestion.pdf}}
+\caption[Schema Classe AnswerQuestion]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuestion}
+\end{figure}
+\subsubsection{Classe \cls{AnswerQuiz}}
+Classe che si occupa di memorizzare le informazioni di un quiz completato e gestisce la verifica del suo superamento.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answerquiz.pdf}}
+\caption[Schema Classe AnswerQuiz]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuiz}
+\end{figure}
+\subsubsection{Classe \cls{AnswerShortAnswerQ}}
+Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answershortanswerq.pdf}}
+\caption[Schema Classe AnswerShortAnswerQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerShortAnswerQ}
+\end{figure}
+\subsubsection{Classe \cls{AnswerTrueFalseQ}}
+Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ risolta.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answertruefalseq.pdf}}
+\caption[Schema Classe AnswerTrueFalseQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerTrueFalseQ}
+\end{figure}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Services::Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
 \begin{figure}[H]
@@ -1967,6 +2023,13 @@ La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qu
 \begin{itemize}
 \item usata da \cls{Quizzipedia::Server::ControllerServer::StatisticsManager::QuizStatisticsFetcher} per 
 \end{itemize}
+\subsubsection{Classe \cls{StudentsStatisticsQuiz}}
+Classe usata per visualizzare gli studenti che hanno svolto un quiz specifico e i loro voti per il quiz stesso.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-studentsstatisticsquiz.pdf}}
+\caption[Schema Classe StudentsStatisticsQuiz]{Schema Classe Quizzipedia::Server::ModelServer::Statistics::StudentsStatisticsQuiz}
+\end{figure}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Users}}
 Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema.
 \begin{figure}[H]
@@ -2072,7 +2135,6 @@ Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli ut
 \item usata da \cls{Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher} per 
-\item usata da \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter} per 
 \item usata da \cls{Quizzipedia::Server::ModelServer::Users::Director} per 
 \item usata da \cls{Quizzipedia::Server::ModelServer::Users::NoRole} per 
 \item usata da \cls{Quizzipedia::Server::ModelServer::Users::Student} per 
@@ -2442,22 +2504,6 @@ Ritorna tutte le informazioni personali riferite all'utente che ne effettua la r
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personaldatafetcher.pdf}}
 \caption[Schema Classe PersonalDataFetcher]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher}
-\end{figure}
-\paragraph{Relazioni con altre classi}
-\subparagraph{Entranti}
-\begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ProfileRouter} per aggiungi
-\end{itemize}
-\subparagraph{Uscenti}
-\begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Users::User} per 
-\end{itemize}
-\subsubsection{Classe \cls{PersonalDataSetter}}
-Permette ad un utente la modifica delle informazioni personali.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personaldatasetter.pdf}}
-\caption[Schema Classe PersonalDataSetter]{Schema Classe Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter}
 \end{figure}
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
@@ -3046,7 +3092,6 @@ Invocato dal client per interagire con ProfileManager.
 \item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter} per aggiungi
 \item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter} per aggiungi
 \item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataSetter} per aggiungi
 \item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher} per aggiungi
 \end{itemize}
 \subsubsection{Classe \cls{QuestionRouter}}
