@@ -2064,7 +2064,7 @@
 \begin{enumerate}
 \item Creazione risposta (UC2.10.5.1).
 \end{enumerate}
-\item \textbf{Descrizione}: il docente deve poter creare una nuova domanda a riposta multipla.
+\item \textbf{Descrizione}: il docente deve poter creare una nuova domanda a riposta multipla, inserendo le possibili risposte e specificando se sono corrette o errate.
 \item \textbf{Precondizione}: il docente è stato riconosciuto e vuole creare una nuova domanda a risposta multipla.
 \item \textbf{Postcondizione}: il docente ha creato una nuova domanda a risposta multipla.
 \item \textbf{Specializzazione di}:
@@ -2083,22 +2083,22 @@
 \item \textbf{Scenario principale}:
 \begin{enumerate}
 \item Upload file multimediale (UC2.10.5.1.1);
-\item Casella di testo (UC2.10.5.1.2);
+\item Creazione casella di testo (UC2.10.5.1.2);
 \item Selezione veridicità della risposta (UC2.10.5.1.3).
 \end{enumerate}
-\item \textbf{Descrizione}: il docente deve poter creare risposte di vario tipo ad esempio: risposte testuali o con immagini o con video o con audio e successivamente indicare quali sono le risposte corrette.
+\item \textbf{Descrizione}: il docente deve poter creare risposte di tipo testuale o multimediale (immagine, audio, video). Per creare una risposta di tipo testuale, il docente potrà creare una casella di testo e scrivere liberamente il testo della risposta, mentre per creare una risposta di tipo multimediale il docente potrà effettuare l'upload del file desiderato. In entrambi i casi è necessario che l'utente indichi la correttezza della risposta creata..
 \item \textbf{Precondizione}: il docente ha iniziato la creazione di una domanda a risposta multipla e non ha ancora creato le risposte alla domanda.
 \item \textbf{Postcondizione}: il docente ha creato le risposte della domanda a risposta multipla.
 \end{itemize}
 \subsubsection{UC2.10.5.1.1 Upload file multimediale}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente esegue l'upload di una immagine o di un video o di un file audio.
-\item \textbf{Descrizione}: il docente deve poter eseguire l'upload di una immagine o di un video o di un file audio.
-\item \textbf{Precondizione}: il docente ha iniziato a creare le risposte della domanda a risposta multipla ma non ha ancora eseguito l'upload del file multimediale.
-\item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale.
+\item \textbf{Scenario principale}: il docente esegue l'upload di un'immagine, un video o un file audio.
+\item \textbf{Descrizione}: il docente deve poter eseguire l'upload di un'immagine, un video o un file audio per creare una risposta di tipo multimediale.
+\item \textbf{Precondizione}: il docente ha iniziato a creare le risposte della domanda a risposta multipla ma non ha ancora creato la risposta multimediale desiderata.
+\item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale, creando la risposta di tipo multimediale.
 \end{itemize}
-\subsubsection{UC2.10.5.1.2 Casella di testo}
+\subsubsection{UC2.10.5.1.2 Creazione casella di testo}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente scrive la risposta testuale nella casella di testo.
@@ -2106,17 +2106,17 @@
 \begin{itemize}
 \item Selezione veridicità della risposta (UC2.10.5.1.3).
 \end{itemize}
-\item \textbf{Descrizione}: il docente deve poter inserire la risposta testuale nella casella di testo.
-\item \textbf{Precondizione}: il docente ha iniziato a creare le risposte della domanda a risposta multipla ma non ha ancora inserito il testo della risposta.
-\item \textbf{Postcondizione}: il docente ha inserito il testo della risposta.
+\item \textbf{Descrizione}: il docente deve poter creare una casella di testo e scrivere la risposta desiderata al suo interno, così creando una risposta di tipo testuale.
+\item \textbf{Precondizione}: il docente ha iniziato a creare le risposte della domanda a risposta multipla ma non ha ancora creato la risposta di tipo testuale desiderata.
+\item \textbf{Postcondizione}: il docente ha inserito il testo della risposta, creando la risposta di tipo testuale.
 \end{itemize}
 \subsubsection{UC2.10.5.1.3 Selezione veridicità della risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente seleziona la veridicità della risposta che sta creando.
-\item \textbf{Descrizione}: il docente deve selezionare la veridicità della risposta che sta creando.
-\item \textbf{Precondizione}: il docente sta creando la risposta della domanda a risposta multipla ma non ha ancora selezionato la veridicità della risposta.
-\item \textbf{Postcondizione}: il docente ha indicato la veridicità della risposta.
+\item \textbf{Scenario principale}: il docente seleziona la correttezza della risposta che ha creato.
+\item \textbf{Descrizione}: il docente deve selezionare la correttezza della risposta, di tipo testuale o multimediale, che ha creato.
+\item \textbf{Precondizione}: il docente ha creato una risposta alla domanda e non ha ancora selezionato la correttezza della risposta.
+\item \textbf{Postcondizione}: il docente ha indicato la correttezza della risposta creata.
 \end{itemize}
 \subsubsection{UC2.10.6 Creazione domanda a collegamenti}
 \begin{figure}[H]
@@ -2431,7 +2431,7 @@
 \item Modificare una risposta (UC2.10.13.2);
 \item Eliminare una risposta (UC2.10.13.3).
 \end{enumerate}
-\item \textbf{Descrizione}: il docente deve poter modificare una domanda a risposta multipla da lui creata.
+\item \textbf{Descrizione}: il docente deve poter modificare una domanda a risposta multipla da lui creata, aggiungendo, modificando e rimuovendo le risposte esistenti.
 \item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda a risposta multipla da lui creata.
 \item \textbf{Postcondizione}: il docente ha modificato una domanda a risposta multipla.
 \item \textbf{Specializzazione di}:
@@ -2453,41 +2453,41 @@
 \item Inserimento risposta testuale (UC2.10.13.1.2);
 \item Selezione veridicità della risposta (UC2.10.13.1.3).
 \end{enumerate}
-\item \textbf{Descrizione}: il docente può aggiungere una nuova risposta alla domanda che sta modificando.
+\item \textbf{Descrizione}: il docente può aggiungere una nuova risposta, di tipo testuale o multimediale, alla domanda che sta modificando.
 \item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a risposta multipla ma non ha ancora aggiunto una nuova risposta.
 \item \textbf{Postcondizione}: il docente ha aggiunto la nuova risposta.
 \end{itemize}
 \subsubsection{UC2.10.13.1.1 Upload file multimediale della risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente esegue l'upload di una immagine o di un video o di un file audio.
+\item \textbf{Scenario principale}: il docente esegue l'upload di un'immagine, un video o un file audio.
 \item \textbf{Inclusioni}:
 \begin{itemize}
 \item Selezione veridicità della risposta (UC2.10.13.1.3).
 \end{itemize}
-\item \textbf{Descrizione}: il docente deve poter eseguire l'upload di una immagine o di un video o di un file audio.
-\item \textbf{Precondizione}: il docente sta inserendo una nuova risposta  ma non ha ancora eseguito l'upload del file multimediale.
+\item \textbf{Descrizione}: il docente deve poter eseguire l'upload di un'immagine, un video o un file audio, creando una risposta di tipo multimediale.
+\item \textbf{Precondizione}: il docente sta inserendo una nuova risposta e non ha ancora eseguito l'upload del file multimediale.
 \item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale della risposta.
 \end{itemize}
 \subsubsection{UC2.10.13.1.2 Inserimento risposta testuale}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente inserisce la risposta testuale.
+\item \textbf{Scenario principale}: il docente inserisce il testo della risposta.
 \item \textbf{Inclusioni}:
 \begin{itemize}
 \item Selezione veridicità della risposta (UC2.10.13.1.3).
 \end{itemize}
-\item \textbf{Descrizione}: il docente deve poter inserire la risposta testuale.
-\item \textbf{Precondizione}: il docente sta inserendo una nuova risposta ma non ha ancora inserito la risposta testuale.
-\item \textbf{Postcondizione}: il docente ha inserito la risposta testuale.
+\item \textbf{Descrizione}: il docente deve poter creare una casella di testo e scrivere il testo desiderato, creando una risposta di tipo testuale.
+\item \textbf{Precondizione}: il docente sta inserendo una nuova risposta e non ha ancora creato la risposta di tipo testuale.
+\item \textbf{Postcondizione}: il docente ha creato la risposta di tipo testuale e ne ha inserito il testo.
 \end{itemize}
 \subsubsection{UC2.10.13.1.3 Selezione veridicità della risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente seleziona la veridicità della risposta che ha aggiunto.
-\item \textbf{Descrizione}: il docente deve selezionare la veridicità della risposta che ha aggiunto.
-\item \textbf{Precondizione}: il docente sta inserendo una nuova risposta ma non ha ancora selezionato la veridicità della risposta.
-\item \textbf{Postcondizione}: il docente ha selezionato la veridicità della risposta.
+\item \textbf{Scenario principale}: il docente seleziona la corretezza della risposta che ha aggiunto.
+\item \textbf{Descrizione}: il docente deve selezionare la correttezza della risposta, di tipo testuale o multimediale, che ha aggiunto.
+\item \textbf{Precondizione}: il docente sta inserendo una nuova risposta ma non ha ancora selezionato la correttezza della risposta.
+\item \textbf{Postcondizione}: il docente ha selezionato la correttezza della risposta.
 \end{itemize}
 \subsubsection{UC2.10.13.2 Modificare una risposta}
 \begin{figure}[H]
@@ -2510,39 +2510,34 @@
 \subsubsection{UC2.10.13.2.1 Upload del file multimediale}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente sostituisce il file multimediale attuale della risposta con un altro eseguendo un upload del file.
-\item \textbf{Inclusioni}:
-\begin{itemize}
-\item Selezione veridicità della risposta (UC2.10.5.1.3).
-\end{itemize}
-\item \textbf{Descrizione}: il docente può sostituire il file multimediale attuale della risposta con un altro eseguendo un upload del file
-.
-\item \textbf{Precondizione}: il docente sta modificando una risposta ma non ha ancora sostituito il file multimediale attuale della risposta.
-\item \textbf{Postcondizione}: il docente ha eseguito l'upload sostituendo il file multimediale, della risposta, precedente.
+\item \textbf{Scenario principale}: il docente sostituisce il file multimediale della risposta.
+\item \textbf{Descrizione}: il docente può sostituire il file multimediale attuale della risposta, eseguendo l'upload di un file diverso.
+\item \textbf{Precondizione}: il docente sta modificando una risposta ma non ne ha ancora sostituito il file multimediale.
+\item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale della risposta, sostituendo quello precedente.
 \end{itemize}
 \subsubsection{UC2.10.13.2.2 Modifica veridicità risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente modifica la veridicità della risposta.
-\item \textbf{Descrizione}: il docente può modificare la veridicità della risposta.
-\item \textbf{Precondizione}: il docente sta modificando una risposta ma non ha ancora cambiato la veridicità della risposta.
-\item \textbf{Postcondizione}: il docente ha modificato la veridicità della risposta.
+\item \textbf{Scenario principale}: il docente modifica la correttezza della risposta.
+\item \textbf{Descrizione}: il docente può modificare la correttezza di una risposta esistente.
+\item \textbf{Precondizione}: il docente sta modificando una risposta e non ha ancora cambiato la correttezza della risposta.
+\item \textbf{Postcondizione}: il docente ha cambiato la correttezza della risposta che sta modificando.
 \end{itemize}
 \subsubsection{UC2.10.13.2.3 Modifica testo risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente modifica la risposta testuale attuale.
-\item \textbf{Descrizione}: il docente può modificare la risposta testuale attuale.
-\item \textbf{Precondizione}: il docente sta modificando una risposta ma non ha ancora cambiato la risposta testuale.
-\item \textbf{Postcondizione}: il docente ha modificato la risposta testuale.
+\item \textbf{Scenario principale}: il docente modifica il testo della risposta.
+\item \textbf{Descrizione}: il docente può modificare i contenuti della casella di testo di una risposta di tipo testuale.
+\item \textbf{Precondizione}: il docente sta modificando una risposta e non ha ancora cambiato il testo della risposta testuale.
+\item \textbf{Postcondizione}: il docente ha cambiato il testo della risposta testuale.
 \end{itemize}
 \subsubsection{UC2.10.13.3 Eliminare una risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente elimina la risposta della domanda a risposta multipla.
-\item \textbf{Descrizione}: il docente deve poter eliminare una risposta dalla domanda a risposta multipla da lui creata.
-\item \textbf{Precondizione}: il docente sta modificando una domanda a risposta multipla da lui creata ma non ha ancora eliminato una risposta.
-\item \textbf{Postcondizione}: il docente ha eliminato una risposta dalla domanda che stava modificando.
+\item \textbf{Scenario principale}: il docente elimina la risposta della domanda che sta modificando.
+\item \textbf{Descrizione}: il docente deve poter eliminare una risposta dalla domanda che sta modificando.
+\item \textbf{Precondizione}: il docente sta modificando una domanda a risposta multipla da lui creata, ma non ha ancora eliminato la risposta desiderata.
+\item \textbf{Postcondizione}: il docente ha eliminato la risposta desiderata dalla domanda che stava modificando.
 \end{itemize}
 \subsubsection{UC2.10.14 Modifica domanda a risposta aperta}
 \begin{figure}[H]
