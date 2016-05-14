@@ -1288,7 +1288,7 @@ accesso alla struttura della classe e potere quindi svolgere correttamente opera
 essa
 \item usa \cls{Quizzipedia::Client::ModelClient::Organizations::Institution} per avere accesso alla struttura dell'istituto e caricare correttamente l'istituto corrente
 \item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlPagination} per visualizzare in modo ordinato e dinamico la lista delle classi. Dalla lista è poi possibile effettuare le operazioni di rimozione e modifica
-\item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlOrganization::MyClass} per memorizzare nello $scope le informazioni necessarie alla modifica, eliminazione o creazione di una classe
+\item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlOrganization::MyClass} per memorizzare nello \$scope le informazioni necessarie alla modifica, eliminazione o creazione di una classe
 \end{itemize}
 \subsubsection{Classe \cls{CtrlPagination}}
 Questa classe permette di creare e gestire dinamicamente la paginazione quando viene visualizzata la lista delle classe presenti in un ente.
@@ -1313,7 +1313,7 @@ Sono presenti i metodi necessari all'inserimento e alla rimozione di uno student
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlInstitution} per memorizzare nello $scope le informazioni necessarie alla modifica, eliminazione o creazione di una classe
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlInstitution} per memorizzare nello \$scope le informazioni necessarie alla modifica, eliminazione o creazione di una classe
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ViewModelClient::CtrlRequests}}
 Questo componente contiene classi necessarie alla gestione delle richieste di ruolo o classe fatte da un utente autenticato.
@@ -1529,7 +1529,7 @@ La classe gestisce il recupero della password in caso di smarrimento.
 \item usata da \cls{Quizzipedia::Client::ViewClient::ViewUsers::RecoveryPw} per passare al sistema le informazioni immesse dall'utente necessarie per il recupero della password
 \end{itemize}
 \subsubsection{Classe \cls{CtrlRegistration}}
-Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'oggetto MyUser, definito all'interno dello $scope.
+Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'oggetto MyUser, definito all'interno dello \$scope.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-ctrlregistration.pdf}}
@@ -1542,11 +1542,11 @@ Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'og
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::MyUser} per memorizzare, nello $scope, le informazioni necessarie alla registrazione dell'utente
+\item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::MyUser} per memorizzare, nello \$scope, le informazioni necessarie alla registrazione dell'utente
 \item usa \cls{Quizzipedia::Server::RoutingManager::AuthenticationRouter} per passare al server le informazioni necessarie per la registrazione
 \end{itemize}
 \subsubsection{Classe \cls{CtrlUserManager}}
-La classe, tramite variabili definite nello $scope, permette agli utenti di gestire e visualizzare il proprio profilo personale.
+La classe, tramite variabili definite nello \$scope, permette agli utenti di gestire e visualizzare il proprio profilo personale.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-ctrlusermanager.pdf}}
@@ -1564,7 +1564,7 @@ La classe, tramite variabili definite nello $scope, permette agli utenti di gest
 \item usa \cls{Quizzipedia::Client::ModelClient::Users::User} per caricare un utente del tipo corretto. A seconda del tipo di utente ne verrà creato uno appropriato tra studente, docente, responsabile o utente senza ruolo
 \end{itemize}
 \subsubsection{Classe \cls{MyUser}}
-La classe è definita nello $scope e serve a raccogliere le informazioni dell'utente che si sta registrando.
+La classe è definita nello \$scope e serve a raccogliere le informazioni dell'utente che si sta registrando.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-myuser.pdf}}
@@ -1573,7 +1573,7 @@ La classe è definita nello $scope e serve a raccogliere le informazioni dell'ut
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlRegistration} per memorizzare, nello $scope, le informazioni necessarie alla registrazione dell'utente
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlRegistration} per memorizzare, nello \$scope, le informazioni necessarie alla registrazione dell'utente
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server}}
 Racchiude tutte le componenti necessarie per il back-end del prodotto. Comunica con il database non relazionale MongoDB per ottenere le informazioni richieste dal client a cui verranno inviate successivamente.
