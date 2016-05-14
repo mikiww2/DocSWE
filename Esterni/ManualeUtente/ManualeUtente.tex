@@ -342,26 +342,62 @@
 	 \label{domande}
 	 A seguire sono elencati vari tipi di domande utilizzabili nel sistema.
 	 
-	 \subsection{Vero/falso}
+	 \subsection{Vero o falso}
 	 \begin{figure}[!h]
-	 	\centering
-	 	\includegraphics[scale=0.33]{Img/screen_CreazioneDomandaVF.png}
-	 	\caption{Schermata di creazione domanda vero/falso}
+ 	 	\centering
+ 	 	\includegraphics[scale=0.33]{Img/screen_CreazioneDomandaVF.png}
+ 	 	\caption{Schermata di creazione domanda vero o falso}
 	 \end{figure}
-	 
+	 Le domande di tipo 'vero o falso' consentono di interrogare gli studenti sulla veridicità di un'affermazione. 
+	 Per creare una domanda vero o falso è necessario compilare nel relativo form:
+	 \begin{itemize}
+ 	 	\item titolo della domanda,
+ 	 	\item descrizione facoltativa,
+ 	 	\item allegato multimediale (immagine, audio o video) opzionale,
+ 	 	\item materia,
+ 	 	\item livello di difficoltà,
+ 	 	\item parole chiave che identificano la domanda.
+	 \end{itemize}
+	 è infine necessario indicare la risposta corretta, scegliendo 'vero' o 'falso' nell'apposita checkbox.
+
 	 \subsection{Risposta multipla}
 	 \begin{figure}[!h]
 	 	\centering
 	 	\includegraphics[scale=0.33]{Img/screen_CreazioneDomandaRMultipla.png}
 	 	\caption{Schermata di creazione domanda a risposta multipla}
 	 \end{figure}
+	 Le domande di tipo 'a risposta multipla' presentano quesiti con molteplici risposte possibili, di cui una o più sono corrette.
+	 Per creare una domanda a risposta multipla è necessario compilare nel relativo form:
+	 \begin{itemize}
+	 	\item titolo della domanda,
+	 	\item descrizione facoltativa,
+	 	\item allegato multimediale (immagine, audio o video) opzionale,
+	 	\item materia,
+	 	\item livello di difficoltà,
+	 	\item parole chiave che identificano la domanda.
+	 \end{itemize}
+	 è poi necessario creare tutte le possibili risposte della domanda, sia corrette che errate. Cliccando nei rispettivi pulsanti è possibile creare una risposta di tipo multimediale o testuale. Nel caso venga creata una risposta multimediale sarà necessario effettuare l'upload del file immagine, audio o video desiderato, mentre nel caso venga creata una risposta testuale sarà necessario scrivere il testo della risposta nell'apposita casella di testo.
+	 Infine dovranno essere indicate le risposte corrette spuntando le checkbox corrispondenti.
 	 
 	 \subsection{A completamento}
 	 \begin{figure}[!h]
 	 	\centering
 	 	\includegraphics[scale=0.33]{Img/screen_CreazioneDomandaCompletamento.png}
-	 	\caption{Schermata di creazione domanda a completamento}
+	 	\caption{Schermata di creazione domanda a completamento testo}
 	 \end{figure}
+	 Le domande di tipo 'a completamento testo' presentano un testo con dei buchi dove devono essere inseriti i pezzi di testo o i file multimediali mancanti.
+	 Per creare una domanda a completamento testo è necessario compilare nel relativo form:
+	 \begin{itemize}
+	 	\item titolo della domanda,
+	 	\item descrizione facoltativa,
+	 	\item allegato multimediale (immagine, audio o video) opzionale,
+	 	\item materia,
+	 	\item livello di difficoltà,
+	 	\item parole chiave che identificano la domanda,
+	 	\item il testo da completare,
+	 	\item i buchi dove inserire le risposte.
+	 \end{itemize}
+	 Il docente dovrà poi creare le possibili risposte, effettuando l'upload del file multimediale o scrivendo il testo della risposta, a seconda che la risposta sia rispettivamente multimediale o testuale. Infine le risposte corrette dovranno essere associate alla posizione corrispondente. 	 
 	 
 	 \subsection{Risposta aperta}
 	 \begin{figure}[!h]
@@ -369,6 +405,17 @@
 	 	\includegraphics[scale=0.33]{Img/screen_CreazioneDomandaAperta.png}
 	 	\caption{Schermata di creazione domanda a risposta aperta}
 	 \end{figure}
+	 Le domande di tipo 'a risposta aperta' presentano quesiti con una sola risposta testuale. è suggerito creare domande a risposta aperta soltanto per quesiti con risposte brevi e chiare, come date, nomi o parole singole. 
+	 Per creare una domanda a risposta aperta è necessario compilare nel relativo form:
+	 \begin{itemize}
+	 	\item titolo della domanda,
+	 	\item descrizione facoltativa,
+	 	\item allegato multimediale (immagine, audio o video) opzionale,
+	 	\item materia,
+	 	\item livello di difficoltà,
+	 	\item parole chiave che identificano la domanda,
+	 	\item testo della risposta corretta.
+	 \end{itemize}
 	 
 	 \subsection{A collegamenti}
 	 \begin{figure}[!h]
@@ -376,5 +423,16 @@
 	 	\includegraphics[scale=0.33]{Img/screen_CreazioneDomandaCollegamenti.png}
 	 	\caption{Schermata di creazione domanda a collegamenti}
 	 \end{figure}
+	 Le domande di tipo 'a collegamenti' presentano porzioni di testo o file multimediali da collegare in un dato ordine per formare una risposta corretta.
+	 Per creare una domanda a collegamenti è necessario compilare nel relativo form:
+	 \begin{itemize}
+	 	\item titolo della domanda,
+	 	\item descrizione facoltativa,
+	 	\item allegato multimediale (immagine, audio o video) opzionale,
+	 	\item materia,
+	 	\item livello di difficoltà,
+	 	\item parole chiave che identificano la domanda.
+	 \end{itemize}
+	 è poi necessario creare le ennuple che compongono le risposte complete nella sequenza corretta, e delle porzioni errate facoltative. 
 	
 \end{document}
