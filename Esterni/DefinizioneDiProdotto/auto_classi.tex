@@ -2221,7 +2221,7 @@ Sono presenti pertanto i metodi necessari a svolgere tali scopi e per eseguire i
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
-contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il model. Questo $scope istanzia un oggetto MyClass
+contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyClass
 \end{itemize}
 \subsubsection{Classe \cls{CtrlPagination}}
 Questa classe permette di creare e gestire dinamicamente la paginazione quando viene visualizzata la lista delle classe presenti in un ente.
@@ -2429,19 +2429,19 @@ Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'og
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
-user viene definito nello $scope e serve per gestire i dati inseriti dall'utente durante la fase di registrazione
+contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyUser e serve per gestire i dati inseriti dall'utente durante la fase di registrazione
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
-\item \method{sendRegistration (user : MyUser) : void}
+\item \method{sendRegistration (user : $scope) : void}
 \newline
 invia al server le informazioni necessarie per portare a termine la registrazione dell'utente
 \newline
 \bold{Parametri} :
 \begin{itemize}
-\item \attribute{user : MyUser}
+\item \attribute{user : $scope}
 \newline
-è definito nello $scope e invia al server le informazioni necessarie per memorizzare l'utente
+utilizza l'oggetto MyUser definito nello $scope e invia al server le informazioni necessarie per memorizzare l'utente
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlUserManager}}
@@ -2455,16 +2455,16 @@ La classe, tramite variabili definite nello $scope, permette agli utenti di gest
 \begin{itemize}
 \item \attribute{cNewPsw : string}
 \newline
-l'utente deve confermare la nuova password. Poi si verificherà che la nuova password coincida
+l'utente deve confermare la nuova password. Poi si verificherà che la nuova password coincida.Questo campo dati viene definito nello $scope
 \item \attribute{newPsw : string}
 \newline
-la nuova password dell'utente
+la nuova password dell'utente. Questo campo dati viene definito nello $scope
 \item \attribute{oldPsw : string}
 \newline
-per potere modificare la password, l'utente deve prima inserire la vecchia
+per potere modificare la password, l'utente deve prima inserire la vecchia.Questo campo dati viene definito nello $scope
 \item \attribute{user : User}
 \newline
-è l'utente che intende modificare le proprie informazioni
+è l'utente che intende modificare le proprie informazioni.Questo campo dati viene definito nello $scope
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
@@ -2482,7 +2482,7 @@ si occupa di comunicare col server per poter avere le informazioni dell'utente
 \newline
 \end{itemize}
 \subsubsection{Classe \cls{MyUser}}
-La classe è definita nello $scope e serve a raccogliere le informazioni dell'utente che si sta registrando.
+La sua istanziazione avviene nella variabile $scope di Angular e permette di comunicare con la view. Questa classe serve a raccogliere le informazioni dell'utente che si sta registrando.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-myuser.pdf}}
