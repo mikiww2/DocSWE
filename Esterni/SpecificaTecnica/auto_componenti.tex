@@ -1619,7 +1619,7 @@ La componente gestisce, lato server, le classi e gli enti, ovvero il sistema in 
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::ClassManager} per 
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::InstitutionManager} per 
-\item usata da \pkg{Quizzipedia::Server::ModelServer::Users} per 
+\item usata da \pkg{Quizzipedia::Server::ModelServer::Users} per organizzare gli utenti all'interno di enti e classi
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Class}}
@@ -1639,10 +1639,13 @@ Contiene informazioni relative alla struttura delle classi.
 \item usata da \cls{Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Organizations::Institution} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Director} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::User} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Organizations::Institution} per memorizzare la lista
+delle classi presenti in un ente
+\item usata da \cls{Quizzipedia::Server::ModelServer::Requests::RequestClass} per identificare la classe
+in cui l'utente vuole essere inserito
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per tenere traccia delle classi per
+cui il quiz è stato creato. Se un quiz è assegnato a delle classi specifiche, allora è privato e
+accessibile dai soli studenti delle classi
 \end{itemize}
 \subsubsection{Classe \cls{Institution}}
 La classe contiene le informazioni relative alla struttura dell'ente.
@@ -1658,9 +1661,12 @@ La classe contiene le informazioni relative alla struttura dell'ente.
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Organizations::Class} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Requests::ClassList} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Requests::RoleList} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Organizations::Class} per memorizzare la lista
+delle classi presenti in un ente
+\item usa \cls{Quizzipedia::Server::ModelServer::Requests::ClassList} per gestire la lista delle richieste di accesso a una delle proprie classi
+\item usa \cls{Quizzipedia::Server::ModelServer::Requests::RoleList} per gestire la lista delle richieste di assegnazione di ruolo degli utenti
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Topics} per avere un elenco degli argomenti possibili all'interno dell'ente
+\item usa \cls{Quizzipedia::Server::ModelServer::Users::Director} per identificare il responsabile dell'ente
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Requests}}
 Questo componente contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
@@ -1674,7 +1680,7 @@ Questo componente contiene le classi necessarie a gestire le richieste di ruolo 
 \item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::RequestsManager} per 
-\item usata da \pkg{Quizzipedia::Server::ModelServer::Users} per 
+\item usata da \pkg{Quizzipedia::Server::ModelServer::Users} per permettere agli utenti di effettuare richieste. Le richieste possono essere di ruolo o di classe
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ClassList}}
@@ -1689,11 +1695,11 @@ Questa classe gestisce le richieste da parte di docenti o studenti per l'assegna
 \begin{itemize}
 \item usata da \cls{Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestsAdder} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Organizations::Institution} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Organizations::Institution} per gestire la lista delle richieste di accesso a una delle proprie classi
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Requests::RequestClass} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Requests::RequestClass} per creare una lista in cui compaiano gli utenti e le classi in cui desiderano entrare
 \end{itemize}
 \subsubsection{Classe \cls{RequestClass}}
 La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui ha fatto richiesta.
@@ -1705,7 +1711,12 @@ La classe memorizza l'utente che invia la richiesta di inserimento in una classe
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::ModelServer::Requests::ClassList} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Requests::ClassList} per creare una lista in cui compaiano gli utenti e le classi in cui desiderano entrare
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Server::ModelServer::Organizations::Class} per identificare la classe
+in cui l'utente vuole essere inserito
 \end{itemize}
 \subsubsection{Classe \cls{RequestRole}}
 La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuole ricoprire.
@@ -1717,7 +1728,7 @@ La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuo
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::ModelServer::Requests::RoleList} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Requests::RoleList} per memorizzare una lista delle richieste di ruolo degli utenti di un istituto
 \end{itemize}
 \subsubsection{Classe \cls{RoleList}}
 Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo di studente o docente al responsabile di un ente. Questa classe gestisce tali richieste.
@@ -1732,13 +1743,11 @@ Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Organizations::Institution} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Director} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::NoRole} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Organizations::Institution} per gestire la lista delle richieste di assegnazione di ruolo degli utenti
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Requests::RequestRole} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Requests::RequestRole} per memorizzare una lista delle richieste di ruolo degli utenti di un istituto
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Services}}
 Il componente racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
@@ -1760,7 +1769,7 @@ Il componente racchiude i modelli necessari alla creazione di domande e quiz, i 
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::QuizManager} per 
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::SearchManager} per 
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::TopicManager} per 
-\item usata da \pkg{Quizzipedia::Server::ModelServer::Users} per 
+\item usata da \pkg{Quizzipedia::Server::ModelServer::Users} per permettere agli utenti di tenere traccia dello storico dei quiz svolti
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Quiz}}
@@ -1780,12 +1789,17 @@ Include la struttura del quiz.
 \item usata da \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Teacher} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuiz} per individuare il quiz a cui associare le risposte date dall'utente
+\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Teacher} per tenere traccia dei quiz da lui creati
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Organizations::Class} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Organizations::Class} per tenere traccia delle classi per
+cui il quiz è stato creato. Se un quiz è assegnato a delle classi specifiche, allora è privato e
+accessibile dai soli studenti delle classi
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per memorizzare la lista delle domande che compongono un quiz
+\item usa \cls{Quizzipedia::Server::ModelServer::Statistics::QuizStatistics} per memorizzare le statistiche generali riguardo al quiz
+\item usa \cls{Quizzipedia::Server::ModelServer::Statistics::StudentsStatisticsQuiz} per memorizzare le statistiche relative agli studenti che hanno svolto il quiz
 \end{itemize}
 \subsubsection{Classe \cls{Topics}}
 Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni domanda e a ogni quiz verranno poi associati i relativi argomenti.
@@ -1799,7 +1813,7 @@ Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni doma
 \begin{itemize}
 \item usata da \cls{Quizzipedia::Server::ControllerServer::TopicManager::TopicCreator} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::TopicManager::TopicEraser} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Director} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Organizations::Institution} per avere un elenco degli argomenti possibili all'interno dell'ente
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Services::Answers}}
 Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e delle domande svolte.
@@ -1808,6 +1822,13 @@ Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers.pdf}}
 \caption[Schema Componente Quizzipedia::Server::ModelServer::Services::Answers]{Schema Componente Quizzipedia::Server::ModelServer::Services::Answers}
 \end{figure}
+\subsubsection{Interazioni con altre componenti}
+\begin{itemize}
+\item \bold{Uscenti}
+\begin{itemize}
+\item usa \pkg{Quizzipedia::Server::ModelServer::Services::Questions} per associare le risposte date dall'utente alla domanda giusta
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerColumn}}
 Classe utilizzata da AnswerMatchingQ per salvare le risposte della domanda MatchingQ.
 \begin{figure}[H]
@@ -1815,6 +1836,11 @@ Classe utilizzata da AnswerMatchingQ per salvare le risposte della domanda Match
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answercolumn.pdf}}
 \caption[Schema Classe AnswerColumn]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerColumn}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerMatchingQ} per memorizzare le risposte date dall'utente a una domanda a collegamenti
+\end{itemize}
 \subsubsection{Classe \cls{AnswerCompletionQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ risolta.
 \begin{figure}[H]
@@ -1822,6 +1848,15 @@ Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ ri
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answercompletionq.pdf}}
 \caption[Schema Classe AnswerCompletionQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerCompletionQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::CompletionQ} per poter impostare la risposta data dall'utente
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuestion} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a completamento
+\end{itemize}
 \subsubsection{Classe \cls{AnswerMatchingQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ risolta.
 \begin{figure}[H]
@@ -1829,6 +1864,16 @@ Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ riso
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answermatchingq.pdf}}
 \caption[Schema Classe AnswerMatchingQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerMatchingQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::MatchingQ} per poter impostare la risposta data dall'utente
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerColumn} per memorizzare le risposte date dall'utente a una domanda a collegamenti
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuestion} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a collegamento
+\end{itemize}
 \subsubsection{Classe \cls{AnswerMultipleChoiceQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoiceQ risolta.
 \begin{figure}[H]
@@ -1836,6 +1881,15 @@ Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoice
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answermultiplechoiceq.pdf}}
 \caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerMultipleChoiceQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::MultipleChoiceQ} per poter impostare la risposta data dall'utente
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuestion} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a scelta multipla
+\end{itemize}
 \subsubsection{Classe \cls{AnswerQuestion}}
 Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \begin{figure}[H]
@@ -1843,6 +1897,20 @@ Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answerquestion.pdf}}
 \caption[Schema Classe AnswerQuestion]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuestion}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerCompletionQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a completamento
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerMatchingQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a collegamento
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerMultipleChoiceQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda a scelta multipla
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuiz} per memorizzare e verificare le risposte date dagli utenti alle domande che compongono il quiz
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerShortAnswerQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda aperta
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerTrueFalseQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda di tipo vero/falso
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per tenere traccia della domanda a cui corrisponde la risposta in questione
+\end{itemize}
 \subsubsection{Classe \cls{AnswerQuiz}}
 Classe che si occupa di memorizzare le informazioni di un quiz completato e gestisce la verifica del suo superamento.
 \begin{figure}[H]
@@ -1850,6 +1918,17 @@ Classe che si occupa di memorizzare le informazioni di un quiz completato e gest
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answerquiz.pdf}}
 \caption[Schema Classe AnswerQuiz]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuiz}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Users::NoRole} per tenere traccia dei quiz che ha già svolto e del loro esito
+\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Student} per tenere traccia dei quiz che ha già svolto e del loro esito
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuestion} per memorizzare e verificare le risposte date dagli utenti alle domande che compongono il quiz
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per individuare il quiz a cui associare le risposte date dall'utente
+\end{itemize}
 \subsubsection{Classe \cls{AnswerShortAnswerQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ risolta.
 \begin{figure}[H]
@@ -1857,6 +1936,15 @@ Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ r
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answershortanswerq.pdf}}
 \caption[Schema Classe AnswerShortAnswerQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerShortAnswerQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::ShortAnswerQ} per poter impostare la risposta data dall'utente
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuestion} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda aperta
+\end{itemize}
 \subsubsection{Classe \cls{AnswerTrueFalseQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ risolta.
 \begin{figure}[H]
@@ -1864,6 +1952,15 @@ Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ ris
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answertruefalseq.pdf}}
 \caption[Schema Classe AnswerTrueFalseQ]{Schema Classe Quizzipedia::Server::ModelServer::Services::Answers::AnswerTrueFalseQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::TrueFalseQ} per poter impostare la risposta data dall'utente
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuestion} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda di tipo vero/falso
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Services::Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
 \begin{figure}[H]
@@ -1876,6 +1973,7 @@ Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente pu�
 \item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Server::ControllerServer::QuestionsManager} per 
+\item usata da \pkg{Quizzipedia::Server::ModelServer::Services::Answers} per associare le risposte date dall'utente alla domanda giusta
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Cell}}
@@ -1888,7 +1986,7 @@ La classe descrive ogni singola riga (quindi ogni opzione) della colonna della d
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::Column} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::Column} per implementare correttamente le celle delle colonne richieste per la domanda a collegamento
 \end{itemize}
 \subsubsection{Classe \cls{Column}}
 La classe descrive le colonne della domanda a collegamenti.
@@ -1900,11 +1998,11 @@ La classe descrive le colonne della domanda a collegamenti.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::MatchingQ} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::MatchingQ} per implementare correttamente le colonne richieste dalla domanda a collegamenti
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::Cell} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::Cell} per implementare correttamente le celle delle colonne richieste per la domanda a collegamento
 \end{itemize}
 \subsubsection{Classe \cls{CompletionQ}}
 Descrive le domande a completamento. Il docente fornirà un testo incompleto e una lista di possibili completamenti; lo studente dovrà inserire le parole adeguate nella giusta posizione.
@@ -1916,7 +2014,8 @@ Descrive le domande a completamento. Il docente fornirà un testo incompleto e u
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerCompletionQ} per poter impostare la risposta data dall'utente
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per per concretizzarla, ereditandone così i campi dati e i metodi concreti
 \end{itemize}
 \subsubsection{Classe \cls{GenericQuestion}}
 Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
@@ -1932,13 +2031,18 @@ Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \item usata da \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::SearchManager::QuestionsSearcher} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::CompletionQ} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::MatchingQ} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::MultipleChoiceQ} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::ShortAnswerQ} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::TrueFalseQ} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuestion} per tenere traccia della domanda a cui corrisponde la risposta in questione
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::CompletionQ} per per concretizzarla, ereditandone così i campi dati e i metodi concreti
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::MatchingQ} per per concretizzarla, ereditandone così i campi dati e i metodi concreti
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::MultipleChoiceQ} per per concretizzarla, ereditandone così i campi dati e i metodi concreti
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::ShortAnswerQ} per per concretizzarla, ereditandone così i campi dati e i metodi concreti
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::TrueFalseQ} per per concretizzarla, ereditandone così i campi dati e i metodi concreti
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per memorizzare la lista delle domande che compongono un quiz
 \item usata da \cls{Quizzipedia::Server::ModelServer::Users::Teacher} per 
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Server::ModelServer::Statistics::QuestionStatistics} per ottenere le proprie statistiche
 \end{itemize}
 \subsubsection{Classe \cls{MatchingQ}}
 La struttura descrive le domande a collegamento. L'utente dovrà formare la risposta collegando le entrate da un numero variabile di colonne.
@@ -1950,8 +2054,9 @@ La struttura descrive le domande a collegamento. L'utente dovrà formare la risp
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::Column} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerMatchingQ} per poter impostare la risposta data dall'utente
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::Column} per implementare correttamente le colonne richieste dalla domanda a collegamenti
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per per concretizzarla, ereditandone così i campi dati e i metodi concreti
 \end{itemize}
 \subsubsection{Classe \cls{MultipleChoiceQ}}
 La struttura descrive le domande a scelta multipla; viene presentata una lista di opzioni tra cui scegliere quelle corrette.
@@ -1963,7 +2068,8 @@ La struttura descrive le domande a scelta multipla; viene presentata una lista d
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerMultipleChoiceQ} per poter impostare la risposta data dall'utente
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per per concretizzarla, ereditandone così i campi dati e i metodi concreti
 \end{itemize}
 \subsubsection{Classe \cls{ShortAnswerQ}}
 La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste in un termine o una frase specifici.
@@ -1975,7 +2081,8 @@ La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste 
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerShortAnswerQ} per poter impostare la risposta data dall'utente
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per per concretizzarla, ereditandone così i campi dati e i metodi concreti
 \end{itemize}
 \subsubsection{Classe \cls{TrueFalseQ}}
 Viene descritta la struttura delle domande che prevedono di decidere la veridicità di un'affermazione.
@@ -1987,7 +2094,8 @@ Viene descritta la struttura delle domande che prevedono di decidere la veridici
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerTrueFalseQ} per poter impostare la risposta data dall'utente
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per per concretizzarla, ereditandone così i campi dati e i metodi concreti
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Statistics}}
 Qui sono raccolte le classi contenenti le informazioni sulle statistiche di domande, quiz e studenti di ogni classe.
@@ -2011,6 +2119,11 @@ La classe raccoglie le statistiche principali riguardanti una singola domanda. D
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-questionstatistics.pdf}}
 \caption[Schema Classe QuestionStatistics]{Schema Classe Quizzipedia::Server::ModelServer::Statistics::QuestionStatistics}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per ottenere le proprie statistiche
+\end{itemize}
 \subsubsection{Classe \cls{QuizStatistics}}
 La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qui è poi possibile ottenere il quiz in questione.
 \begin{figure}[H]
@@ -2022,6 +2135,7 @@ La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qu
 \subparagraph{Entranti}
 \begin{itemize}
 \item usata da \cls{Quizzipedia::Server::ControllerServer::StatisticsManager::QuizStatisticsFetcher} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per memorizzare le statistiche generali riguardo al quiz
 \end{itemize}
 \subsubsection{Classe \cls{StudentsStatisticsQuiz}}
 Classe usata per visualizzare gli studenti che hanno svolto un quiz specifico e i loro voti per il quiz stesso.
@@ -2030,6 +2144,15 @@ Classe usata per visualizzare gli studenti che hanno svolto un quiz specifico e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-studentsstatisticsquiz.pdf}}
 \caption[Schema Classe StudentsStatisticsQuiz]{Schema Classe Quizzipedia::Server::ModelServer::Statistics::StudentsStatisticsQuiz}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per memorizzare le statistiche relative agli studenti che hanno svolto il quiz
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Server::ModelServer::Users::Student} per tenere traccia degli utenti a cui le statistiche si riferiscono
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ModelServer::Users}}
 Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema.
 \begin{figure}[H]
@@ -2046,9 +2169,9 @@ Raccoglie le classi necessarie a descrivere le diverse tipologie di utente prese
 \end{itemize}
 \item \bold{Uscenti}
 \begin{itemize}
-\item usa \pkg{Quizzipedia::Server::ModelServer::Organizations} per 
-\item usa \pkg{Quizzipedia::Server::ModelServer::Requests} per 
-\item usa \pkg{Quizzipedia::Server::ModelServer::Services} per 
+\item usa \pkg{Quizzipedia::Server::ModelServer::Organizations} per organizzare gli utenti all'interno di enti e classi
+\item usa \pkg{Quizzipedia::Server::ModelServer::Requests} per permettere agli utenti di effettuare richieste. Le richieste possono essere di ruolo o di classe
+\item usa \pkg{Quizzipedia::Server::ModelServer::Services} per permettere agli utenti di tenere traccia dello storico dei quiz svolti
 \item usa \pkg{Quizzipedia::Server::ModelServer::Statistics} per 
 \end{itemize}
 \end{itemize}
@@ -2066,7 +2189,7 @@ Questa classe gestisce le informazioni di autenticazione comuni a tutti gli uten
 \item usata da \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerOut} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::Register} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::User} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Users::User} per memorizzare le informazioni di autenticazione comuni a tutti gli utenti registrati
 \end{itemize}
 \subsubsection{Classe \cls{Director}}
 Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per ogni ente del sistema.
@@ -2076,12 +2199,13 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \caption[Schema Classe Director]{Schema Classe Quizzipedia::Server::ModelServer::Users::Director}
 \end{figure}
 \paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Organizations::Institution} per identificare il responsabile dell'ente
+\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Organizations::Class} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Requests::RoleList} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Services::Topics} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Users::User} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Users::User} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
 \end{itemize}
 \subsubsection{Classe \cls{NoRole}}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
@@ -2093,8 +2217,8 @@ Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e 
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Requests::RoleList} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Users::User} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuiz} per tenere traccia dei quiz che ha già svolto e del loro esito
+\item usa \cls{Quizzipedia::Server::ModelServer::Users::User} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
 \end{itemize}
 \subsubsection{Classe \cls{Student}}
 Rappresenta uno studente del sistema e implementa le sue funzioni specifiche oltre a quelle ereditate da utente.
@@ -2104,9 +2228,14 @@ Rappresenta uno studente del sistema e implementa le sue funzioni specifiche olt
 \caption[Schema Classe Student]{Schema Classe Quizzipedia::Server::ModelServer::Users::Student}
 \end{figure}
 \paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::ModelServer::Statistics::StudentsStatisticsQuiz} per tenere traccia degli utenti a cui le statistiche si riferiscono
+\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Users::User} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Answers::AnswerQuiz} per tenere traccia dei quiz che ha già svolto e del loro esito
+\item usa \cls{Quizzipedia::Server::ModelServer::Users::User} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
 \end{itemize}
 \subsubsection{Classe \cls{Teacher}}
 Rappresenta un docente del sistema e ne implementa le funzionalità specifiche in aggiunta a quelle comuni a tutti gli utenti.
@@ -2119,8 +2248,8 @@ Rappresenta un docente del sistema e ne implementa le funzionalità specifiche i
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Users::User} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per tenere traccia dei quiz da lui creati
+\item usa \cls{Quizzipedia::Server::ModelServer::Users::User} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
 \end{itemize}
 \subsubsection{Classe \cls{User}}
 Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli utenti.
@@ -2135,15 +2264,14 @@ Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli ut
 \item usata da \cls{Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter} per 
 \item usata da \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Director} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::NoRole} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Student} per 
-\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Teacher} per 
+\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Director} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
+\item usata da \cls{Quizzipedia::Server::ModelServer::Users::NoRole} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
+\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Student} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
+\item usata da \cls{Quizzipedia::Server::ModelServer::Users::Teacher} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ModelServer::Organizations::Class} per 
-\item usa \cls{Quizzipedia::Server::ModelServer::Users::AuthenticationData} per 
+\item usa \cls{Quizzipedia::Server::ModelServer::Users::AuthenticationData} per memorizzare le informazioni di autenticazione comuni a tutti gli utenti registrati
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Server::ControllerServer}}
 Questo componente contiene tutti i servizi che permettono di isolare il più possibile l'accesso al database non relazionale. Avviene sempre un controllo dell'utente che genera una determinata richiesta al server affinchè sia abilitato per farla. 
