@@ -1234,11 +1234,11 @@ permette il salvataggio delle risposte dell'utente, sotto forma di AnswerMatchin
 \newline
 le AnswerColumn contenenti le risposte alla domanda
 \end{itemize}
-\item \method{getColumn () : Column[]}
+\item \method{getColumns () : Column[]}
 \newline
 permette di ottenere tutte le colonne della domanda
 \newline
-\item \method{setColumn (newColumn : Column[]) : void}
+\item \method{setColumns (newColumn : Column[]) : void}
 \newline
 permette di sostituire tutte le colonne della domanda MatchingQ con delle nuove colonne
 \newline
@@ -1614,6 +1614,43 @@ Rappresenta uno studente del sistema e implementa le sue funzioni specifiche olt
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-student.pdf}}
 \caption[Schema Classe Student]{Schema Classe Quizzipedia::Client::ModelClient::Users::Student}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{quizProfile : AnswerQuiz}
+\newline
+lo storico dei quiz svolti con relativa soluzione
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
+\newline
+aggiunge un quiz e la relativa soluzione allo storico dei quiz svolti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{quiz : AnswerQuiz}
+\newline
+il quiz che si intende aggiungere allo storico
+\end{itemize}
+\item \method{getQuizProfile () : AnswerQuiz[]}
+\newline
+restituisce lo storico dei quiz svolti dall'utente con relative soluzioni
+\newline
+\item \method{loadQuizProfile () : void}
+\newline
+carica lo storico dei quiz svolti dall'utente e dei loro esiti
+\newline
+\item \method{removeQuizFromProfile (indexOfQuiz : int) : void}
+\newline
+rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{indexOfQuiz : int}
+\newline
+l'indice del quiz che si intende rimuovere dallo storico
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Teacher}}
 Rappresenta un docente del sistema e ne implementa le funzionalità specifiche in aggiunta a quelle comuni a tutti gli utenti.
 \begin{figure}[H]
@@ -1968,13 +2005,6 @@ Presenta all'utente il menù da cui potrà svolgere le proprie funzioni principa
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-menu.pdf}}
 \caption[Schema Classe Menu]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::Menu}
 \end{figure}
-\subsubsection{Classe \cls{PersonalData}}
-La classe presenta all'utente la pagina da cui prendere visione delle proprie informazioni personali.
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-personaldata.pdf}}
-\caption[Schema Classe PersonalData]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::PersonalData}
-\end{figure}
 \subsubsection{Classe \cls{RecoveryPw}}
 Da questa pagina sarà possibile inserire i dati per il recupero della password.
 \begin{figure}[H]
@@ -1995,6 +2025,13 @@ Da qui, grazie ai metodi della classe, l'utente potrà modificare la propria pas
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-viewmodifypw.pdf}}
 \caption[Schema Classe ViewModifyPw]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::ViewModifyPw}
+\end{figure}
+\subsubsection{Classe \cls{ViewProfile}}
+La classe presenta all'utente la pagina da cui prendere visione delle proprie informazioni personali.
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-viewprofile.pdf}}
+\caption[Schema Classe ViewProfile]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::ViewProfile}
 \end{figure}
 \subsubsection{Classe \cls{ViewUsersList}}
 Presenta un pannello da cui è possibile visualizzare una lista di utenti e compiere operazioni su di loro.
