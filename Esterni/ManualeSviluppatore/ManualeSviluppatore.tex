@@ -36,12 +36,11 @@
 	\input{diary}
 	
 	\newpage
-	\tableofcontents
+	\tableofcontents\label{lastromanpage}
 %	\newpage
 %	\listoffigures
 %	\newpage
 %	\listoftables
-\label{lastromanpage}
 	
 	\newpage
 	\clearpage	
@@ -57,6 +56,11 @@
 	\subsection{Scopo del prodotto}
 	\SCOPO
 	
+	\subsection{Glossario}
+	Al fine di evitare ogni ambiguità nel linguaggio e massimizzare la comprensione dei documenti, i termini tecnici, gli acronimi e le abbreviazioni che necessitano di definizione sono riportati nell'\hyperref[gl]{appendice A}.
+	Inoltre ogni occorrenza di un vocabolo presente nel “Glossario” sarà posta in corsivo e seguita da
+	una ‘g’ maiuscola a pedice (p.es. ParolaG).
+		
 	\subsection{Riferimenti}	
 	\subsubsection{Riferimenti informativi}
 	\begin{itemize}
@@ -69,7 +73,7 @@
 	\newpage
 	
 	\section{Prerequisiti software}
-	Per poter avviare Quizzipedia è richiesta l'installazione dei seguenti software.
+	Per poter avviare Quizzipedia è richiesta l'installazione dei seguenti \gl{software}.
 	
 	\subsection{Node.js e npm}
 	Scaricare e installare \gl{Node.js} e il package manager \gl{npm} da \url{https://nodejs.org/en/download/current/}.
@@ -88,7 +92,7 @@
 	\texttt{\$ mongod}
 
 	\subsection{Forever}
-	Scaricare e installare globalmente \gl{forever} utilizzando \gl{npm} con il seguente comando:
+	Scaricare e installare globalmente il modulo 'forever' utilizzando \gl{npm} con il seguente comando:
 
 	\texttt{\$ npm install -g forever}
 	
@@ -98,7 +102,7 @@
 	\texttt{\$ npm install angular}
 	
 	\section{Requisiti hardware}
-	Il prodotto lato server richiede come requisiti minimi:
+	Il prodotto lato \gl{server} richiede come requisiti minimi:
 	\begin{itemize}
 		\item processore dual core;
 		\item 2GB di memoria RAM;
@@ -109,7 +113,7 @@
 	
 	\subsection{Ottenere Quizzipedia}
 	\subsubsection{Download da browser}
-	Reperire il progetto Quizzipedia è possibile recandosi con qualunque browser all'indirizzo \url{http://github.com/vault-tech/Quizzipedia}.
+	Reperire il progetto Quizzipedia è possibile recandosi con qualunque \gl{browser} all'indirizzo \url{http://github.com/vault-tech/Quizzipedia}.
 	A questo punto è possibile scaricare il codice sorgente con l'apposito tasto \texttt{Download ZIP}.
 
 	\subsubsection{Download da riga di comando}
@@ -121,7 +125,7 @@
 
 	\subsection{Installazione dipendenze}
 	
-	Una volta ottenuto il codice sorgente, spostarsi all'interno della root del repository, si controlli che sia presente il file package.json.
+	Una volta ottenuto il codice sorgente, spostarsi all'interno della root del \gl{repository}, si controlli che sia presente il file package.json.
 	
 	Sempre nella directory corrente eseguire poi il seguente comando da terminale:
 	
@@ -131,12 +135,65 @@
 	
 	\subsection{Avvio}
 	
-	Per avviare Quizzipedia e mantenerlo in esecuzione, utilizzare il modulo \gl{npm} \gl{forever} precedentemente installato digitando il seguente comando dopo essersi spostati nella root di Quizzipedia:
+	Per avviare Quizzipedia e mantenerlo in esecuzione, utilizzare il modulo \gl{npm} 'forever' precedentemente installato digitando il seguente comando dopo essersi spostati nella root di Quizzipedia:
 
 	\texttt{\$ PORT=porta forever start server.js}
 
-	Sostituire "porta" con il numero di porta sul quale si vuole rendere reperibile Quizzipedia via browser;\\
+	Sostituire "porta" con il numero di porta sul quale si vuole rendere reperibile Quizzipedia via \gl{browser};\\
 	se non viene specificata verrà usata di default la 8080;\\
 	se viene specificata una porta inferiore a 1024 allora sarà necessario digitare il comando \texttt{sudo} seguito dal resto per autorizzare \gl{Node.js} ad utilizzare tale porta.
+	
+	\newpage
+	\appendix
+	
+	\section{Glossario}
+	\label{gl} 
+	
+	\subsection{Angular.js}
+	AngularJS (o semplicemente Angular o Angular.js) è un framework web open source principalmente sviluppato da Google e dalla comunità di sviluppatori individuali che ruotano intorno al framework nato per affrontare le molte difficoltà incontrate nello sviluppo di applicazioni singola pagina. Ha l'obiettivo di semplificare lo sviluppo e il test di questa tipologia di applicazioni fornendo un framework lato client con architettura MVC (Model View Controller) e Model–view–viewmodel (MVVM) insieme a componenti comunemente usate nelle applicazioni RIA.
+	
+	\subsection{Browser}
+	Programma che consente di usufruire dei servizi di connettività in Internet, o di una rete di computer.
+	
+	\subsection{CSS3}
+	Il CSS (Cascading Style Sheets) è un linguaggio usato per definire la formattazione di documenti HTML, XHTML e XML. CSS3 è l’ultimo standard approvato al momento.
+	
+	\subsection{Git}
+	Sistema software di controllo di versione distribuito, utilizzabile da riga di comando.
+	
+	\subsection{HTML5}
+	L’HTML5 `e un linguaggio di markup per la strutturazione delle pagine web divenuto standard W3C nell’ottobre 2014.
+	
+	\subsection{JavaScript}
+	Linguaggio di programmazione interpretato, generalmente utilizzato nella gestione degli eventi.
+	Implementa un paradigma basato sia sugli oggetti che sulla programmazione funzionale.
+	
+	\subsection{MongoDB}
+	MongoDB è un Data Base Management System non relazionale, orientato ai documenti. Classificato come un database di tipo NoSQL.
+	
+	\subsection{Node.js}
+	Node.js è un framework event-driven per il motore JavaScript V8, su piattaforme UNIX
+	like, si tratta cioè di un framework relativo all'utilizzo server-side di JavaScript.
+	
+	\subsection{npm}
+	Npm è il packet manager default per Node.js. Permette di installare moduli extra per Node.js da riga di comando.
+	
+	\subsection{Repository}
+	È un ambiente di un sistema informativo, in cui vengono gestiti i dati, attraverso
+	tabelle relazionali. In questo caso il sistema informativo è gestito con Git.
+	
+	\subsection{Server}
+	Un server in informatica è un componente o sottosistema informatico di elaborazione e gestione del traffico di informazioni che fornisce, a livello logico e fisico, un qualunque tipo di servizio ad altre componenti (tipicamente chiamate clients, cioè clienti) che ne fanno richiesta attraverso una rete di computer, all'interno di un sistema informatico o anche direttamente in locale su un computer.
+	
+	\subsection{Software}
+	Un software, in informatica, è l’informazione o le informazioni utilizzate da uno o più sistemi informatici
+	e memorizzate su uno o più supporti informatici. Tali informazioni possono essere quindi rappresentate da uno o più programmi, oppure da uno o più dati, oppure da una combinazione
+	delle due.
+	
+	\subsection{Web}
+	Il Web, abbreviazione di World Wide Web, è uno dei principali servizi di Internet che permette di
+	navigare e usufruire di un insieme vastissimo di contenuti (multimediali e non) collegati tra loro
+	attraverso legami (link), e di ulteriori servizi accessibili a tutti o ad una parte selezionata degli
+	utenti di Internet.
 	
 \end{document}
