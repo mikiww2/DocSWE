@@ -1,72 +1,52 @@
-\begin{tabella}{!{\VRule}p{2cm}!{\VRule}p{6cm}!{\VRule}p{5cm}!{\VRule}}
+\begin{tabella}{!{\VRule}p{1cm}!{\VRule}p{6cm}!{\VRule}p{6.55cm}!{\VRule}}
 \color{white} \bold{Codice test} & \color{white} \bold{Classe} & \color{white} \bold{Metodi}\\
 \endhead
 \rowcolor{D}
- TU67 & Quizzipedia:: Server:: RoutingManager:: AbstractRouter & \method{<<abstract>> forwardTo1 (bundle : JSON) : void} \\
+ TU1 & Quizzipedia:: Client:: ModelClient:: Organizations:: Class & \method{addStudent () : void} \\
 \rowcolor{D}
- & & \method{<<abstract>> forwardTo2 (bundle : JSON) : JSON} \\
+ & & \method{addTeacher () : void} \\
 \rowcolor{D}
- & & \method{<<abstract>> forwardTo3 () : JSON} \\
+ & & \method{edit (newDescription : String, newName : String, newYear : String) : void} \\
 \rowcolor{D}
- & & \method{<<abstract>> forwardTo4 () : void} \\
+ & & \method{getAcademicYear () : String} \\
+\rowcolor{D}
+ & & \method{getDescription () : String} \\
+\rowcolor{D}
+ & & \method{getName () : String} \\
+\rowcolor{D}
+ & & \method{getStudents () : String[]} \\
+\rowcolor{D}
+ & & \method{getTeachers () : String[]} \\
+\rowcolor{D}
+ & & \method{removeStudent (studentMail : String) : void} \\
+\rowcolor{D}
+ & & \method{removeTeacher (teacherMail : String) : void} \\
 \rowcolor{P}
- TU90 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: AccountDeleter & \method{deleteAccount (email : String) : void} \\
-\rowcolor{D}
- TU7 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerColumn & \method{addAnswer (answer : int) : void} \\
-\rowcolor{D}
- & & \method{checkColumn () : bool} \\
-\rowcolor{D}
- & & \method{getGivenAnswerCell () : int[]} \\
-\rowcolor{D}
- & & \method{setGivenAnswerCell (answer : int[]) : void} \\
-\rowcolor{P}
- TU40 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerColumn1 & \method{addAnswer (answer : int) : void} \\
-\rowcolor{P}
- & & \method{checkColumn () : bool} \\
-\rowcolor{P}
- & & \method{getGivenAnswerCell () : int[]} \\
-\rowcolor{P}
- & & \method{setGivenAnswerCell (answer : int[]) : void} \\
-\rowcolor{D}
- TU8 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerCompletionQ & \method{addAnswer (answer : String) : void} \\
-\rowcolor{D}
- & & \method{check () : bool} \\
-\rowcolor{D}
- & & \method{getGivenAnswer () : String[]} \\
-\rowcolor{P}
- TU41 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerCompletionQ1 & \method{addAnswer (answer : String) : void} \\
-\rowcolor{P}
- & & \method{check () : bool} \\
-\rowcolor{P}
- & & \method{getGivenAnswer () : String[]} \\
-\rowcolor{D}
- TU9 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerMatchingQ & \method{check () : bool} \\
-\rowcolor{D}
- & & \method{getGivenAnswerColumn () : AnswerColumn} \\
-\rowcolor{D}
- & & \method{setAnswer (answer : AnswerColumn) : void} \\
-\rowcolor{D}
- & & \method{setGivenAnswerColumn (answer : AnswerColumn) : void} \\
-\rowcolor{P}
- TU42 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerMatchingQ1 & \method{check () : bool} \\
-\rowcolor{P}
- & & \method{getGivenAnswerColumn () : AnswerColumn} \\
-\rowcolor{P}
- & & \method{setAnswer (answer : AnswerColumn) : void} \\
-\rowcolor{P}
- & & \method{setGivenAnswerColumn (answer : AnswerColumn) : void} \\
-\rowcolor{D}
  TU10 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerMultipleChoiceQ & \method{addAnswer (answer : bool) : void} \\
-\rowcolor{D}
- & & \method{check () : bool} \\
-\rowcolor{D}
- & & \method{getGivenAnswer () : bool[]} \\
-\rowcolor{P}
- TU43 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerMultipleChoiceQ1 & \method{addAnswer (answer : bool) : void} \\
 \rowcolor{P}
  & & \method{check () : bool} \\
 \rowcolor{P}
  & & \method{getGivenAnswer () : bool[]} \\
+\rowcolor{D}
+ TU100 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizCreator & \method{createQuiz (quiz : JSON) : void} \\
+\rowcolor{P}
+ TU101 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizEraser & \method{eraseQuiz (quiz : String) : void} \\
+\rowcolor{D}
+ TU102 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizFetcher & \method{fetchQuiz (quiz : String) : JSON} \\
+\rowcolor{P}
+ TU103 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizUpdater & \method{updateQuiz (quiz : JSON) : void} \\
+\rowcolor{D}
+ TU104 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: ResultsUpdater & \method{updateResults (quiz : String, results : JSON) : void} \\
+\rowcolor{P}
+ TU105 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: StatisticsQuizUpdater & \method{updateStats (quiz : String, statistics : JSON) : void} \\
+\rowcolor{D}
+ TU106 & Quizzipedia:: Server:: ControllerServer:: RequestsManager:: InsertClassRequestsAdder & \method{add (class : String, email : String) : void} \\
+\rowcolor{P}
+ TU107 & Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RequestsFetcher & \method{fetchRequests () : JSON} \\
+\rowcolor{D}
+ TU108 & Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RoleAccepter & \method{accept (email : String, role : String) : void} \\
+\rowcolor{P}
+ TU109 & Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RoleRequestAdder & \method{add (email : String, role : String) : void} \\
 \rowcolor{D}
  TU11 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerQuestion & \method{<<abstract>>check () : bool} \\
 \rowcolor{D}
@@ -76,31 +56,33 @@
 \rowcolor{D}
  & & \method{setSolver (user : User) : void} \\
 \rowcolor{P}
- TU44 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerQuestion1 & \method{<<abstract>>check () : bool} \\
-\rowcolor{P}
- & & \method{getQuestion () : GenricQuestion} \\
-\rowcolor{P}
- & & \method{setQuestion (question : GenericQuestion) : void} \\
-\rowcolor{P}
- & & \method{setSolver () : void} \\
+ TU110 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher & \method{searchQuestions (parameters : JSON) : JSON} \\
 \rowcolor{D}
+ TU111 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher & \method{searchQuiz (parameters : JSON) : JSON} \\
+\rowcolor{P}
+ TU112 & Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: QuestionStatisticsFetcher & \method{fetchStats () : JSON} \\
+\rowcolor{D}
+ TU113 & Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: QuizStatisticsFetcher & \method{fetchStats () : JSON} \\
+\rowcolor{P}
+ TU114 & Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: StudentStatisticsFetcher & \method{fetchStats () : JSON} \\
+\rowcolor{D}
+ TU115 & Quizzipedia:: Server:: ControllerServer:: TopicManager:: TopicCreator & \method{createTopic (topic : String) : void} \\
+\rowcolor{P}
+ TU116 & Quizzipedia:: Server:: ControllerServer:: TopicManager:: TopicEraser & \method{eraseTopic (topic : String) : void} \\
+\rowcolor{D}
+ TU117 & Quizzipedia:: Server:: ControllerServer:: SessionController & \method{isAuthorized (email : String) : bool} \\
+\rowcolor{P}
+ TU118 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: CtrlQuestion & \method{save () : void} \\
+\rowcolor{D}
+ TU119 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: CtrlQuestionManager & \method{loadQuestionList () : void} \\
+\rowcolor{D}
+ & & \method{loadTeacher () : void} \\
+\rowcolor{D}
+ & & \method{modifyQuestion (question : GenericQuestion) : void} \\
+\rowcolor{D}
+ & & \method{removeQuestion (indexOfQuestion : int) : void} \\
+\rowcolor{P}
  TU12 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerQuiz & \method{addAnswer (answer : AnswerQuestion) : void} \\
-\rowcolor{D}
- & & \method{check () : bool} \\
-\rowcolor{D}
- & & \method{getAnswerQuestion () : AnswerQuestion} \\
-\rowcolor{D}
- & & \method{getDate () : Date} \\
-\rowcolor{D}
- & & \method{getQuiz () : Quiz} \\
-\rowcolor{D}
- & & \method{removeAnswer (indexOfAnswer : int) : void} \\
-\rowcolor{D}
- & & \method{setDate (date : Date) : void} \\
-\rowcolor{D}
- & & \method{setQuiz (quiz : Quiz) : void} \\
-\rowcolor{P}
- TU45 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerQuiz1 & \method{addAnswer (answer : AnswerQuestion) : void} \\
 \rowcolor{P}
  & & \method{check () : bool} \\
 \rowcolor{P}
@@ -122,59 +104,13 @@
 \rowcolor{D}
  & & \method{setAnswer () : void} \\
 \rowcolor{P}
- TU46 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerShortAnswerQ1 & \method{check () : bool} \\
-\rowcolor{P}
- & & \method{getGivenAnswer () : String} \\
-\rowcolor{P}
- & & \method{setAnswer () : void} \\
-\rowcolor{D}
  TU14 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerTrueFalseQ & \method{check () : bool} \\
-\rowcolor{D}
- & & \method{getGivenAnswer () : bool} \\
-\rowcolor{D}
- & & \method{setAnswer () : void} \\
-\rowcolor{P}
- TU47 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerTrueFalseQ1 & \method{check () : bool} \\
 \rowcolor{P}
  & & \method{getGivenAnswer () : bool} \\
 \rowcolor{P}
  & & \method{setAnswer () : void} \\
 \rowcolor{D}
- TU28 & Quizzipedia:: Client:: ModelClient:: Users:: AuthenticationData & \method{getFirstName () : String} \\
-\rowcolor{D}
- & & \method{getLastName () : String} \\
-\rowcolor{D}
- & & \method{getMail () : String} \\
-\rowcolor{D}
- & & \method{setPassword (newPsw : String, oldPsw : String) : void} \\
-\rowcolor{P}
- TU61 & Quizzipedia:: Server:: ModelServer:: Users1:: AuthenticationData1 & \method{getFirstName () : String} \\
-\rowcolor{P}
- & & \method{getLastName () : String} \\
-\rowcolor{P}
- & & \method{getMail () : String} \\
-\rowcolor{P}
- & & \method{setPassword (newPsw : String, oldPsw : String) : void} \\
-\rowcolor{D}
- TU68 & Quizzipedia:: Server:: RoutingManager:: AuthenticationRouter & \method{forwardTo1 () : void} \\
-\rowcolor{D}
- & & \method{forwardTo2 (bundle : JSON) : void} \\
-\rowcolor{D}
- & & \method{forwardTo3 () : JSON} \\
-\rowcolor{P}
  TU15 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: Cell & \method{getAttachment () : String} \\
-\rowcolor{P}
- & & \method{getPosition () : int} \\
-\rowcolor{P}
- & & \method{getText () : String} \\
-\rowcolor{P}
- & & \method{setAttachment (newAttachment : String) : void} \\
-\rowcolor{P}
- & & \method{setPosition (position : int) : void} \\
-\rowcolor{P}
- & & \method{setText (newText : String) : void} \\
-\rowcolor{D}
- TU48 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: Cell1 & \method{getAttachment () : String} \\
 \rowcolor{D}
  & & \method{getPosition () : int} \\
 \rowcolor{D}
@@ -185,68 +121,6 @@
  & & \method{setPosition (position : int) : void} \\
 \rowcolor{D}
  & & \method{setText (newText : String) : void} \\
-\rowcolor{P}
- TU1 & Quizzipedia:: Client:: ModelClient:: Organizations:: Class & \method{addStudent () : void} \\
-\rowcolor{P}
- & & \method{addTeacher () : void} \\
-\rowcolor{P}
- & & \method{edit (newDescription : String, newName : String, newYear : String) : void} \\
-\rowcolor{P}
- & & \method{getAcademicYear () : String} \\
-\rowcolor{P}
- & & \method{getDescription () : String} \\
-\rowcolor{P}
- & & \method{getName () : String} \\
-\rowcolor{P}
- & & \method{getStudents () : String[]} \\
-\rowcolor{P}
- & & \method{getTeachers () : String[]} \\
-\rowcolor{P}
- & & \method{removeStudent (studentMail : String) : void} \\
-\rowcolor{P}
- & & \method{removeTeacher (teacherMail : String) : void} \\
-\rowcolor{D}
- TU34 & Quizzipedia:: Server:: ModelServer:: Organizations1:: Class1 & \method{addStudent () : void} \\
-\rowcolor{D}
- & & \method{addTeacher () : void} \\
-\rowcolor{D}
- & & \method{edit (newDescription : String, newName : String, newYear : String) : void} \\
-\rowcolor{D}
- & & \method{getAcademicYear () : String} \\
-\rowcolor{D}
- & & \method{getDescription () : String} \\
-\rowcolor{D}
- & & \method{getName () : String} \\
-\rowcolor{D}
- & & \method{getStudents () : String[]} \\
-\rowcolor{D}
- & & \method{getTeachers () : String[]} \\
-\rowcolor{D}
- & & \method{removeStudent (studentMail : String) : void} \\
-\rowcolor{D}
- & & \method{removeTeacher (teacherMail : String) : void} \\
-\rowcolor{P}
- TU82 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassAdder & \method{adder (class : JSON, classname : String) : void} \\
-\rowcolor{D}
- TU83 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassDeleter & \method{deleter (classname : String) : void} \\
-\rowcolor{P}
- TU3 & Quizzipedia:: Client:: ModelClient:: Requests:: ClassList & \method{acceptClassRequest (indexOfRequest : int) : void} \\
-\rowcolor{P}
- & & \method{addClassRequest (mail : String, nameClass : String, year : String) : void} \\
-\rowcolor{P}
- & & \method{removeClassRequest (indexOfRequest : int) : void} \\
-\rowcolor{D}
- TU36 & Quizzipedia:: Server:: ModelServer:: Requests1:: ClassList1 & \method{acceptClassRequest (indexOfRequest : int) : void} \\
-\rowcolor{D}
- & & \method{addClassRequest (mail : String, nameClass : String, year : String) : void} \\
-\rowcolor{D}
- & & \method{removeClassRequest (indexOfRequest : int) : void} \\
-\rowcolor{P}
- TU69 & Quizzipedia:: Server:: RoutingManager:: ClassRouter & \method{forwardTo1 (bundle : JSON) : JSON} \\
-\rowcolor{P}
- & & \method{forwardTo2 (bundle : JSON) : void} \\
-\rowcolor{D}
- TU84 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassUpdater & \method{updater (classname : String, description : String) : void} \\
 \rowcolor{P}
  TU16 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: Column & \method{addCell (attachment : String, position : int, text : String) : void} \\
 \rowcolor{P}
@@ -258,29 +132,7 @@
 \rowcolor{P}
  & & \method{setText (newText : Cell[]) : void} \\
 \rowcolor{D}
- TU49 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: Column1 & \method{addCell (attachment : String, position : int, text : String) : void} \\
-\rowcolor{D}
- & & \method{getCorrectAnswer () : int[]} \\
-\rowcolor{D}
- & & \method{getText () : Cell[]} \\
-\rowcolor{D}
- & & \method{setCorrectAnswer (answer : int[]) : void} \\
-\rowcolor{D}
- & & \method{setText (newText : Cell[]) : void} \\
-\rowcolor{P}
  TU17 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: CompletionQ & \method{createAnswerQuestion (answer : String[]) : AnswerCompletionQ} \\
-\rowcolor{P}
- & & \method{getSuggestion () : String[]} \\
-\rowcolor{P}
- & & \method{removeSuggestion (index : int) : void} \\
-\rowcolor{P}
- & & \method{setCorrectAnswer (correctAnswer : String[]) : void} \\
-\rowcolor{P}
- & & \method{setSuggestion (suggestions : String[]) : void} \\
-\rowcolor{P}
- & & \method{setText (newText : String) : void} \\
-\rowcolor{D}
- TU50 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: CompletionQ1 & \method{createAnswerQuestion (answer : String[]) : AnswerCompletionQ} \\
 \rowcolor{D}
  & & \method{getSuggestion () : String[]} \\
 \rowcolor{D}
@@ -291,18 +143,6 @@
  & & \method{setSuggestion (suggestions : String[]) : void} \\
 \rowcolor{D}
  & & \method{setText (newText : String) : void} \\
-\rowcolor{P}
- TU118 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: CtrlQuestion & \method{save () : void} \\
-\rowcolor{D}
- TU29 & Quizzipedia:: Client:: ModelClient:: Users:: Director & \method{acceptStudent () : void} \\
-\rowcolor{D}
- & & \method{acceptTeacher () : void} \\
-\rowcolor{P}
- TU62 & Quizzipedia:: Server:: ModelServer:: Users1:: Director1 & \method{acceptStudent () : void} \\
-\rowcolor{P}
- & & \method{acceptTeacher () : void} \\
-\rowcolor{D}
- TU85 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: FromClassRemover & \method{remover (classname : String, email : String) : void} \\
 \rowcolor{P}
  TU18 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: GenericQuestion & \method{createStatisticsQuestion () : QuestionStatistics} \\
 \rowcolor{P}
@@ -318,23 +158,13 @@
 \rowcolor{P}
  & & \method{setTopic (newTopic : String) : void} \\
 \rowcolor{D}
- TU51 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: GenericQuestion1 & \method{createStatisticsQuestion () : QuestionStatistics} \\
+ TU19 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: MatchingQ & \method{addColumn (newColumn : Column) : void} \\
 \rowcolor{D}
- & & \method{setDescription (newDescription : String) : void} \\
+ & & \method{createAnswerQuestion (answerColumn : AnswerColumn[]) : AnswerMatchingQ} \\
 \rowcolor{D}
- & & \method{setDifficulty (difficulty : int) : void} \\
+ & & \method{getColumns () : Column[]} \\
 \rowcolor{D}
- & & \method{setKeyword (keyword : String) : void} \\
-\rowcolor{D}
- & & \method{setQuestionAttachment (attachment : String) : void} \\
-\rowcolor{D}
- & & \method{setTitle (newTitle : String) : void} \\
-\rowcolor{D}
- & & \method{setTopic (newTopic : String) : void} \\
-\rowcolor{P}
- TU86 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: InClassAdder & \method{adder (classname : String, email : String) : void} \\
-\rowcolor{D}
- TU106 & Quizzipedia:: Server:: ControllerServer:: RequestsManager:: InsertClassRequestsAdder & \method{add (class : String, email : String) : void} \\
+ & & \method{setColumns (newColumn : Column[]) : void} \\
 \rowcolor{P}
  TU2 & Quizzipedia:: Client:: ModelClient:: Organizations:: Institution & \method{acceptClassRequest (indexOfRequest : int) : void} \\
 \rowcolor{P}
@@ -370,6 +200,134 @@
 \rowcolor{P}
  & & \method{setName (newName : String) : void} \\
 \rowcolor{D}
+ TU20 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: MultipleChoiceQ & \method{createAnswerQuestion (answer : bool[]) : AnswerMultipleChoicheQ} \\
+\rowcolor{D}
+ & & \method{getAttachment () : String[]} \\
+\rowcolor{D}
+ & & \method{setAnswer () : void} \\
+\rowcolor{D}
+ & & \method{setAttachment (attachment : String, position : int) : void} \\
+\rowcolor{D}
+ & & \method{setCorrectAnswer (correctAnswers : bool[]) : void} \\
+\rowcolor{P}
+ TU21 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: ShortAnswerQ & \method{createAnswerQuestion (answer : String) : AnswerShortAnswerQ} \\
+\rowcolor{P}
+ & & \method{setCorrectAnswer (newCorrectAnswer : String) : void} \\
+\rowcolor{D}
+ TU22 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: TrueFalseQ & \method{createAnswerQuestion (answer : bool) : AnswerTrueFalseQ} \\
+\rowcolor{D}
+ & & \method{setCorrectAnswer (answer : bool) : void} \\
+\rowcolor{P}
+ TU23 & Quizzipedia:: Client:: ModelClient:: Services:: Quiz & \method{addClass (class : Class) : void} \\
+\rowcolor{P}
+ & & \method{addKeyword (keyword : String) : void} \\
+\rowcolor{P}
+ & & \method{addQuestion (question : GenericQuestion) : void} \\
+\rowcolor{P}
+ & & \method{addTopic (topic : String) : void} \\
+\rowcolor{P}
+ & & \method{createStatisticsQuiz () : QuizStatistics} \\
+\rowcolor{P}
+ & & \method{createStatisticsStudents () : StudentsStatisticsQuiz} \\
+\rowcolor{P}
+ & & \method{removeClass (indexOfClass : int) : void} \\
+\rowcolor{P}
+ & & \method{removeKeyword (indexOfKeyword : int) : void} \\
+\rowcolor{P}
+ & & \method{removeQuestion (indexOfQuestion : int) : void} \\
+\rowcolor{P}
+ & & \method{removeTopic (indexOfTopic : int) : void} \\
+\rowcolor{P}
+ & & \method{setDescription (newDescr : String) : void} \\
+\rowcolor{P}
+ & & \method{setTitle (newTitle : String) : void} \\
+\rowcolor{D}
+ TU24 & Quizzipedia:: Client:: ModelClient:: Services:: Topics & \method{addTopics (nameTopic : String) : void} \\
+\rowcolor{D}
+ & & \method{removeTopic (indexTopic : int) : void} \\
+\rowcolor{P}
+ TU25 & Quizzipedia:: Client:: ModelClient:: Statistics:: QuestionStatistics & \method{getQuizNumber () : int} \\
+\rowcolor{P}
+ & & \method{getSuccessRate () : double} \\
+\rowcolor{D}
+ TU26 & Quizzipedia:: Client:: ModelClient:: Statistics:: QuizStatistics & \method{getAverageResult () : double} \\
+\rowcolor{D}
+ & & \method{getSuccessRate () : double} \\
+\rowcolor{D}
+ & & \method{getTimesSolved () : int} \\
+\rowcolor{P}
+ TU27 & Quizzipedia:: Client:: ModelClient:: Statistics:: StudentsStatisticsQuiz & \method{getResults () : double[]} \\
+\rowcolor{P}
+ & & \method{getStudents () : Student[]} \\
+\rowcolor{D}
+ TU28 & Quizzipedia:: Client:: ModelClient:: Users:: AuthenticationData & \method{getFirstName () : String} \\
+\rowcolor{D}
+ & & \method{getLastName () : String} \\
+\rowcolor{D}
+ & & \method{getMail () : String} \\
+\rowcolor{D}
+ & & \method{setPassword (newPsw : String, oldPsw : String) : void} \\
+\rowcolor{P}
+ TU29 & Quizzipedia:: Client:: ModelClient:: Users:: Director & \method{acceptStudent () : void} \\
+\rowcolor{P}
+ & & \method{acceptTeacher () : void} \\
+\rowcolor{D}
+ TU3 & Quizzipedia:: Client:: ModelClient:: Requests:: ClassList & \method{acceptClassRequest (indexOfRequest : int) : void} \\
+\rowcolor{D}
+ & & \method{addClassRequest (mail : String, nameClass : String, year : String) : void} \\
+\rowcolor{D}
+ & & \method{removeClassRequest (indexOfRequest : int) : void} \\
+\rowcolor{P}
+ TU30 & Quizzipedia:: Client:: ModelClient:: Users:: NoRole & \method{addQuizToProfile (quiz : AnswerQuiz) : void} \\
+\rowcolor{P}
+ & & \method{getQuizProfile () : AnswerQuiz} \\
+\rowcolor{P}
+ & & \method{loadProfileQuiz () : void} \\
+\rowcolor{P}
+ & & \method{removeQuizFromProfile (indexOfQuiz : int) : void} \\
+\rowcolor{D}
+ TU31 & Quizzipedia:: Client:: ModelClient:: Users:: Student & \method{addQuizToProfile (quiz : AnswerQuiz) : void} \\
+\rowcolor{D}
+ & & \method{getQuizProfile () : AnswerQuiz[]} \\
+\rowcolor{D}
+ & & \method{loadQuizProfile () : void} \\
+\rowcolor{D}
+ & & \method{removeQuizFromProfile (indexOfQuiz : int) : void} \\
+\rowcolor{P}
+ TU32 & Quizzipedia:: Client:: ModelClient:: Users:: Teacher & \method{addQuiz (newQuiz : Quiz) : void} \\
+\rowcolor{P}
+ & & \method{getOwnQuiz () : Quiz[]} \\
+\rowcolor{P}
+ & & \method{getQuizStatistics () : QuizStatistics} \\
+\rowcolor{P}
+ & & \method{getStudentsStatistics () : StudentsStatisticsQuiz} \\
+\rowcolor{P}
+ & & \method{removeQuiz (indexOfQuiz : int) : void} \\
+\rowcolor{D}
+ TU33 & Quizzipedia:: Client:: ModelClient:: Users:: User & \method{getAuthenticationData () : AuthenticationData} \\
+\rowcolor{D}
+ & & \method{getMail () : String} \\
+\rowcolor{P}
+ TU34 & Quizzipedia:: Server:: ModelServer:: Organizations1:: Class1 & \method{addStudent () : void} \\
+\rowcolor{P}
+ & & \method{addTeacher () : void} \\
+\rowcolor{P}
+ & & \method{edit (newDescription : String, newName : String, newYear : String) : void} \\
+\rowcolor{P}
+ & & \method{getAcademicYear () : String} \\
+\rowcolor{P}
+ & & \method{getDescription () : String} \\
+\rowcolor{P}
+ & & \method{getName () : String} \\
+\rowcolor{P}
+ & & \method{getStudents () : String[]} \\
+\rowcolor{P}
+ & & \method{getTeachers () : String[]} \\
+\rowcolor{P}
+ & & \method{removeStudent (studentMail : String) : void} \\
+\rowcolor{P}
+ & & \method{removeTeacher (teacherMail : String) : void} \\
+\rowcolor{D}
  TU35 & Quizzipedia:: Server:: ModelServer:: Organizations1:: Institution1 & \method{acceptClassRequest (indexOfRequest : int) : void} \\
 \rowcolor{D}
  & & \method{acceptRequestRole (role : String) : void} \\
@@ -404,39 +362,153 @@
 \rowcolor{D}
  & & \method{setName (newName : String) : void} \\
 \rowcolor{P}
- TU70 & Quizzipedia:: Server:: RoutingManager:: InstitutionRouter & \method{forwardTo () : void} \\
+ TU36 & Quizzipedia:: Server:: ModelServer:: Requests1:: ClassList1 & \method{acceptClassRequest (indexOfRequest : int) : void} \\
+\rowcolor{P}
+ & & \method{addClassRequest (mail : String, nameClass : String, year : String) : void} \\
+\rowcolor{P}
+ & & \method{removeClassRequest (indexOfRequest : int) : void} \\
 \rowcolor{D}
- TU89 & Quizzipedia:: Server:: ControllerServer:: InstitutionManager:: InstitutionUpdater & \method{update (companyname : String, newname : String) : void} \\
+ TU37 & Quizzipedia:: Server:: ModelServer:: Requests1:: RequestClass1 & \method{getMail () : String} \\
 \rowcolor{P}
- TU78 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerIn & \method{login (email : String, password : String) : JSON} \\
+ TU38 & Quizzipedia:: Server:: ModelServer:: Requests1:: RequestRole2 & \method{getMail () : String} \\
+\rowcolor{P}
+ & & \method{getMessage () : String} \\
 \rowcolor{D}
- TU79 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerOut & \method{logout () : void} \\
-\rowcolor{P}
- TU19 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: MatchingQ & \method{addColumn (newColumn : Column) : void} \\
-\rowcolor{P}
- & & \method{createAnswerQuestion (answerColumn : AnswerColumn[]) : AnswerMatchingQ} \\
-\rowcolor{P}
- & & \method{getColumns () : Column[]} \\
-\rowcolor{P}
- & & \method{setColumns (newColumn : Column[]) : void} \\
+ TU39 & Quizzipedia:: Server:: ModelServer:: Requests1:: RoleList1 & \method{acceptStudent (indexOfStudent : int) : void} \\
 \rowcolor{D}
- TU52 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: MatchingQ1 & \method{addColumn (newColumn : Column) : void} \\
+ & & \method{acceptTeacher (indexOfTeacher : int) : void} \\
 \rowcolor{D}
- & & \method{createAnswerQuestion (answerColumn : AnswerColumn[]) : AnswerMatchingQ} \\
+ & & \method{addRoleList (mailUser : String, message : String, role : String) : void} \\
 \rowcolor{D}
- & & \method{getColumns () : Column[]} \\
+ & & \method{removeStudent () : void} \\
 \rowcolor{D}
- & & \method{setColumns (newColumn : Column[]) : void} \\
+ & & \method{removeTeacher () : void} \\
 \rowcolor{P}
- TU20 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: MultipleChoiceQ & \method{createAnswerQuestion (answer : bool[]) : AnswerMultipleChoicheQ} \\
+ TU4 & Quizzipedia:: Client:: ModelClient:: Requests:: RequestClass & \method{getMail () : String} \\
+\rowcolor{D}
+ TU40 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerColumn1 & \method{addAnswer (answer : int) : void} \\
+\rowcolor{D}
+ & & \method{checkColumn () : bool} \\
+\rowcolor{D}
+ & & \method{getGivenAnswerCell () : int[]} \\
+\rowcolor{D}
+ & & \method{setGivenAnswerCell (answer : int[]) : void} \\
 \rowcolor{P}
- & & \method{getAttachment () : String[]} \\
+ TU41 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerCompletionQ1 & \method{addAnswer (answer : String) : void} \\
 \rowcolor{P}
+ & & \method{check () : bool} \\
+\rowcolor{P}
+ & & \method{getGivenAnswer () : String[]} \\
+\rowcolor{D}
+ TU42 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerMatchingQ1 & \method{check () : bool} \\
+\rowcolor{D}
+ & & \method{getGivenAnswerColumn () : AnswerColumn} \\
+\rowcolor{D}
+ & & \method{setAnswer (answer : AnswerColumn) : void} \\
+\rowcolor{D}
+ & & \method{setGivenAnswerColumn (answer : AnswerColumn) : void} \\
+\rowcolor{P}
+ TU43 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerMultipleChoiceQ1 & \method{addAnswer (answer : bool) : void} \\
+\rowcolor{P}
+ & & \method{check () : bool} \\
+\rowcolor{P}
+ & & \method{getGivenAnswer () : bool[]} \\
+\rowcolor{D}
+ TU44 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerQuestion1 & \method{<<abstract>>check () : bool} \\
+\rowcolor{D}
+ & & \method{getQuestion () : GenricQuestion} \\
+\rowcolor{D}
+ & & \method{setQuestion (question : GenericQuestion) : void} \\
+\rowcolor{D}
+ & & \method{setSolver () : void} \\
+\rowcolor{P}
+ TU45 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerQuiz1 & \method{addAnswer (answer : AnswerQuestion) : void} \\
+\rowcolor{P}
+ & & \method{check () : bool} \\
+\rowcolor{P}
+ & & \method{getAnswerQuestion () : AnswerQuestion} \\
+\rowcolor{P}
+ & & \method{getDate () : Date} \\
+\rowcolor{P}
+ & & \method{getQuiz () : Quiz} \\
+\rowcolor{P}
+ & & \method{removeAnswer (indexOfAnswer : int) : void} \\
+\rowcolor{P}
+ & & \method{setDate (date : Date) : void} \\
+\rowcolor{P}
+ & & \method{setQuiz (quiz : Quiz) : void} \\
+\rowcolor{D}
+ TU46 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerShortAnswerQ1 & \method{check () : bool} \\
+\rowcolor{D}
+ & & \method{getGivenAnswer () : String} \\
+\rowcolor{D}
  & & \method{setAnswer () : void} \\
 \rowcolor{P}
- & & \method{setAttachment (attachment : String, position : int) : void} \\
+ TU47 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerTrueFalseQ1 & \method{check () : bool} \\
 \rowcolor{P}
- & & \method{setCorrectAnswer (correctAnswers : bool[]) : void} \\
+ & & \method{getGivenAnswer () : bool} \\
+\rowcolor{P}
+ & & \method{setAnswer () : void} \\
+\rowcolor{D}
+ TU48 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: Cell1 & \method{getAttachment () : String} \\
+\rowcolor{D}
+ & & \method{getPosition () : int} \\
+\rowcolor{D}
+ & & \method{getText () : String} \\
+\rowcolor{D}
+ & & \method{setAttachment (newAttachment : String) : void} \\
+\rowcolor{D}
+ & & \method{setPosition (position : int) : void} \\
+\rowcolor{D}
+ & & \method{setText (newText : String) : void} \\
+\rowcolor{P}
+ TU49 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: Column1 & \method{addCell (attachment : String, position : int, text : String) : void} \\
+\rowcolor{P}
+ & & \method{getCorrectAnswer () : int[]} \\
+\rowcolor{P}
+ & & \method{getText () : Cell[]} \\
+\rowcolor{P}
+ & & \method{setCorrectAnswer (answer : int[]) : void} \\
+\rowcolor{P}
+ & & \method{setText (newText : Cell[]) : void} \\
+\rowcolor{D}
+ TU5 & Quizzipedia:: Client:: ModelClient:: Requests:: RequestRole1 & \method{getMail () : String} \\
+\rowcolor{D}
+ & & \method{getMessage () : String} \\
+\rowcolor{P}
+ TU50 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: CompletionQ1 & \method{createAnswerQuestion (answer : String[]) : AnswerCompletionQ} \\
+\rowcolor{P}
+ & & \method{getSuggestion () : String[]} \\
+\rowcolor{P}
+ & & \method{removeSuggestion (index : int) : void} \\
+\rowcolor{P}
+ & & \method{setCorrectAnswer (correctAnswer : String[]) : void} \\
+\rowcolor{P}
+ & & \method{setSuggestion (suggestions : String[]) : void} \\
+\rowcolor{P}
+ & & \method{setText (newText : String) : void} \\
+\rowcolor{D}
+ TU51 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: GenericQuestion1 & \method{createStatisticsQuestion () : QuestionStatistics} \\
+\rowcolor{D}
+ & & \method{setDescription (newDescription : String) : void} \\
+\rowcolor{D}
+ & & \method{setDifficulty (difficulty : int) : void} \\
+\rowcolor{D}
+ & & \method{setKeyword (keyword : String) : void} \\
+\rowcolor{D}
+ & & \method{setQuestionAttachment (attachment : String) : void} \\
+\rowcolor{D}
+ & & \method{setTitle (newTitle : String) : void} \\
+\rowcolor{D}
+ & & \method{setTopic (newTopic : String) : void} \\
+\rowcolor{P}
+ TU52 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: MatchingQ1 & \method{addColumn (newColumn : Column) : void} \\
+\rowcolor{P}
+ & & \method{createAnswerQuestion (answerColumn : AnswerColumn[]) : AnswerMatchingQ} \\
+\rowcolor{P}
+ & & \method{getColumns () : Column[]} \\
+\rowcolor{P}
+ & & \method{setColumns (newColumn : Column[]) : void} \\
 \rowcolor{D}
  TU53 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: MultipleChoiceQ1 & \method{createAnswerQuestion (answer : bool[]) : AnswerMultipleChoicheQ} \\
 \rowcolor{D}
@@ -448,81 +520,13 @@
 \rowcolor{D}
  & & \method{setCorrectAnswer (correctAnswers : bool[]) : void} \\
 \rowcolor{P}
- TU30 & Quizzipedia:: Client:: ModelClient:: Users:: NoRole & \method{addQuizToProfile (quiz : AnswerQuiz) : void} \\
+ TU54 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: ShortAnswerQ1 & \method{createAnswerQuestion (answer : String) : AnswerShortAnswerQ} \\
 \rowcolor{P}
- & & \method{getQuizProfile () : AnswerQuiz} \\
-\rowcolor{P}
- & & \method{loadProfileQuiz () : void} \\
-\rowcolor{P}
- & & \method{removeQuizFromProfile (indexOfQuiz : int) : void} \\
+ & & \method{setCorrectAnswer (newCorrectAnswer : String) : void} \\
 \rowcolor{D}
- TU63 & Quizzipedia:: Server:: ModelServer:: Users1:: NoRole1 & \method{addQuizToProfile (quiz : AnswerQuiz) : void} \\
+ TU55 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: TrueFalseQ1 & \method{createAnswerQuestion (answer : bool) : AnswerTrueFalseQ} \\
 \rowcolor{D}
- & & \method{getQuizProfile () : AnswerQuiz} \\
-\rowcolor{D}
- & & \method{loadProfileQuiz () : void} \\
-\rowcolor{D}
- & & \method{removeQuizFromProfile (indexOfQuiz : int) : void} \\
-\rowcolor{P}
- TU80 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: PasswordRecover & \method{recoverPassword () : JSON} \\
-\rowcolor{D}
- TU91 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PasswordSetter & \method{setPassword (email : String, password : String) : void} \\
-\rowcolor{P}
- TU92 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PersonalDataFetcher & \method{fetchData (email : String) : JSON} \\
-\rowcolor{D}
- TU93 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PersonalQuizFetcher & \method{fetchQuiz (email : String) : JSON} \\
-\rowcolor{P}
- TU71 & Quizzipedia:: Server:: RoutingManager:: ProfileRouter & \method{forwardTo1 (bundle : JSON) : JSON} \\
-\rowcolor{P}
- & & \method{forwardTo2 (bundle : JSON) : void} \\
-\rowcolor{D}
- TU98 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent:: QMLGenerator & \method{generate (question : JSON) : String} \\
-\rowcolor{P}
- TU99 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent:: QMLParser & \method{parse (question : String) : JSON} \\
-\rowcolor{D}
- TU94 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionCreator & \method{createQuestion (question : JSON) : void} \\
-\rowcolor{P}
- TU95 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionEraser & \method{eraseQuestion (question : String) : void} \\
-\rowcolor{D}
- TU72 & Quizzipedia:: Server:: RoutingManager:: QuestionRouter & \method{forwardTo (bundle : JSON) : void} \\
-\rowcolor{P}
- TU110 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher & \method{searchQuestions (parameters : JSON) : JSON} \\
-\rowcolor{D}
- TU25 & Quizzipedia:: Client:: ModelClient:: Statistics:: QuestionStatistics & \method{getQuizNumber () : int} \\
-\rowcolor{D}
- & & \method{getSuccessRate () : double} \\
-\rowcolor{P}
- TU58 & Quizzipedia:: Server:: ModelServer:: Statistics1:: QuestionStatistics1 & \method{getQuizNumber () : int} \\
-\rowcolor{P}
- & & \method{getSuccessRate () : double} \\
-\rowcolor{D}
- TU112 & Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: QuestionStatisticsFetcher & \method{fetchStats () : JSON} \\
-\rowcolor{P}
- TU96 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionUpdater & \method{updateQuestion (question : JSON) : void} \\
-\rowcolor{D}
- TU23 & Quizzipedia:: Client:: ModelClient:: Services:: Quiz & \method{addClass (class : Class) : void} \\
-\rowcolor{D}
- & & \method{addKeyword (keyword : String) : void} \\
-\rowcolor{D}
- & & \method{addQuestion (question : GenericQuestion) : void} \\
-\rowcolor{D}
- & & \method{addTopic (topic : String) : void} \\
-\rowcolor{D}
- & & \method{createStatisticsQuiz () : QuizStatistics} \\
-\rowcolor{D}
- & & \method{createStatisticsStudents () : StudentsStatisticsQuiz} \\
-\rowcolor{D}
- & & \method{removeClass (indexOfClass : int) : void} \\
-\rowcolor{D}
- & & \method{removeKeyword (indexOfKeyword : int) : void} \\
-\rowcolor{D}
- & & \method{removeQuestion (indexOfQuestion : int) : void} \\
-\rowcolor{D}
- & & \method{removeTopic (indexOfTopic : int) : void} \\
-\rowcolor{D}
- & & \method{setDescription (newDescr : String) : void} \\
-\rowcolor{D}
- & & \method{setTitle (newTitle : String) : void} \\
+ & & \method{setCorrectAnswer (answer : bool) : void} \\
 \rowcolor{P}
  TU56 & Quizzipedia:: Server:: ModelServer:: Services1:: Quiz1 & \method{addClass (class : Class) : void} \\
 \rowcolor{P}
@@ -548,23 +552,13 @@
 \rowcolor{P}
  & & \method{setTitle (newTitle : String) : void} \\
 \rowcolor{D}
- TU100 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizCreator & \method{createQuiz (quiz : JSON) : void} \\
-\rowcolor{P}
- TU101 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizEraser & \method{eraseQuiz (quiz : String) : void} \\
+ TU57 & Quizzipedia:: Server:: ModelServer:: Services1:: Topics1 & \method{addTopics (nameTopic : String) : void} \\
 \rowcolor{D}
- TU102 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizFetcher & \method{fetchQuiz (quiz : String) : JSON} \\
+ & & \method{removeTopic (indexTopic : int) : void} \\
 \rowcolor{P}
- TU73 & Quizzipedia:: Server:: RoutingManager:: QuizRouter & \method{forwardTo1 (bundle : JSON) : JSON} \\
-\rowcolor{P}
- & & \method{forwardTo2 (bundle : JSON) : void} \\
-\rowcolor{D}
- TU111 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher & \method{searchQuiz (parameters : JSON) : JSON} \\
-\rowcolor{P}
- TU26 & Quizzipedia:: Client:: ModelClient:: Statistics:: QuizStatistics & \method{getAverageResult () : double} \\
+ TU58 & Quizzipedia:: Server:: ModelServer:: Statistics1:: QuestionStatistics1 & \method{getQuizNumber () : int} \\
 \rowcolor{P}
  & & \method{getSuccessRate () : double} \\
-\rowcolor{P}
- & & \method{getTimesSolved () : int} \\
 \rowcolor{D}
  TU59 & Quizzipedia:: Server:: ModelServer:: Statistics1:: QuizStatistics1 & \method{getAverageResult () : double} \\
 \rowcolor{D}
@@ -572,45 +566,7 @@
 \rowcolor{D}
  & & \method{getTimesSolved () : int} \\
 \rowcolor{P}
- TU113 & Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: QuizStatisticsFetcher & \method{fetchStats () : JSON} \\
-\rowcolor{D}
- TU103 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizUpdater & \method{updateQuiz (quiz : JSON) : void} \\
-\rowcolor{P}
- TU81 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: Register & \method{register (email : String, firstname : String, lastname : String, password : String) : void} \\
-\rowcolor{D}
- TU4 & Quizzipedia:: Client:: ModelClient:: Requests:: RequestClass & \method{getMail () : String} \\
-\rowcolor{P}
- TU37 & Quizzipedia:: Server:: ModelServer:: Requests1:: RequestClass1 & \method{getMail () : String} \\
-\rowcolor{D}
- TU5 & Quizzipedia:: Client:: ModelClient:: Requests:: RequestRole1 & \method{getMail () : String} \\
-\rowcolor{D}
- & & \method{getMessage () : String} \\
-\rowcolor{P}
- TU38 & Quizzipedia:: Server:: ModelServer:: Requests1:: RequestRole2 & \method{getMail () : String} \\
-\rowcolor{P}
- & & \method{getMessage () : String} \\
-\rowcolor{D}
- TU107 & Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RequestsFetcher & \method{fetchRequests () : JSON} \\
-\rowcolor{P}
- TU74 & Quizzipedia:: Server:: RoutingManager:: RequestsRouter & \method{forwardTo1 (bundle : JSON) : void} \\
-\rowcolor{P}
- & & \method{forwardTo2 () : JSON} \\
-\rowcolor{D}
- TU104 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: ResultsUpdater & \method{updateResults (quiz : String, results : JSON) : void} \\
-\rowcolor{P}
- TU108 & Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RoleAccepter & \method{accept (email : String, role : String) : void} \\
-\rowcolor{D}
  TU6 & Quizzipedia:: Client:: ModelClient:: Requests:: RoleList & \method{acceptStudent (indexOfStudent : int) : void} \\
-\rowcolor{D}
- & & \method{acceptTeacher (indexOfTeacher : int) : void} \\
-\rowcolor{D}
- & & \method{addRoleList (mailUser : String, message : String, role : String) : void} \\
-\rowcolor{D}
- & & \method{removeStudent () : void} \\
-\rowcolor{D}
- & & \method{removeTeacher () : void} \\
-\rowcolor{P}
- TU39 & Quizzipedia:: Server:: ModelServer:: Requests1:: RoleList1 & \method{acceptStudent (indexOfStudent : int) : void} \\
 \rowcolor{P}
  & & \method{acceptTeacher (indexOfTeacher : int) : void} \\
 \rowcolor{P}
@@ -619,66 +575,38 @@
  & & \method{removeStudent () : void} \\
 \rowcolor{P}
  & & \method{removeTeacher () : void} \\
-\rowcolor{D}
- TU109 & Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RoleRequestAdder & \method{add (email : String, role : String) : void} \\
-\rowcolor{P}
- TU75 & Quizzipedia:: Server:: RoutingManager:: SearchRouter & \method{forwardTo (bundle : JSON) : JSON} \\
-\rowcolor{D}
- TU117 & Quizzipedia:: Server:: ControllerServer:: SessionController & \method{isAuthorized (email : String) : bool} \\
-\rowcolor{P}
- TU21 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: ShortAnswerQ & \method{createAnswerQuestion (answer : String) : AnswerShortAnswerQ} \\
-\rowcolor{P}
- & & \method{setCorrectAnswer (newCorrectAnswer : String) : void} \\
-\rowcolor{D}
- TU54 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: ShortAnswerQ1 & \method{createAnswerQuestion (answer : String) : AnswerShortAnswerQ} \\
-\rowcolor{D}
- & & \method{setCorrectAnswer (newCorrectAnswer : String) : void} \\
-\rowcolor{P}
- TU97 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: StatisticsQuestionUpdater & \method{updateStats (question : String, statistics : JSON) : void} \\
-\rowcolor{D}
- TU105 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: StatisticsQuizUpdater & \method{updateStats (quiz : String, statistics : JSON) : void} \\
-\rowcolor{P}
- TU76 & Quizzipedia:: Server:: RoutingManager:: StatisticsRouter & \method{forwardTo1 (bundle : JSON) : JSON} \\
-\rowcolor{P}
- & & \method{forwardTo2 () : JSON} \\
-\rowcolor{D}
- TU31 & Quizzipedia:: Client:: ModelClient:: Users:: Student & \method{addQuizToProfile (quiz : AnswerQuiz) : void} \\
-\rowcolor{D}
- & & \method{getQuizProfile () : AnswerQuiz[]} \\
-\rowcolor{D}
- & & \method{loadQuizProfile () : void} \\
-\rowcolor{D}
- & & \method{removeQuizFromProfile (indexOfQuiz : int) : void} \\
-\rowcolor{P}
- TU64 & Quizzipedia:: Server:: ModelServer:: Users1:: Student1 & \method{addQuizToProfile (quiz : AnswerQuiz) : void} \\
-\rowcolor{P}
- & & \method{getQuizProfile () : AnswerQuiz[]} \\
-\rowcolor{P}
- & & \method{loadQuizProfile () : void} \\
-\rowcolor{P}
- & & \method{removeQuizFromProfile (indexOfQuiz : int) : void} \\
-\rowcolor{D}
- TU87 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: StudentsClassFetcher & \method{getStudents (classname : String) : JSON} \\
-\rowcolor{P}
- TU27 & Quizzipedia:: Client:: ModelClient:: Statistics:: StudentsStatisticsQuiz & \method{getResults () : double[]} \\
-\rowcolor{P}
- & & \method{getStudents () : Student[]} \\
 \rowcolor{D}
  TU60 & Quizzipedia:: Server:: ModelServer:: Statistics1:: StudentsStatisticsQuiz1 & \method{getResults () : double[]} \\
 \rowcolor{D}
  & & \method{getStudents () : Student[]} \\
 \rowcolor{P}
- TU114 & Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: StudentStatisticsFetcher & \method{fetchStats () : JSON} \\
+ TU61 & Quizzipedia:: Server:: ModelServer:: Users1:: AuthenticationData1 & \method{getFirstName () : String} \\
+\rowcolor{P}
+ & & \method{getLastName () : String} \\
+\rowcolor{P}
+ & & \method{getMail () : String} \\
+\rowcolor{P}
+ & & \method{setPassword (newPsw : String, oldPsw : String) : void} \\
 \rowcolor{D}
- TU32 & Quizzipedia:: Client:: ModelClient:: Users:: Teacher & \method{addQuiz (newQuiz : Quiz) : void} \\
+ TU62 & Quizzipedia:: Server:: ModelServer:: Users1:: Director1 & \method{acceptStudent () : void} \\
 \rowcolor{D}
- & & \method{getOwnQuiz () : Quiz[]} \\
+ & & \method{acceptTeacher () : void} \\
+\rowcolor{P}
+ TU63 & Quizzipedia:: Server:: ModelServer:: Users1:: NoRole1 & \method{addQuizToProfile (quiz : AnswerQuiz) : void} \\
+\rowcolor{P}
+ & & \method{getQuizProfile () : AnswerQuiz} \\
+\rowcolor{P}
+ & & \method{loadProfileQuiz () : void} \\
+\rowcolor{P}
+ & & \method{removeQuizFromProfile (indexOfQuiz : int) : void} \\
 \rowcolor{D}
- & & \method{getQuizStatistics () : QuizStatistics} \\
+ TU64 & Quizzipedia:: Server:: ModelServer:: Users1:: Student1 & \method{addQuizToProfile (quiz : AnswerQuiz) : void} \\
 \rowcolor{D}
- & & \method{getStudentsStatistics () : StudentsStatisticsQuiz} \\
+ & & \method{getQuizProfile () : AnswerQuiz[]} \\
 \rowcolor{D}
- & & \method{removeQuiz (indexOfQuiz : int) : void} \\
+ & & \method{loadQuizProfile () : void} \\
+\rowcolor{D}
+ & & \method{removeQuizFromProfile (indexOfQuiz : int) : void} \\
 \rowcolor{P}
  TU65 & Quizzipedia:: Server:: ModelServer:: Users1:: Teacher1 & \method{addQuiz (newQuiz : Quiz) : void} \\
 \rowcolor{P}
@@ -690,37 +618,117 @@
 \rowcolor{P}
  & & \method{removeQuiz (indexOfQuiz : int) : void} \\
 \rowcolor{D}
+ TU66 & Quizzipedia:: Server:: ModelServer:: Users1:: User1 & \method{getAuthenticationData () : AuthenticationData} \\
+\rowcolor{D}
+ & & \method{getMail () : String1} \\
+\rowcolor{P}
+ TU67 & Quizzipedia:: Server:: RoutingManager:: AbstractRouter & \method{<<abstract>> forwardTo1 (bundle : JSON) : void} \\
+\rowcolor{P}
+ & & \method{<<abstract>> forwardTo2 (bundle : JSON) : JSON} \\
+\rowcolor{P}
+ & & \method{<<abstract>> forwardTo3 () : JSON} \\
+\rowcolor{P}
+ & & \method{<<abstract>> forwardTo4 () : void} \\
+\rowcolor{D}
+ TU68 & Quizzipedia:: Server:: RoutingManager:: AuthenticationRouter & \method{forwardTo1 () : void} \\
+\rowcolor{D}
+ & & \method{forwardTo2 (bundle : JSON) : void} \\
+\rowcolor{D}
+ & & \method{forwardTo3 () : JSON} \\
+\rowcolor{P}
+ TU69 & Quizzipedia:: Server:: RoutingManager:: ClassRouter & \method{forwardTo1 (bundle : JSON) : JSON} \\
+\rowcolor{P}
+ & & \method{forwardTo2 (bundle : JSON) : void} \\
+\rowcolor{D}
+ TU7 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerColumn & \method{addAnswer (answer : int) : void} \\
+\rowcolor{D}
+ & & \method{checkColumn () : bool} \\
+\rowcolor{D}
+ & & \method{getGivenAnswerCell () : int[]} \\
+\rowcolor{D}
+ & & \method{setGivenAnswerCell (answer : int[]) : void} \\
+\rowcolor{P}
+ TU70 & Quizzipedia:: Server:: RoutingManager:: InstitutionRouter & \method{forwardTo () : void} \\
+\rowcolor{D}
+ TU71 & Quizzipedia:: Server:: RoutingManager:: ProfileRouter & \method{forwardTo1 (bundle : JSON) : JSON} \\
+\rowcolor{D}
+ & & \method{forwardTo2 (bundle : JSON) : void} \\
+\rowcolor{P}
+ TU72 & Quizzipedia:: Server:: RoutingManager:: QuestionRouter & \method{forwardTo (bundle : JSON) : void} \\
+\rowcolor{D}
+ TU73 & Quizzipedia:: Server:: RoutingManager:: QuizRouter & \method{forwardTo1 (bundle : JSON) : JSON} \\
+\rowcolor{D}
+ & & \method{forwardTo2 (bundle : JSON) : void} \\
+\rowcolor{P}
+ TU74 & Quizzipedia:: Server:: RoutingManager:: RequestsRouter & \method{forwardTo1 (bundle : JSON) : void} \\
+\rowcolor{P}
+ & & \method{forwardTo2 () : JSON} \\
+\rowcolor{D}
+ TU75 & Quizzipedia:: Server:: RoutingManager:: SearchRouter & \method{forwardTo (bundle : JSON) : JSON} \\
+\rowcolor{P}
+ TU76 & Quizzipedia:: Server:: RoutingManager:: StatisticsRouter & \method{forwardTo1 (bundle : JSON) : JSON} \\
+\rowcolor{P}
+ & & \method{forwardTo2 () : JSON} \\
+\rowcolor{D}
+ TU77 & Quizzipedia:: Server:: RoutingManager:: TopicRouter & \method{forwardTo (bundle : JSON) : void} \\
+\rowcolor{P}
+ TU78 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerIn & \method{login (email : String, password : String) : JSON} \\
+\rowcolor{D}
+ TU79 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerOut & \method{logout () : void} \\
+\rowcolor{P}
+ TU8 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerCompletionQ & \method{addAnswer (answer : String) : void} \\
+\rowcolor{P}
+ & & \method{check () : bool} \\
+\rowcolor{P}
+ & & \method{getGivenAnswer () : String[]} \\
+\rowcolor{D}
+ TU80 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: PasswordRecover & \method{recoverPassword () : JSON} \\
+\rowcolor{P}
+ TU81 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: Register & \method{register (email : String, firstname : String, lastname : String, password : String) : void} \\
+\rowcolor{D}
+ TU82 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassAdder & \method{adder (class : JSON, classname : String) : void} \\
+\rowcolor{P}
+ TU83 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassDeleter & \method{deleter (classname : String) : void} \\
+\rowcolor{D}
+ TU84 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassUpdater & \method{updater (classname : String, description : String) : void} \\
+\rowcolor{P}
+ TU85 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: FromClassRemover & \method{remover (classname : String, email : String) : void} \\
+\rowcolor{D}
+ TU86 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: InClassAdder & \method{adder (classname : String, email : String) : void} \\
+\rowcolor{P}
+ TU87 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: StudentsClassFetcher & \method{getStudents (classname : String) : JSON} \\
+\rowcolor{D}
  TU88 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: TeachersClassFetcher & \method{getTeachers (classname : String) : JSON} \\
 \rowcolor{P}
- TU115 & Quizzipedia:: Server:: ControllerServer:: TopicManager:: TopicCreator & \method{createTopic (topic : String) : void} \\
+ TU89 & Quizzipedia:: Server:: ControllerServer:: InstitutionManager:: InstitutionUpdater & \method{update (companyname : String, newname : String) : void} \\
 \rowcolor{D}
- TU116 & Quizzipedia:: Server:: ControllerServer:: TopicManager:: TopicEraser & \method{eraseTopic (topic : String) : void} \\
-\rowcolor{P}
- TU77 & Quizzipedia:: Server:: RoutingManager:: TopicRouter & \method{forwardTo (bundle : JSON) : void} \\
+ TU9 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerMatchingQ & \method{check () : bool} \\
 \rowcolor{D}
- TU24 & Quizzipedia:: Client:: ModelClient:: Services:: Topics & \method{addTopics (nameTopic : String) : void} \\
+ & & \method{getGivenAnswerColumn () : AnswerColumn} \\
 \rowcolor{D}
- & & \method{removeTopic (indexTopic : int) : void} \\
-\rowcolor{P}
- TU57 & Quizzipedia:: Server:: ModelServer:: Services1:: Topics1 & \method{addTopics (nameTopic : String) : void} \\
-\rowcolor{P}
- & & \method{removeTopic (indexTopic : int) : void} \\
+ & & \method{setAnswer (answer : AnswerColumn) : void} \\
 \rowcolor{D}
- TU22 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: TrueFalseQ & \method{createAnswerQuestion (answer : bool) : AnswerTrueFalseQ} \\
+ & & \method{setGivenAnswerColumn (answer : AnswerColumn) : void} \\
+\rowcolor{P}
+ TU90 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: AccountDeleter & \method{deleteAccount (email : String) : void} \\
 \rowcolor{D}
- & & \method{setCorrectAnswer (answer : bool) : void} \\
+ TU91 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PasswordSetter & \method{setPassword (email : String, password : String) : void} \\
 \rowcolor{P}
- TU55 & Quizzipedia:: Server:: ModelServer:: Services1:: Questions1:: TrueFalseQ1 & \method{createAnswerQuestion (answer : bool) : AnswerTrueFalseQ} \\
-\rowcolor{P}
- & & \method{setCorrectAnswer (answer : bool) : void} \\
+ TU92 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PersonalDataFetcher & \method{fetchData (email : String) : JSON} \\
 \rowcolor{D}
- TU33 & Quizzipedia:: Client:: ModelClient:: Users:: User & \method{getAuthenticationData () : AuthenticationData} \\
+ TU93 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PersonalQuizFetcher & \method{fetchQuiz (email : String) : JSON} \\
+\rowcolor{P}
+ TU94 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionCreator & \method{createQuestion (question : JSON) : void} \\
 \rowcolor{D}
- & & \method{getMail () : String} \\
+ TU95 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionEraser & \method{eraseQuestion (question : String) : void} \\
 \rowcolor{P}
- TU66 & Quizzipedia:: Server:: ModelServer:: Users1:: User1 & \method{getAuthenticationData () : AuthenticationData} \\
+ TU96 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionUpdater & \method{updateQuestion (question : JSON) : void} \\
+\rowcolor{D}
+ TU97 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: StatisticsQuestionUpdater & \method{updateStats (question : String, statistics : JSON) : void} \\
 \rowcolor{P}
- & & \method{getMail () : String1} \\
+ TU98 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent:: QMLGenerator & \method{generate (question : JSON) : String} \\
+\rowcolor{D}
+ TU99 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent:: QMLParser & \method{parse (question : String) : JSON} \\
 \rowcolor{white}
 \caption{Tracciamento test di unità - metodi di classe}
 \end{tabella}
