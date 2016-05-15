@@ -58,39 +58,191 @@ ROF1.5 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Registration \\
 \rowcolor{D}
  & Quizzipedia::Server::ControllerServer::AuthenticationManager::Register \\
 \rowcolor{P}
-ROF11 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent:: QMLParser \\
-\rowcolor{D}
-ROF11.1 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizFetcher \\
+ROF11 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: MatchingQ \\
 \rowcolor{P}
-ROF11.2 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizFetcher \\
+ & Quizzipedia::Client::ModelClient::Services::Quiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ModelClient::Users::NoRole \\
+\rowcolor{P}
+ & Quizzipedia::Client::ModelClient::Users::Student \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewCompletionQ \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMatchingQ \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMultipleChoiceQ \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewShortAnswerQ \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewTrueFalseQ \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuizExec \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewClient::ViewStatistics::ViewQuizResults \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizSelection \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLParser \\
 \rowcolor{D}
-ROF11.4 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: StatisticsQuestionUpdater \\
+ROF11.1 & Quizzipedia:: Client:: ModelClient:: Users:: NoRole \\
 \rowcolor{D}
+ & Quizzipedia::Client::ModelClient::Users::Student \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher \\
+\rowcolor{P}
+ROF11.2 & Quizzipedia:: Client:: ModelClient:: Users:: NoRole \\
+\rowcolor{P}
+ & Quizzipedia::Client::ModelClient::Users::Student \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizSelection \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher \\
+\rowcolor{D}
+ROF11.3 & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewCompletionQ \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMatchingQ \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMultipleChoiceQ \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewShortAnswerQ \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewTrueFalseQ \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec \\
+\rowcolor{P}
+ROF11.3.1 & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuizExec \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec \\
+\rowcolor{D}
+ROF11.3.2 & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuizExec \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec \\
+\rowcolor{P}
+ROF11.4 & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuizExec \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::QuestionsManager::StatisticsQuestionUpdater \\
+\rowcolor{P}
  & Quizzipedia::Server::ControllerServer::QuizManager::QMLAgent::QMLGenerator \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::QuizManager::StatisticsQuizUpdater \\
+\rowcolor{D}
+ROF11.5 & Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewQuizResults \\
 \rowcolor{D}
  & Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater \\
-\rowcolor{D}
- & Quizzipedia::Server::ControllerServer::QuizManager::StatisticsQuizUpdater \\
 \rowcolor{P}
-ROF11.5 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: ResultsUpdater \\
-\rowcolor{D}
-ROF12.1 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ROF12 & Quizzipedia:: Client:: ModelClient:: Users:: NoRole \\
 \rowcolor{P}
-ROF12.1.1 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
-\rowcolor{D}
-ROF12.1.1.1 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ & Quizzipedia::Client::ModelClient::Users::Student \\
 \rowcolor{P}
-ROF12.1.1.2 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
-\rowcolor{D}
-ROF12.1.1.3 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ & Quizzipedia::Client::ModelClient::Users::Teacher \\
 \rowcolor{P}
-ROF12.1.1.4 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
-\rowcolor{D}
-ROF12.1.1.5 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ & Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuestions \\
 \rowcolor{P}
-ROF12.1.1.5.1 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ & Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuestion \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuestion \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuiz \\
 \rowcolor{D}
-ROF12.1.1.6 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ROF12.1 & Quizzipedia:: Client:: ModelClient:: Users:: NoRole \\
+\rowcolor{D}
+ & Quizzipedia::Client::ModelClient::Users::Student \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher \\
+\rowcolor{P}
+ROF12.1.1 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher \\
+\rowcolor{D}
+ROF12.1.1.1 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher \\
+\rowcolor{P}
+ROF12.1.1.2 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher \\
+\rowcolor{D}
+ROF12.1.1.3 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher \\
+\rowcolor{P}
+ROF12.1.1.4 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher \\
+\rowcolor{D}
+ROF12.1.1.5 & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher \\
+\rowcolor{P}
+ROF12.1.1.5.1 & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher \\
+\rowcolor{D}
+ROF12.1.1.6 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlServices::MySearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher \\
 \rowcolor{P}
 ROF12.2 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher \\
 \rowcolor{D}
