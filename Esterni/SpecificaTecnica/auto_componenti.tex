@@ -66,6 +66,7 @@ accessibile dai soli studenti delle classi
 accesso alla struttura della classe e potere quindi svolgere correttamente operazioni su di
 essa
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz} per fornire al docente la lista delle classi a cui poter assegnare il quiz
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizSelection} per ottenere le classi a cui l'utente è iscritto
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlStudentsQuizStats} per fornire all'utente la lista di classi tra cui scegliere
 \end{itemize}
 \subsubsection{Classe \cls{Institution}}
@@ -204,6 +205,7 @@ Include la struttura del quiz.
 \item usata da \cls{Quizzipedia::Client::ModelClient::Users::Teacher} per tenere traccia dei quiz da lui creati
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz} per avere un riferimento alla struttura dei quiz durante la creazione
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizManager} per dare al docente lista di quiz di cui è proprietario con possibilità di modifica e rimozione
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizSelection} per avere un riferimento al quiz che l'utente intende risolvere
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz} per poter restituire all'utente un quiz che rispetti i criteri specificati
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlStudentsQuizStats} per selezionare il quiz di cui si vogliono avere le statistiche
 \end{itemize}
@@ -328,6 +330,7 @@ Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \item usata da \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuiz} per memorizzare e verificare le risposte date dagli utenti alle domande che compongono il quiz
 \item usata da \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerShortAnswerQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda aperta
 \item usata da \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerTrueFalseQ} per concretizzarla, ereditandone così i campi dati e i metodi concreti. Inoltre, la classe concretizza il metodo check e memorizza correttamente la risposta data in caso di risposta a domanda di tipo vero/falso
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec} per memorizzare le risposte date dagli utenti alle singole domande
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -346,6 +349,7 @@ Classe che si occupa di memorizzare le informazioni di un quiz completato e gest
 \begin{itemize}
 \item usata da \cls{Quizzipedia::Client::ModelClient::Users::NoRole} per tenere traccia dei quiz che ha già svolto e del loro esito
 \item usata da \cls{Quizzipedia::Client::ModelClient::Users::Student} per tenere traccia dei quiz che ha già svolto e del loro esito
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec} per memorizzare la soluzione del quiz fornita dall'utente
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -460,7 +464,9 @@ Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestions::CtrlQuestion} per avere la struttura della domanda durante la sua creazione
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestions::CtrlQuestionManager} per poter modificare o cancellare le domande
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz} per poter aggiungere domande all'interno del quiz
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec} per gestire le singole domande contenute nel quiz
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuestion} per comprendere e utilizzare correttamente la struttura della domanda
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlTeachersStats} per poter manipolare le domande create dal docente
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -673,6 +679,7 @@ Rappresenta un docente del sistema e ne implementa le funzionalità specifiche i
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz} per riconoscere l'utente come docente e memorizzarlo come creatore del quiz
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizManager} per riconoscere il docente e fornirgli una lista dei quiz da lui creati
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuestion} per identificare il docente che sta effettuando la ricerca
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlTeachersStats} per identificare il docente di cui si vuole avere le statistiche
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -694,6 +701,7 @@ Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli ut
 \item usata da \cls{Quizzipedia::Client::ModelClient::Users::NoRole} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
 \item usata da \cls{Quizzipedia::Client::ModelClient::Users::Student} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
 \item usata da \cls{Quizzipedia::Client::ModelClient::Users::Teacher} per ereditarne i campi dato e i metodi comuni a tutti gli utenti
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizSelection} per tenere traccia dell'utente che sta svolgendo le operazioni
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz} per identificare l'utente che sta effettuando la ricerca
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlHeader} per comprendere la tipologia di utente che visita la pagina e identificare quindi lo header corretto
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlUserManager} per caricare un utente del tipo corretto. A seconda del tipo di utente ne verrà creato uno appropriato tra studente, docente, responsabile o utente senza ruolo
@@ -1079,7 +1087,12 @@ Pagina da cui sarà possibile svolgere un quiz. Verranno caricate le domande che
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuiz} per aggiungi
+\item usa \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewCompletionQ} per visualizzare correttamente le domande a completamento
+\item usa \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMatchingQ} per visualizzare correttamente le domande a collegamenti
+\item usa \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMultipleChoiceQ} per visualizzare correttamente le domande a scelta multipla
+\item usa \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewShortAnswerQ} per visualizzare correttamente le domande aperte
+\item usa \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewTrueFalseQ} per visualizzare correttamente le domande di tipo vero/falso
+\item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec} per ottenere i dati da presentare all'utente durante lo svolgimento di quiz e memorizzare le sue risposte
 \end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver}}
 Il componente raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile rispondere alle singole domande.
@@ -1102,6 +1115,11 @@ Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewcompletionq.pdf}}
 \caption[Schema Classe ViewCompletionQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewCompletionQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuizExec} per visualizzare correttamente le domande a completamento
+\end{itemize}
 \subsubsection{Classe \cls{ViewMatchingQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a collegamenti.
 \begin{figure}[H]
@@ -1109,6 +1127,11 @@ Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewmatchingq.pdf}}
 \caption[Schema Classe ViewMatchingQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMatchingQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuizExec} per visualizzare correttamente le domande a collegamenti
+\end{itemize}
 \subsubsection{Classe \cls{ViewMultipleChoiceQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a risposta multipla.
 \begin{figure}[H]
@@ -1116,6 +1139,11 @@ Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewmultiplechoiceq.pdf}}
 \caption[Schema Classe ViewMultipleChoiceQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewMultipleChoiceQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuizExec} per visualizzare correttamente le domande a scelta multipla
+\end{itemize}
 \subsubsection{Classe \cls{ViewShortAnswerQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a risposta aperta.
 \begin{figure}[H]
@@ -1123,6 +1151,11 @@ Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewshortanswerq.pdf}}
 \caption[Schema Classe ViewShortAnswerQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewShortAnswerQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuizExec} per visualizzare correttamente le domande aperte
+\end{itemize}
 \subsubsection{Classe \cls{ViewTrueFalseQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda di tipo vero/falso.
 \begin{figure}[H]
@@ -1130,6 +1163,11 @@ Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda di
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewtruefalseq.pdf}}
 \caption[Schema Classe ViewTrueFalseQ]{Schema Classe Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver::ViewTrueFalseQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuizExec} per visualizzare correttamente le domande di tipo vero/falso
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ViewClient::ViewRequests}}
 Qui sono raccolte le pagine che permettono all'utente di inviare e gestire le richieste di ruolo e classe.
 \begin{figure}[H]
@@ -1288,6 +1326,11 @@ Vengono rappresentate le statistiche riguardo i quiz e le domande create dai doc
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewteachersstats.pdf}}
 \caption[Schema Classe ViewTeachersStats]{Schema Classe Quizzipedia::Client::ViewClient::ViewStatistics::ViewTeachersStats}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlTeachersStats} per poter ottenere i dati da fornire all'utente per la visualizzazione delle statistiche
+\end{itemize}
 \subsection{\pkg{Quizzipedia::Client::ViewClient::ViewTopicManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire gli argomenti di domande e quiz.
 \begin{figure}[H]
@@ -1359,6 +1402,11 @@ pagina da cui l'utente potrà vedere la lista dei quiz privati e selezionare qua
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-privatequizlist.pdf}}
 \caption[Schema Classe PrivateQuizList]{Schema Classe Quizzipedia::Client::ViewClient::ViewUsers::PrivateQuizList}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizSelection} per permettere all'utente di ottenere i quiz privati a cui ha accesso e di svolgerne
+\end{itemize}
 \subsubsection{Classe \cls{Profile}}
 La classe presenta all'utente la pagina da cui prendere visione delle proprie informazioni personali.
 \begin{figure}[H]
@@ -1597,7 +1645,6 @@ Raccoglie i metodi necessari alle comunicazioni tra view e model richieste per l
 \item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuizManager::ViewCreateQuiz} per memorizzare le informazioni date dal docente durante la creazione del quiz
 \item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuizManager::ViewEditQuiz} per fare in modo che i cambiamenti che l'utente apporta al quiz siano consistenti
 \item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuizManager::ViewQuizMgmt} per aggiungi
-\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuizExec} per aggiungi
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -1615,6 +1662,18 @@ Gestisce la procedura di risoluzione quiz, andando a caricare le singole domande
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquizexec.pdf}}
 \caption[Schema Classe CtrlQuizExec]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuizExec} per ottenere i dati da presentare all'utente durante lo svolgimento di quiz e memorizzare le sue risposte
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuestion} per memorizzare le risposte date dagli utenti alle singole domande
+\item usa \cls{Quizzipedia::Client::ModelClient::Services::Answers::AnswerQuiz} per memorizzare la soluzione del quiz fornita dall'utente
+\item usa \cls{Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion} per gestire le singole domande contenute nel quiz
+\item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizSelection} per avere il riferimento al quiz che l'utente ha deciso di svolgere
+\end{itemize}
 \subsubsection{Classe \cls{CtrlQuizManager}}
 Fornisce al docente i metodi necessari per poter visualizzare, modificare e rimuovere quiz dalla lista di quiz da loro creati.
 \begin{figure}[H]
@@ -1639,6 +1698,18 @@ Segue l'utente nella procedura di scelta del quiz che si desidera risolvere.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquizselection.pdf}}
 \caption[Schema Classe CtrlQuizSelection]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizSelection}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewUsers::PrivateQuizList} per permettere all'utente di ottenere i quiz privati a cui ha accesso e di svolgerne
+\item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuizExec} per avere il riferimento al quiz che l'utente ha deciso di svolgere
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ModelClient::Organizations::Class} per ottenere le classi a cui l'utente è iscritto
+\item usa \cls{Quizzipedia::Client::ModelClient::Services::Quiz} per avere un riferimento al quiz che l'utente intende risolvere
+\item usa \cls{Quizzipedia::Client::ModelClient::Users::User} per tenere traccia dell'utente che sta svolgendo le operazioni
+\end{itemize}
 \subsubsection{Classe \cls{CtrlSearchQuestion}}
 la classe fornisce i metodi necessari alla ricerca di domande nella fase di creazione del quiz.
 \begin{figure}[H]
@@ -1921,6 +1992,16 @@ Si occupa di fornire al docente le statistiche riguardanti le proprie domande e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-ctrlteachersstats.pdf}}
 \caption[Schema Classe CtrlTeachersStats]{Schema Classe Quizzipedia::Client::ViewModelClient::CtrlStatistics::CtrlTeachersStats}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewStatistics::ViewTeachersStats} per poter ottenere i dati da fornire all'utente per la visualizzazione delle statistiche
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ModelClient::Services::Questions::GenericQuestion} per poter manipolare le domande create dal docente
+\item usa \cls{Quizzipedia::Client::ModelClient::Users::Teacher} per identificare il docente di cui si vuole avere le statistiche
+\end{itemize}
 \subsubsection{Classe \cls{MyStudentsStats}}
 La sua istanziazione avviene nella variabile \$scope di Angular e permette di comunicare con la view. Questa classe raccoglie le informazioni necessarie a visualizzare le statistiche degli studenti.
 \begin{figure}[H]
