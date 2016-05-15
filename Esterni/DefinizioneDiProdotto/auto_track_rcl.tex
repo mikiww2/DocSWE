@@ -78,13 +78,13 @@ ROF2.3 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: Logge
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlLogin \\
 \rowcolor{P}
-ROF3 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlRecoveryPw \\
+ROF3 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: PasswordRecover \\
 \rowcolor{P}
- & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: PasswordRecover \\
-\rowcolor{P}
- & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RecoveryPw \\
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlRecoveryPw \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Users:: User \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RecoveryPw \\
 \rowcolor{D}
 ROF3.1 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: PasswordRecover \\
 \rowcolor{D}
@@ -92,9 +92,9 @@ ROF3.1 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: Passw
 \rowcolor{P}
 ROF3.2 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlRecoveryPw \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RecoveryPw \\
-\rowcolor{P}
  & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: PasswordRecover \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RecoveryPw \\
 \rowcolor{D}
 ROF11 & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewMatchingQ \\
 \rowcolor{D}
@@ -138,167 +138,167 @@ ROF11.1 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
 \rowcolor{D}
-ROF11.2 & Quizzipedia:: Client:: ModelClient:: Users:: NoRole \\
+ROF11.2 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizSelection \\
 \rowcolor{D}
  & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizFetcher \\
 \rowcolor{D}
+ & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
+\rowcolor{D}
  & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizSelection \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
+ & Quizzipedia:: Client:: ModelClient:: Users:: NoRole \\
 \rowcolor{P}
 ROF11.3 & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewTrueFalseQ \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizExec \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewShortAnswerQ \\
-\rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewMultipleChoiceQ \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewShortAnswerQ \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewCompletionQ \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewMatchingQ \\
 \rowcolor{D}
-ROF11.3.1 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizExec \\
+ROF11.3.1 & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuizExec \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuizExec \\
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizExec \\
 \rowcolor{P}
-ROF11.3.2 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizExec \\
+ROF11.3.2 & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuizExec \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuizExec \\
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizExec \\
 \rowcolor{D}
-ROF11.4 & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuizExec \\
+ROF11.4 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: StatisticsQuestionUpdater \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizExec \\
 \rowcolor{D}
- & Quizzipedia:: Server:: ControllerServer:: QuizManager:: StatisticsQuizUpdater \\
-\rowcolor{D}
- & Quizzipedia:: Server:: ControllerServer:: QuizManager:: ResultsUpdater \\
+ & Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuizExec \\
 \rowcolor{D}
  & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent:: QMLGenerator \\
 \rowcolor{D}
- & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: StatisticsQuestionUpdater \\
+ & Quizzipedia:: Server:: ControllerServer:: QuizManager:: ResultsUpdater \\
+\rowcolor{D}
+ & Quizzipedia:: Server:: ControllerServer:: QuizManager:: StatisticsQuizUpdater \\
 \rowcolor{P}
 ROF11.5 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: ResultsUpdater \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewQuizResults \\
 \rowcolor{D}
-ROF12 & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
+ROF12 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ModelClient:: Users:: Teacher \\
+ & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ModelClient:: Users:: NoRole \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
+ & Quizzipedia:: Client:: ModelClient:: Users:: Teacher \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuestion \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
 \rowcolor{P}
-ROF12.1 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
+ROF12.1 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
 \rowcolor{P}
  & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ModelClient:: Users:: NoRole \\
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
+ & Quizzipedia:: Client:: ModelClient:: Users:: NoRole \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
 \rowcolor{D}
-ROF12.1.1 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
+ROF12.1.1 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
 \rowcolor{D}
- & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
 \rowcolor{P}
-ROF12.1.1.1 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ROF12.1.1.1 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
-\rowcolor{P}
- & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
-\rowcolor{D}
-ROF12.1.1.2 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
-\rowcolor{D}
  & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
 \rowcolor{P}
-ROF12.1.1.3 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
-\rowcolor{P}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
-\rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
+\rowcolor{D}
+ROF12.1.1.2 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
+\rowcolor{D}
  & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
 \rowcolor{P}
+ROF12.1.1.3 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
+\rowcolor{P}
  & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
 \rowcolor{D}
 ROF12.1.1.4 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
 \rowcolor{D}
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
+\rowcolor{D}
  & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
 \rowcolor{P}
-ROF12.1.1.5 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ROF12.1.1.5 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
-\rowcolor{P}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
 \rowcolor{D}
-ROF12.1.1.5.1 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
-\rowcolor{D}
- & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ROF12.1.1.5.1 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
 \rowcolor{P}
-ROF12.1.1.6 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
+ROF12.1.1.6 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
+\rowcolor{P}
+ & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz \\
-\rowcolor{P}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz \\
 \rowcolor{D}
 ROF12.2 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
-\rowcolor{D}
  & Quizzipedia:: Client:: ModelClient:: Users:: Teacher \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuestion \\
-\rowcolor{P}
-ROF12.2.1 & Quizzipedia:: Client:: ModelClient:: Users:: Teacher \\
-\rowcolor{P}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuestion \\
-\rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
+\rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuestion \\
+\rowcolor{P}
+ROF12.2.1 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ModelClient:: Users:: Teacher \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuestion \\
 \rowcolor{P}
  & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher \\
 \rowcolor{D}
@@ -310,63 +310,63 @@ ROF12.2.1.1 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: Question
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
 \rowcolor{P}
-ROF12.2.1.2 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher \\
+ROF12.2.1.2 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuestion \\
 \rowcolor{P}
+ & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher \\
+\rowcolor{D}
+ROF12.2.1.3 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuestion \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion \\
+\rowcolor{D}
  & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
-\rowcolor{P}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion \\
-\rowcolor{D}
-ROF12.2.1.3 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuestion \\
 \rowcolor{D}
  & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher \\
 \rowcolor{P}
-ROF12.2.1.4 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher \\
+ROF12.2.1.4 & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
+\rowcolor{P}
+ & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuestion \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion \\
-\rowcolor{P}
- & Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions \\
 \rowcolor{D}
-ROF13 & Quizzipedia:: Client:: ViewClient:: Shared:: Homepage:: HomepageGeneric \\
+ROF13 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerOut \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ViewClient:: Shared:: Homepage:: HomepageGeneric \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewClient:: Shared:: Header:: HeaderLogged \\
-\rowcolor{D}
- & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerOut \\
 \rowcolor{P}
-ROF14 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RemoveUser \\
+ROF14 & Quizzipedia:: Client:: ModelClient:: Users:: Director \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ModelClient:: Users:: Director \\
+ & Quizzipedia:: Client:: ModelClient:: Users:: AuthenticationData \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Users:: NoRole \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Users:: Student \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ModelClient:: Users:: AuthenticationData \\
-\rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Profile \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RemoveUser \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlRecoveryPw \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewUsers:: PrivateQuizList \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewUsers:: ChangePw \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Users:: Teacher \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Users:: User \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager \\
-\rowcolor{P}
- & Quizzipedia:: Client:: ViewClient:: ViewUsers:: ChangePw \\
 \rowcolor{D}
-ROF14.1 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager \\
+ROF14.1 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Profile \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Profile \\
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ModelClient:: Users:: User \\
 \rowcolor{D}
@@ -380,39 +380,59 @@ ROF14.1.1 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager
 \rowcolor{D}
 ROF14.1.2 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Profile \\
+ & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PersonalDataFetcher \\
 \rowcolor{D}
+ & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Profile \\
+\rowcolor{P}
+ROF14.1.3 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Profile \\
+\rowcolor{P}
  & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PersonalDataFetcher \\
 \rowcolor{P}
-ROF14.1.3 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PersonalDataFetcher \\
-\rowcolor{P}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager \\
-\rowcolor{P}
- & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Profile \\
 \rowcolor{D}
 ROF14.2 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PersonalQuizFetcher \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewClient:: ViewUsers:: PrivateQuizList \\
 \rowcolor{P}
-ROF14.3 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: ChangePw \\
+ROF14.3 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Profile \\
 \rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewUsers:: ChangePw \\
+\rowcolor{D}
+ROF14.3.3 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PasswordSetter \\
+\rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager \\
-\rowcolor{D}
-ROF14.3.3 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager \\
-\rowcolor{D}
- & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PasswordSetter \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewClient:: ViewUsers:: ChangePw \\
 \rowcolor{P}
 ROF14.3.3.1 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PasswordSetter \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewUsers:: ChangePw \\
 \rowcolor{D}
 ROF14.3.3.2 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PasswordSetter \\
-\rowcolor{P}
-ROF14.3.3.3 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PasswordSetter \\
 \rowcolor{D}
-ROF14.4.1 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: AccountDeleter \\
+ & Quizzipedia:: Client:: ViewClient:: ViewUsers:: ChangePw \\
+\rowcolor{P}
+ROF14.3.3.3 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: ChangePw \\
+\rowcolor{P}
+ & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PasswordSetter \\
+\rowcolor{D}
+ROF14.3.3.4 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ViewClient:: ViewUsers:: ChangePw \\
+\rowcolor{P}
+ROF14.4 & Quizzipedia:: Client:: ModelClient:: Users:: Director \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RemoveUser \\
+\rowcolor{D}
+ROF14.4.1 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RemoveUser \\
+\rowcolor{D}
+ & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: AccountDeleter \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ModelClient:: Users:: Director \\
 \rowcolor{P}
 ROF15.1 & Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizCreator \\
 \rowcolor{P}
