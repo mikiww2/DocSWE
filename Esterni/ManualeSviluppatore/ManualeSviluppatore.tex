@@ -18,7 +18,7 @@
 \def\NOME{Manuale Sviluppatore}
 \def\VERSIONE{1.0}
 \def\DATA{13.05.2016}
-\def\REDATTORE{Filippo Tesser \\ & ?????}
+\def\REDATTORE{Filippo Tesser \\ & Giacomo Beltrame}
 \def\VERIFICATORE{Miki Violetto}
 \def\RESPONSABILE{Giacomo Beltrame}
 \def\USO{Esterno}
@@ -40,7 +40,8 @@
 %	\newpage
 %	\listoffigures
 %	\newpage
-%	\listoftables\label{lastromanpage}
+%	\listoftables
+\label{lastromanpage}
 	
 	\newpage
 	\clearpage	
@@ -71,7 +72,7 @@
 	Per poter avviare Quizzipedia è richiesta l'installazione dei seguenti software.
 	
 	\subsection{Node.js e npm}
-	Scarica e installa \gl{Node.js} e il package manager npm da \url{https://nodejs.org/en/download/current/}.
+	Scaricare e installare \gl{Node.js} e il package manager \gl{npm} da \url{https://nodejs.org/en/download/current/}.
 	
 	Verificare che sia visibile la versione installata con i seguenti comandi:
 	
@@ -80,13 +81,21 @@
 	\texttt{\$ npm -v}
 
 	\subsection{MongoDB}
-	Scarica e installa \gl{MongoDB} da \url{https://www.mongodb.com/download-center}.
+	Scaricare e installare \gl{MongoDB} da \url{https://www.mongodb.com/download-center}.
 	
 	Per avviare \gl{MongoDB} sarà necessario dare il seguente comando:
 	
 	\texttt{\$ mongod}
+
+	\subsection{Forever}
+	Scaricare e installare globalmente \gl{forever} utilizzando \gl{npm} con il seguente comando:
+
+	\texttt{\$ npm install -g forever}
 	
-	\subsection{DA FARE: AGGIUNGERE GLI ALTRI MODULI LATO CLIENT}
+	\subsection{Angular.js}
+	Scaricare e installare \gl{Angular.js} utilizzando \gl{npm} con il seguente comando:
+
+	\texttt{\$ npm install angular}
 	
 	\section{Requisiti hardware}
 	Il prodotto lato server richiede come requisiti minimi:
@@ -96,11 +105,20 @@
 		\item 1GB di spazio libero su disco.
 	\end{itemize}
 	
-	\section{Installazione}
+	\section{Installazione e Avvio}
 	
 	\subsection{Ottenere Quizzipedia}
-	DA FARE
-	
+	\subsubsection{Download da browser}
+	Reperire il progetto Quizzipedia è possibile recandosi con qualunque browser all'indirizzo \url{http://github.com/vault-tech/Quizzipedia}.
+	A questo punto è possibile scaricare il codice sorgente con l'apposito tasto \texttt{Download ZIP}.
+
+	\subsubsection{Download da riga di comando}
+	Dopo aver aperto un terminale eseguire il seguente comando:
+
+	\texttt{\$ git clone http://github.com/vault-tech/Quizzipedia dest}
+
+	dove "dest" va sostituita con il percorso alla cartella nella quale si vuole installare Quizzipedia.
+
 	\subsection{Installazione dipendenze}
 	
 	Una volta ottenuto il codice sorgente, spostarsi all'interno della root del repository, si controlli che sia presente il file package.json.
@@ -109,12 +127,16 @@
 	
 	\texttt{\$ npm install}
 	
-	in questo modo verrano installati automaticamente i moduli di Node.js necessari per l'esecuzione del prodotto.
-	
-	DA FARE: PROCEDIMENTO PER MODULI LATO CLIENT
+	in questo modo verrano installati automaticamente i moduli di \gl{Node.js} necessari per l'esecuzione del prodotto.
 	
 	\subsection{Avvio}
 	
-	DA FARE: PROCEDURA PER ESEGUIRE SERVER, EVENTUALI AMBIENTI DI ESECUZIONE, E PROCEDURA PER FARLO ANDARE LOCALMENTE O IN REMOTO
+	Per avviare Quizzipedia e mantenerlo in esecuzione, utilizzare il modulo \gl{npm} \gl{forever} precedentemente installato digitando il seguente comando dopo essersi spostati nella root di Quizzipedia:
+
+	\texttt{\$ PORT=porta forever start server.js}
+
+	Sostituire "porta" con il numero di porta sul quale si vuole rendere reperibile Quizzipedia via browser;\\
+	se non viene specificata verrà usata di default la 8080;\\
+	se viene specificata una porta inferiore a 1024 allora sarà necessario digitare il comando \texttt{sudo} seguito dal resto per autorizzare \gl{Node.js} ad utilizzare tale porta.
 	
 \end{document}
