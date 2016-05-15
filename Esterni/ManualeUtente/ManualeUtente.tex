@@ -51,11 +51,16 @@
 	
 	\section{Introduzione}
 	\subsection{Scopo del documento}
-	Questo documento ha lo scopo di fornire un aiuto all'utente che si trovi ad utilizzare il software
+	Questo documento ha lo scopo di fornire un aiuto all'utente che si trovi ad utilizzare il \gl{software}
 	Quizzipedia per le prime volte illustrandone il funzionamento di base dello stesso.
 	
 	\subsection{Scopo del prodotto}
 	\SCOPO
+	
+	\subsection{Glossario}
+	Al fine di evitare ogni ambiguità nel linguaggio e massimizzare la comprensione dei documenti, i termini tecnici, gli acronimi e le abbreviazioni che necessitano di definizione sono riportati nell'\hyperref[gl]{appendice B}.
+	Inoltre ogni occorrenza di un vocabolo presente nel “Glossario” sarà posta in corsivo e seguita da
+	una ‘g’ maiuscola a pedice (p.es. ParolaG).
 	
 	\subsection{Riferimenti}	
 	\subsubsection{Riferimenti normativi}
@@ -69,12 +74,12 @@
 	Per usufruire del prodotto è necessario connettersi all'indirizzo \centra{\url{http://vault-tech.tk:8080/Quizzipedia}} e disporre di:
 	\begin{itemize}
 		\item connessione ad internet;
-		\item browser con Javascript e cookies abilitati, sono garantite le piene funzionalità con i seguenti:
+		\item \gl{browser} con \gl{Javascript} e \gl{cookies} abilitati, sono garantite le piene funzionalità con i seguenti:
 		\begin{itemize}
-			\item Google Chrome versione 49 o seguente,
-			\item Mozilla Firefox versione 44,
-			\item Internet Explorer versione 11,
-			\item Safari versione 9;
+			\item \gl{Google Chrome} versione 49 o seguente,
+			\item \gl{Mozilla Firefox} versione 44,
+			\item \gl{Internet Explorer} versione 11,
+			\item \gl{Safari} versione 9;
 		\end{itemize}
 		\item piattaforma fissa per docente, piattaforma fissa o mobile per studenti.
 	\end{itemize}
@@ -88,7 +93,7 @@
 		\caption{Schermata di home page}
 	\end{figure}
 	Al primo accesso è consentito all'utente di autenticarsi, qualora già in possesso di un account valido, oppure registrarsi al sistema. Una volta autenticato la homepage varierà in base al tipo di account in uso (si vedano le sezioni successive per i vari tipi). 
-	Anche senza autenticarsi sarà possibile usufruire dei servizi pubblici offerti da Quizzipedia, ma non vi sarà un salvataggio dei dati e delle statistiche. Si veda la sezione 4 per i vari servizi pubblici.
+	Anche senza autenticarsi sarà possibile usufruire dei servizi pubblici offerti da Quizzipedia, ma non vi sarà un salvataggio dei dati e delle statistiche. Si veda la \hyperref[pub]{sezione 4} per i vari servizi pubblici.
 	
 	\newpage
 	\subsection{Registrazione}
@@ -143,6 +148,7 @@
 	
 	\newpage
 	\section{Funzionalità pubbliche}
+	\label{pub}
 		A seguire vengono illustrate le funzionalità specifiche del prodotto che possono essere eseguite pubblicamente.
 		
 	\subsection{Ricerca quiz}
@@ -287,7 +293,7 @@
 	 	\item la classe a cui è destinato il quiz (qualora sia selezionato permesso privato),
 	 	\item le varie domande che verranno associate al quiz.
 	 \end{itemize}
-	 Per aggiungere le domande si aprirà un menù che permetterà di cercare nel database delle domande (pubbliche o quelle personali già create) oppure crearne al momento. Per dettagli sulla creazione domande si rimanda all'\hyperref[domande]{appendice A}.
+	 Per aggiungere le domande si aprirà un menù che permetterà di cercare nel \gl{database} delle domande (pubbliche o quelle personali già create) oppure crearne al momento. Per dettagli sulla creazione domande si rimanda all'\hyperref[domande]{appendice A}.
 	 
 	 \newpage
 	 \subsection{Gestione domande}
@@ -375,7 +381,7 @@
  	 	\item livello di difficoltà,
  	 	\item parole chiave che identificano la domanda.
 	 \end{itemize}
-	 è infine necessario indicare la risposta corretta, scegliendo 'vero' o 'falso' nell'apposita checkbox.
+	 È infine necessario indicare la risposta corretta, scegliendo 'vero' o 'falso' nell'apposita checkbox.
 
 	 
 	 \newpage
@@ -395,7 +401,7 @@
 	 	\item livello di difficoltà,
 	 	\item parole chiave che identificano la domanda.
 	 \end{itemize}
-	 è poi necessario creare tutte le possibili risposte della domanda, sia corrette che errate. Cliccando nei rispettivi pulsanti è possibile creare una risposta di tipo multimediale o testuale. Nel caso venga creata una risposta multimediale sarà necessario effettuare l'upload del file immagine, audio o video desiderato, mentre nel caso venga creata una risposta testuale sarà necessario scrivere il testo della risposta nell'apposita casella di testo.
+	 È poi necessario creare tutte le possibili risposte della domanda, sia corrette che errate. Cliccando nei rispettivi pulsanti è possibile creare una risposta di tipo multimediale o testuale. Nel caso venga creata una risposta multimediale sarà necessario effettuare l'upload del file immagine, audio o video desiderato, mentre nel caso venga creata una risposta testuale sarà necessario scrivere il testo della risposta nell'apposita casella di testo.
 	 Infine dovranno essere indicate le risposte corrette spuntando le checkbox corrispondenti.
 	 
 	 \newpage
@@ -455,6 +461,58 @@
 	 	\item livello di difficoltà,
 	 	\item parole chiave che identificano la domanda.
 	 \end{itemize}
-	 è poi necessario creare le ennuple che compongono le risposte complete nella sequenza corretta, e delle porzioni errate facoltative. 
+	 È poi necessario creare le ennuple che compongono le risposte complete nella sequenza corretta, e delle porzioni errate facoltative.
+	 
+	 \section{Glossario}
+	 \label{gl} 
+	 
+	 \subsection{Browser}
+	 Programma che consente di usufruire dei servizi di connettività in Internet, o di una rete di computer.
+	 
+	 \subsection{Cookies}
+	 I cookie HTTP (più comunemente denominati cookie web, o per antonomasia cookie) sono un tipo
+	 particolare di magic cookie, una sorta di gettone identificativo, usato dai server web per poter
+	 riconoscere i browser durante comunicazioni con il protocollo HTTP usato per la navigazione web.
+	 Tale riconoscimento permette di realizzare meccanismi di autenticazione, conservazione di dati utili
+	 alla sessione di navigazione, di associare dati memorizzati dal server e di tracciare la navigazione dell’utente.
+	 
+	 \subsection{CSS3}
+	 Il CSS (Cascading Style Sheets) è un linguaggio usato per definire la formattazione di documenti HTML, XHTML e XML. CSS3 è l’ultimo standard approvato al momento.
+
+	 \subsection{Database}
+	 È una base di dati, cioè un archivio o un insieme di archivi contenenti informazioni strutturate e
+	 collegate tra loro secondo un particolare modello logico (relazionale, gerarchico, a oggetti, etc.),
+	 offrendo una gestione efficiente dei dati che vi sono contenuti.
+
+	 \subsection{Google Chrome}
+	 Browser web sviluppato da Google.
+	 
+	 \subsection{HTML5}
+	 L’HTML5 `e un linguaggio di markup per la strutturazione delle pagine web divenuto standard W3C nell’ottobre 2014.
+
+	 \subsection{Internet Explorer}
+	 Browser web sviluppato da Microsoft Windows. La nuova versione del browser è la Edge, a differenza delle precedenti che portavano il nome di Internet Explorer.
+
+	 \subsection{JavaScript}
+	 Linguaggio di programmazione interpretato, generalmente utilizzato nella gestione degli eventi.
+	 Implementa un paradigma basato sia sugli oggetti che sulla programmazione funzionale.
+	 
+	 \subsection{Mozilla Firefox}
+	 Browser web open source sviluppato da Mozilla Foundation. Risulta essere il terzo browser più diffuso.
+	
+	 \subsection{Safari}
+ 	 Safari è un browser web sviluppato da Apple Inc.
+ 	 
+ 	 \subsection{Software}
+ 	 Un software, in informatica, è l’informazione o le informazioni utilizzate da uno o più sistemi informatici
+ 	 e memorizzate su uno o più supporti informatici. Tali informazioni possono essere quindi rappresentate da uno o più programmi, oppure da uno o più dati, oppure da una combinazione
+ 	 delle due.
+ 	 
+ 	 \subsection{Web}
+ 	 Il Web, abbreviazione di World Wide Web, è uno dei principali servizi di Internet che permette di
+ 	 navigare e usufruire di un insieme vastissimo di contenuti (multimediali e non) collegati tra loro
+ 	 attraverso legami (link), e di ulteriori servizi accessibili a tutti o ad una parte selezionata degli
+ 	 utenti di Internet.
+ 	 
 	
 \end{document}
