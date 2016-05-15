@@ -660,6 +660,16 @@ le risposte date dall'utente in una colonna della domanda a collegamenti
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
+\item \method{addAnswer (answer : int) : void}
+\newline
+aggiunge la risposta data dall'utente in una colonna della domanda a collegamenti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : int}
+\newline
+il valore dato dall'utente a una casella della colonna della domanda a collegamenti
+\end{itemize}
 \item \method{checkColumn () : bool}
 \newline
 verifica la correttezza di una colonna data la risposta a una domanda a collegamenti
@@ -694,6 +704,16 @@ la risposta data dall'utente
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
+\item \method{addAnswer (answer : String) : void}
+\newline
+aggiunge una parola alla lista di parole che compongono la risposta alla domanda a completamento
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : String}
+\newline
+la parola da aggiungere alla lista che costituisce la risposta alla domanda a completamento
+\end{itemize}
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a completamento
@@ -726,6 +746,16 @@ concretizzazione del metodo ereditato dalla classe base astratta. Viene implemen
 \newline
 restituisce le risposte date dall'utente per una delle colonne della domanda a collegamenti
 \newline
+\item \method{setAnswer (answer : AnswerColumn) : void}
+\newline
+aggiunge una risposta dell'utente per le domande a collegamento
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : AnswerColumn}
+\newline
+la risposta parziale dell'utente da aggiungere alla risposta della domanda a collegamenti
+\end{itemize}
 \item \method{setGivenAnswerColumn (answer : AnswerColumn) : void}
 \newline
 imposta le risposte date dall'utente per una delle colonne della domanda a collegamenti
@@ -752,6 +782,16 @@ la risposta data dall'utente
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
+\item \method{addAnswer (answer : bool) : void}
+\newline
+aggiunge una scelta alla risposta data dal'utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : bool}
+\newline
+una delle scelte fatte dall'utente per la risposta a scelta multipla
+\end{itemize}
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a scelta multipla
@@ -909,16 +949,10 @@ concretizzazione del metodo ereditato dalla classe base astratta. Viene implemen
 \newline
 restituisce la risposta dell'utente
 \newline
-\item \method{setAnswer (answer : String) : void}
+\item \method{setAnswer () : void}
 \newline
 imposta la risposta data dall'utente
 \newline
-\bold{Parametri} :
-\begin{itemize}
-\item \attribute{answer : String}
-\newline
-la risposta data dall'utente
-\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AnswerTrueFalseQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ risolta.
@@ -943,16 +977,10 @@ concretizzazione del metodo ereditato dalla classe base astratta. Viene implemen
 \newline
 restituisce la risposta data dall'utente
 \newline
-\item \method{setAnswer (answer : bool) : void}
+\item \method{setAnswer () : void}
 \newline
 imposta la risposta data dall'utente
 \newline
-\bold{Parametri} :
-\begin{itemize}
-\item \attribute{answer : bool}
-\newline
-risposta data dall'utente
-\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ModelClient:: Services:: Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
@@ -1347,19 +1375,10 @@ le risposte dell'utente alla domanda
 \newline
 permette di recuperare gli allegati della domanda MultipleChoiceQ
 \newline
-\item \method{setAnswer (answer : String, position : int) : void}
+\item \method{setAnswer () : void}
 \newline
 permette di modificare una risposta corretta della domanda MultipleChoiceQ
 \newline
-\bold{Parametri} :
-\begin{itemize}
-\item \attribute{answer : String}
-\newline
-il testo della risposta
-\item \attribute{position : int}
-\newline
-la posizione della risposta
-\end{itemize}
 \item \method{setAttachment (attachment : String, position : int) : void}
 \newline
 permette di aggiungere un allegato alla domanda MultipleChoiceQ
@@ -2259,7 +2278,7 @@ pagina da cui l'utente, una volta autenticato, potrà selezionare l'ente a cui v
 \end{figure}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient}}
 Raccoglie le classi responsabili della comunicazione tra il model e la view. Ha inoltre il compito di comunicare con il server per elaborare le richieste svolte dall'utente.
-Con Angula.js il controller permette di tenere sempre aggiornato facilmente il model con le modifiche fatte nella view da parte dell'utente.
+Con Angular.js il controller permette di tenere sempre aggiornato facilmente il model con le modifiche fatte nella view da parte dell'utente.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{../SpecificaTecnica/Img/quizzipedia-client-viewmodelclient.pdf}}
@@ -2399,6 +2418,12 @@ Fornisce al docente i metodi necessari per poter visualizzare, modificare e rimu
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquizmanager.pdf}}
 \caption[Schema Classe CtrlQuizManager]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizManager}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{teacher : Teacher}
+\newline
+il docente a cui appartengono i quiz da modificare o rimuovere
+\end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadTeacher () : void}
@@ -2767,6 +2792,47 @@ permette di memorizzare la risposta data dall'utente in caso di domanda a comple
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-mycompletionq.pdf}}
 \caption[Schema Classe MyCompletionQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyCompletionQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{correctAnswer : String[]}
+\newline
+la lista dei completamenti corretti per la domanda creata
+\item \attribute{text : String}
+\newline
+il testo o l'indirizzo dei completamenti possibili
+\item \attribute{wrongAnswer : String[]}
+\newline
+la lista dei completamenti sbagliati per la domanda creata
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{insertAnswer (text : String, check : bool) : void}
+\newline
+inserisce un completamento dell'utente nella lista delle possibili risposte, tenendo traccia anche della sua correttezza
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{check : bool}
+\newline
+la correttezza completamento da inserire
+\item \attribute{text : String}
+\newline
+il completamento da inserire
+\end{itemize}
+\item \method{removeAnswer (text : String, check : bool) : void}
+\newline
+rimuove una delle opzioni possibili per la domanda a completamento
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{check : bool}
+\newline
+la correttezza del completamento da rimuovere
+\item \attribute{text : String}
+\newline
+il completamento da rimuovere
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MyGenericQ}}
 La sua istanziazione avviene nella variabile $scope di Angular e permette di comunicare con la view. Questa classe permette di creare la parte comune a tutti i tipi di domanda.
 \begin{figure}[H]
@@ -2805,6 +2871,38 @@ permette di memorizzare la risposta data dall'utente in caso di domanda a colleg
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-mymatchingq.pdf}}
 \caption[Schema Classe MyMatchingQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyMatchingQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{allAnswers : answer[]}
+\newline
+tutte le risposte corrette per le domande a collegamenti
+\item \attribute{answer : String[]}
+\newline
+indica una parte della domanda a collegamenti, che andrà poi a comporre una risposta corretta
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{removeAnswer (answer : String) : void}
+\newline
+rimuove una possibile soluzione del quiz
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : String}
+\newline
+una parte da rimuovere dalla domanda a collegamenti
+\end{itemize}
+\item \method{saveAnswer (answer : String) : void}
+\newline
+serve a memorizzare la corretta soluzione della domanda
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : String}
+\newline
+una parte da aggiungere alla domanda a collegamenti
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MyMutipleChoiceQ}}
 permette di memorizzare la risposta data dall'utente in caso di domanda a scelta multipla.
 \begin{figure}[H]
@@ -2812,6 +2910,44 @@ permette di memorizzare la risposta data dall'utente in caso di domanda a scelta
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-mymutiplechoiceq.pdf}}
 \caption[Schema Classe MyMutipleChoiceQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyMutipleChoiceQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{correctAnswer : bool[]}
+\newline
+le opzioni che corrispondono alla scelta corretta
+\item \attribute{wrongAnswer : bool[]}
+\newline
+le opzioni che non corrispondono alla scelta corretta
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{insertAnswer (text : String, check : bool) : void}
+\newline
+inserisce un'opzione tra le possibili scelte della domanda, andando a memorizzare anche la su correttezza
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{check : bool}
+\newline
+la correttezza o meno della scelta
+\item \attribute{text : String}
+\newline
+il testo o l'indirizzo dell'allegato che corrisponde a un'opzione della domanda
+\end{itemize}
+\item \method{removeAnswer (text : String, check : bool) : void}
+\newline
+rimuove un'opzione dalla domanda
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{check : bool}
+\newline
+la correttezza o meno della scelta
+\item \attribute{text : String}
+\newline
+il testo o l'indirizzo dell'allegato che si desidera rimuovere dalle opzioni della domanda
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MyShortAnswerQ}}
 permette di memorizzare la risposta data dall'utente in caso di domanda aperta.
 \begin{figure}[H]
@@ -2819,6 +2955,12 @@ permette di memorizzare la risposta data dall'utente in caso di domanda aperta.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-myshortanswerq.pdf}}
 \caption[Schema Classe MyShortAnswerQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyShortAnswerQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{answer : String}
+\newline
+la risposta data dall'utente alla domanda aperta
+\end{itemize}
 \subsubsection{Classe \cls{MyTrueFalseQ}}
 permette di memorizzare la risposta data dall'utente in caso di domanda di tipo vero/falso.
 \begin{figure}[H]
@@ -2826,6 +2968,12 @@ permette di memorizzare la risposta data dall'utente in caso di domanda di tipo 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-mytruefalseq.pdf}}
 \caption[Schema Classe MyTrueFalseQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyTrueFalseQ}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{answer : bool}
+\newline
+la risposta data dall'utente alla domanda vero/falso
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics}}
 Raccoglie le classi necessarie a recuperare le statistiche da presentare all'utente.
 \begin{figure}[H]
@@ -2880,6 +3028,27 @@ Si occupa di ottenere i dati necessari all'utente per visualizzare le statistich
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-ctrlstudentsquizstats.pdf}}
 \caption[Schema Classe CtrlStudentsQuizStats]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlStudentsQuizStats}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{$scope : $scope}
+\newline
+contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyStudentsStats
+\end{itemize}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{loadClasses () : void}
+\newline
+carica le classi dell'istituto
+\newline
+\item \method{loadQuiz () : void}
+\newline
+carica i quiz disponibili per la classe selezionata
+\newline
+\item \method{loadStudentsStatsQuiz () : void}
+\newline
+richiede al server le statistiche relative al quiz selezionato e aggiorna lo $scope
+\newline
+\end{itemize}
 \subsubsection{Classe \cls{CtrlTeachersStats}}
 Si occupa di fornire al docente le statistiche riguardanti le proprie domande e i propri quiz.
 \begin{figure}[H]
@@ -2887,6 +3056,17 @@ Si occupa di fornire al docente le statistiche riguardanti le proprie domande e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-ctrlteachersstats.pdf}}
 \caption[Schema Classe CtrlTeachersStats]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlTeachersStats}
 \end{figure}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{loadQuestions () : void}
+\newline
+carica le domande create dal docente selezionato
+\newline
+\item \method{loadTeachers () : void}
+\newline
+carica i docenti di cui è possibile richiedere le statistiche
+\newline
+\end{itemize}
 \subsubsection{Classe \cls{MyStudentsStats}}
 La sua istanziazione avviene nella variabile $scope di Angular e permette di comunicare con la view. Questa classe raccoglie le informazioni necessarie a visualizzare le statistiche degli studenti.
 \begin{figure}[H]
@@ -2894,6 +3074,21 @@ La sua istanziazione avviene nella variabile $scope di Angular e permette di com
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-mystudentsstats.pdf}}
 \caption[Schema Classe MyStudentsStats]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: MyStudentsStats}
 \end{figure}
+\paragraph{Attributi}
+\begin{itemize}
+\item \attribute{classes : Class[]}
+\newline
+sono le classi presenti nell'ente
+\item \attribute{quiz : Quiz[]}
+\newline
+la lista dei quiz disponibili per la classe selezionata
+\item \attribute{result : StudentsStatistcsQuiz}
+\newline
+le statistiche del quiz selezionato
+\item \attribute{selectedQuiz : Quiz}
+\newline
+il quiz di cui si chiedono le statistiche
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient:: CtrlUsers}}
 Il componente raccoglie le classi che permettono la comunicazione per quanto riguarda funzioni e dati dell'utente.
 \begin{figure}[H]
@@ -3745,6 +3940,16 @@ le risposte date dall'utente in una colonna della domanda a collegamenti
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
+\item \method{addAnswer (answer : int) : void}
+\newline
+aggiunge la risposta data dall'utente in una colonna della domanda a collegamenti
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : int}
+\newline
+il valore dato dall'utente a una casella della colonna della domanda a collegamenti
+\end{itemize}
 \item \method{checkColumn () : bool}
 \newline
 verifica la correttezza di una colonna data la risposta a una domanda a collegamenti
@@ -3779,6 +3984,16 @@ la risposta data dall'utente
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
+\item \method{addAnswer (answer : String) : void}
+\newline
+aggiunge una parola alla lista di parole che compongono la risposta alla domanda a completamento
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : String}
+\newline
+la parola da aggiungere alla lista che costituisce la risposta alla domanda a completamento
+\end{itemize}
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a completamento
@@ -3811,6 +4026,16 @@ concretizzazione del metodo ereditato dalla classe base astratta. Viene implemen
 \newline
 restituisce le risposte date dall'utente per una delle colonne della domanda a collegamenti
 \newline
+\item \method{setAnswer (answer : AnswerColumn) : void}
+\newline
+aggiunge una risposta dell'utente per le domande a collegamento
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : AnswerColumn}
+\newline
+la risposta parziale dell'utente da aggiungere alla risposta della domanda a collegamenti
+\end{itemize}
 \item \method{setGivenAnswerColumn (answer : AnswerColumn) : void}
 \newline
 imposta le risposte date dall'utente per una delle colonne della domanda a collegamenti
@@ -3837,6 +4062,16 @@ la risposta data dall'utente
 \end{itemize}
 \paragraph{Metodi}
 \begin{itemize}
+\item \method{addAnswer (answer : bool) : void}
+\newline
+aggiunge una scelta alla risposta data dal'utente
+\newline
+\bold{Parametri} :
+\begin{itemize}
+\item \attribute{answer : bool}
+\newline
+una delle scelte fatte dall'utente per la risposta a scelta multipla
+\end{itemize}
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a scelta multipla
@@ -4420,19 +4655,10 @@ le risposte dell'utente alla domanda
 \newline
 permette di recuperare gli allegati della domanda MultipleChoiceQ
 \newline
-\item \method{setAnswer (answer : String, position : int) : void}
+\item \method{setAnswer () : void}
 \newline
 permette di modificare una risposta corretta della domanda MultipleChoiceQ
 \newline
-\bold{Parametri} :
-\begin{itemize}
-\item \attribute{answer : String}
-\newline
-il testo della risposta
-\item \attribute{position : int}
-\newline
-la posizione della risposta
-\end{itemize}
 \item \method{setAttachment (attachment : String, position : int) : void}
 \newline
 permette di aggiungere un allegato alla domanda MultipleChoiceQ
