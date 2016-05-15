@@ -143,17 +143,107 @@ TU123 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuiz &
 \item \method{loadTopics () : void}
 \item \method{save (quiz : $scope) : void}
 \end{itemize} \\
+TU124 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizExec & 
+\begin{itemize}
+\item \method{loadQuestion () : void}
+\item \method{saveAnswer () : void}
+\item \method{saveQuiz () : void}
+\end{itemize} \\
+TU125 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizManager & 
+\begin{itemize}
+\item \method{loadTeacher () : void}
+\item \method{modifyQuiz (quiz : Quiz) : void}
+\item \method{removeQuiz (indexOfQuiz : int) : void}
+\end{itemize} \\
+TU126 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizSelection & 
+\begin{itemize}
+\item \method{loadClasses () : void}
+\item \method{loadQuizList (classes : Class[]) : void}
+\item \method{loadUser () : void}
+\end{itemize} \\
+TU127 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion & 
+\begin{itemize}
+\item \method{loadKeywords () : void}
+\item \method{loadTeacher () : void}
+\item \method{loadTopics () : void}
+\item \method{searchQuestion (question : $scope) : void}
+\end{itemize} \\
+TU128 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz & 
+\begin{itemize}
+\item \method{loadKeywords () : void}
+\item \method{loadTopics () : void}
+\item \method{loadUser () : void}
+\item \method{searchQuiz (search : $scope) : void}
+\end{itemize} \\
+TU129 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlTopics & 
+\begin{itemize}
+\item \method{addTopic (name : string) : void}
+\item \method{loadTopics () : void}
+\item \method{removeTopic (indexOfTopic : int) : void}
+\end{itemize} \\
 TU13 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerShortAnswerQ & 
 \begin{itemize}
 \item \method{check () : bool}
 \item \method{getGivenAnswer () : String}
 \item \method{setAnswer () : void}
 \end{itemize} \\
+TU130 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MyQuiz & 
+\begin{itemize}
+\item \method{addKeyword (keyword : String) : void}
+\item \method{addQuestion (quiz : Quiz) : void}
+\end{itemize} \\
+TU131 & Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlQuestionStatistics & 
+\begin{itemize}
+\item \method{loadQuestion () : void}
+\end{itemize} \\
+TU132 & Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlQuizStatistics & 
+\begin{itemize}
+\item \method{loadQuiz () : void}
+\end{itemize} \\
+TU133 & Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlStudentsQuizStats & 
+\begin{itemize}
+\item \method{loadClasses () : void}
+\item \method{loadQuiz () : void}
+\item \method{loadStudentsStatsQuiz () : void}
+\end{itemize} \\
+TU134 & Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlTeachersStats & 
+\begin{itemize}
+\item \method{loadQuestions () : void}
+\item \method{loadTeachers () : void}
+\end{itemize} \\
+TU135 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlHeader & 
+\begin{itemize}
+\item \method{loadCurrentHeader () : void}
+\item \method{loadUser () : void}
+\end{itemize} \\
+TU136 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlLogin & 
+\begin{itemize}
+\item \method{checkLogin (email : string, password : string) : bool}
+\end{itemize} \\
+TU137 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlRecoveryPw & 
+\begin{itemize}
+\item \method{sendRecoveryEmail (email : string) : void}
+\end{itemize} \\
+TU138 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlRegistration & 
+\begin{itemize}
+\item \method{sendRegistration (user : $scope) : void}
+\end{itemize} \\
+TU139 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager & 
+\begin{itemize}
+\item \method{changePsw () : void}
+\item \method{loadAffiliation () : void}
+\item \method{loadUser () : void}
+\end{itemize} \\
 TU14 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerTrueFalseQ & 
 \begin{itemize}
 \item \method{check () : bool}
 \item \method{getGivenAnswer () : bool}
 \item \method{setAnswer () : void}
+\end{itemize} \\
+TU140 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: MyUser & 
+\begin{itemize}
+\item \method{checkMail () : bool}
+\item \method{checkPassword () : bool}
 \end{itemize} \\
 TU15 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: Cell & 
 \begin{itemize}
