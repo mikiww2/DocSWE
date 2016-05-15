@@ -1173,7 +1173,7 @@ Il componente raccoglie le classi necessarie alla visualizzazione delle pagine d
 \begin{itemize}
 \item \bold{Uscenti}
 \begin{itemize}
-\item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per aggiungi
+\item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per avere informazioni sulle domande e i quiz che l'utente risolverà
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewQuizExec}}
@@ -1720,7 +1720,7 @@ Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e
 \item \bold{Entranti}
 \begin{itemize}
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizManager} per ottenere le informazioni che le servono sui quiz
-\item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver} per aggiungi
+\item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver} per avere informazioni sulle domande e i quiz che l'utente risolverà
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver} per 
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewSearch} per aggiungi
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewTopicManager} per aggiungi
@@ -3490,6 +3490,10 @@ Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un ut
 \caption[Schema Classe ResultsUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: ResultsUpdater}
 \end{figure}
 \paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per indirizzare i dati necessari ad aggiornare i risultati di un quiz
+\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per 
@@ -3501,6 +3505,11 @@ Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-statisticsquizupdater.pdf}}
 \caption[Schema Classe StatisticsQuizUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: StatisticsQuizUpdater}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per indirizzare i dati necessari ad aggiornare le statistiche di un quiz
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent}}
 Questo componente racchiude i moduli necessari alla traduzione, da QML ad un formato comprensibile dal sistema, delle informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
 \begin{figure}[H]
@@ -3557,7 +3566,7 @@ Permette la memorizzazione nella base di dati di tutte le richieste, fatte da pa
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::RequestsRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::RequestsRouter} per indirizzare la richiesta di un utente di essere inserito in una classe
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3573,7 +3582,7 @@ Permette la visualizzazione di tutte le richieste da parte degli utenti.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::RequestsRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::RequestsRouter} per indirizzare la richiesta di un utente che vuole recuperare la lista di richieste avanzate dagli altri utenti
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3591,7 +3600,7 @@ Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utent
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::RequestsRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::RequestsRouter} per indirizzare la richiesta di un utente che vuole accettare una richiesta da parte di un utente si assumere un determinato ruolo
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3608,7 +3617,7 @@ Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'i
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::RequestsRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::RequestsRouter} per indirizzare la richiesta di un utente che vuole assumere un determinato ruolo
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3636,10 +3645,6 @@ Ritorna una lista di domande che corrispondono ai parametri di ricerca impostati
 \caption[Schema Classe QuestionsSearcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher}
 \end{figure}
 \paragraph{Relazioni con altre classi}
-\subparagraph{Entranti}
-\begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::SearchRouter} per aggiungi
-\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Server::ModelServer::Services::Questions::GenericQuestion} per 
@@ -3652,10 +3657,6 @@ Ritorna una lista di quiz che corrispondono ai parametri di ricerca impostati da
 \caption[Schema Classe QuizSearcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher}
 \end{figure}
 \paragraph{Relazioni con altre classi}
-\subparagraph{Entranti}
-\begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::SearchRouter} per aggiungi
-\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per 
@@ -3888,6 +3889,8 @@ Invocato dal client per interagire con QuizManager.
 \item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser} per indirizzare la richiesta di un utente che vuole eliminare un quiz
 \item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher} per indirizzare la richiesta di un utente che vuole recuperare un quiz
 \item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater} per indirizzare la richiesta di un utente che vuole modificare un quiz
+\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater} per indirizzare i dati necessari ad aggiornare i risultati di un quiz
+\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::StatisticsQuizUpdater} per indirizzare i dati necessari ad aggiornare le statistiche di un quiz
 \end{itemize}
 \subsubsection{Classe \cls{RequestsRouter}}
 Invocato dal client per interagire con RequestsManager.
@@ -3899,10 +3902,10 @@ Invocato dal client per interagire con RequestsManager.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestsAdder} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder} per aggiungi
+\item usa \cls{Quizzipedia::Server::ControllerServer::RequestsManager::InsertClassRequestsAdder} per indirizzare la richiesta di un utente di essere inserito in una classe
+\item usa \cls{Quizzipedia::Server::ControllerServer::RequestsManager::RequestsFetcher} per indirizzare la richiesta di un utente che vuole recuperare la lista di richieste avanzate dagli altri utenti
+\item usa \cls{Quizzipedia::Server::ControllerServer::RequestsManager::RoleAccepter} per indirizzare la richiesta di un utente che vuole accettare una richiesta da parte di un utente si assumere un determinato ruolo
+\item usa \cls{Quizzipedia::Server::ControllerServer::RequestsManager::RoleRequestAdder} per indirizzare la richiesta di un utente che vuole assumere un determinato ruolo
 \end{itemize}
 \subsubsection{Classe \cls{SearchRouter}}
 Invocato dal client per interagire con SearchManager.
@@ -3915,11 +3918,6 @@ Invocato dal client per interagire con SearchManager.
 \subparagraph{Entranti}
 \begin{itemize}
 \item usata da \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlSearchQuiz} per aggiungi
-\end{itemize}
-\subparagraph{Uscenti}
-\begin{itemize}
-\item usa \cls{Quizzipedia::Server::ControllerServer::SearchManager::QuestionsSearcher} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::SearchManager::QuizSearcher} per aggiungi
 \end{itemize}
 \subsubsection{Classe \cls{StatisticsRouter}}
 Invocato dal client per interagire con StatisticsManager.
