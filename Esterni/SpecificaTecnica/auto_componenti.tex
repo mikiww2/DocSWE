@@ -1118,7 +1118,7 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \begin{itemize}
 \item \bold{Uscenti}
 \begin{itemize}
-\item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per aggiungi
+\item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per ottenere le informazioni che le servono sui quiz
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewCreateQuiz}}
@@ -1719,7 +1719,7 @@ Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e
 \begin{itemize}
 \item \bold{Entranti}
 \begin{itemize}
-\item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizManager} per aggiungi
+\item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizManager} per ottenere le informazioni che le servono sui quiz
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver} per aggiungi
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver} per 
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewSearch} per aggiungi
@@ -3356,6 +3356,10 @@ Permette la cancellazione di una domanda dalla base di dati.
 \caption[Schema Classe QuestionEraser]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionEraser}
 \end{figure}
 \paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::RoutingManager::QuestionRouter} per indirizzare la richiesta di un utente che vuole eliminare una domanda
+\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Server::ControllerServer::SessionController} per verificare che l'utente sia un Docente
@@ -3369,6 +3373,10 @@ Permette la modifica di una domanda già esistente.
 \caption[Schema Classe QuestionUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionUpdater}
 \end{figure}
 \paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::RoutingManager::QuestionRouter} per indirizzare la richiesta di un utente che vuole modificare una domanda
+\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Server::ControllerServer::SessionController} per verificare che l'utente sia un Docente
@@ -3381,6 +3389,11 @@ Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in e
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-statisticsquestionupdater.pdf}}
 \caption[Schema Classe StatisticsQuestionUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: StatisticsQuestionUpdater}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Server::RoutingManager::QuestionRouter} per indirizzare i dati necessari ad aggiornare le statistiche di una domanda
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: QuizManager}}
 Componente che racchiude tutte le funzionalità adibite alla creazione, modifica e al recupero di quiz per lo svolgimento da parte di un utente.
 \begin{figure}[H]
@@ -3409,7 +3422,7 @@ Permette il salvataggio nella base di dati di un nuovo quiz.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per indirizzare la richiesta di un utente che vuole creare un nuovo quiz
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3427,7 +3440,7 @@ Permette la cancellazione di un quiz dalla base di dati.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per indirizzare la richiesta di un utente che vuole eliminare un quiz
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3444,7 +3457,7 @@ Ritorna un determinato quiz pronto per essere svolto da un utente .
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per indirizzare la richiesta di un utente che vuole recuperare un quiz
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3461,7 +3474,7 @@ Permette la modifica di un quiz già presente nella base di dati.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per indirizzare la richiesta di un utente che vuole modificare un quiz
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3477,10 +3490,6 @@ Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un ut
 \caption[Schema Classe ResultsUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: ResultsUpdater}
 \end{figure}
 \paragraph{Relazioni con altre classi}
-\subparagraph{Entranti}
-\begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per aggiungi
-\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Server::ModelServer::Services::Quiz} per 
@@ -3492,11 +3501,6 @@ Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-statisticsquizupdater.pdf}}
 \caption[Schema Classe StatisticsQuizUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: StatisticsQuizUpdater}
 \end{figure}
-\paragraph{Relazioni con altre classi}
-\subparagraph{Entranti}
-\begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::QuizRouter} per aggiungi
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent}}
 Questo componente racchiude i moduli necessari alla traduzione, da QML ad un formato comprensibile dal sistema, delle informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
 \begin{figure}[H]
@@ -3866,6 +3870,9 @@ Invocato dal client per interagire con QuestionsManager.
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator} per indirizzare la richiesta di un utente che vuole creare una nuova domanda
+\item usa \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser} per indirizzare la richiesta di un utente che vuole eliminare una domanda
+\item usa \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater} per indirizzare la richiesta di un utente che vuole modificare una domanda
+\item usa \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::StatisticsQuestionUpdater} per indirizzare i dati necessari ad aggiornare le statistiche di una domanda
 \end{itemize}
 \subsubsection{Classe \cls{QuizRouter}}
 Invocato dal client per interagire con QuizManager.
@@ -3877,12 +3884,10 @@ Invocato dal client per interagire con QuizManager.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::ResultsUpdater} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::StatisticsQuizUpdater} per aggiungi
+\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizCreator} per indirizzare la richiesta di un utente che vuole creare un nuovo quiz
+\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizEraser} per indirizzare la richiesta di un utente che vuole eliminare un quiz
+\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizFetcher} per indirizzare la richiesta di un utente che vuole recuperare un quiz
+\item usa \cls{Quizzipedia::Server::ControllerServer::QuizManager::QuizUpdater} per indirizzare la richiesta di un utente che vuole modificare un quiz
 \end{itemize}
 \subsubsection{Classe \cls{RequestsRouter}}
 Invocato dal client per interagire con RequestsManager.
