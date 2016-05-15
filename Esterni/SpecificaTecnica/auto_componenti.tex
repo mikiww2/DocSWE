@@ -764,6 +764,14 @@ Contiene il codice necessario a creare il footer, che è costante su tutte le pa
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-footer.pdf}}
 \caption[Schema Classe Footer]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Footer}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Homepage::HomepageDirector} per visualizzare il footer del sito
+\item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Homepage::HomepageGeneric} per visualizzare il footer del sito
+\item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Homepage::HomepageStudent} per visualizzare il footer del sito
+\item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Homepage::HomepageTeacher} per visualizzare il footer del sito
+\end{itemize}
 \subsubsection{Classe \cls{Pagination}}
 Contiene il codice necessario a gestire il sistema di paginazione.
 \begin{figure}[H]
@@ -785,6 +793,13 @@ Contiene i template per caricare header e breadcrumb delle pagine a seconda dell
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-header.pdf}}
 \caption[Schema Componente Header]{Schema Componente Quizzipedia:: Client:: ViewClient:: Shared:: Header}
 \end{figure}
+\subsubsection{Interazioni con altre componenti}
+\begin{itemize}
+\item \bold{Entranti}
+\begin{itemize}
+\item usata da \pkg{Quizzipedia::Client::ViewClient::Shared::Homepage} per visualizzare in homepage lo header corretto
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Breadcrumbs}}
 Contiene il codice necessario a creare il breadcrumb.
 \begin{figure}[H]
@@ -810,7 +825,7 @@ Carica lo header che verrà visualizzato dall'utente registrato.
 \begin{itemize}
 \item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderLoggedDirector} per aggiungere allo header visualizzato dal responsabile la parte comune a tutti gli utenti registrati
 \item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderLoggedStudent} per aggiungere allo header visualizzato dallo studente la parte comune a tutti gli utenti registrati
-\item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Homepage::HomepageTeacher} per aggiungere allo header visualizzato dal docente la parte comune a tutti gli utenti registrati
+\item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderLoggedTeacher} per aggiungere allo header visualizzato dal docente la parte comune a tutti gli utenti registrati
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -825,6 +840,10 @@ Carica lo header che verrà visualizzato dal responsabile.
 \caption[Schema Classe HeaderLoggedDirector]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Header:: HeaderLoggedDirector}
 \end{figure}
 \paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Homepage::HomepageDirector} per mostrare in homepage lo header con le funzionalità del responsabile
+\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderLogged} per aggiungere allo header visualizzato dal responsabile la parte comune a tutti gli utenti registrati
@@ -837,6 +856,10 @@ Carica lo header che verrà visualizzato dallo studente.
 \caption[Schema Classe HeaderLoggedStudent]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Header:: HeaderLoggedStudent}
 \end{figure}
 \paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Homepage::HomepageStudent} per mostrare in homepage lo header con le funzionalità dello studente
+\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderLogged} per aggiungere allo header visualizzato dallo studente la parte comune a tutti gli utenti registrati
@@ -848,6 +871,15 @@ Carica lo header che verrà visualizzato dall'insegnante.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-header-headerloggedteacher.pdf}}
 \caption[Schema Classe HeaderLoggedTeacher]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Header:: HeaderLoggedTeacher}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Homepage::HomepageTeacher} per mostrare in homepage lo header con le funzionalità del docente
+\end{itemize}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderLogged} per aggiungere allo header visualizzato dal docente la parte comune a tutti gli utenti registrati
+\end{itemize}
 \subsubsection{Classe \cls{HeaderNotLogged}}
 Carica lo header che verrà visualizzato da un visitatore non registrato.
 \begin{figure}[H]
@@ -856,6 +888,10 @@ Carica lo header che verrà visualizzato da un visitatore non registrato.
 \caption[Schema Classe HeaderNotLogged]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Header:: HeaderNotLogged}
 \end{figure}
 \paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::Shared::Homepage::HomepageGeneric} per mostrare in homepage lo header di un utente che non ha effettuato login
+\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Client::ViewClient::Shared::Header::Breadcrumbs} per tenere traccia del percorso compiuto dall'utente durante la navigazione
@@ -868,6 +904,13 @@ Contiene le pagine necessarie alla creazione della homepage e delle parti che po
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-homepage.pdf}}
 \caption[Schema Componente Homepage]{Schema Componente Quizzipedia:: Client:: ViewClient:: Shared:: Homepage}
 \end{figure}
+\subsubsection{Interazioni con altre componenti}
+\begin{itemize}
+\item \bold{Uscenti}
+\begin{itemize}
+\item usa \pkg{Quizzipedia::Client::ViewClient::Shared::Header} per visualizzare in homepage lo header corretto
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{HomepageDirector}}
 Carica la homepage che verrà visualizzata dal responsabile.
 \begin{figure}[H]
@@ -875,6 +918,12 @@ Carica la homepage che verrà visualizzata dal responsabile.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-homepage-homepagedirector.pdf}}
 \caption[Schema Classe HomepageDirector]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Homepage:: HomepageDirector}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewClient::Shared::Footer} per visualizzare il footer del sito
+\item usa \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderLoggedDirector} per mostrare in homepage lo header con le funzionalità del responsabile
+\end{itemize}
 \subsubsection{Classe \cls{HomepageGeneric}}
 Carica la homepage che verrà visualizzata da un visitatore generico.
 \begin{figure}[H]
@@ -882,6 +931,12 @@ Carica la homepage che verrà visualizzata da un visitatore generico.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-homepage-homepagegeneric.pdf}}
 \caption[Schema Classe HomepageGeneric]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Homepage:: HomepageGeneric}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewClient::Shared::Footer} per visualizzare il footer del sito
+\item usa \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderNotLogged} per mostrare in homepage lo header di un utente che non ha effettuato login
+\end{itemize}
 \subsubsection{Classe \cls{HomepageStudent}}
 Carica la homepage che verrà visualizzata dallo studente.
 \begin{figure}[H]
@@ -889,6 +944,12 @@ Carica la homepage che verrà visualizzata dallo studente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-homepage-homepagestudent.pdf}}
 \caption[Schema Classe HomepageStudent]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Homepage:: HomepageStudent}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewClient::Shared::Footer} per visualizzare il footer del sito
+\item usa \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderLoggedStudent} per mostrare in homepage lo header con le funzionalità dello studente
+\end{itemize}
 \subsubsection{Classe \cls{HomepageTeacher}}
 Carica la homepage che verrà visualizzata dal docente.
 \begin{figure}[H]
@@ -899,7 +960,8 @@ Carica la homepage che verrà visualizzata dal docente.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderLogged} per aggiungere allo header visualizzato dal docente la parte comune a tutti gli utenti registrati
+\item usa \cls{Quizzipedia::Client::ViewClient::Shared::Footer} per visualizzare il footer del sito
+\item usa \cls{Quizzipedia::Client::ViewClient::Shared::Header::HeaderLoggedTeacher} per mostrare in homepage lo header con le funzionalità del docente
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewOrgManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti presenti in Quizzipedia.
@@ -912,7 +974,7 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \begin{itemize}
 \item \bold{Uscenti}
 \begin{itemize}
-\item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlOrganization} per aggiungi
+\item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlOrganization} per ottenere i dati su enti e classi e gli utenti che vi appartengono
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ViewClassMembers}}
@@ -922,6 +984,11 @@ La classe si occupa di presentare una lista degli utenti iscritti alla classe e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager-viewclassmembers.pdf}}
 \caption[Schema Classe ViewClassMembers]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewOrgManager:: ViewClassMembers}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlOrganization::CtrlInstitution} per ottenere informazioni sugli studenti e sui docenti delle classi e dell'istituto
+\end{itemize}
 \subsubsection{Classe \cls{ViewModifyOrg}}
 Presenta all'utente la pagina da cui sarà possibile modificare le informazioni su una classe o su un ente esistente.
 \begin{figure}[H]
@@ -945,7 +1012,7 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \begin{itemize}
 \item \bold{Uscenti}
 \begin{itemize}
-\item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices} per aggiungi
+\item usa \pkg{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestions} per ottenere le informazioni che le servono sulle domande
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CreateCompletionQ}}
@@ -955,6 +1022,11 @@ Presenta la pagina da cui sarà possibile creare una nuova domanda a completamen
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-createcompletionq.pdf}}
 \caption[Schema Classe CreateCompletionQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateCompletionQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewClient::ViewQuestionManager::CreateGenericQ} per permettere all'utente di creare un domanda a completamento completa di tutti i campi
+\end{itemize}
 \subsubsection{Classe \cls{CreateGenericQ}}
 Presenta la pagina da cui è possibile creare una nuova domanda, inserendo le informazioni comuni a tutte le domande. Poi si potrà selezionare il tipo di domanda desiderato.
 \begin{figure}[H]
@@ -963,6 +1035,14 @@ Presenta la pagina da cui è possibile creare una nuova domanda, inserendo le in
 \caption[Schema Classe CreateGenericQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateGenericQ}
 \end{figure}
 \paragraph{Relazioni con altre classi}
+\subparagraph{Entranti}
+\begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuestionManager::CreateCompletionQ} per permettere all'utente di creare un domanda a completamento completa di tutti i campi
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuestionManager::CreateMatchingQ} per permettere all'utente di creare un domanda a collegamenti completa di tutti i campi
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuestionManager::CreateMultipleChoiceQ} per permettere all'utente di creare un domanda a scelta multipla completa di tutti i campi
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuestionManager::CreateShortAnswerQ} per permettere all'utente di creare un domanda aperta completa di tutti i campi
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewQuestionManager::CreateTrueFalseQ} per permettere all'utente di creare un domanda di tipo vero/falso completa di tutti i campi
+\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Client::ViewModelClient::CtrlServices::CtrlQuestions::CtrlQuestion} per passare al controller i dati immessi dall'utente durante la creazione della domanda
@@ -974,6 +1054,11 @@ Presenta la pagina da cui sarà possibile creare una nuova domanda a collegament
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-creatematchingq.pdf}}
 \caption[Schema Classe CreateMatchingQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateMatchingQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewClient::ViewQuestionManager::CreateGenericQ} per permettere all'utente di creare un domanda a collegamenti completa di tutti i campi
+\end{itemize}
 \subsubsection{Classe \cls{CreateMultipleChoiceQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda a scelta multipla.
 \begin{figure}[H]
@@ -981,6 +1066,11 @@ Presenta la pagina da cui sarà possibile creare una nuova domanda a scelta mult
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-createmultiplechoiceq.pdf}}
 \caption[Schema Classe CreateMultipleChoiceQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateMultipleChoiceQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewClient::ViewQuestionManager::CreateGenericQ} per permettere all'utente di creare un domanda a scelta multipla completa di tutti i campi
+\end{itemize}
 \subsubsection{Classe \cls{CreateShortAnswerQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda aperta.
 \begin{figure}[H]
@@ -988,6 +1078,11 @@ Presenta la pagina da cui sarà possibile creare una nuova domanda aperta.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-createshortanswerq.pdf}}
 \caption[Schema Classe CreateShortAnswerQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateShortAnswerQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewClient::ViewQuestionManager::CreateGenericQ} per permettere all'utente di creare un domanda aperta completa di tutti i campi
+\end{itemize}
 \subsubsection{Classe \cls{CreateTrueFalseQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda di tipo vero/falso.
 \begin{figure}[H]
@@ -995,6 +1090,11 @@ Presenta la pagina da cui sarà possibile creare una nuova domanda di tipo vero/
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-createtruefalseq.pdf}}
 \caption[Schema Classe CreateTrueFalseQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateTrueFalseQ}
 \end{figure}
+\paragraph{Relazioni con altre classi}
+\subparagraph{Uscenti}
+\begin{itemize}
+\item usa \cls{Quizzipedia::Client::ViewClient::ViewQuestionManager::CreateGenericQ} per permettere all'utente di creare un domanda di tipo vero/falso completa di tutti i campi
+\end{itemize}
 \subsubsection{Classe \cls{QuestionMgmt}}
 Presenta all'utente il pannello da cui sarà possibile creare una nuova domanda e visualizzare una lista di informazioni riassuntive sulle domande già create, con possibilità di modifica e rimozione.
 \begin{figure}[H]
@@ -1508,7 +1608,7 @@ Raccoglie le classi che si occupano delle comunicazioni necessarie per la creazi
 \begin{itemize}
 \item \bold{Entranti}
 \begin{itemize}
-\item usata da \pkg{Quizzipedia::Client::ViewClient::ViewOrgManager} per aggiungi
+\item usata da \pkg{Quizzipedia::Client::ViewClient::ViewOrgManager} per ottenere i dati su enti e classi e gli utenti che vi appartengono
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewSearch} per aggiungi
 \end{itemize}
 \end{itemize}
@@ -1523,6 +1623,7 @@ Sono presenti pertanto i metodi necessari a svolgere tali scopi e per eseguire i
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
+\item usata da \cls{Quizzipedia::Client::ViewClient::ViewOrgManager::ViewClassMembers} per ottenere informazioni sugli studenti e sui docenti delle classi e dell'istituto
 \item usata da \cls{Quizzipedia::Client::ViewClient::ViewOrgManager::ViewModifyOrg} per passare al controller i dati immessi dall'utente durante le operazioni di modifica, creazione o rimozione di una classe di un istituto
 \item usata da \cls{Quizzipedia::Client::ViewClient::ViewSearch::ViewSearchClass} per 
 \end{itemize}
@@ -1618,7 +1719,6 @@ Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e
 \begin{itemize}
 \item \bold{Entranti}
 \begin{itemize}
-\item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuestionManager} per aggiungi
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizManager} per aggiungi
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver} per aggiungi
 \item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuizSolver::ViewQuestionSolver} per 
@@ -1807,6 +1907,13 @@ Raccoglie le classi necessarie al collegamento tra view e model nelle fasi di ge
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions.pdf}}
 \caption[Schema Componente CtrlQuestions]{Schema Componente Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions}
 \end{figure}
+\subsubsection{Interazioni con altre componenti}
+\begin{itemize}
+\item \bold{Entranti}
+\begin{itemize}
+\item usata da \pkg{Quizzipedia::Client::ViewClient::ViewQuestionManager} per ottenere le informazioni che le servono sulle domande
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlQuestion}}
 Si occupa di gestire la creazione delle domande da parte dell'utente, raccogliendo i dati dalla view.
 \begin{figure}[H]
@@ -2913,7 +3020,7 @@ Permette l'autenticazione nel sistema da parte di utenti preventivamente registr
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::AuthenticationRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::AuthenticationRouter} per indirizzare la richiesta di un utente che vuole effettuare il login
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -2929,7 +3036,7 @@ Permette l'uscita dal sistema ad utenti autenticati.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::AuthenticationRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::AuthenticationRouter} per indirizzare la richiesta di un utente che vuole effettuare il logout
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -2945,7 +3052,7 @@ Permette il recupero della password da parte di un utente in caso di smarrimento
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::AuthenticationRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::AuthenticationRouter} per indirizzare la richiesta di un utente che vuole recuperare la password
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -2961,7 +3068,7 @@ Permette la registrazione di un utente nel sistema.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::AuthenticationRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::AuthenticationRouter} per indirizzare la richiesta di un utente che vuole registrarsi
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -2991,7 +3098,7 @@ Permette la creazione di una nuova classe.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per indirizzare la richiesta di un utente che vuole creare una nuova classe
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3008,7 +3115,7 @@ Permette la rimozione delle classi dal sistema.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per indirizzare la richiesta di un utente che vuole rimuovere una classe
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3025,7 +3132,7 @@ Permette la modifica delle informazioni di base di una determinata classe.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per indirizzare la richiesta di un utente che vuole modificare una classe
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3042,7 +3149,7 @@ Permette la rimozione di un utente da una determinata classe.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per indirizzare la richiesta di un utente che vuole rimuovere un altro utente da una classe
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3059,7 +3166,7 @@ Permette l'inserimento di un utente in una specifica classe.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per indirizzare la richiesta di un utente che vuole inserire un altro utente in una classe
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3076,7 +3183,7 @@ Recupera la lista degli studenti appartenenti ad una determinata classe.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per indirizzare la richiesta di un utente che vuole recuperare la lista di studenti di una classe
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3093,7 +3200,7 @@ Recupera la lista degli insegnanti relativi ad una determinata classe.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ClassRouter} per indirizzare la richiesta di un utente che vuole recuperare la lista di docenti di una classe
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3124,7 +3231,7 @@ Permette la modifica dell'ente da parte del responsabile.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::InstitutionRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::InstitutionRouter} per indirizzare la richiesta di un utente che vuole modificare un ente
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3155,7 +3262,7 @@ Permette la rimozione di un account dal sistema.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ProfileRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ProfileRouter} per indirizzare la richiesta di un utente che vuole eliminare un account
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3171,7 +3278,7 @@ Permette ad un utente di impostare una nuova password relativa al proprio accoun
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ProfileRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ProfileRouter} per indirizzare la richiesta di un utente che vuole impostare la propria password
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3187,7 +3294,7 @@ Ritorna tutte le informazioni personali riferite all'utente che ne effettua la r
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ProfileRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ProfileRouter} per indirizzare la richiesta di un utente che vuole recuperare i propri dati personali
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3203,7 +3310,7 @@ Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fi
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::ProfileRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::ProfileRouter} per indirizzare la richiesta di un utente che vuole recuperare la lista dei quiz da lui svolti
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3234,7 +3341,7 @@ Permette il salvataggio nella base di dati di una nuova domanda.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Entranti}
 \begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::QuestionRouter} per aggiungi
+\item usata da \cls{Quizzipedia::Server::RoutingManager::QuestionRouter} per indirizzare la richiesta di un utente che vuole creare una nuova domanda
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
@@ -3249,10 +3356,6 @@ Permette la cancellazione di una domanda dalla base di dati.
 \caption[Schema Classe QuestionEraser]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionEraser}
 \end{figure}
 \paragraph{Relazioni con altre classi}
-\subparagraph{Entranti}
-\begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::QuestionRouter} per aggiungi
-\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Server::ControllerServer::SessionController} per verificare che l'utente sia un Docente
@@ -3266,10 +3369,6 @@ Permette la modifica di una domanda già esistente.
 \caption[Schema Classe QuestionUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionUpdater}
 \end{figure}
 \paragraph{Relazioni con altre classi}
-\subparagraph{Entranti}
-\begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::QuestionRouter} per aggiungi
-\end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
 \item usa \cls{Quizzipedia::Server::ControllerServer::SessionController} per verificare che l'utente sia un Docente
@@ -3282,11 +3381,6 @@ Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in e
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-statisticsquestionupdater.pdf}}
 \caption[Schema Classe StatisticsQuestionUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: StatisticsQuestionUpdater}
 \end{figure}
-\paragraph{Relazioni con altre classi}
-\subparagraph{Entranti}
-\begin{itemize}
-\item usata da \cls{Quizzipedia::Server::RoutingManager::QuestionRouter} per 
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: QuizManager}}
 Componente che racchiude tutte le funzionalità adibite alla creazione, modifica e al recupero di quiz per lo svolgimento da parte di un utente.
 \begin{figure}[H]
@@ -3711,10 +3805,10 @@ Invocato dal client per interagire con AuthenticationManager.
 \end{itemize}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerOut} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::Register} per aggiungi
+\item usa \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn} per indirizzare la richiesta di un utente che vuole effettuare il login
+\item usa \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerOut} per indirizzare la richiesta di un utente che vuole effettuare il logout
+\item usa \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover} per indirizzare la richiesta di un utente che vuole recuperare la password
+\item usa \cls{Quizzipedia::Server::ControllerServer::AuthenticationManager::Register} per indirizzare la richiesta di un utente che vuole registrarsi
 \end{itemize}
 \subsubsection{Classe \cls{ClassRouter}}
 Invocato dal client per interagire con ClassManager.
@@ -3726,13 +3820,13 @@ Invocato dal client per interagire con ClassManager.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::ClassDeleter} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::ClassUpdater} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::FromClassRemover} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher} per aggiungi
+\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::ClassAdder} per indirizzare la richiesta di un utente che vuole creare una nuova classe
+\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::ClassDeleter} per indirizzare la richiesta di un utente che vuole rimuovere una classe
+\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::ClassUpdater} per indirizzare la richiesta di un utente che vuole modificare una classe
+\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::FromClassRemover} per indirizzare la richiesta di un utente che vuole rimuovere un altro utente da una classe
+\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::InClassAdder} per indirizzare la richiesta di un utente che vuole inserire un altro utente in una classe
+\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::StudentsClassFetcher} per indirizzare la richiesta di un utente che vuole recuperare la lista di studenti di una classe
+\item usa \cls{Quizzipedia::Server::ControllerServer::ClassManager::TeachersClassFetcher} per indirizzare la richiesta di un utente che vuole recuperare la lista di docenti di una classe
 \end{itemize}
 \subsubsection{Classe \cls{InstitutionRouter}}
 Invocato dal client per interagire con InstitutionManager.
@@ -3744,7 +3838,7 @@ Invocato dal client per interagire con InstitutionManager.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ControllerServer::InstitutionManager::InstitutionUpdater} per aggiungi
+\item usa \cls{Quizzipedia::Server::ControllerServer::InstitutionManager::InstitutionUpdater} per indirizzare la richiesta di un utente che vuole modificare un ente
 \end{itemize}
 \subsubsection{Classe \cls{ProfileRouter}}
 Invocato dal client per interagire con ProfileManager.
@@ -3756,10 +3850,10 @@ Invocato dal client per interagire con ProfileManager.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher} per aggiungi
+\item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::AccountDeleter} per indirizzare la richiesta di un utente che vuole eliminare un account
+\item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PasswordSetter} per indirizzare la richiesta di un utente che vuole impostare la propria password
+\item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PersonalDataFetcher} per indirizzare la richiesta di un utente che vuole recuperare i propri dati personali
+\item usa \cls{Quizzipedia::Server::ControllerServer::ProfileManager::PersonalQuizFetcher} per indirizzare la richiesta di un utente che vuole recuperare la lista dei quiz da lui svolti
 \end{itemize}
 \subsubsection{Classe \cls{QuestionRouter}}
 Invocato dal client per interagire con QuestionsManager.
@@ -3771,10 +3865,7 @@ Invocato dal client per interagire con QuestionsManager.
 \paragraph{Relazioni con altre classi}
 \subparagraph{Uscenti}
 \begin{itemize}
-\item usa \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionEraser} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionUpdater} per aggiungi
-\item usa \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::StatisticsQuestionUpdater} per 
+\item usa \cls{Quizzipedia::Server::ControllerServer::QuestionsManager::QuestionCreator} per indirizzare la richiesta di un utente che vuole creare una nuova domanda
 \end{itemize}
 \subsubsection{Classe \cls{QuizRouter}}
 Invocato dal client per interagire con QuizManager.
