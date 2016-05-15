@@ -194,17 +194,25 @@ ROF18.2 & Quizzipedia:: Server:: ControllerServer:: TopicManager:: TopicEraser \
 \rowcolor{P}
 ROF19.2 & Quizzipedia:: Server:: ControllerServer:: InstitutionManager:: InstitutionUpdater \\
 \rowcolor{D}
-ROF2 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Login \\
+ROF2 & Quizzipedia:: Client:: ModelClient:: Users:: User \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewClient::ViewUsers::Login \\
 \rowcolor{D}
  & Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlLogin \\
 \rowcolor{D}
  & Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn \\
 \rowcolor{P}
-ROF2.1 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerIn \\
-\rowcolor{D}
-ROF2.2 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerIn \\
+ROF2.1 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Login \\
 \rowcolor{P}
-ROF2.3 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerIn \\
+ & Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn \\
+\rowcolor{D}
+ROF2.2 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: Login \\
+\rowcolor{D}
+ & Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn \\
+\rowcolor{P}
+ROF2.3 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlLogin \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::AuthenticationManager::LoggerIn \\
 \rowcolor{D}
 ROF20.1 & Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: QuizStatisticsFetcher \\
 \rowcolor{P}
@@ -250,11 +258,23 @@ ROF21.6.3 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: InClassAdde
 \rowcolor{P}
 ROF21.6.4 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: FromClassRemover \\
 \rowcolor{D}
-ROF3 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: PasswordRecover \\
-\rowcolor{P}
-ROF3.1 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: PasswordRecover \\
+ROF3 & Quizzipedia:: Client:: ModelClient:: Users:: User \\
 \rowcolor{D}
-ROF3.2 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: PasswordRecover \\
+ & Quizzipedia::Client::ViewClient::ViewUsers::RecoveryPw \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlRecoveryPw \\
+\rowcolor{D}
+ & Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover \\
+\rowcolor{P}
+ROF3.1 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RecoveryPw \\
+\rowcolor{P}
+ & Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover \\
+\rowcolor{D}
+ROF3.2 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RecoveryPw \\
+\rowcolor{D}
+ & Quizzipedia::Client::ViewModelClient::CtrlUsers::CtrlRecoveryPw \\
+\rowcolor{D}
+ & Quizzipedia::Server::ControllerServer::AuthenticationManager::PasswordRecover \\
 \rowcolor{P}
 ROF31.1 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionCreator \\
 \rowcolor{D}

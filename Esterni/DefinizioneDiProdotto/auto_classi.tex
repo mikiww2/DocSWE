@@ -2712,7 +2712,35 @@ Gestisce la procedura di risoluzione quiz, andando a caricare le singole domande
 \end{figure}
 \begin{itemize}
 \item \bold{Attributi}
+\begin{itemize}
+\item \attribute{answerQuestion : AnswerQuestion}
+\newline
+la risposta data dall'utente alla domanda corrente
+\item \attribute{answerQuiz : AnswerQuiz}
+\newline
+la risposta complessiva al quiz data dall'utente
+\item \attribute{indexOfQuestion : int}
+\newline
+l'indice della domanda che l'utente sta visualizzando al momento
+\item \attribute{question : GenericQuestion}
+\newline
+la domanda correntemente visualizzata dall'utente
+\end{itemize}
 \item \bold{Metodi}
+\begin{itemize}
+\item \method{loadQuestion () : void}
+\newline
+permette di spostarsi tra una domanda e l'altra durante lo svolgimento di quiz
+\newline
+\item \method{saveAnswer () : void}
+\newline
+memorizza la risposta data dall'utente a una domanda del quiz
+\newline
+\item \method{saveQuiz () : void}
+\newline
+salva il quiz concluso e avvia la procedura di correzione
+\newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlQuizManager}}
 Fornisce al docente i metodi necessari per poter visualizzare, modificare e rimuovere quiz dalla lista di quiz da loro creati.
@@ -2772,6 +2800,9 @@ le classi a cui l'utente è iscritto
 \item \attribute{quizList : Quiz[]}
 \newline
 la lista di quiz privati che l'utente può svolgere
+\item \attribute{selectedQuiz : Quiz}
+\newline
+il quiz che l'utente ha deciso di svolgere
 \item \attribute{user : User}
 \newline
 l'utente che sta effettuando la selezione di quiz
@@ -2782,10 +2813,16 @@ l'utente che sta effettuando la selezione di quiz
 \newline
 carica le classi a cui lo studente è iscritto per permettergli di scegliere quiz privati
 \newline
-\item \method{loadQuizList () : void}
+\item \method{loadQuizList (classes : Class[]) : void}
 \newline
 carica tutti i quiz appartenenti alle classi a cui l'utente è iscritto
 \newline
+Parametri :
+\begin{itemize}
+\item \attribute{classes : Class[]}
+\newline
+le classi a cui l'utente è iscritto
+\end{itemize}
 \item \method{loadUser () : void}
 \newline
 carica l'utente che sta effettuando la ricerca per svolgere un quiz
