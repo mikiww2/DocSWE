@@ -1,4 +1,4 @@
-\begin{tabella}{!{\VRule}p{1cm}!{\VRule}p{6cm}!{\VRule}p{6.55cm}!{\VRule}}
+\begin{tabella}{!{\VRule}p{1cm}!{\VRule}p{4cm}!{\VRule}p{8.5cm}!{\VRule}}
 \color{white} \bold{Codice test} & \color{white} \bold{Classe} & \color{white} \bold{Metodi}\\
 \endfirsthead
 TU1 & Quizzipedia:: Client:: ModelClient:: Organizations:: Class & 
@@ -130,6 +130,18 @@ TU121 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: 
 \begin{itemize}
 \item \method{removeAnswer (answer : String) : void}
 \item \method{saveAnswer (answer : String) : void}
+\end{itemize} \\
+TU122 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyMutipleChoiceQ & 
+\begin{itemize}
+\item \method{insertAnswer (text : String, check : bool) : void}
+\item \method{removeAnswer (text : String, check : bool) : void}
+\end{itemize} \\
+TU123 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuiz & 
+\begin{itemize}
+\item \method{loadClasses () : void}
+\item \method{loadTeacher () : void}
+\item \method{loadTopics () : void}
+\item \method{save (quiz : $scope) : void}
 \end{itemize} \\
 TU13 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerShortAnswerQ & 
 \begin{itemize}
