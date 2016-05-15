@@ -51,7 +51,26 @@
 \pagenumbering{arabic}
 \rfoot{Pagina \thepage{} di \pageref*{LastPage}}
 
-\section{Introduzione}
+	\section{Introduzione}
+	\subsection{Scopo del documento}
+	Questo documento ha lo scopo di fornire tutte le informazioni necessarie alla manutenzione del \gl{software}
+	Quizzipedia, descrivendone esaustivamente la struttura.
+	
+	\subsection{Scopo del prodotto}
+	\SCOPO
+	
+	\subsection{Glossario}
+	Al fine di evitare ogni ambiguità nel linguaggio e massimizzare la comprensione dei documenti, i termini tecnici, gli acronimi e le abbreviazioni che necessitano di definizione sono riportati nell'\hyperref[gl]{appendice B}.
+	Inoltre ogni occorrenza di un vocabolo presente nel “Glossario” sarà posta in corsivo e seguita da
+	una ‘g’ maiuscola a pedice (p.es. ParolaG).
+	
+	\subsection{Riferimenti}	
+	\subsubsection{Riferimenti normativi}
+	\begin{itemize}
+		\item \bold{\gl{Capitolato} d'appalto C5:} Quizzipedia: \gl{software} per la gestione di questionari \newline \url{http://www.math.unipd.it/~tullio/IS-1/2015/Progetto/C5.pdf};
+		\item \bold {Norme di progetto:} \NdPdoc.
+	\end{itemize}
+	\newpage
 
 \section{Specifica componenti e classi}
 \input{auto_classi}
