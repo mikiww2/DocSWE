@@ -416,26 +416,14 @@ memorizza la lista delle richieste degli utenti che hanno richiesto di diventare
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{acceptStudent (indexOfStudent : int) : void}
+\item \method{acceptStudent () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
 \newline
-Parametri :
-\begin{itemize}
-\item \attribute{indexOfStudent : int}
-\newline
-l'indice della richiesta di ruolo che si intende accettare. L'utente diventa uno studente dell'ente
-\end{itemize}
-\item \method{acceptTeacher (indexOfTeacher : int) : void}
+\item \method{acceptTeacher () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare docente
 \newline
-Parametri :
-\begin{itemize}
-\item \attribute{indexOfTeacher : int}
-\newline
-l'indice della richiesta di ruolo che si intende accettare. L'utente diventa un docente dell'ente
-\end{itemize}
 \item \method{addRoleList (mailUser : String, message : String, role : String) : void}
 \newline
 il metodo aggiunge una richiesta alla lista corretta delle richieste pendenti
@@ -1691,17 +1679,6 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \caption[Schema Classe Director]{Schema Classe Quizzipedia:: Client:: ModelClient:: Users:: Director}
 \end{figure}
 \begin{itemize}
-\item \bold{Metodi}
-\begin{itemize}
-\item \method{acceptStudent () : void}
-\newline
-permette di inserire uno studente nell'istituzione posseduta dal direttore
-\newline
-\item \method{acceptTeacher () : void}
-\newline
-permette di inserire un docente nell'istituzione posseduta dal direttore
-\newline
-\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{NoRole}}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
@@ -4014,26 +3991,14 @@ memorizza la lista delle richieste degli utenti che hanno richiesto di diventare
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{acceptStudent (indexOfStudent : int) : void}
+\item \method{acceptStudent () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
 \newline
-Parametri :
-\begin{itemize}
-\item \attribute{indexOfStudent : int}
-\newline
-l'indice della richiesta di ruolo che si intende accettare. L'utente diventa uno studente dell'ente
-\end{itemize}
-\item \method{acceptTeacher (indexOfTeacher : int) : void}
+\item \method{acceptTeacher () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare docente
 \newline
-Parametri :
-\begin{itemize}
-\item \attribute{indexOfTeacher : int}
-\newline
-l'indice della richiesta di ruolo che si intende accettare. L'utente diventa un docente dell'ente
-\end{itemize}
 \item \method{addRoleList (mailUser : String, message : String, role : String) : void}
 \newline
 il metodo aggiunge una richiesta alla lista corretta delle richieste pendenti
