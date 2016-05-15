@@ -143,13 +143,13 @@ Inoltre saranno definite tre tipologie di test (test di  integrazione, test di s
 
 \mysubparagraph{Definizione di Prodotto}
 I \italics{Progettisti} devono redigere la \doc{Definizione di Prodotto}. In essa viene descritta la progettazione di dettaglio del sistema, specificando maggiormente quanto scritto nella \doc{Specifica Tecnica}. Inoltre opportuni test di unità devono essere definiti per verificare che le singole componenti del sistema funzionino come previsto.
-\\ I seguenti diagrammi UML devono essere realizzati:
+\\ I seguenti diagrammi \gl{UML} devono essere realizzati:
 \begin{itemize}
 	\item diagrammi delle classi,
 	\item diagrammi di sequenza.
 \end{itemize}
 Ogni classe individuata nella \doc{Specifica Tecnica} deve essere descritta all'interno della \doc{Definizione di Prodotto}. Devono essere illustrati lo scopo della classe e la funzionalità che ricopre. Nella descrizione devono essere inoltre elencati i metodi e gli attributi della classe, elementi che permetteranno di comprendere meglio le interazioni presenti tra diverse classi all'interno dell'architettura.
-\\ Ad ogni classe deve essere associato almeno un requisito in modo tale da poter controllare lo stato di avanzamento nello sviluppo del progetto secondo il modello specificato nel \doc{Piano di Progetto}. L'applicativo Tracker viene utilizzato nel tracciamento di tali dipendenze.
+\\ Ad ogni classe deve essere associato almeno un requisito in modo tale da poter controllare lo stato di avanzamento nello sviluppo del progetto secondo il modello specificato nel \doc{Piano di Progetto}. L'applicativo \gl{Tracker} viene utilizzato nel tracciamento di tali dipendenze.
 \\ Infine i diagrammi di sequenza illustrati all'interno del documento permetteranno di comprendere come un determinato comportamento del prodotto si svolga in funzione dell'interazione tra diversi oggetti che collettivamente lo implementano.
 
 \myparagraph{Codifica}
@@ -218,20 +218,20 @@ Inoltre per ogni caso d'uso sono specificati:
 \end{itemize}
 
 \myparagraph{Definizione dei package}
-L'identificazione dei package, individuati all'interno dell'architettura durante il periodo di progettazione, dovrà essere univoca.
+L'identificazione dei \gl{package}, individuati all'interno dell'architettura durante il periodo di progettazione, dovrà essere univoca.
 \\ La stringa dovrà essere nel formato:
 \centra{Quizzipedia::Package::SottoPackage::[...]}
 dove:
 \begin{itemize}
 \item \bold{Quizzipedia} è il nome del prodotto che andremo a realizzare;
-\item \bold{Package} rappresenta il nome di un package padre che racchiuderà all'interno altri package oppure classi;
-\item \bold{SottoPackage} rappresenta il figlio del package padre. Non è detto che ogni package padre contenga un sottopackage, pertanto è un campo opzionale. Al contrario un sottopackage potrebbe a sua volta contenere altri package come figli (sotto-sottopackage) e così via;
+\item \bold{\gl{Package}} rappresenta il nome di un \gl{package} padre che racchiuderà all'interno altri \gl{package} oppure classi;
+\item \bold{SottoPackage} rappresenta il figlio del \gl{package} padre. Non è detto che ogni \gl{package} padre contenga un sottopackage, pertanto è un campo opzionale. Al contrario un sottopackage potrebbe a sua volta contenere altri \gl{package} come figli (sotto-sottopackage) e così via;
 \end{itemize} 
-Per ogni package vengono inoltre definite:
+Per ogni \gl{package} vengono inoltre definite:
 \begin{itemize}
 \item una breve descrizione della componente in questione;
-\item \bold{componenti contenute:} un elenco delle altre componenti contenute all'interno del proprio package;
-\item \bold{interazioni on altre componenti:} le interazioni del package con le altre componenti, interne oppure uscenti;
+\item \bold{componenti contenute:} un elenco delle altre componenti contenute all'interno del proprio \gl{package};
+\item \bold{interazioni on altre componenti:} le interazioni del \gl{package} con le altre componenti, interne oppure uscenti;
 \end{itemize}
 
 \myparagraph{Definizione delle classi}
@@ -240,8 +240,8 @@ Le classi rappresentano il dettaglio massimo raggiungibile all'interno dell'arch
 \centra{Quizzipedia::Package::SottoPackage::[...]::Classe}
 dove:
 \begin{itemize}
-\item \bold{Quizzipedia, Package, SottoPackage} sono descritti nella sezione precedente;
-\item \bold{Classe} rappresenta la componente più piccola, contenuta nel package, che contiene attributi e metodi.
+\item \bold{Quizzipedia, \gl{Package}, SottoPackage} sono descritti nella sezione precedente;
+\item \bold{Classe} rappresenta la componente più piccola, contenuta nel \gl{package}, che contiene attributi e metodi.
 \end{itemize}
 
 La definizione di una classe si divide in una descrizione ad alto livello presente all'interno del documento \doc{Specifica Tecnica}, mentre una descrizione più completa viene presentata nel documento \doc{Definizione di Prodotto}.
@@ -263,9 +263,9 @@ Il codice deve seguire le linee guida Google reperibili all'indirizzo \url{https
 \\
 \\ Ogni file sorgente deve contenere dalla prima riga l'intestazione che elenca:
 \begin{itemize}
-	\item nome del file comprensivo di estensione e percorso a partire dalla root del repository;
+	\item nome del file comprensivo di estensione e percorso a partire dalla root del \gl{repository};
 	\item autore e data di creazione del file;
-	\item e-mail del team Vault-Tech;
+	\item e-mail del \gl{team} Vault-Tech;
 	\item una breve descrizione sullo scopo del file con la varie dipendenze verso altri file;
 	\item sintetico diario delle modifiche ordinato per data che riporti:
 	\begin{itemize}
@@ -288,18 +288,18 @@ Per i metodi e attributi delle classi vanno rispettate le seguenti regole:
 \gl{Tracker} è lo strumento sviluppato dal \gl{team} a supporto dell'attività di Analisi dei Requisiti. In particolare è stato dotato di una \gl{dashboard} che permette a tutti i membri del \gl{team} di mantenere sotto controllo le varie attività e la loro fase di avanzamento. Esso è inoltre in grado di redigere i documenti \doc{Analisi dei Requisiti} e \doc{Glossario} e di effettuare il tracciamento fonte-requisiti e requisiti-fonte grazie alla base di dati su cui poggia la logica del sistema. In futuro le sue funzionalità verranno estese per fornire ulteriori funzioni
 di supporto per lo sviluppo del progetto e la stesura della successiva documentazione.
 \\
-\newline Nell'attività di progettazione lo strumento Tracker è stato incrementato con nuove funzionalità per la stesura automatica delle componenti dell'architettura  all'interno dei documenti \doc{Specifica Tecnica} e \doc{Definizione di Prodotto}. 
-Anche i test, una volta inseriti nel Tracker, verranno automaticamente scritti all'interno dell'appropriato documento.
+\newline Nell'attività di progettazione lo strumento \gl{Tracker} è stato incrementato con nuove funzionalità per la stesura automatica delle componenti dell'architettura  all'interno dei documenti \doc{Specifica Tecnica} e \doc{Definizione di Prodotto}. 
+Anche i test, una volta inseriti nel \gl{Tracker}, verranno automaticamente scritti all'interno dell'appropriato documento.
 \\ Sia per le singole componenti sia per i test è stato predisposto una propria funzionalità di tracciamento.
 
 \myparagraph{Webstorm}
-L'IDE JetBrains WebStorm 2016.1.1 è utilizzato dal team per scrivere il codice.
-Webstorm è stato scelto dal team per le funzionalità e i vantaggi che esso offre:
+L'\gl{IDE} JetBrains WebStorm 2016.1.1 è utilizzato dal \gl{team} per scrivere il codice.
+Webstorm è stato scelto dal \gl{team} per le funzionalità e i vantaggi che esso offre:
 \begin{itemize}
 	\item è fruibile gratuitamente tramite licenza studenti;
 	\item permette di automatizzare alcuni dei procedimenti illustrati nelle procedure di sviluppo come l'inserimento automatico dell'intestazione per ogni file di codice sviluppato;
-	\item JSHint, un tool che aiuta a rilevare errori e potenziali problemi nel codice JavaScript;
-	\item diversi plugin già implementati per lavorare con Node.js e AngularJS;
+	\item JSHint, un tool che aiuta a rilevare errori e potenziali problemi nel codice \gl{JavaScript};
+	\item diversi plugin già implementati per lavorare con \gl{Node.js} e \gl{AngularJS};
 	\item è multipiattaforma.
 \end{itemize}
 
@@ -601,7 +601,7 @@ Segue un elenco dei tipi di test che vengono effettuati.
 
 \mysubparagraph{Test di unità}
 Sono test atti a verificare che ogni singola unità di prodotto funzioni nel modo corretto. In questo tipo di test ogni componente del sistema viene verificata isolata dal resto del sistema.
-Il codice identificativo dei test di unità è: \centra{TU[codice numerico]} dove il codice numerico è progressivo e determinato dallo strumento Tracker in cui vengono inseriti i test di unità.
+Il codice identificativo dei test di unità è: \centra{TU[codice numerico]} dove il codice numerico è progressivo e determinato dallo strumento \gl{Tracker} in cui vengono inseriti i test di unità.
 
 \mysubparagraph{Test di integrazione}
 I test di integrazione rappresentano l'estensione logica del test di unità. Il tipo più semplice di test di integrazione consiste nella combinazione di due unità già sottoposte a test in un solo componente e nel test dell'interfaccia presente tra le due. In uno scenario realistico più unità vengono combinate in componenti che, a loro volta, vengono aggregate in parti più grandi del sistema. Alla fine, tutti i moduli che compongono un processo vengono sottoposti al test contemporaneamente.
@@ -753,7 +753,7 @@ Le risorse necessarie per la realizzazione del progetto, e quelle realmente disp
 	\newline All'interno del gruppo di sviluppo sono disponibili sufficienti persone per ricoprire tutti i ruoli necessari all'esecuzione delle attività di verifica.
 \end{itemize}
 
-\subparagraph{Risorse software}
+\subparagraph{Risorse \gl{software}}
 \begin{itemize}
 	\item \bold{Necessarie}
 	\newline Le risorse \gl{software} necessarie sono un sistema operativo possibilmente comune a tutti i membri del gruppo e gli strumenti che garantiscano la miglior qualità possibile nell'attuare le attività di verifica sui prodotti e sui processi. 
@@ -762,7 +762,7 @@ Le risorse necessarie per la realizzazione del progetto, e quelle realmente disp
 	\newline  Si dispone del numero sufficiente di strumenti, installati e funzionanti, per svolgere le attività di verifica richieste in questo documento.
 \end{itemize}
 
-\subparagraph{Risorse hardware}
+\subparagraph{Risorse \gl{hardware}}
 \begin{itemize}
 	\item \bold{Necessarie}
 	\newline Come risorse \gl{hardware} sono richiesti computer con sufficienti prestazioni su cui lavorare ed eseguire tutto il \gl{software} necessario durante le attività da svolgere.
