@@ -28,7 +28,8 @@ informazioni che saranno utilizzate per la visualizzazione e per la gestione del
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organizations-class.pdf}}
 \caption[Schema Classe Class]{Schema Classe Quizzipedia:: Client:: ModelClient:: Organizations:: Class}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{academicYear : String}
 \newline
@@ -46,6 +47,7 @@ le mail degli studenti iscritti alla classe
 \newline
 le mail dei docenti associati alla classe
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addStudent () : void}
@@ -116,6 +118,7 @@ classe
 mail del docente da rimuovere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Institution}}
 Tale classe rappresenta un ente. Contiene le informazioni relative alla struttura dell'ente che saranno visualizzate dall'utente e gestiste dal controller, come ad esempio la lista delle classi presenti nell'ente, la lista degli studenti e degli insegnati all'interno dell'ente.
 \begin{figure}[H]
@@ -123,7 +126,8 @@ Tale classe rappresenta un ente. Contiene le informazioni relative alla struttur
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-organizations-institution.pdf}}
 \caption[Schema Classe Institution]{Schema Classe Quizzipedia:: Client:: ModelClient:: Organizations:: Institution}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{classes : Class[]}
 \newline
@@ -153,6 +157,7 @@ raccoglie le mail di tutti i docenti registrati presso un ente
 \newline
 i topic dell'istituto
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{acceptClassRequest (indexOfRequest : int) : void}
@@ -278,6 +283,7 @@ permette di modificare il nome dell'istituto
 il nuovo nome dell'istituto
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ModelClient:: Requests}}
 Questo componente contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
 \begin{figure}[H]
@@ -292,12 +298,14 @@ Questa classe gestisce le richieste da parte di docenti o studenti per l'assegna
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-classlist.pdf}}
 \caption[Schema Classe ClassList]{Schema Classe Quizzipedia:: Client:: ModelClient:: Requests:: ClassList}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{classRequest : RequestClass[]}
 \newline
 è la lista delle richieste di classe pendenti
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{acceptClassRequest (indexOfRequest : int) : void}
@@ -337,6 +345,7 @@ rimuove una richiesta di entrata nella classe dalla lista delle richieste penden
 l'indice della richiesta che si intende rifiutare e rimuovere dalla lista
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{RequestClass}}
 La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui la richiesta è stata effettuata.
 \begin{figure}[H]
@@ -344,7 +353,8 @@ La classe memorizza l'utente che invia la richiesta di inserimento in una classe
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-requestclass.pdf}}
 \caption[Schema Classe RequestClass]{Schema Classe Quizzipedia:: Client:: ModelClient:: Requests:: RequestClass}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{class : Class}
 \newline
@@ -353,12 +363,14 @@ la classe per cui è stata effettuata la richiesta
 \newline
 la mail dell'utente che ha effettuato la richiesta
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getMail () : String}
 \newline
 restituisce la mail dell'utente che ha effettuato la richiesta
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RequestRole}}
 La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuole ricoprire.
@@ -367,7 +379,8 @@ La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuo
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-requestrole.pdf}}
 \caption[Schema Classe RequestRole]{Schema Classe Quizzipedia:: Client:: ModelClient:: Requests:: RequestRole}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{mail : String}
 \newline
@@ -376,6 +389,7 @@ la mail dell'utente che effettua la richiesta di ruolo
 \newline
 un messaggio che l'utente può includere alla sua richiesta di ruolo
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getMail () : String}
@@ -387,6 +401,7 @@ restituisce la mail dell'utente che effettua la richiesta
 restituisce il messaggio dell'utente che effettua la richiesta
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{RoleList}}
 Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo di studente o docente al responsabile di un ente. Questa classe gestisce tali richieste.
 \begin{figure}[H]
@@ -394,7 +409,8 @@ Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-requests-rolelist.pdf}}
 \caption[Schema Classe RoleList]{Schema Classe Quizzipedia:: Client:: ModelClient:: Requests:: RoleList}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{students : RequesRole[]}
 \newline
@@ -403,6 +419,7 @@ memorizza la lista delle richieste degli utenti che hanno richiesto di diventare
 \newline
 memorizza la lista delle richieste degli utenti che hanno richiesto di diventare docenti
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{acceptStudent (indexOfStudent : int) : void}
@@ -450,6 +467,7 @@ rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desi
 rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
 \newline
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ModelClient:: Services}}
 Il componente racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
 \begin{figure}[H]
@@ -464,7 +482,8 @@ Include la struttura del quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-quiz.pdf}}
 \caption[Schema Classe Quiz]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Quiz}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{author : String}
 \newline
@@ -491,6 +510,7 @@ il titolo del quiz
 \newline
 gli argomenti coperti dal quiz
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addClass (class : Class) : void}
@@ -602,6 +622,7 @@ imposta il titolo del quiz
 il nuovo titolo del quiz
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Topics}}
 Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni domanda e a ogni quiz verranno poi associati i relativi argomenti .
 \begin{figure}[H]
@@ -609,12 +630,14 @@ Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni doma
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-topics.pdf}}
 \caption[Schema Classe Topics]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Topics}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{topics : String[]}
 \newline
 la lista degli argomenti esistenti
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addTopics (nameTopic : String) : void}
@@ -638,6 +661,7 @@ permette di rimuovere un argomento da quelli esistenti
 l'indice dell'argomento da rimuovere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ModelClient:: Services:: Answers}}
 Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e delle domande svolte.
 \begin{figure}[H]
@@ -652,12 +676,14 @@ Classe utilizzata da AnswerMatchingQ per salvare le risposte della domanda Match
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answercolumn.pdf}}
 \caption[Schema Classe AnswerColumn]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerColumn}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswerCell : int[]}
 \newline
 le risposte date dall'utente in una colonna della domanda a collegamenti
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addAnswer (answer : int) : void}
@@ -689,6 +715,7 @@ imposta, memorizzando correttamente, le risposte date dall'utente in una colonna
 la risposta data dall'utente che verrà memorizzata
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerCompletionQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ risolta.
 \begin{figure}[H]
@@ -696,12 +723,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ ri
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answercompletionq.pdf}}
 \caption[Schema Classe AnswerCompletionQ]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerCompletionQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswer : String[]}
 \newline
 la risposta data dall'utente
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addAnswer (answer : String) : void}
@@ -723,6 +752,7 @@ concretizzazione del metodo ereditato dalla classe base astratta. Viene implemen
 restituisce la risposta data dall'utente
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerMatchingQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ risolta.
 \begin{figure}[H]
@@ -730,12 +760,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ riso
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answermatchingq.pdf}}
 \caption[Schema Classe AnswerMatchingQ]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerMatchingQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswerColumn : AnswerColumn[]}
 \newline
 le risposte data dall'utente per le varie colonne della domanda a collegamenti
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{check () : bool}
@@ -767,6 +799,7 @@ imposta le risposte date dall'utente per una delle colonne della domanda a colle
 le risposte date dall'utente per una delle colonne della domanda a collegnamenti
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerMultipleChoiceQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoiceQ risolta.
 \begin{figure}[H]
@@ -774,12 +807,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoice
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answermultiplechoiceq.pdf}}
 \caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerMultipleChoiceQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswer : bool[]}
 \newline
 la risposta data dall'utente
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addAnswer (answer : bool) : void}
@@ -801,6 +836,7 @@ concretizzazione del metodo ereditato dalla classe base astratta. Viene implemen
 restituisce la risposta data dall'utente
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerQuestion}}
 Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \begin{figure}[H]
@@ -808,7 +844,8 @@ Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answerquestion.pdf}}
 \caption[Schema Classe AnswerQuestion]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerQuestion}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -817,6 +854,7 @@ la domanda a cui corrisponde la risposta data
 \newline
 l'utente che sta rispondendo alla domanda
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{<<abstract>>check () : bool}
@@ -848,6 +886,7 @@ imposta l'utente che sta risolvendo la domanda
 l'utente che sta rispondendo alla domanda
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerQuiz}}
 Classe che si occupa di memorizzare le informazioni di un quiz completato e gestisce la verifica del suo superamento.
 \begin{figure}[H]
@@ -855,7 +894,8 @@ Classe che si occupa di memorizzare le informazioni di un quiz completato e gest
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answerquiz.pdf}}
 \caption[Schema Classe AnswerQuiz]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerQuiz}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{answerQuestion : AnswerQuestion[]}
 \newline
@@ -867,6 +907,7 @@ la data di risoluzione del quiz
 \newline
 è il Quiz a cui sono associate le risposte date dall'utente
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addAnswer (answer : AnswerQuestion) : void}
@@ -926,6 +967,7 @@ imposta il quiz di cui a cui si riferisce la risposta
 il quiz a cui la risposta si riferisce
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerShortAnswerQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ risolta.
 \begin{figure}[H]
@@ -933,12 +975,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ r
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answershortanswerq.pdf}}
 \caption[Schema Classe AnswerShortAnswerQ]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerShortAnswerQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswer : String}
 \newline
 la risposta data dall'utente
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{check () : bool}
@@ -954,6 +998,7 @@ restituisce la risposta dell'utente
 imposta la risposta data dall'utente
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerTrueFalseQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ risolta.
 \begin{figure}[H]
@@ -961,12 +1006,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ ris
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-answers-answertruefalseq.pdf}}
 \caption[Schema Classe AnswerTrueFalseQ]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerTrueFalseQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswer : bool}
 \newline
 la risposta data dall'utente alla domanda di tipo vero/falso
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{check () : bool}
@@ -982,6 +1029,7 @@ restituisce la risposta data dall'utente
 imposta la risposta data dall'utente
 \newline
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ModelClient:: Services:: Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
 \begin{figure}[H]
@@ -996,7 +1044,8 @@ La classe descrive ogni singola riga (quindi ogni opzione) della colonna della d
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-cell.pdf}}
 \caption[Schema Classe Cell]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Questions:: Cell}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -1008,6 +1057,7 @@ la posizione corretta della cella
 \newline
 il testo contenuto nella cella
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getAttachment () : String}
@@ -1053,6 +1103,7 @@ permette di modificare il testo della cella
 il nuovo test da inserire nella cella
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Column}}
 La classe descrive le colonne della domanda a collegamenti.
 \begin{figure}[H]
@@ -1060,7 +1111,8 @@ La classe descrive le colonne della domanda a collegamenti.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-column.pdf}}
 \caption[Schema Classe Column]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Questions:: Column}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{correctAnswer : int[]}
 \newline
@@ -1069,6 +1121,7 @@ il corretto ordinamento delle celle della colonna
 \newline
 celle che compongono la colonna
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addCell (attachment : String, position : int, text : String) : void}
@@ -1116,6 +1169,7 @@ permette di rimpiazzare completamente tutte le celle con delle celle nuove
 le nuove celle che sostituiranno le vecchie nella colonna
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CompletionQ}}
 Descrive le domande a completamento. Il docente fornirà un testo incompleto e una lista di possibili completamenti; lo studente dovrà inserire le parole adeguate nella giusta posizione.
 \begin{figure}[H]
@@ -1123,7 +1177,8 @@ Descrive le domande a completamento. Il docente fornirà un testo incompleto e u
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-completionq.pdf}}
 \caption[Schema Classe CompletionQ]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Questions:: CompletionQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{correctAnswer : String[]}
 \newline
@@ -1135,6 +1190,7 @@ i suggerimenti della domanda CompletionQ
 \newline
 il testo della domanda CompletionQ
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createAnswerQuestion (answer : String[]) : AnswerCompletionQ}
@@ -1192,6 +1248,7 @@ permette di modificare il testo della domanda CompletionQ
 il nuovo testo della domanda
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{GenericQuestion}}
 Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \begin{figure}[H]
@@ -1199,7 +1256,8 @@ Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-genericquestion.pdf}}
 \caption[Schema Classe GenericQuestion]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Questions:: GenericQuestion}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{author : Teacher}
 \newline
@@ -1223,6 +1281,7 @@ il titolo della domanda
 \newline
 il topic della domanda
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createStatisticsQuestion () : QuestionStatistics}
@@ -1290,6 +1349,7 @@ permette l'aggiunta di un topic alla domanda
 il nuovo topic della domanda
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MatchingQ}}
 La struttura descrive le domande a collegamento. L'utente dovrà formare la risposta collegando le entrate da un numero variabile di colonne .
 \begin{figure}[H]
@@ -1297,12 +1357,14 @@ La struttura descrive le domande a collegamento. L'utente dovrà formare la risp
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-matchingq.pdf}}
 \caption[Schema Classe MatchingQ]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Questions:: MatchingQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{column : Column[]}
 \newline
 le colonne della domanda
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addColumn (newColumn : Column) : void}
@@ -1340,6 +1402,7 @@ permette di sostituire tutte le colonne della domanda MatchingQ con delle nuove 
 le nuove colonne della domanda che andranno a sostituire le vecchie
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MultipleChoiceQ}}
 La struttura descrive le domande a scelta multipla; viene presentata una lista di opzioni tra cui scegliere quelle corrette.
 \begin{figure}[H]
@@ -1347,7 +1410,8 @@ La struttura descrive le domande a scelta multipla; viene presentata una lista d
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-multiplechoiceq.pdf}}
 \caption[Schema Classe MultipleChoiceQ]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Questions:: MultipleChoiceQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{answerAttachments : String[]}
 \newline
@@ -1359,6 +1423,7 @@ le risposte della domanda
 \newline
 le soluzione della domanda
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createAnswerQuestion (answer : bool[]) : AnswerMultipleChoicheQ}
@@ -1403,6 +1468,7 @@ permette di inserire le nuove risposte corrette alla domanda MultipleChoiceQ che
 le nuove risposte corrette
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{ShortAnswerQ}}
 La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste in un termine o una frase specifici.
 \begin{figure}[H]
@@ -1410,12 +1476,14 @@ La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-shortanswerq.pdf}}
 \caption[Schema Classe ShortAnswerQ]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Questions:: ShortAnswerQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{correctAnswer : String}
 \newline
 la risposta corretta della domanda ShortAnswerQ
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createAnswerQuestion (answer : String) : AnswerShortAnswerQ}
@@ -1439,6 +1507,7 @@ permette di modificare la risposta corretta della domanda ShortAnswerQ
 la nuova risposta corretta della domanda ShortAnswerQ
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{TrueFalseQ}}
 Viene descritta la struttura delle domande che prevedono di decidere la veridicità di un'affermazione.
 \begin{figure}[H]
@@ -1446,12 +1515,14 @@ Viene descritta la struttura delle domande che prevedono di decidere la veridici
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-services-questions-truefalseq.pdf}}
 \caption[Schema Classe TrueFalseQ]{Schema Classe Quizzipedia:: Client:: ModelClient:: Services:: Questions:: TrueFalseQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{correctAnswer : bool}
 \newline
 la risposta corretta alla domanda TrueFalseQ
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createAnswerQuestion (answer : bool) : AnswerTrueFalseQ}
@@ -1475,6 +1546,7 @@ permette di modificare la risposta corretta della domanda TrueFalseQ
 la nuova risposta corretta della domanda TrueFalseQ
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ModelClient:: Statistics}}
 Qui sono raccolte le classi con il compito di reperire informazioni sulle statistiche dal server e presentarle all'utente finale. Sono disponibili statistiche per le domande, per i quiz e per gli studenti di ogni classe.
 \begin{figure}[H]
@@ -1489,7 +1561,8 @@ La classe raccoglie le statistiche principali riguardanti una singola domanda..
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-questionstatistics.pdf}}
 \caption[Schema Classe QuestionStatistics]{Schema Classe Quizzipedia:: Client:: ModelClient:: Statistics:: QuestionStatistics}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{quizNumber : int}
 \newline
@@ -1498,6 +1571,7 @@ il numero di quiz in cui è presente la domanda
 \newline
 la percentuale di utenti che rispondono correttamente alla domanda
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getQuizNumber () : int}
@@ -1509,6 +1583,7 @@ restituisce il numero di quiz in cui la domanda è presente
 restituisce la percentuale di utenti che risponde correttamente a questa domanda
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuizStatistics}}
 La classe raccoglie le statistiche principali riguardanti un singolo quiz.
 \begin{figure}[H]
@@ -1516,7 +1591,8 @@ La classe raccoglie le statistiche principali riguardanti un singolo quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-quizstatistics.pdf}}
 \caption[Schema Classe QuizStatistics]{Schema Classe Quizzipedia:: Client:: ModelClient:: Statistics:: QuizStatistics}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{averageResult : double}
 \newline
@@ -1528,6 +1604,7 @@ la percentuale di utenti che ha risolto il quiz con successo
 \newline
 il numero di volte che il quiz è stato svolto
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getAverageResult () : double}
@@ -1543,6 +1620,7 @@ restituisce la percentuale di utenti che ha risolto correttamente il quiz
 restituisce il numero di volte che un quiz è stato svolto
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{StudentsStatisticsQuiz}}
 Classe usata per visualizzare gli studenti che hanno svolto un quiz specifico e i loro voti per il quiz stesso.
 \begin{figure}[H]
@@ -1550,7 +1628,8 @@ Classe usata per visualizzare gli studenti che hanno svolto un quiz specifico e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-statistics-studentsstatisticsquiz.pdf}}
 \caption[Schema Classe StudentsStatisticsQuiz]{Schema Classe Quizzipedia:: Client:: ModelClient:: Statistics:: StudentsStatisticsQuiz}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{results : double[]}
 \newline
@@ -1559,6 +1638,7 @@ i risultati ottenuti dagli studenti che hanno risolto il quiz
 \newline
 gli studenti che hanno svolto il quiz
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getResults () : double[]}
@@ -1569,6 +1649,7 @@ restituisce la lista dei risultati degli studenti che hanno svolto il quiz
 \newline
 ottiene la lista degli studenti che hanno svolto il quiz
 \newline
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ModelClient:: Users}}
 Raccoglie le classi necessarie a descrivere le diverse tipologie di utente che possono accedere al sistema.
@@ -1584,7 +1665,8 @@ Questa classe gestisce le informazioni di autenticazione comuni a tutti gli uten
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-authenticationdata.pdf}}
 \caption[Schema Classe AuthenticationData]{Schema Classe Quizzipedia:: Client:: ModelClient:: Users:: AuthenticationData}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{firstName : String}
 \newline
@@ -1599,6 +1681,7 @@ contiene la mail dell'utente registrato
 \newline
 contiene la password criptata dell'utente registrato
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getFirstName () : String}
@@ -1627,6 +1710,7 @@ contiene la nuova password dell'utente
 contiene la vecchia password dell'utente registrato, necessaria per cambiarla con la nuova
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Director}}
 Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per ogni ente del sistema.
 \begin{figure}[H]
@@ -1634,6 +1718,9 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-director.pdf}}
 \caption[Schema Classe Director]{Schema Classe Quizzipedia:: Client:: ModelClient:: Users:: Director}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{acceptStudent () : void}
@@ -1645,6 +1732,7 @@ permette di inserire uno studente nell'istituzione posseduta dal direttore
 permette di inserire un docente nell'istituzione posseduta dal direttore
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{NoRole}}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
 \begin{figure}[H]
@@ -1652,12 +1740,14 @@ Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-norole.pdf}}
 \caption[Schema Classe NoRole]{Schema Classe Quizzipedia:: Client:: ModelClient:: Users:: NoRole}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{quizProfile : AnswerQuiz[]}
 \newline
 è il profilo che raccoglie i quiz già risolti dall'utente e le risposte che l'utente aveva dato
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
@@ -1689,6 +1779,7 @@ rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti da un uten
 l'indice del quiz che si desidera rimuovere dallo storico
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Student}}
 Rappresenta uno studente del sistema e implementa le sue funzioni specifiche oltre a quelle ereditate da utente.
 \begin{figure}[H]
@@ -1696,12 +1787,14 @@ Rappresenta uno studente del sistema e implementa le sue funzioni specifiche olt
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-student.pdf}}
 \caption[Schema Classe Student]{Schema Classe Quizzipedia:: Client:: ModelClient:: Users:: Student}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{quizProfile : AnswerQuiz}
 \newline
 lo storico dei quiz svolti con relativa soluzione
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
@@ -1733,6 +1826,7 @@ rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti
 l'indice del quiz che si intende rimuovere dallo storico
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Teacher}}
 Rappresenta un docente del sistema e ne implementa le funzionalità specifiche in aggiunta a quelle comuni a tutti gli utenti.
 \begin{figure}[H]
@@ -1740,12 +1834,14 @@ Rappresenta un docente del sistema e ne implementa le funzionalità specifiche i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-teacher.pdf}}
 \caption[Schema Classe Teacher]{Schema Classe Quizzipedia:: Client:: ModelClient:: Users:: Teacher}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{ownQuiz : Quiz[]}
 \newline
 la lista dei quiz creati dall'utente
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addQuiz (newQuiz : Quiz) : void}
@@ -1781,6 +1877,7 @@ rimuove un quiz dalla lista di quiz creati dall'utente
 l'indice del quiz che si intende rimuovere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{User}}
 Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli utenti.
 \begin{figure}[H]
@@ -1788,12 +1885,14 @@ Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli ut
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-modelclient-users-user.pdf}}
 \caption[Schema Classe User]{Schema Classe Quizzipedia:: Client:: ModelClient:: Users:: User}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{authenticationData : AuthenticationData}
 \newline
 raccoglie le informazioni di base dell'utente, necessarie alla sua autenticazione. Sono comuni in tutta la gerarchia
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getAuthenticationData () : AuthenticationData}
@@ -1804,6 +1903,7 @@ restituisce i dati necessari all'autenticazione dell'utente
 \newline
 restituisce la mail dell'utente, che è univoca
 \newline
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient}}
 Racchiude tutte le componenti necessarie per presentare il prodotto all'utente.
@@ -1828,6 +1928,10 @@ Contiene il codice necessario a creare il dato elemento grafico.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-collapsabletips.pdf}}
 \caption[Schema Classe CollapsableTips]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: CollapsableTips}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{Footer}}
 Contiene il codice necessario a creare il footer, che è costante su tutte le pagine del sito.
 \begin{figure}[H]
@@ -1835,6 +1939,10 @@ Contiene il codice necessario a creare il footer, che è costante su tutte le pa
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-footer.pdf}}
 \caption[Schema Classe Footer]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Footer}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{Pagination}}
 Contiene il codice necessario a gestire il sistema di paginazione.
 \begin{figure}[H]
@@ -1842,6 +1950,10 @@ Contiene il codice necessario a gestire il sistema di paginazione.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-pagination.pdf}}
 \caption[Schema Classe Pagination]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Pagination}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ProgressBar}}
 Contiene il codice necessario a creare la barra di progresso.
 \begin{figure}[H]
@@ -1849,6 +1961,10 @@ Contiene il codice necessario a creare la barra di progresso.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-progressbar.pdf}}
 \caption[Schema Classe ProgressBar]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: ProgressBar}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: Shared:: Header}}
 Contiene i template per caricare header e breadcrumb delle pagine a seconda della posizione e del ruolo dell'utente.
 \begin{figure}[H]
@@ -1863,6 +1979,10 @@ Contiene il codice necessario a creare il breadcrumb.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-header-breadcrumbs.pdf}}
 \caption[Schema Classe Breadcrumbs]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Header:: Breadcrumbs}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{HeaderLogged}}
 Carica lo header che verrà visualizzato dall'utente registrato.
 \begin{figure}[H]
@@ -1870,6 +1990,10 @@ Carica lo header che verrà visualizzato dall'utente registrato.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-header-headerlogged.pdf}}
 \caption[Schema Classe HeaderLogged]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Header:: HeaderLogged}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{HeaderLoggedDirector}}
 Carica lo header che verrà visualizzato dal responsabile.
 \begin{figure}[H]
@@ -1877,6 +2001,10 @@ Carica lo header che verrà visualizzato dal responsabile.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-header-headerloggeddirector.pdf}}
 \caption[Schema Classe HeaderLoggedDirector]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Header:: HeaderLoggedDirector}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{HeaderLoggedStudent}}
 Carica lo header che verrà visualizzato dallo studente.
 \begin{figure}[H]
@@ -1884,6 +2012,10 @@ Carica lo header che verrà visualizzato dallo studente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-header-headerloggedstudent.pdf}}
 \caption[Schema Classe HeaderLoggedStudent]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Header:: HeaderLoggedStudent}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{HeaderLoggedTeacher}}
 Carica lo header che verrà visualizzato dall'insegnante.
 \begin{figure}[H]
@@ -1891,6 +2023,10 @@ Carica lo header che verrà visualizzato dall'insegnante.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-header-headerloggedteacher.pdf}}
 \caption[Schema Classe HeaderLoggedTeacher]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Header:: HeaderLoggedTeacher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{HeaderNotLogged}}
 Carica lo header che verrà visualizzato da un visitatore non registrato.
 \begin{figure}[H]
@@ -1898,6 +2034,10 @@ Carica lo header che verrà visualizzato da un visitatore non registrato.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-header-headernotlogged.pdf}}
 \caption[Schema Classe HeaderNotLogged]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Header:: HeaderNotLogged}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: Shared:: Homepage}}
 Contiene le pagine necessarie alla creazione della homepage e delle parti che possono variare a seconda del tipo di utente che la visita.
 \begin{figure}[H]
@@ -1912,6 +2052,10 @@ Carica la homepage che verrà visualizzata dal responsabile.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-homepage-homepagedirector.pdf}}
 \caption[Schema Classe HomepageDirector]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Homepage:: HomepageDirector}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{HomepageGeneric}}
 Carica la homepage che verrà visualizzata da un visitatore generico.
 \begin{figure}[H]
@@ -1919,6 +2063,10 @@ Carica la homepage che verrà visualizzata da un visitatore generico.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-homepage-homepagegeneric.pdf}}
 \caption[Schema Classe HomepageGeneric]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Homepage:: HomepageGeneric}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{HomepageStudent}}
 Carica la homepage che verrà visualizzata dallo studente.
 \begin{figure}[H]
@@ -1926,6 +2074,10 @@ Carica la homepage che verrà visualizzata dallo studente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-homepage-homepagestudent.pdf}}
 \caption[Schema Classe HomepageStudent]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Homepage:: HomepageStudent}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{HomepageTeacher}}
 Carica la homepage che verrà visualizzata dal docente.
 \begin{figure}[H]
@@ -1933,6 +2085,10 @@ Carica la homepage che verrà visualizzata dal docente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-shared-homepage-homepageteacher.pdf}}
 \caption[Schema Classe HomepageTeacher]{Schema Classe Quizzipedia:: Client:: ViewClient:: Shared:: Homepage:: HomepageTeacher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewOrgManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti presenti in Quizzipedia.
 \begin{figure}[H]
@@ -1947,6 +2103,10 @@ La classe si occupa di presentare una lista degli utenti iscritti alla classe e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager-viewclassmembers.pdf}}
 \caption[Schema Classe ViewClassMembers]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewOrgManager:: ViewClassMembers}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewModifyOrg}}
 Presenta all'utente la pagina da cui sarà possibile modificare le informazioni su una classe o su un ente esistente.
 \begin{figure}[H]
@@ -1954,6 +2114,10 @@ Presenta all'utente la pagina da cui sarà possibile modificare le informazioni 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-vieworgmanager-viewmodifyorg.pdf}}
 \caption[Schema Classe ViewModifyOrg]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewOrgManager:: ViewModifyOrg}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewQuestionManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le domande.
 \begin{figure}[H]
@@ -1968,6 +2132,10 @@ Presenta la pagina da cui sarà possibile creare una nuova domanda a completamen
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-createcompletionq.pdf}}
 \caption[Schema Classe CreateCompletionQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateCompletionQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{CreateGenericQ}}
 Presenta la pagina da cui è possibile creare una nuova domanda, inserendo le informazioni comuni a tutte le domande. Poi si potrà selezionare il tipo di domanda desiderato.
 \begin{figure}[H]
@@ -1975,6 +2143,10 @@ Presenta la pagina da cui è possibile creare una nuova domanda, inserendo le in
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-creategenericq.pdf}}
 \caption[Schema Classe CreateGenericQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateGenericQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{CreateMatchingQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda a collegamenti.
 \begin{figure}[H]
@@ -1982,6 +2154,10 @@ Presenta la pagina da cui sarà possibile creare una nuova domanda a collegament
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-creatematchingq.pdf}}
 \caption[Schema Classe CreateMatchingQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateMatchingQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{CreateMultipleChoiceQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda a scelta multipla.
 \begin{figure}[H]
@@ -1989,6 +2165,10 @@ Presenta la pagina da cui sarà possibile creare una nuova domanda a scelta mult
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-createmultiplechoiceq.pdf}}
 \caption[Schema Classe CreateMultipleChoiceQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateMultipleChoiceQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{CreateShortAnswerQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda aperta.
 \begin{figure}[H]
@@ -1996,6 +2176,10 @@ Presenta la pagina da cui sarà possibile creare una nuova domanda aperta.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-createshortanswerq.pdf}}
 \caption[Schema Classe CreateShortAnswerQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateShortAnswerQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{CreateTrueFalseQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda di tipo vero/falso.
 \begin{figure}[H]
@@ -2003,6 +2187,10 @@ Presenta la pagina da cui sarà possibile creare una nuova domanda di tipo vero/
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-createtruefalseq.pdf}}
 \caption[Schema Classe CreateTrueFalseQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateTrueFalseQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{QuestionMgmt}}
 Presenta all'utente il pannello da cui sarà possibile creare una nuova domanda e visualizzare una lista di informazioni riassuntive sulle domande già create, con possibilità di modifica e rimozione.
 \begin{figure}[H]
@@ -2010,6 +2198,10 @@ Presenta all'utente il pannello da cui sarà possibile creare una nuova domanda 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquestionmanager-questionmgmt.pdf}}
 \caption[Schema Classe QuestionMgmt]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: QuestionMgmt}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewQuizManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire i quiz.
 \begin{figure}[H]
@@ -2024,6 +2216,10 @@ Presenta la pagina da cui sarà possibile creare un nuovo quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-viewcreatequiz.pdf}}
 \caption[Schema Classe ViewCreateQuiz]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuizManager:: ViewCreateQuiz}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewEditQuiz}}
 Presenta all'utente una pagina da cui è possibile modificare nel dettaglio un quiz esistente, intervenendo sulle domande che lo compongono.
 \begin{figure}[H]
@@ -2031,6 +2227,10 @@ Presenta all'utente una pagina da cui è possibile modificare nel dettaglio un q
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-vieweditquiz.pdf}}
 \caption[Schema Classe ViewEditQuiz]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuizManager:: ViewEditQuiz}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewQuizMgmt}}
 Carica una pagina contenente una lista con informazioni riassuntive sui quiz e un pannello da cui sarà possibile svolgere operazioni di modifica e rimozione. Da qui è inoltre possibile creare nuovi quiz.
 \begin{figure}[H]
@@ -2038,6 +2238,10 @@ Carica una pagina contenente una lista con informazioni riassuntive sui quiz e u
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizmanager-viewquizmgmt.pdf}}
 \caption[Schema Classe ViewQuizMgmt]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuizManager:: ViewQuizMgmt}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewQuizSolver}}
 Il componente raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile svolgere quiz.
 \begin{figure}[H]
@@ -2052,6 +2256,10 @@ Pagina da cui sarà possibile svolgere un quiz. Verranno caricate le domande che
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquizexec.pdf}}
 \caption[Schema Classe ViewQuizExec]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuizExec}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver}}
 Il componente raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile rispondere alle singole domande.
 \begin{figure}[H]
@@ -2066,6 +2274,10 @@ Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewcompletionq.pdf}}
 \caption[Schema Classe ViewCompletionQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewCompletionQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewMatchingQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a collegamenti.
 \begin{figure}[H]
@@ -2073,6 +2285,10 @@ Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewmatchingq.pdf}}
 \caption[Schema Classe ViewMatchingQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewMatchingQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewMultipleChoiceQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a risposta multipla.
 \begin{figure}[H]
@@ -2080,6 +2296,10 @@ Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewmultiplechoiceq.pdf}}
 \caption[Schema Classe ViewMultipleChoiceQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewMultipleChoiceQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewShortAnswerQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a risposta aperta.
 \begin{figure}[H]
@@ -2087,6 +2307,10 @@ Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewshortanswerq.pdf}}
 \caption[Schema Classe ViewShortAnswerQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewShortAnswerQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewTrueFalseQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda di tipo vero/falso.
 \begin{figure}[H]
@@ -2094,6 +2318,10 @@ Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda di
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewquizsolver-viewquestionsolver-viewtruefalseq.pdf}}
 \caption[Schema Classe ViewTrueFalseQ]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver:: ViewTrueFalseQ}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewRequests}}
 Qui sono raccolte le pagine che permettono all'utente di inviare e gestire le richieste di ruolo e classe.
 \begin{figure}[H]
@@ -2108,6 +2336,10 @@ Qui sono raccolte le pagine che permettono all'utente di inviare e gestire le ri
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-sendrequests.pdf}}
 \caption[Schema Classe SendRequests]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewRequests:: SendRequests}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewPendingRequests}}
 Visualizza il pannello da cui sarà possibile gestire le richieste di inserimento in una classe e le richieste di assegnazione di ruolo pendenti.
 \begin{figure}[H]
@@ -2115,6 +2347,10 @@ Visualizza il pannello da cui sarà possibile gestire le richieste di inseriment
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewrequests-viewpendingrequests.pdf}}
 \caption[Schema Classe ViewPendingRequests]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewRequests:: ViewPendingRequests}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewSearch}}
 Il componente contiene le classi responsabili della creazione delle pagine da cui sarà possibile ricercare domande, quiz, istituti e classi all'interno degli enti.
 \begin{figure}[H]
@@ -2129,6 +2365,10 @@ La classe carica la pagina da cui sarà possibile ricercare enti e classi all'in
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch-viewsearchclass.pdf}}
 \caption[Schema Classe ViewSearchClass]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchClass}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewSearchQuestions}}
 Classe che ha il compito di caricare la pagina da cui sarà possibile effettuare la ricerca di domande.
 \begin{figure}[H]
@@ -2136,6 +2376,10 @@ Classe che ha il compito di caricare la pagina da cui sarà possibile effettuare
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch-viewsearchquestions.pdf}}
 \caption[Schema Classe ViewSearchQuestions]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuestions}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewSearchQuiz}}
 Raccoglie i metodi necessari alla creazione della pagina da cui sarà possibile cercare un quiz.
 \begin{figure}[H]
@@ -2143,6 +2387,10 @@ Raccoglie i metodi necessari alla creazione della pagina da cui sarà possibile 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewsearch-viewsearchquiz.pdf}}
 \caption[Schema Classe ViewSearchQuiz]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewSearch:: ViewSearchQuiz}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewStatistics}}
 Componente che gestisce le pagine in cui verranno visualizzate le statistiche richieste dall'utente.
 \begin{figure}[H]
@@ -2157,6 +2405,10 @@ Vengono rappresentate le statistiche generali relative alle domande.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquestionstats.pdf}}
 \caption[Schema Classe ViewQuestionStats]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewQuestionStats}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewQuizResults}}
 Da qui è possibile vedere la lista di studenti che hanno risolto un quiz e il risultato ottenuto.
 \begin{figure}[H]
@@ -2164,6 +2416,10 @@ Da qui è possibile vedere la lista di studenti che hanno risolto un quiz e il r
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquizresults.pdf}}
 \caption[Schema Classe ViewQuizResults]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewQuizResults}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewQuizStats}}
 Vengono rappresentate le statistiche generali riguardanti i quiz.
 \begin{figure}[H]
@@ -2171,6 +2427,10 @@ Vengono rappresentate le statistiche generali riguardanti i quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewquizstats.pdf}}
 \caption[Schema Classe ViewQuizStats]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewQuizStats}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewStudentsStats}}
 Vengono rappresentate le statistiche relative a una singola classe in relazione a un particolare quiz.
 \begin{figure}[H]
@@ -2178,6 +2438,10 @@ Vengono rappresentate le statistiche relative a una singola classe in relazione 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewstudentsstats.pdf}}
 \caption[Schema Classe ViewStudentsStats]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewStudentsStats}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{ViewTeachersStats}}
 Vengono rappresentate le statistiche riguardo i quiz e le domande create dai docenti.
 \begin{figure}[H]
@@ -2185,6 +2449,10 @@ Vengono rappresentate le statistiche riguardo i quiz e le domande create dai doc
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewstatistics-viewteachersstats.pdf}}
 \caption[Schema Classe ViewTeachersStats]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewTeachersStats}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewTopicManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire gli argomenti di domande e quiz.
 \begin{figure}[H]
@@ -2199,6 +2467,10 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewtopicmanager-viewtopicsmanager.pdf}}
 \caption[Schema Classe ViewTopicsManager]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewTopicManager:: ViewTopicsManager}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewUsers}}
 Raccoglie le classi necessarie a presentare all'utente le pagine da cui visualizzare le informazioni che lo riguardano e compiere le funzioni principali.
 \begin{figure}[H]
@@ -2213,6 +2485,10 @@ Da qui, grazie ai metodi della classe, l'utente potrà modificare la propria pas
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-changepw.pdf}}
 \caption[Schema Classe ChangePw]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewUsers:: ChangePw}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{Login}}
 Presenta la pagina necessaria per effettuare il login nel sistema.
 \begin{figure}[H]
@@ -2220,6 +2496,10 @@ Presenta la pagina necessaria per effettuare il login nel sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-login.pdf}}
 \caption[Schema Classe Login]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewUsers:: Login}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{PrivateQuizList}}
 pagina da cui l'utente potrà vedere la lista dei quiz privati e selezionare quali fare.
 \begin{figure}[H]
@@ -2227,6 +2507,10 @@ pagina da cui l'utente potrà vedere la lista dei quiz privati e selezionare qua
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-privatequizlist.pdf}}
 \caption[Schema Classe PrivateQuizList]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewUsers:: PrivateQuizList}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{Profile}}
 La classe presenta all'utente la pagina da cui prendere visione delle proprie informazioni personali.
 \begin{figure}[H]
@@ -2234,6 +2518,10 @@ La classe presenta all'utente la pagina da cui prendere visione delle proprie in
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-profile.pdf}}
 \caption[Schema Classe Profile]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewUsers:: Profile}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{QuizHistory}}
 pagina da cui l'utente potrà vedere lo storico dei quiz da lui svolti e i relativi risultati.
 \begin{figure}[H]
@@ -2241,6 +2529,10 @@ pagina da cui l'utente potrà vedere lo storico dei quiz da lui svolti e i relat
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-quizhistory.pdf}}
 \caption[Schema Classe QuizHistory]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewUsers:: QuizHistory}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{QuizHistorySingleResult}}
 pagina da cui l'utente potrà vedere nel dettaglio le risposte da lui date in un quiz selezionato dallo storico.
 \begin{figure}[H]
@@ -2248,6 +2540,10 @@ pagina da cui l'utente potrà vedere nel dettaglio le risposte da lui date in un
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-quizhistorysingleresult.pdf}}
 \caption[Schema Classe QuizHistorySingleResult]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewUsers:: QuizHistorySingleResult}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{RecoveryPw}}
 Da questa pagina sarà possibile inserire i dati per il recupero della password.
 \begin{figure}[H]
@@ -2255,6 +2551,10 @@ Da questa pagina sarà possibile inserire i dati per il recupero della password.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-recoverypw.pdf}}
 \caption[Schema Classe RecoveryPw]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewUsers:: RecoveryPw}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{Registration}}
 Presenta la pagina da cui effettuare la  registrazione al sistema.
 \begin{figure}[H]
@@ -2262,6 +2562,10 @@ Presenta la pagina da cui effettuare la  registrazione al sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-registration.pdf}}
 \caption[Schema Classe Registration]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewUsers:: Registration}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{RemoveUser}}
 Pagina da cui sarà possibile selezionare utenti da rimuovere dal sistema.
 \begin{figure}[H]
@@ -2269,6 +2573,10 @@ Pagina da cui sarà possibile selezionare utenti da rimuovere dal sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-removeuser.pdf}}
 \caption[Schema Classe RemoveUser]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewUsers:: RemoveUser}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{SelectInst}}
 pagina da cui l'utente, una volta autenticato, potrà selezionare l'ente a cui vuole accedere. Potrà scegliere tra quelli a cui è già iscritto, oppure scegliere di entrare in uno nuovo. Volendo, può anche proseguire come utente generico.
 \begin{figure}[H]
@@ -2276,6 +2584,10 @@ pagina da cui l'utente, una volta autenticato, potrà selezionare l'ente a cui v
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient-viewusers-selectinst.pdf}}
 \caption[Schema Classe SelectInst]{Schema Classe Quizzipedia:: Client:: ViewClient:: ViewUsers:: SelectInst}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient}}
 Raccoglie le classi responsabili della comunicazione tra il model e la view. Ha inoltre il compito di comunicare con il server per elaborare le richieste svolte dall'utente.
 Con Angular.js il controller permette di tenere sempre aggiornato facilmente il model con le modifiche fatte nella view da parte dell'utente.
@@ -2299,11 +2611,14 @@ Sono presenti pertanto i metodi necessari a svolgere tali scopi e per eseguire i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlorganization-ctrlinstitution.pdf}}
 \caption[Schema Classe CtrlInstitution]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlOrganization:: CtrlInstitution}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
 contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyClass
+\end{itemize}
+\item \bold{Metodi}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlPagination}}
 Questa classe permette di creare e gestire dinamicamente la paginazione quando viene visualizzata la lista delle classe presenti in un ente.
@@ -2312,6 +2627,10 @@ Questa classe permette di creare e gestire dinamicamente la paginazione quando v
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlorganization-ctrlpagination.pdf}}
 \caption[Schema Classe CtrlPagination]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlOrganization:: CtrlPagination}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{MyClass}}
 La sua istanziazione avviene nella variabile $scope di Angular e permette di comunicare con la view. Questa classe permette di creare, eliminare, modificare oppure gestire una classe, relativa ad un ente, presente all'interno del sistema.
 Sono presenti i metodi necessari all'inserimento e alla rimozione di uno studente o un docente da una classe, oltre ai metodi necessari alla creazione, eliminazione e modifica di una classe.
@@ -2320,7 +2639,8 @@ Sono presenti i metodi necessari all'inserimento e alla rimozione di uno student
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlorganization-myclass.pdf}}
 \caption[Schema Classe MyClass]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlOrganization:: MyClass}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{cemail : string}
 \newline
@@ -2328,6 +2648,8 @@ viene chiesto all'utente di inserire la mail una seconda volta per conferma
 \item \attribute{cpassword : string}
 \newline
 viene chiesto all'utente di inserire la password una seconda volta per conferma
+\end{itemize}
+\item \bold{Metodi}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient:: CtrlRequests}}
 Questo componente contiene classi necessarie alla gestione delle richieste di ruolo o classe fatte da un utente autenticato.
@@ -2343,6 +2665,10 @@ Si occupa delle comunicazioni necessarie per la gestione delle richieste di inse
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlrequests-ctrlrequestclass.pdf}}
 \caption[Schema Classe CtrlRequestClass]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlRequests:: CtrlRequestClass}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlRequestRole}}
 Si occupa delle comunicazioni necessarie per la gestione delle richieste di ruolo.
 \begin{figure}[H]
@@ -2350,6 +2676,10 @@ Si occupa delle comunicazioni necessarie per la gestione delle richieste di ruol
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlrequests-ctrlrequestrole.pdf}}
 \caption[Schema Classe CtrlRequestRole]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlRequests:: CtrlRequestRole}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient:: CtrlServices}}
 Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande.
 \begin{figure}[H]
@@ -2364,7 +2694,8 @@ Raccoglie i metodi necessari alle comunicazioni tra view e model richieste per l
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquiz.pdf}}
 \caption[Schema Classe CtrlQuiz]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuiz}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
@@ -2379,6 +2710,7 @@ il docente che sta creando il quiz
 \newline
 gli argomenti tra cui il docente può scegliere quello da assegnare al proprio quiz
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadClasses () : void}
@@ -2404,6 +2736,7 @@ invia il quiz completo al server perché lo salvi nel database
 lo $scope contiene l'oggetto che raccoglie le informazioni necessarie a salvare il quiz
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlQuizExec}}
 Gestisce la procedura di risoluzione quiz, andando a caricare le singole domande e memorizzando le risposte date dall'utente.
 \begin{figure}[H]
@@ -2411,6 +2744,10 @@ Gestisce la procedura di risoluzione quiz, andando a caricare le singole domande
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquizexec.pdf}}
 \caption[Schema Classe CtrlQuizExec]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizExec}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlQuizManager}}
 Fornisce al docente i metodi necessari per poter visualizzare, modificare e rimuovere quiz dalla lista di quiz da loro creati.
 \begin{figure}[H]
@@ -2418,12 +2755,14 @@ Fornisce al docente i metodi necessari per poter visualizzare, modificare e rimu
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquizmanager.pdf}}
 \caption[Schema Classe CtrlQuizManager]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizManager}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{teacher : Teacher}
 \newline
 il docente a cui appartengono i quiz da modificare o rimuovere
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadTeacher () : void}
@@ -2451,6 +2790,7 @@ rimuove un quiz dalla lista dei quiz creati dal docente
 l'indice del quiz da rimuovere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlQuizSelection}}
 Segue l'utente nella procedura di scelta del quiz che si desidera risolvere.
 \begin{figure}[H]
@@ -2458,6 +2798,21 @@ Segue l'utente nella procedura di scelta del quiz che si desidera risolvere.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquizselection.pdf}}
 \caption[Schema Classe CtrlQuizSelection]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizSelection}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
+\paragraph{Metodi}
+\begin{itemize}
+\item \method{loadClasses () : void}
+\newline
+carica le classi a cui lo studente è iscritto per permettergli di scegliere quiz privati
+\newline
+\item \method{loadUser () : void}
+\newline
+carica l'utente che sta effettuando la ricerca per svolgere un quiz
+\newline
+\end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlSearchQuestion}}
 la classe fornisce i metodi necessari alla ricerca di domande nella fase di creazione del quiz.
 \begin{figure}[H]
@@ -2465,7 +2820,8 @@ la classe fornisce i metodi necessari alla ricerca di domande nella fase di crea
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlsearchquestion.pdf}}
 \caption[Schema Classe CtrlSearchQuestion]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuestion}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{keywords : String[]}
 \newline
@@ -2480,6 +2836,7 @@ il docente che sta effettuando la ricerca
 \newline
 la lista degli argomenti che il docente può utilizzare per facilitare la ricerca
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadKeywords () : void}
@@ -2505,6 +2862,7 @@ ricerca la domanda utilizzando i parametri immessi dall'utente
 nello $scope è inizializzato l'oggetto MySearchQuestion, contenente i parametri di ricerca richiesti dall'utente
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlSearchQuiz}}
 La classe contiene i metodi necessari alla comunicazione tra model e view nell'effettuare la ricerca di quiz.
 \begin{figure}[H]
@@ -2512,7 +2870,8 @@ La classe contiene i metodi necessari alla comunicazione tra model e view nell'e
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlsearchquiz.pdf}}
 \caption[Schema Classe CtrlSearchQuiz]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
@@ -2530,6 +2889,7 @@ la lista dei possibili argomenti che l'utente che fa la ricerca può selezionare
 \newline
 l'utente che sta effettuando la ricerca
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadKeywords () : void}
@@ -2555,6 +2915,7 @@ invia al server le informazioni necessarie per compiere la ricerca nel database
 nello $scope è inizializzato l'oggetto MySearchQuiz contenente i parametri di ricerca richiesti dall'utente
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlTopics}}
 Fornisce i metodi necessari alle comunicazioni richieste per la gestione degli argomenti.
 \begin{figure}[H]
@@ -2562,7 +2923,8 @@ Fornisce i metodi necessari alle comunicazioni richieste per la gestione degli a
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrltopics.pdf}}
 \caption[Schema Classe CtrlTopics]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlTopics}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{topicName : string}
 \newline
@@ -2571,6 +2933,7 @@ indica il singolo argomento su cui si desiderano apportare modifiche. Questo cam
 \newline
 la lista di argomenti esistenti, viene definito nello $scope
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addTopic (name : string) : void}
@@ -2598,6 +2961,7 @@ rimuove l'argomento specificato in locale e invia una richiesta al server
 l'indice dell'argomento che si desidera eliminare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MyQuiz}}
 La sua istanziazione avviene nella variabile $scope di Angular e permette di comunicare con la view. Questa classe permette di raccogliere le informazioni necessarie alla creazione di un nuovo quiz.
 \begin{figure}[H]
@@ -2605,7 +2969,8 @@ La sua istanziazione avviene nella variabile $scope di Angular e permette di com
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-myquiz.pdf}}
 \caption[Schema Classe MyQuiz]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MyQuiz}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{authorization : int}
 \newline
@@ -2635,6 +3000,7 @@ il titolo del quiz
 \newline
 l'argomento del quiz
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addKeyword (keyword : String) : void}
@@ -2658,6 +3024,7 @@ aggiunge una domanda al quiz creato dal docente
 il quiz a cui si vuole aggiungere la domanda
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MySearchQuestion}}
 La sua istanziazione avviene nella variabile $scope di Angular e permette di comunicare con la view. Questa classe raccoglie le informazioni immesse dall'utente durante la ricerca di domande.
 \begin{figure}[H]
@@ -2665,7 +3032,8 @@ La sua istanziazione avviene nella variabile $scope di Angular e permette di com
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-mysearchquestion.pdf}}
 \caption[Schema Classe MySearchQuestion]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuestion}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{author : String}
 \newline
@@ -2683,6 +3051,8 @@ l'argomento della domanda che l'utente sta cercando
 \newline
 il titolo della domanda che l'utente sta cercando
 \end{itemize}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{MySearchQuiz}}
 La sua istanziazione avviene nella variabile $scope di Angular e permette di comunicare con la view. Questa classe raccoglie le informazioni immesse dall'utente durante la ricerca di quiz.
 \begin{figure}[H]
@@ -2690,7 +3060,8 @@ La sua istanziazione avviene nella variabile $scope di Angular e permette di com
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-mysearchquiz.pdf}}
 \caption[Schema Classe MySearchQuiz]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: MySearchQuiz}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{author : String}
 \newline
@@ -2708,6 +3079,8 @@ l'argomento che l'utente ha richiesto effettuando la ricerca
 \newline
 il titolo che l'utente ha richiesto effettuando la ricerca
 \end{itemize}
+\item \bold{Metodi}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions}}
 Raccoglie le classi necessarie al collegamento tra view e model nelle fasi di gestione delle domande.
 \begin{figure}[H]
@@ -2722,7 +3095,8 @@ Si occupa di gestire la creazione delle domande da parte dell'utente, raccoglien
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-ctrlquestion.pdf}}
 \caption[Schema Classe CtrlQuestion]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: CtrlQuestion}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
@@ -2731,12 +3105,14 @@ contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato 
 \newline
 è la lista di possibili argomenti disponibili da assegnare al quiz
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{save () : void}
 \newline
 permette di salvare la domanda creata
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlQuestionManager}}
 Fornisce i metodi necessari per la comunicazione tra view e model. Permette al docente di visualizzare la lista delle proprie domande e ne consente la modifica e la rimozione.
@@ -2745,7 +3121,8 @@ Fornisce i metodi necessari per la comunicazione tra view e model. Permette al d
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-ctrlquestionmanager.pdf}}
 \caption[Schema Classe CtrlQuestionManager]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: CtrlQuestionManager}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{questionList : GenericQuestion[]}
 \newline
@@ -2754,6 +3131,7 @@ Fornisce i metodi necessari per la comunicazione tra view e model. Permette al d
 \newline
 è il docente che ha creato le domande
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadQuestionList () : void}
@@ -2785,6 +3163,7 @@ rimuove la domanda selezionata
 l'indice della domanda che si desidera rimuovere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MyCompletionQ}}
 permette di memorizzare la risposta data dall'utente in caso di domanda a completamento.
 \begin{figure}[H]
@@ -2792,7 +3171,8 @@ permette di memorizzare la risposta data dall'utente in caso di domanda a comple
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-mycompletionq.pdf}}
 \caption[Schema Classe MyCompletionQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyCompletionQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{correctAnswer : String[]}
 \newline
@@ -2804,6 +3184,7 @@ il testo o l'indirizzo dei completamenti possibili
 \newline
 la lista dei completamenti sbagliati per la domanda creata
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{insertAnswer (text : String, check : bool) : void}
@@ -2833,6 +3214,7 @@ la correttezza del completamento da rimuovere
 il completamento da rimuovere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MyGenericQ}}
 La sua istanziazione avviene nella variabile $scope di Angular e permette di comunicare con la view. Questa classe permette di creare la parte comune a tutti i tipi di domanda.
 \begin{figure}[H]
@@ -2840,7 +3222,8 @@ La sua istanziazione avviene nella variabile $scope di Angular e permette di com
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-mygenericq.pdf}}
 \caption[Schema Classe MyGenericQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyGenericQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -2864,6 +3247,8 @@ il titolo della domanda creata
 \newline
 l'argomento della domanda creata
 \end{itemize}
+\item \bold{Metodi}
+\end{itemize}
 \subsubsection{Classe \cls{MyMatchingQ}}
 permette di memorizzare la risposta data dall'utente in caso di domanda a collegamenti.
 \begin{figure}[H]
@@ -2871,7 +3256,8 @@ permette di memorizzare la risposta data dall'utente in caso di domanda a colleg
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-mymatchingq.pdf}}
 \caption[Schema Classe MyMatchingQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyMatchingQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{allAnswers : answer[]}
 \newline
@@ -2880,6 +3266,7 @@ tutte le risposte corrette per le domande a collegamenti
 \newline
 indica una parte della domanda a collegamenti, che andrà poi a comporre una risposta corretta
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{removeAnswer (answer : String) : void}
@@ -2903,6 +3290,7 @@ serve a memorizzare la corretta soluzione della domanda
 una parte da aggiungere alla domanda a collegamenti
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MyMutipleChoiceQ}}
 permette di memorizzare la risposta data dall'utente in caso di domanda a scelta multipla.
 \begin{figure}[H]
@@ -2910,7 +3298,8 @@ permette di memorizzare la risposta data dall'utente in caso di domanda a scelta
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-mymutiplechoiceq.pdf}}
 \caption[Schema Classe MyMutipleChoiceQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyMutipleChoiceQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{correctAnswer : bool[]}
 \newline
@@ -2919,6 +3308,7 @@ le opzioni che corrispondono alla scelta corretta
 \newline
 le opzioni che non corrispondono alla scelta corretta
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{insertAnswer (text : String, check : bool) : void}
@@ -2948,6 +3338,7 @@ la correttezza o meno della scelta
 il testo o l'indirizzo dell'allegato che si desidera rimuovere dalle opzioni della domanda
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MyShortAnswerQ}}
 permette di memorizzare la risposta data dall'utente in caso di domanda aperta.
 \begin{figure}[H]
@@ -2955,11 +3346,14 @@ permette di memorizzare la risposta data dall'utente in caso di domanda aperta.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-myshortanswerq.pdf}}
 \caption[Schema Classe MyShortAnswerQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyShortAnswerQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
 la risposta data dall'utente alla domanda aperta
+\end{itemize}
+\item \bold{Metodi}
 \end{itemize}
 \subsubsection{Classe \cls{MyTrueFalseQ}}
 permette di memorizzare la risposta data dall'utente in caso di domanda di tipo vero/falso.
@@ -2968,11 +3362,14 @@ permette di memorizzare la risposta data dall'utente in caso di domanda di tipo 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlservices-ctrlquestions-mytruefalseq.pdf}}
 \caption[Schema Classe MyTrueFalseQ]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyTrueFalseQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
 la risposta data dall'utente alla domanda vero/falso
+\end{itemize}
+\item \bold{Metodi}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics}}
 Raccoglie le classi necessarie a recuperare le statistiche da presentare all'utente.
@@ -2988,18 +3385,21 @@ La classe serve a caricare, per renderle visibili all'utente, le statistiche gen
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-ctrlquestionstatistics.pdf}}
 \caption[Schema Classe CtrlQuestionStatistics]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlQuestionStatistics}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{questionStatistics : QuestionStatistics[]}
 \newline
 sono le statistiche generali relative alle domande richieste
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadQuestion () : void}
 \newline
 carica la domanda di cui si desidera ottenere le statistiche
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlQuizStatistics}}
 La classe serve a caricare, per renderle visibili all'utente, le statistiche generali di un quiz.
@@ -3008,18 +3408,21 @@ La classe serve a caricare, per renderle visibili all'utente, le statistiche gen
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-ctrlquizstatistics.pdf}}
 \caption[Schema Classe CtrlQuizStatistics]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlQuizStatistics}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{quizStatistics : QuizStatistics[]}
 \newline
 Sono le statistiche generali per i quiz di cui si è fatta richiesta
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadQuiz () : void}
 \newline
 carica il quiz di cui si desidera conoscere le statistiche
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlStudentsQuizStats}}
 Si occupa di ottenere i dati necessari all'utente per visualizzare le statistiche degli studenti relativamente a un quiz.
@@ -3028,12 +3431,14 @@ Si occupa di ottenere i dati necessari all'utente per visualizzare le statistich
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-ctrlstudentsquizstats.pdf}}
 \caption[Schema Classe CtrlStudentsQuizStats]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlStudentsQuizStats}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
 contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyStudentsStats
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadClasses () : void}
@@ -3049,6 +3454,7 @@ carica i quiz disponibili per la classe selezionata
 richiede al server le statistiche relative al quiz selezionato e aggiorna lo $scope
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlTeachersStats}}
 Si occupa di fornire al docente le statistiche riguardanti le proprie domande e i propri quiz.
 \begin{figure}[H]
@@ -3056,6 +3462,20 @@ Si occupa di fornire al docente le statistiche riguardanti le proprie domande e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-ctrlteachersstats.pdf}}
 \caption[Schema Classe CtrlTeachersStats]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlTeachersStats}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\begin{itemize}
+\item \attribute{questions : GenericQuestion[]}
+\newline
+le domande create dal docente di cui si desidera avere le statistiche
+\item \attribute{selectedTeacher : Teacher}
+\newline
+il docente di cui si vuole avere le statistiche
+\item \attribute{teachers : Teacher[]}
+\newline
+i docenti di cui è possibile richiedere le statistiche
+\end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadQuestions () : void}
@@ -3067,6 +3487,7 @@ carica le domande create dal docente selezionato
 carica i docenti di cui è possibile richiedere le statistiche
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MyStudentsStats}}
 La sua istanziazione avviene nella variabile $scope di Angular e permette di comunicare con la view. Questa classe raccoglie le informazioni necessarie a visualizzare le statistiche degli studenti.
 \begin{figure}[H]
@@ -3074,7 +3495,8 @@ La sua istanziazione avviene nella variabile $scope di Angular e permette di com
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlstatistics-mystudentsstats.pdf}}
 \caption[Schema Classe MyStudentsStats]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: MyStudentsStats}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{classes : Class[]}
 \newline
@@ -3088,6 +3510,8 @@ le statistiche del quiz selezionato
 \item \attribute{selectedQuiz : Quiz}
 \newline
 il quiz di cui si chiedono le statistiche
+\end{itemize}
+\item \bold{Metodi}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient:: CtrlUsers}}
 Il componente raccoglie le classi che permettono la comunicazione per quanto riguarda funzioni e dati dell'utente.
@@ -3103,7 +3527,8 @@ La classe si occupa di caricare lo header corretto a seconda del tipo di utente 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-ctrlheader.pdf}}
 \caption[Schema Classe CtrlHeader]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlHeader}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{currentHeader : String}
 \newline
@@ -3112,6 +3537,7 @@ specifica lo header che deve essere caricato dalla view
 \newline
 è l'utente che sta visitando la pagina
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{loadCurrentHeader () : void}
@@ -3123,6 +3549,7 @@ il metodo verifica il tipo dell'utente che visita la magica e carica lo header c
 carica l'utente che sta visitando la pagina
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlLogin}}
 Gestisce la comunicazione necessaria per l'autenticazione dell'utente in fase di login.
 \begin{figure}[H]
@@ -3130,7 +3557,8 @@ Gestisce la comunicazione necessaria per l'autenticazione dell'utente in fase di
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-ctrllogin.pdf}}
 \caption[Schema Classe CtrlLogin]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlLogin}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{email : string}
 \newline
@@ -3139,6 +3567,7 @@ la mail introdotta dall'utente per effettuare il login. Questo campo dati viene 
 \newline
 la password introdotta dall'utente per il login
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{checkLogin (email : string, password : string) : bool}
@@ -3155,6 +3584,7 @@ la mail introdotta dall'utente necessaria per il login
 la password necessaria per il login
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlRecoveryPw}}
 La classe gestisce il recupero della password in caso di smarrimento.
 \begin{figure}[H]
@@ -3162,12 +3592,14 @@ La classe gestisce il recupero della password in caso di smarrimento.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-ctrlrecoverypw.pdf}}
 \caption[Schema Classe CtrlRecoveryPw]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlRecoveryPw}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{email : string}
 \newline
 è l'email a cui la nuova password verrà mandata in caso di smarrimento della precedente.Questo campo dati viene definito nello $scope
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{sendRecoveryEmail (email : string) : void}
@@ -3181,6 +3613,7 @@ il metodo si occupa di inviare all'indirizzo specificato la nuova password
 la mail a cui inviare la nuova password
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlRegistration}}
 Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'oggetto MyUser, definito all'interno dello $scope.
 \begin{figure}[H]
@@ -3188,12 +3621,14 @@ Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'og
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-ctrlregistration.pdf}}
 \caption[Schema Classe CtrlRegistration]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlRegistration}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
 contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyUser e serve per gestire i dati inseriti dall'utente durante la fase di registrazione
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{sendRegistration (user : $scope) : void}
@@ -3207,6 +3642,7 @@ invia al server le informazioni necessarie per portare a termine la registrazion
 utilizza l'oggetto MyUser definito nello $scope e invia al server le informazioni necessarie per memorizzare l'utente
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CtrlUserManager}}
 La classe, tramite variabili definite nello $scope, permette agli utenti di gestire e visualizzare il proprio profilo personale.
 \begin{figure}[H]
@@ -3214,7 +3650,8 @@ La classe, tramite variabili definite nello $scope, permette agli utenti di gest
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-ctrlusermanager.pdf}}
 \caption[Schema Classe CtrlUserManager]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{cNewPsw : string}
 \newline
@@ -3229,6 +3666,7 @@ per potere modificare la password, l'utente deve prima inserire la vecchia.Quest
 \newline
 è l'utente che intende modificare le proprie informazioni.Questo campo dati viene definito nello $scope
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{changePsw () : void}
@@ -3244,6 +3682,7 @@ carica gli istituti a cui l'utente è iscritto
 si occupa di comunicare col server per poter avere le informazioni dell'utente
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MyUser}}
 La sua istanziazione avviene nella variabile $scope di Angular e permette di comunicare con la view. Questa classe serve a raccogliere le informazioni dell'utente che si sta registrando.
 \begin{figure}[H]
@@ -3251,7 +3690,8 @@ La sua istanziazione avviene nella variabile $scope di Angular e permette di com
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewmodelclient-ctrlusers-myuser.pdf}}
 \caption[Schema Classe MyUser]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: MyUser}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{email : string}
 \newline
@@ -3266,6 +3706,7 @@ il cognome dell'utente che si sta registrando
 \newline
 la password dell'utente che si sta registrando
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{checkMail () : bool}
@@ -3276,6 +3717,7 @@ verifica che i due indirizzi mail inseriti coincidano
 \newline
 verifica che le due password inserite coincidano
 \newline
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server}}
 Racchiude tutte le componenti necessarie per il back-end del prodotto. Comunica con il database non relazionale MongoDB per ottenere le informazioni richieste dal client a cui verranno inviate successivamente.
@@ -3308,7 +3750,8 @@ informazioni che saranno utilizzate per la visualizzazione e per la gestione del
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organizations-class.pdf}}
 \caption[Schema Classe Class]{Schema Classe Quizzipedia:: Server:: ModelServer:: Organizations:: Class}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{academicYear : String}
 \newline
@@ -3326,6 +3769,7 @@ le mail degli studenti iscritti alla classe
 \newline
 le mail dei docenti associati alla classe
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addStudent () : void}
@@ -3396,6 +3840,7 @@ classe
 mail del docente da rimuovere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Institution}}
 Tale classe rappresenta un ente. Contiene le informazioni relative alla struttura dell'ente che saranno visualizzate dall'utente e gestiste dal controller, come ad esempio la lista delle classi presenti nell'ente, la lista degli studenti e degli insegnati all'interno dell'ente.
 \begin{figure}[H]
@@ -3403,7 +3848,8 @@ Tale classe rappresenta un ente. Contiene le informazioni relative alla struttur
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-organizations-institution.pdf}}
 \caption[Schema Classe Institution]{Schema Classe Quizzipedia:: Server:: ModelServer:: Organizations:: Institution}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{classes : Class[]}
 \newline
@@ -3433,6 +3879,7 @@ raccoglie le mail di tutti i docenti registrati presso un ente
 \newline
 i topic dell'istituto
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{acceptClassRequest (indexOfRequest : int) : void}
@@ -3558,6 +4005,7 @@ permette di modificare il nome dell'istituto
 il nuovo nome dell'istituto
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ModelServer:: Requests}}
 Questo componente contiene le classi necessarie a gestire le richieste di ruolo e di classe degli utenti autenticati.
 \begin{figure}[H]
@@ -3572,12 +4020,14 @@ Questa classe gestisce le richieste da parte di docenti o studenti per l'assegna
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-classlist.pdf}}
 \caption[Schema Classe ClassList]{Schema Classe Quizzipedia:: Server:: ModelServer:: Requests:: ClassList}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{classRequest : RequestClass[]}
 \newline
 è la lista delle richieste di classe pendenti
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{acceptClassRequest (indexOfRequest : int) : void}
@@ -3617,6 +4067,7 @@ rimuove una richiesta di entrata nella classe dalla lista delle richieste penden
 l'indice della richiesta che si intende rifiutare e rimuovere dalla lista
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{RequestClass}}
 La classe memorizza l'utente che invia la richiesta di inserimento in una classe e la classe per cui la richiesta è stata effettuata.
 \begin{figure}[H]
@@ -3624,7 +4075,8 @@ La classe memorizza l'utente che invia la richiesta di inserimento in una classe
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-requestclass.pdf}}
 \caption[Schema Classe RequestClass]{Schema Classe Quizzipedia:: Server:: ModelServer:: Requests:: RequestClass}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{class : Class}
 \newline
@@ -3633,12 +4085,14 @@ la classe per cui è stata effettuata la richiesta
 \newline
 la mail dell'utente che ha effettuato la richiesta
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getMail () : String}
 \newline
 restituisce la mail dell'utente che ha effettuato la richiesta
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RequestRole}}
 La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuole ricoprire.
@@ -3647,7 +4101,8 @@ La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuo
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-requestrole.pdf}}
 \caption[Schema Classe RequestRole]{Schema Classe Quizzipedia:: Server:: ModelServer:: Requests:: RequestRole}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{mail : String}
 \newline
@@ -3656,6 +4111,7 @@ la mail dell'utente che effettua la richiesta di ruolo
 \newline
 un messaggio che l'utente può includere alla sua richiesta di ruolo
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getMail () : String}
@@ -3667,6 +4123,7 @@ restituisce la mail dell'utente che effettua la richiesta
 restituisce il messaggio dell'utente che effettua la richiesta
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{RoleList}}
 Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo di studente o docente al responsabile di un ente. Questa classe gestisce tali richieste.
 \begin{figure}[H]
@@ -3674,7 +4131,8 @@ Gli utenti senza ruolo inviano le proprie richieste per l'assegnazione al ruolo 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-requests-rolelist.pdf}}
 \caption[Schema Classe RoleList]{Schema Classe Quizzipedia:: Server:: ModelServer:: Requests:: RoleList}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{students : RequesRole[]}
 \newline
@@ -3683,6 +4141,7 @@ memorizza la lista delle richieste degli utenti che hanno richiesto di diventare
 \newline
 memorizza la lista delle richieste degli utenti che hanno richiesto di diventare docenti
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{acceptStudent (indexOfStudent : int) : void}
@@ -3730,6 +4189,7 @@ rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desi
 rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
 \newline
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ModelServer:: Services}}
 Il componente racchiude i modelli necessari alla creazione di domande e quiz, i servizi principali offerti dal nostro prodotto.
 \begin{figure}[H]
@@ -3744,7 +4204,8 @@ Include la struttura del quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-quiz.pdf}}
 \caption[Schema Classe Quiz]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Quiz}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{author : String}
 \newline
@@ -3771,6 +4232,7 @@ il titolo del quiz
 \newline
 gli argomenti coperti dal quiz
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addClass (class : Class) : void}
@@ -3882,6 +4344,7 @@ imposta il titolo del quiz
 il nuovo titolo del quiz
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Topics}}
 Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni domanda e a ogni quiz verranno poi associati i relativi argomenti.
 \begin{figure}[H]
@@ -3889,12 +4352,14 @@ Modella la struttura necessaria a memorizzare la lista di argomenti. A ogni doma
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-topics.pdf}}
 \caption[Schema Classe Topics]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Topics}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{topics : String[]}
 \newline
 la lista degli argomenti esistenti
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addTopics (nameTopic : String) : void}
@@ -3918,6 +4383,7 @@ permette di rimuovere un argomento da quelli esistenti
 l'indice dell'argomento da rimuovere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ModelServer:: Services:: Answers}}
 Raccoglie tutte le componenti necessarie alla gestione della verifica dei quiz e delle domande svolte.
 \begin{figure}[H]
@@ -3932,12 +4398,14 @@ Classe utilizzata da AnswerMatchingQ per salvare le risposte della domanda Match
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answercolumn.pdf}}
 \caption[Schema Classe AnswerColumn]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Answers:: AnswerColumn}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswerCell : int[]}
 \newline
 le risposte date dall'utente in una colonna della domanda a collegamenti
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addAnswer (answer : int) : void}
@@ -3969,6 +4437,7 @@ imposta, memorizzando correttamente, le risposte date dall'utente in una colonna
 la risposta data dall'utente che verrà memorizzata
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerCompletionQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ risolta.
 \begin{figure}[H]
@@ -3976,12 +4445,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda CompletionQ ri
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answercompletionq.pdf}}
 \caption[Schema Classe AnswerCompletionQ]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Answers:: AnswerCompletionQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswer : String[]}
 \newline
 la risposta data dall'utente
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addAnswer (answer : String) : void}
@@ -4003,6 +4474,7 @@ concretizzazione del metodo ereditato dalla classe base astratta. Viene implemen
 restituisce la risposta data dall'utente
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerMatchingQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ risolta.
 \begin{figure}[H]
@@ -4010,12 +4482,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda MatchingQ riso
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answermatchingq.pdf}}
 \caption[Schema Classe AnswerMatchingQ]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Answers:: AnswerMatchingQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswerColumn : AnswerColumn[]}
 \newline
 le risposte data dall'utente per le varie colonne della domanda a collegamenti
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{check () : bool}
@@ -4047,6 +4521,7 @@ imposta le risposte date dall'utente per una delle colonne della domanda a colle
 le risposte date dall'utente per una delle colonne della domanda a collegnamenti
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerMultipleChoiceQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoiceQ risolta.
 \begin{figure}[H]
@@ -4054,12 +4529,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda MultipleChoice
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answermultiplechoiceq.pdf}}
 \caption[Schema Classe AnswerMultipleChoiceQ]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Answers:: AnswerMultipleChoiceQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswer : bool[]}
 \newline
 la risposta data dall'utente
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addAnswer (answer : bool) : void}
@@ -4081,6 +4558,7 @@ concretizzazione del metodo ereditato dalla classe base astratta. Viene implemen
 restituisce la risposta data dall'utente
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerQuestion}}
 Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \begin{figure}[H]
@@ -4088,7 +4566,8 @@ Classe che si occupa di memorizzare le informazioni di un domanda risolta.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answerquestion.pdf}}
 \caption[Schema Classe AnswerQuestion]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Answers:: AnswerQuestion}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -4100,6 +4579,7 @@ l'utente che sta rispondendo alla domanda
 \newline
 l'utente che sta rispondendo alla domanda
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{<<abstract>>check () : bool}
@@ -4125,6 +4605,7 @@ la domanda a cui si vuole dare risposta
 imposta l'utente che sta risolvendo la domanda
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerQuiz}}
 Classe che si occupa di memorizzare le informazioni di un quiz completato e gestisce la verifica del suo superamento.
 \begin{figure}[H]
@@ -4132,7 +4613,8 @@ Classe che si occupa di memorizzare le informazioni di un quiz completato e gest
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answerquiz.pdf}}
 \caption[Schema Classe AnswerQuiz]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Answers:: AnswerQuiz}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{answerQuestion : AnswerQuestion[]}
 \newline
@@ -4144,6 +4626,7 @@ la data di risoluzione del quiz
 \newline
 è il Quiz a cui sono associate le risposte date dall'utente
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addAnswer (answer : AnswerQuestion) : void}
@@ -4203,6 +4686,7 @@ imposta il quiz a cui si riferisce la risposta
 il quiz a cui è associata la risposta
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerShortAnswerQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ risolta.
 \begin{figure}[H]
@@ -4210,12 +4694,14 @@ Classe che si occupa di memorizzare le informazioni di un domanda ShortAnswerQ r
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answershortanswerq.pdf}}
 \caption[Schema Classe AnswerShortAnswerQ]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Answers:: AnswerShortAnswerQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{givenAnswer : String}
 \newline
 la risposta data dall'utente
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{check () : bool}
@@ -4231,6 +4717,7 @@ restituisce la risposta dell'utente
 imposta la risposta data dall'utente
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AnswerTrueFalseQ}}
 Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ risolta.
 \begin{figure}[H]
@@ -4238,7 +4725,8 @@ Classe che si occupa di memorizzare le informazioni di un domanda TrueFalseQ ris
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-answers-answertruefalseq.pdf}}
 \caption[Schema Classe AnswerTrueFalseQ]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Answers:: AnswerTrueFalseQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -4247,6 +4735,7 @@ la risposta data dall'utente
 \newline
 la risposta data dall'utente alla domanda di tipo vero/falso
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{check () : bool}
@@ -4262,6 +4751,7 @@ restituisce la risposta data dall'utente
 imposta la risposta data dall'utente
 \newline
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ModelServer:: Services:: Questions}}
 Descrive il modo in cui sono strutturati i vari tipi di domande che l'utente può incontrare durante la creazione o la compilazione di quiz.
 \begin{figure}[H]
@@ -4276,7 +4766,8 @@ La classe descrive ogni singola riga (quindi ogni opzione) della colonna della d
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-cell.pdf}}
 \caption[Schema Classe Cell]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Questions:: Cell}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -4288,6 +4779,7 @@ la posizione corretta della cella
 \newline
 il testo contenuto nella cella
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getAttachment () : String}
@@ -4333,6 +4825,7 @@ permette di modificare il testo della cella
 il nuovo test da inserire nella cella
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Column}}
 La classe descrive le colonne della domanda a collegamenti.
 \begin{figure}[H]
@@ -4340,7 +4833,8 @@ La classe descrive le colonne della domanda a collegamenti.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-column.pdf}}
 \caption[Schema Classe Column]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Questions:: Column}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{correctAnswer : int[]}
 \newline
@@ -4349,6 +4843,7 @@ il corretto ordinamento delle celle della colonna
 \newline
 celle che compongono la colonna
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addCell (attachment : String, position : int, text : String) : void}
@@ -4396,6 +4891,7 @@ permette di rimpiazzare completamente tutte le celle con delle celle nuove
 le nuove celle che sostituiranno le vecchie nella colonna
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{CompletionQ}}
 Descrive le domande a completamento. Il docente fornirà un testo incompleto e una lista di possibili completamenti; lo studente dovrà inserire le parole adeguate nella giusta posizione.
 \begin{figure}[H]
@@ -4403,7 +4899,8 @@ Descrive le domande a completamento. Il docente fornirà un testo incompleto e u
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-completionq.pdf}}
 \caption[Schema Classe CompletionQ]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Questions:: CompletionQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{correctAnswer : String[]}
 \newline
@@ -4415,6 +4912,7 @@ i suggerimenti della domanda CompletionQ
 \newline
 il testo della domanda CompletionQ
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createAnswerQuestion (answer : String[]) : AnswerCompletionQ}
@@ -4472,6 +4970,7 @@ permette di modificare il testo della domanda CompletionQ
 il nuovo testo della domanda
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{GenericQuestion}}
 Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \begin{figure}[H]
@@ -4479,7 +4978,8 @@ Descrive le parti comuni a tutti i tipi di domanda presenti nel sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-genericquestion.pdf}}
 \caption[Schema Classe GenericQuestion]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Questions:: GenericQuestion}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{author : Teacher}
 \newline
@@ -4503,6 +5003,7 @@ il titolo della domanda
 \newline
 il topic della domanda
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createStatisticsQuestion () : QuestionStatistics}
@@ -4570,6 +5071,7 @@ permette l'aggiunta di un topic alla domanda
 il nuovo topic della domanda
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MatchingQ}}
 La struttura descrive le domande a collegamento. L'utente dovrà formare la risposta collegando le entrate da un numero variabile di colonne.
 \begin{figure}[H]
@@ -4577,12 +5079,14 @@ La struttura descrive le domande a collegamento. L'utente dovrà formare la risp
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-matchingq.pdf}}
 \caption[Schema Classe MatchingQ]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Questions:: MatchingQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{column : Column[]}
 \newline
 le colonne della domanda
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addColumn (newColumn : Column) : void}
@@ -4620,6 +5124,7 @@ permette di sostituire tutte le colonne della domanda MatchingQ con delle nuove 
 le nuove colonne della domanda che andranno a sostituire le vecchie
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{MultipleChoiceQ}}
 La struttura descrive le domande a scelta multipla; viene presentata una lista di opzioni tra cui scegliere quelle corrette.
 \begin{figure}[H]
@@ -4627,7 +5132,8 @@ La struttura descrive le domande a scelta multipla; viene presentata una lista d
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-multiplechoiceq.pdf}}
 \caption[Schema Classe MultipleChoiceQ]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Questions:: MultipleChoiceQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{answerAttachments : String[]}
 \newline
@@ -4639,6 +5145,7 @@ le risposte della domanda
 \newline
 le soluzione della domanda
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createAnswerQuestion (answer : bool[]) : AnswerMultipleChoicheQ}
@@ -4683,6 +5190,7 @@ permette di inserire le nuove risposte corrette alla domanda MultipleChoiceQ che
 le nuove risposte corrette
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{ShortAnswerQ}}
 La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste in un termine o una frase specifici.
 \begin{figure}[H]
@@ -4690,12 +5198,14 @@ La struttura descrive le domande aperte, ovvero quelle la cui risposta consiste 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-shortanswerq.pdf}}
 \caption[Schema Classe ShortAnswerQ]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Questions:: ShortAnswerQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{correctAnswer : String}
 \newline
 la risposta corretta della domanda ShortAnswerQ
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createAnswerQuestion (answer : String) : AnswerShortAnswerQ}
@@ -4719,6 +5229,7 @@ permette di modificare la risposta corretta della domanda ShortAnswerQ
 la nuova risposta corretta della domanda ShortAnswerQ
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{TrueFalseQ}}
 Viene descritta la struttura delle domande che prevedono di decidere la veridicità di un'affermazione.
 \begin{figure}[H]
@@ -4726,12 +5237,14 @@ Viene descritta la struttura delle domande che prevedono di decidere la veridici
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-services-questions-truefalseq.pdf}}
 \caption[Schema Classe TrueFalseQ]{Schema Classe Quizzipedia:: Server:: ModelServer:: Services:: Questions:: TrueFalseQ}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{correctAnswer : bool}
 \newline
 la risposta corretta alla domanda TrueFalseQ
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createAnswerQuestion (answer : bool) : AnswerTrueFalseQ}
@@ -4755,6 +5268,7 @@ permette di modificare la risposta corretta della domanda TrueFalseQ
 la nuova risposta corretta della domanda TrueFalseQ
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ModelServer:: Statistics}}
 Qui sono raccolte le classi contenenti le informazioni sulle statistiche di domande, quiz e studenti di ogni classe.
 \begin{figure}[H]
@@ -4769,7 +5283,8 @@ La classe raccoglie le statistiche principali riguardanti una singola domanda. D
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-questionstatistics.pdf}}
 \caption[Schema Classe QuestionStatistics]{Schema Classe Quizzipedia:: Server:: ModelServer:: Statistics:: QuestionStatistics}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{quizNumber : int}
 \newline
@@ -4778,6 +5293,7 @@ il numero di quiz in cui è presente la domanda
 \newline
 la percentuale di utenti che rispondono correttamente alla domanda
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getQuizNumber () : int}
@@ -4789,6 +5305,7 @@ restituisce il numero di quiz in cui la domanda è presente
 restituisce la percentuale di utenti che risponde correttamente a questa domanda
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuizStatistics}}
 La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qui è poi possibile ottenere il quiz in questione.
 \begin{figure}[H]
@@ -4796,7 +5313,8 @@ La classe raccoglie le statistiche principali riguardanti un singolo quiz. Da qu
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-quizstatistics.pdf}}
 \caption[Schema Classe QuizStatistics]{Schema Classe Quizzipedia:: Server:: ModelServer:: Statistics:: QuizStatistics}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{averageResult : double}
 \newline
@@ -4808,6 +5326,7 @@ la percentuale di utenti che ha risolto il quiz con successo
 \newline
 il numero di volte che il quiz è stato svolto
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getAverageResult () : double}
@@ -4823,6 +5342,7 @@ restituisce la percentuale di utenti che ha risolto correttamente il quiz
 restituisce il numero di volte che un quiz è stato svolto
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{StudentsStatisticsQuiz}}
 Classe usata per visualizzare gli studenti che hanno svolto un quiz specifico e i loro voti per il quiz stesso.
 \begin{figure}[H]
@@ -4830,7 +5350,8 @@ Classe usata per visualizzare gli studenti che hanno svolto un quiz specifico e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-statistics-studentsstatisticsquiz.pdf}}
 \caption[Schema Classe StudentsStatisticsQuiz]{Schema Classe Quizzipedia:: Server:: ModelServer:: Statistics:: StudentsStatisticsQuiz}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{results : double[]}
 \newline
@@ -4839,6 +5360,7 @@ i risultati ottenuti dagli studenti che hanno risolto il quiz
 \newline
 gli studenti che hanno svolto il quiz
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getResults () : double[]}
@@ -4849,6 +5371,7 @@ restituisce la lista dei risultati degli studenti che hanno svolto il quiz
 \newline
 ottiene la lista degli studenti che hanno svolto il quiz
 \newline
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ModelServer:: Users}}
 Raccoglie le classi necessarie a descrivere le diverse tipologie di utente presenti nel sistema.
@@ -4864,7 +5387,8 @@ Questa classe gestisce le informazioni di autenticazione comuni a tutti gli uten
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-authenticationdata.pdf}}
 \caption[Schema Classe AuthenticationData]{Schema Classe Quizzipedia:: Server:: ModelServer:: Users:: AuthenticationData}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{firstName : String}
 \newline
@@ -4879,6 +5403,7 @@ contiene la mail dell'utente registrato
 \newline
 contiene la password criptata dell'utente registrato
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getFirstName () : String}
@@ -4907,6 +5432,7 @@ contiene la nuova password dell'utente
 contiene la vecchia password dell'utente registrato, necessaria per cambiarla con la nuova
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Director}}
 Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per ogni ente del sistema.
 \begin{figure}[H]
@@ -4914,6 +5440,9 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-director.pdf}}
 \caption[Schema Classe Director]{Schema Classe Quizzipedia:: Server:: ModelServer:: Users:: Director}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{acceptStudent () : void}
@@ -4925,6 +5454,7 @@ permette di inserire uno studente nell'istituzione posseduta dal direttore
 permette di inserire un docente nell'istituzione posseduta dal direttore
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{NoRole}}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
 \begin{figure}[H]
@@ -4932,12 +5462,14 @@ Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e 
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-norole.pdf}}
 \caption[Schema Classe NoRole]{Schema Classe Quizzipedia:: Server:: ModelServer:: Users:: NoRole}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{quizProfile : AnswerQuiz[]}
 \newline
 è il profilo che raccoglie i quiz già risolti dall'utente e le risposte che l'utente aveva dato
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
@@ -4969,6 +5501,7 @@ rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti da un uten
 l'indice del quiz che si desidera rimuovere dallo storico
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Student}}
 Rappresenta uno studente del sistema e implementa le sue funzioni specifiche oltre a quelle ereditate da utente.
 \begin{figure}[H]
@@ -4976,12 +5509,14 @@ Rappresenta uno studente del sistema e implementa le sue funzioni specifiche olt
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-student.pdf}}
 \caption[Schema Classe Student]{Schema Classe Quizzipedia:: Server:: ModelServer:: Users:: Student}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{quizProfile : AnswerQuiz}
 \newline
 lo storico dei quiz svolti con relativa soluzione
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
@@ -5013,6 +5548,7 @@ rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti
 l'indice del quiz che si intende rimuovere dallo storico
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{Teacher}}
 Rappresenta un docente del sistema e ne implementa le funzionalità specifiche in aggiunta a quelle comuni a tutti gli utenti.
 \begin{figure}[H]
@@ -5020,12 +5556,14 @@ Rappresenta un docente del sistema e ne implementa le funzionalità specifiche i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-teacher.pdf}}
 \caption[Schema Classe Teacher]{Schema Classe Quizzipedia:: Server:: ModelServer:: Users:: Teacher}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{ownQuiz : Quiz[]}
 \newline
 la lista dei quiz creati dall'utente
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{addQuiz (newQuiz : Quiz) : void}
@@ -5061,6 +5599,7 @@ rimuove un quiz dalla lista di quiz creati dall'utente
 l'indice del quiz che si intende rimuovere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{User}}
 Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli utenti.
 \begin{figure}[H]
@@ -5068,12 +5607,14 @@ Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli ut
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-modelserver-users-user.pdf}}
 \caption[Schema Classe User]{Schema Classe Quizzipedia:: Server:: ModelServer:: Users:: User}
 \end{figure}
-\paragraph{Attributi}
+\begin{itemize}
+\item \bold{Attributi}
 \begin{itemize}
 \item \attribute{authenticationData : AuthenticationData}
 \newline
 raccoglie le informazioni di base dell'utente, necessarie alla sua autenticazione. Sono comuni in tutta la gerarchia
 \end{itemize}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getAuthenticationData () : AuthenticationData}
@@ -5084,6 +5625,7 @@ restituisce i dati necessari all'autenticazione dell'utente
 \newline
 restituisce la mail dell'utente, che è univoca
 \newline
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer}}
 Questo componente contiene tutti i servizi che permettono di isolare il più possibile l'accesso al database non relazionale. Avviene sempre un controllo dell'utente che genera una determinata richiesta al server affinchè sia abilitato per farla. 
@@ -5100,6 +5642,9 @@ Effettua il controllo sull'utente per verificare che egli sia in possesso dell'a
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-sessioncontroller.pdf}}
 \caption[Schema Classe SessionController]{Schema Classe Quizzipedia:: Server:: ControllerServer:: SessionController}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{isAuthorized (email : String) : bool}
@@ -5111,6 +5656,7 @@ verifica che l'utente (oltre ad essere autenticato) goda dei permessi necessari 
 \item \attribute{email : String}
 \newline
 l'email dell'utente del quale verificare i permessi per effettuare una determinata operazione
+\end{itemize}
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: AuthenticationManager}}
@@ -5127,6 +5673,9 @@ Permette l'autenticazione nel sistema da parte di utenti preventivamente registr
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-loggerin.pdf}}
 \caption[Schema Classe LoggerIn]{Schema Classe Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerIn}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{login (email : String, password : String) : JSON}
@@ -5143,6 +5692,7 @@ la email con la quale l'utente si è registrato in Quizzipedia
 la password con la quale l'utente si è registrato in Quizzipedia
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{LoggerOut}}
 Permette l'uscita dal sistema ad utenti autenticati.
 \begin{figure}[H]
@@ -5150,12 +5700,16 @@ Permette l'uscita dal sistema ad utenti autenticati.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-loggerout.pdf}}
 \caption[Schema Classe LoggerOut]{Schema Classe Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: LoggerOut}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{logout () : void}
 \newline
 permette l'uscita dal sistema Quizzipedia ad un utente autenticato
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{PasswordRecover}}
 Permette il recupero della password da parte di un utente in caso di smarrimento o dimenticanza.
@@ -5164,12 +5718,16 @@ Permette il recupero della password da parte di un utente in caso di smarrimento
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-passwordrecover.pdf}}
 \caption[Schema Classe PasswordRecover]{Schema Classe Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: PasswordRecover}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{recoverPassword () : JSON}
 \newline
 permette di impostare una password temporanea e di inviarla all'utente per email nel caso quest'ultimo abbia smarrito la propria
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Register}}
 Permette la registrazione di un utente nel sistema.
@@ -5178,6 +5736,9 @@ Permette la registrazione di un utente nel sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-authenticationmanager-register.pdf}}
 \caption[Schema Classe Register]{Schema Classe Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: Register}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{register (email : String, firstname : String, lastname : String, password : String) : void}
@@ -5200,6 +5761,7 @@ il cognome dell'utente
 la password scelta dall'utente per autenticarsi
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: ClassManager}}
 Componente che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni riguardanti le classi di un ente.
 \begin{figure}[H]
@@ -5214,6 +5776,9 @@ Permette la creazione di una nuova classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classadder.pdf}}
 \caption[Schema Classe ClassAdder]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassAdder}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{adder (class : JSON, classname : String) : void}
@@ -5230,6 +5795,7 @@ struttura contenente le informazioni della classe
 il nome da attribuire alla classe
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{ClassDeleter}}
 Permette la rimozione delle classi dal sistema.
 \begin{figure}[H]
@@ -5237,6 +5803,9 @@ Permette la rimozione delle classi dal sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classdeleter.pdf}}
 \caption[Schema Classe ClassDeleter]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassDeleter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{deleter (classname : String) : void}
@@ -5250,6 +5819,7 @@ permette la rimozione di una classe presente in un ente
 il nome della classe da rimuovere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{ClassUpdater}}
 Permette la modifica delle informazioni di base di una determinata classe.
 \begin{figure}[H]
@@ -5257,6 +5827,9 @@ Permette la modifica delle informazioni di base di una determinata classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-classupdater.pdf}}
 \caption[Schema Classe ClassUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassUpdater}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{updater (classname : String, description : String) : void}
@@ -5273,6 +5846,7 @@ la classe da modificare
 la descrizione da modificare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{FromClassRemover}}
 Permette la rimozione di un utente da una determinata classe.
 \begin{figure}[H]
@@ -5280,6 +5854,9 @@ Permette la rimozione di un utente da una determinata classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-fromclassremover.pdf}}
 \caption[Schema Classe FromClassRemover]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ClassManager:: FromClassRemover}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{remover (classname : String, email : String) : void}
@@ -5296,6 +5873,7 @@ classe dalla quale rimuovere l'utente
 email dell'utente da rimuovere dalla classe
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{InClassAdder}}
 Permette l'inserimento di un utente in una specifica classe.
 \begin{figure}[H]
@@ -5303,6 +5881,9 @@ Permette l'inserimento di un utente in una specifica classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-inclassadder.pdf}}
 \caption[Schema Classe InClassAdder]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ClassManager:: InClassAdder}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{adder (classname : String, email : String) : void}
@@ -5319,6 +5900,7 @@ il nome della classe nella quale inserire l'utente
 l'email dell'utente da inserire nella classe
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{StudentsClassFetcher}}
 Recupera la lista degli studenti appartenenti ad una determinata classe.
 \begin{figure}[H]
@@ -5326,6 +5908,9 @@ Recupera la lista degli studenti appartenenti ad una determinata classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-studentsclassfetcher.pdf}}
 \caption[Schema Classe StudentsClassFetcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ClassManager:: StudentsClassFetcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getStudents (classname : String) : JSON}
@@ -5339,6 +5924,7 @@ recupera la lista di studenti appartenenti ad una determinata classe
 il nome della classe della quale recuperare la lista degli studenti
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{TeachersClassFetcher}}
 Recupera la lista degli insegnanti relativi ad una determinata classe.
 \begin{figure}[H]
@@ -5346,6 +5932,9 @@ Recupera la lista degli insegnanti relativi ad una determinata classe.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-classmanager-teachersclassfetcher.pdf}}
 \caption[Schema Classe TeachersClassFetcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ClassManager:: TeachersClassFetcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{getTeachers (classname : String) : JSON}
@@ -5357,6 +5946,7 @@ recupera la lista di docenti relativi ad una determinata classe
 \item \attribute{classname : String}
 \newline
 il nome della classe della quale recuperare la lista dei docenti
+\end{itemize}
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: InstitutionManager}}
@@ -5373,6 +5963,9 @@ Permette la modifica dell'ente da parte del responsabile.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-institutionmanager-institutionupdater.pdf}}
 \caption[Schema Classe InstitutionUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: InstitutionManager:: InstitutionUpdater}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{update (companyname : String, newname : String) : void}
@@ -5389,6 +5982,7 @@ nome dell'ente da modificare
 nuovo nome da assegnare all'ente
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: ProfileManager}}
 Componente che racchiude tutte le funzionalità adibite al salvataggio e alla visualizzazione delle informazioni personali da parte di un utente autenticato.
 \begin{figure}[H]
@@ -5403,6 +5997,9 @@ Permette la rimozione di un account dal sistema.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-accountdeleter.pdf}}
 \caption[Schema Classe AccountDeleter]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ProfileManager:: AccountDeleter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{deleteAccount (email : String) : void}
@@ -5416,6 +6013,7 @@ permette la rimozione di un account da Quizzipedia
 l'email dell'account da eliminare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{PasswordSetter}}
 Permette ad un utente di impostare una nuova password relativa al proprio account.
 \begin{figure}[H]
@@ -5423,6 +6021,9 @@ Permette ad un utente di impostare una nuova password relativa al proprio accoun
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-passwordsetter.pdf}}
 \caption[Schema Classe PasswordSetter]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PasswordSetter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{setPassword (email : String, password : String) : void}
@@ -5439,6 +6040,7 @@ email dell'utente che vuole modificare la propria password
 la nuova password da impostare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{PersonalDataFetcher}}
 Ritorna tutte le informazioni personali riferite all'utente che ne effettua la richiesta.
 \begin{figure}[H]
@@ -5446,6 +6048,9 @@ Ritorna tutte le informazioni personali riferite all'utente che ne effettua la r
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personaldatafetcher.pdf}}
 \caption[Schema Classe PersonalDataFetcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PersonalDataFetcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{fetchData (email : String) : JSON}
@@ -5459,6 +6064,7 @@ ritorna tutte le informazioni personali dell'utente che ne ha fatto richiesta
 email dell'utente che vuole vedere le proprie informazioni personali
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{PersonalQuizFetcher}}
 Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fino a quel momento.
 \begin{figure}[H]
@@ -5466,6 +6072,9 @@ Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fi
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-profilemanager-personalquizfetcher.pdf}}
 \caption[Schema Classe PersonalQuizFetcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: ProfileManager:: PersonalQuizFetcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{fetchQuiz (email : String) : JSON}
@@ -5477,6 +6086,7 @@ ritorna i quiz che l'utente ha svolto
 \item \attribute{email : String}
 \newline
 email dell'utente del quale recuperare i quiz svolti
+\end{itemize}
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: QuestionsManager}}
@@ -5493,6 +6103,9 @@ Permette il salvataggio nella base di dati di una nuova domanda.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questioncreator.pdf}}
 \caption[Schema Classe QuestionCreator]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionCreator}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createQuestion (question : JSON) : void}
@@ -5506,6 +6119,7 @@ permette il salvataggio di una nuova domanda
 contiene la struttura della domanda
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuestionEraser}}
 Permette la cancellazione di una domanda dalla base di dati.
 \begin{figure}[H]
@@ -5513,6 +6127,9 @@ Permette la cancellazione di una domanda dalla base di dati.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questioneraser.pdf}}
 \caption[Schema Classe QuestionEraser]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionEraser}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{eraseQuestion (question : String) : void}
@@ -5526,6 +6143,7 @@ permette la cancellazione di una domanda esistente
 la domanda da eliminare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuestionUpdater}}
 Permette la modifica di una domanda già esistente.
 \begin{figure}[H]
@@ -5533,6 +6151,9 @@ Permette la modifica di una domanda già esistente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-questionupdater.pdf}}
 \caption[Schema Classe QuestionUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionUpdater}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{updateQuestion (question : JSON) : void}
@@ -5546,6 +6167,7 @@ permette la modifica di una domanda esistente
 i dati della domanda da modificare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{StatisticsQuestionUpdater}}
 Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in esso contenuta.
 \begin{figure}[H]
@@ -5553,6 +6175,9 @@ Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in e
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-questionsmanager-statisticsquestionupdater.pdf}}
 \caption[Schema Classe StatisticsQuestionUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: StatisticsQuestionUpdater}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{updateStats (question : String, statistics : JSON) : void}
@@ -5569,6 +6194,7 @@ la domanda della quale modificare le statistiche
 le statistiche della domanda da aggiornare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: QuizManager}}
 Componente che racchiude tutte le funzionalità adibite alla creazione, modifica e al recupero di quiz per lo svolgimento da parte di un utente.
 \begin{figure}[H]
@@ -5583,6 +6209,9 @@ Permette il salvataggio nella base di dati di un nuovo quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizcreator.pdf}}
 \caption[Schema Classe QuizCreator]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizCreator}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createQuiz (quiz : JSON) : void}
@@ -5596,6 +6225,7 @@ permette la creazione di un nuovo quiz
 struttura contenente i dati del quiz da creare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuizEraser}}
 Permette la cancellazione di un quiz dalla base di dati.
 \begin{figure}[H]
@@ -5603,6 +6233,9 @@ Permette la cancellazione di un quiz dalla base di dati.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizeraser.pdf}}
 \caption[Schema Classe QuizEraser]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizEraser}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{eraseQuiz (quiz : String) : void}
@@ -5616,6 +6249,7 @@ permette la cancellazione di un quiz
 nome del quiz da eliminare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuizFetcher}}
 Ritorna un determinato quiz pronto per essere svolto da un utente .
 \begin{figure}[H]
@@ -5623,6 +6257,9 @@ Ritorna un determinato quiz pronto per essere svolto da un utente .
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizfetcher.pdf}}
 \caption[Schema Classe QuizFetcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizFetcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{fetchQuiz (quiz : String) : JSON}
@@ -5636,6 +6273,7 @@ ritorna un quiz per essere svolto
 il nome del quiz selezionato dall'utente
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuizUpdater}}
 Permette la modifica di un quiz già presente nella base di dati.
 \begin{figure}[H]
@@ -5643,6 +6281,9 @@ Permette la modifica di un quiz già presente nella base di dati.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-quizupdater.pdf}}
 \caption[Schema Classe QuizUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: QuizUpdater}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{updateQuiz (quiz : JSON) : void}
@@ -5656,6 +6297,7 @@ permette la modifica di un quiz
 la struttura contenente i dati da aggiornare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{ResultsUpdater}}
 Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un utente.
 \begin{figure}[H]
@@ -5663,6 +6305,9 @@ Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un ut
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-resultsupdater.pdf}}
 \caption[Schema Classe ResultsUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: ResultsUpdater}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{updateResults (quiz : String, results : JSON) : void}
@@ -5679,6 +6324,7 @@ il quiz in questione
 la struttura contenente i dati dei risultati da aggiornare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{StatisticsQuizUpdater}}
 Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte degli utenti.
 \begin{figure}[H]
@@ -5686,6 +6332,9 @@ Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-statisticsquizupdater.pdf}}
 \caption[Schema Classe StatisticsQuizUpdater]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: StatisticsQuizUpdater}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{updateStats (quiz : String, statistics : JSON) : void}
@@ -5702,6 +6351,7 @@ il nome del quiz
 la struttura contenente i dati delle statistiche da aggiornare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent}}
 Questo componente racchiude i moduli necessari alla traduzione, da QML ad un formato comprensibile dal sistema, delle informazioni estratte dal database per la generazione delle pagine HTML relative ad un quiz e viceversa.
 \begin{figure}[H]
@@ -5716,6 +6366,9 @@ Permette la traduzione in formato QML di un quiz nel caso si voglia procedere al
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent-qmlgenerator.pdf}}
 \caption[Schema Classe QMLGenerator]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent:: QMLGenerator}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{generate (question : JSON) : String}
@@ -5729,6 +6382,7 @@ traduzione in formato QML di un quiz per procedere con il salvataggio nel databa
 la domanda da tradurre
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QMLParser}}
 Permette la traduzione di un quiz dal formato QML ad uno comprensibile dal sistema per la generazione delle relative pagine HTML.
 \begin{figure}[H]
@@ -5736,6 +6390,9 @@ Permette la traduzione di un quiz dal formato QML ad uno comprensibile dal siste
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-quizmanager-qmlagent-qmlparser.pdf}}
 \caption[Schema Classe QMLParser]{Schema Classe Quizzipedia:: Server:: ControllerServer:: QuizManager:: QMLAgent:: QMLParser}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{parse (question : String) : JSON}
@@ -5747,6 +6404,7 @@ traduzione del formato QML in formato JSON per la visualizzazione lato client
 \item \attribute{question : String}
 \newline
 la domanda da tradurre
+\end{itemize}
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: RequestsManager}}
@@ -5763,6 +6421,9 @@ Permette la memorizzazione nella base di dati di tutte le richieste, fatte da pa
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-insertclassrequestsadder.pdf}}
 \caption[Schema Classe InsertClassRequestsAdder]{Schema Classe Quizzipedia:: Server:: ControllerServer:: RequestsManager:: InsertClassRequestsAdder}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{add (class : String, email : String) : void}
@@ -5779,6 +6440,7 @@ classe nella quale l'utente fa richiesta di essere inserito
 l'email dell'utente
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{RequestsFetcher}}
 Permette la visualizzazione di tutte le richieste da parte degli utenti.
 \begin{figure}[H]
@@ -5786,12 +6448,16 @@ Permette la visualizzazione di tutte le richieste da parte degli utenti.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-requestsfetcher.pdf}}
 \caption[Schema Classe RequestsFetcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RequestsFetcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{fetchRequests () : JSON}
 \newline
 ritorna tutte le richieste da parte degli utenti
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RoleAccepter}}
 Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utente dopo che ne ha fatto richiesta.
@@ -5800,6 +6466,9 @@ Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utent
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-roleaccepter.pdf}}
 \caption[Schema Classe RoleAccepter]{Schema Classe Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RoleAccepter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{accept (email : String, role : String) : void}
@@ -5816,6 +6485,7 @@ email dell'utente
 ruolo che l'utente vorrebbe ottenere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{RoleRequestAdder}}
 Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'interno del sistema.
 \begin{figure}[H]
@@ -5823,6 +6493,9 @@ Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'i
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-requestsmanager-rolerequestadder.pdf}}
 \caption[Schema Classe RoleRequestAdder]{Schema Classe Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RoleRequestAdder}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{add (email : String, role : String) : void}
@@ -5839,6 +6512,7 @@ l'email dell'utente
 il ruolo che l'utente vorrebbe assumere
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: SearchManager}}
 Questo componente permette di effettuare una ricerca nel database di quiz o domande richiesti dall'utente e ritornare una lista che corrisponde ai parametri desiderati.
 \begin{figure}[H]
@@ -5853,6 +6527,9 @@ Ritorna una lista di domande che corrispondono ai parametri di ricerca impostati
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-questionssearcher.pdf}}
 \caption[Schema Classe QuestionsSearcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{searchQuestions (parameters : JSON) : JSON}
@@ -5866,6 +6543,7 @@ ritorna le domande che corrispondono ai parametri di ricerca impostati dall'uten
 la struttura che contiene i dati dei parametri di ricerca
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuizSearcher}}
 Ritorna una lista di quiz che corrispondono ai parametri di ricerca impostati dall'utente.
 \begin{figure}[H]
@@ -5873,6 +6551,9 @@ Ritorna una lista di quiz che corrispondono ai parametri di ricerca impostati da
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-searchmanager-quizsearcher.pdf}}
 \caption[Schema Classe QuizSearcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuizSearcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{searchQuiz (parameters : JSON) : JSON}
@@ -5884,6 +6565,7 @@ ritorna i quiz che corrispondono ai parametri di ricerca impostati dall'utente
 \item \attribute{parameters : JSON}
 \newline
 la struttura che contiene i dati dei parametri di ricerca
+\end{itemize}
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: StatisticsManager}}
@@ -5900,12 +6582,16 @@ Ritorna le statistiche riferite ad una domanda.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-questionstatisticsfetcher.pdf}}
 \caption[Schema Classe QuestionStatisticsFetcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: QuestionStatisticsFetcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{fetchStats () : JSON}
 \newline
 ritorna le statistiche riferite ad una domanda
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuizStatisticsFetcher}}
 Ritorna le statistiche riferite ad un quiz.
@@ -5914,12 +6600,16 @@ Ritorna le statistiche riferite ad un quiz.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-quizstatisticsfetcher.pdf}}
 \caption[Schema Classe QuizStatisticsFetcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: QuizStatisticsFetcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{fetchStats () : JSON}
 \newline
 ritorna le statistiche riferite al quiz
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{StudentStatisticsFetcher}}
 Ritorna le statistiche riferite ad uno studente.
@@ -5928,12 +6618,16 @@ Ritorna le statistiche riferite ad uno studente.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-statisticsmanager-studentstatisticsfetcher.pdf}}
 \caption[Schema Classe StudentStatisticsFetcher]{Schema Classe Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: StudentStatisticsFetcher}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{fetchStats () : JSON}
 \newline
 ritorna le statistiche riferite ad uno studente
 \newline
+\end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: TopicManager}}
 Componente che permette la creazione di un nuovo argomento o l'eliminazione di uno già esistente.
@@ -5949,6 +6643,9 @@ Permette la creazione di un nuovo argomento.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager-topiccreator.pdf}}
 \caption[Schema Classe TopicCreator]{Schema Classe Quizzipedia:: Server:: ControllerServer:: TopicManager:: TopicCreator}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{createTopic (topic : String) : void}
@@ -5962,6 +6659,7 @@ permette la creazione di un nuovo argomento
 l'argomento da creare
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{TopicEraser}}
 Permette l'eliminazione di un argomento.
 \begin{figure}[H]
@@ -5969,6 +6667,9 @@ Permette l'eliminazione di un argomento.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-controllerserver-topicmanager-topiceraser.pdf}}
 \caption[Schema Classe TopicEraser]{Schema Classe Quizzipedia:: Server:: ControllerServer:: TopicManager:: TopicEraser}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{eraseTopic (topic : String) : void}
@@ -5980,6 +6681,7 @@ permette l'eliminazione di un argomento
 \item \attribute{topic : String}
 \newline
 l'argomento da eliminare
+\end{itemize}
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: RoutingManager}}
@@ -5997,6 +6699,9 @@ Classe astratta supertipo delle altre classi del pacchetto.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-abstractrouter.pdf}}
 \caption[Schema Classe AbstractRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: AbstractRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{<<abstract>> forwardTo (bundle : JSON) : void}
@@ -6028,6 +6733,7 @@ metodo astratto usato per il reindirizzamento
 metodo astratto usato per il reindirizzamento
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{AuthenticationRouter}}
 Invocato dal client per interagire con AuthenticationManager.
 \begin{figure}[H]
@@ -6035,6 +6741,9 @@ Invocato dal client per interagire con AuthenticationManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-authenticationrouter.pdf}}
 \caption[Schema Classe AuthenticationRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: AuthenticationRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{forwardTo () : void}
@@ -6056,6 +6765,7 @@ contenitore dei dati provenienti da chiamate REST del client
 metodo usato per il reindirizzamento alla classe AuthenticationManager
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{ClassRouter}}
 Invocato dal client per interagire con ClassManager.
 \begin{figure}[H]
@@ -6063,6 +6773,9 @@ Invocato dal client per interagire con ClassManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-classrouter.pdf}}
 \caption[Schema Classe ClassRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: ClassRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{forwardTo (bundle : JSON) : JSON}
@@ -6084,6 +6797,7 @@ metodo usato per il reindirizzamento alla classe ClassManager
 \item \attribute{bundle : JSON}
 \newline
 contenitore dei dati provenienti da chiamate REST del client
+\end{itemize}
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{InstitutionRouter}}
@@ -6093,12 +6807,16 @@ Invocato dal client per interagire con InstitutionManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-institutionrouter.pdf}}
 \caption[Schema Classe InstitutionRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: InstitutionRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{forwardTo () : void}
 \newline
 metodo usato per il reindirizzamento alla classe InstitutionManager
 \newline
+\end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ProfileRouter}}
 Invocato dal client per interagire con ProfileManager.
@@ -6107,6 +6825,9 @@ Invocato dal client per interagire con ProfileManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-profilerouter.pdf}}
 \caption[Schema Classe ProfileRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: ProfileRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{forwardTo (bundle : JSON) : JSON}
@@ -6130,6 +6851,7 @@ metodo usato per il reindirizzamento alla classe ProfileManager
 contenitore dei dati provenienti da chiamate REST del client
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuestionRouter}}
 Invocato dal client per interagire con QuestionsManager.
 \begin{figure}[H]
@@ -6137,6 +6859,9 @@ Invocato dal client per interagire con QuestionsManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-questionrouter.pdf}}
 \caption[Schema Classe QuestionRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: QuestionRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{forwardTo (bundle : JSON) : void}
@@ -6150,6 +6875,7 @@ metodo usato per il reindirizzamento alla classe QuestionsManager
 contenitore dei dati provenienti da chiamate REST del client
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{QuizRouter}}
 Invocato dal client per interagire con QuizManager.
 \begin{figure}[H]
@@ -6157,6 +6883,9 @@ Invocato dal client per interagire con QuizManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-quizrouter.pdf}}
 \caption[Schema Classe QuizRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: QuizRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{forwardTo (bundle : JSON) : JSON}
@@ -6180,6 +6909,7 @@ metodo usato per il reindirizzamento alla classe QuizManager
 contenitore dei dati provenienti da chiamate REST del client
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{RequestsRouter}}
 Invocato dal client per interagire con RequestsManager.
 \begin{figure}[H]
@@ -6187,6 +6917,9 @@ Invocato dal client per interagire con RequestsManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-requestsrouter.pdf}}
 \caption[Schema Classe RequestsRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: RequestsRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{forwardTo (bundle : JSON) : void}
@@ -6204,6 +6937,7 @@ contenitore dei dati provenienti da chiamate REST del client
 metodo usato per il reindirizzamento alla classe RequestsManager
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{SearchRouter}}
 Invocato dal client per interagire con SearchManager.
 \begin{figure}[H]
@@ -6211,6 +6945,9 @@ Invocato dal client per interagire con SearchManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-searchrouter.pdf}}
 \caption[Schema Classe SearchRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: SearchRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{forwardTo (bundle : JSON) : JSON}
@@ -6224,6 +6961,7 @@ metodo usato per il reindirizzamento alla classe SearchManager
 contenitore dei dati provenienti da chiamate REST del client
 \end{itemize}
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{StatisticsRouter}}
 Invocato dal client per interagire con StatisticsManager.
 \begin{figure}[H]
@@ -6231,6 +6969,9 @@ Invocato dal client per interagire con StatisticsManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-statisticsrouter.pdf}}
 \caption[Schema Classe StatisticsRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: StatisticsRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{forwardTo (bundle : JSON) : JSON}
@@ -6248,6 +6989,7 @@ contenitore dei dati provenienti da chiamate REST del client
 metodo usato per il reindirizzamento alla classe StatisticsManager
 \newline
 \end{itemize}
+\end{itemize}
 \subsubsection{Classe \cls{TopicRouter}}
 Invocato dal client per interagire con TopicManager.
 \begin{figure}[H]
@@ -6255,6 +6997,9 @@ Invocato dal client per interagire con TopicManager.
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-server-routingmanager-topicrouter.pdf}}
 \caption[Schema Classe TopicRouter]{Schema Classe Quizzipedia:: Server:: RoutingManager:: TopicRouter}
 \end{figure}
+\begin{itemize}
+\item \bold{Attributi}
+\item \bold{Metodi}
 \paragraph{Metodi}
 \begin{itemize}
 \item \method{forwardTo (bundle : JSON) : void}
@@ -6266,5 +7011,6 @@ metodo usato per il reindirizzamento alla classe TopicManager
 \item \attribute{bundle : JSON}
 \newline
 contenitore dei dati provenienti da chiamate REST del client
+\end{itemize}
 \end{itemize}
 \end{itemize}
