@@ -1478,8 +1478,6 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \noindent\makebox[\textwidth]{\includegraphics[scale=0.75]{Img/quizzipedia-client-modelclient-users-director.pdf}}
 \caption[Schema Classe Director]{Schema Classe Quizzipedia:: Client:: ModelClient:: Users:: Director}
 \end{figure}
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{NoRole}}
 Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e autenticati ma non hanno ancora fatto richiesta per l'assegnazione ad alcun ruolo.
 \begin{figure}[H]
@@ -1645,20 +1643,12 @@ Contiene componenti condivise da più pagine del sistema, che vengono quindi qui
 \end{figure}
 \subsubsection{Classe \cls{CollapsableTips}}
 Contiene il codice necessario a creare il dato elemento grafico.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{Footer}}
 Contiene il codice necessario a creare il footer, che è costante su tutte le pagine del sito.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{Pagination}}
 Contiene il codice necessario a gestire il sistema di paginazione.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ProgressBar}}
 Contiene il codice necessario a creare la barra di progresso.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: Shared:: Header}}
 Contiene i template per caricare header e breadcrumb delle pagine a seconda della posizione e del ruolo dell'utente.
 \begin{figure}[H]
@@ -1668,28 +1658,16 @@ Contiene i template per caricare header e breadcrumb delle pagine a seconda dell
 \end{figure}
 \subsubsection{Classe \cls{Breadcrumbs}}
 Contiene il codice necessario a creare il breadcrumb.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{HeaderLogged}}
 Carica lo header che verrà visualizzato dall'utente registrato.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{HeaderLoggedDirector}}
 Carica lo header che verrà visualizzato dal responsabile.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{HeaderLoggedStudent}}
 Carica lo header che verrà visualizzato dallo studente.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{HeaderLoggedTeacher}}
 Carica lo header che verrà visualizzato dall'insegnante.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{HeaderNotLogged}}
 Carica lo header che verrà visualizzato da un visitatore non registrato.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: Shared:: Homepage}}
 Contiene le pagine necessarie alla creazione della homepage e delle parti che possono variare a seconda del tipo di utente che la visita.
 \begin{figure}[H]
@@ -1699,20 +1677,12 @@ Contiene le pagine necessarie alla creazione della homepage e delle parti che po
 \end{figure}
 \subsubsection{Classe \cls{HomepageDirector}}
 Carica la homepage che verrà visualizzata dal responsabile.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{HomepageGeneric}}
 Carica la homepage che verrà visualizzata da un visitatore generico.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{HomepageStudent}}
 Carica la homepage che verrà visualizzata dallo studente.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{HomepageTeacher}}
 Carica la homepage che verrà visualizzata dal docente.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewOrgManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le classi e gli enti presenti in Quizzipedia.
 \begin{figure}[H]
@@ -1722,12 +1692,8 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \end{figure}
 \subsubsection{Classe \cls{ViewClassMembers}}
 La classe si occupa di presentare una lista degli utenti iscritti alla classe e altre informazioni aggiuntive.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewModifyOrg}}
 Presenta all'utente la pagina da cui sarà possibile modificare le informazioni su una classe o su un ente esistente.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewQuestionManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire le domande.
 \begin{figure}[H]
@@ -1737,32 +1703,18 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \end{figure}
 \subsubsection{Classe \cls{CreateCompletionQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda a completamento.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{CreateGenericQ}}
 Presenta la pagina da cui è possibile creare una nuova domanda, inserendo le informazioni comuni a tutte le domande. Poi si potrà selezionare il tipo di domanda desiderato.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{CreateMatchingQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda a collegamenti.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{CreateMultipleChoiceQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda a scelta multipla.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{CreateShortAnswerQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda aperta.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{CreateTrueFalseQ}}
 Presenta la pagina da cui sarà possibile creare una nuova domanda di tipo vero/falso.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{QuestionMgmt}}
 Presenta all'utente il pannello da cui sarà possibile creare una nuova domanda e visualizzare una lista di informazioni riassuntive sulle domande già create, con possibilità di modifica e rimozione.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewQuizManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire i quiz.
 \begin{figure}[H]
@@ -1772,16 +1724,10 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \end{figure}
 \subsubsection{Classe \cls{ViewCreateQuiz}}
 Presenta la pagina da cui sarà possibile creare un nuovo quiz.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewEditQuiz}}
 Presenta all'utente una pagina da cui è possibile modificare nel dettaglio un quiz esistente, intervenendo sulle domande che lo compongono.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewQuizMgmt}}
 Carica una pagina contenente una lista con informazioni riassuntive sui quiz e un pannello da cui sarà possibile svolgere operazioni di modifica e rimozione. Da qui è inoltre possibile creare nuovi quiz.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewQuizSolver}}
 Il componente raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile svolgere quiz.
 \begin{figure}[H]
@@ -1791,8 +1737,6 @@ Il componente raccoglie le classi necessarie alla visualizzazione delle pagine d
 \end{figure}
 \subsubsection{Classe \cls{ViewQuizExec}}
 Pagina da cui sarà possibile svolgere un quiz. Verranno caricate le domande che lo compongono fino al risultato finale.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewQuizSolver:: ViewQuestionSolver}}
 Il componente raccoglie le classi necessarie alla visualizzazione delle pagine da cui sarà possibile rispondere alle singole domande.
 \begin{figure}[H]
@@ -1802,24 +1746,14 @@ Il componente raccoglie le classi necessarie alla visualizzazione delle pagine d
 \end{figure}
 \subsubsection{Classe \cls{ViewCompletionQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a completamento.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewMatchingQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a collegamenti.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewMultipleChoiceQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a risposta multipla.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewShortAnswerQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda a risposta aperta.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewTrueFalseQ}}
 Presenta all'utente la pagina da cui sarà possibile rispondere a una domanda di tipo vero/falso.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewRequests}}
 Qui sono raccolte le pagine che permettono all'utente di inviare e gestire le richieste di ruolo e classe.
 \begin{figure}[H]
@@ -1829,12 +1763,8 @@ Qui sono raccolte le pagine che permettono all'utente di inviare e gestire le ri
 \end{figure}
 \subsubsection{Classe \cls{SendRequests}}
 È la pagina da cui l'utente potrà richiedere di entrare in una classe o che gli venga assegnato un ruolo in un ente.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewPendingRequests}}
 Visualizza il pannello da cui sarà possibile gestire le richieste di inserimento in una classe e le richieste di assegnazione di ruolo pendenti.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewSearch}}
 Il componente contiene le classi responsabili della creazione delle pagine da cui sarà possibile ricercare domande, quiz, istituti e classi all'interno degli enti.
 \begin{figure}[H]
@@ -1844,16 +1774,10 @@ Il componente contiene le classi responsabili della creazione delle pagine da cu
 \end{figure}
 \subsubsection{Classe \cls{ViewSearchClass}}
 La classe carica la pagina da cui sarà possibile ricercare enti e classi all'interno di un ente.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewSearchQuestions}}
 Classe che ha il compito di caricare la pagina da cui sarà possibile effettuare la ricerca di domande.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewSearchQuiz}}
 Raccoglie i metodi necessari alla creazione della pagina da cui sarà possibile cercare un quiz.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewStatistics}}
 Componente che gestisce le pagine in cui verranno visualizzate le statistiche richieste dall'utente.
 \begin{figure}[H]
@@ -1863,24 +1787,14 @@ Componente che gestisce le pagine in cui verranno visualizzate le statistiche ri
 \end{figure}
 \subsubsection{Classe \cls{ViewQuestionStats}}
 Vengono rappresentate le statistiche generali relative alle domande.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewQuizResults}}
 Da qui è possibile vedere la lista di studenti che hanno risolto un quiz e il risultato ottenuto.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewQuizStats}}
 Vengono rappresentate le statistiche generali riguardanti i quiz.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewStudentsStats}}
 Vengono rappresentate le statistiche relative a una singola classe in relazione a un particolare quiz.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{ViewTeachersStats}}
 Vengono rappresentate le statistiche riguardo i quiz e le domande create dai docenti.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewTopicManager}}
 Qui sono raccolte le classi responsabili della presentazione delle pagine da cui sarà possibile gestire gli argomenti di domande e quiz.
 \begin{figure}[H]
@@ -1890,8 +1804,6 @@ Qui sono raccolte le classi responsabili della presentazione delle pagine da cui
 \end{figure}
 \subsubsection{Classe \cls{ViewTopicsManager}}
 È la pagina da cui sarà possibile vedere la lista degli argomenti disponibili. Da qui sarà inoltre possibile creare nuovi argomenti o cancellare quelli già inseriti.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient:: ViewUsers}}
 Raccoglie le classi necessarie a presentare all'utente le pagine da cui visualizzare le informazioni che lo riguardano e compiere le funzioni principali.
 \begin{figure}[H]
@@ -1901,44 +1813,24 @@ Raccoglie le classi necessarie a presentare all'utente le pagine da cui visualiz
 \end{figure}
 \subsubsection{Classe \cls{ChangePw}}
 Da qui, grazie ai metodi della classe, l'utente potrà modificare la propria password.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{Login}}
 Presenta la pagina necessaria per effettuare il login nel sistema.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{PrivateQuizList}}
 pagina da cui l'utente potrà vedere la lista dei quiz privati e selezionare quali fare.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{Profile}}
 La classe presenta all'utente la pagina da cui prendere visione delle proprie informazioni personali.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{QuizHistory}}
 pagina da cui l'utente potrà vedere lo storico dei quiz da lui svolti e i relativi risultati.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{QuizHistorySingleResult}}
 pagina da cui l'utente potrà vedere nel dettaglio le risposte da lui date in un quiz selezionato dallo storico.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{RecoveryPw}}
 Da questa pagina sarà possibile inserire i dati per il recupero della password.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{Registration}}
 Presenta la pagina da cui effettuare la  registrazione al sistema.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{RemoveUser}}
 Pagina da cui sarà possibile selezionare utenti da rimuovere dal sistema.
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{SelectInst}}
 pagina da cui l'utente, una volta autenticato, potrà selezionare l'ente a cui vuole accedere. Potrà scegliere tra quelli a cui è già iscritto, oppure scegliere di entrare in uno nuovo. Volendo, può anche proseguire come utente generico.
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient}}
 Raccoglie le classi responsabili della comunicazione tra il model e la view. Ha inoltre il compito di comunicare con il server per elaborare le richieste svolte dall'utente.
 Con Angular.js il controller permette di tenere sempre aggiornato facilmente il model con le modifiche fatte nella view da parte dell'utente.
@@ -1977,8 +1869,6 @@ Questa classe permette di creare e gestire dinamicamente la paginazione quando v
 \noindent\makebox[\textwidth]{\includegraphics[scale=0.75]{Img/quizzipedia-client-viewmodelclient-ctrlorganization-ctrlpagination.pdf}}
 \caption[Schema Classe CtrlPagination]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlOrganization:: CtrlPagination}
 \end{figure}
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{MyClass}}
 La sua istanziazione avviene nella variabile \$scope di Angular e permette di comunicare con la view. Questa classe permette di creare, eliminare, modificare oppure gestire una classe, relativa ad un ente, presente all'interno del sistema.
 Sono presenti i metodi necessari all'inserimento e alla rimozione di uno studente o un docente da una classe, oltre ai metodi necessari alla creazione, eliminazione e modifica di una classe.
@@ -2012,8 +1902,6 @@ Si occupa delle comunicazioni necessarie per la gestione delle richieste di inse
 \noindent\makebox[\textwidth]{\includegraphics[scale=0.75]{Img/quizzipedia-client-viewmodelclient-ctrlrequests-ctrlrequestclass.pdf}}
 \caption[Schema Classe CtrlRequestClass]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlRequests:: CtrlRequestClass}
 \end{figure}
-\begin{itemize}
-\end{itemize}
 \subsubsection{Classe \cls{CtrlRequestRole}}
 Si occupa delle comunicazioni necessarie per la gestione delle richieste di ruolo.
 \begin{figure}[H]
@@ -2021,8 +1909,6 @@ Si occupa delle comunicazioni necessarie per la gestione delle richieste di ruol
 \noindent\makebox[\textwidth]{\includegraphics[scale=0.75]{Img/quizzipedia-client-viewmodelclient-ctrlrequests-ctrlrequestrole.pdf}}
 \caption[Schema Classe CtrlRequestRole]{Schema Classe Quizzipedia:: Client:: ViewModelClient:: CtrlRequests:: CtrlRequestRole}
 \end{figure}
-\begin{itemize}
-\end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewModelClient:: CtrlServices}}
 Raccoglie gli elementi necessari alla creazione, svolgimento e ricerca di quiz e domande.
 \begin{figure}[H]
