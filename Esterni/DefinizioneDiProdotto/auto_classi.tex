@@ -832,7 +832,7 @@ l'utente che sta rispondendo alla domanda
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{<<abstract>>check () : bool}
+\item \method{\<\<abstract\>\>check () : bool}
 \newline
 il metodo è astratto e verrà concretizzato nelle sottoclassi. Serve a verificare la correttezza della risposta data per le varie tipologie di domande
 \newline
@@ -2288,7 +2288,7 @@ carica le informazioni sul docente che sta creando il quiz
 \newline
 carica gli argomenti disponibili. Il docente ne assegnerà uno al quiz
 \newline
-\item \method{save (quiz : $scope) : void}
+\item \method{save (quiz : \$scope) : void}
 \newline
 invia il quiz completo al server perché lo salvi nel database
 \newline
@@ -2466,7 +2466,7 @@ carica il docente che sta effettuando la ricerca
 \newline
 carica la lista di argomenti che il docente può utilizzare per aiutarsi nella ricerca della domanda che desidera
 \newline
-\item \method{searchQuestion (question : $scope) : void}
+\item \method{searchQuestion (question : \$scope) : void}
 \newline
 ricerca la domanda utilizzando i parametri immessi dall'utente
 \newline
@@ -2518,7 +2518,7 @@ fornisce all'utente la lista dei possibili argomenti tra cui scegliere per la ri
 \newline
 carica l'utente che sta effettuando la ricerca
 \newline
-\item \method{searchQuiz (search : $scope) : void}
+\item \method{searchQuiz (search : \$scope) : void}
 \newline
 invia al server le informazioni necessarie per compiere la ricerca nel database
 \newline
@@ -3224,7 +3224,7 @@ contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{sendRegistration (user : $scope) : void}
+\item \method{sendRegistration (user : \$scope) : void}
 \newline
 invia al server le informazioni necessarie per portare a termine la registrazione dell'utente
 \newline
@@ -4148,7 +4148,7 @@ l'utente che sta rispondendo alla domanda
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{<<abstract>>check () : bool}
+\item \method{\<\<abstract\>\>check () : bool}
 \newline
 il metodo è astratto e verrà concretizzato nelle sottoclassi. Serve a verificare la correttezza della risposta data per le varie tipologie di domande
 \newline
@@ -6167,7 +6167,7 @@ Classe astratta supertipo delle altre classi del pacchetto.
 \begin{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{<<abstract>> forwardTo (bundle : JSON) : void}
+\item \method{\<\<abstract\>\> forwardTo (bundle : JSON) : void}
 \newline
 metodo astratto usato per il reindirizzamento
 \newline
@@ -6177,7 +6177,7 @@ Parametri :
 \newline
 contenitore dei dati provenienti da chiamate REST del client
 \end{itemize}
-\item \method{<<abstract>> forwardTo (bundle : JSON) : JSON}
+\item \method{\<\<abstract\>\> forwardTo (bundle : JSON) : JSON}
 \newline
 metodo astratto usato per il reindirizzamento
 \newline
@@ -6187,11 +6187,11 @@ Parametri :
 \newline
 contenitore dei dati provenienti da chiamate REST del client
 \end{itemize}
-\item \method{<<abstract>> forwardTo () : JSON}
+\item \method{\<\<abstract\>\> forwardTo () : JSON}
 \newline
 metodo astratto usato per il reindirizzamento
 \newline
-\item \method{<<abstract>> forwardTo () : void}
+\item \method{\<\<abstract\>\> forwardTo () : void}
 \newline
 metodo astratto usato per il reindirizzamento
 \newline
