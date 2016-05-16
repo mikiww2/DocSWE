@@ -2188,7 +2188,7 @@ Sono presenti pertanto i metodi necessari a svolgere tali scopi e per eseguire i
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
-contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyClass
+contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo \$scope istanzia un oggetto MyClass
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlPagination}}
@@ -2263,7 +2263,7 @@ Raccoglie i metodi necessari alle comunicazioni tra view e model richieste per l
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
-contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyQuiz
+contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo \$scope istanzia un oggetto MyQuiz
 \item \attribute{classes : Classes[]}
 \newline
 le classi presenti nell'ente. Il docente può scegliere a quali assegnare il quiz, oppure lasciarlo pubblico
@@ -2296,7 +2296,7 @@ Parametri :
 \begin{itemize}
 \item \attribute{quiz : $scope}
 \newline
-lo $scope contiene l'oggetto che raccoglie le informazioni necessarie a salvare il quiz
+lo \$scope contiene l'oggetto che raccoglie le informazioni necessarie a salvare il quiz
 \end{itemize}
 \end{itemize}
 \end{itemize}
@@ -2438,7 +2438,7 @@ la classe fornisce i metodi necessari alla ricerca di domande nella fase di crea
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
-contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MySearchQuestion
+contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo \$scope istanzia un oggetto MySearchQuestion
 \item \attribute{keywords : String[]}
 \newline
 la lista delle parole chiave che l'utente può usare per facilitare la ricerca
@@ -2474,7 +2474,7 @@ Parametri :
 \begin{itemize}
 \item \attribute{question : $scope}
 \newline
-nello $scope è inizializzato l'oggetto MySearchQuestion, contenente i parametri di ricerca richiesti dall'utente
+nello \$scope è inizializzato l'oggetto MySearchQuestion, contenente i parametri di ricerca richiesti dall'utente
 \end{itemize}
 \end{itemize}
 \end{itemize}
@@ -2490,7 +2490,7 @@ La classe contiene i metodi necessari alla comunicazione tra model e view nell'e
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
-contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MySearchQuiz
+contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo \$scope istanzia un oggetto MySearchQuiz
 \item \attribute{keywords : String[]}
 \newline
 Le possibili keyword che l'utente può scegliere quando effettua la ricerca
@@ -2526,7 +2526,7 @@ Parametri :
 \begin{itemize}
 \item \attribute{search : $scope}
 \newline
-nello $scope è inizializzato l'oggetto MySearchQuiz contenente i parametri di ricerca richiesti dall'utente
+nello \$scope è inizializzato l'oggetto MySearchQuiz contenente i parametri di ricerca richiesti dall'utente
 \end{itemize}
 \end{itemize}
 \end{itemize}
@@ -2542,10 +2542,10 @@ Fornisce i metodi necessari alle comunicazioni richieste per la gestione degli a
 \begin{itemize}
 \item \attribute{topicName : string}
 \newline
-indica il singolo argomento su cui si desiderano apportare modifiche. Questo campo dati viene definito nello $scope
+indica il singolo argomento su cui si desiderano apportare modifiche. Questo campo dati viene definito nello \$scope
 \item \attribute{topicsList : string[]}
 \newline
-la lista di argomenti esistenti, viene definito nello $scope
+la lista di argomenti esistenti, viene definito nello \$scope
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
@@ -2561,7 +2561,7 @@ Parametri :
 \end{itemize}
 \item \method{loadTopics () : void}
 \newline
-effettua una richiesta al server che mi ritorna un array di topics che verrà poi assegnato allo $scope topicsList
+effettua una richiesta al server che mi ritorna un array di topics che verrà poi assegnato allo \$scope topicsList
 \newline
 \item \method{removeTopic (indexOfTopic : int) : void}
 \newline
@@ -2710,7 +2710,7 @@ Si occupa di gestire la creazione delle domande da parte dell'utente, raccoglien
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
-contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyGenericQ
+contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo \$scope istanzia un oggetto MyGenericQ
 \item \attribute{topics : Topics}
 \newline
 è la lista di possibili argomenti disponibili da assegnare al quiz
@@ -3036,7 +3036,7 @@ Si occupa di ottenere i dati necessari all'utente per visualizzare le statistich
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
-contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyStudentsStats
+contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo \$scope istanzia un oggetto MyStudentsStats
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
@@ -3050,7 +3050,7 @@ carica i quiz disponibili per la classe selezionata
 \newline
 \item \method{loadStudentsStatsQuiz () : void}
 \newline
-richiede al server le statistiche relative al quiz selezionato e aggiorna lo $scope
+richiede al server le statistiche relative al quiz selezionato e aggiorna lo \$scope
 \newline
 \end{itemize}
 \end{itemize}
@@ -3158,7 +3158,7 @@ Gestisce la comunicazione necessaria per l'autenticazione dell'utente in fase di
 \begin{itemize}
 \item \attribute{email : string}
 \newline
-la mail introdotta dall'utente per effettuare il login. Questo campo dati viene definito nello $scope
+la mail introdotta dall'utente per effettuare il login. Questo campo dati viene definito nello \$scope
 \item \attribute{password : string}
 \newline
 la password introdotta dall'utente per il login
@@ -3192,7 +3192,7 @@ La classe gestisce il recupero della password in caso di smarrimento.
 \begin{itemize}
 \item \attribute{email : string}
 \newline
-è l'email a cui la nuova password verrà mandata in caso di smarrimento della precedente.Questo campo dati viene definito nello $scope
+è l'email a cui la nuova password verrà mandata in caso di smarrimento della precedente.Questo campo dati viene definito nello \$scope
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
@@ -3220,7 +3220,7 @@ Si occupa di registrare un nuovo utente nel sistema. Per fare ciò utilizza l'og
 \begin{itemize}
 \item \attribute{$scope : $scope}
 \newline
-contiene un riferimento all'oggetto $scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo $scope istanzia un oggetto MyUser e serve per gestire i dati inseriti dall'utente durante la fase di registrazione
+contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato per la comunicazione tra la view e il controller. Questo \$scope istanzia un oggetto MyUser e serve per gestire i dati inseriti dall'utente durante la fase di registrazione
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
@@ -3232,7 +3232,7 @@ Parametri :
 \begin{itemize}
 \item \attribute{user : $scope}
 \newline
-utilizza l'oggetto MyUser definito nello $scope e invia al server le informazioni necessarie per memorizzare l'utente
+utilizza l'oggetto MyUser definito nello \$scope e invia al server le informazioni necessarie per memorizzare l'utente
 \end{itemize}
 \end{itemize}
 \end{itemize}
@@ -3248,16 +3248,16 @@ La classe, tramite variabili definite nello $scope, permette agli utenti di gest
 \begin{itemize}
 \item \attribute{cNewPsw : string}
 \newline
-l'utente deve confermare la nuova password. Poi si verificherà che la nuova password coincida.Questo campo dati viene definito nello $scope
+l'utente deve confermare la nuova password. Poi si verificherà che la nuova password coincida.Questo campo dati viene definito nello \$scope
 \item \attribute{newPsw : string}
 \newline
-la nuova password dell'utente. Questo campo dati viene definito nello $scope
+la nuova password dell'utente. Questo campo dati viene definito nello \$scope
 \item \attribute{oldPsw : string}
 \newline
-per potere modificare la password, l'utente deve prima inserire la vecchia.Questo campo dati viene definito nello $scope
+per potere modificare la password, l'utente deve prima inserire la vecchia.Questo campo dati viene definito nello \$scope
 \item \attribute{user : User}
 \newline
-è l'utente che intende modificare le proprie informazioni.Questo campo dati viene definito nello $scope
+è l'utente che intende modificare le proprie informazioni.Questo campo dati viene definito nello \$scope
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
