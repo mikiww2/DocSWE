@@ -428,15 +428,15 @@ ROF14.4 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RemoveUser \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Users:: Director \\
 \rowcolor{D}
-ROF14.4.1 & Quizzipedia:: Client:: ModelClient:: Users:: Director \\
+ROF14.4.1 & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RemoveUser \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewUsers:: RemoveUser \\
+ & Quizzipedia:: Client:: ModelClient:: Users:: Director \\
 \rowcolor{D}
  & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: AccountDeleter \\
 \rowcolor{P}
 ROF15 & Quizzipedia:: Client:: ModelClient:: Users:: Teacher \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateMatchingQ \\
+ & Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateShortAnswerQ \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateGenericQ \\
 \rowcolor{P}
@@ -448,7 +448,7 @@ ROF15 & Quizzipedia:: Client:: ModelClient:: Users:: Teacher \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ViewClient:: ViewQuizManager:: ViewCreateQuiz \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateShortAnswerQ \\
+ & Quizzipedia:: Client:: ViewClient:: ViewQuestionManager:: CreateMatchingQ \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Services:: Quiz \\
 \rowcolor{P}
@@ -560,11 +560,11 @@ ROF17.4.1 & Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RoleAcce
 \rowcolor{P}
 ROF17.4.2 & Quizzipedia:: Server:: ControllerServer:: RequestsManager:: RoleAccepter \\
 \rowcolor{D}
-ROF18 & Quizzipedia:: Client:: ModelClient:: Users:: Director \\
+ROF18 & Quizzipedia:: Client:: ViewClient:: ViewTopicManager:: ViewTopicsManager \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlTopics \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewTopicManager:: ViewTopicsManager \\
+ & Quizzipedia:: Client:: ModelClient:: Users:: Director \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ModelClient:: Services:: Topics \\
 \rowcolor{P}
@@ -590,23 +590,23 @@ ROF19.2 & Quizzipedia:: Server:: ControllerServer:: InstitutionManager:: Institu
 \rowcolor{D}
 ROF20 & Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewTeachersStats \\
 \rowcolor{D}
+ & Quizzipedia:: Client:: ModelClient:: Users:: Teacher \\
+\rowcolor{D}
  & Quizzipedia:: Client:: ModelClient:: Statistics:: StudentsStatisticsQuiz \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ModelClient:: Statistics:: QuizStatistics \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ModelClient:: Statistics:: QuestionStatistics \\
 \rowcolor{D}
- & Quizzipedia:: Client:: ModelClient:: Users:: Teacher \\
-\rowcolor{D}
  & Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewQuestionStats \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlQuestionStatistics \\
-\rowcolor{D}
- & Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewStudentsStats \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewQuizStats \\
 \rowcolor{D}
  & Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlQuizStatistics \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ViewModelClient:: CtrlStatistics:: CtrlQuestionStatistics \\
+\rowcolor{D}
+ & Quizzipedia:: Client:: ViewClient:: ViewStatistics:: ViewStudentsStats \\
 \rowcolor{P}
 ROF20.1 & Quizzipedia:: Server:: ControllerServer:: StatisticsManager:: QuizStatisticsFetcher \\
 \rowcolor{D}
@@ -652,19 +652,23 @@ ROF21.6.3 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: InClassAdde
 \rowcolor{D}
 ROF21.6.4 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: FromClassRemover \\
 \rowcolor{P}
-ROF31 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: GenericQuestion \\
+ROF31 & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: MultipleChoiceQ \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: ShortAnswerQ \\
 \rowcolor{P}
- & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: MultipleChoiceQ \\
+ & Quizzipedia:: Client:: ModelClient:: Services:: Topics \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: MatchingQ \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerTrueFalseQ \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: Cell \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: Column \\
 \rowcolor{P}
  & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: CompletionQ \\
+\rowcolor{P}
+ & Quizzipedia:: Client:: ModelClient:: Services:: Questions:: GenericQuestion \\
 \rowcolor{D}
 ROF31.1 & Quizzipedia:: Server:: ControllerServer:: QuestionsManager:: QuestionCreator \\
 \rowcolor{P}

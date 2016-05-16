@@ -52,16 +52,13 @@ le mail dei docenti associati alla classe
 \item \method{addStudent () : void}
 \newline
 permette di aggiungere uno studente alla classe
-\newline
 \item \method{addTeacher () : void}
 \newline
 permette di aggiungere un docente alla classe
-\newline
 \item \method{edit (newDescription : String, newName : String, newYear : String) : void}
 \newline
 permette
 di modificare le informazioni base della classe
-\newline
 \begin{itemize}
 \item \attribute{newDescription : String}
 \newline
@@ -76,28 +73,22 @@ il nuovo anno della classe
 \item \method{getAcademicYear () : String}
 \newline
 restituisce l'anno accademico della classe
-\newline
 \item \method{getDescription () : String}
 \newline
 restituisce la descrizione della classe
-\newline
 \item \method{getName () : String}
 \newline
 restituisce il nome della classe
-\newline
 \item \method{getStudents () : String[]}
 \newline
 restituisce le mail degli studenti della classe
-\newline
 \item \method{getTeachers () : String[]}
 \newline
 restituisce le mail dei docenti della classe
-\newline
 \item \method{removeStudent (studentMail : String) : void}
 \newline
 permette di rimuovere uno studente dalla
 classe
-\newline
 \begin{itemize}
 \item \attribute{studentMail : String}
 \newline
@@ -107,7 +98,6 @@ mail dello studente da rimuovere
 \newline
 permette di rimuovere un docente dalla
 classe
-\newline
 \begin{itemize}
 \item \attribute{teacherMail : String}
 \newline
@@ -158,7 +148,6 @@ i topic dell'istituto
 \item \method{acceptClassRequest (indexOfRequest : int) : void}
 \newline
 permette di accettare una richiesta di ingresso ad una classe
-\newline
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -167,7 +156,6 @@ la posizione della richiesta di ingresso ad una classe da accettare
 \item \method{acceptRequestRole (role : String) : void}
 \newline
 permette di accettare una richiesta di ingresso ad un ruolo dell'istituto
-\newline
 \begin{itemize}
 \item \attribute{role : String}
 \newline
@@ -176,7 +164,6 @@ l'utente da accettare nell'istituto
 \item \method{addClass  (objectClass : Class) : void}
 \newline
 Permette l'aggiunta di una classe all'interno di un istituto
-\newline
 \begin{itemize}
 \item \attribute{objectClass : Class}
 \newline
@@ -185,39 +172,30 @@ viene passata al metodo la classe da inserire
 \item \method{getClass () : Class[]}
 \newline
 permette di recuperare le classi facenti parte dell'istituto
-\newline
 \item \method{getCLassList () : ClassList}
 \newline
 permette di recuperare la lista delle richieste di entrata alle classi
-\newline
 \item \method{getDirector () : Director}
 \newline
 permette di recuperare il direttore dell'istituto
-\newline
 \item \method{getName () : String}
 \newline
 permette di recuperare il nome dell'istituto
-\newline
 \item \method{getRoleList () : RoleList}
 \newline
 permette di recuperare le richieste di ingresso all'istituto con un appropriato ruolo
-\newline
 \item \method{getStudents () : String[]}
 \newline
 permette di recuperare gli studenti abilitati nell'istituto
-\newline
 \item \method{getTeachers () : String[]}
 \newline
 permette di recuperare gli insegnanti abilitati nell'istituto
-\newline
 \item \method{getTopics () : Topics}
 \newline
 permette di recuperare i topics dell'istituto
-\newline
 \item \method{removeClass (indexOfClass : int) : void}
 \newline
 rimuove una classe da un istituto
-\newline
 \begin{itemize}
 \item \attribute{indexOfClass : int}
 \newline
@@ -226,7 +204,6 @@ l'indice della classe da rimuovere dalle classi presenti nell'ente
 \item \method{removeClassRequest (indexOfRequest : int) : void}
 \newline
 permette di rimuovere una richiesta di ingresso ad una classe dell'istituto
-\newline
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -235,7 +212,6 @@ la posizione della richiesta da rimuovere
 \item \method{removeStudent (studentMail : String) : void}
 \newline
 rimuove uno studente dagli iscritti presso un istituto
-\newline
 \begin{itemize}
 \item \attribute{studentMail : String}
 \newline
@@ -244,7 +220,6 @@ lo studente da rimuovere dall'istituto
 \item \method{removeTeacher (teacherMail : String) : void}
 \newline
 rimuove un docente dagli iscritti presso un istituto
-\newline
 \begin{itemize}
 \item \attribute{teacherMail : String}
 \newline
@@ -253,7 +228,6 @@ l'insegnate da rimuovere dall'istituto
 \item \method{setDirector (objectDirector : Director) : void}
 \newline
 permette di modificare il direttore dell'istituto
-\newline
 \begin{itemize}
 \item \attribute{objectDirector : Director}
 \newline
@@ -262,7 +236,6 @@ il nuovo direttore dell'istituto
 \item \method{setName (newName : String) : void}
 \newline
 permette di modificare il nome dell'istituto
-\newline
 \begin{itemize}
 \item \attribute{newName : String}
 \newline
@@ -296,7 +269,6 @@ Questa classe gestisce le richieste da parte di docenti o studenti per l'assegna
 \item \method{acceptClassRequest (indexOfRequest : int) : void}
 \newline
 accetta la richiesta di entrata in una classe dell'utente
-\newline
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -305,7 +277,6 @@ accetta la richiesta di entrata in una classe dell'utente
 \item \method{addClassRequest (mail : String, nameClass : String, year : String) : void}
 \newline
 aggiunge una richiesta di entrata in una classe alla lista delle richieste pendenti
-\newline
 \begin{itemize}
 \item \attribute{mail : String}
 \newline
@@ -320,7 +291,6 @@ l'anno della classe per cui si sta effettuando la richiesta
 \item \method{removeClassRequest (indexOfRequest : int) : void}
 \newline
 rimuove una richiesta di entrata nella classe dalla lista delle richieste pendenti. Di fatto, comporta il rifiuto della richiesta
-\newline
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -350,7 +320,6 @@ la mail dell'utente che ha effettuato la richiesta
 \item \method{getMail () : String}
 \newline
 restituisce la mail dell'utente che ha effettuato la richiesta
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RequestRole}}
@@ -375,11 +344,9 @@ un messaggio che l'utente può includere alla sua richiesta di ruolo
 \item \method{getMail () : String}
 \newline
 restituisce la mail dell'utente che effettua la richiesta
-\newline
 \item \method{getMessage () : String}
 \newline
 restituisce il messaggio dell'utente che effettua la richiesta
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RoleList}}
@@ -404,15 +371,12 @@ memorizza la lista delle richieste degli utenti che hanno richiesto di diventare
 \item \method{acceptStudent () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\newline
 \item \method{acceptTeacher () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare docente
-\newline
 \item \method{addRoleList (mailUser : String, message : String, role : String) : void}
 \newline
 il metodo aggiunge una richiesta alla lista corretta delle richieste pendenti
-\newline
 \begin{itemize}
 \item \attribute{mailUser : String}
 \newline
@@ -427,11 +391,9 @@ il ruolo per cui l'utente ha fatto domanda
 \item \method{removeStudent () : void}
 \newline
 rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\newline
 \item \method{removeTeacher () : void}
 \newline
 rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\newline
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ModelClient:: Services}}
@@ -481,7 +443,6 @@ gli argomenti coperti dal quiz
 \item \method{addClass (class : Class) : void}
 \newline
 aggiunge una classe alla lista delle classi che hanno accesso al quiz
-\newline
 \begin{itemize}
 \item \attribute{class : Class}
 \newline
@@ -490,7 +451,6 @@ la classe che si intende aggiungere
 \item \method{addKeyword (keyword : String) : void}
 \newline
 aggiunge una parola chiave per identificare il quiz
-\newline
 \begin{itemize}
 \item \attribute{keyword : String}
 \newline
@@ -499,7 +459,6 @@ la parola chiave da aggiungere
 \item \method{addQuestion (question : GenericQuestion) : void}
 \newline
 aggiunge una domanda al quiz
-\newline
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -508,7 +467,6 @@ la domanda da aggiungere al quiz
 \item \method{addTopic (topic : String) : void}
 \newline
 aggiunge un argomento agli argomenti del quiz
-\newline
 \begin{itemize}
 \item \attribute{topic : String}
 \newline
@@ -517,15 +475,12 @@ l'argomento da aggiungere
 \item \method{createStatisticsQuiz () : QuizStatistics}
 \newline
 restituisce un oggetto contenente le statistiche generali del quiz
-\newline
 \item \method{createStatisticsStudents () : StudentsStatisticsQuiz}
 \newline
 ritorna un oggetto contenente le statistiche degli utenti che hanno risolto il quiz
-\newline
 \item \method{removeClass (indexOfClass : int) : void}
 \newline
 rimuove una classe da quelle che hanno accesso al quiz. Rimuovendo tutte le classi il quiz diventa pubblico
-\newline
 \begin{itemize}
 \item \attribute{indexOfClass : int}
 \newline
@@ -534,7 +489,6 @@ l'indice della classe da rimuovere
 \item \method{removeKeyword (indexOfKeyword : int) : void}
 \newline
 rimuove una parola chiave da quelle che identificano il quiz
-\newline
 \begin{itemize}
 \item \attribute{indexOfKeyword : int}
 \newline
@@ -543,7 +497,6 @@ l'indice della parola chiave da rimuovere
 \item \method{removeQuestion (indexOfQuestion : int) : void}
 \newline
 rimuove una domanda dal quiz
-\newline
 \begin{itemize}
 \item \attribute{indexOfQuestion : int}
 \newline
@@ -552,7 +505,6 @@ l'indice della domanda da rimuovere
 \item \method{removeTopic (indexOfTopic : int) : void}
 \newline
 rimuove un argomento da quelli che identificano il quiz
-\newline
 \begin{itemize}
 \item \attribute{indexOfTopic : int}
 \newline
@@ -561,7 +513,6 @@ l'indice della classe da rimuovere
 \item \method{setDescription (newDescr : String) : void}
 \newline
 imposta la descrizione del quiz
-\newline
 \begin{itemize}
 \item \attribute{newDescr : String}
 \newline
@@ -570,7 +521,6 @@ la nuova descrizione del quiz
 \item \method{setTitle (newTitle : String) : void}
 \newline
 imposta il titolo del quiz
-\newline
 \begin{itemize}
 \item \attribute{newTitle : String}
 \newline
@@ -597,7 +547,6 @@ la lista degli argomenti esistenti
 \item \method{addTopics (nameTopic : String) : void}
 \newline
 permette di aggiungere un nuovo argomento a quelli esistenti
-\newline
 \begin{itemize}
 \item \attribute{nameTopic : String}
 \newline
@@ -606,7 +555,6 @@ il nuovo argomento da aggiungere
 \item \method{removeTopic (indexTopic : int) : void}
 \newline
 permette di rimuovere un argomento da quelli esistenti
-\newline
 \begin{itemize}
 \item \attribute{indexTopic : int}
 \newline
@@ -640,7 +588,6 @@ le risposte date dall'utente in una colonna della domanda a collegamenti
 \item \method{addAnswer (answer : int) : void}
 \newline
 aggiunge la risposta data dall'utente in una colonna della domanda a collegamenti
-\newline
 \begin{itemize}
 \item \attribute{answer : int}
 \newline
@@ -649,15 +596,12 @@ il valore dato dall'utente a una casella della colonna della domanda a collegame
 \item \method{checkColumn () : bool}
 \newline
 verifica la correttezza di una colonna data la risposta a una domanda a collegamenti
-\newline
 \item \method{getGivenAnswerCell () : int[]}
 \newline
 restituisce le risposte date dall'utente in una colonna della domanda a collegamenti
-\newline
 \item \method{setGivenAnswerCell (answer : int[]) : void}
 \newline
 imposta, memorizzando correttamente, le risposte date dall'utente in una colonna della domanda a collegamenti
-\newline
 \begin{itemize}
 \item \attribute{answer : int[]}
 \newline
@@ -684,7 +628,6 @@ la risposta data dall'utente
 \item \method{addAnswer (answer : String) : void}
 \newline
 aggiunge una parola alla lista di parole che compongono la risposta alla domanda a completamento
-\newline
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -693,11 +636,9 @@ la parola da aggiungere alla lista che costituisce la risposta alla domanda a co
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a completamento
-\newline
 \item \method{getGivenAnswer () : String[]}
 \newline
 restituisce la risposta data dall'utente
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AnswerMatchingQ}}
@@ -719,15 +660,12 @@ le risposte data dall'utente per le varie colonne della domanda a collegamenti
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a collegamenti
-\newline
 \item \method{getGivenAnswerColumn () : AnswerColumn}
 \newline
 restituisce le risposte date dall'utente per una delle colonne della domanda a collegamenti
-\newline
 \item \method{setAnswer (answer : AnswerColumn) : void}
 \newline
 aggiunge una risposta dell'utente per le domande a collegamento
-\newline
 \begin{itemize}
 \item \attribute{answer : AnswerColumn}
 \newline
@@ -736,7 +674,6 @@ la risposta parziale dell'utente da aggiungere alla risposta della domanda a col
 \item \method{setGivenAnswerColumn (answer : AnswerColumn) : void}
 \newline
 imposta le risposte date dall'utente per una delle colonne della domanda a collegamenti
-\newline
 \begin{itemize}
 \item \attribute{answer : AnswerColumn}
 \newline
@@ -763,7 +700,6 @@ la risposta data dall'utente
 \item \method{addAnswer (answer : bool) : void}
 \newline
 aggiunge una scelta alla risposta data dal'utente
-\newline
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -772,11 +708,9 @@ una delle scelte fatte dall'utente per la risposta a scelta multipla
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a scelta multipla
-\newline
 \item \method{getGivenAnswer () : bool[]}
 \newline
 restituisce la risposta data dall'utente
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AnswerQuestion}}
@@ -801,15 +735,12 @@ l'utente che sta rispondendo alla domanda
 \item \method{\<\<abstract\>\>check () : bool}
 \newline
 il metodo è astratto e verrà concretizzato nelle sottoclassi. Serve a verificare la correttezza della risposta data per le varie tipologie di domande
-\newline
 \item \method{getQuestion () : GenricQuestion}
 \newline
 restituisce la domanda a cui corrisponde la risposta data
-\newline
 \item \method{setQuestion (question : GenericQuestion) : void}
 \newline
 imposta la domanda a cui si vuole dare risposta
-\newline
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -818,7 +749,6 @@ la domanda a cui si vuole dare risposta
 \item \method{setSolver (user : User) : void}
 \newline
 imposta l'utente che sta risolvendo la domanda
-\newline
 \begin{itemize}
 \item \attribute{user : User}
 \newline
@@ -851,7 +781,6 @@ la data di risoluzione del quiz
 \item \method{addAnswer (answer : AnswerQuestion) : void}
 \newline
 aggiunge la risposta a una delle domande del quiz alla lista delle risposte per il quiz corrente
-\newline
 \begin{itemize}
 \item \attribute{answer : AnswerQuestion}
 \newline
@@ -860,23 +789,18 @@ la risposta da aggiungere alla lista delle risposte del quiz
 \item \method{check () : bool}
 \newline
 verifica la correttezza del quiz, confrontando le risposte date dall'utente con quelle corrette
-\newline
 \item \method{getAnswerQuestion () : AnswerQuestion}
 \newline
 restituisce la lista delle risposte alle varie domande del quiz
-\newline
 \item \method{getDate () : Date}
 \newline
 restituisce la data in cui il quiz è stato risolto
-\newline
 \item \method{getQuiz () : Quiz}
 \newline
 restituisce il Quiz che l'utente sta risolvendo
-\newline
 \item \method{removeAnswer (indexOfAnswer : int) : void}
 \newline
 rimuove la risposta data dall'utente a una domanda dalla lista delle risposte alle domande del quiz corrente
-\newline
 \begin{itemize}
 \item \attribute{indexOfAnswer : int}
 \newline
@@ -885,7 +809,6 @@ l'indice della risposta da rimuovere dalla lista di risposte alle domande del qu
 \item \method{setDate (date : Date) : void}
 \newline
 imposta la data di risoluzione del quiz
-\newline
 \begin{itemize}
 \item \attribute{date : Date}
 \newline
@@ -894,7 +817,6 @@ la data di risoluzione del quiz
 \item \method{setQuiz (quiz : Quiz) : void}
 \newline
 imposta il quiz di cui a cui si riferisce la risposta
-\newline
 \begin{itemize}
 \item \attribute{quiz : Quiz}
 \newline
@@ -921,15 +843,12 @@ la risposta data dall'utente
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda aperta
-\newline
 \item \method{getGivenAnswer () : String}
 \newline
 restituisce la risposta dell'utente
-\newline
 \item \method{setAnswer () : void}
 \newline
 imposta la risposta data dall'utente
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AnswerTrueFalseQ}}
@@ -951,15 +870,12 @@ la risposta data dall'utente alla domanda di tipo vero/falso
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda di tipo vero/falso
-\newline
 \item \method{getGivenAnswer () : bool}
 \newline
 restituisce la risposta data dall'utente
-\newline
 \item \method{setAnswer () : void}
 \newline
 imposta la risposta data dall'utente
-\newline
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ModelClient:: Services:: Questions}}
@@ -994,19 +910,15 @@ il testo contenuto nella cella
 \item \method{getAttachment () : String}
 \newline
 permette di recuperare l'allegato della cella
-\newline
 \item \method{getPosition () : int}
 \newline
 permette di recuperare la posizione corretta della cella
-\newline
 \item \method{getText () : String}
 \newline
 permette di recuperare il testo della cella
-\newline
 \item \method{setAttachment (newAttachment : String) : void}
 \newline
 permette di sostituire l'allegato della cella
-\newline
 \begin{itemize}
 \item \attribute{newAttachment : String}
 \newline
@@ -1015,7 +927,6 @@ il nuovo allegato da inserire nella cella
 \item \method{setPosition (position : int) : void}
 \newline
 permette di modificare la posizione corretta della cella
-\newline
 \begin{itemize}
 \item \attribute{position : int}
 \newline
@@ -1024,7 +935,6 @@ la nuova posizione da dare alla cella
 \item \method{setText (newText : String) : void}
 \newline
 permette di modificare il testo della cella
-\newline
 \begin{itemize}
 \item \attribute{newText : String}
 \newline
@@ -1054,7 +964,6 @@ celle che compongono la colonna
 \item \method{addCell (attachment : String, position : int, text : String) : void}
 \newline
 permette di aggiungere una nuova cella alla colonna di celle
-\newline
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -1069,15 +978,12 @@ il testo della nuova cella da aggiungere
 \item \method{getCorrectAnswer () : int[]}
 \newline
 permette di recuperare l'ordine corretto delle celle della colonna
-\newline
 \item \method{getText () : Cell[]}
 \newline
 permette di recuperare le celle che compongono la colonna
-\newline
 \item \method{setCorrectAnswer (answer : int[]) : void}
 \newline
 permette di aggiornare il corretto ordinamento delle celle
-\newline
 \begin{itemize}
 \item \attribute{answer : int[]}
 \newline
@@ -1086,7 +992,6 @@ il corretto ordinamento delle celle della colonna
 \item \method{setText (newText : Cell[]) : void}
 \newline
 permette di rimpiazzare completamente tutte le celle con delle celle nuove
-\newline
 \begin{itemize}
 \item \attribute{newText : Cell[]}
 \newline
@@ -1119,7 +1024,6 @@ il testo della domanda CompletionQ
 \item \method{createAnswerQuestion (answer : String[]) : AnswerCompletionQ}
 \newline
 permette di creare una AnswerCompletionQ che rappresenta una CompletionQ risolta da un utente
-\newline
 \begin{itemize}
 \item \attribute{answer : String[]}
 \newline
@@ -1128,11 +1032,9 @@ le risposte dell'utente a questa domanda
 \item \method{getSuggestion () : String[]}
 \newline
 permette di recuperare i suggerimenti della domanda CompletionQ
-\newline
 \item \method{removeSuggestion (index : int) : void}
 \newline
 permette di rimuovere un suggerimento della domanda
-\newline
 \begin{itemize}
 \item \attribute{index : int}
 \newline
@@ -1141,7 +1043,6 @@ la posizione del suggerimento da rimuovere
 \item \method{setCorrectAnswer (correctAnswer : String[]) : void}
 \newline
 permette di aggiornare la risposta corretta della domanda CompletionQ
-\newline
 \begin{itemize}
 \item \attribute{correctAnswer : String[]}
 \newline
@@ -1150,7 +1051,6 @@ le nuove risposte corrette della domanda
 \item \method{setSuggestion (suggestions : String[]) : void}
 \newline
 permette di inserire dei suggerimenti alla domanda CompletionQ
-\newline
 \begin{itemize}
 \item \attribute{suggestions : String[]}
 \newline
@@ -1159,7 +1059,6 @@ i nuovi suggerimenti della domanda
 \item \method{setText (newText : String) : void}
 \newline
 permette di modificare il testo della domanda CompletionQ
-\newline
 \begin{itemize}
 \item \attribute{newText : String}
 \newline
@@ -1204,11 +1103,9 @@ il topic della domanda
 \item \method{createStatisticsQuestion () : QuestionStatistics}
 \newline
 permette di creare un QuestionStatistics con le statistiche della domanda
-\newline
 \item \method{setDescription (newDescription : String) : void}
 \newline
 permette la modifica della descrizione della domanda
-\newline
 \begin{itemize}
 \item \attribute{newDescription : String}
 \newline
@@ -1217,7 +1114,6 @@ la nuova descrizione della domanda
 \item \method{setDifficulty (difficulty : int) : void}
 \newline
 permette la modifica della difficoltà della domanda
-\newline
 \begin{itemize}
 \item \attribute{difficulty : int}
 \newline
@@ -1226,7 +1122,6 @@ la nuova difficoltà della domanda
 \item \method{setKeyword (keyword : String) : void}
 \newline
 permette di aggiungere una parola chiave alla domanda
-\newline
 \begin{itemize}
 \item \attribute{keyword : String}
 \newline
@@ -1235,7 +1130,6 @@ la nuova parola chiave della domanda
 \item \method{setQuestionAttachment (attachment : String) : void}
 \newline
 permette di aggiungere un allegato alla domanda
-\newline
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -1244,7 +1138,6 @@ il nuovo allegato della domanda
 \item \method{setTitle (newTitle : String) : void}
 \newline
 permette di modificare il titolo della domanda
-\newline
 \begin{itemize}
 \item \attribute{newTitle : String}
 \newline
@@ -1253,7 +1146,6 @@ il nuovo titolo della domanda
 \item \method{setTopic (newTopic : String) : void}
 \newline
 permette l'aggiunta di un topic alla domanda
-\newline
 \begin{itemize}
 \item \attribute{newTopic : String}
 \newline
@@ -1280,7 +1172,6 @@ le colonne della domanda
 \item \method{addColumn (newColumn : Column) : void}
 \newline
 permette di aggiungere una colonna alla domanda MatchingQ
-\newline
 \begin{itemize}
 \item \attribute{newColumn : Column}
 \newline
@@ -1289,7 +1180,6 @@ la nuova colonna della domanda
 \item \method{createAnswerQuestion (answerColumn : AnswerColumn[]) : AnswerMatchingQ}
 \newline
 permette il salvataggio delle risposte dell'utente, sotto forma di AnswerMatchingQ
-\newline
 \begin{itemize}
 \item \attribute{answerColumn : AnswerColumn[]}
 \newline
@@ -1298,11 +1188,9 @@ le AnswerColumn contenenti le risposte alla domanda
 \item \method{getColumns () : Column[]}
 \newline
 permette di ottenere tutte le colonne della domanda
-\newline
 \item \method{setColumns (newColumn : Column[]) : void}
 \newline
 permette di sostituire tutte le colonne della domanda MatchingQ con delle nuove colonne
-\newline
 \begin{itemize}
 \item \attribute{newColumn : Column[]}
 \newline
@@ -1335,7 +1223,6 @@ le soluzione della domanda
 \item \method{createAnswerQuestion (answer : bool[]) : AnswerMultipleChoicheQ}
 \newline
 permette di creare un AnswerMultipleChoicheQ con le risposte dell'utente
-\newline
 \begin{itemize}
 \item \attribute{answer : bool[]}
 \newline
@@ -1344,15 +1231,12 @@ le risposte dell'utente alla domanda
 \item \method{getAttachment () : String[]}
 \newline
 permette di recuperare gli allegati della domanda MultipleChoiceQ
-\newline
 \item \method{setAnswer () : void}
 \newline
 permette di modificare una risposta corretta della domanda MultipleChoiceQ
-\newline
 \item \method{setAttachment (attachment : String, position : int) : void}
 \newline
 permette di aggiungere un allegato alla domanda MultipleChoiceQ
-\newline
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -1364,7 +1248,6 @@ la posizione del nuovo allegato
 \item \method{setCorrectAnswer (correctAnswers : bool[]) : void}
 \newline
 permette di inserire le nuove risposte corrette alla domanda MultipleChoiceQ che sostituiranno le vecchie
-\newline
 \begin{itemize}
 \item \attribute{correctAnswers : bool[]}
 \newline
@@ -1391,7 +1274,6 @@ la risposta corretta della domanda ShortAnswerQ
 \item \method{createAnswerQuestion (answer : String) : AnswerShortAnswerQ}
 \newline
 permette di creare un AnswerShortAnswerQ con le risposte dell'utente
-\newline
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -1400,7 +1282,6 @@ la risposta alla domanda ShortAnswerQ dell'utente
 \item \method{setCorrectAnswer (newCorrectAnswer : String) : void}
 \newline
 permette di modificare la risposta corretta della domanda ShortAnswerQ
-\newline
 \begin{itemize}
 \item \attribute{newCorrectAnswer : String}
 \newline
@@ -1427,7 +1308,6 @@ la risposta corretta alla domanda TrueFalseQ
 \item \method{createAnswerQuestion (answer : bool) : AnswerTrueFalseQ}
 \newline
 permette di creare la AnswerTrueFalseQ che contiene la risposta dell'utente
-\newline
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -1436,7 +1316,6 @@ la risposta dell'utente alla domanda TrueFalseQ
 \item \method{setCorrectAnswer (answer : bool) : void}
 \newline
 permette di modificare la risposta corretta della domanda TrueFalseQ
-\newline
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -1473,11 +1352,9 @@ la percentuale di utenti che rispondono correttamente alla domanda
 \item \method{getQuizNumber () : int}
 \newline
 restituisce il numero di quiz in cui la domanda è presente
-\newline
 \item \method{getSuccessRate () : double}
 \newline
 restituisce la percentuale di utenti che risponde correttamente a questa domanda
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuizStatistics}}
@@ -1505,15 +1382,12 @@ il numero di volte che il quiz è stato svolto
 \item \method{getAverageResult () : double}
 \newline
 restituisce il risultato medio degli utenti che hanno già svolto il quiz
-\newline
 \item \method{getSuccessRate () : double}
 \newline
 restituisce la percentuale di utenti che ha risolto correttamente il quiz
-\newline
 \item \method{getTimesSolved () : int}
 \newline
 restituisce il numero di volte che un quiz è stato svolto
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{StudentsStatisticsQuiz}}
@@ -1538,11 +1412,9 @@ gli studenti che hanno svolto il quiz
 \item \method{getResults () : double[]}
 \newline
 restituisce la lista dei risultati degli studenti che hanno svolto il quiz
-\newline
 \item \method{getStudents () : Student[]}
 \newline
 ottiene la lista degli studenti che hanno svolto il quiz
-\newline
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ModelClient:: Users}}
@@ -1580,19 +1452,15 @@ contiene la password criptata dell'utente registrato
 \item \method{getFirstName () : String}
 \newline
 permette di recuperare il nome dell'utente registrato
-\newline
 \item \method{getLastName () : String}
 \newline
 permette di recuperare il cognome dell'utente registrato
-\newline
 \item \method{getMail () : String}
 \newline
 permette di recuperare la mail dell'utente registrato
-\newline
 \item \method{setPassword (newPsw : String, oldPsw : String) : void}
 \newline
 permette di modificare la password dell'account di un utente registrato
-\newline
 \begin{itemize}
 \item \attribute{newPsw : String}
 \newline
@@ -1631,7 +1499,6 @@ Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e 
 \item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
 \newline
 aggiunge un quiz svolto e le risposte date dall'utente allo storico dei quiz
-\newline
 \begin{itemize}
 \item \attribute{quiz : AnswerQuiz}
 \newline
@@ -1640,15 +1507,12 @@ la soluzione che si desidera aggiungere alla lista dei quiz già svolti
 \item \method{getQuizProfile () : AnswerQuiz}
 \newline
 restituisce la lista dei quiz svolti dall'utente e delle relative soluzioni
-\newline
 \item \method{loadProfileQuiz () : void}
 \newline
 carica e assegna a quizProfile la lista dei quiz già svolti dall'utente e dei loro esiti
-\newline
 \item \method{removeQuizFromProfile (indexOfQuiz : int) : void}
 \newline
 rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti da un utente
-\newline
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -1675,7 +1539,6 @@ lo storico dei quiz svolti con relativa soluzione
 \item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
 \newline
 aggiunge un quiz e la relativa soluzione allo storico dei quiz svolti
-\newline
 \begin{itemize}
 \item \attribute{quiz : AnswerQuiz}
 \newline
@@ -1684,15 +1547,12 @@ il quiz che si intende aggiungere allo storico
 \item \method{getQuizProfile () : AnswerQuiz[]}
 \newline
 restituisce lo storico dei quiz svolti dall'utente con relative soluzioni
-\newline
 \item \method{loadQuizProfile () : void}
 \newline
 carica lo storico dei quiz svolti dall'utente e dei loro esiti
-\newline
 \item \method{removeQuizFromProfile (indexOfQuiz : int) : void}
 \newline
 rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti
-\newline
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -1719,7 +1579,6 @@ la lista dei quiz creati dall'utente
 \item \method{addQuiz (newQuiz : Quiz) : void}
 \newline
 aggiunge un quiz alla lista dei quiz creati dal docente
-\newline
 \begin{itemize}
 \item \attribute{newQuiz : Quiz}
 \newline
@@ -1728,19 +1587,15 @@ il quiz che si intende aggiungere
 \item \method{getOwnQuiz () : Quiz[]}
 \newline
 restituisce la lista dei quiz creati dal docente
-\newline
 \item \method{getQuizStatistics () : QuizStatistics}
 \newline
 restituisce le statistiche generali del quiz richiesto
-\newline
 \item \method{getStudentsStatistics () : StudentsStatisticsQuiz}
 \newline
 restituisce le statistiche degli utenti che hanno risolto il quiz richiesto
-\newline
 \item \method{removeQuiz (indexOfQuiz : int) : void}
 \newline
 rimuove un quiz dalla lista di quiz creati dall'utente
-\newline
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -1767,11 +1622,9 @@ raccoglie le informazioni di base dell'utente, necessarie alla sua autenticazion
 \item \method{getAuthenticationData () : AuthenticationData}
 \newline
 restituisce i dati necessari all'autenticazione dell'utente
-\newline
 \item \method{getMail () : String}
 \newline
 restituisce la mail dell'utente, che è univoca
-\newline
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient}}
@@ -2205,19 +2058,15 @@ gli argomenti tra cui il docente può scegliere quello da assegnare al proprio q
 \item \method{loadClasses () : void}
 \newline
 carica le classi dell'istituto. Il docente potrà scegliere se assegnare il quiz a delle classi specifiche (rendendolo quindi privato) o lasciarlo pubblico
-\newline
 \item \method{loadTeacher () : void}
 \newline
 carica le informazioni sul docente che sta creando il quiz
-\newline
 \item \method{loadTopics () : void}
 \newline
 carica gli argomenti disponibili. Il docente ne assegnerà uno al quiz
-\newline
 \item \method{save (quiz : \$scope) : void}
 \newline
 invia il quiz completo al server perché lo salvi nel database
-\newline
 \begin{itemize}
 \item \attribute{quiz : \$scope}
 \newline
@@ -2253,15 +2102,12 @@ la domanda correntemente visualizzata dall'utente
 \item \method{loadQuestion () : void}
 \newline
 permette di spostarsi tra una domanda e l'altra durante lo svolgimento di quiz
-\newline
 \item \method{saveAnswer () : void}
 \newline
 memorizza la risposta data dall'utente a una domanda del quiz
-\newline
 \item \method{saveQuiz () : void}
 \newline
 salva il quiz concluso e avvia la procedura di correzione
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlQuizManager}}
@@ -2283,11 +2129,9 @@ il docente a cui appartengono i quiz da modificare o rimuovere
 \item \method{loadTeacher () : void}
 \newline
 carica il docente che ha creato i quiz
-\newline
 \item \method{modifyQuiz (quiz : Quiz) : void}
 \newline
 permette al docente di modificare uno dei quiz da lui creati
-\newline
 \begin{itemize}
 \item \attribute{quiz : Quiz}
 \newline
@@ -2296,7 +2140,6 @@ il quiz che si intende modificare
 \item \method{removeQuiz (indexOfQuiz : int) : void}
 \newline
 rimuove un quiz dalla lista dei quiz creati dal docente
-\newline
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -2332,11 +2175,9 @@ l'utente che sta effettuando la selezione di quiz
 \item \method{loadClasses () : void}
 \newline
 carica le classi a cui lo studente è iscritto per permettergli di scegliere quiz privati
-\newline
 \item \method{loadQuizList (classes : Class[]) : void}
 \newline
 carica tutti i quiz appartenenti alle classi a cui l'utente è iscritto
-\newline
 \begin{itemize}
 \item \attribute{classes : Class[]}
 \newline
@@ -2345,7 +2186,6 @@ le classi a cui l'utente è iscritto
 \item \method{loadUser () : void}
 \newline
 carica l'utente che sta effettuando la ricerca per svolgere un quiz
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlSearchQuestion}}
@@ -2379,19 +2219,15 @@ la lista degli argomenti che il docente può utilizzare per facilitare la ricerc
 \item \method{loadKeywords () : void}
 \newline
 carica le keyword possibili che il docente può utilizzare per facilitarsi nella ricerca
-\newline
 \item \method{loadTeacher () : void}
 \newline
 carica il docente che sta effettuando la ricerca
-\newline
 \item \method{loadTopics () : void}
 \newline
 carica la lista di argomenti che il docente può utilizzare per aiutarsi nella ricerca della domanda che desidera
-\newline
 \item \method{searchQuestion (question : \$scope) : void}
 \newline
 ricerca la domanda utilizzando i parametri immessi dall'utente
-\newline
 \begin{itemize}
 \item \attribute{question : \$scope}
 \newline
@@ -2430,19 +2266,15 @@ l'utente che sta effettuando la ricerca
 \item \method{loadKeywords () : void}
 \newline
 fornisce all'utente la lista delle possibili keyword tra cui scegliere
-\newline
 \item \method{loadTopics () : void}
 \newline
 fornisce all'utente la lista dei possibili argomenti tra cui scegliere per la ricerca
-\newline
 \item \method{loadUser () : void}
 \newline
 carica l'utente che sta effettuando la ricerca
-\newline
 \item \method{searchQuiz (search : \$scope) : void}
 \newline
 invia al server le informazioni necessarie per compiere la ricerca nel database
-\newline
 \begin{itemize}
 \item \attribute{search : \$scope}
 \newline
@@ -2472,7 +2304,6 @@ la lista di argomenti esistenti, viene definito nello \$scope
 \item \method{addTopic (name : string) : void}
 \newline
 viene aggiunto un argomento alla lista di quelli esistenti
-\newline
 \begin{itemize}
 \item \attribute{name : string}
 \newline
@@ -2481,11 +2312,9 @@ viene aggiunto un argomento alla lista di quelli esistenti
 \item \method{loadTopics () : void}
 \newline
 effettua una richiesta al server che mi ritorna un array di topics che verrà poi assegnato allo \$scope topicsList
-\newline
 \item \method{removeTopic (indexOfTopic : int) : void}
 \newline
 rimuove l'argomento specificato in locale e invia una richiesta al server
-\newline
 \begin{itemize}
 \item \attribute{indexOfTopic : int}
 \newline
@@ -2536,7 +2365,6 @@ l'argomento del quiz
 \item \method{addKeyword (keyword : String) : void}
 \newline
 aggiunge la parola chiave scelta dal docente al quiz
-\newline
 \begin{itemize}
 \item \attribute{keyword : String}
 \newline
@@ -2545,7 +2373,6 @@ la parola chiave che si vuole aggiungere come identificativo del quiz
 \item \method{addQuestion (quiz : Quiz) : void}
 \newline
 aggiunge una domanda al quiz creato dal docente
-\newline
 \begin{itemize}
 \item \attribute{quiz : Quiz}
 \newline
@@ -2636,7 +2463,6 @@ contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato
 \item \method{save () : void}
 \newline
 permette di salvare la domanda creata
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlQuestionManager}}
@@ -2661,15 +2487,12 @@ Fornisce i metodi necessari per la comunicazione tra view e model. Permette al d
 \item \method{loadQuestionList () : void}
 \newline
 carica le domande in una lista da cui è possibile vederne le informazioni principali, rimuoverle o modificarle
-\newline
 \item \method{loadTeacher () : void}
 \newline
 carica il docente che ha creato la domanda
-\newline
 \item \method{modifyQuestion (question : GenericQuestion) : void}
 \newline
 avvia la procedura da cui sarà possibile modificare la domanda
-\newline
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -2678,7 +2501,6 @@ la domanda che si intende modificare
 \item \method{removeQuestion (indexOfQuestion : int) : void}
 \newline
 rimuove la domanda selezionata
-\newline
 \begin{itemize}
 \item \attribute{indexOfQuestion : int}
 \newline
@@ -2711,7 +2533,6 @@ la lista dei completamenti sbagliati per la domanda creata
 \item \method{insertAnswer (text : String, check : bool) : void}
 \newline
 inserisce un completamento dell'utente nella lista delle possibili risposte, tenendo traccia anche della sua correttezza
-\newline
 \begin{itemize}
 \item \attribute{check : bool}
 \newline
@@ -2723,7 +2544,6 @@ il completamento da inserire
 \item \method{removeAnswer (text : String, check : bool) : void}
 \newline
 rimuove una delle opzioni possibili per la domanda a completamento
-\newline
 \begin{itemize}
 \item \attribute{check : bool}
 \newline
@@ -2789,7 +2609,6 @@ indica una parte della domanda a collegamenti, che andrà poi a comporre una ris
 \item \method{removeAnswer (answer : String) : void}
 \newline
 rimuove una possibile soluzione del quiz
-\newline
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -2798,7 +2617,6 @@ una parte da rimuovere dalla domanda a collegamenti
 \item \method{saveAnswer (answer : String) : void}
 \newline
 serve a memorizzare la corretta soluzione della domanda
-\newline
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -2828,7 +2646,6 @@ le opzioni che non corrispondono alla scelta corretta
 \item \method{insertAnswer (text : String, check : bool) : void}
 \newline
 inserisce un'opzione tra le possibili scelte della domanda, andando a memorizzare anche la sua correttezza
-\newline
 \begin{itemize}
 \item \attribute{check : bool}
 \newline
@@ -2840,7 +2657,6 @@ il testo o l'indirizzo dell'allegato che corrisponde a un'opzione della domanda
 \item \method{removeAnswer (text : String, check : bool) : void}
 \newline
 rimuove un'opzione dalla domanda
-\newline
 \begin{itemize}
 \item \attribute{check : bool}
 \newline
@@ -2907,7 +2723,6 @@ sono le statistiche generali relative alle domande richieste
 \item \method{loadQuestion () : void}
 \newline
 carica la domanda di cui si desidera ottenere le statistiche
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlQuizStatistics}}
@@ -2929,7 +2744,6 @@ Sono le statistiche generali per i quiz di cui si è fatta richiesta
 \item \method{loadQuiz () : void}
 \newline
 carica il quiz di cui si desidera conoscere le statistiche
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlStudentsQuizStats}}
@@ -2951,15 +2765,12 @@ contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato
 \item \method{loadClasses () : void}
 \newline
 carica le classi dell'istituto
-\newline
 \item \method{loadQuiz () : void}
 \newline
 carica i quiz disponibili per la classe selezionata
-\newline
 \item \method{loadStudentsStatsQuiz () : void}
 \newline
 richiede al server le statistiche relative al quiz selezionato e aggiorna lo \$scope
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlTeachersStats}}
@@ -2987,11 +2798,9 @@ i docenti di cui è possibile richiedere le statistiche
 \item \method{loadQuestions () : void}
 \newline
 carica le domande create dal docente selezionato
-\newline
 \item \method{loadTeachers () : void}
 \newline
 carica i docenti di cui è possibile richiedere le statistiche
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{MyStudentsStats}}
@@ -3047,11 +2856,9 @@ specifica lo header che deve essere caricato dalla view
 \item \method{loadCurrentHeader () : void}
 \newline
 il metodo verifica il tipo dell'utente che visita la pagina e carica lo header corretto
-\newline
 \item \method{loadUser () : void}
 \newline
 carica l'utente che sta visitando la pagina
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{CtrlLogin}}
@@ -3076,7 +2883,6 @@ la password introdotta dall'utente per il login
 \item \method{checkLogin (email : string, password : string) : bool}
 \newline
 Il metodo si occupa di verificare le credenziali per il login
-\newline
 \begin{itemize}
 \item \attribute{email : string}
 \newline
@@ -3106,7 +2912,6 @@ La classe gestisce il recupero della password in caso di smarrimento.
 \item \method{sendRecoveryEmail (email : string) : void}
 \newline
 il metodo si occupa di inviare all'indirizzo specificato la nuova password
-\newline
 \begin{itemize}
 \item \attribute{email : string}
 \newline
@@ -3133,7 +2938,6 @@ contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato
 \item \method{sendRegistration (user : \$scope) : void}
 \newline
 invia al server le informazioni necessarie per portare a termine la registrazione dell'utente
-\newline
 \begin{itemize}
 \item \attribute{user : \$scope}
 \newline
@@ -3169,15 +2973,12 @@ per potere modificare la password, l'utente deve prima inserire la vecchia.Quest
 \item \method{changePsw () : void}
 \newline
 metodo che gestisce il cambio della password
-\newline
 \item \method{loadAffiliation () : void}
 \newline
 carica gli istituti a cui l'utente è iscritto
-\newline
 \item \method{loadUser () : void}
 \newline
 si occupa di comunicare col server per poter avere le informazioni dell'utente
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{MyUser}}
@@ -3208,11 +3009,9 @@ la password dell'utente che si sta registrando
 \item \method{checkMail () : bool}
 \newline
 verifica che i due indirizzi mail inseriti coincidano
-\newline
 \item \method{checkPassword () : bool}
 \newline
 verifica che le due password inserite coincidano
-\newline
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server}}
@@ -3270,16 +3069,13 @@ le mail dei docenti associati alla classe
 \item \method{addStudent () : void}
 \newline
 permette di aggiungere uno studente alla classe
-\newline
 \item \method{addTeacher () : void}
 \newline
 permette di aggiungere un docente alla classe
-\newline
 \item \method{edit (newDescription : String, newName : String, newYear : String) : void}
 \newline
 permette
 di modificare le informazioni base della classe
-\newline
 \begin{itemize}
 \item \attribute{newDescription : String}
 \newline
@@ -3294,28 +3090,22 @@ il nuovo anno della classe
 \item \method{getAcademicYear () : String}
 \newline
 restituisce l'anno accademico della classe
-\newline
 \item \method{getDescription () : String}
 \newline
 restituisce la descrizione della classe
-\newline
 \item \method{getName () : String}
 \newline
 restituisce il nome della classe
-\newline
 \item \method{getStudents () : String[]}
 \newline
 restituisce le mail degli studenti della classe
-\newline
 \item \method{getTeachers () : String[]}
 \newline
 restituisce le mail dei docenti della classe
-\newline
 \item \method{removeStudent (studentMail : String) : void}
 \newline
 permette di rimuovere uno studente dalla
 classe
-\newline
 \begin{itemize}
 \item \attribute{studentMail : String}
 \newline
@@ -3325,7 +3115,6 @@ mail dello studente da rimuovere
 \newline
 permette di rimuovere un docente dalla
 classe
-\newline
 \begin{itemize}
 \item \attribute{teacherMail : String}
 \newline
@@ -3376,7 +3165,6 @@ i topic dell'istituto
 \item \method{acceptClassRequest (indexOfRequest : int) : void}
 \newline
 permette di accettare una richiesta di ingresso ad una classe
-\newline
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -3385,7 +3173,6 @@ la posizione della richiesta di ingresso ad una classe da accettare
 \item \method{acceptRequestRole (role : String) : void}
 \newline
 permette di accettare una richiesta di ingresso ad un ruolo dell'istituto
-\newline
 \begin{itemize}
 \item \attribute{role : String}
 \newline
@@ -3394,7 +3181,6 @@ l'utente da accettare nell'istituto
 \item \method{addClass  (objectClass : Class) : void}
 \newline
 permette l'aggiunta di una classe all'interno di un istituto
-\newline
 \begin{itemize}
 \item \attribute{objectClass : Class}
 \newline
@@ -3403,39 +3189,30 @@ viene passata al metodo la classe da inserire
 \item \method{getClass () : Class[]}
 \newline
 permette di recuperare le classi facenti parte dell'istituto
-\newline
 \item \method{getCLassList () : ClassList}
 \newline
 permette di recuperare la lista delle richieste di entrata alle classi
-\newline
 \item \method{getDirector () : Director}
 \newline
 permette di recuperare il direttore dell'istituto
-\newline
 \item \method{getName () : String}
 \newline
 permette di recuperare il nome dell'istituto
-\newline
 \item \method{getRoleList () : RoleList}
 \newline
 permette di recuperare le richieste di ingresso all'istituto con un appropriato ruolo
-\newline
 \item \method{getStudents () : String[]}
 \newline
 permette di recuperare gli studenti abilitati nell'istituto
-\newline
 \item \method{getTeachers () : String[]}
 \newline
 permette di recuperare gli insegnanti abilitati nell'istituto
-\newline
 \item \method{getTopics () : Topics}
 \newline
 permette di recuperare i topics dell'istituto
-\newline
 \item \method{removeClass (indexOfClass : int) : void}
 \newline
 rimuove una classe da un istituto
-\newline
 \begin{itemize}
 \item \attribute{indexOfClass : int}
 \newline
@@ -3444,7 +3221,6 @@ l'indice della classe da rimuovere dalle classi presenti nell'ente
 \item \method{removeClassRequest (indexOfRequest : int) : void}
 \newline
 permette di rimuovere una richiesta di ingresso ad una classe dell'istituto
-\newline
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -3453,7 +3229,6 @@ la posizione della richiesta da rimuovere
 \item \method{removeStudent (studentMail : String) : void}
 \newline
 rimuove uno studente dagli iscritti presso un istituto
-\newline
 \begin{itemize}
 \item \attribute{studentMail : String}
 \newline
@@ -3462,7 +3237,6 @@ lo studente da rimuovere dall'istituto
 \item \method{removeTeacher (teacherMail : String) : void}
 \newline
 rimuove un docente dagli iscritti presso un istituto
-\newline
 \begin{itemize}
 \item \attribute{teacherMail : String}
 \newline
@@ -3471,7 +3245,6 @@ l'insegnate da rimuovere dall'istituto
 \item \method{setDirector (objectDirector : Director) : void}
 \newline
 permette di modificare il direttore dell'istituto
-\newline
 \begin{itemize}
 \item \attribute{objectDirector : Director}
 \newline
@@ -3480,7 +3253,6 @@ il nuovo direttore dell'istituto
 \item \method{setName (newName : String) : void}
 \newline
 permette di modificare il nome dell'istituto
-\newline
 \begin{itemize}
 \item \attribute{newName : String}
 \newline
@@ -3514,7 +3286,6 @@ Questa classe gestisce le richieste da parte di docenti o studenti per l'assegna
 \item \method{acceptClassRequest (indexOfRequest : int) : void}
 \newline
 accetta la richiesta di entrata in una classe dell'utente
-\newline
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -3523,7 +3294,6 @@ accetta la richiesta di entrata in una classe dell'utente
 \item \method{addClassRequest (mail : String, nameClass : String, year : String) : void}
 \newline
 aggiunge una richiesta di entrata in una classe alla lista delle richieste pendenti
-\newline
 \begin{itemize}
 \item \attribute{mail : String}
 \newline
@@ -3538,7 +3308,6 @@ l'anno della classe per cui si sta effettuando la richiesta
 \item \method{removeClassRequest (indexOfRequest : int) : void}
 \newline
 rimuove una richiesta di entrata nella classe dalla lista delle richieste pendenti. Di fatto, comporta il rifiuto della richiesta
-\newline
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -3568,7 +3337,6 @@ la mail dell'utente che ha effettuato la richiesta
 \item \method{getMail () : String}
 \newline
 restituisce la mail dell'utente che ha effettuato la richiesta
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RequestRole}}
@@ -3593,11 +3361,9 @@ un messaggio che l'utente può includere alla sua richiesta di ruolo
 \item \method{getMail () : String}
 \newline
 restituisce la mail dell'utente che effettua la richiesta
-\newline
 \item \method{getMessage () : String}
 \newline
 restituisce il messaggio dell'utente che effettua la richiesta
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RoleList}}
@@ -3622,15 +3388,12 @@ memorizza la lista delle richieste degli utenti che hanno richiesto di diventare
 \item \method{acceptStudent () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\newline
 \item \method{acceptTeacher () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare docente
-\newline
 \item \method{addRoleList (mailUser : String, message : String, role : String) : void}
 \newline
 il metodo aggiunge una richiesta alla lista corretta delle richieste pendenti
-\newline
 \begin{itemize}
 \item \attribute{mailUser : String}
 \newline
@@ -3645,11 +3408,9 @@ il ruolo per cui l'utente ha fatto domanda
 \item \method{removeStudent () : void}
 \newline
 rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\newline
 \item \method{removeTeacher () : void}
 \newline
 rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\newline
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ModelServer:: Services}}
@@ -3699,7 +3460,6 @@ gli argomenti coperti dal quiz
 \item \method{addClass (class : Class) : void}
 \newline
 aggiunge una classe alla lista delle classi che hanno accesso al quiz
-\newline
 \begin{itemize}
 \item \attribute{class : Class}
 \newline
@@ -3708,7 +3468,6 @@ la classe che si intende aggiungere
 \item \method{addKeyword (keyword : String) : void}
 \newline
 aggiunge una parola chiave per identificare il quiz
-\newline
 \begin{itemize}
 \item \attribute{keyword : String}
 \newline
@@ -3717,7 +3476,6 @@ la parola chiave da aggiungere
 \item \method{addQuestion (question : GenericQuestion) : void}
 \newline
 aggiunge una domanda al quiz
-\newline
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -3726,7 +3484,6 @@ la domanda da aggiungere al quiz
 \item \method{addTopic (topic : String) : void}
 \newline
 aggiunge un argomento agli argomenti del quiz
-\newline
 \begin{itemize}
 \item \attribute{topic : String}
 \newline
@@ -3735,15 +3492,12 @@ l'argomento da aggiungere
 \item \method{createStatisticsQuiz () : QuizStatistics}
 \newline
 restituisce un oggetto contenente le statistiche generali del quiz
-\newline
 \item \method{createStatisticsStudents () : StudentsStatisticsQuiz}
 \newline
 ritorna un oggetto contenente le statistiche degli utenti che hanno risolto il quiz
-\newline
 \item \method{removeClass (indexOfClass : int) : void}
 \newline
 rimuove una classe da quelle che hanno accesso al quiz. Rimuovendo tutte le classi il quiz diventa pubblico
-\newline
 \begin{itemize}
 \item \attribute{indexOfClass : int}
 \newline
@@ -3752,7 +3506,6 @@ l'indice della classe da rimuovere
 \item \method{removeKeyword (indexOfKeyword : int) : void}
 \newline
 rimuove una parola chiave da quelle che identificano il quiz
-\newline
 \begin{itemize}
 \item \attribute{indexOfKeyword : int}
 \newline
@@ -3761,7 +3514,6 @@ l'indice della parola chiave da rimuovere
 \item \method{removeQuestion (indexOfQuestion : int) : void}
 \newline
 rimuove una domanda dal quiz
-\newline
 \begin{itemize}
 \item \attribute{indexOfQuestion : int}
 \newline
@@ -3770,7 +3522,6 @@ l'indice della domanda da rimuovere
 \item \method{removeTopic (indexOfTopic : int) : void}
 \newline
 rimuove un argomento da quelli che identificano il quiz
-\newline
 \begin{itemize}
 \item \attribute{indexOfTopic : int}
 \newline
@@ -3779,7 +3530,6 @@ l'indice della classe da rimuovere
 \item \method{setDescription (newDescr : String) : void}
 \newline
 imposta la descrizione del quiz
-\newline
 \begin{itemize}
 \item \attribute{newDescr : String}
 \newline
@@ -3788,7 +3538,6 @@ la nuova descrizione del quiz
 \item \method{setTitle (newTitle : String) : void}
 \newline
 imposta il titolo del quiz
-\newline
 \begin{itemize}
 \item \attribute{newTitle : String}
 \newline
@@ -3815,7 +3564,6 @@ la lista degli argomenti esistenti
 \item \method{addTopics (nameTopic : String) : void}
 \newline
 permette di aggiungere un nuovo argomento a quelli esistenti
-\newline
 \begin{itemize}
 \item \attribute{nameTopic : String}
 \newline
@@ -3824,7 +3572,6 @@ il nuovo argomento da aggiungere
 \item \method{removeTopic (indexTopic : int) : void}
 \newline
 permette di rimuovere un argomento da quelli esistenti
-\newline
 \begin{itemize}
 \item \attribute{indexTopic : int}
 \newline
@@ -3858,7 +3605,6 @@ le risposte date dall'utente in una colonna della domanda a collegamenti
 \item \method{addAnswer (answer : int) : void}
 \newline
 aggiunge la risposta data dall'utente in una colonna della domanda a collegamenti
-\newline
 \begin{itemize}
 \item \attribute{answer : int}
 \newline
@@ -3867,15 +3613,12 @@ il valore dato dall'utente a una casella della colonna della domanda a collegame
 \item \method{checkColumn () : bool}
 \newline
 verifica la correttezza di una colonna data la risposta a una domanda a collegamenti
-\newline
 \item \method{getGivenAnswerCell () : int[]}
 \newline
 restituisce le risposte date dall'utente in una colonna della domanda a collegamenti
-\newline
 \item \method{setGivenAnswerCell (answer : int[]) : void}
 \newline
 imposta, memorizzando correttamente, le risposte date dall'utente in una colonna della domanda a collegamenti
-\newline
 \begin{itemize}
 \item \attribute{answer : int[]}
 \newline
@@ -3902,7 +3645,6 @@ la risposta data dall'utente
 \item \method{addAnswer (answer : String) : void}
 \newline
 aggiunge una parola alla lista di parole che compongono la risposta alla domanda a completamento
-\newline
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -3911,11 +3653,9 @@ la parola da aggiungere alla lista che costituisce la risposta alla domanda a co
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a completamento
-\newline
 \item \method{getGivenAnswer () : String[]}
 \newline
 restituisce la risposta data dall'utente
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AnswerMatchingQ}}
@@ -3937,15 +3677,12 @@ le risposte data dall'utente per le varie colonne della domanda a collegamenti
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a collegamenti
-\newline
 \item \method{getGivenAnswerColumn () : AnswerColumn}
 \newline
 restituisce le risposte date dall'utente per una delle colonne della domanda a collegamenti
-\newline
 \item \method{setAnswer (answer : AnswerColumn) : void}
 \newline
 aggiunge una risposta dell'utente per le domande a collegamento
-\newline
 \begin{itemize}
 \item \attribute{answer : AnswerColumn}
 \newline
@@ -3954,7 +3691,6 @@ la risposta parziale dell'utente da aggiungere alla risposta della domanda a col
 \item \method{setGivenAnswerColumn (answer : AnswerColumn) : void}
 \newline
 imposta le risposte date dall'utente per una delle colonne della domanda a collegamenti
-\newline
 \begin{itemize}
 \item \attribute{answer : AnswerColumn}
 \newline
@@ -3981,7 +3717,6 @@ la risposta data dall'utente
 \item \method{addAnswer (answer : bool) : void}
 \newline
 aggiunge una scelta alla risposta data dal'utente
-\newline
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -3990,11 +3725,9 @@ una delle scelte fatte dall'utente per la risposta a scelta multipla
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda a scelta multipla
-\newline
 \item \method{getGivenAnswer () : bool[]}
 \newline
 restituisce la risposta data dall'utente
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AnswerQuestion}}
@@ -4022,15 +3755,12 @@ l'utente che sta rispondendo alla domanda
 \item \method{\<\<abstract\>\>check () : bool}
 \newline
 il metodo è astratto e verrà concretizzato nelle sottoclassi. Serve a verificare la correttezza della risposta data per le varie tipologie di domande
-\newline
 \item \method{getQuestion () : GenricQuestion}
 \newline
 restituisce la domanda a cui corrisponde la risposta data
-\newline
 \item \method{setQuestion (question : GenericQuestion) : void}
 \newline
 imposta la domanda a cui si vuole dare risposta
-\newline
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -4039,7 +3769,6 @@ la domanda a cui si vuole dare risposta
 \item \method{setSolver () : void}
 \newline
 imposta l'utente che sta risolvendo la domanda
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AnswerQuiz}}
@@ -4067,7 +3796,6 @@ la data di risoluzione del quiz
 \item \method{addAnswer (answer : AnswerQuestion) : void}
 \newline
 aggiunge la risposta a una delle domande del quiz alla lista delle risposte per il quiz corrente
-\newline
 \begin{itemize}
 \item \attribute{answer : AnswerQuestion}
 \newline
@@ -4076,23 +3804,18 @@ la risposta da aggiungere alla lista delle risposte del quiz
 \item \method{check () : bool}
 \newline
 verifica la correttezza del quiz, confrontando le risposte date dall'utente con quelle corrette
-\newline
 \item \method{getAnswerQuestion () : AnswerQuestion}
 \newline
 restituisce la lista delle risposte alle varie domande del quiz
-\newline
 \item \method{getDate () : Date}
 \newline
 restituisce la data in cui il quiz è stato risolto
-\newline
 \item \method{getQuiz () : Quiz}
 \newline
 restituisce il Quiz che l'utente sta risolvendo
-\newline
 \item \method{removeAnswer (indexOfAnswer : int) : void}
 \newline
 rimuove la risposta data dall'utente a una domanda dalla lista delle risposte alle domande del quiz corrente
-\newline
 \begin{itemize}
 \item \attribute{indexOfAnswer : int}
 \newline
@@ -4101,7 +3824,6 @@ l'indice della risposta da rimuovere dalla lista di risposte alle domande del qu
 \item \method{setDate (date : Date) : void}
 \newline
 imposta la data di risoluzione del quiz
-\newline
 \begin{itemize}
 \item \attribute{date : Date}
 \newline
@@ -4110,7 +3832,6 @@ la data di risoluzione del quiz
 \item \method{setQuiz (quiz : Quiz) : void}
 \newline
 imposta il quiz a cui si riferisce la risposta
-\newline
 \begin{itemize}
 \item \attribute{quiz : Quiz}
 \newline
@@ -4137,15 +3858,12 @@ la risposta data dall'utente
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda aperta
-\newline
 \item \method{getGivenAnswer () : String}
 \newline
 restituisce la risposta dell'utente
-\newline
 \item \method{setAnswer () : void}
 \newline
 imposta la risposta data dall'utente
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AnswerTrueFalseQ}}
@@ -4170,15 +3888,12 @@ la risposta data dall'utente alla domanda di tipo vero/falso
 \item \method{check () : bool}
 \newline
 concretizzazione del metodo ereditato dalla classe base astratta. Viene implementato in modo che verifichi la correttezza della risposta al fronte di una domanda di tipo vero/falso
-\newline
 \item \method{getGivenAnswer () : bool}
 \newline
 restituisce la risposta data dall'utente
-\newline
 \item \method{setAnswer () : void}
 \newline
 imposta la risposta data dall'utente
-\newline
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ModelServer:: Services:: Questions}}
@@ -4213,19 +3928,15 @@ il testo contenuto nella cella
 \item \method{getAttachment () : String}
 \newline
 permette di recuperare l'allegato della cella
-\newline
 \item \method{getPosition () : int}
 \newline
 permette di recuperare la posizione corretta della cella
-\newline
 \item \method{getText () : String}
 \newline
 permette di recuperare il testo della cella
-\newline
 \item \method{setAttachment (newAttachment : String) : void}
 \newline
 permette di sostituire l'allegato della cella
-\newline
 \begin{itemize}
 \item \attribute{newAttachment : String}
 \newline
@@ -4234,7 +3945,6 @@ il nuovo allegato da inserire nella cella
 \item \method{setPosition (position : int) : void}
 \newline
 permette di modificare la posizione corretta della cella
-\newline
 \begin{itemize}
 \item \attribute{position : int}
 \newline
@@ -4243,7 +3953,6 @@ la nuova posizione da dare alla cella
 \item \method{setText (newText : String) : void}
 \newline
 permette di modificare il testo della cella
-\newline
 \begin{itemize}
 \item \attribute{newText : String}
 \newline
@@ -4273,7 +3982,6 @@ celle che compongono la colonna
 \item \method{addCell (attachment : String, position : int, text : String) : void}
 \newline
 permette di aggiungere una nuova cella alla colonna di celle
-\newline
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -4288,15 +3996,12 @@ il testo della nuova cella da aggiungere
 \item \method{getCorrectAnswer () : int[]}
 \newline
 permette di recuperare l'ordine corretto delle celle della colonna
-\newline
 \item \method{getText () : Cell[]}
 \newline
 permette di recuperare le celle che compongono la colonna
-\newline
 \item \method{setCorrectAnswer (answer : int[]) : void}
 \newline
 permette di aggiornare il corretto ordinamento delle celle
-\newline
 \begin{itemize}
 \item \attribute{answer : int[]}
 \newline
@@ -4305,7 +4010,6 @@ il corretto ordinamento delle celle della colonna
 \item \method{setText (newText : Cell[]) : void}
 \newline
 permette di rimpiazzare completamente tutte le celle con delle celle nuove
-\newline
 \begin{itemize}
 \item \attribute{newText : Cell[]}
 \newline
@@ -4338,7 +4042,6 @@ il testo della domanda CompletionQ
 \item \method{createAnswerQuestion (answer : String[]) : AnswerCompletionQ}
 \newline
 permette di creare una AnswerCompletionQ che rappresenta una CompletionQ risolta da un utente
-\newline
 \begin{itemize}
 \item \attribute{answer : String[]}
 \newline
@@ -4347,11 +4050,9 @@ le risposte dell'utente a questa domanda
 \item \method{getSuggestion () : String[]}
 \newline
 permette di recuperare i suggerimenti della domanda CompletionQ
-\newline
 \item \method{removeSuggestion (index : int) : void}
 \newline
 permette di rimuovere un suggerimento della domanda
-\newline
 \begin{itemize}
 \item \attribute{index : int}
 \newline
@@ -4360,7 +4061,6 @@ la posizione del suggerimento da rimuovere
 \item \method{setCorrectAnswer (correctAnswer : String[]) : void}
 \newline
 permette di aggiornare la risposta corretta della domanda CompletionQ
-\newline
 \begin{itemize}
 \item \attribute{correctAnswer : String[]}
 \newline
@@ -4369,7 +4069,6 @@ le nuove risposte corrette della domanda
 \item \method{setSuggestion (suggestions : String[]) : void}
 \newline
 permette di inserire dei suggerimenti alla domanda CompletionQ
-\newline
 \begin{itemize}
 \item \attribute{suggestions : String[]}
 \newline
@@ -4378,7 +4077,6 @@ i nuovi suggerimenti della domanda
 \item \method{setText (newText : String) : void}
 \newline
 permette di modificare il testo della domanda CompletionQ
-\newline
 \begin{itemize}
 \item \attribute{newText : String}
 \newline
@@ -4423,11 +4121,9 @@ il topic della domanda
 \item \method{createStatisticsQuestion () : QuestionStatistics}
 \newline
 permette di creare un QuestionStatistics con le statistiche della domanda
-\newline
 \item \method{setDescription (newDescription : String) : void}
 \newline
 permette la modifica della descrizione della domanda
-\newline
 \begin{itemize}
 \item \attribute{newDescription : String}
 \newline
@@ -4436,7 +4132,6 @@ la nuova descrizione della domanda
 \item \method{setDifficulty (difficulty : int) : void}
 \newline
 permette la modifica della difficoltà della domanda
-\newline
 \begin{itemize}
 \item \attribute{difficulty : int}
 \newline
@@ -4445,7 +4140,6 @@ la nuova difficoltà della domanda
 \item \method{setKeyword (keyword : String) : void}
 \newline
 permette di aggiungere una parola chiave alla domanda
-\newline
 \begin{itemize}
 \item \attribute{keyword : String}
 \newline
@@ -4454,7 +4148,6 @@ la nuova parola chiave della domanda
 \item \method{setQuestionAttachment (attachment : String) : void}
 \newline
 permette di aggiungere un allegato alla domanda
-\newline
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -4463,7 +4156,6 @@ il nuovo allegato della domanda
 \item \method{setTitle (newTitle : String) : void}
 \newline
 permette di modificare il titolo della domanda
-\newline
 \begin{itemize}
 \item \attribute{newTitle : String}
 \newline
@@ -4472,7 +4164,6 @@ il nuovo titolo della domanda
 \item \method{setTopic (newTopic : String) : void}
 \newline
 permette l'aggiunta di un topic alla domanda
-\newline
 \begin{itemize}
 \item \attribute{newTopic : String}
 \newline
@@ -4499,7 +4190,6 @@ le colonne della domanda
 \item \method{addColumn (newColumn : Column) : void}
 \newline
 permette di aggiungere una colonna alla domanda MatchingQ
-\newline
 \begin{itemize}
 \item \attribute{newColumn : Column}
 \newline
@@ -4508,7 +4198,6 @@ la nuova colonna della domanda
 \item \method{createAnswerQuestion (answerColumn : AnswerColumn[]) : AnswerMatchingQ}
 \newline
 permette il salvataggio delle risposte dell'utente, sotto forma di AnswerMatchingQ
-\newline
 \begin{itemize}
 \item \attribute{answerColumn : AnswerColumn[]}
 \newline
@@ -4517,11 +4206,9 @@ le AnswerColumn contenenti le risposte alla domanda
 \item \method{getColumns () : Column[]}
 \newline
 permette di ottenere tutte le colonne della domanda
-\newline
 \item \method{setColumns (newColumn : Column[]) : void}
 \newline
 permette di sostituire tutte le colonne della domanda MatchingQ con delle nuove colonne
-\newline
 \begin{itemize}
 \item \attribute{newColumn : Column[]}
 \newline
@@ -4554,7 +4241,6 @@ le soluzione della domanda
 \item \method{createAnswerQuestion (answer : bool[]) : AnswerMultipleChoicheQ}
 \newline
 permette di creare un AnswerMultipleChoicheQ con le risposte dell'utente
-\newline
 \begin{itemize}
 \item \attribute{answer : bool[]}
 \newline
@@ -4563,15 +4249,12 @@ le risposte dell'utente alla domanda
 \item \method{getAttachment () : String[]}
 \newline
 permette di recuperare gli allegati della domanda MultipleChoiceQ
-\newline
 \item \method{setAnswer () : void}
 \newline
 permette di modificare una risposta corretta della domanda MultipleChoiceQ
-\newline
 \item \method{setAttachment (attachment : String, position : int) : void}
 \newline
 permette di aggiungere un allegato alla domanda MultipleChoiceQ
-\newline
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -4583,7 +4266,6 @@ la posizione del nuovo allegato
 \item \method{setCorrectAnswer (correctAnswers : bool[]) : void}
 \newline
 permette di inserire le nuove risposte corrette alla domanda MultipleChoiceQ che sostituiranno le vecchie
-\newline
 \begin{itemize}
 \item \attribute{correctAnswers : bool[]}
 \newline
@@ -4610,7 +4292,6 @@ la risposta corretta della domanda ShortAnswerQ
 \item \method{createAnswerQuestion (answer : String) : AnswerShortAnswerQ}
 \newline
 permette di creare un AnswerShortAnswerQ con le risposte dell'utente
-\newline
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -4619,7 +4300,6 @@ la risposta alla domanda ShortAnswerQ dell'utente
 \item \method{setCorrectAnswer (newCorrectAnswer : String) : void}
 \newline
 permette di modificare la risposta corretta della domanda ShortAnswerQ
-\newline
 \begin{itemize}
 \item \attribute{newCorrectAnswer : String}
 \newline
@@ -4646,7 +4326,6 @@ la risposta corretta alla domanda TrueFalseQ
 \item \method{createAnswerQuestion (answer : bool) : AnswerTrueFalseQ}
 \newline
 permette di creare la AnswerTrueFalseQ che contiene la risposta dell'utente
-\newline
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -4655,7 +4334,6 @@ la risposta dell'utente alla domanda TrueFalseQ
 \item \method{setCorrectAnswer (answer : bool) : void}
 \newline
 permette di modificare la risposta corretta della domanda TrueFalseQ
-\newline
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -4692,11 +4370,9 @@ la percentuale di utenti che rispondono correttamente alla domanda
 \item \method{getQuizNumber () : int}
 \newline
 restituisce il numero di quiz in cui la domanda è presente
-\newline
 \item \method{getSuccessRate () : double}
 \newline
 restituisce la percentuale di utenti che risponde correttamente a questa domanda
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuizStatistics}}
@@ -4724,15 +4400,12 @@ il numero di volte che il quiz è stato svolto
 \item \method{getAverageResult () : double}
 \newline
 restituisce il risultato medio degli utenti che hanno già svolto il quiz
-\newline
 \item \method{getSuccessRate () : double}
 \newline
 restituisce la percentuale di utenti che ha risolto correttamente il quiz
-\newline
 \item \method{getTimesSolved () : int}
 \newline
 restituisce il numero di volte che un quiz è stato svolto
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{StudentsStatisticsQuiz}}
@@ -4757,11 +4430,9 @@ gli studenti che hanno svolto il quiz
 \item \method{getResults () : double[]}
 \newline
 restituisce la lista dei risultati degli studenti che hanno svolto il quiz
-\newline
 \item \method{getStudents () : Student[]}
 \newline
 ottiene la lista degli studenti che hanno svolto il quiz
-\newline
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ModelServer:: Users}}
@@ -4799,19 +4470,15 @@ contiene la password criptata dell'utente registrato
 \item \method{getFirstName () : String}
 \newline
 permette di recuperare il nome dell'utente registrato
-\newline
 \item \method{getLastName () : String}
 \newline
 permette di recuperare il cognome dell'utente registrato
-\newline
 \item \method{getMail () : String}
 \newline
 permette di recuperare la mail dell'utente registrato
-\newline
 \item \method{setPassword (newPsw : String, oldPsw : String) : void}
 \newline
 permette di modificare la password dell'account di un utente registrato
-\newline
 \begin{itemize}
 \item \attribute{newPsw : String}
 \newline
@@ -4835,11 +4502,9 @@ Rappresenta un responsabile, ovvero colui che gestisce docenti e studenti per og
 \item \method{acceptStudent () : void}
 \newline
 permette di inserire uno studente nell'istituzione posseduta dal direttore
-\newline
 \item \method{acceptTeacher () : void}
 \newline
 permette di inserire un docente nell'istituzione posseduta dal direttore
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{NoRole}}
@@ -4861,7 +4526,6 @@ Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e 
 \item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
 \newline
 aggiunge un quiz svolto e le risposte date dall'utente allo storico dei quiz
-\newline
 \begin{itemize}
 \item \attribute{quiz : AnswerQuiz}
 \newline
@@ -4870,15 +4534,12 @@ la soluzione che si desidera aggiungere alla lista dei quiz già svolti
 \item \method{getQuizProfile () : AnswerQuiz}
 \newline
 restituisce la lista dei quiz svolti dall'utente e delle relative soluzioni
-\newline
 \item \method{loadProfileQuiz () : void}
 \newline
 carica e assegna a quizProfile la lista dei quiz già svolti dall'utente e dei loro esiti
-\newline
 \item \method{removeQuizFromProfile (indexOfQuiz : int) : void}
 \newline
 rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti da un utente
-\newline
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -4905,7 +4566,6 @@ lo storico dei quiz svolti con relativa soluzione
 \item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
 \newline
 aggiunge un quiz e la relativa soluzione allo storico dei quiz svolti
-\newline
 \begin{itemize}
 \item \attribute{quiz : AnswerQuiz}
 \newline
@@ -4914,15 +4574,12 @@ il quiz che si intende aggiungere allo storico
 \item \method{getQuizProfile () : AnswerQuiz[]}
 \newline
 restituisce lo storico dei quiz svolti dall'utente con relative soluzioni
-\newline
 \item \method{loadQuizProfile () : void}
 \newline
 carica lo storico dei quiz svolti dall'utente e dei loro esiti
-\newline
 \item \method{removeQuizFromProfile (indexOfQuiz : int) : void}
 \newline
 rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti
-\newline
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -4949,7 +4606,6 @@ la lista dei quiz creati dall'utente
 \item \method{addQuiz (newQuiz : Quiz) : void}
 \newline
 aggiunge un quiz alla lista dei quiz creati dal docente
-\newline
 \begin{itemize}
 \item \attribute{newQuiz : Quiz}
 \newline
@@ -4958,19 +4614,15 @@ il quiz che si intende aggiungere
 \item \method{getOwnQuiz () : Quiz[]}
 \newline
 restituisce la lista dei quiz creati dal docente
-\newline
 \item \method{getQuizStatistics () : QuizStatistics}
 \newline
 restituisce le statistiche generali del quiz richiesto
-\newline
 \item \method{getStudentsStatistics () : StudentsStatisticsQuiz}
 \newline
 restituisce le statistiche degli utenti che hanno risolto il quiz richiesto
-\newline
 \item \method{removeQuiz (indexOfQuiz : int) : void}
 \newline
 rimuove un quiz dalla lista di quiz creati dall'utente
-\newline
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -4997,11 +4649,9 @@ raccoglie le informazioni di base dell'utente, necessarie alla sua autenticazion
 \item \method{getAuthenticationData () : AuthenticationData}
 \newline
 restituisce i dati necessari all'autenticazione dell'utente
-\newline
 \item \method{getMail () : String}
 \newline
 restituisce la mail dell'utente, che è univoca
-\newline
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer}}
@@ -5025,7 +4675,6 @@ Effettua il controllo sull'utente per verificare che egli sia in possesso dell'a
 \item \method{isAuthorized (email : String) : bool}
 \newline
 verifica che l'utente (oltre ad essere autenticato) goda dei permessi necessari per effettuare l'operazione richiesta
-\newline
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5053,7 +4702,6 @@ Permette l'autenticazione nel sistema da parte di utenti preventivamente registr
 \item \method{login (email : String, password : String) : JSON}
 \newline
 permette l'autenticazione di un utente in Quizzipedia nel caso esso si sia preventivamente registrato
-\newline
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5077,7 +4725,6 @@ Permette l'uscita dal sistema ad utenti autenticati.
 \item \method{logout () : void}
 \newline
 permette l'uscita dal sistema Quizzipedia ad un utente autenticato
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{PasswordRecover}}
@@ -5093,7 +4740,6 @@ Permette il recupero della password da parte di un utente in caso di smarrimento
 \item \method{recoverPassword () : JSON}
 \newline
 permette di impostare una password temporanea e di inviarla all'utente per email nel caso quest'ultimo abbia smarrito la propria
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Register}}
@@ -5109,7 +4755,6 @@ Permette la registrazione di un utente nel sistema.
 \item \method{register (email : String, firstname : String, lastname : String, password : String) : void}
 \newline
 permette la registrazione di un utente in Quizzipedia
-\newline
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5146,7 +4791,6 @@ Permette la creazione di una nuova classe.
 \item \method{adder (class : JSON, classname : String) : void}
 \newline
 permette la creazione di una nuova classe (che sarà associata ad un ente)
-\newline
 \begin{itemize}
 \item \attribute{class : JSON}
 \newline
@@ -5170,7 +4814,6 @@ Permette la rimozione delle classi dal sistema.
 \item \method{deleter (classname : String) : void}
 \newline
 permette la rimozione di una classe presente in un ente
-\newline
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5191,7 +4834,6 @@ Permette la modifica delle informazioni di base di una determinata classe.
 \item \method{updater (classname : String, description : String) : void}
 \newline
 permette la modifica delle informazioni di una classe
-\newline
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5215,7 +4857,6 @@ Permette la rimozione di un utente da una determinata classe.
 \item \method{remover (classname : String, email : String) : void}
 \newline
 permette la rimozione di un utente dalla classe
-\newline
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5239,7 +4880,6 @@ Permette l'inserimento di un utente in una specifica classe.
 \item \method{adder (classname : String, email : String) : void}
 \newline
 permette l'inserimento di un utente in una classe
-\newline
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5263,7 +4903,6 @@ Recupera la lista degli studenti appartenenti ad una determinata classe.
 \item \method{getStudents (classname : String) : JSON}
 \newline
 recupera la lista di studenti appartenenti ad una determinata classe
-\newline
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5284,7 +4923,6 @@ Recupera la lista degli insegnanti relativi ad una determinata classe.
 \item \method{getTeachers (classname : String) : JSON}
 \newline
 recupera la lista di docenti relativi ad una determinata classe
-\newline
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5312,7 +4950,6 @@ Permette la modifica dell'ente da parte del responsabile.
 \item \method{update (companyname : String, newname : String) : void}
 \newline
 permette la modifica del nome di un ente
-\newline
 \begin{itemize}
 \item \attribute{companyname : String}
 \newline
@@ -5343,7 +4980,6 @@ Permette la rimozione di un account dal sistema.
 \item \method{deleteAccount (email : String) : void}
 \newline
 permette la rimozione di un account da Quizzipedia
-\newline
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5364,7 +5000,6 @@ Permette ad un utente di impostare una nuova password relativa al proprio accoun
 \item \method{setPassword (email : String, password : String) : void}
 \newline
 permette ad un utente di cambiare la propria password
-\newline
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5388,7 +5023,6 @@ Ritorna tutte le informazioni personali riferite all'utente che ne effettua la r
 \item \method{fetchData (email : String) : JSON}
 \newline
 ritorna tutte le informazioni personali dell'utente che ne ha fatto richiesta
-\newline
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5409,7 +5043,6 @@ Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fi
 \item \method{fetchQuiz (email : String) : JSON}
 \newline
 ritorna i quiz che l'utente ha svolto
-\newline
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5437,7 +5070,6 @@ Permette il salvataggio nella base di dati di una nuova domanda.
 \item \method{createQuestion (question : JSON) : void}
 \newline
 permette il salvataggio di una nuova domanda
-\newline
 \begin{itemize}
 \item \attribute{question : JSON}
 \newline
@@ -5458,7 +5090,6 @@ Permette la cancellazione di una domanda dalla base di dati.
 \item \method{eraseQuestion (question : String) : void}
 \newline
 permette la cancellazione di una domanda esistente
-\newline
 \begin{itemize}
 \item \attribute{question : String}
 \newline
@@ -5479,7 +5110,6 @@ Permette la modifica di una domanda già esistente.
 \item \method{updateQuestion (question : JSON) : void}
 \newline
 permette la modifica di una domanda esistente
-\newline
 \begin{itemize}
 \item \attribute{question : JSON}
 \newline
@@ -5500,7 +5130,6 @@ Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in e
 \item \method{updateStats (question : String, statistics : JSON) : void}
 \newline
 aggiorna le statistiche relative ad una domanda
-\newline
 \begin{itemize}
 \item \attribute{question : String}
 \newline
@@ -5531,7 +5160,6 @@ Permette il salvataggio nella base di dati di un nuovo quiz.
 \item \method{createQuiz (quiz : JSON) : void}
 \newline
 permette la creazione di un nuovo quiz
-\newline
 \begin{itemize}
 \item \attribute{quiz : JSON}
 \newline
@@ -5552,7 +5180,6 @@ Permette la cancellazione di un quiz dalla base di dati.
 \item \method{eraseQuiz (quiz : String) : void}
 \newline
 permette la cancellazione di un quiz
-\newline
 \begin{itemize}
 \item \attribute{quiz : String}
 \newline
@@ -5573,7 +5200,6 @@ Ritorna un determinato quiz pronto per essere svolto da un utente .
 \item \method{fetchQuiz (quiz : String) : JSON}
 \newline
 ritorna un quiz per essere svolto
-\newline
 \begin{itemize}
 \item \attribute{quiz : String}
 \newline
@@ -5594,7 +5220,6 @@ Permette la modifica di un quiz già presente nella base di dati.
 \item \method{updateQuiz (quiz : JSON) : void}
 \newline
 permette la modifica di un quiz
-\newline
 \begin{itemize}
 \item \attribute{quiz : JSON}
 \newline
@@ -5615,7 +5240,6 @@ Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un ut
 \item \method{updateResults (quiz : String, results : JSON) : void}
 \newline
 aggiorna i risultati dei quiz ad ogni svolgimento
-\newline
 \begin{itemize}
 \item \attribute{quiz : String}
 \newline
@@ -5639,7 +5263,6 @@ Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte
 \item \method{updateStats (quiz : String, statistics : JSON) : void}
 \newline
 aggiorna le statistiche relative al quiz
-\newline
 \begin{itemize}
 \item \attribute{quiz : String}
 \newline
@@ -5670,7 +5293,6 @@ Permette la traduzione in formato QML di un quiz nel caso si voglia procedere al
 \item \method{generate (question : JSON) : String}
 \newline
 traduzione in formato QML di un quiz per procedere con il salvataggio nel database
-\newline
 \begin{itemize}
 \item \attribute{question : JSON}
 \newline
@@ -5691,7 +5313,6 @@ Permette la traduzione di un quiz dal formato QML ad uno comprensibile dal siste
 \item \method{parse (question : String) : JSON}
 \newline
 traduzione del formato QML in formato JSON per la visualizzazione lato client
-\newline
 \begin{itemize}
 \item \attribute{question : String}
 \newline
@@ -5719,7 +5340,6 @@ Permette la memorizzazione nella base di dati di tutte le richieste, fatte da pa
 \item \method{add (class : String, email : String) : void}
 \newline
 permette la memorizzazione della richiesta di inserimento in una classe da parte di un utente
-\newline
 \begin{itemize}
 \item \attribute{class : String}
 \newline
@@ -5743,7 +5363,6 @@ Permette la visualizzazione di tutte le richieste da parte degli utenti.
 \item \method{fetchRequests () : JSON}
 \newline
 ritorna tutte le richieste da parte degli utenti
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{RoleAccepter}}
@@ -5759,7 +5378,6 @@ Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utent
 \item \method{accept (email : String, role : String) : void}
 \newline
 permette l'accettazione o negazione dell'assegnazione di un ruolo ad un utente previa richiesta
-\newline
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5783,7 +5401,6 @@ Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'i
 \item \method{add (email : String, role : String) : void}
 \newline
 memorizza le richieste da parte di utenti di assumere un determinato ruolo
-\newline
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5814,7 +5431,6 @@ Ritorna una lista di domande che corrispondono ai parametri di ricerca impostati
 \item \method{searchQuestions (parameters : JSON) : JSON}
 \newline
 ritorna le domande che corrispondono ai parametri di ricerca impostati dall'utente
-\newline
 \begin{itemize}
 \item \attribute{parameters : JSON}
 \newline
@@ -5835,7 +5451,6 @@ Ritorna una lista di quiz che corrispondono ai parametri di ricerca impostati da
 \item \method{searchQuiz (parameters : JSON) : JSON}
 \newline
 ritorna i quiz che corrispondono ai parametri di ricerca impostati dall'utente
-\newline
 \begin{itemize}
 \item \attribute{parameters : JSON}
 \newline
@@ -5863,7 +5478,6 @@ Ritorna le statistiche riferite ad una domanda.
 \item \method{fetchStats () : JSON}
 \newline
 ritorna le statistiche riferite ad una domanda
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{QuizStatisticsFetcher}}
@@ -5879,7 +5493,6 @@ Ritorna le statistiche riferite ad un quiz.
 \item \method{fetchStats () : JSON}
 \newline
 ritorna le statistiche riferite al quiz
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{StudentStatisticsFetcher}}
@@ -5895,7 +5508,6 @@ Ritorna le statistiche riferite ad uno studente.
 \item \method{fetchStats () : JSON}
 \newline
 ritorna le statistiche riferite ad uno studente
-\newline
 \end{itemize}
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Server:: ControllerServer:: TopicManager}}
@@ -5918,7 +5530,6 @@ Permette la creazione di un nuovo argomento.
 \item \method{createTopic (topic : String) : void}
 \newline
 permette la creazione di un nuovo argomento
-\newline
 \begin{itemize}
 \item \attribute{topic : String}
 \newline
@@ -5939,7 +5550,6 @@ Permette l'eliminazione di un argomento.
 \item \method{eraseTopic (topic : String) : void}
 \newline
 permette l'eliminazione di un argomento
-\newline
 \begin{itemize}
 \item \attribute{topic : String}
 \newline
@@ -5968,7 +5578,6 @@ Classe astratta supertipo delle altre classi del pacchetto.
 \item \method{\<\<abstract\>\> forwardTo (bundle : JSON) : void}
 \newline
 metodo astratto usato per il reindirizzamento
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -5977,7 +5586,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \item \method{\<\<abstract\>\> forwardTo (bundle : JSON) : JSON}
 \newline
 metodo astratto usato per il reindirizzamento
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -5986,11 +5594,9 @@ contenitore dei dati provenienti da chiamate REST del client
 \item \method{\<\<abstract\>\> forwardTo () : JSON}
 \newline
 metodo astratto usato per il reindirizzamento
-\newline
 \item \method{\<\<abstract\>\> forwardTo () : void}
 \newline
 metodo astratto usato per il reindirizzamento
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{AuthenticationRouter}}
@@ -6006,11 +5612,9 @@ Invocato dal client per interagire con AuthenticationManager.
 \item \method{forwardTo () : void}
 \newline
 metodo usato per il reindirizzamento alla classe AuthenticationManager
-\newline
 \item \method{forwardTo (bundle : JSON) : void}
 \newline
 metodo usato per il reindirizzamento alla classe AuthenticationManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6019,7 +5623,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \item \method{forwardTo () : JSON}
 \newline
 metodo usato per il reindirizzamento alla classe AuthenticationManager
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ClassRouter}}
@@ -6035,7 +5638,6 @@ Invocato dal client per interagire con ClassManager.
 \item \method{forwardTo (bundle : JSON) : JSON}
 \newline
 metodo usato per il reindirizzamento alla classe ClassManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6044,7 +5646,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \item \method{forwardTo (bundle : JSON) : void}
 \newline
 metodo usato per il reindirizzamento alla classe ClassManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6065,7 +5666,6 @@ Invocato dal client per interagire con InstitutionManager.
 \item \method{forwardTo () : void}
 \newline
 metodo usato per il reindirizzamento alla classe InstitutionManager
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{ProfileRouter}}
@@ -6081,7 +5681,6 @@ Invocato dal client per interagire con ProfileManager.
 \item \method{forwardTo (bundle : JSON) : JSON}
 \newline
 metodo usato per il reindirizzamento alla classe ProfileManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6090,7 +5689,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \item \method{forwardTo (bundle : JSON) : void}
 \newline
 metodo usato per il reindirizzamento alla classe ProfileManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6111,7 +5709,6 @@ Invocato dal client per interagire con QuestionsManager.
 \item \method{forwardTo (bundle : JSON) : void}
 \newline
 metodo usato per il reindirizzamento alla classe QuestionsManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6132,7 +5729,6 @@ Invocato dal client per interagire con QuizManager.
 \item \method{forwardTo (bundle : JSON) : JSON}
 \newline
 metodo usato per il reindirizzamento alla classe QuizManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6141,7 +5737,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \item \method{forwardTo (bundle : JSON) : void}
 \newline
 metodo usato per il reindirizzamento alla classe QuizManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6162,7 +5757,6 @@ Invocato dal client per interagire con RequestsManager.
 \item \method{forwardTo (bundle : JSON) : void}
 \newline
 metodo usato per il reindirizzamento alla classe RequestsManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6171,7 +5765,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \item \method{forwardTo () : JSON}
 \newline
 metodo usato per il reindirizzamento alla classe RequestsManager
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{SearchRouter}}
@@ -6187,7 +5780,6 @@ Invocato dal client per interagire con SearchManager.
 \item \method{forwardTo (bundle : JSON) : JSON}
 \newline
 metodo usato per il reindirizzamento alla classe SearchManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6208,7 +5800,6 @@ Invocato dal client per interagire con StatisticsManager.
 \item \method{forwardTo (bundle : JSON) : JSON}
 \newline
 metodo usato per il reindirizzamento alla classe StatisticsManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6217,7 +5808,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \item \method{forwardTo () : JSON}
 \newline
 metodo usato per il reindirizzamento alla classe StatisticsManager
-\newline
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{TopicRouter}}
@@ -6233,7 +5823,6 @@ Invocato dal client per interagire con TopicManager.
 \item \method{forwardTo (bundle : JSON) : void}
 \newline
 metodo usato per il reindirizzamento alla classe TopicManager
-\newline
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
