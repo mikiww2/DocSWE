@@ -134,7 +134,7 @@ L'utilizzo di \gl{Node.js}, associato a \gl{Tomcat}, è stato consigliato dal pr
 \subsubsection{Svantaggi:}
 \begin{itemize}
 	\item essendo di recente creazione, alcuni moduli possono essere instabili;
-	\item essendo un framework single-threaded, non è performante in caso di applicazioni con uso
+	\item essendo un \gl{framework} single-threaded, non è performante in caso di applicazioni con uso
 	intensivo di CPU;
 	\item utilizzando un sistema I/O asincrono, è possibile che l’uso di callback risulti eccessivo.
 \end{itemize}
@@ -153,19 +153,19 @@ Express.js è un \gl{framework} di \gl{Node.js} che mette a disposizione un \gl{
 \end{itemize}
 
 \subsection{MongoDB - v3.2}
-Dalla discussione emersa col committente si è deciso di passare ad utilizzare MongoDB come database. MongoDB è un database non relazionale orientato ai documenti, che appartiene alla tipologia di database NoSQL.
+Dalla discussione emersa col committente si è deciso di passare ad utilizzare \gl{MongoDB} come \gl{database}. \gl{MongoDB} è un \gl{database} non relazionale orientato ai documenti, che appartiene alla tipologia di \gl{database} NoSQL.
 
 \subsubsection{Vantaggi:}
 \begin{itemize}
-	\item è un database documentale con documenti in JSON;
-	\item essendo un database non relazionale lo schema su cui ci si basa può essere flessibile;
-	\item se utilizzato correttamente è nettamente più performante di un database di tipo relazionale;
+	\item è un \gl{database} documentale con documenti in \gl{JSON};
+	\item essendo un \gl{database} non relazionale lo schema su cui ci si basa può essere flessibile;
+	\item se utilizzato correttamente è nettamente più performante di un \gl{database} di tipo relazionale;
 	\item scalabilità.
 \end{itemize}
 
 \subsubsection{Svantaggi:}
 \begin{itemize}
-	\item approccio del team, per la prima volta, ad un database non relazionale;
+	\item approccio del \gl{team}, per la prima volta, ad un \gl{database} non relazionale;
 	\item meno flessibilità nella scrittura di query (non è supportata la keyword Join ad esempio);
 	\item non supporta le transazioni.
 \end{itemize}
@@ -305,7 +305,7 @@ L'architettura del prodotto sarà presentata con un approccio top-down, descrive
 	\end{enumerate}
 	
 	\subsubsection{Client}
-	La parte \gl{client} è divisa in Model, View e ViewModel, applicando il design pattern MVVM dal momento che viene utilizzato AngularJS. È il livello più alto dell'applicazione e interagisce con l'utente finale. La componente View è possibile considerarla come il Presentation Tier dell'architettura generale assunta.
+	La parte \gl{client} è divisa in Model, View e ViewModel, applicando il \gl{design pattern} \gl{MVVM} dal momento che viene utilizzato \gl{AngularJS}. È il livello più alto dell'applicazione e interagisce con l'utente finale. La componente View è possibile considerarla come il Presentation Tier dell'architettura generale assunta.
 	
 	\subsubsection{Server}
 	La parte \gl{server} è divisa in Model e Controller. Gestisce la logica di business e interroga il \gl{database} per passarne i dati al \gl{client}. Per questo nell'architettura Three-Tier rappresenta la Logic Tier.
@@ -318,10 +318,10 @@ L'architettura del prodotto sarà presentata con un approccio top-down, descrive
 	\\ REST ignora i dettagli di implementazione delle componenti e la sintassi del protocollo al fine di concentrarsi sui ruoli delle componenti e i vincoli imposti dalle loro interazioni con altri componenti.
 	\\ REST, che lavora sul protocollo HTTP generalmente, pur lasciando libera l'implementazione delle componenti all'interno dell'architettura, presenta dei vincoli stretti:
 	\begin{itemize}
-	\item separazione delle risorse in client e server in modo tale che i ruoli risultino ben definiti e ogni componente non debba preoccuparsi di altro se non del proprio ruolo, portando beneficio alla portabilità e scalabilità del prodotto;
-	\item la comunicazione client-server dev'essere di tipo stateless, ogni richiesta fatta dal client pertanto dovrà avere tutte le informazioni necessarie perchè il server comprenda la richiesta, senza utilizzare alcun contesto presente nel server;
-	\item i risultati ottenuti da una richiesta client-server devono definirsi cacheable o non cacheable. Qualora i dati risultino cacheable saranno salvati in cache in modo tale da permettere al client di riutilizzarli successivamente senza dover fare una nuova richiesta al server per ottenerli, aumentando l'efficienza e la scalabilità del prodotto;
-	\item è richiesta un'interfaccia omogenea di comunicazione tra client e server per disaccoppiare maggiormente l'architettura.
+	\item separazione delle risorse in \gl{client} e \gl{server} in modo tale che i ruoli risultino ben definiti e ogni componente non debba preoccuparsi di altro se non del proprio ruolo, portando beneficio alla portabilità e scalabilità del prodotto;
+	\item la comunicazione client-server dev'essere di tipo stateless, ogni richiesta fatta dal \gl{client} pertanto dovrà avere tutte le informazioni necessarie perchè il \gl{server} comprenda la richiesta, senza utilizzare alcun contesto presente nel \gl{server};
+	\item i risultati ottenuti da una richiesta client-server devono definirsi cacheable o non cacheable. Qualora i dati risultino cacheable saranno salvati in cache in modo tale da permettere al \gl{client} di riutilizzarli successivamente senza dover fare una nuova richiesta al \gl{server} per ottenerli, aumentando l'efficienza e la scalabilità del prodotto;
+	\item è richiesta un'interfaccia omogenea di comunicazione tra \gl{client} e \gl{server} per disaccoppiare maggiormente l'architettura.
 	\end{itemize}
 \newpage
 
@@ -954,8 +954,8 @@ In questa sezione vengono presentati i \gl{design pattern} che sono stati stabil
 
 \subsection{Model-View-ViewModel}
 L'utilizzo di \gl{AngularJS} all'interno del progetto porta a non implementare l'usuale \gl{design pattern} \gl{MVC}, ma necessita dell'implementazione di una sua variante, il Model-View-ViewModel (\gl{MVVM}).
-\\Tale design pattern permette la divisione delle principali componenti nell'architettura promuovendo il Separation of Concern, il principio per cui ogni componente presenta un ruolo ben distinto dalle altre con cui è in comunicazione.
-\\La peculiarità di questo design pattern architetturale è data dal Two-way data-binding: quando vengono aggiornati i dati presenti nel model automaticamente viene aggiornata anche l'interfaccia grafica e viceversa.
+\\Tale \gl{design pattern} permette la divisione delle principali componenti nell'architettura promuovendo il Separation of Concern, il principio per cui ogni componente presenta un ruolo ben distinto dalle altre con cui è in comunicazione.
+\\La peculiarità di questo \gl{design pattern} architetturale è data dal Two-way data-binding: quando vengono aggiornati i dati presenti nel model automaticamente viene aggiornata anche l'interfaccia grafica e viceversa.
 
 \subsubsection{Componenti}
 Segue una breve descrizione generale delle componenti che caratterizzano il pattern \gl{MVVM}.
@@ -972,29 +972,29 @@ Il ViewModel fornisce quindi i dati dal modello in una forma che la vista possa 
 \end{description}
 
 \subsubsection{Concretizzazione}
-L'applicazione del design pattern MVVM avviene lato client nella nostra architettura.
+L'applicazione del \gl{design pattern} \gl{MVVM} avviene lato \gl{client} nella nostra architettura.
 \\
 \\ Le classi presenti all'interno della componente ViewClient ad ogni azione di modifica effettuata dall'utente nell'interfaccia grafica a lui presentata avrà il compito di inviare il cambiamento all'adeguata classe presente nel ViewModelClient che comunicherà il nuovo aggiornamento al ModelClient. Al contrario quando una proprietà del ModelClient viene aggiornata invia una notifica al ViewModelClient che provvede in tempo reale alla visualizzazione nell'interfaccia grafica del cambiamento.
-\\ Ogni classe presente in queste tre componenti conterrà le direttive AngularJS per le comunicazioni degli aggiornamenti che sfruttano il principio del Two-way data-binding.
-\\ Nel nostro caso la componente ViewModelClient avrà inoltre il compito di controller, come nel pattern MVC, per la comunicazione con il server per il reperimento di alcune informazioni dal database.
+\\ Ogni classe presente in queste tre componenti conterrà le direttive \gl{AngularJS} per le comunicazioni degli aggiornamenti che sfruttano il principio del Two-way data-binding.
+\\ Nel nostro caso la componente ViewModelClient avrà inoltre il compito di controller, come nel pattern \gl{MVC}, per la comunicazione con il \gl{server} per il reperimento di alcune informazioni dal \gl{database}.
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=0.75]{Img/MVVM.pdf}
-\caption{Quizzipedia::Client con il MVVM}
+\caption{Quizzipedia::Client con il \gl{MVVM}}
 \label{}
 \end{figure}
 
 \subsection{Facade}
-Il Facade è un design pattern strutturale che fornisce un’ unica interfaccia semplice per un sottosistema complesso in modo tale che la complessità dell'intero sistema risulti minore e siano semplificate le dipendenze tra le componenti che interagiscono.
-\\ Ciò non si verificherebbe, in assenza del Facade, dal momento che una componente client ad esempio, si potrebbe trovare ad interagire direttamente con moltissime componenti lato server ottenendo un elevatissimo numero di dipendenze, maggiormente difficoltose da soddisfare durante l'attività di programmazione del codice.
+Il Facade è un \gl{design pattern} strutturale che fornisce un’ unica interfaccia semplice per un sottosistema complesso in modo tale che la complessità dell'intero sistema risulti minore e siano semplificate le dipendenze tra le componenti che interagiscono.
+\\ Ciò non si verificherebbe, in assenza del Facade, dal momento che una componente \gl{client} ad esempio, si potrebbe trovare ad interagire direttamente con moltissime componenti lato \gl{server} ottenendo un elevatissimo numero di dipendenze, maggiormente difficoltose da soddisfare durante l'attività di programmazione del codice.
 \\ Avere un'interfaccia comune che faccia da intermediario pertanto risulta comodo da utilizzare quando se ne presenta la possibilità.
 
 \subsubsection{Concretizzazione}
-Il Facade all'interno della nostra architettura viene rappresentato dalla componente RoutingManager presente nel server, come rappresentato dal diagramma che mostra solo alcune classi a titolo esemplificativo.
+Il Facade all'interno della nostra architettura viene rappresentato dalla componente RoutingManager presente nel \gl{server}, come rappresentato dal diagramma che mostra solo alcune classi a titolo esemplificativo.
 \\
-\\ Il client quando esegue una richiesta od un invio di informazioni al server non parla direttamente con la classe del ControllerServer appropriata; se così fosse per ogni classe del client si avrebbe un numero esagerato di dipendenze verso molte classi del ControllerServer.
-\\L'informazione prima viene filtrata dalla componente adatta presente nel package RoutingManager, la quale poi decide con quale classe del ControllerServer sia più appropriato comunicare.
-\\ Come è possibile notare dal diagramma, quando un utente ad esempio vuole creare un quiz, riempirà i campi necessari dell'interfaccia grafica. Le informazioni inserite verranno inviate al server e giungeranno prima di tutto alla classe concreta QuizRouter presente in RoutingManager (il nostro Facade). Questa classe attraverso i propri metodi avrà il compito di indirizzare le informazioni alla classe QuizCreator presente nel ControllerServer che si occuperà infine del salvataggio nel database e nel model.
+\\ Il \gl{client} quando esegue una richiesta od un invio di informazioni al \gl{server} non parla direttamente con la classe del ControllerServer appropriata; se così fosse per ogni classe del \gl{client} si avrebbe un numero esagerato di dipendenze verso molte classi del ControllerServer.
+\\L'informazione prima viene filtrata dalla componente adatta presente nel \gl{package} RoutingManager, la quale poi decide con quale classe del ControllerServer sia più appropriato comunicare.
+\\ Come è possibile notare dal diagramma, quando un utente ad esempio vuole creare un quiz, riempirà i campi necessari dell'interfaccia grafica. Le informazioni inserite verranno inviate al \gl{server} e giungeranno prima di tutto alla classe concreta QuizRouter presente in RoutingManager (il nostro Facade). Questa classe attraverso i propri metodi avrà il compito di indirizzare le informazioni alla classe QuizCreator presente nel ControllerServer che si occuperà infine del salvataggio nel \gl{database} e nel model.
 
 \begin{figure}[htp]
 \centering
@@ -1011,18 +1011,18 @@ Pertanto questo pattern viene utilizzato per disaccoppiare la logica di business
 \newline Il \gl{DAO} pertanto funge da intermediario tra l'applicazione e il \gl{database}.
 
 \subsubsection{Concretizzazione}
-Nella nostra architettura il DAO esplica la sua funzione nel controller lato server del nostro prodotto attraverso la comunicazione con il database MongoDB per l'esecuzione delle richieste provenienti dal client.
-\\ Di seguito viene presentato un diagramma semplificato di come è stato applicato il design pattern nel nostro progetto. Quasi tutte le componenti presenti nel ControllerServer utilizzano il pattern DAO, ma per semplicità ne viene considerata solo una nel seguente diagramma.
+Nella nostra architettura il \gl{DAO} esplica la sua funzione nel controller lato \gl{server} del nostro prodotto attraverso la comunicazione con il \gl{database} \gl{MongoDB} per l'esecuzione delle richieste provenienti dal \gl{client}.
+\\ Di seguito viene presentato un diagramma semplificato di come è stato applicato il \gl{design pattern} nel nostro progetto. Quasi tutte le componenti presenti nel ControllerServer utilizzano il pattern \gl{DAO}, ma per semplicità ne viene considerata solo una nel seguente diagramma.
 \\
-\\ Il client invia una richiesta al server per ottenere delle informazioni. L'informazione verrà indirizzata, attraverso il RoutingManager spiegato nel precedente design pattern, alla classe del ControllerServer predisposta nel portare a termine la richiesta. 
-Come nell'esempio illustrato il client richiede (l'utente fa la richiesta ovviamente attraverso l'interfaccia grafica) di vedere i propri dati personali che si troveranno memorizzati nel database. La richiesta pertanto deve arrivare alla classe adatta a soddisfarla, ovvero PersonalDataFetcher, che attraverso i propri metodi comunicherà col database esterno alla ricerca delle informazioni.
-Nel database MongoDB, una volta individuata l'informazione desiderata con l'esecuzione di una query, questa viene ritornata come oggetto JSON di tipo readonly, rappresentato nel diagramma dalla classe ResultsJSON (pur non essendo una vera classe). Per la classe del controller sarà possibile usare tale informazione per reindirizzarla al destinatario che l'aveva richiesta.
-\\ In tal modo si sfruttano tutte le caratteristiche che offre tale design pattern.
+\\ Il \gl{client} invia una richiesta al \gl{server} per ottenere delle informazioni. L'informazione verrà indirizzata, attraverso il RoutingManager spiegato nel precedente \gl{design pattern}, alla classe del ControllerServer predisposta nel portare a termine la richiesta. 
+Come nell'esempio illustrato il \gl{client} richiede (l'utente fa la richiesta ovviamente attraverso l'interfaccia grafica) di vedere i propri dati personali che si troveranno memorizzati nel \gl{database}. La richiesta pertanto deve arrivare alla classe adatta a soddisfarla, ovvero PersonalDataFetcher, che attraverso i propri metodi comunicherà col \gl{database} esterno alla ricerca delle informazioni.
+Nel \gl{database} \gl{MongoDB}, una volta individuata l'informazione desiderata con l'esecuzione di una query, questa viene ritornata come oggetto \gl{JSON} di tipo readonly, rappresentato nel diagramma dalla classe ResultsJSON (pur non essendo una vera classe). Per la classe del controller sarà possibile usare tale informazione per reindirizzarla al destinatario che l'aveva richiesta.
+\\ In tal modo si sfruttano tutte le caratteristiche che offre tale \gl{design pattern}.
 
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=0.75]{Img/DAO.pdf}
-\caption{Quizzipedia::Server::ControllerServer con l'utilizzo del DAO}
+\caption{Quizzipedia::Server::ControllerServer con l'utilizzo del \gl{DAO}}
 \label{}
 \end{figure}
 
