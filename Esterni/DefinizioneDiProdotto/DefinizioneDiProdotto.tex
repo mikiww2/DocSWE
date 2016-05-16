@@ -89,10 +89,54 @@
 	Gli strumenti utilizzati per lo sviluppo del progetto sono specificati nei documenti \doc{Norme di
 	Progetto}. Per approfondimenti si faccia riferimento a tale documento.
 
+\newpage
 \section{Specifica componenti e classi}
 \input{auto_classi}
 
-%diagrammi di sequenza ?
+\newpage
+\section{Diagrammi di sequenza}
+	Questa sezione illustrerà alcuni dei diagrammi di sequenza relativi alle operazioni principali
+	dell'applicazione, descrivendo le interazioni che intercorrono tra attori e oggetti o entità di
+	sistema all'interno di uno scenario.
+	
+	\subsection{Autenticazione}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.33]{Img/seq-login.pdf}
+		\caption{Diagramma di sequenza dello scenario di autenticazione}
+	\end{figure}
+	Il diagramma in figura illustra la gestione da parte del prodotto di una richiesta di login. La sequenza di azioni viene avviata una volta che un client invia una richiesta tramite un browser web supportato contenente i campi: indirizzo email e password.
+	La richiesta viene accolta da CtrlLogin, il quale chiamerà il metodo checkLogin(string, string) che comunicherà con la classe AuthenticationRouter. Questa indirizzerà la richiesta di login alla classe LoggerIn attraverso il metodo forwardTo(bundle) che inoltrerà a sua volta i dati alla classe del model corretta, AuthenticationData, utilizzando il metodo login(email, password). Quest'ultimo effettuerà un controllo nel database dei dati inseriti. Una volta elaborati i dati, in caso di errore dovuto alle credenziali errate verrà restituito un messaggio d'errore al client rappresentante un problema, altrimenti in caso di successo verrà restituito l'oggetto User rappresentante l'utente stesso.
+	
+	\subsection{Registrazione}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Img/seq-register.png}
+		\caption{Diagramma di sequenza dello scenario di registrazione}
+	\end{figure}
+	
+	\subsection{Gestione richieste}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Img/seq-request.png}
+		\caption{Diagramma di sequenza dello scenario di gestione richieste}
+	\end{figure}
+	
+	\subsection{Ricerca quiz}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Img/seq-searchquiz.png}
+		\caption{Diagramma di sequenza dello scenario di ricerca quiz}
+	\end{figure}
+	
+	\subsection{Svolgimento quiz}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.5]{Img/seq-solvingquiz.png}
+		\caption{Diagramma di sequenza dello scenario di svolgimento quiz}
+	\end{figure}
+
+\newpage
 \appendix
 \section{Tracciamento}
 
