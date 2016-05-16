@@ -62,7 +62,6 @@ permette di aggiungere un docente alla classe
 permette
 di modificare le informazioni base della classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newDescription : String}
 \newline
@@ -99,7 +98,6 @@ restituisce le mail dei docenti della classe
 permette di rimuovere uno studente dalla
 classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{studentMail : String}
 \newline
@@ -110,7 +108,6 @@ mail dello studente da rimuovere
 permette di rimuovere un docente dalla
 classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{teacherMail : String}
 \newline
@@ -162,7 +159,6 @@ i topic dell'istituto
 \newline
 permette di accettare una richiesta di ingresso ad una classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -172,7 +168,6 @@ la posizione della richiesta di ingresso ad una classe da accettare
 \newline
 permette di accettare una richiesta di ingresso ad un ruolo dell'istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{role : String}
 \newline
@@ -182,7 +177,6 @@ l'utente da accettare nell'istituto
 \newline
 Permette l'aggiunta di una classe all'interno di un istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{objectClass : Class}
 \newline
@@ -224,7 +218,6 @@ permette di recuperare i topics dell'istituto
 \newline
 rimuove una classe da un istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfClass : int}
 \newline
@@ -234,7 +227,6 @@ l'indice della classe da rimuovere dalle classi presenti nell'ente
 \newline
 permette di rimuovere una richiesta di ingresso ad una classe dell'istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -244,7 +236,6 @@ la posizione della richiesta da rimuovere
 \newline
 rimuove uno studente dagli iscritti presso un istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{studentMail : String}
 \newline
@@ -254,7 +245,6 @@ lo studente da rimuovere dall'istituto
 \newline
 rimuove un docente dagli iscritti presso un istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{teacherMail : String}
 \newline
@@ -264,7 +254,6 @@ l'insegnate da rimuovere dall'istituto
 \newline
 permette di modificare il direttore dell'istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{objectDirector : Director}
 \newline
@@ -274,7 +263,6 @@ il nuovo direttore dell'istituto
 \newline
 permette di modificare il nome dell'istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newName : String}
 \newline
@@ -309,7 +297,6 @@ Questa classe gestisce le richieste da parte di docenti o studenti per l'assegna
 \newline
 accetta la richiesta di entrata in una classe dell'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -319,7 +306,6 @@ Parametri :
 \newline
 aggiunge una richiesta di entrata in una classe alla lista delle richieste pendenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{mail : String}
 \newline
@@ -335,7 +321,6 @@ l'anno della classe per cui si sta effettuando la richiesta
 \newline
 rimuove una richiesta di entrata nella classe dalla lista delle richieste pendenti. Di fatto, comporta il rifiuto della richiesta
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -428,7 +413,6 @@ accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare do
 \newline
 il metodo aggiunge una richiesta alla lista corretta delle richieste pendenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{mailUser : String}
 \newline
@@ -498,7 +482,6 @@ gli argomenti coperti dal quiz
 \newline
 aggiunge una classe alla lista delle classi che hanno accesso al quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{class : Class}
 \newline
@@ -508,7 +491,6 @@ la classe che si intende aggiungere
 \newline
 aggiunge una parola chiave per identificare il quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{keyword : String}
 \newline
@@ -518,7 +500,6 @@ la parola chiave da aggiungere
 \newline
 aggiunge una domanda al quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -528,7 +509,6 @@ la domanda da aggiungere al quiz
 \newline
 aggiunge un argomento agli argomenti del quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{topic : String}
 \newline
@@ -546,7 +526,6 @@ ritorna un oggetto contenente le statistiche degli utenti che hanno risolto il q
 \newline
 rimuove una classe da quelle che hanno accesso al quiz. Rimuovendo tutte le classi il quiz diventa pubblico
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfClass : int}
 \newline
@@ -556,7 +535,6 @@ l'indice della classe da rimuovere
 \newline
 rimuove una parola chiave da quelle che identificano il quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfKeyword : int}
 \newline
@@ -566,7 +544,6 @@ l'indice della parola chiave da rimuovere
 \newline
 rimuove una domanda dal quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfQuestion : int}
 \newline
@@ -576,7 +553,6 @@ l'indice della domanda da rimuovere
 \newline
 rimuove un argomento da quelli che identificano il quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfTopic : int}
 \newline
@@ -586,7 +562,6 @@ l'indice della classe da rimuovere
 \newline
 imposta la descrizione del quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newDescr : String}
 \newline
@@ -596,7 +571,6 @@ la nuova descrizione del quiz
 \newline
 imposta il titolo del quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newTitle : String}
 \newline
@@ -624,7 +598,6 @@ la lista degli argomenti esistenti
 \newline
 permette di aggiungere un nuovo argomento a quelli esistenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{nameTopic : String}
 \newline
@@ -634,7 +607,6 @@ il nuovo argomento da aggiungere
 \newline
 permette di rimuovere un argomento da quelli esistenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexTopic : int}
 \newline
@@ -669,7 +641,6 @@ le risposte date dall'utente in una colonna della domanda a collegamenti
 \newline
 aggiunge la risposta data dall'utente in una colonna della domanda a collegamenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : int}
 \newline
@@ -687,7 +658,6 @@ restituisce le risposte date dall'utente in una colonna della domanda a collegam
 \newline
 imposta, memorizzando correttamente, le risposte date dall'utente in una colonna della domanda a collegamenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : int[]}
 \newline
@@ -715,7 +685,6 @@ la risposta data dall'utente
 \newline
 aggiunge una parola alla lista di parole che compongono la risposta alla domanda a completamento
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -759,7 +728,6 @@ restituisce le risposte date dall'utente per una delle colonne della domanda a c
 \newline
 aggiunge una risposta dell'utente per le domande a collegamento
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : AnswerColumn}
 \newline
@@ -769,7 +737,6 @@ la risposta parziale dell'utente da aggiungere alla risposta della domanda a col
 \newline
 imposta le risposte date dall'utente per una delle colonne della domanda a collegamenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : AnswerColumn}
 \newline
@@ -797,7 +764,6 @@ la risposta data dall'utente
 \newline
 aggiunge una scelta alla risposta data dal'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -844,7 +810,6 @@ restituisce la domanda a cui corrisponde la risposta data
 \newline
 imposta la domanda a cui si vuole dare risposta
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -854,7 +819,6 @@ la domanda a cui si vuole dare risposta
 \newline
 imposta l'utente che sta risolvendo la domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{user : User}
 \newline
@@ -888,7 +852,6 @@ la data di risoluzione del quiz
 \newline
 aggiunge la risposta a una delle domande del quiz alla lista delle risposte per il quiz corrente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : AnswerQuestion}
 \newline
@@ -914,7 +877,6 @@ restituisce il Quiz che l'utente sta risolvendo
 \newline
 rimuove la risposta data dall'utente a una domanda dalla lista delle risposte alle domande del quiz corrente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfAnswer : int}
 \newline
@@ -924,7 +886,6 @@ l'indice della risposta da rimuovere dalla lista di risposte alle domande del qu
 \newline
 imposta la data di risoluzione del quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{date : Date}
 \newline
@@ -934,7 +895,6 @@ la data di risoluzione del quiz
 \newline
 imposta il quiz di cui a cui si riferisce la risposta
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : Quiz}
 \newline
@@ -1047,7 +1007,6 @@ permette di recuperare il testo della cella
 \newline
 permette di sostituire l'allegato della cella
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newAttachment : String}
 \newline
@@ -1057,7 +1016,6 @@ il nuovo allegato da inserire nella cella
 \newline
 permette di modificare la posizione corretta della cella
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{position : int}
 \newline
@@ -1067,7 +1025,6 @@ la nuova posizione da dare alla cella
 \newline
 permette di modificare il testo della cella
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newText : String}
 \newline
@@ -1098,7 +1055,6 @@ celle che compongono la colonna
 \newline
 permette di aggiungere una nuova cella alla colonna di celle
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -1122,7 +1078,6 @@ permette di recuperare le celle che compongono la colonna
 \newline
 permette di aggiornare il corretto ordinamento delle celle
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : int[]}
 \newline
@@ -1132,7 +1087,6 @@ il corretto ordinamento delle celle della colonna
 \newline
 permette di rimpiazzare completamente tutte le celle con delle celle nuove
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newText : Cell[]}
 \newline
@@ -1166,7 +1120,6 @@ il testo della domanda CompletionQ
 \newline
 permette di creare una AnswerCompletionQ che rappresenta una CompletionQ risolta da un utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : String[]}
 \newline
@@ -1180,7 +1133,6 @@ permette di recuperare i suggerimenti della domanda CompletionQ
 \newline
 permette di rimuovere un suggerimento della domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{index : int}
 \newline
@@ -1190,7 +1142,6 @@ la posizione del suggerimento da rimuovere
 \newline
 permette di aggiornare la risposta corretta della domanda CompletionQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{correctAnswer : String[]}
 \newline
@@ -1200,7 +1151,6 @@ le nuove risposte corrette della domanda
 \newline
 permette di inserire dei suggerimenti alla domanda CompletionQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{suggestions : String[]}
 \newline
@@ -1210,7 +1160,6 @@ i nuovi suggerimenti della domanda
 \newline
 permette di modificare il testo della domanda CompletionQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newText : String}
 \newline
@@ -1260,7 +1209,6 @@ permette di creare un QuestionStatistics con le statistiche della domanda
 \newline
 permette la modifica della descrizione della domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newDescription : String}
 \newline
@@ -1270,7 +1218,6 @@ la nuova descrizione della domanda
 \newline
 permette la modifica della difficoltà della domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{difficulty : int}
 \newline
@@ -1280,7 +1227,6 @@ la nuova difficoltà della domanda
 \newline
 permette di aggiungere una parola chiave alla domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{keyword : String}
 \newline
@@ -1290,7 +1236,6 @@ la nuova parola chiave della domanda
 \newline
 permette di aggiungere un allegato alla domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -1300,7 +1245,6 @@ il nuovo allegato della domanda
 \newline
 permette di modificare il titolo della domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newTitle : String}
 \newline
@@ -1310,7 +1254,6 @@ il nuovo titolo della domanda
 \newline
 permette l'aggiunta di un topic alla domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newTopic : String}
 \newline
@@ -1338,7 +1281,6 @@ le colonne della domanda
 \newline
 permette di aggiungere una colonna alla domanda MatchingQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newColumn : Column}
 \newline
@@ -1348,7 +1290,6 @@ la nuova colonna della domanda
 \newline
 permette il salvataggio delle risposte dell'utente, sotto forma di AnswerMatchingQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answerColumn : AnswerColumn[]}
 \newline
@@ -1362,7 +1303,6 @@ permette di ottenere tutte le colonne della domanda
 \newline
 permette di sostituire tutte le colonne della domanda MatchingQ con delle nuove colonne
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newColumn : Column[]}
 \newline
@@ -1396,7 +1336,6 @@ le soluzione della domanda
 \newline
 permette di creare un AnswerMultipleChoicheQ con le risposte dell'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : bool[]}
 \newline
@@ -1414,7 +1353,6 @@ permette di modificare una risposta corretta della domanda MultipleChoiceQ
 \newline
 permette di aggiungere un allegato alla domanda MultipleChoiceQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -1427,7 +1365,6 @@ la posizione del nuovo allegato
 \newline
 permette di inserire le nuove risposte corrette alla domanda MultipleChoiceQ che sostituiranno le vecchie
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{correctAnswers : bool[]}
 \newline
@@ -1455,7 +1392,6 @@ la risposta corretta della domanda ShortAnswerQ
 \newline
 permette di creare un AnswerShortAnswerQ con le risposte dell'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -1465,7 +1401,6 @@ la risposta alla domanda ShortAnswerQ dell'utente
 \newline
 permette di modificare la risposta corretta della domanda ShortAnswerQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newCorrectAnswer : String}
 \newline
@@ -1493,7 +1428,6 @@ la risposta corretta alla domanda TrueFalseQ
 \newline
 permette di creare la AnswerTrueFalseQ che contiene la risposta dell'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -1503,7 +1437,6 @@ la risposta dell'utente alla domanda TrueFalseQ
 \newline
 permette di modificare la risposta corretta della domanda TrueFalseQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -1660,7 +1593,6 @@ permette di recuperare la mail dell'utente registrato
 \newline
 permette di modificare la password dell'account di un utente registrato
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newPsw : String}
 \newline
@@ -1700,7 +1632,6 @@ Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e 
 \newline
 aggiunge un quiz svolto e le risposte date dall'utente allo storico dei quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : AnswerQuiz}
 \newline
@@ -1718,7 +1649,6 @@ carica e assegna a quizProfile la lista dei quiz già svolti dall'utente e dei l
 \newline
 rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti da un utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -1746,7 +1676,6 @@ lo storico dei quiz svolti con relativa soluzione
 \newline
 aggiunge un quiz e la relativa soluzione allo storico dei quiz svolti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : AnswerQuiz}
 \newline
@@ -1764,7 +1693,6 @@ carica lo storico dei quiz svolti dall'utente e dei loro esiti
 \newline
 rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -1792,7 +1720,6 @@ la lista dei quiz creati dall'utente
 \newline
 aggiunge un quiz alla lista dei quiz creati dal docente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newQuiz : Quiz}
 \newline
@@ -1814,7 +1741,6 @@ restituisce le statistiche degli utenti che hanno risolto il quiz richiesto
 \newline
 rimuove un quiz dalla lista di quiz creati dall'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -2292,7 +2218,6 @@ carica gli argomenti disponibili. Il docente ne assegnerà uno al quiz
 \newline
 invia il quiz completo al server perché lo salvi nel database
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : \$scope}
 \newline
@@ -2363,7 +2288,6 @@ carica il docente che ha creato i quiz
 \newline
 permette al docente di modificare uno dei quiz da lui creati
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : Quiz}
 \newline
@@ -2373,7 +2297,6 @@ il quiz che si intende modificare
 \newline
 rimuove un quiz dalla lista dei quiz creati dal docente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -2414,7 +2337,6 @@ carica le classi a cui lo studente è iscritto per permettergli di scegliere qui
 \newline
 carica tutti i quiz appartenenti alle classi a cui l'utente è iscritto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{classes : Class[]}
 \newline
@@ -2470,7 +2392,6 @@ carica la lista di argomenti che il docente può utilizzare per aiutarsi nella r
 \newline
 ricerca la domanda utilizzando i parametri immessi dall'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : \$scope}
 \newline
@@ -2522,7 +2443,6 @@ carica l'utente che sta effettuando la ricerca
 \newline
 invia al server le informazioni necessarie per compiere la ricerca nel database
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{search : \$scope}
 \newline
@@ -2553,7 +2473,6 @@ la lista di argomenti esistenti, viene definito nello \$scope
 \newline
 viene aggiunto un argomento alla lista di quelli esistenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{name : string}
 \newline
@@ -2567,7 +2486,6 @@ effettua una richiesta al server che mi ritorna un array di topics che verrà po
 \newline
 rimuove l'argomento specificato in locale e invia una richiesta al server
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfTopic : int}
 \newline
@@ -2619,7 +2537,6 @@ l'argomento del quiz
 \newline
 aggiunge la parola chiave scelta dal docente al quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{keyword : String}
 \newline
@@ -2629,7 +2546,6 @@ la parola chiave che si vuole aggiungere come identificativo del quiz
 \newline
 aggiunge una domanda al quiz creato dal docente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : Quiz}
 \newline
@@ -2754,7 +2670,6 @@ carica il docente che ha creato la domanda
 \newline
 avvia la procedura da cui sarà possibile modificare la domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -2764,7 +2679,6 @@ la domanda che si intende modificare
 \newline
 rimuove la domanda selezionata
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfQuestion : int}
 \newline
@@ -2798,7 +2712,6 @@ la lista dei completamenti sbagliati per la domanda creata
 \newline
 inserisce un completamento dell'utente nella lista delle possibili risposte, tenendo traccia anche della sua correttezza
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{check : bool}
 \newline
@@ -2811,7 +2724,6 @@ il completamento da inserire
 \newline
 rimuove una delle opzioni possibili per la domanda a completamento
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{check : bool}
 \newline
@@ -2878,7 +2790,6 @@ indica una parte della domanda a collegamenti, che andrà poi a comporre una ris
 \newline
 rimuove una possibile soluzione del quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -2888,7 +2799,6 @@ una parte da rimuovere dalla domanda a collegamenti
 \newline
 serve a memorizzare la corretta soluzione della domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -2919,7 +2829,6 @@ le opzioni che non corrispondono alla scelta corretta
 \newline
 inserisce un'opzione tra le possibili scelte della domanda, andando a memorizzare anche la sua correttezza
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{check : bool}
 \newline
@@ -2932,7 +2841,6 @@ il testo o l'indirizzo dell'allegato che corrisponde a un'opzione della domanda
 \newline
 rimuove un'opzione dalla domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{check : bool}
 \newline
@@ -3169,7 +3077,6 @@ la password introdotta dall'utente per il login
 \newline
 Il metodo si occupa di verificare le credenziali per il login
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : string}
 \newline
@@ -3200,7 +3107,6 @@ La classe gestisce il recupero della password in caso di smarrimento.
 \newline
 il metodo si occupa di inviare all'indirizzo specificato la nuova password
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : string}
 \newline
@@ -3228,7 +3134,6 @@ contiene un riferimento all'oggetto \$scope creato da Angular e viene utilizzato
 \newline
 invia al server le informazioni necessarie per portare a termine la registrazione dell'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{user : \$scope}
 \newline
@@ -3375,7 +3280,6 @@ permette di aggiungere un docente alla classe
 permette
 di modificare le informazioni base della classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newDescription : String}
 \newline
@@ -3412,7 +3316,6 @@ restituisce le mail dei docenti della classe
 permette di rimuovere uno studente dalla
 classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{studentMail : String}
 \newline
@@ -3423,7 +3326,6 @@ mail dello studente da rimuovere
 permette di rimuovere un docente dalla
 classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{teacherMail : String}
 \newline
@@ -3475,7 +3377,6 @@ i topic dell'istituto
 \newline
 permette di accettare una richiesta di ingresso ad una classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -3485,7 +3386,6 @@ la posizione della richiesta di ingresso ad una classe da accettare
 \newline
 permette di accettare una richiesta di ingresso ad un ruolo dell'istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{role : String}
 \newline
@@ -3495,7 +3395,6 @@ l'utente da accettare nell'istituto
 \newline
 permette l'aggiunta di una classe all'interno di un istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{objectClass : Class}
 \newline
@@ -3537,7 +3436,6 @@ permette di recuperare i topics dell'istituto
 \newline
 rimuove una classe da un istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfClass : int}
 \newline
@@ -3547,7 +3445,6 @@ l'indice della classe da rimuovere dalle classi presenti nell'ente
 \newline
 permette di rimuovere una richiesta di ingresso ad una classe dell'istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -3557,7 +3454,6 @@ la posizione della richiesta da rimuovere
 \newline
 rimuove uno studente dagli iscritti presso un istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{studentMail : String}
 \newline
@@ -3567,7 +3463,6 @@ lo studente da rimuovere dall'istituto
 \newline
 rimuove un docente dagli iscritti presso un istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{teacherMail : String}
 \newline
@@ -3577,7 +3472,6 @@ l'insegnate da rimuovere dall'istituto
 \newline
 permette di modificare il direttore dell'istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{objectDirector : Director}
 \newline
@@ -3587,7 +3481,6 @@ il nuovo direttore dell'istituto
 \newline
 permette di modificare il nome dell'istituto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newName : String}
 \newline
@@ -3622,7 +3515,6 @@ Questa classe gestisce le richieste da parte di docenti o studenti per l'assegna
 \newline
 accetta la richiesta di entrata in una classe dell'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -3632,7 +3524,6 @@ Parametri :
 \newline
 aggiunge una richiesta di entrata in una classe alla lista delle richieste pendenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{mail : String}
 \newline
@@ -3648,7 +3539,6 @@ l'anno della classe per cui si sta effettuando la richiesta
 \newline
 rimuove una richiesta di entrata nella classe dalla lista delle richieste pendenti. Di fatto, comporta il rifiuto della richiesta
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfRequest : int}
 \newline
@@ -3741,7 +3631,6 @@ accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare do
 \newline
 il metodo aggiunge una richiesta alla lista corretta delle richieste pendenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{mailUser : String}
 \newline
@@ -3811,7 +3700,6 @@ gli argomenti coperti dal quiz
 \newline
 aggiunge una classe alla lista delle classi che hanno accesso al quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{class : Class}
 \newline
@@ -3821,7 +3709,6 @@ la classe che si intende aggiungere
 \newline
 aggiunge una parola chiave per identificare il quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{keyword : String}
 \newline
@@ -3831,7 +3718,6 @@ la parola chiave da aggiungere
 \newline
 aggiunge una domanda al quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -3841,7 +3727,6 @@ la domanda da aggiungere al quiz
 \newline
 aggiunge un argomento agli argomenti del quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{topic : String}
 \newline
@@ -3859,7 +3744,6 @@ ritorna un oggetto contenente le statistiche degli utenti che hanno risolto il q
 \newline
 rimuove una classe da quelle che hanno accesso al quiz. Rimuovendo tutte le classi il quiz diventa pubblico
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfClass : int}
 \newline
@@ -3869,7 +3753,6 @@ l'indice della classe da rimuovere
 \newline
 rimuove una parola chiave da quelle che identificano il quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfKeyword : int}
 \newline
@@ -3879,7 +3762,6 @@ l'indice della parola chiave da rimuovere
 \newline
 rimuove una domanda dal quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfQuestion : int}
 \newline
@@ -3889,7 +3771,6 @@ l'indice della domanda da rimuovere
 \newline
 rimuove un argomento da quelli che identificano il quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfTopic : int}
 \newline
@@ -3899,7 +3780,6 @@ l'indice della classe da rimuovere
 \newline
 imposta la descrizione del quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newDescr : String}
 \newline
@@ -3909,7 +3789,6 @@ la nuova descrizione del quiz
 \newline
 imposta il titolo del quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newTitle : String}
 \newline
@@ -3937,7 +3816,6 @@ la lista degli argomenti esistenti
 \newline
 permette di aggiungere un nuovo argomento a quelli esistenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{nameTopic : String}
 \newline
@@ -3947,7 +3825,6 @@ il nuovo argomento da aggiungere
 \newline
 permette di rimuovere un argomento da quelli esistenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexTopic : int}
 \newline
@@ -3982,7 +3859,6 @@ le risposte date dall'utente in una colonna della domanda a collegamenti
 \newline
 aggiunge la risposta data dall'utente in una colonna della domanda a collegamenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : int}
 \newline
@@ -4000,7 +3876,6 @@ restituisce le risposte date dall'utente in una colonna della domanda a collegam
 \newline
 imposta, memorizzando correttamente, le risposte date dall'utente in una colonna della domanda a collegamenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : int[]}
 \newline
@@ -4028,7 +3903,6 @@ la risposta data dall'utente
 \newline
 aggiunge una parola alla lista di parole che compongono la risposta alla domanda a completamento
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -4072,7 +3946,6 @@ restituisce le risposte date dall'utente per una delle colonne della domanda a c
 \newline
 aggiunge una risposta dell'utente per le domande a collegamento
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : AnswerColumn}
 \newline
@@ -4082,7 +3955,6 @@ la risposta parziale dell'utente da aggiungere alla risposta della domanda a col
 \newline
 imposta le risposte date dall'utente per una delle colonne della domanda a collegamenti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : AnswerColumn}
 \newline
@@ -4110,7 +3982,6 @@ la risposta data dall'utente
 \newline
 aggiunge una scelta alla risposta data dal'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -4160,7 +4031,6 @@ restituisce la domanda a cui corrisponde la risposta data
 \newline
 imposta la domanda a cui si vuole dare risposta
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : GenericQuestion}
 \newline
@@ -4198,7 +4068,6 @@ la data di risoluzione del quiz
 \newline
 aggiunge la risposta a una delle domande del quiz alla lista delle risposte per il quiz corrente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : AnswerQuestion}
 \newline
@@ -4224,7 +4093,6 @@ restituisce il Quiz che l'utente sta risolvendo
 \newline
 rimuove la risposta data dall'utente a una domanda dalla lista delle risposte alle domande del quiz corrente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfAnswer : int}
 \newline
@@ -4234,7 +4102,6 @@ l'indice della risposta da rimuovere dalla lista di risposte alle domande del qu
 \newline
 imposta la data di risoluzione del quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{date : Date}
 \newline
@@ -4244,7 +4111,6 @@ la data di risoluzione del quiz
 \newline
 imposta il quiz a cui si riferisce la risposta
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : Quiz}
 \newline
@@ -4360,7 +4226,6 @@ permette di recuperare il testo della cella
 \newline
 permette di sostituire l'allegato della cella
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newAttachment : String}
 \newline
@@ -4370,7 +4235,6 @@ il nuovo allegato da inserire nella cella
 \newline
 permette di modificare la posizione corretta della cella
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{position : int}
 \newline
@@ -4380,7 +4244,6 @@ la nuova posizione da dare alla cella
 \newline
 permette di modificare il testo della cella
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newText : String}
 \newline
@@ -4411,7 +4274,6 @@ celle che compongono la colonna
 \newline
 permette di aggiungere una nuova cella alla colonna di celle
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -4435,7 +4297,6 @@ permette di recuperare le celle che compongono la colonna
 \newline
 permette di aggiornare il corretto ordinamento delle celle
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : int[]}
 \newline
@@ -4445,7 +4306,6 @@ il corretto ordinamento delle celle della colonna
 \newline
 permette di rimpiazzare completamente tutte le celle con delle celle nuove
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newText : Cell[]}
 \newline
@@ -4479,7 +4339,6 @@ il testo della domanda CompletionQ
 \newline
 permette di creare una AnswerCompletionQ che rappresenta una CompletionQ risolta da un utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : String[]}
 \newline
@@ -4493,7 +4352,6 @@ permette di recuperare i suggerimenti della domanda CompletionQ
 \newline
 permette di rimuovere un suggerimento della domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{index : int}
 \newline
@@ -4503,7 +4361,6 @@ la posizione del suggerimento da rimuovere
 \newline
 permette di aggiornare la risposta corretta della domanda CompletionQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{correctAnswer : String[]}
 \newline
@@ -4513,7 +4370,6 @@ le nuove risposte corrette della domanda
 \newline
 permette di inserire dei suggerimenti alla domanda CompletionQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{suggestions : String[]}
 \newline
@@ -4523,7 +4379,6 @@ i nuovi suggerimenti della domanda
 \newline
 permette di modificare il testo della domanda CompletionQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newText : String}
 \newline
@@ -4573,7 +4428,6 @@ permette di creare un QuestionStatistics con le statistiche della domanda
 \newline
 permette la modifica della descrizione della domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newDescription : String}
 \newline
@@ -4583,7 +4437,6 @@ la nuova descrizione della domanda
 \newline
 permette la modifica della difficoltà della domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{difficulty : int}
 \newline
@@ -4593,7 +4446,6 @@ la nuova difficoltà della domanda
 \newline
 permette di aggiungere una parola chiave alla domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{keyword : String}
 \newline
@@ -4603,7 +4455,6 @@ la nuova parola chiave della domanda
 \newline
 permette di aggiungere un allegato alla domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -4613,7 +4464,6 @@ il nuovo allegato della domanda
 \newline
 permette di modificare il titolo della domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newTitle : String}
 \newline
@@ -4623,7 +4473,6 @@ il nuovo titolo della domanda
 \newline
 permette l'aggiunta di un topic alla domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newTopic : String}
 \newline
@@ -4651,7 +4500,6 @@ le colonne della domanda
 \newline
 permette di aggiungere una colonna alla domanda MatchingQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newColumn : Column}
 \newline
@@ -4661,7 +4509,6 @@ la nuova colonna della domanda
 \newline
 permette il salvataggio delle risposte dell'utente, sotto forma di AnswerMatchingQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answerColumn : AnswerColumn[]}
 \newline
@@ -4675,7 +4522,6 @@ permette di ottenere tutte le colonne della domanda
 \newline
 permette di sostituire tutte le colonne della domanda MatchingQ con delle nuove colonne
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newColumn : Column[]}
 \newline
@@ -4709,7 +4555,6 @@ le soluzione della domanda
 \newline
 permette di creare un AnswerMultipleChoicheQ con le risposte dell'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : bool[]}
 \newline
@@ -4727,7 +4572,6 @@ permette di modificare una risposta corretta della domanda MultipleChoiceQ
 \newline
 permette di aggiungere un allegato alla domanda MultipleChoiceQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{attachment : String}
 \newline
@@ -4740,7 +4584,6 @@ la posizione del nuovo allegato
 \newline
 permette di inserire le nuove risposte corrette alla domanda MultipleChoiceQ che sostituiranno le vecchie
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{correctAnswers : bool[]}
 \newline
@@ -4768,7 +4611,6 @@ la risposta corretta della domanda ShortAnswerQ
 \newline
 permette di creare un AnswerShortAnswerQ con le risposte dell'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : String}
 \newline
@@ -4778,7 +4620,6 @@ la risposta alla domanda ShortAnswerQ dell'utente
 \newline
 permette di modificare la risposta corretta della domanda ShortAnswerQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newCorrectAnswer : String}
 \newline
@@ -4806,7 +4647,6 @@ la risposta corretta alla domanda TrueFalseQ
 \newline
 permette di creare la AnswerTrueFalseQ che contiene la risposta dell'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -4816,7 +4656,6 @@ la risposta dell'utente alla domanda TrueFalseQ
 \newline
 permette di modificare la risposta corretta della domanda TrueFalseQ
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{answer : bool}
 \newline
@@ -4973,7 +4812,6 @@ permette di recuperare la mail dell'utente registrato
 \newline
 permette di modificare la password dell'account di un utente registrato
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newPsw : String}
 \newline
@@ -5024,7 +4862,6 @@ Rappresenta gli utenti senza ruolo del sistema; coloro che si sono registrati e 
 \newline
 aggiunge un quiz svolto e le risposte date dall'utente allo storico dei quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : AnswerQuiz}
 \newline
@@ -5042,7 +4879,6 @@ carica e assegna a quizProfile la lista dei quiz già svolti dall'utente e dei l
 \newline
 rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti da un utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -5070,7 +4906,6 @@ lo storico dei quiz svolti con relativa soluzione
 \newline
 aggiunge un quiz e la relativa soluzione allo storico dei quiz svolti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : AnswerQuiz}
 \newline
@@ -5088,7 +4923,6 @@ carica lo storico dei quiz svolti dall'utente e dei loro esiti
 \newline
 rimuove un quiz e la relativa soluzione dallo storico dei quiz svolti
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -5116,7 +4950,6 @@ la lista dei quiz creati dall'utente
 \newline
 aggiunge un quiz alla lista dei quiz creati dal docente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{newQuiz : Quiz}
 \newline
@@ -5138,7 +4971,6 @@ restituisce le statistiche degli utenti che hanno risolto il quiz richiesto
 \newline
 rimuove un quiz dalla lista di quiz creati dall'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{indexOfQuiz : int}
 \newline
@@ -5194,7 +5026,6 @@ Effettua il controllo sull'utente per verificare che egli sia in possesso dell'a
 \newline
 verifica che l'utente (oltre ad essere autenticato) goda dei permessi necessari per effettuare l'operazione richiesta
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5223,7 +5054,6 @@ Permette l'autenticazione nel sistema da parte di utenti preventivamente registr
 \newline
 permette l'autenticazione di un utente in Quizzipedia nel caso esso si sia preventivamente registrato
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5280,7 +5110,6 @@ Permette la registrazione di un utente nel sistema.
 \newline
 permette la registrazione di un utente in Quizzipedia
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5318,7 +5147,6 @@ Permette la creazione di una nuova classe.
 \newline
 permette la creazione di una nuova classe (che sarà associata ad un ente)
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{class : JSON}
 \newline
@@ -5343,7 +5171,6 @@ Permette la rimozione delle classi dal sistema.
 \newline
 permette la rimozione di una classe presente in un ente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5365,7 +5192,6 @@ Permette la modifica delle informazioni di base di una determinata classe.
 \newline
 permette la modifica delle informazioni di una classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5390,7 +5216,6 @@ Permette la rimozione di un utente da una determinata classe.
 \newline
 permette la rimozione di un utente dalla classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5415,7 +5240,6 @@ Permette l'inserimento di un utente in una specifica classe.
 \newline
 permette l'inserimento di un utente in una classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5440,7 +5264,6 @@ Recupera la lista degli studenti appartenenti ad una determinata classe.
 \newline
 recupera la lista di studenti appartenenti ad una determinata classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5462,7 +5285,6 @@ Recupera la lista degli insegnanti relativi ad una determinata classe.
 \newline
 recupera la lista di docenti relativi ad una determinata classe
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{classname : String}
 \newline
@@ -5491,7 +5313,6 @@ Permette la modifica dell'ente da parte del responsabile.
 \newline
 permette la modifica del nome di un ente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{companyname : String}
 \newline
@@ -5523,7 +5344,6 @@ Permette la rimozione di un account dal sistema.
 \newline
 permette la rimozione di un account da Quizzipedia
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5545,7 +5365,6 @@ Permette ad un utente di impostare una nuova password relativa al proprio accoun
 \newline
 permette ad un utente di cambiare la propria password
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5570,7 +5389,6 @@ Ritorna tutte le informazioni personali riferite all'utente che ne effettua la r
 \newline
 ritorna tutte le informazioni personali dell'utente che ne ha fatto richiesta
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5592,7 +5410,6 @@ Ritorna una lista contenente tutti i quiz che un utente autenticato ha svolto fi
 \newline
 ritorna i quiz che l'utente ha svolto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5621,7 +5438,6 @@ Permette il salvataggio nella base di dati di una nuova domanda.
 \newline
 permette il salvataggio di una nuova domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : JSON}
 \newline
@@ -5643,7 +5459,6 @@ Permette la cancellazione di una domanda dalla base di dati.
 \newline
 permette la cancellazione di una domanda esistente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : String}
 \newline
@@ -5665,7 +5480,6 @@ Permette la modifica di una domanda già esistente.
 \newline
 permette la modifica di una domanda esistente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : JSON}
 \newline
@@ -5687,7 +5501,6 @@ Aggiorna le statistiche relative ad una domanda quando viene svolto un quiz in e
 \newline
 aggiorna le statistiche relative ad una domanda
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : String}
 \newline
@@ -5719,7 +5532,6 @@ Permette il salvataggio nella base di dati di un nuovo quiz.
 \newline
 permette la creazione di un nuovo quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : JSON}
 \newline
@@ -5741,7 +5553,6 @@ Permette la cancellazione di un quiz dalla base di dati.
 \newline
 permette la cancellazione di un quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : String}
 \newline
@@ -5763,7 +5574,6 @@ Ritorna un determinato quiz pronto per essere svolto da un utente .
 \newline
 ritorna un quiz per essere svolto
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : String}
 \newline
@@ -5785,7 +5595,6 @@ Permette la modifica di un quiz già presente nella base di dati.
 \newline
 permette la modifica di un quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : JSON}
 \newline
@@ -5807,7 +5616,6 @@ Aggiorna i risultati dei quiz ad ogni svolgimento degli stessi da parte di un ut
 \newline
 aggiorna i risultati dei quiz ad ogni svolgimento
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : String}
 \newline
@@ -5832,7 +5640,6 @@ Aggiorna le statistiche relative ad un quiz ogni volta che viene svolto da parte
 \newline
 aggiorna le statistiche relative al quiz
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{quiz : String}
 \newline
@@ -5864,7 +5671,6 @@ Permette la traduzione in formato QML di un quiz nel caso si voglia procedere al
 \newline
 traduzione in formato QML di un quiz per procedere con il salvataggio nel database
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : JSON}
 \newline
@@ -5886,7 +5692,6 @@ Permette la traduzione di un quiz dal formato QML ad uno comprensibile dal siste
 \newline
 traduzione del formato QML in formato JSON per la visualizzazione lato client
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{question : String}
 \newline
@@ -5915,7 +5720,6 @@ Permette la memorizzazione nella base di dati di tutte le richieste, fatte da pa
 \newline
 permette la memorizzazione della richiesta di inserimento in una classe da parte di un utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{class : String}
 \newline
@@ -5956,7 +5760,6 @@ Permette l'accettazione o la negazione dell'assegnazione di un ruolo ad un utent
 \newline
 permette l'accettazione o negazione dell'assegnazione di un ruolo ad un utente previa richiesta
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -5981,7 +5784,6 @@ Memorizza richieste da parte degli utenti di assumere un determinato ruolo all'i
 \newline
 memorizza le richieste da parte di utenti di assumere un determinato ruolo
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{email : String}
 \newline
@@ -6013,7 +5815,6 @@ Ritorna una lista di domande che corrispondono ai parametri di ricerca impostati
 \newline
 ritorna le domande che corrispondono ai parametri di ricerca impostati dall'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{parameters : JSON}
 \newline
@@ -6035,7 +5836,6 @@ Ritorna una lista di quiz che corrispondono ai parametri di ricerca impostati da
 \newline
 ritorna i quiz che corrispondono ai parametri di ricerca impostati dall'utente
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{parameters : JSON}
 \newline
@@ -6119,7 +5919,6 @@ Permette la creazione di un nuovo argomento.
 \newline
 permette la creazione di un nuovo argomento
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{topic : String}
 \newline
@@ -6141,7 +5940,6 @@ Permette l'eliminazione di un argomento.
 \newline
 permette l'eliminazione di un argomento
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{topic : String}
 \newline
@@ -6171,7 +5969,6 @@ Classe astratta supertipo delle altre classi del pacchetto.
 \newline
 metodo astratto usato per il reindirizzamento
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6181,7 +5978,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \newline
 metodo astratto usato per il reindirizzamento
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6215,7 +6011,6 @@ metodo usato per il reindirizzamento alla classe AuthenticationManager
 \newline
 metodo usato per il reindirizzamento alla classe AuthenticationManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6241,7 +6036,6 @@ Invocato dal client per interagire con ClassManager.
 \newline
 metodo usato per il reindirizzamento alla classe ClassManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6251,7 +6045,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \newline
 metodo usato per il reindirizzamento alla classe ClassManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6289,7 +6082,6 @@ Invocato dal client per interagire con ProfileManager.
 \newline
 metodo usato per il reindirizzamento alla classe ProfileManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6299,7 +6091,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \newline
 metodo usato per il reindirizzamento alla classe ProfileManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6321,7 +6112,6 @@ Invocato dal client per interagire con QuestionsManager.
 \newline
 metodo usato per il reindirizzamento alla classe QuestionsManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6343,7 +6133,6 @@ Invocato dal client per interagire con QuizManager.
 \newline
 metodo usato per il reindirizzamento alla classe QuizManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6353,7 +6142,6 @@ contenitore dei dati provenienti da chiamate REST del client
 \newline
 metodo usato per il reindirizzamento alla classe QuizManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6375,7 +6163,6 @@ Invocato dal client per interagire con RequestsManager.
 \newline
 metodo usato per il reindirizzamento alla classe RequestsManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6401,7 +6188,6 @@ Invocato dal client per interagire con SearchManager.
 \newline
 metodo usato per il reindirizzamento alla classe SearchManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6423,7 +6209,6 @@ Invocato dal client per interagire con StatisticsManager.
 \newline
 metodo usato per il reindirizzamento alla classe StatisticsManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
@@ -6449,7 +6234,6 @@ Invocato dal client per interagire con TopicManager.
 \newline
 metodo usato per il reindirizzamento alla classe TopicManager
 \newline
-Parametri :
 \begin{itemize}
 \item \attribute{bundle : JSON}
 \newline
