@@ -102,11 +102,11 @@
 	\subsection{Autenticazione}
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.33]{Img/seq-login.pdf}
+		\includegraphics[scale=0.5]{Img/seq-login.pdf}
 		\caption{Diagramma di sequenza dello scenario di autenticazione}
 	\end{figure}
-	Il diagramma in figura illustra la gestione da parte del prodotto di una richiesta di login. La sequenza di azioni viene avviata una volta che un client invia una richiesta tramite un browser web supportato contenente i campi: indirizzo email e password.
-	La richiesta viene accolta da CtrlLogin, il quale chiamerà il metodo checkLogin(string, string) che comunicherà con la classe AuthenticationRouter. Questa indirizzerà la richiesta di login alla classe LoggerIn attraverso il metodo forwardTo(bundle) che inoltrerà a sua volta i dati alla classe del model corretta, AuthenticationData, utilizzando il metodo login(email, password). Quest'ultimo effettuerà un controllo nel database dei dati inseriti. Una volta elaborati i dati, in caso di errore dovuto alle credenziali errate verrà restituito un messaggio d'errore al client rappresentante un problema, altrimenti in caso di successo verrà restituito l'oggetto User rappresentante l'utente stesso.
+	Il diagramma in figura illustra la gestione da parte del prodotto di una richiesta di login. La sequenza di azioni viene avviata una volta che un client invia una richiesta tramite un browser web supportato contenente i campi: indirizzo email e password.
+	La richiesta viene accolta da CtrlLogin, il quale chiamerà il metodo checkLogin(email: string, password: string) che comunicherà con la classe AuthenticationRouter. Questa indirizzerà la richiesta di login alla classe LoggerIn attraverso il metodo forwardTo(bundle: JSON) che inoltrerà a sua volta i dati alla classe del model corretta, AuthenticationData, utilizzando il metodo login(email: string, password: string). Quest'ultimo effettuerà un controllo nel database dei dati inseriti. Una volta elaborati i dati, in caso di errore dovuto alle credenziali errate verrà restituito un messaggio d'errore al client rappresentante un problema, altrimenti in caso di successo verrà restituito l'oggetto User rappresentante l'utente stesso.
 	
 	\subsection{Registrazione}
 	\begin{figure}[!h]
