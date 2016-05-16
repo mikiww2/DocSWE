@@ -710,9 +710,7 @@ Questa è una classe astratta e raccoglie le funzionalità comuni a tutti gli ut
 \item usa \cls{Quizzipedia:: Client:: ModelClient:: Users:: AuthenticationData} per memorizzare le informazioni di autenticazione comuni a tutti gli utenti registrati
 \end{itemize}
 \subsection{\pkg{Quizzipedia:: Client:: ViewClient}}
-Racchiude tutte le componenti necessarie per presentare il prodotto all'utente.
-Grazie all'uso di Angular.js ogni modifica svolta dall'utente si ripercuoterà automaticamente a sulla componente model, attraverso il controller, per mantenere sempre le informazioni consistenti e aggiornate.
-Con l'uso invece di Bootstrap e Fabric.js a livello di grafica web risulta semplificata l'impaginazione delle singole pagine web dedicate all'utente e alla gestione di allegati non testuali all'interno di domande.
+Racchiude tutti i template e le pagine HTML necessari per presentare il prodotto all'utente. Grazie all'uso di Angular.js e del Two-Way Data Binding,ogni modifica svolta dall'utente si ripercuoteràautomaticamente sulla componente model, attraverso il controller, e viceversa, per mantenere sempre le informazioni consistenti e aggiornate. Con l'uso invece di Bootstrap e Fabric.js, a livello di grafica web risulta semplificata l'impaginazione delle singole pagine web dedicate all'utente e alla gestione di allegati non testuali all'interno di domande. Non vengono elencati metodi dal momento che le pagine sono scritte in codice HTML con l'integrazione di direttive Angular.
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/quizzipedia-client-viewclient.pdf}}
