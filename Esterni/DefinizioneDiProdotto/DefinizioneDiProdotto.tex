@@ -139,8 +139,8 @@ sistema all'interno di uno scenario.
 	\includegraphics[scale=0.5]{Img/seq-login.pdf}
 	\caption{Diagramma di sequenza dello scenario di autenticazione}
 \end{figure}
-Il diagramma in figura illustra la gestione da parte del prodotto di una richiesta di accesso. La sequenza di azioni viene avviata una volta che un client invia una richiesta tramite un browser web supportato contenente i campi: indirizzo email e password.
-La richiesta viene accolta da CtrlLogin, il quale chiamerà il metodo checkLogin(email: string, password: string) che comunicherà con la classe AuthenticationRouter. Questa indirizzerà la richiesta di login alla classe LoggerIn attraverso il metodo forwardTo(bundle: JSON) che inoltrerà a sua volta i dati alla classe del model corretta, AuthenticationData, utilizzando il metodo login(email: string, password: string). Quest'ultimo effettuerà un controllo nel database dei dati inseriti. Una volta elaborati i dati, in caso di errore dovuto alle credenziali errate verrà restituito un messaggio d'errore al client rappresentante un problema, altrimenti in caso di successo verrà restituito l'oggetto User rappresentante l'utente stesso.
+Il diagramma in figura illustra la gestione da parte del prodotto di una richiesta di accesso. La sequenza di azioni viene avviata una volta che un client invia una richiesta di autenticazione tramite un browser web supportato contenente i campi: indirizzo email e password.
+La richiesta viene accolta da CtrlLogin, il quale chiamerà il metodo checkLogin(email: String, password: String) che comunicherà con la classe AuthenticationRouter. Questa indirizzerà la richiesta di login alla classe LoggerIn attraverso il metodo forwardTo(bundle: JSON) che inoltrerà a sua volta i dati alla classe del model corretta, AuthenticationData, utilizzando il metodo login(email: String, password: String). Quest'ultimo effettuerà un controllo nel database dei dati inseriti. Una volta elaborati i dati, in caso di errore dovuto alle credenziali errate verrà restituito un messaggio d'errore al client rappresentante un problema, altrimenti in caso di successo verrà restituito l'oggetto User rappresentante l'utente stesso.
 
 \newpage
 \subsection{Registrazione}
@@ -158,8 +158,8 @@ Il diagramma in figura illustra la gestione da parte del prodotto di una richies
 	\item password,
 	\item conferma della password.
 \end{itemize}
-La richiesta viene accolta dalla classe Registration che comunica con il controller CtrlRegistration attraverso il metodo sendRegistration(user), la quale comunica a sua volta con la classe AuthenticationRouter usando il metodo sendRegistration(user).
-AuthenticationRouter inoltra la richiesta alla classe Register grazie al metodo forwardTo(bundle: JSON). Quest'ultima effettuerà un controllo nel database dei dati inseriti. Una volta elaborati i dati, in caso di errore dovuto alla presenza nel database dell'indirizzo email inserito verrà restituito un messaggio d'errore al client rappresentante un problema, altrimenti in caso di successo verranno salvati i dati attraverso il metodo register(firstname: string, lastname: string, email: string, password: string) che chiama AuthenticationData. Verrà poi restituito all'utente un messaggio di conferma per comunicargli che la registrazione è stata effettuata cn successo.
+La richiesta viene accolta dalla classe Registration che comunica con il controller CtrlRegistration attraverso il metodo sendRegistration(User), la quale comunica a sua volta con la classe AuthenticationRouter usando il metodo sendRegistration(User).
+AuthenticationRouter inoltra la richiesta alla classe Register grazie al metodo forwardTo(bundle: JSON). Quest'ultima effettuerà un controllo nel database dei dati inseriti. Una volta elaborati i dati, in caso di errore dovuto alla presenza nel database dell'indirizzo email inserito verrà restituito un messaggio d'errore al client rappresentante un problema, altrimenti in caso di successo verranno salvati i dati attraverso il metodo register(firstname: String, lastname: String, email: String, password: String) che chiama AuthenticationData. Verrà poi restituito all'utente un messaggio di conferma per comunicargli che la registrazione è stata effettuata con successo.
 
 \newpage
 \subsection{Richiesta ruolo studente}
@@ -168,7 +168,7 @@ AuthenticationRouter inoltra la richiesta alla classe Register grazie al metodo 
 	\includegraphics[scale=0.5]{Img/seq-rolerequest.pdf}
 	\caption{Diagramma di sequenza dello scenario di richiesta ruolo studente }
 \end{figure}
-Il diagramma in figura illustra la gestione da parte del prodotto dell'invio delle richieste di ruolo di studente. La classe SendRequests inoltra la richiesta al controller CtrlRequestsRole utilizzando il metodo addStudent(user: string) il quale a sua volta chiama il metodo forwardTo(bundle: JSON) per inoltrare la richiesta alla classe RoleRequestsAdder. A questo punto il metodo add(email: String, role: String) si occupa di inserire la richiesta dell'utente di assumere un determinato ruolo in RoleList.
+Il diagramma in figura illustra la gestione da parte del prodotto dell'invio delle richieste di ruolo di studente. La classe SendRequests inoltra la richiesta al controller CtrlRequestsRole utilizzando il metodo addStudent(user: String) il quale a sua volta chiama il metodo forwardTo(bundle: JSON) per inoltrare la richiesta alla classe RoleRequestsAdder. A questo punto il metodo add(email: String, role: String) si occupa di inserire la richiesta dell'utente di assumere un determinato ruolo in RoleList.
 
 \subsection{Accettazione ruolo}
 \begin{figure}[!h]
@@ -176,7 +176,7 @@ Il diagramma in figura illustra la gestione da parte del prodotto dell'invio del
 	\includegraphics[scale=0.5]{Img/seq-acceptrequest.pdf}
 	\caption{Diagramma di sequenza dello scenario di accettazione ruolo}
 \end{figure}
-Il diagramma in figura illustra la gestione da parte del prodotto dell'accettazione delle richieste di ruolo. Grazie al metodo accept(mailOfRequest: string) la classe ViewPendingRequests inoltra l'accettazione della richiesta al CtrlRequests il quale tramite la classe RequestsRouter inoltra tramite forwardTo(bundle: JSON) i dati alla classe RoleAccepter. Qui la richiesta dell'utente viene contrassegnata come accettata tramite il metodo accept(email: String).
+Il diagramma in figura illustra la gestione da parte del prodotto dell'accettazione delle richieste di ruolo. Grazie al metodo accept(mailOfRequest: String) la classe ViewPendingRequests inoltra l'accettazione della richiesta al CtrlRequests il quale tramite la classe RequestsRouter inoltra tramite forwardTo(bundle: JSON) i dati alla classe RoleAccepter. Qui la richiesta dell'utente viene contrassegnata come accettata tramite il metodo accept(email: String).
 
 \newpage
 \subsection{Ricerca quiz}
