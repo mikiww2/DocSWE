@@ -63,7 +63,7 @@ TU109 & Quizzipedia:: Server:: ControllerServer:: SearchManager:: QuestionsSearc
 TU11 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerQuestion & 
 \begin{itemize}
 \item \method{<<abstract>>check () : bool}
-\item \method{getQuestion () : GenricQuestion}
+\item \method{getQuestion () : GenericQuestion}
 \item \method{setQuestion (question : GenericQuestion) : void}
 \item \method{setSolver (user : User) : void}
 \end{itemize} \\
@@ -127,7 +127,7 @@ TU120 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: 
 \item \method{removeAnswer (answer : String) : void}
 \item \method{saveAnswer (answer : String) : void}
 \end{itemize} \\
-TU121 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyMutipleChoiceQ & 
+TU121 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuestions:: MyMultipleChoiceQ & 
 \begin{itemize}
 \item \method{insertAnswer (text : String, check : bool) : void}
 \item \method{removeAnswer (text : String, check : bool) : void}
@@ -137,7 +137,7 @@ TU122 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuiz &
 \item \method{loadClasses () : void}
 \item \method{loadTeacher () : void}
 \item \method{loadTopics () : void}
-\item \method{save (quiz : $scope) : void}
+\item \method{save (quiz : \$scope) : void}
 \end{itemize} \\
 TU123 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlQuizExec & 
 \begin{itemize}
@@ -162,18 +162,18 @@ TU126 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuesti
 \item \method{loadKeywords () : void}
 \item \method{loadTeacher () : void}
 \item \method{loadTopics () : void}
-\item \method{searchQuestion (question : $scope) : void}
+\item \method{searchQuestion (question : \$scope) : void}
 \end{itemize} \\
 TU127 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz & 
 \begin{itemize}
 \item \method{loadKeywords () : void}
 \item \method{loadTopics () : void}
 \item \method{loadUser () : void}
-\item \method{searchQuiz (search : $scope) : void}
+\item \method{searchQuiz (search : \$scope) : void}
 \end{itemize} \\
 TU128 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlTopics & 
 \begin{itemize}
-\item \method{addTopic (name : string) : void}
+\item \method{addTopic (name : String) : void}
 \item \method{loadTopics () : void}
 \item \method{removeTopic (indexOfTopic : int) : void}
 \end{itemize} \\
@@ -214,15 +214,15 @@ TU134 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlHeader &
 \end{itemize} \\
 TU135 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlLogin & 
 \begin{itemize}
-\item \method{checkLogin (email : string, password : string) : bool}
+\item \method{checkLogin (email : String, password : String) : bool}
 \end{itemize} \\
 TU136 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlRecoveryPw & 
 \begin{itemize}
-\item \method{sendRecoveryEmail (email : string) : void}
+\item \method{sendRecoveryEmail (email : String) : void}
 \end{itemize} \\
 TU137 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlRegistration & 
 \begin{itemize}
-\item \method{sendRegistration (user : $scope) : void}
+\item \method{sendRegistration (user : \$scope) : void}
 \end{itemize} \\
 TU138 & Quizzipedia:: Client:: ViewModelClient:: CtrlUsers:: CtrlUserManager & 
 \begin{itemize}
@@ -487,7 +487,7 @@ TU42 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerMultipl
 TU43 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerQuestion1 & 
 \begin{itemize}
 \item \method{<<abstract>>check () : bool}
-\item \method{getQuestion () : GenricQuestion}
+\item \method{getQuestion () : GenericQuestion}
 \item \method{setQuestion (question : GenericQuestion) : void}
 \item \method{setSolver () : void}
 \end{itemize} \\
@@ -748,35 +748,35 @@ TU80 & Quizzipedia:: Server:: ControllerServer:: AuthenticationManager:: Registe
 \end{itemize} \\
 TU81 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassAdder & 
 \begin{itemize}
-\item \method{adder (class : JSON, classname : String) : void}
+\item \method{adder (class : JSON, className : String) : void}
 \end{itemize} \\
 TU82 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassDeleter & 
 \begin{itemize}
-\item \method{deleter (classname : String) : void}
+\item \method{deleter (className : String) : void}
 \end{itemize} \\
 TU83 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: ClassUpdater & 
 \begin{itemize}
-\item \method{updater (classname : String, description : String) : void}
+\item \method{updater (className : String, description : String) : void}
 \end{itemize} \\
 TU84 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: FromClassRemover & 
 \begin{itemize}
-\item \method{remover (classname : String, email : String) : void}
+\item \method{remover (className : String, email : String) : void}
 \end{itemize} \\
 TU85 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: InClassAdder & 
 \begin{itemize}
-\item \method{adder (classname : String, email : String) : void}
+\item \method{adder (className : String, email : String) : void}
 \end{itemize} \\
 TU86 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: StudentsClassFetcher & 
 \begin{itemize}
-\item \method{getStudents (classname : String) : JSON}
+\item \method{getStudents (className : String) : JSON}
 \end{itemize} \\
 TU87 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: TeachersClassFetcher & 
 \begin{itemize}
-\item \method{getTeachers (classname : String) : JSON}
+\item \method{getTeachers (className : String) : JSON}
 \end{itemize} \\
 TU88 & Quizzipedia:: Server:: ControllerServer:: InstitutionManager:: InstitutionUpdater & 
 \begin{itemize}
-\item \method{update (companyname : String, newname : String) : void}
+\item \method{update (companyName : String, newName : String) : void}
 \end{itemize} \\
 TU89 & Quizzipedia:: Server:: ControllerServer:: ProfileManager:: AccountDeleter & 
 \begin{itemize}
