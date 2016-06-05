@@ -73,35 +73,52 @@
 		\item \bold{Specifica Tecnica: } \STdoc.
 		
 	\end{itemize}
+	
 	\subsubsection{Riferimenti informativi}
 	\begin{itemize}
-		\item \bold{Glossario:} \Gldoc;
+
+	\item \bold{Glossario:} \Gldoc;
+	
+	\item \bold{\gl{HTML5}: } \newline \url{https://www.w3.org/TR/html5/};
+	
+	\item \bold{\gl{CSS3}: } \newline \url{https://www.w3.org/TR/CSS/};
+	
+	\item \bold{\gl{JavaScript}: } \newline \url{http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf};
+	
+	\item \bold{\gl{MongoDB}: } \newline \url{https://docs.mongodb.org/manual/};
+	
+	\item \bold{\gl{Node.js}: } \newline \url{https://nodejs.org/api/};
+	
+	\item \bold{\gl{Express.js}: } \newline \url{http://expressjs.com/en/api.html};
+	
+	\item \bold{\gl{AngularJS} }
+	 	\begin{itemize}
+	 	 \item[-] Documentazione generale:  \newline \url{https://angular.io/docs/ts/latest/};
+	 	 \item[-] Documentazione servizio \$http: \newline \url{https://docs.angularjs.org/api/ng/service/$http};
+	 	 \item[-] Documentazione servizio \$location:  \newline\url{https://docs.angularjs.org/api/ng/service/$location};
+	 	 \item[-] Documentazione servizio \$window: \newline \url{https://docs.angularjs.org/api/ng/service/$window};
+	 	\end{itemize}
+	
+	\item \bold{\gl{Bootstrap}: } \newline \url{http://getbootstrap.com/css/};
+	
+	\item \bold{\gl{JSON}: } \newline \url{http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf};
+	
+	\item \bold{\gl{Fabric.js}: } \newline \url{http://fabricjs.com/docs/};
+	
+	\item \bold{\gl{Socket.IO}: } \newline \url{http://socket.io/docs/};
+	
+	\item \bold{\gl{UML}: } \newline \url{http://www.omg.org/spec/UML/2.5/PDF/};
+	
+	\item \bold{REST:} \newline \url{https://it.wikipedia.org/wiki/Representational_State_Transfer};
+	
+	\item \bold{Diagrammi}
+		\begin{itemize}
+		\item[-] Diagrammi dei package:  \newline \url{http://www.math.unipd.it/~tullio/IS-1/2015/Dispense/E04.pdf};
+		\item[-] Diagrammi delle classi: \newline \url{http://www.math.unipd.it/~tullio/IS-1/2015/Dispense/E03.pdf};
+		\item[-] Diagrammi di sequenza:  \newline \url{http://www.math.unipd.it/~tullio/IS-1/2015/Dispense/E05.pdf};
+		\end{itemize}
 		
-		\item \bold{\gl{HTML5}: } \newline \url{https://www.w3.org/TR/html5/};
-		
-		\item \bold{\gl{CSS3}: } \newline \url{https://www.w3.org/TR/CSS/};
-		
-		\item \bold{\gl{JavaScript}: } \newline \url{http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf};
-		
-		\item \bold{\gl{MongoDB}: } \newline \url{https://docs.mongodb.org/manual/};
-		
-		\item \bold{\gl{AngularJS}: } \newline \url{https://angular.io/docs/ts/latest/};
-		
-		\item \bold{\gl{Node.js}: } \newline \url{https://nodejs.org/api/};
-		
-		\item \bold{\gl{Express.js}: } \newline \url{http://expressjs.com/en/api.html};
-		
-		\item \bold{\gl{Bootstrap}: } \newline \url{http://getbootstrap.com/css/};
-		
-		\item \bold{\gl{JSON}: } \newline \url{http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf};
-		
-		\item \bold{\gl{Fabric.js}: } \newline \url{http://fabricjs.com/docs/};
-		
-		\item \bold{\gl{Socket.IO}: } \newline \url{http://socket.io/docs/};
-		
-		\item \bold{\gl{UML}: } \newline \url{http://www.omg.org/spec/UML/2.5/PDF/}. 
-		
-	\end{itemize}
+\end{itemize}
 		
 	\newpage
 	
@@ -121,6 +138,27 @@
 	\subsection{Strumenti di lavoro}
 	Gli strumenti utilizzati per lo sviluppo del progetto sono specificati nei documenti \doc{Norme di
 	Progetto}. Per approfondimenti si faccia riferimento a tale documento.
+
+\newpage
+\section{Architettura generale}
+	L'architettura generale segue il pattern Three-Tier e viene suddivisa nei seguenti tre livelli:
+	\begin{enumerate}
+		\item \gl{Client} 
+		\item \gl{Server} 
+		\item \gl{Database}
+	\end{enumerate}
+	
+	\subsubsection{Client}
+	La parte \gl{client} è divisa in Model, View e ViewModel, applicando il \gl{design pattern} \gl{MVVM} dal momento che viene utilizzato \gl{AngularJS}. È il livello più alto dell'applicazione e interagisce con l'utente finale. La componente View è possibile considerarla come il Presentation Tier dell'architettura generale assunta.
+	
+	\subsubsection{Server}
+	La parte \gl{server} è divisa in Model e Controller. Gestisce la logica di business e interroga il \gl{database} per passarne i dati al \gl{client}. Per questo nell'architettura Three-Tier rappresenta la Logic Tier.
+	
+	\subsubsection{Database}
+	Il \gl{database} memorizza i dati e li isola dal resto del sistema. Il \gl{database}, che rappresenta il Data Tier dell'architettura Three-Tier, è implementato con \gl{MongoDB}.
+	\\ \\ \\I livelli usufruiranno inoltre di alcuni framework che permetteranno loro di svolgere al meglio le proprie funzionalità.
+	\\Viene pertanto presentato un diagramma generale dell'intera architettura:
+
 
 \newpage
 \section{Specifica componenti e classi}
