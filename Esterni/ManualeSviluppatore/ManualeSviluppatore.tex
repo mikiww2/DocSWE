@@ -173,6 +173,7 @@
 	Si possono utilizzare immagini, video o audio, con un limite di ???.
 	La sintassi specifica per allegare un file a una domanda o risposta è lo stesso ed è il seguente:
 	\begin{itemize}
+		\item deve iniziare e finire con i caratteri "{" e "}";
 		\item deve essere preceduto dal tipo (img, vid, aud) e il carattere ":";
 		\item deve contenere il path del file;
 		\item opzionalmente può contenere le coordinate X e Y del media, preceduti dai caratteri ":x." e ":y.".
@@ -186,13 +187,18 @@
 	Questo dopo aver rilevato il tipo di domanda chiama la funzione opportuna che genera il JSON o la stringa QML.
 	Qualora si volesse implementare una nuova tipologia è quindi fondamentale scegliere una stringa univoca per identificare il tipo di domanda e inserire il caso che riconosca tale stringa.
 	Successivamente è necessario creare una funzione di generazione e una di parsing per questo nuovo tipo, seguendo le regole definite in precedenza ed eventualmente creandone di nuove.
+	Per il formato del JSON di ogni tipo di domanda si vedano le sottosezioni seguenti.
 	
 	\subsection{createQuestionBase}
 	
-	\subsection{??? }
+	\subsection{SVOLGIMENTO DOMANDA}
 	
 	\subsection{Manuale Utente}
-	Una volta inserito un nuovo tipo di domanda non ci si dimentichi di inserirla in appendice al \doc{Manuale Utente}.
+	Una volta inserito un nuovo tipo di domanda sarà opportuno inserire una sua descrizione adeguata in appendice al \doc{Manuale Utente}.
+	
+	\newpage
+	\section{Gestione dei responsabili}
+	
 	
 	\newpage
 	\appendix
