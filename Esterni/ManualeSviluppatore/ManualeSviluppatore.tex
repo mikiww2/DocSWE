@@ -144,6 +144,51 @@
 	se viene specificata una porta inferiore a 1024 allora sarà necessario digitare il comando \texttt{sudo} seguito dal resto per autorizzare \gl{Node.js} ad utilizzare tale porta.
 	
 	\newpage
+	
+	\section{Creazione nuova tipologia di domande}
+	
+	\subsection{Sintassi QML}
+	Il QML (Quiz Markup Language) è un linguaggio con una sintassi definita da utilizzare per il salvataggio delle domande utilizzate nei quiz.
+	Vengono qui illustrate le regole da adottare per utilizzare il QML per definire nuove tipologie di domande:
+	\begin{itemize}
+		\item deve iniziare e finire con i caratteri "|";
+		\item la tipologia di domanda è una stringa lunga a piacere ed univoca, deve essere preceduta dalla sequenza di caratteri "q?";
+		\item la parte relativa al testo della domanda è una stringa lunga a piacere, deve essere preceduta dalla sequenza di caratteri "\#t\#";
+		\item la parte relativa a/alle risposta/e è una stringa lunga a piacere, deve essere preceduta dalla sequenza di caratteri "\#a\#";
+		\item nel caso le due suddette stringhe siano multiple, è possibile utilizzare il carattere "§" per separare la varie parti;
+		\item per aggiungere una validità o un id a una parte di testo si utilizzano i caratteri "[" e "]";
+		\item eventuali allegati vanno racchiusi tra i caratteri "{" e "}", si veda la sottosezione seguente per i dettagli;
+		\item alla fine delle stringhe relative al testo e alle risposte, deve essere utilizzata la sequenza di caratteri "\#££\#";
+		\item è possibile inserire nuove parti aggiuntive nella stringa QML qualora vengano rispettate queste condizioni e il QMLAgent venga esteso in modo opportuno.
+	\end{itemize}
+	Segue un esempio di QML per i tipi di domande Vero/Falso e Risposta Multipla.
+	\begin{verbatim}|q?trfs#t#Parigi è in Germania#a#false#££#|\end{verbatim}
+	\begin{verbatim}|q?mult#t#Quali sono città europee?#a#Londra[true]§Mosca[false]#££#|\end{verbatim}
+	
+	\subsubsection{Allegati}
+	Gli allegati possono essere aggiunti sia per il testo della domanda, che per ogni risposta.
+	Si possono utilizzare immagini, video o audio, con un limite di ???.
+	La sintassi specifica per allegare un file a una domanda o risposta è lo stesso ed è il seguente:
+	\begin{itemize}
+		\item deve essere preceduto dal tipo (img, vid, aud) e il carattere ":";
+		\item deve contenere il path del file;
+		\item opzionalmente può contenere le coordinate X e Y del media, preceduti dai caratteri ":x." e ":y.".
+	\end{itemize}
+	Segue un esempio di QML con allegato per la domanda.
+	\begin{verbatim}|q?open#t#Chi è l'autore di quest'opera?{img:laPass.png:x.5:y.5}#a#Monet#££#|\end{verbatim}
+	
+	\subsection{QMLAgent}
+	Il QMLAgent è il componente che si occupa di tradurre il QML in JSON, per poter poi creare effettivamente la domanda in modo visuale,
+	e da JSON a QML per il salvataggio di una domanda nel database.
+	Questo dopo aver rilevato il tipo di domanda chiama la funzione opportuna che genera il JSON o la stringa QML.
+	Qualora si volesse implementare una nuova tipologia è quindi fondamentale scegliere una stringa univoca per identificare il tipo di domanda e inserire il caso che riconosca tale stringa.
+	Successivamente è necessario creare una funzione di generazione e una di parsing per questo nuovo tipo, seguendo le regole definite in precedenza ed eventualmente creandone di nuove.
+	
+	\subsection{createQuestionBase}
+	
+	\subsection{??? }
+	
+	\newpage
 	\appendix
 	
 	\section{Glossario}
