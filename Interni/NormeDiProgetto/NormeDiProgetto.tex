@@ -110,6 +110,29 @@ Il \italics{Responsabile} deve organizzare delle riunioni con lo scopo di valuta
 	\item \textbf{individuazione dei rischi}: comprensione dei punti critici della realizzazione quali mancanza di conoscenze o competenze e difficoltà nell'individuazione dei requisiti.
 \end{itemize}
 
+\subsubsection{Procedure}
+
+\myparagraph{Consegna al committente}
+La consegna avverrà a mezzo CD-ROM / DVD, comprensivo di:
+\begin{itemize}
+	\item manuale utente e sviluppatore contenenti istruzioni per l’installazione e l’uso;
+	\item utilità di installazione;
+	\item sorgenti completi;
+	\item documentazione completa e finale;
+	\item eventuali utilità di collaudo.
+\end{itemize}
+
+\myparagraph{Consegna al proponente}
+La consegna avverrà per via telematica e comprenderà:
+\begin{itemize}
+	\item manuale utente e sviluppatore contenenti istruzioni per l’installazione e l’uso;
+	\item utilità di installazione;
+	\item accesso al repository contenente le sorgenti del prodotto;
+	\item report con risultato dell’esecuzione interna dei test di accettazione;
+	\item eventuali utilità di collaudo.
+\end{itemize}
+
+\newpage
 \subsection{Processi di sviluppo}
 
 \subsubsection{Attività}
@@ -130,27 +153,75 @@ Scopo dell’attività di progettazione è produrre una soluzione soddisfacente 
 \newline Dapprima verrà stabilita un'architettura ad alto livello all'interno del documento \doc{Specifica Tecnica}, solo in seguito questa verrà raffinata nel dettaglio per la stesura del documento \doc{Definizione di Prodotto}.
 
 \mysubparagraph{Specifica Tecnica}
-Questo documento verrà redatto dai \italics{Progettisti} e ha il compito di descrivere l'architettura del prodotto identificando le componenti al proprio interno. 
-\\ Sarà necessario realizzare i seguenti diagrammi \gl{UML}:
+Questo documento verrà redatto dai \italics{Progettisti} e ha il compito di descrivere l'architettura ad alto livello del prodotto identificando le componenti al proprio interno.
+Prima di procedere alla definizione vera e propria dell’architettura del prodotto software,
+devono essere eseguiti i seguenti task:
 \begin{itemize}
-	\item diagrammi delle classi,
-	\item diagrammi dei \gl{package},
-	\item diagrammi di attività.
+	\item si suddivide il prodotto in componenti;
+	\item si definiscono ruoli e responsabilità di ognuno dei componenti individuati;
+	\item si definiscono le interazioni che i componenti hanno fra di loro;
+	\item si definiscono le eventuali interfacce che ogni componente mette a disposizione dell’ambiente
+	esterno;
+	\item ci si assicura che ogni requisito sia soddisfatto da almeno uno dei componenti individuati e
+	\item ci si assicura che ogni componente realizzi almeno un requisito;
+	\item si realizzano e si documentano i test di integrazione, necessari per verificare il corretto funzionamento di più componenti assemblati insieme.
 \end{itemize}
-Inoltre saranno definite tre tipologie di test (test di  integrazione, test di sistema e test di validazione) che permetteranno di verificare il corretto funzionamento dell'intera architettura. In particolare i test di integrazione avranno il compito di individuare i problemi che si potranno verificare nella combinazione di due distinte unità.
-\\ Dovranno essere descritti anche i vari \gl{design pattern} che verranno utilizzati per la strutturazione dell'architettura e il modo che questi impatteranno sulla struttura.
-\\ Infine sarà necessario eseguire il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto.
+Seguono i principali contenuti del documento:
+\begin{itemize}
+	\item Diagrammi \gl{UML}.
+	\\ Sarà necessario realizzare i seguenti diagrammi:
+	\begin{itemize}
+		\item diagrammi delle classi,
+		\item diagrammi dei \gl{package},
+		\item diagrammi di attività.
+	\end{itemize}
+	\item Test.
+	\\ Saranno definite tre tipologie di test:
+	\begin{itemize}
+		\item test di integrazione,
+		\item test di sistema,
+		\item test di validazione,
+	\end{itemize}
+	che permetteranno di verificare il corretto funzionamento dell'intera architettura. In particolare i test di integrazione avranno il compito di individuare i problemi che si potranno verificare nella combinazione di due distinte unità.
+	\item \gl{Design pattern}.
+	\\ Dovranno essere descritti anche i vari \gl{design pattern} che verranno utilizzati per la strutturazione dell'architettura e il modo che questi impatteranno sulla struttura.
+	\item Tracciamento componenti.
+	\\ Infine sarà necessario eseguire il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto. Questo tracciamento viene automatizzato dal tool \gl{Tracker}.
+\end{itemize}
 
 \mysubparagraph{Definizione di Prodotto}
-I \italics{Progettisti} devono redigere la \doc{Definizione di Prodotto}. In essa viene descritta la progettazione di dettaglio del sistema, specificando maggiormente quanto scritto nella \doc{Specifica Tecnica}. Inoltre opportuni test di unità devono essere definiti per verificare che le singole componenti del sistema funzionino come previsto.
-\\ I seguenti diagrammi \gl{UML} devono essere realizzati:
+I \italics{Progettisti} devono redigere la \doc{Definizione di Prodotto}. In essa viene descritta la progettazione di dettaglio del sistema, specificando maggiormente quanto scritto nella \doc{Specifica Tecnica}.
+Essa prevede che vengano eseguiti i seguenti task:
 \begin{itemize}
-	\item diagrammi delle classi,
-	\item diagrammi di sequenza.
+	\item si individuano le classi che implementano ciascuno dei componenti trovati durante la progettazione
+	architetturale;
+	\item si definiscono i ruoli e le responsabilità di ciascuna delle classi individuate;
+	\item si definiscono le interazioni che le classi hanno fra di loro;
+	\item ognuna delle classi deve essere definita nel dettaglio;
+	\item ci si assicura che ogni requisito sia soddisfatto da almeno una delle classi individuate e
+	descritte;
+	\item ci si assicura che ogni classe realizzi almeno un requisito;
+	\item si realizzano e si documentano i test di unità, necessari per verificare il corretto comportamento
+	delle classi.
 \end{itemize}
-Ogni classe individuata nella \doc{Specifica Tecnica} deve essere descritta all'interno della \doc{Definizione di Prodotto}. Devono essere illustrati lo scopo della classe e la funzionalità che ricopre. Nella descrizione devono essere inoltre elencati i metodi e gli attributi della classe, elementi che permetteranno di comprendere meglio le interazioni presenti tra diverse classi all'interno dell'architettura.
-\\ Ad ogni classe deve essere associato almeno un requisito in modo tale da poter controllare lo stato di avanzamento nello sviluppo del progetto secondo il modello specificato nel \doc{Piano di Progetto}. L'applicativo \gl{Tracker} viene utilizzato nel tracciamento di tali dipendenze.
-\\ Infine i diagrammi di sequenza illustrati all'interno del documento permetteranno di comprendere come un determinato comportamento del prodotto si svolga in funzione dell'interazione tra diversi oggetti che collettivamente lo implementano.
+Seguono i principali contenuti del documento:
+\begin{itemize}
+	\item Diagrammi \gl{UML}.\\ Sarà necessario realizzare i seguenti diagrammi:
+	\begin{itemize}
+		\item diagrammi delle classi,
+		\item diagrammi di sequenza.
+	\end{itemize}
+	I diagrammi di sequenza permetteranno di comprendere come un determinato comportamento del prodotto si svolga in funzione dell'interazione tra diversi oggetti che collettivamente lo implementano.
+	\item Test.\\ Sarà definita la seguente tipologia di test:
+	\begin{itemize}
+		\item test di unità,
+	\end{itemize}
+	questi permetteranno di verificare che le singole componenti del sistema funzionino come previsto.
+	\item Definizione di classe.
+	\\Ogni classe individuata nella \doc{Specifica Tecnica} deve essere descritta all'interno della \doc{Definizione di Prodotto}. Devono essere illustrati lo scopo della classe e la funzionalità che ricopre. Nella descrizione devono essere inoltre elencati i metodi e gli attributi della classe, elementi che permetteranno di comprendere meglio le interazioni presenti tra diverse classi all'interno dell'architettura.
+	\item Tracciamento classi.
+	\\ Ad ogni classe deve essere associato almeno un requisito in modo tale da poter controllare lo stato di avanzamento nello sviluppo del progetto secondo il modello specificato nel \doc{Piano di Progetto}. L'applicativo \gl{Tracker} viene utilizzato nel tracciamento di tali dipendenze.
+\end{itemize}
 
 \myparagraph{Codifica}
 A seguito dell'attività di Progettazione, avviene la reale implementazione dell'architettura con la scrittura del codice sorgente da parte dei \italics{Programmatori}. Tale attività si concluderà con il collaudo finale del prodotto e la sua validazione attraverso il superamento dei test, dopo aver corretto tutti i bug esistenti.
@@ -284,7 +355,7 @@ Per i metodi e attributi delle classi vanno rispettate le seguenti regole:
 
 \subsubsection{Strumenti}
 
-\myparagraph{Tracker}
+\myparagraph{Tracker} 
 \gl{Tracker} è lo strumento sviluppato dal \gl{team} a supporto dell'attività di Analisi dei Requisiti. In particolare è stato dotato di una \gl{dashboard} che permette a tutti i membri del \gl{team} di mantenere sotto controllo le varie attività e la loro fase di avanzamento. Esso è inoltre in grado di redigere i documenti \doc{Analisi dei Requisiti} e \doc{Glossario} e di effettuare il tracciamento fonte-requisiti e requisiti-fonte grazie alla base di dati su cui poggia la logica del sistema. In futuro le sue funzionalità verranno estese per fornire ulteriori funzioni
 di supporto per lo sviluppo del progetto e la stesura della successiva documentazione.
 \\
@@ -614,18 +685,7 @@ Il test di regressione va eseguito ogni volta che viene modificata un'implementa
 Sono test che vengono eseguiti quando si pensa che il prodotto sia giunto a una versione definitiva. In sostanza si controlla che il sistema soddisfi tutti i requisiti.
 Il codice identificativo dei test di sistema è: \centra{TS[CodiceRequisito]} dove CodiceRequisito identifica il codice univoco associato ad ogni requisito descritto nell'\doc{Analisi dei requisiti}.
 
-\mysubparagraph{Test di validazione}
-Questo tipo di test viene svolto durante l'attività di collaudo antecedente il rilascio sotto supervisione del proponente. Si controlla che il sistema soddisfi almeno tutti i requisiti obbligatori. Se l'esito del test è positivo viene consentito il rilascio del prodotto.
-Il codice identificativo per tale tipo di test è: \centra{TV[CodiceRequisito]} dove CodiceRequisito identifica il codice univoco associato ad ogni requisito descritto nell'\doc{Analisi dei requisiti}.
-
 \subsubsection{Procedure}
-
-\myparagraph{Controllo qualità di processo}
-La qualità di un processo viene raffinata attraverso un miglioramento continuo grazie al modello \gl{PDCA} (Plan-Do-Check-Act) che in modo incrementale apporta ulteriore qualità a quella precedente. Per rendere effettivo il miglioramento è necessario che ogni attività del modello abbia una scrupolosa pianificazione (possibilmente) proattiva ed un'ottima strategia di verifica che, svolta fin dall'inizio, dovrà permettere una serie di iterazioni all'interno di una determinata attività fino al raggiungimento di un grado di qualità accettabile per poter procedere ad un ulteriore incremento.
-\newline La valutazione della qualità di un processo, per poter parlare di un suo possibile miglioramento, dev'essere pertanto quantificata studiando le sue caratteristiche d'interesse; ciò sarà possibile basandosi sul modello \gl{CMM} e sul confronto di performance diverse in momenti differenti.
-\newline Un ulteriore indice di valutazione per i processi può esser assunto dalla qualità dei loro prodotti, dal momento che esiste una forte correlazione diretta tra processo e prodotto.
-
-Si vedano i \hyperref[rifinfo]{riferimenti informativi} riguardanti il \gl{PDCA} e il \gl{Capability Maturity Model} per maggiori chiarimenti sui modelli adottati.
 
 \myparagraph{Controllo qualità di prodotto}
 Il controllo della qualità del prodotto è assicurato da due tipi di processi, quello di verifica e quello di validazione e dal rispetto delle norme.
@@ -637,11 +697,56 @@ Il controllo della qualità del prodotto è assicurato da due tipi di processi, 
 	\item \bold{Norme:} il prodotto dovrà rispettare le norme e l'uso degli strumenti elencati all'interno di questo documento.
 \end{itemize}
 
+\myparagraph{Controllo qualità di processo}
+La qualità di un processo viene raffinata attraverso un miglioramento continuo grazie al modello \gl{PDCA} (Plan-Do-Check-Act) che in modo incrementale apporta ulteriore qualità a quella precedente. Per rendere effettivo il miglioramento è necessario che ogni attività del modello abbia una scrupolosa pianificazione (possibilmente) proattiva ed un'ottima strategia di verifica che, svolta fin dall'inizio, dovrà permettere una serie di iterazioni all'interno di una determinata attività fino al raggiungimento di un grado di qualità accettabile per poter procedere ad un ulteriore incremento.
+\newline La valutazione della qualità di un processo, per poter parlare di un suo possibile miglioramento, dev'essere pertanto quantificata studiando le sue caratteristiche d'interesse; ciò sarà possibile basandosi sul modello \gl{CMM} e sul confronto di performance diverse in momenti differenti.
+\newline Un ulteriore indice di valutazione per i processi può esser assunto dalla qualità dei loro prodotti, dal momento che esiste una forte correlazione diretta tra processo e prodotto.
+
+Si vedano i \hyperref[rifinfo]{riferimenti informativi} riguardanti il \gl{PDCA} e il \gl{Capability Maturity Model} per maggiori chiarimenti sui modelli adottati.
+
 \myparagraph{Gestione anomalie}
 Alla risoluzione di ogni \gl{ticket} il \italics{Verificatore} deve procedere alla verifica dell'operato. Ogni anomalia individuata viene annotata all'interno di un elenco. L'elenco delle anomalie è comunicato al \italics{Responsabile} che si occupa di assegnare un \gl{ticket} per la correzione al responsabile di esse.
 
 L'elenco delle anomalie riscontrate viene utilizzato per stilare una lista di controllo utile ai processi di verifica futuri. La segnalazione di una anomalia deve specificare il file oggetto della verifica, la posizione dell'anomalia all'interno del file, il suo tipo e la sua descrizione.
 
+\myparagraph{Gestione modifiche} %DA EXT
+
+\subsubsection{Strumenti}
+Di seguito sono elencati i vari tool da utilizzare per i test.
+
+\myparagraph{Karma}
+Lo strumento Karma è utilizzato per automatizzare i test di unità ed integrazione lato client scritti
+con il framework Jasmine. Permette di testare il codice su diversi browser, tra cui Chrome.
+
+\myparagraph{Jasmine}
+Un frameworkG JavaScriptG per l’esecuzione di test su codice che utilizza AngularJS.
+
+\myparagraph{Mocha}
+Lo strumento Mocha è utilizzato per eseguire i test asincroni lato server asseriti con la libreria
+Should.js.
+
+\myparagraph{Should}
+Should.js è una libreria asserzionale, è necessario Mocha per utilizzarla.
+
+\newpage
+\subsection{Processo di validazione}
+Il processo di validazione serve per determinare se il prodotto finale è conforme a quanto è stato
+pianificato. Si procederà dapprima ad una validazione interna da parte dei componenti del team e
+poi sarà il proponente a rivalidare il prodotto, per garantire l’indipendenza del processo.
+L’attività di validazione consiste nel condurre i test per poi analizzare i risultati e assicurarsi che
+il prodotto rispecchi le indicazioni per cui è stato sviluppato. Si andrà inoltre a verificare che il
+prodotto sia abile nell’isolare e minimizzare gli effetti degli errori.
+\subsubsection{Attività}
+
+\myparagraph{Test}
+\label{sez:test}
+Segue un elenco dei tipi di test che vengono effettuati.
+
+\mysubparagraph{Test di validazione}
+Questo tipo di test viene svolto durante l'attività di collaudo antecedente il rilascio sotto supervisione del proponente. Si controlla che il sistema soddisfi almeno tutti i requisiti obbligatori. Se l'esito del test è positivo viene consentito il rilascio del prodotto.
+Il codice identificativo per tale tipo di test è: \centra{TV[CodiceRequisito]} dove CodiceRequisito identifica il codice univoco associato ad ogni requisito descritto nell'\doc{Analisi dei requisiti}.
+
+\subsubsection{Procedure}
 
 \newpage
 
@@ -753,7 +858,7 @@ Le risorse necessarie per la realizzazione del progetto, e quelle realmente disp
 	\newline All'interno del gruppo di sviluppo sono disponibili sufficienti persone per ricoprire tutti i ruoli necessari all'esecuzione delle attività di verifica.
 \end{itemize}
 
-\subparagraph{Risorse \gl{software}}
+\subparagraph{Risorse software}
 \begin{itemize}
 	\item \bold{Necessarie}
 	\newline Le risorse \gl{software} necessarie sono un sistema operativo possibilmente comune a tutti i membri del gruppo e gli strumenti che garantiscano la miglior qualità possibile nell'attuare le attività di verifica sui prodotti e sui processi. 
@@ -762,7 +867,7 @@ Le risorse necessarie per la realizzazione del progetto, e quelle realmente disp
 	\newline  Si dispone del numero sufficiente di strumenti, installati e funzionanti, per svolgere le attività di verifica richieste in questo documento.
 \end{itemize}
 
-\subparagraph{Risorse \gl{hardware}}
+\subparagraph{Risorse hardware}
 \begin{itemize}
 	\item \bold{Necessarie}
 	\newline Come risorse \gl{hardware} sono richiesti computer con sufficienti prestazioni su cui lavorare ed eseguire tutto il \gl{software} necessario durante le attività da svolgere.
