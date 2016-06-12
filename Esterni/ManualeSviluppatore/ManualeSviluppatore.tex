@@ -151,16 +151,17 @@
 	\section{Creazione nuova tipologia di domande}
 	
 	\subsection{Sintassi QML}
+	\label{qml}
 	Il QML (Quiz Markup Language) è un linguaggio con una sintassi definita da utilizzare per il salvataggio delle domande utilizzate nei quiz.
 	Vengono qui illustrate le regole da adottare per utilizzare il QML per definire nuove tipologie di domande:
 	\begin{itemize}
-		\item deve iniziare e finire con i caratteri "|";
+		\item deve iniziare e finire con i caratteri "\textbar";
 		\item la tipologia di domanda è una stringa lunga a piacere ed univoca, deve essere preceduta dalla sequenza di caratteri "q?";
 		\item la parte relativa al testo della domanda è una stringa lunga a piacere, deve essere preceduta dalla sequenza di caratteri "\#t\#";
 		\item la parte relativa a/alle risposta/e è una stringa lunga a piacere, deve essere preceduta dalla sequenza di caratteri "\#a\#";
 		\item nel caso le due suddette stringhe siano multiple, è possibile utilizzare il carattere "§" per separare la varie parti;
-		\item per aggiungere una validità o un id a una parte di testo si utilizzano i caratteri "[" e "]";
-		\item eventuali allegati vanno racchiusi tra i caratteri "{" e "}", si veda la sottosezione seguente per i dettagli;
+		\item per aggiungere una validità o un id a una parte di testo si utilizza una stringa racchiusi  nei caratteri "[" e "]";
+		\item eventuali allegati vanno racchiusi tra i caratteri "\{" e "\}", si veda la sottosezione seguente per i dettagli;
 		\item alla fine delle stringhe relative al testo e alle risposte, deve essere utilizzata la sequenza di caratteri "\#££\#";
 		\item è possibile inserire nuove parti aggiuntive nella stringa QML qualora vengano rispettate queste condizioni e il QMLAgent venga esteso in modo opportuno.
 	\end{itemize}
@@ -170,26 +171,71 @@
 	
 	\subsubsection{Allegati}
 	Gli allegati possono essere aggiunti sia per il testo della domanda, che per ogni risposta.
-	Si possono utilizzare immagini, video o audio, con un limite di ???.
+	Si possono utilizzare immagini, video o audio, con un limite di 20MB.
 	La sintassi specifica per allegare un file a una domanda o risposta è lo stesso ed è il seguente:
 	\begin{itemize}
-		\item deve iniziare e finire con i caratteri "{" e "}";
-		\item deve essere preceduto dal tipo (img, vid, aud) e il carattere ":";
+		\item deve iniziare e finire con i caratteri "\{" e "\}";
+		\item deve essere preceduto dalla stringa che indica il tipo (img, vid, aud) e il carattere ":";
 		\item deve contenere il path del file;
 		\item opzionalmente può contenere le coordinate X e Y del media, preceduti dai caratteri ":x." e ":y.".
 	\end{itemize}
 	Segue un esempio di QML con allegato per la domanda.
 	\begin{verbatim}|q?open#t#Chi è l'autore di quest'opera?{img:laPass.png:x.5:y.5}#a#Monet#££#|\end{verbatim}
 	
-	\subsection{QMLAgent}
-	Il QMLAgent è il componente che si occupa di tradurre il QML in JSON, per poter poi creare effettivamente la domanda in modo visuale,
-	e da JSON a QML per il salvataggio di una domanda nel database.
-	Questo dopo aver rilevato il tipo di domanda chiama la funzione opportuna che genera il JSON o la stringa QML.
-	Qualora si volesse implementare una nuova tipologia è quindi fondamentale scegliere una stringa univoca per identificare il tipo di domanda e inserire il caso che riconosca tale stringa.
-	Successivamente è necessario creare una funzione di generazione e una di parsing per questo nuovo tipo, seguendo le regole definite in precedenza ed eventualmente creandone di nuove.
-	Per il formato del JSON di ogni tipo di domanda si vedano le sottosezioni seguenti.
+	\subsubsection{Struttura JSON}
+	\label{qson}
+	La struttura JSON delle domande deve seguire questa gerarchia:
+	\begin{itemize}
+		\item type;
+		\item \begin{itemize}
+			\item title/arrayTitle (se la domanda è singola o in piu parti), che contiene stringhe o JSON,
+			\item correctAnswer/arrayAnswer (se la risposta è singola o in piu parti), che contiene stringhe o JSON,
+		\end{itemize}
+	\end{itemize}
+	Campo questionAttachment/answerAttachment è opzionale e contiene eventuali allegati con la seguente struttura:
+	\begin{itemize}
+		\item type,
+		\item path,
+		\item x,
+		\item y.
+	\end{itemize}
+	Segue un esempio per le stringhe utilizzate prima.
+	\begin{verbatim}
+	{type: 'trfs',
+	 question: {
+	            title: 'Parigi è in Germania',
+	            correctAnswer: 'false'
+	           }	
+	}
 	
-	\subsection{createQuestionBase}
+	{type: 'mult',
+	 question: {
+	            title: 'Quali sono città europee?',
+	            arrayAnswer: [ {textAnswer: 'Londra', isTrue: 'true'},
+	                           {textAnswer: 'Mosca', isTrue: 'false'} ]
+	           }	
+	}
+	\end{verbatim}
+	
+	\subsection{QMLAgent}
+	Si trova al percorso \centra{app/controller/QMLAgent.js} 
+	È il componente che si occupa di tradurre il QML in JSON, per poter poi creare effettivamente la domanda in modo visuale, e da JSON a QML per il salvataggio di una domanda nel database.
+	Questo dopo aver rilevato il tipo di domanda chiama la funzione opportuna che genera il JSON o la stringa QML.
+	Qualora si volesse implementare una nuova tipologia è quindi fondamentale seguire il seguente procedimento:
+	\begin{itemize}
+		\item scegliere una stringa univoca per identificare il tipo di domanda;
+		\item inserire il caso che riconosca tale stringa nella funzione \texttt{generate} e \texttt{parse};
+		\item aggiungere nel file la funzione che effettui il parsing della stringa QML a JSON, che rispetti le regole definite nella sottosezione \hyperref[qml]{Sintassi QML}.
+		\item aggiungere nel file la funzione che effettui la generazione della stringa QML dal JSON, che rispetti le regole definite nella sottosezione \hyperref[qml]{Sintassi QML}.
+		\item inserire la chiamata delle due funzioni nel caso definito al punto 2.
+	\end{itemize}
+	scegliere una stringa univoca per identificare il tipo di domanda e inserire il caso che riconosca tale stringa.
+	Successivamente è necessario creare una funzione di generazione e una di parsing per questo nuovo tipo, seguendo le regole definite in precedenza ed eventualmente creandone di nuove.
+	Per il formato del JSON delle domande si veda la sottosezione \hyperref[qson]{Struttura JSON}.
+	
+	\subsection{CtrlQuestion}
+	Si trova al percorso \centra{public/question\_creation/CtrlQuestion.js} 
+	DA ESTENDERE
 	
 	\subsection{SVOLGIMENTO DOMANDA}
 	
@@ -198,6 +244,7 @@
 	
 	\newpage
 	\section{Gestione dei responsabili}
+	DA ESTENDERE
 	
 	\section{Segnalazione di problemi d'uso}
 	Nel caso si verificassero dei problemi d'uso è possibile contattare il team Vault-Tech tramite email \centra{vaulttech.swe@gmail.com}
