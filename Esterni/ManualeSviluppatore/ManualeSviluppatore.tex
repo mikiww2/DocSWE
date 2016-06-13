@@ -252,7 +252,7 @@
 	Qualora si volesse implementare una nuova tipologia è quindi fondamentale seguire il seguente procedimento:
 	\begin{itemize}
 		\item creare una pagina html con il nome della domanda che conterrà solo il codice per rappresentare a video la struttura della domanda, e salvare il file html nella directory public/question\_creation;
-		\item creare una direttiva angular di tipo elemento che esegue il fetch del path della pagina html precedentemente creata, e salvare il file js nella directory public/question\_creation;
+		\item creare una direttiva \gl{angular} di tipo elemento che esegue il fetch del path della pagina html precedentemente creata, e salvare il file js nella directory public/question\_creation;
 		\item dentro createQuestionBase inserire tanti tag \texttt{src} quanti sono i file js appena creati (direttiva e factory);
 		\item dentro la "variable part" di createQuestionBase aggiungere la direttiva relativa alla pagina html creata al punto 1.
 	\end{itemize}
