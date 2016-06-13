@@ -136,6 +136,9 @@
 	
 	in questo modo verranno installati automaticamente i moduli di \gl{Node.js} necessari per l'esecuzione del prodotto.
 	
+	\subsection{Configurazione}
+	mail del referente , cartella upload 
+	
 	\subsection{Avvio}
 	
 	Per avviare Quizzipedia e mantenerlo in esecuzione, utilizzare il modulo \gl{npm} 'forever' precedentemente installato digitando il seguente comando dopo essersi spostati nella root di Quizzipedia:
@@ -263,8 +266,14 @@
 	Una volta inserito un nuovo tipo di domanda sarà opportuno inserire una sua descrizione adeguata in appendice al \doc{Manuale Utente}.
 	
 	\newpage
-	\section{Gestione dei responsabili} %DA FINIRE
-	Una volta installato il prodotto viene creato di default un account SuperAdmin che permette di creare enti e l'account responsabile associato. Per essere reperibili da chiunque voglia diventare responsabile di un ente è necessario quindi modificare il form "Contattaci" inserendo la proprio mail come referente. Una volta che un SuperAdmin riceve per mail una richiesta di aspiranti responsabili, può loggare con le credenziali    e troverà un form speciale che permette l'inserimento nel database di account responsabili ed enti.
+	\section{Account SuperAdmin} %DA FINIRE
+	Una volta installato il prodotto viene creato di default un account SuperAdmin che permette di creare enti e l'account responsabile associato.Per essere reperibili da chiunque voglia diventare responsabile di un ente è necessario quindi modificare il file \texttt{config/email.js} inserendo la proprio mail come referente, in questo modo il form "Contattaci" si riferirà a questa casella di posta. 
+	\\ Le credenziali di login per SuperAdmin sono:
+	\begin{description}
+		\item[Username] SuperAdmin,
+		\item[Password] la password sarà generata random e sarà reperibile nel file \texttt{config/superadmin.js}.
+	\end{description}
+	Una volta loggato con le credenziali si troverà un form speciale che permette l'inserimento nel database di enti, account responsabili associati e una pagina dove vengono mostrate le varie segnalazioni di errori o problemi tecnici effettutate dagli utenti.
 	
 	\section{Segnalazione di problemi d'uso}
 	Nel caso si verificassero dei problemi d'uso è possibile contattare il team Vault-Tech tramite email \centra{vaulttech.swe@gmail.com}
