@@ -224,10 +224,10 @@
 	Qualora si volesse implementare una nuova tipologia è quindi fondamentale seguire il seguente procedimento:
 	\begin{itemize}
 		\item scegliere una stringa univoca per identificare il tipo di domanda;
-		\item inserire il caso che riconosca tale stringa nella funzione \texttt{generate} e \texttt{parse};
+		\item inserire il case che riconosca tale stringa nello switch delle funzioni \texttt{generate} e \texttt{parse};
 		\item aggiungere nel file la funzione che effettui il parsing della stringa QML a JSON, che rispetti le regole definite nella sottosezione \hyperref[qml]{Sintassi QML}.
 		\item aggiungere nel file la funzione che effettui la generazione della stringa QML dal JSON, che rispetti le regole definite nella sottosezione \hyperref[qml]{Sintassi QML}.
-		\item inserire la chiamata delle due funzioni nel caso definito al punto 2.
+		\item inserire la chiamata delle due funzioni nel case definito al punto 2.
 	\end{itemize}
 	scegliere una stringa univoca per identificare il tipo di domanda e inserire il caso che riconosca tale stringa.
 	Successivamente è necessario creare una funzione di generazione e una di parsing per questo nuovo tipo, seguendo le regole definite in precedenza ed eventualmente creandone di nuove.
@@ -235,7 +235,27 @@
 	
 	\subsection{CtrlQuestion}
 	Si trova al percorso \centra{public/question\_creation/CtrlQuestion.js} 
-	DA ESTENDERE
+	È il componente che si occupa di gestire la creazione di domande lato client.
+	Qualora si volesse implementare una nuova tipologia è quindi fondamentale seguire il seguente procedimento:
+	\begin{itemize}
+		\item prima bisogna creare la factory della domanda che sarà il model della domanda lato client, e salvare il file js nella directory public/services;
+		\item nelle dipendenze di CtrlQuestion aggiungere il nome del factory della domanda;
+		\item assegnare allo \$scope una variabile che sarà del tipo della domanda che vogliamo creare;
+		\item modificare lo switch del metodo \texttt{\$scope.createQuestion} aggiungendo il case relativo al nuovo tipo di domanda;
+		\item nel corpo del case creare un metodo \texttt{save} che si occuperà solo del salvataggio della nuova domanda da salvare;
+		\item definire il metodo \texttt{save} della domanda nello \$scope.
+	\end{itemize}
+	
+	\subsection{CreateQuestionBase}
+	Si trova al percorso \centra{public/question\_creation/CreateQuestionBase.html}
+	È il componente che si occupa di mostrare la creazione dei vari tipi di domande.
+	Qualora si volesse implementare una nuova tipologia è quindi fondamentale seguire il seguente procedimento:
+	\begin{itemize}
+		\item creare una pagina html con il nome della domanda che conterrà solo il codice per rappresentare a video la struttura della domanda, e salvare il file html nella directory public/question\_creation;
+		\item creare una direttiva angular di tipo elemento che esegue il fetch del path della pagina html precedentemente creata, e salvare il file js nella directory public/question\_creation;
+		\item dentro createQuestionBase inserire tanti tag \texttt{src} quanti sono i file js appena creati (direttiva e factory);
+		\item dentro la "variable part" di createQuestionBase aggiungere la direttiva relativa alla pagina html creata al punto 1.
+	\end{itemize}
 	
 	\subsection{SVOLGIMENTO DOMANDA}
 	
@@ -244,7 +264,7 @@
 	
 	\newpage
 	\section{Gestione dei responsabili} %DA FINIRE
-	Una volta installato il prodotto viene creato di default un account SuperAdmin che permette di creare enti e l'account responsabile associato. Per essere reperibili da chiunque voglia diventare responsabile di un ente è necessario quindi modificare il form "Contattaci" inserendo la proprio mail come referente. Una volta che un SuperAdmin riceve per mail una richiesta di aspiranti responsabili, può loggare con le credenziali    , troverà un form speciale che permette l'inserimento nel database di account responsabili ed enti.
+	Una volta installato il prodotto viene creato di default un account SuperAdmin che permette di creare enti e l'account responsabile associato. Per essere reperibili da chiunque voglia diventare responsabile di un ente è necessario quindi modificare il form "Contattaci" inserendo la proprio mail come referente. Una volta che un SuperAdmin riceve per mail una richiesta di aspiranti responsabili, può loggare con le credenziali    e troverà un form speciale che permette l'inserimento nel database di account responsabili ed enti.
 	
 	\section{Segnalazione di problemi d'uso}
 	Nel caso si verificassero dei problemi d'uso è possibile contattare il team Vault-Tech tramite email \centra{vaulttech.swe@gmail.com}
