@@ -1896,15 +1896,15 @@
 \item Creazione domanda a collegamenti (UC2.10.6);
 \item Creazione domanda a risposta aperta (UC2.10.7);
 \item Creazione domanda a completamento testo (UC2.10.8);
-\item Modifica domanda (UC2.10.9);
-\item Errore numero risposte modifica (UC2.10.10);
-\item Interruzione volontaria della modifica della domanda (UC2.10.11);
-\item Modifica domanda vero o falso (UC2.10.12);
-\item Modifica domanda risposta multipla (UC2.10.13);
-\item Modifica domanda a risposta aperta (UC2.10.14);
-\item Modifica domanda a completamento testo (UC2.10.15);
-\item Modifica domanda a collegamenti (UC2.10.16);
-\item Eliminazione domanda (UC2.10.17).
+\item Errore numero risposte modifica (UC2.10.9);
+\item Interruzione volontaria della modifica della domanda (UC2.10.10);
+\item Modifica domanda vero o falso (UC2.10.11);
+\item Modifica domanda risposta multipla (UC2.10.12);
+\item Modifica domanda a risposta aperta (UC2.10.13);
+\item Modifica domanda a completamento testo (UC2.10.14);
+\item Modifica domanda a collegamenti (UC2.10.15);
+\item Eliminazione domanda (UC2.10.16);
+\item Modifica domanda (UC2.10.17).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter effettuare varie operazioni sulle domande, in particolare creare nuove domande di vario tipo e modificare o eliminare domande esistenti.
 \item \textbf{Precondizione}: il sistema ha riconosciuto il docente e ora può gestire le domande.
@@ -2286,93 +2286,7 @@
 \item \textbf{Precondizione}:  il docente ha iniziato la creazione di una domanda a completamento testo ma non ha ancora inserito l'insieme di parole corrette e sbagliate.
 \item \textbf{Postcondizione}: il docente ha inserito l'insieme di parole corrette e sbagliate.
 \end{itemize}
-\subsubsection{UC2.10.9 Modifica domanda}
-\begin{figure}[H]
-\centering
-\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda.pdf}}
-\caption{UC2.10.9 Modifica domanda}
-\end{figure}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}:
-\begin{enumerate}
-\item Modifica titolo domanda
- (UC2.10.9.1);
-\item Modifica descrizione aggiuntiva (UC2.10.9.2);
-\item Modifica argomento della domanda (UC2.10.9.3);
-\item Modifica livello difficoltà (UC2.10.9.4);
-\item Modifica allegato (UC2.10.9.5);
-\item Modifica parole chiave (UC2.10.9.6).
-\end{enumerate}
-\item \textbf{Estensioni}:
-\begin{itemize}
-\item Errore numero risposte modifica (UC2.10.10);
-\item Interruzione volontaria della modifica della domanda (UC2.10.11).
-\end{itemize}
-\item \textbf{Generalizzazioni}:
-\begin{itemize}
-\item Modifica domanda vero o falso (UC2.10.12);
-\item Modifica domanda risposta multipla (UC2.10.13);
-\item Modifica domanda a risposta aperta (UC2.10.14);
-\item Modifica domanda a completamento testo (UC2.10.15);
-\item Modifica domanda a collegamenti (UC2.10.16).
-\end{itemize}
-\item \textbf{Descrizione}: il docente deve poter modificare una domanda da lui creata.
-\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda da lui creata
-.
-\item \textbf{Postcondizione}: il docente ha modificato una domanda esistente da lui creata.
-\end{itemize}
-\subsubsection{UC2.10.9.1 Modifica titolo domanda
-}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente può modificare il titolo della domanda che ha selezionato.
-\item \textbf{Descrizione}: il docente deve poter modificare il titolo della domanda che ha selezionato.
-\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato il titolo
-.
-\item \textbf{Postcondizione}: il docente ha modificato il titolo della domanda.
-\end{itemize}
-\subsubsection{UC2.10.9.2 Modifica descrizione aggiuntiva}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente può modificare la descrizione aggiuntiva della domanda selezionata.
-\item \textbf{Descrizione}: il docente deve poter modificare la descrizione aggiuntiva della domanda selezionata.
-\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato la descrizione aggiuntiva.
-\item \textbf{Postcondizione}: il docente ha modificato la descrizione aggiuntiva.
-\end{itemize}
-\subsubsection{UC2.10.9.3 Modifica argomento della domanda}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente può modificare l'argomento della domanda selezionata semplicemente selezionando un argomento tra quelli disponibili.
-\item \textbf{Descrizione}: il docente deve poter modificare l'argomento della domanda selezionata semplicemente selezionando un argomento tra quelli disponibili.
-\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato l'argomento della domanda.
-\item \textbf{Postcondizione}: il docente ha modificato l'argomento della domanda selezionata.
-\end{itemize}
-\subsubsection{UC2.10.9.4 Modifica livello difficoltà}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente può modificare il livello di difficoltà della domanda selezionata.
-\item \textbf{Descrizione}: il docente deve poter modificare il livello di difficoltà della domanda selezionata.
-\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato il livello di difficoltà.
-\item \textbf{Postcondizione}: il docente ha modificato il livello di difficoltà della domanda selezionata.
-\end{itemize}
-\subsubsection{UC2.10.9.5 Modifica allegato}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente può modificare l'allegato della domanda eseguendo l'upload di un file multimediale (immagine, audio, video).
-\item \textbf{Descrizione}: il docente ha la possibilità di modificare l'allegato della domanda eseguendo l'upload di un file multimediale.
-\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato l'allegato della domanda.
-\item \textbf{Postcondizione}: il docente ha modificato l'allegato della domanda.
-\end{itemize}
-\subsubsection{UC2.10.9.6 Modifica parole chiave}
-\begin{itemize}
-\item \textbf{Attori}: Docente.
-\item \textbf{Scenario principale}: il docente modifica le parole chiave della domanda.
-\item \textbf{Descrizione}: il docente deve poter modificare le parole chiave della domanda che sta modificando.
-\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora modificato le parole chiave.
-\item \textbf{Postcondizione}: il docente ha modificato le parole chiave.
-\end{itemize}
-\subsubsection{UC2.10.10 Errore numero risposte modifica}
+\subsubsection{UC2.10.9 Errore numero risposte modifica}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente durante la modifica di una domanda non ha lasciato un numero minimo di risposte valide.
@@ -2381,7 +2295,7 @@
 \item \textbf{Precondizione}: il docente ha modificato una domanda ed ha un numero di risposte non valido.
 \item \textbf{Postcondizione}: il docente visualizza il messaggio d'errore.
 \end{itemize}
-\subsubsection{UC2.10.11 Interruzione volontaria della modifica della domanda}
+\subsubsection{UC2.10.10 Interruzione volontaria della modifica della domanda}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente interrompe la modifica della domanda.
@@ -2389,27 +2303,27 @@
 \item \textbf{Precondizione}: il docente sta modificando una domanda.
 \item \textbf{Postcondizione}: la modifica della domanda è stata interrotta.
 \end{itemize}
-\subsubsection{UC2.10.12 Modifica domanda vero o falso}
+\subsubsection{UC2.10.11 Modifica domanda vero o falso}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda vero o falso.pdf}}
-\caption{UC2.10.12 Modifica domanda vero o falso}
+\caption{UC2.10.11 Modifica domanda vero o falso}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Modifica veridicità della domanda (UC2.10.12.1).
+\item Modifica veridicità della domanda (UC2.10.11.1).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter modificare una domanda del tipo vero o falso da lui creata.
 \item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda vero o falso da lui creata.
 \item \textbf{Postcondizione}: il docente ha modificato una domanda del tipo vero o falso esistente da lui creata.
 \item \textbf{Specializzazione di}:
 \begin{enumerate}
-\item Modifica domanda (UC2.10.9).
+\item Modifica domanda (UC2.10.17).
 \end{enumerate}
 \end{itemize}
-\subsubsection{UC2.10.12.1 Modifica veridicità della domanda}
+\subsubsection{UC2.10.11.1 Modifica veridicità della domanda}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente deve poter modificare la veridicità della domanda che sta modificando.
@@ -2417,71 +2331,71 @@
 \item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda del tipo vero o falso ma non ha ancora modificato la veridicità della domanda.
 \item \textbf{Postcondizione}: il docente ha modificato la veridicità della domanda.
 \end{itemize}
-\subsubsection{UC2.10.13 Modifica domanda risposta multipla}
+\subsubsection{UC2.10.12 Modifica domanda risposta multipla}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda risposta multipla.pdf}}
-\caption{UC2.10.13 Modifica domanda risposta multipla}
+\caption{UC2.10.12 Modifica domanda risposta multipla}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Aggiungere una risposta (UC2.10.13.1);
-\item Modificare una risposta (UC2.10.13.2);
-\item Eliminare una risposta (UC2.10.13.3).
+\item Aggiungere una risposta (UC2.10.12.1);
+\item Modificare una risposta (UC2.10.12.2);
+\item Eliminare una risposta (UC2.10.12.3).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter modificare una domanda a risposta multipla da lui creata, aggiungendo, modificando e rimuovendo le risposte esistenti.
 \item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda a risposta multipla da lui creata.
 \item \textbf{Postcondizione}: il docente ha modificato una domanda a risposta multipla.
 \item \textbf{Specializzazione di}:
 \begin{enumerate}
-\item Modifica domanda (UC2.10.9).
+\item Modifica domanda (UC2.10.17).
 \end{enumerate}
 \end{itemize}
-\subsubsection{UC2.10.13.1 Aggiungere una risposta}
+\subsubsection{UC2.10.12.1 Aggiungere una risposta}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Aggiungere una risposta.pdf}}
-\caption{UC2.10.13.1 Aggiungere una risposta}
+\caption{UC2.10.12.1 Aggiungere una risposta}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Upload file multimediale della risposta (UC2.10.13.1.1);
-\item Inserimento risposta testuale (UC2.10.13.1.2);
-\item Selezione veridicità della risposta (UC2.10.13.1.3).
+\item Upload file multimediale della risposta (UC2.10.12.1.1);
+\item Inserimento risposta testuale (UC2.10.12.1.2);
+\item Selezione veridicità della risposta (UC2.10.12.1.3).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente può aggiungere una nuova risposta, di tipo testuale o multimediale, alla domanda che sta modificando.
 \item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a risposta multipla ma non ha ancora aggiunto una nuova risposta.
 \item \textbf{Postcondizione}: il docente ha aggiunto la nuova risposta.
 \end{itemize}
-\subsubsection{UC2.10.13.1.1 Upload file multimediale della risposta}
+\subsubsection{UC2.10.12.1.1 Upload file multimediale della risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente esegue l'upload di un'immagine, un video o un file audio.
 \item \textbf{Inclusioni}:
 \begin{itemize}
-\item Selezione veridicità della risposta (UC2.10.13.1.3).
+\item Selezione veridicità della risposta (UC2.10.12.1.3).
 \end{itemize}
 \item \textbf{Descrizione}: il docente deve poter eseguire l'upload di un'immagine, un video o un file audio, creando una risposta di tipo multimediale.
 \item \textbf{Precondizione}: il docente sta inserendo una nuova risposta e non ha ancora eseguito l'upload del file multimediale.
 \item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale della risposta.
 \end{itemize}
-\subsubsection{UC2.10.13.1.2 Inserimento risposta testuale}
+\subsubsection{UC2.10.12.1.2 Inserimento risposta testuale}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente inserisce il testo della risposta.
 \item \textbf{Inclusioni}:
 \begin{itemize}
-\item Selezione veridicità della risposta (UC2.10.13.1.3).
+\item Selezione veridicità della risposta (UC2.10.12.1.3).
 \end{itemize}
 \item \textbf{Descrizione}: il docente deve poter creare una casella di testo e scrivere il testo desiderato, creando una risposta di tipo testuale.
 \item \textbf{Precondizione}: il docente sta inserendo una nuova risposta e non ha ancora creato la risposta di tipo testuale.
 \item \textbf{Postcondizione}: il docente ha creato la risposta di tipo testuale e ne ha inserito il testo.
 \end{itemize}
-\subsubsection{UC2.10.13.1.3 Selezione veridicità della risposta}
+\subsubsection{UC2.10.12.1.3 Selezione veridicità della risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente seleziona la corretezza della risposta che ha aggiunto.
@@ -2489,25 +2403,25 @@
 \item \textbf{Precondizione}: il docente sta inserendo una nuova risposta ma non ha ancora selezionato la correttezza della risposta.
 \item \textbf{Postcondizione}: il docente ha selezionato la correttezza della risposta.
 \end{itemize}
-\subsubsection{UC2.10.13.2 Modificare una risposta}
+\subsubsection{UC2.10.12.2 Modificare una risposta}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modificare una risposta.pdf}}
-\caption{UC2.10.13.2 Modificare una risposta}
+\caption{UC2.10.12.2 Modificare una risposta}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Upload del file multimediale (UC2.10.13.2.1);
-\item Modifica veridicità risposta (UC2.10.13.2.2);
-\item Modifica testo risposta (UC2.10.13.2.3).
+\item Upload del file multimediale (UC2.10.12.2.1);
+\item Modifica veridicità risposta (UC2.10.12.2.2);
+\item Modifica testo risposta (UC2.10.12.2.3).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente può modificare una risposta della domanda a risposta multipla.
 \item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a risposta multipla ma non ha ancora modificato una risposta.
 \item \textbf{Postcondizione}: il docente ha modificato una risposta della domanda a risposta multipla.
 \end{itemize}
-\subsubsection{UC2.10.13.2.1 Upload del file multimediale}
+\subsubsection{UC2.10.12.2.1 Upload del file multimediale}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente sostituisce il file multimediale della risposta.
@@ -2515,7 +2429,7 @@
 \item \textbf{Precondizione}: il docente sta modificando una risposta ma non ne ha ancora sostituito il file multimediale.
 \item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale della risposta, sostituendo quello precedente.
 \end{itemize}
-\subsubsection{UC2.10.13.2.2 Modifica veridicità risposta}
+\subsubsection{UC2.10.12.2.2 Modifica veridicità risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente modifica la correttezza della risposta.
@@ -2523,7 +2437,7 @@
 \item \textbf{Precondizione}: il docente sta modificando una risposta e non ha ancora cambiato la correttezza della risposta.
 \item \textbf{Postcondizione}: il docente ha cambiato la correttezza della risposta che sta modificando.
 \end{itemize}
-\subsubsection{UC2.10.13.2.3 Modifica testo risposta}
+\subsubsection{UC2.10.12.2.3 Modifica testo risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente modifica il testo della risposta.
@@ -2531,7 +2445,7 @@
 \item \textbf{Precondizione}: il docente sta modificando una risposta e non ha ancora cambiato il testo della risposta testuale.
 \item \textbf{Postcondizione}: il docente ha cambiato il testo della risposta testuale.
 \end{itemize}
-\subsubsection{UC2.10.13.3 Eliminare una risposta}
+\subsubsection{UC2.10.12.3 Eliminare una risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente elimina la risposta della domanda che sta modificando.
@@ -2539,27 +2453,27 @@
 \item \textbf{Precondizione}: il docente sta modificando una domanda a risposta multipla da lui creata, ma non ha ancora eliminato la risposta desiderata.
 \item \textbf{Postcondizione}: il docente ha eliminato la risposta desiderata dalla domanda che stava modificando.
 \end{itemize}
-\subsubsection{UC2.10.14 Modifica domanda a risposta aperta}
+\subsubsection{UC2.10.13 Modifica domanda a risposta aperta}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda a risposta aperta.pdf}}
-\caption{UC2.10.14 Modifica domanda a risposta aperta}
+\caption{UC2.10.13 Modifica domanda a risposta aperta}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Modifica della risposta (UC2.10.14.1).
+\item Modifica della risposta (UC2.10.13.1).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter modificare una domanda a risposta aperta esistente, da lui creata.
 \item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda a risposta aperta esistente, da lui creata.
 \item \textbf{Postcondizione}: il docente ha modificato la domanda a risposta aperta.
 \item \textbf{Specializzazione di}:
 \begin{enumerate}
-\item Modifica domanda (UC2.10.9).
+\item Modifica domanda (UC2.10.17).
 \end{enumerate}
 \end{itemize}
-\subsubsection{UC2.10.14.1 Modifica della risposta}
+\subsubsection{UC2.10.13.1 Modifica della risposta}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente modifica la risposta corretta alla domanda.
@@ -2567,29 +2481,29 @@
 \item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a risposta aperta ma non ha ancora modificato la risposta corretta.
 \item \textbf{Postcondizione}: il docente ha modificato la risposta corretta della domanda a risposta aperta.
 \end{itemize}
-\subsubsection{UC2.10.15 Modifica domanda a completamento testo}
+\subsubsection{UC2.10.14 Modifica domanda a completamento testo}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda a completamento testo.pdf}}
-\caption{UC2.10.15 Modifica domanda a completamento testo}
+\caption{UC2.10.14 Modifica domanda a completamento testo}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Modifica testo incompleto (UC2.10.15.1);
-\item Modifica parole esistenti (UC2.10.15.2);
-\item Elimina parole (UC2.10.15.3).
+\item Modifica testo incompleto (UC2.10.14.1);
+\item Modifica parole esistenti (UC2.10.14.2);
+\item Elimina parole (UC2.10.14.3).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter modificare una domanda a completamento testo da lui creata.
 \item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda a completamento testo da lui creata.
 \item \textbf{Postcondizione}: il docente ha modificato una domanda a completamento testo, esistente, da lui creata.
 \item \textbf{Specializzazione di}:
 \begin{enumerate}
-\item Modifica domanda (UC2.10.9).
+\item Modifica domanda (UC2.10.17).
 \end{enumerate}
 \end{itemize}
-\subsubsection{UC2.10.15.1 Modifica testo incompleto}
+\subsubsection{UC2.10.14.1 Modifica testo incompleto}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente modifica il testo incompleto della domanda, specificando gli spazi vuoti nel testo.
@@ -2597,7 +2511,7 @@
 \item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a completamento testo ma non ha ancora modificato il testo incompleto della domanda.
 \item \textbf{Postcondizione}: il docente ha modificato il testo incompleto della domanda.
 \end{itemize}
-\subsubsection{UC2.10.15.2 Modifica parole esistenti}
+\subsubsection{UC2.10.14.2 Modifica parole esistenti}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente modifica l'insieme di parole associate al testo incompleto.
@@ -2605,7 +2519,7 @@
 \item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a completamento testo ma non ha ancora modificato l'insieme di parole associate al testo incompleto.
 \item \textbf{Postcondizione}: il docente ha modificato l'insieme di parole associate al testo incompleto.
 \end{itemize}
-\subsubsection{UC2.10.15.3 Elimina parole}
+\subsubsection{UC2.10.14.3 Elimina parole}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente può eliminare alcune parole associate al testo incompleto.
@@ -2613,62 +2527,62 @@
 \item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda a completamento testo ma non ha ancora eliminato alcune parole.
 \item \textbf{Postcondizione}: il docente ha eliminato alcune parole associate al testo incompleto.
 \end{itemize}
-\subsubsection{UC2.10.16 Modifica domanda a collegamenti}
+\subsubsection{UC2.10.15 Modifica domanda a collegamenti}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda a collegamenti.pdf}}
-\caption{UC2.10.16 Modifica domanda a collegamenti}
+\caption{UC2.10.15 Modifica domanda a collegamenti}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Inserire ennupla (UC2.10.16.1);
-\item Elimina ennupla (UC2.10.16.2).
+\item Inserire ennupla (UC2.10.15.1);
+\item Elimina ennupla (UC2.10.15.2).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter modificare una domanda a collegamenti esistente, da lui creata.
 \item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda a collegamenti esistente da lui creata.
 \item \textbf{Postcondizione}: il docente ha modificato la domanda a collegamenti.
 \item \textbf{Specializzazione di}:
 \begin{enumerate}
-\item Modifica domanda (UC2.10.9).
+\item Modifica domanda (UC2.10.17).
 \end{enumerate}
 \end{itemize}
-\subsubsection{UC2.10.16.1 Inserire ennupla}
+\subsubsection{UC2.10.15.1 Inserire ennupla}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Inserire ennupla.pdf}}
-\caption{UC2.10.16.1 Inserire ennupla}
+\caption{UC2.10.15.1 Inserire ennupla}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Aggiungere parte iniziale (UC2.10.16.1.1);
-\item Aggiungere parte finale (UC2.10.16.1.2).
+\item Aggiungere parte iniziale (UC2.10.15.1.1);
+\item Aggiungere parte finale (UC2.10.15.1.2).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente sta modificando una domanda a collegamenti e può inserire una nuova ennupla (risposta).
 \item \textbf{Precondizione}: il docente sta modificando una domanda a collegamenti ma non ha ancora aggiunto l'ennupla.
 \item \textbf{Postcondizione}: il docente ha aggiunto l'ennupla (risposta) che ha creato.
 \end{itemize}
-\subsubsection{UC2.10.16.1.1 Aggiungere parte iniziale}
+\subsubsection{UC2.10.15.1.1 Aggiungere parte iniziale}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Aggiungere parte iniziale.pdf}}
-\caption{UC2.10.16.1.1 Aggiungere parte iniziale}
+\caption{UC2.10.15.1.1 Aggiungere parte iniziale}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Upload file parte iniziale (UC2.10.16.1.1.1);
-\item Aggiungere testo parte iniziale (UC2.10.16.1.1.2).
+\item Upload file parte iniziale (UC2.10.15.1.1.1);
+\item Aggiungere testo parte iniziale (UC2.10.15.1.1.2).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter aggiungere la parte iniziale della risposta.
 \item \textbf{Precondizione}: il docente sto creando l'ennupla ma non ha ancora inserito la parte iniziale della risposta.
 \item \textbf{Postcondizione}: il docente ha inserito la parte iniziale dell'ennupla.
 \end{itemize}
-\subsubsection{UC2.10.16.1.1.1 Upload file parte iniziale}
+\subsubsection{UC2.10.15.1.1.1 Upload file parte iniziale}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente inserisce un file multimediale nella parte iniziale della risposta, facendo l'upload del file.
@@ -2676,7 +2590,7 @@
 \item \textbf{Precondizione}: il docente ha iniziato ad aggiungere la parte iniziale della risposta ma non ha ancora eseguito l'upload del file multimediale.
 \item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale.
 \end{itemize}
-\subsubsection{UC2.10.16.1.1.2 Aggiungere testo parte iniziale}
+\subsubsection{UC2.10.15.1.1.2 Aggiungere testo parte iniziale}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente inserisce del testo nella parta iniziale dell'ennupla (risposta).
@@ -2684,24 +2598,24 @@
 \item \textbf{Precondizione}: il docente ha iniziato ad aggiungere la parte iniziale dell'ennupla, ma non ha ancora specificato il testo da inserire.
 \item \textbf{Postcondizione}: il docente ha inserito il testo nella parte iniziale dell'ennupla.
 \end{itemize}
-\subsubsection{UC2.10.16.1.2 Aggiungere parte finale}
+\subsubsection{UC2.10.15.1.2 Aggiungere parte finale}
 \begin{figure}[H]
 \centering
 \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Aggiungere parte finale.pdf}}
-\caption{UC2.10.16.1.2 Aggiungere parte finale}
+\caption{UC2.10.15.1.2 Aggiungere parte finale}
 \end{figure}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}:
 \begin{enumerate}
-\item Upload file parte finale (UC2.10.16.1.2.1);
-\item Aggiungere testo parte finale (UC2.10.16.1.2.2).
+\item Upload file parte finale (UC2.10.15.1.2.1);
+\item Aggiungere testo parte finale (UC2.10.15.1.2.2).
 \end{enumerate}
 \item \textbf{Descrizione}: il docente deve poter aggiungere la parte finale della risposta.
 \item \textbf{Precondizione}: il docente sta creando l'ennupla ma non ha ancora inserito la parte finale della risposta.
 \item \textbf{Postcondizione}: il docente ha inserito la parte finale dell'ennupla.
 \end{itemize}
-\subsubsection{UC2.10.16.1.2.1 Upload file parte finale}
+\subsubsection{UC2.10.15.1.2.1 Upload file parte finale}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente aggiunge un file multimediale nella parte finale della risposta, facendo l'upload del file.
@@ -2709,7 +2623,7 @@
 \item \textbf{Precondizione}: il docente ha iniziato ad aggiungere la parte finale della risposta ma non ha ancora eseguito l'upload del file multimediale.
 \item \textbf{Postcondizione}: il docente ha eseguito l'upload del file multimediale.
 \end{itemize}
-\subsubsection{UC2.10.16.1.2.2 Aggiungere testo parte finale}
+\subsubsection{UC2.10.15.1.2.2 Aggiungere testo parte finale}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente inserisce del testo nella parta finale dell'ennupla (risposta).
@@ -2717,7 +2631,7 @@
 \item \textbf{Precondizione}: il docente ha iniziato ad aggiungere la parte finale dell'ennupla, ma non ha ancora specificato il testo da inserire.
 \item \textbf{Postcondizione}: il docente ha inserito il testo nella parte finale dell'ennupla.
 \end{itemize}
-\subsubsection{UC2.10.16.2 Elimina ennupla}
+\subsubsection{UC2.10.15.2 Elimina ennupla}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente elimina una risposta dalla domanda a collegamenti.
@@ -2725,11 +2639,105 @@
 \item \textbf{Precondizione}: il docente ha iniziato a modificare una domanda a collegamenti ma non ha ancora eliminato una ennupla (risposta).
 \item \textbf{Postcondizione}: il docente ha eliminato una ennupla dalla domanda a collegamenti.
 \end{itemize}
-\subsubsection{UC2.10.17 Eliminazione domanda}
+\subsubsection{UC2.10.16 Eliminazione domanda}
 \begin{itemize}
 \item \textbf{Attori}: Docente.
 \item \textbf{Scenario principale}: il docente elimina la domanda.
 \item \textbf{Descrizione}: il docente che ha creato una domanda deve poterla eliminare. I docenti che hanno utilizzato la domanda nei loro quiz saranno notificati della sua eliminazione.
 \item \textbf{Precondizione}: il docente sta gestendo le proprie domande.
 \item \textbf{Postcondizione}: il docente ha eliminato la domanda.
+\end{itemize}
+\subsubsection{UC2.10.17 Modifica domanda}
+\begin{figure}[H]
+\centering
+\noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{Img/UC Modifica domanda.pdf}}
+\caption{UC2.10.17 Modifica domanda}
+\end{figure}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}:
+\begin{enumerate}
+\item Modifica titolo domanda (UC2.10.17.1);
+\item Modifica descrizione aggiuntiva (UC2.10.17.2);
+\item Modifica argomento della domanda (UC2.10.17.3);
+\item Modifica livello difficoltà (UC2.10.17.4);
+\item Modifica allegato (UC2.10.17.5);
+\item Modifica parole chiave (UC2.10.17.6).
+\end{enumerate}
+\item \textbf{Estensioni}:
+\begin{itemize}
+\item Errore numero risposte modifica (UC2.10.9);
+\item Interruzione volontaria della modifica della domanda (UC2.10.10).
+\end{itemize}
+\item \textbf{Generalizzazioni}:
+\begin{itemize}
+\item Modifica domanda vero o falso (UC2.10.11);
+\item Modifica domanda risposta multipla (UC2.10.12);
+\item Modifica domanda a risposta aperta (UC2.10.13);
+\item Modifica domanda a completamento testo (UC2.10.14);
+\item Modifica domanda a collegamenti (UC2.10.15).
+\end{itemize}
+\item \textbf{Descrizione}: il docente deve poter modificare una domanda da lui creata.
+\item \textbf{Precondizione}: il docente è stato riconosciuto e vuole modificare una domanda da lui creata.
+\item \textbf{Postcondizione}: il docente ha modificato una domanda esistente da lui creata.
+\end{itemize}
+\subsubsection{UC2.10.17.1 Modifica titolo domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente pu`o modificare il titolo della domanda che ha selezionato.
+\item \textbf{Descrizione}: il docente deve poter modificare il titolo della domanda che ha selezionato.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora
+modificato il titolo.
+\item \textbf{Postcondizione}: il docente ha modificato il titolo della domanda.
+\end{itemize}
+\subsubsection{UC2.10.17.2 Modifica descrizione aggiuntiva}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può modificare la descrizione aggiuntiva della domanda
+selezionata.
+\item \textbf{Descrizione}: il docente deve poter modificare la descrizione aggiuntiva della domanda
+selezionata.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora
+modificato la descrizione aggiuntiva.
+\item \textbf{Postcondizione}: il docente ha modificato la descrizione aggiuntiva.
+\end{itemize}
+\subsubsection{UC2.10.17.3 Modifica argomento della domanda}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può modificare l'argomento della domanda selezionata
+semplicemente selezionando un argomento tra quelli disponibili.
+\item \textbf{Descrizione}: il docente deve poter modificare l'argomento della domanda selezionata semplicemente selezionando un argomento tra quelli disponibili.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora
+modificato l'argomento della domanda.
+\item \textbf{Postcondizione}: il docente ha modificato l'argomento della domanda selezionata.
+\end{itemize}
+\subsubsection{UC2.10.17.4 Modifica livello difficoltà}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può modificare il livello di difficoltà della domanda selezionata.
+\item \textbf{Descrizione}: il docente deve poter modificare il livello di difficoltà della domanda selezionata.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora
+modificato il livello di difficoltà.
+\item \textbf{Postcondizione}: il docente ha modificato il livello di difficoltà della domanda selezionata.
+\end{itemize}
+\subsubsection{UC2.10.17.5 Modifica allegato}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente può modificare l'allegato della domanda eseguendo l'upload
+di un file multimediale (immagine, audio, video).
+\item \textbf{Descrizione}: il docente ha la possibilità di modificare l'allegato della domanda eseguendo
+l'upload di un file multimediale.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora
+modificato l'allegato della domanda.
+\item \textbf{Postcondizione}: il docente ha modificato l'allegato della domanda.
+\end{itemize}
+\subsubsection{UC2.10.17.6 Modifica parole chiave}
+\begin{itemize}
+\item \textbf{Attori}: Docente.
+\item \textbf{Scenario principale}: il docente modifica le parole chiave della domanda.
+\item \textbf{Descrizione}: il docente deve poter modificare le parole chiave della domanda che sta
+modificando.
+\item \textbf{Precondizione}: il docente ha iniziato la modifica di una domanda ma non ha ancora
+modificato le parole chiave.
+\item \textbf{Postcondizione}: il docente ha modificato le parole chiave.
 \end{itemize}
