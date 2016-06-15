@@ -85,24 +85,14 @@ restituisce le mail degli studenti della classe
 \item \method{getTeachers () : String[]}
 \newline
 restituisce le mail dei docenti della classe
-\item \method{removeStudent (studentMail : String) : void}
+\item \method{removeStudent () : void}
 \newline
 permette di rimuovere uno studente dalla
 classe
-\begin{itemize}
-\item \attribute{studentMail : String}
-\newline
-mail dello studente da rimuovere
-\end{itemize}
-\item \method{removeTeacher (teacherMail : String) : void}
+\item \method{removeTeacher () : void}
 \newline
 permette di rimuovere un docente dalla
 classe
-\begin{itemize}
-\item \attribute{teacherMail : String}
-\newline
-mail del docente da rimuovere
-\end{itemize}
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Institution}}
@@ -172,7 +162,7 @@ viene passata al metodo la classe da inserire
 \item \method{getClass () : Class[]}
 \newline
 permette di recuperare le classi facenti parte dell'istituto
-\item \method{getCLassList () : ClassList}
+\item \method{getClassRequestsList () : ClassList}
 \newline
 permette di recuperare la lista delle richieste di entrata alle classi
 \item \method{getDirector () : Director}
@@ -181,7 +171,7 @@ permette di recuperare il direttore dell'istituto
 \item \method{getName () : String}
 \newline
 permette di recuperare il nome dell'istituto
-\item \method{getRoleList () : RoleList}
+\item \method{getRoleRequestsList () : RoleList}
 \newline
 permette di recuperare le richieste di ingresso all'istituto con un appropriato ruolo
 \item \method{getStudents () : String[]}
@@ -209,22 +199,12 @@ permette di rimuovere una richiesta di ingresso ad una classe dell'istituto
 \newline
 la posizione della richiesta da rimuovere
 \end{itemize}
-\item \method{removeStudent (studentMail : String) : void}
+\item \method{removeStudent () : void}
 \newline
 rimuove uno studente dagli iscritti presso un istituto
-\begin{itemize}
-\item \attribute{studentMail : String}
-\newline
-lo studente da rimuovere dall'istituto
-\end{itemize}
-\item \method{removeTeacher (teacherMail : String) : void}
+\item \method{removeTeacher () : void}
 \newline
 rimuove un docente dagli iscritti presso un istituto
-\begin{itemize}
-\item \attribute{teacherMail : String}
-\newline
-l'insegnate da rimuovere dall'istituto
-\end{itemize}
 \item \method{setDirector (objectDirector : Director) : void}
 \newline
 permette di modificare il direttore dell'istituto
@@ -335,7 +315,7 @@ La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuo
 \item \attribute{mail : String}
 \newline
 la mail dell'utente che effettua la richiesta di ruolo
-\item \attribute{messagge : String}
+\item \attribute{message : String}
 \newline
 un messaggio che l'utente può includere alla sua richiesta di ruolo
 \end{itemize}
@@ -368,10 +348,10 @@ memorizza la lista delle richieste degli utenti che hanno richiesto di diventare
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{acceptStudent () : void}
+\item \method{acceptStudentRoleRequest () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\item \method{acceptTeacher () : void}
+\item \method{acceptTeacherRoleRequest () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare docente
 \item \method{addRoleList (mailUser : String, message : String, role : String) : void}
@@ -388,10 +368,10 @@ il messaggio dell'utente che ha effettuato una richiesta di ruolo
 \newline
 il ruolo per cui l'utente ha fatto domanda
 \end{itemize}
-\item \method{removeStudent () : void}
+\item \method{removeStudentRoleRequest () : void}
 \newline
 rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\item \method{removeTeacher () : void}
+\item \method{removeTeacherRoleRequest () : void}
 \newline
 rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
 \end{itemize}
@@ -425,6 +405,9 @@ la data di creazione del quiz
 \item \attribute{description : String}
 \newline
 la descrizione del quiz
+\item \attribute{difficulty : int}
+\newline
+la difficoltà del quiz
 \item \attribute{keywords : String[]}
 \newline
 le keyword che identificano il quiz
@@ -517,6 +500,14 @@ imposta la descrizione del quiz
 \item \attribute{newDescr : String}
 \newline
 la nuova descrizione del quiz
+\end{itemize}
+\item \method{setDifficulty (difficulty : int) : void}
+\newline
+imposta la difficoltà del quiz
+\begin{itemize}
+\item \attribute{difficulty : int}
+\newline
+la difficoltà da impostare al quiz
 \end{itemize}
 \item \method{setTitle (newTitle : String) : void}
 \newline
@@ -789,7 +780,7 @@ la risposta da aggiungere alla lista delle risposte del quiz
 \item \method{check () : bool}
 \newline
 verifica la correttezza del quiz, confrontando le risposte date dall'utente con quelle corrette
-\item \method{getAnswerQuestion () : AnswerQuestion}
+\item \method{getAnswerQuestionList () : AnswerQuestion}
 \newline
 restituisce la lista delle risposte alle varie domande del quiz
 \item \method{getDate () : Date}
@@ -1409,10 +1400,10 @@ gli studenti che hanno svolto il quiz
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{getResults () : double[]}
+\item \method{getResultsList () : double[]}
 \newline
 restituisce la lista dei risultati degli studenti che hanno svolto il quiz
-\item \method{getStudents () : Student[]}
+\item \method{getStudentsList () : Student[]}
 \newline
 ottiene la lista degli studenti che hanno svolto il quiz
 \end{itemize}
@@ -1502,7 +1493,7 @@ aggiunge un quiz svolto e le risposte date dall'utente allo storico dei quiz
 \newline
 la soluzione che si desidera aggiungere alla lista dei quiz già svolti
 \end{itemize}
-\item \method{getQuizProfile () : AnswerQuiz}
+\item \method{getQuizProfileList () : AnswerQuiz}
 \newline
 restituisce la lista dei quiz svolti dall'utente e delle relative soluzioni
 \item \method{loadProfileQuiz () : void}
@@ -1582,7 +1573,7 @@ aggiunge un quiz alla lista dei quiz creati dal docente
 \newline
 il quiz che si intende aggiungere
 \end{itemize}
-\item \method{getOwnQuiz () : Quiz[]}
+\item \method{getOwnQuizList () : Quiz[]}
 \newline
 restituisce la lista dei quiz creati dal docente
 \item \method{getQuizStatistics () : QuizStatistics}
@@ -2106,7 +2097,7 @@ carica le keyword possibili che il docente può utilizzare per facilitarsi nella
 \item \method{loadTeacher () : void}
 \newline
 carica il docente che sta effettuando la ricerca
-\item \method{loadTopics () : void}
+\item \method{loadTopicsList () : void}
 \newline
 carica la lista di argomenti che il docente può utilizzare per aiutarsi nella ricerca della domanda che desidera
 \item \method{searchQuestion (question : \$scope) : void}
@@ -2150,7 +2141,7 @@ l'utente che sta effettuando la ricerca
 \item \method{loadKeywords () : void}
 \newline
 fornisce all'utente la lista delle possibili keyword tra cui scegliere
-\item \method{loadTopics () : void}
+\item \method{loadTopicsList () : void}
 \newline
 fornisce all'utente la lista dei possibili argomenti tra cui scegliere per la ricerca
 \item \method{loadUser () : void}
@@ -2986,24 +2977,14 @@ restituisce le mail degli studenti della classe
 \item \method{getTeachers () : String[]}
 \newline
 restituisce le mail dei docenti della classe
-\item \method{removeStudent (studentMail : String) : void}
+\item \method{removeStudent () : void}
 \newline
 permette di rimuovere uno studente dalla
 classe
-\begin{itemize}
-\item \attribute{studentMail : String}
-\newline
-mail dello studente da rimuovere
-\end{itemize}
-\item \method{removeTeacher (teacherMail : String) : void}
+\item \method{removeTeacher () : void}
 \newline
 permette di rimuovere un docente dalla
 classe
-\begin{itemize}
-\item \attribute{teacherMail : String}
-\newline
-mail del docente da rimuovere
-\end{itemize}
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{Institution}}
@@ -3073,7 +3054,7 @@ viene passata al metodo la classe da inserire
 \item \method{getClass () : Class[]}
 \newline
 permette di recuperare le classi facenti parte dell'istituto
-\item \method{getCLassList () : ClassList}
+\item \method{getClassRequestsList () : ClassList}
 \newline
 permette di recuperare la lista delle richieste di entrata alle classi
 \item \method{getDirector () : Director}
@@ -3082,7 +3063,7 @@ permette di recuperare il direttore dell'istituto
 \item \method{getName () : String}
 \newline
 permette di recuperare il nome dell'istituto
-\item \method{getRoleList () : RoleList}
+\item \method{getRoleRequestsList () : RoleList}
 \newline
 permette di recuperare le richieste di ingresso all'istituto con un appropriato ruolo
 \item \method{getStudents () : String[]}
@@ -3110,22 +3091,12 @@ permette di rimuovere una richiesta di ingresso ad una classe dell'istituto
 \newline
 la posizione della richiesta da rimuovere
 \end{itemize}
-\item \method{removeStudent (studentMail : String) : void}
+\item \method{removeStudent () : void}
 \newline
 rimuove uno studente dagli iscritti presso un istituto
-\begin{itemize}
-\item \attribute{studentMail : String}
-\newline
-lo studente da rimuovere dall'istituto
-\end{itemize}
-\item \method{removeTeacher (teacherMail : String) : void}
+\item \method{removeTeacher () : void}
 \newline
 rimuove un docente dagli iscritti presso un istituto
-\begin{itemize}
-\item \attribute{teacherMail : String}
-\newline
-l'insegnate da rimuovere dall'istituto
-\end{itemize}
 \item \method{setDirector (objectDirector : Director) : void}
 \newline
 permette di modificare il direttore dell'istituto
@@ -3236,7 +3207,7 @@ La classe memorizza l'utente che invia una richiesta di ruolo e il ruolo che vuo
 \item \attribute{mail : String}
 \newline
 la mail dell'utente che effettua la richiesta di ruolo
-\item \attribute{messagge : String}
+\item \attribute{message : String}
 \newline
 un messaggio che l'utente può includere alla sua richiesta di ruolo
 \end{itemize}
@@ -3269,10 +3240,10 @@ memorizza la lista delle richieste degli utenti che hanno richiesto di diventare
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{acceptStudent () : void}
+\item \method{acceptStudentRoleRequest () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\item \method{acceptTeacher () : void}
+\item \method{acceptTeacherRoleRequest () : void}
 \newline
 accetta la richiesta di ruolo di un utente senza ruolo che desidera diventare docente
 \item \method{addRoleList (mailUser : String, message : String, role : String) : void}
@@ -3289,10 +3260,10 @@ il messaggio dell'utente che ha effettuato una richiesta di ruolo
 \newline
 il ruolo per cui l'utente ha fatto domanda
 \end{itemize}
-\item \method{removeStudent () : void}
+\item \method{removeStudentRoleRequest () : void}
 \newline
 rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
-\item \method{removeTeacher () : void}
+\item \method{removeTeacherRoleRequest () : void}
 \newline
 rimuove, quindi rifiuta, la richiesta di ruolo di un utente senza ruolo che desidera diventare studente
 \end{itemize}
@@ -3326,6 +3297,9 @@ la data di creazione del quiz
 \item \attribute{description : String}
 \newline
 la descrizione del quiz
+\item \attribute{difficulty : int}
+\newline
+la difficoltà del quiz
 \item \attribute{keywords : String[]}
 \newline
 le keyword che identificano il quiz
@@ -3418,6 +3392,14 @@ imposta la descrizione del quiz
 \item \attribute{newDescr : String}
 \newline
 la nuova descrizione del quiz
+\end{itemize}
+\item \method{setDifficulty (difficulty : int) : void}
+\newline
+imposta la difficoltà del quiz
+\begin{itemize}
+\item \attribute{difficulty : int}
+\newline
+la difficoltà da impostare al quiz
 \end{itemize}
 \item \method{setTitle (newTitle : String) : void}
 \newline
@@ -3688,7 +3670,7 @@ la risposta da aggiungere alla lista delle risposte del quiz
 \item \method{check () : bool}
 \newline
 verifica la correttezza del quiz, confrontando le risposte date dall'utente con quelle corrette
-\item \method{getAnswerQuestion () : AnswerQuestion}
+\item \method{getAnswerQuestionList () : AnswerQuestion}
 \newline
 restituisce la lista delle risposte alle varie domande del quiz
 \item \method{getDate () : Date}
@@ -4311,10 +4293,10 @@ gli studenti che hanno svolto il quiz
 \end{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{getResults () : double[]}
+\item \method{getResultsList () : double[]}
 \newline
 restituisce la lista dei risultati degli studenti che hanno svolto il quiz
-\item \method{getStudents () : Student[]}
+\item \method{getStudentsList () : Student[]}
 \newline
 ottiene la lista degli studenti che hanno svolto il quiz
 \end{itemize}
@@ -4415,7 +4397,7 @@ aggiunge un quiz svolto e le risposte date dall'utente allo storico dei quiz
 \newline
 la soluzione che si desidera aggiungere alla lista dei quiz già svolti
 \end{itemize}
-\item \method{getQuizProfile () : AnswerQuiz}
+\item \method{getQuizProfileList () : AnswerQuiz}
 \newline
 restituisce la lista dei quiz svolti dall'utente e delle relative soluzioni
 \item \method{loadProfileQuiz () : void}
@@ -4495,7 +4477,7 @@ aggiunge un quiz alla lista dei quiz creati dal docente
 \newline
 il quiz che si intende aggiungere
 \end{itemize}
-\item \method{getOwnQuiz () : Quiz[]}
+\item \method{getOwnQuizList () : Quiz[]}
 \newline
 restituisce la lista dei quiz creati dal docente
 \item \method{getQuizStatistics () : QuizStatistics}
@@ -4784,14 +4766,9 @@ Recupera la lista degli studenti appartenenti ad una determinata classe.
 \begin{itemize}
 \item \bold{Metodi}
 \begin{itemize}
-\item \method{getStudents (className : String) : JSON}
+\item \method{getStudents () : JSON}
 \newline
 recupera la lista di studenti appartenenti ad una determinata classe
-\begin{itemize}
-\item \attribute{className : String}
-\newline
-il nome della classe della quale recuperare la lista degli studenti
-\end{itemize}
 \end{itemize}
 \end{itemize}
 \subsubsection{Classe \cls{TeachersClassFetcher}}
