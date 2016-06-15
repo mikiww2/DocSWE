@@ -16,15 +16,16 @@
 \setcounter{tocdepth}{5}
 
 \def\NOME{Norme di Progetto}
-\def\VERSIONE{4.0}
-\def\DATA{26.04.2016}
-\def\REDATTORE{Rudy Berton \\ & Michela De Bortoli \\ & Filippo Tesser}
-\def\VERIFICATORE{Miki Violetto}
-\def\RESPONSABILE{Giacomo Beltrame}
+\def\VERSIONE{5.0}
+\def\DATA{29.05.2016}
+\def\REDATTORE{Vassilikì Menarin}
+\def\VERIFICATORE{Filippo Tesser}
+\def\RESPONSABILE{Rudy Berton}
 \def\USO{Interno}
 \def\DISTRIBUZIONE{\AUTORE}
 %\def\SOMMARIO{Questo documento elenca le norme che i membri del \gl{team} Vault-Tech devono seguire durante lo sviluppo del progetto \CAPITOLATO.}
 
+\usepackage{graphicx}
 \begin{document}
 \pagestyle{fancy}	
 \pagenumbering{Roman}
@@ -113,9 +114,9 @@ Il \italics{Responsabile} deve organizzare delle riunioni con lo scopo di valuta
 \subsubsection{Procedure}
 
 \myparagraph{Consegna al committente}
-La consegna avverrà a mezzo CD-ROM / DVD, comprensivo di:
+La consegna avverrà per mezzo di CD-ROM / DVD, comprensivo di:
 \begin{itemize}
-	\item manuale utente e sviluppatore contenenti istruzioni per l’installazione e l’uso;
+	\item manuale utente e manutentore contenenti istruzioni per l’installazione e l’uso;
 	\item utilità di installazione;
 	\item sorgenti completi;
 	\item documentazione completa e finale;
@@ -125,7 +126,7 @@ La consegna avverrà a mezzo CD-ROM / DVD, comprensivo di:
 \myparagraph{Consegna al proponente}
 La consegna avverrà per via telematica e comprenderà:
 \begin{itemize}
-	\item manuale utente e sviluppatore contenenti istruzioni per l’installazione e l’uso;
+	\item manuale utente e manutentore contenenti istruzioni per l’installazione e l’uso;
 	\item utilità di installazione;
 	\item accesso al repository contenente le sorgenti del prodotto;
 	\item report con risultato dell’esecuzione interna dei test di accettazione;
@@ -162,30 +163,31 @@ devono essere eseguiti i seguenti task:
 	\item si definiscono le interazioni che i componenti hanno fra di loro;
 	\item si definiscono le eventuali interfacce che ogni componente mette a disposizione dell’ambiente
 	esterno;
-	\item ci si assicura che ogni requisito sia soddisfatto da almeno uno dei componenti individuati e
+	\item ci si assicura che ogni requisito sia soddisfatto da almeno uno dei componenti individuati;
 	\item ci si assicura che ogni componente realizzi almeno un requisito;
 	\item si realizzano e si documentano i test di integrazione, necessari per verificare il corretto funzionamento di più componenti assemblati insieme.
 \end{itemize}
 Seguono i principali contenuti del documento:
 \begin{itemize}
-	\item Diagrammi \gl{UML}.
+	\item Diagrammi \gl{UML}
 	\\ Sarà necessario realizzare i seguenti diagrammi:
 	\begin{itemize}
 		\item diagrammi delle classi,
 		\item diagrammi dei \gl{package},
 		\item diagrammi di attività.
 	\end{itemize}
-	\item Test.
+	\item Test
 	\\ Saranno definite tre tipologie di test:
 	\begin{itemize}
 		\item test di integrazione,
 		\item test di sistema,
 		\item test di validazione,
 	\end{itemize}
-	che permetteranno di verificare il corretto funzionamento dell'intera architettura. In particolare i test di integrazione avranno il compito di individuare i problemi che si potranno verificare nella combinazione di due distinte unità.
-	\item \gl{Design pattern}.
+	che permetteranno di verificare il corretto funzionamento dell'intera architettura. In particolare i test di integrazione avranno il compito di individuare i problemi che si potranno verificare nella combinazione di due o più distinte unità.
+	\newline Per maggiori dettagli sui test si veda la sezione dedicata in questo documento.
+	\item \gl{Design pattern}
 	\\ Dovranno essere descritti anche i vari \gl{design pattern} che verranno utilizzati per la strutturazione dell'architettura e il modo che questi impatteranno sulla struttura.
-	\item Tracciamento componenti.
+	\item Tracciamento componenti
 	\\ Infine sarà necessario eseguire il tracciamento requisito-componente atto a controllare lo stato di avanzamento del progetto. Questo tracciamento viene automatizzato dal tool \gl{Tracker}.
 \end{itemize}
 
@@ -196,42 +198,48 @@ Essa prevede che vengano eseguiti i seguenti task:
 	\item si individuano le classi che implementano ciascuno dei componenti trovati durante la progettazione
 	architetturale;
 	\item si definiscono i ruoli e le responsabilità di ciascuna delle classi individuate;
-	\item si definiscono le interazioni che le classi hanno fra di loro;
+	\item si definiscono le interazioni che le classi hanno tra di loro;
 	\item ognuna delle classi deve essere definita nel dettaglio;
 	\item ci si assicura che ogni requisito sia soddisfatto da almeno una delle classi individuate e
 	descritte;
 	\item ci si assicura che ogni classe realizzi almeno un requisito;
 	\item si realizzano e si documentano i test di unità, necessari per verificare il corretto comportamento
-	delle classi.
+	delle singole classi.
 \end{itemize}
 Seguono i principali contenuti del documento:
 \begin{itemize}
-	\item Diagrammi \gl{UML}.\\ Sarà necessario realizzare i seguenti diagrammi:
+	\item Diagrammi \gl{UML}
+	\\ Sarà necessario realizzare i seguenti diagrammi:
 	\begin{itemize}
 		\item diagrammi delle classi,
 		\item diagrammi di sequenza.
 	\end{itemize}
 	I diagrammi di sequenza permetteranno di comprendere come un determinato comportamento del prodotto si svolga in funzione dell'interazione tra diversi oggetti che collettivamente lo implementano.
-	\item Test.\\ Sarà definita la seguente tipologia di test:
+	\item Test
+	\\ Sarà definita la seguente tipologia di test:
 	\begin{itemize}
 		\item test di unità,
 	\end{itemize}
 	questi permetteranno di verificare che le singole componenti del sistema funzionino come previsto.
-	\item Definizione di classe.
+	\item Definizione di classe
 	\\Ogni classe individuata nella \doc{Specifica Tecnica} deve essere descritta all'interno della \doc{Definizione di Prodotto}. Devono essere illustrati lo scopo della classe e la funzionalità che ricopre. Nella descrizione devono essere inoltre elencati i metodi e gli attributi della classe, elementi che permetteranno di comprendere meglio le interazioni presenti tra diverse classi all'interno dell'architettura.
-	\item Tracciamento classi.
+	\item Tracciamento delle classi 
 	\\ Ad ogni classe deve essere associato almeno un requisito in modo tale da poter controllare lo stato di avanzamento nello sviluppo del progetto secondo il modello specificato nel \doc{Piano di Progetto}. L'applicativo \gl{Tracker} viene utilizzato nel tracciamento di tali dipendenze.
 \end{itemize}
 
 \myparagraph{Codifica}
 A seguito dell'attività di Progettazione, avviene la reale implementazione dell'architettura con la scrittura del codice sorgente da parte dei \italics{Programmatori}. Tale attività si concluderà con il collaudo finale del prodotto e la sua validazione attraverso il superamento dei test, dopo aver corretto tutti i bug esistenti.
 \\ La codifica dovrà seguire le indicazioni presenti nel documento \doc{Definizione di Prodotto} per la realizzazione delle singole componenti presenti. La scrittura del codice dovrà inoltre rispettare le metriche definite all'interno del \doc{Piano di Qualifica} per poter garantire una buona qualità anche al codice.
+\newline L'implementazione concreta dell'architettura porta lo sviluppatore a dover installare software di terze parti per procedere con la stesura del codice, a realizzare un prodotto che dovrà esser compreso dagli utenti che ne usufruiranno e che dovrà esser mantenuto attivo dopo il proprio rilascio. Proprio per questo durante l'attività di codifica verranno scritti i documenti \doc{Manuale Utente} e \doc{Manuale Sviluppatore}.
+\newline
+L'attività di codifica comprende infine l'implementazione dei test che sono stati definiti nelle attività precedenti, in modo tale che, durante l'attività di validazione, sia possibile eseguirli per verificare la correttezza del software prodotto o per rilevarne dei bug.
 
 \mysubparagraph{Manuale utente}
 I \italics{Programmatori} devono redigere il \doc{Manuale Utente}. In esso vengono fornite all'utilizzatore del prodotto le informazioni principali per aiutarlo nel suo uso e fornirgli una rapida spiegazione delle funzionalità presenti nell'applicazione. Deve essere un documento chiaro, diretto e pienamente comprensibile per il bacino di utenza a cui il prodotto è destinato.
 
 \mysubparagraph{Manuale sviluppatore}
-Redatto dai \italics{Programmatori}, il \doc{Manuale Sviluppatore} ha come destinatari gli incaricati a installare e configurare il prodotto, prima del suo reale utilizzo.
+Redatto dai \italics{Programmatori}, il \doc{Manuale Sviluppatore} ha come destinatari gli incaricati a installare e configurare il prodotto, prima del suo reale utilizzo. Questo documento permetterà inoltre di favorire la manutenibilità del prodotto una volta rilasciato sul mercato.
+
 
 \subsubsection{Procedure}
 \myparagraph{Classificazione dei requisiti}
@@ -326,7 +334,27 @@ La definizione di una classe si divide in una descrizione ad alto livello presen
 
 
 \myparagraph{Definizione dei test}
-Si veda la sezione \hyperref[sez:test]{Test} dedicata a tale argomento.
+\label{sez:test}
+Segue un elenco dei tipi di test che vengono effettuati, con la descrizione del modo in cui vengono definiti all'interno del \doc{Piano di Qualifica}.
+
+\mysubparagraph{Test di unità}
+Sono test atti a verificare che ogni singola unità di prodotto funzioni nel modo corretto. In questo tipo di test ogni componente del sistema viene verificata isolata dal resto del sistema.
+Il codice identificativo dei test di unità è: \centra{TU[codice numerico]} dove il codice numerico è progressivo e determinato dallo strumento \gl{Tracker} in cui vengono inseriti i test di unità.
+
+\mysubparagraph{Test di integrazione}
+I test di integrazione rappresentano l'estensione logica del test di unità. Il tipo più semplice di test di integrazione consiste nella combinazione di due unità già sottoposte a test in un solo componente e nel test dell'interfaccia presente tra le due. In uno scenario realistico più unità vengono combinate in componenti che, a loro volta, vengono aggregate in parti più grandi del sistema. Alla fine, tutti i moduli che compongono un processo vengono sottoposti al test contemporaneamente.
+Il codice identificativo dei test di integrazione è: \centra{TI[IDcomponente]} dove IDcomponente rappresenta la componente i cui elementi integrati sono sottoposti al test. Qualora più componenti abbiano lo stesso nome identificativo verrà associato a IDcomponente anche la componente principale che possa identificarli in modo univoco (ad esempio TIServicesClient e TIServicesServer).
+
+\mysubparagraph{Test di regressione}
+Il test di regressione va eseguito ogni volta che viene modificata un'implementazione del sistema. A tale scopo, è possibile eseguire nuovamente i test esistenti sul codice modificato per stabilire se le modifiche apportate hanno alterato elementi precedentemente funzionanti. Se necessario è anche possibile scrivere nuovi test.
+
+\mysubparagraph{Test di sistema}
+Sono test che vengono eseguiti quando si pensa che il prodotto sia giunto a una versione definitiva. In sostanza si controlla che il sistema soddisfi tutti i requisiti.
+Il codice identificativo dei test di sistema è: \centra{TS[CodiceRequisito]} dove CodiceRequisito identifica il codice univoco associato ad ogni requisito descritto nell'\doc{Analisi dei requisiti}.
+
+\mysubparagraph{Test di validazione}
+Questo tipo di test viene svolto durante l'attività di collaudo antecedente il rilascio sotto supervisione del proponente. Si controlla che il sistema soddisfi almeno tutti i requisiti obbligatori. Se l'esito del test è positivo viene consentito il rilascio del prodotto.
+Il codice identificativo per tale tipo di test è: \centra{TV[CodiceRequisito]} dove CodiceRequisito identifica il codice univoco associato ad ogni requisito descritto nell'\doc{Analisi dei requisiti}.
 
 \myparagraph{Codifica e convenzioni}
 Tutti i file contenente codice o documentazione \LaTeX{} devono essere conformi alla codifica \gl{UTF-8} con carattere di fine riga in stile \gl{Unix LF} e avere una riga vuota al termine.
@@ -374,7 +402,6 @@ Webstorm è stato scelto dal \gl{team} per le funzionalità e i vantaggi che ess
 	\item è multipiattaforma.
 \end{itemize}
 
-\newpage
 \section{Processi di supporto}
 
 \subsection{Processo di documentazione}
@@ -664,26 +691,7 @@ L'analisi statica è un processo di verifica che consente di trovare le anomalie
 \end{description}
 
 \mysubparagraph{Analisi dinamica}
-L'analisi dinamica può essere svolta solamente sulle componenti \gl{software} ed è utile a evidenziare anomalie presenti nel codice. Vengono eseguiti dei test su parti di sistema per verificare che ognuna di esse produca il risultato desiderato. Prima di eseguire un qualsiasi test è necessario conoscere la precondizione e postcondizione del sistema per poterne decretare l'esito.
-
-\myparagraph{Test}
-\label{sez:test}
-Segue un elenco dei tipi di test che vengono effettuati.
-
-\mysubparagraph{Test di unità}
-Sono test atti a verificare che ogni singola unità di prodotto funzioni nel modo corretto. In questo tipo di test ogni componente del sistema viene verificata isolata dal resto del sistema.
-Il codice identificativo dei test di unità è: \centra{TU[codice numerico]} dove il codice numerico è progressivo e determinato dallo strumento \gl{Tracker} in cui vengono inseriti i test di unità.
-
-\mysubparagraph{Test di integrazione}
-I test di integrazione rappresentano l'estensione logica del test di unità. Il tipo più semplice di test di integrazione consiste nella combinazione di due unità già sottoposte a test in un solo componente e nel test dell'interfaccia presente tra le due. In uno scenario realistico più unità vengono combinate in componenti che, a loro volta, vengono aggregate in parti più grandi del sistema. Alla fine, tutti i moduli che compongono un processo vengono sottoposti al test contemporaneamente.
-Il codice identificativo dei test di integrazione è: \centra{TI[IDcomponente]} dove IDcomponente rappresenta la componente i cui elementi integrati sono sottoposti al test. Qualora più componenti abbiano lo stesso nome identificativo verrà associato a IDcomponente anche la componente principale che possa identificarli in modo univoco (ad esempio TIServicesClient e TIServicesServer).
-
-\mysubparagraph{Test di regressione}
-Il test di regressione va eseguito ogni volta che viene modificata un'implementazione del sistema. A tale scopo, è possibile eseguire nuovamente i test esistenti sul codice modificato per stabilire se le modifiche apportate hanno alterato elementi precedentemente funzionanti. Se necessario è anche possibile scrivere nuovi test.
-
-\mysubparagraph{Test di sistema}
-Sono test che vengono eseguiti quando si pensa che il prodotto sia giunto a una versione definitiva. In sostanza si controlla che il sistema soddisfi tutti i requisiti.
-Il codice identificativo dei test di sistema è: \centra{TS[CodiceRequisito]} dove CodiceRequisito identifica il codice univoco associato ad ogni requisito descritto nell'\doc{Analisi dei requisiti}.
+L'analisi dinamica può essere svolta solamente sulle componenti \gl{software} ed è utile a evidenziare anomalie presenti nel codice. Vengono eseguiti dei test su parti di sistema per verificare che ognuna di esse produca il risultato desiderato. Prima di eseguire un qualsiasi test è necessario conoscere la precondizione e postcondizione del sistema per poterne decretare l'esito finale.
 
 \subsubsection{Procedure}
 
@@ -709,44 +717,134 @@ Alla risoluzione di ogni \gl{ticket} il \italics{Verificatore} deve procedere al
 
 L'elenco delle anomalie riscontrate viene utilizzato per stilare una lista di controllo utile ai processi di verifica futuri. La segnalazione di una anomalia deve specificare il file oggetto della verifica, la posizione dell'anomalia all'interno del file, il suo tipo e la sua descrizione.
 
-\myparagraph{Gestione modifiche} %DA EXT
+\myparagraph{Gestione modifiche} 
+Qualora durante l'attività di verifica si presenti un problema nella documentazione o nel codice sorgente che necessita di una correzione dovrà esser inoltrata una richiesta al \italics{Responsabile} in modo tale che possa constatare l'effettiva esistenza del problema o meno. Se la segnalazione risulta corretta allora sarà compito del \italics{Responsabile} assegnarne a chi ritiene più opportuno la sua modifica. Spetta poi al \italics{Verificatore} constatare che la modifica sia stata effettuata in modo corretto. 
+\newline
+La richiesta da presentare al \italics{Responsabile} dovrà contenere:
+\begin{itemize}
+\item autore: il nome e cognome di colui che invia la richiesta di modifica;
+\item documento/file: viene indicato quale documento/file presenta un errore da correggere
+\item motivazione: spiegazione del perchè è necessario apportare una modifica.
+\end{itemize}
+
+Dopo la visione del \italics{Responsabile} sarà necessario aggiungere se la richiesta è stata approvata oppure rifiutata e il membro del team a cui è stato affidata la correzione, in modo da tener traccia dell'intero processo di modifica.
 
 \subsubsection{Strumenti}
-Di seguito sono elencati i vari tool da utilizzare per i test.
+
+\myparagraph{JsMeter}
+JsMeter viene utilizzato per analizzare il codice JavaScript. 
+Questo strumento permetterà di capire se alcune metriche descritte nel \doc{Piano di Qualifica} sono state rispettate o meno.
+\newline È possibile usufruire di tale mezzo attraverso il sito web \url{http://jsmeter.info/}.
+\\ Le metriche prese in analisi dallo strumento sono:
+\begin{itemize}
+\item numero di linee di codice;
+\item numero di linee di commento;
+\item complessità ciclomatica.
+\end{itemize}
+
+\myparagraph{JSHint}
+JSHint è uno strumento di analisi statica del codice utilizzato per verificare se il codice sorgente JavaScript è conforme alle metriche definite nel documento \doc{Piano di Progetto}.
+\newline È possibile usufruire facilmente di tale servizio attraverso il sito web \url{http://jshint.com/}.
+\\ Le metriche prese in analisi dallo strumento sono:
+\begin{itemize}
+\item numero di statement;
+\item numero di parametri formali all'interno di un metodo;
+\item complessità ciclomatica.
+\end{itemize}
+
+\myparagraph{W3C Css Validation Service}
+È un servizio online reperibile al sito \url{https://jigsaw.w3.org/css-validator/} che permette di verificare la correttezza della sintassi con cui sono stati scritti i file css.
+
+\myparagraph{W3C Markup Validation Service}
+È un servizio online reperibile al sito \url{https://validator.w3.org/} che permette di verificare la correttezza del codice scritto per le pagine html. 
+
+
+\subsection{Processo di validazione}
+Il processo di validazione serve per determinare se il prodotto finale è conforme a quanto è stato pianificato. Tale processo verrà effettuato dopo molteplici verifiche effettuate sul prodotto dal momento che, essendo un atto conclusivo, non è desiderabile ottenere un risultato negativo.
+\\Si procederà dapprima ad una validazione interna da parte dei componenti del team e poi sarà il proponente a rivalidare il prodotto, per garantire l’indipendenza del processo.
+\\ L’attività di validazione consiste nel condurre i test per poi analizzare i risultati e assicurarsi che
+il prodotto rispecchi le indicazioni per cui è stato sviluppato.
+Per le norme sulla sintassi dei test si rimanda alla sezione \hyperref[sez:test]{Definizione dei test} del presente documento.
+
+\subsubsection{Attività}
+
+\myparagraph{Analisi dinamica}
+Il \italics{Verificatore} riesegue tutti i test prestando molta attenzione ai risultati, specialmente a quelli ottenuti dai test di validazione. 
+\\Sarà compito del \italics{Responsabile} poi analizzare i risultati ottenuti per decidere se rieseguire nuovamente i test ulteriormente.
+\newline In questo modo avviene il collaudo conclusivo del prodotto prima della sua consegna al committente, verificando che soddisfi tutti gli obbiettivi definiti inizialmente nel \doc{Piano di Qualifica}.
+
+\subsubsection{Procedure}
+
+\myparagraph{Esecuzione dei test}
+Per l'esecuzione dei test di unità, di integrazione e i test sul database si assume che il \italics{Verificatore} abbia già installato nella propria macchina il package manager npm di node.js.
+\\
+\\Per eseguire i test riguardanti unicamente il database serve eseguire i seguenti passi:
+
+\begin{itemize}
+\item da terminale ci si sposti nella cartella Quizzipedia;
+\item in caso non siano presenti, si installino il test framework mocha e la libreria di asserzioni Should.js, tramite il comando \italics{"npm install"};
+\item avviare il database MongoDb digitando il comando \italics{"mongod"} da terminale;
+\item ci si sposti poi nella cartella Quizzipedia/tests in cui sono presenti i file dei test e si digiti a riga di comando \italics{"npm run testDb"};
+\item in caso i test diano risultato positivo, comparirà l’elenco dei metodi testati con il segno di spunta;
+\item in caso alcuni test falliscano verrà presentato il messaggio di errore a terminale con segnalato il metodo che è fallito.
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.45]{Img/test1.png}
+\caption{Superamento test database}
+\label{}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.35]{Img/test2.png}
+\caption{Fallimento test database}
+\label{}
+\end{figure}
+
+\end{itemize}
+
+\newpage
+Per eseguire i test lato client e server invece i passaggi che il \italics{Verificatore} dovrà eseguire sono i seguenti:
+\begin{itemize}
+\item da terminale ci si sposti nella cartella Quizzipedia;
+\item in caso non siano presenti, si installino il test framework Karma e il framework Jasmine, tramite il comando \italics{"npm install -g Karma"} seguito da \italics{"npm install"};
+\item ci si sposti poi nella cartella Quizzipedia/tests in cui sono presenti i file dei test e si digiti a riga di comando \italics{"npm run testKarma"};
+\item durante l’esecuzione del comando si aprirà una finestra del browser che è possibile ignorare e alla fine della procedura compariranno i risultati dei test nel terminale;
+\item in caso i test diano risultato positivo, comparirà il numero di test superati con successo;
+\item in caso alcuni test falliscano verrà presentato il numero di test superati con successo e il numero di test falliti con relativo errore.
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.50]{Img/test3.png}
+\caption{Superato test Karma}
+\label{}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.50]{Img/test4.png}
+\caption{Fallito test Karma}
+\label{}
+\end{figure}
+
+\end{itemize}
+
+
+\subsubsection{Strumenti}
+Di seguito sono elencati i vari tool da utilizzare per l'esecuzione dei test.
 
 \myparagraph{Karma}
 Lo strumento Karma è utilizzato per automatizzare i test di unità ed integrazione lato client scritti
 con il framework Jasmine. Permette di testare il codice su diversi browser, tra cui Chrome.
 
 \myparagraph{Jasmine}
-Un frameworkG JavaScriptG per l’esecuzione di test su codice che utilizza AngularJS.
+Un framework JavaScript per l’esecuzione di test su codice che utilizza AngularJS.
 
 \myparagraph{Mocha}
-Lo strumento Mocha è utilizzato per eseguire i test asincroni lato server asseriti con la libreria
-Should.js.
+Lo strumento Mocha è utilizzato per eseguire i test asincroni lato server asseriti con la libreria Should.js.
 
-\myparagraph{Should}
+\myparagraph{Should.js}
 Should.js è una libreria asserzionale, è necessario Mocha per utilizzarla.
 
-\newpage
-\subsection{Processo di validazione}
-Il processo di validazione serve per determinare se il prodotto finale è conforme a quanto è stato
-pianificato. Si procederà dapprima ad una validazione interna da parte dei componenti del team e
-poi sarà il proponente a rivalidare il prodotto, per garantire l’indipendenza del processo.
-L’attività di validazione consiste nel condurre i test per poi analizzare i risultati e assicurarsi che
-il prodotto rispecchi le indicazioni per cui è stato sviluppato. Si andrà inoltre a verificare che il
-prodotto sia abile nell’isolare e minimizzare gli effetti degli errori.
-\subsubsection{Attività}
-
-\myparagraph{Test}
-\label{sez:test}
-Segue un elenco dei tipi di test che vengono effettuati.
-
-\mysubparagraph{Test di validazione}
-Questo tipo di test viene svolto durante l'attività di collaudo antecedente il rilascio sotto supervisione del proponente. Si controlla che il sistema soddisfi almeno tutti i requisiti obbligatori. Se l'esito del test è positivo viene consentito il rilascio del prodotto.
-Il codice identificativo per tale tipo di test è: \centra{TV[CodiceRequisito]} dove CodiceRequisito identifica il codice univoco associato ad ogni requisito descritto nell'\doc{Analisi dei requisiti}.
-
-\subsubsection{Procedure}
 
 \newpage
 
