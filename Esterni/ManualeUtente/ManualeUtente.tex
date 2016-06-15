@@ -178,7 +178,7 @@
 	 	\includegraphics[scale=0.33]{Img/screen_SvolgimentoQuiz3.png}
 	 	\caption{Schermata finale di svolgimento quiz}
 	 \end{figure}
-	 Una volta scelto il quiz e premuto sul tasto 'inizia' partirà l'esecuzione del quiz. Durante l'esecuzione e fino alla fine del quiz, l'utente potrà solo fare la sua scelta nelle varie domande, muoversi tra queste o decidere di annullare il quiz. Il sistema attualmente offre diversi tipo di domande, si veda l'\hyperref[domande]{appendice A} per la lista completa.
+	 Una volta scelto il quiz e premuto sul tasto 'inizia' partirà l'esecuzione del quiz. Durante l'esecuzione e fino alla fine del quiz, l'utente potrà solo fare la sua scelta nelle varie domande, muoversi tra queste o decidere di annullare il quiz. Il sistema attualmente offre diversi tipi di domande, si veda l'\hyperref[domande]{appendice A} per la lista completa.
 	 
 	 \newpage
 	 \begin{figure}[!h]
@@ -214,11 +214,25 @@
 	\subsection{Richiesta ruoli e classi}
 	\begin{figure}[!h]
 		\centering
+		\includegraphics[scale=0.33]{Img/screen_RichiestaRuolo.png}
+		\caption{Schermata di richiesta inserimento in un ente}
+	\end{figure}	
+	\begin{figure}[!h]
+		\centering
 		\includegraphics[scale=0.33]{Img/screen_RichiestaClasse.png}
-		\caption{Schermata di richiesta classe}
+		\caption{Schermata di richiesta inserimento in una classe}
 	\end{figure}
-	Per essere inseriti in un istituto bisogna fare richiesta formale tramite questo form, il menù a tendina fornisce la lista di istituti registrati nel sistema, la lista di classi dell'istituto selezionato e il ruolo che in essa si desidera. È possibile fare richiesta di entrare in un istituto senza specificare una classe e ruolo. Tali richieste rimangono pendenti fino alla loro approvazione o rifiuto.
+	Per essere inseriti in un istituto bisogna fare richiesta formale tramite il primo form, il menù a tendina fornisce la lista di istituti registrati nel sistema e il ruolo che in esso si desidera. È possibile fare richiesta di entrare in una classe dell'ente selezionato tramite il secondo form. Tali richieste rimangono pendenti fino alla loro approvazione o rifiuto da parte del responsabile.
 	
+	\newpage
+	\subsection{Selezione ente}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=0.33]{Img/screen_SelezioneEnte.png}
+		\caption{Schermata di selezione ente}
+	\end{figure}
+	Appena autenticati se si è inseriti in un ente bisogna selezionare quest'ultimo dal menù di selezione ente.
+	Se non viene selezionato alcun ente l'utente viene riconosciuto dal sistema come utente autenticato semplice, invece una volta selezionato si hanno accesso alle funzioni relative al tipo di account posseduto nell'ente scelto.
 	 
 	 \subsection{Visualizzazione storico dei quiz}
 	 \begin{figure}[!h]
@@ -270,7 +284,7 @@
 	 	\includegraphics[scale=0.33]{Img/screen_GestioneQuiz.png}
 	 	\caption{Schermata di gestione quiz}
 	 \end{figure}
-	 Qui vengono elencati tutti i propri quiz personali creati ed è possibile iniziare la creazione di un nuovo quiz, modificare o eliminare uno già esistente.
+	 Qui vengono elencati tutti i propri quiz personali creati ed è possibile iniziare la creazione di un nuovo quiz o eliminare uno già esistente.
 	 
 	 \newpage
 	 \subsection{Creazione quiz}
@@ -301,7 +315,7 @@
 	 	\includegraphics[scale=0.33]{Img/screen_gestioneDomande.png}
 	 	\caption{Schermata di gestione domande}
 	 \end{figure}
-	 Qui vengono elencate tutte le proprie domande personali già create ed è possibile iniziare la creazione di una nuova domanda, modificare o eliminare una già esistente. Per dettagli sulla creazione domande si rimanda all'\hyperref[domande]{appendice A}.
+	 Qui vengono elencate tutte le proprie domande personali già create ed è possibile iniziare la creazione di una nuova domanda o eliminare una già esistente. Per dettagli sulla creazione domande si rimanda all'\hyperref[domande]{appendice A}.
 	 
 	 \subsection{Visualizzazione statistiche}
 	 \begin{figure}[!h]
@@ -329,7 +343,7 @@
 	 	\includegraphics[scale=0.33]{Img/screen_GestioneArgomenti.png}
 	 	\caption{Schermata di gestione argomenti}
 	 \end{figure}
-	 I vari argomenti vengono utilizzati dal sistema per classificare quiz e domande per ogni ente. Ogni responsabile può definire la propria lista argomenti per organizzare meglio il proprio materiale: è possibile aggiungere, modificare o eliminare argomenti dalla lista tramite il form sopra illustrato.
+	 I vari argomenti vengono utilizzati dal sistema per classificare quiz e domande per ogni ente. Ogni responsabile può definire la propria lista argomenti per organizzare meglio il proprio materiale: è possibile aggiungere o eliminare argomenti dalla lista tramite il form sopra illustrato.
 	 
 	 \subsection{Gestione utenti}
 	 \begin{figure}[!h]
@@ -358,6 +372,15 @@
 	 Dalla schermata di gestione utenti il responsabile può visualizzare le richieste in sospeso effettuate dagli altri utenti e accettarle o rifiutarle.
 	 
 	 \newpage
+	 \section{Segnalazione problemi e richieste}
+	 \begin{figure}[!h]
+	 	\centering
+	 	\includegraphics[scale=0.33]{Img/screen_GestioneRichieste.png}
+	 	\caption{Schermata di segnalazione problemi e richieste}
+	 \end{figure}
+	 Dalla schermata di segnalazione problemi e richieste un utente di qualsiasi tipo può segnalare anomalie riscontrate durante l'utilizzo del prodotto al amministratore di sistema, può anche fare una richiesta formale per l'inserimento di un proprio ente all'interno del prodotto e esserne nominato responsabile
+	 
+	 \newpage
 	 \appendix
 	 
 	 \section{Tipi di domande}
@@ -374,7 +397,7 @@
 	 Per creare una domanda vero o falso è necessario compilare nel relativo form:
 	 \begin{itemize}
  	 	\item titolo della domanda,
- 	 	\item descrizione facoltativa,
+ 	 	\item descrizione della domanda,
  	 	\item allegato multimediale (immagine, audio o video) opzionale,
  	 	\item materia,
  	 	\item livello di difficoltà,
@@ -394,7 +417,7 @@
 	 Per creare una domanda a risposta multipla è necessario compilare nel relativo form:
 	 \begin{itemize}
 	 	\item titolo della domanda,
-	 	\item descrizione facoltativa,
+	 	\item descrizione della domanda,
 	 	\item allegato multimediale (immagine, audio o video) opzionale,
 	 	\item materia,
 	 	\item livello di difficoltà,
@@ -414,15 +437,14 @@
 	 Per creare una domanda a completamento testo è necessario compilare nel relativo form:
 	 \begin{itemize}
 	 	\item titolo della domanda,
-	 	\item descrizione facoltativa,
-	 	\item allegato multimediale (immagine, audio o video) opzionale,
+	 	\item descrizione della domanda,
 	 	\item materia,
 	 	\item livello di difficoltà,
 	 	\item parole chiave che identificano la domanda,
-	 	\item il testo da completare,
-	 	\item i buchi dove inserire le risposte.
+	 	\item le parti di testo con i buchi da completare,
+	 	\item le risposte relative ai buchi.
 	 \end{itemize}
-	 Il docente dovrà poi creare le possibili risposte, effettuando l'upload del file multimediale o scrivendo il testo della risposta, a seconda che la risposta sia rispettivamente multimediale o testuale. Infine le risposte corrette dovranno essere associate alla posizione corrispondente. 	 
+	 Il docente tramite il tasto aggiungi può aggiungere pezzi di testo, ad ogni aggiunta di pezzi di testo verrà inserito anche il buco dove andrà inserita una risposta (i buchi si riconosceranno da un numero ID crescente dispari tra i blocchi di testo). Infine le risposte dovranno essere aggiunte con il tasto apposta, associando la risposta alla posizione giusta corrispondente tramite il selettore di ID, è possibile inserire risposte con nessuna corrispondenza dandogli ID "-1". Si presti attenzione al fatto che ogni buco nel testo deve avere una risposta corrispondente.
 	 
 	 \newpage
 	 \subsection{Risposta aperta}
@@ -431,17 +453,18 @@
 	 	\includegraphics[scale=0.33]{Img/screen_CreazioneDomandaAperta.png}
 	 	\caption{Schermata di creazione domanda a risposta aperta}
 	 \end{figure}
-	 Le domande di tipo 'a risposta aperta' presentano quesiti con una sola risposta testuale. è suggerito creare domande a risposta aperta soltanto per quesiti con risposte brevi e chiare, come date, nomi o parole singole. 
+	 Le domande di tipo 'a risposta aperta' presentano quesiti con una sola risposta testuale. È suggerito creare domande a risposta aperta soltanto per quesiti con risposte brevi e chiare, come date, nomi o parole singole. 
 	 Per creare una domanda a risposta aperta è necessario compilare nel relativo form:
 	 \begin{itemize}
 	 	\item titolo della domanda,
-	 	\item descrizione facoltativa,
+	 	\item descrizione della domanda,
 	 	\item allegato multimediale (immagine, audio o video) opzionale,
 	 	\item materia,
 	 	\item livello di difficoltà,
 	 	\item parole chiave che identificano la domanda,
 	 	\item testo della risposta corretta.
 	 \end{itemize}
+	 In esecuzione il controllo della risposta non sarà case sensitive (ovvero caratteri in maiuscolo verranno trattati come minuscolo).
 	 
 	 \newpage
 	 \subsection{A collegamenti}
@@ -450,17 +473,19 @@
 	 	\includegraphics[scale=0.33]{Img/screen_CreazioneDomandaCollegamenti.png}
 	 	\caption{Schermata di creazione domanda a collegamenti}
 	 \end{figure}
-	 Le domande di tipo 'a collegamenti' presentano porzioni di testo o file multimediali da collegare in un dato ordine per formare una risposta corretta.
+	 Le domande di tipo 'a collegamenti' presentano porzioni di testo o file multimediali da collegare a coppie per formare una risposta corretta.
 	 Per creare una domanda a collegamenti è necessario compilare nel relativo form:
 	 \begin{itemize}
 	 	\item titolo della domanda,
-	 	\item descrizione facoltativa,
+	 	\item descrizione della domanda,
 	 	\item allegato multimediale (immagine, audio o video) opzionale,
 	 	\item materia,
 	 	\item livello di difficoltà,
-	 	\item parole chiave che identificano la domanda.
+	 	\item parole chiave che identificano la domanda,
+	 	\item elementi della parte sinistra da collegare (testo o allegato),
+	 	\item elementi della parte destra da collegare (testo o allegato).
 	 \end{itemize}
-	 È poi necessario creare le ennuple che compongono le risposte complete nella sequenza corretta, e delle porzioni errate facoltative.
+	 Tramite il tasto aggiungi si possono inserire elementi nella relative parti di tipo testuale o allegato, per stabilire quali elementi sono accoppiati bisogna settare il loro ID in modo che corrisponda.
 	 
 	 \section{Glossario}
 	 \label{gl} 
