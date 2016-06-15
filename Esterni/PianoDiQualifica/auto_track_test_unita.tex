@@ -11,8 +11,8 @@ TU1 & Quizzipedia:: Client:: ModelClient:: Organizations:: Class &
 \item \method{getName () : String}
 \item \method{getStudents () : String[]}
 \item \method{getTeachers () : String[]}
-\item \method{removeStudent (studentMail : String) : void}
-\item \method{removeTeacher (teacherMail : String) : void}
+\item \method{removeStudent () : void}
+\item \method{removeTeacher () : void}
 \end{itemize} \\
 TU10 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerMultipleChoiceQ & 
 \begin{itemize}
@@ -115,7 +115,7 @@ TU12 & Quizzipedia:: Client:: ModelClient:: Services:: Answers:: AnswerQuiz &
 \begin{itemize}
 \item \method{addAnswer (answer : AnswerQuestion) : void}
 \item \method{check () : bool}
-\item \method{getAnswerQuestion () : AnswerQuestion}
+\item \method{getAnswerQuestionList () : AnswerQuestion}
 \item \method{getDate () : Date}
 \item \method{getQuiz () : Quiz}
 \item \method{removeAnswer (indexOfAnswer : int) : void}
@@ -161,13 +161,13 @@ TU126 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuesti
 \begin{itemize}
 \item \method{loadKeywords () : void}
 \item \method{loadTeacher () : void}
-\item \method{loadTopics () : void}
+\item \method{loadTopicsList () : void}
 \item \method{searchQuestion (question : \$scope) : void}
 \end{itemize} \\
 TU127 & Quizzipedia:: Client:: ViewModelClient:: CtrlServices:: CtrlSearchQuiz & 
 \begin{itemize}
 \item \method{loadKeywords () : void}
-\item \method{loadTopics () : void}
+\item \method{loadTopicsList () : void}
 \item \method{loadUser () : void}
 \item \method{searchQuiz (search : \$scope) : void}
 \end{itemize} \\
@@ -290,17 +290,17 @@ TU2 & Quizzipedia:: Client:: ModelClient:: Organizations:: Institution &
 \item \method{acceptRequestRole (role : String) : void}
 \item \method{addClass  (objectClass : Class) : void}
 \item \method{getClass () : Class[]}
-\item \method{getCLassList () : ClassList}
+\item \method{getClassRequestsList () : ClassList}
 \item \method{getDirector () : Director}
 \item \method{getName () : String}
-\item \method{getRoleList () : RoleList}
+\item \method{getRoleRequestsList () : RoleList}
 \item \method{getStudents () : String[]}
 \item \method{getTeachers () : String[]}
 \item \method{getTopics () : Topics}
 \item \method{removeClass (indexOfClass : int) : void}
 \item \method{removeClassRequest (indexOfRequest : int) : void}
-\item \method{removeStudent (studentMail : String) : void}
-\item \method{removeTeacher (teacherMail : String) : void}
+\item \method{removeStudent () : void}
+\item \method{removeTeacher () : void}
 \item \method{setDirector (objectDirector : Director) : void}
 \item \method{setName (newName : String) : void}
 \end{itemize} \\
@@ -335,6 +335,7 @@ TU23 & Quizzipedia:: Client:: ModelClient:: Services:: Quiz &
 \item \method{removeQuestion (indexOfQuestion : int) : void}
 \item \method{removeTopic (indexOfTopic : int) : void}
 \item \method{setDescription (newDescr : String) : void}
+\item \method{setDifficulty (difficulty : int) : void}
 \item \method{setTitle (newTitle : String) : void}
 \end{itemize} \\
 TU24 & Quizzipedia:: Client:: ModelClient:: Services:: Topics & 
@@ -355,8 +356,8 @@ TU26 & Quizzipedia:: Client:: ModelClient:: Statistics:: QuizStatistics &
 \end{itemize} \\
 TU27 & Quizzipedia:: Client:: ModelClient:: Statistics:: StudentsStatisticsQuiz & 
 \begin{itemize}
-\item \method{getResults () : double[]}
-\item \method{getStudents () : Student[]}
+\item \method{getResultsList () : double[]}
+\item \method{getStudentsList () : Student[]}
 \end{itemize} \\
 TU28 & Quizzipedia:: Client:: ModelClient:: Users:: AuthenticationData & 
 \begin{itemize}
@@ -368,7 +369,7 @@ TU28 & Quizzipedia:: Client:: ModelClient:: Users:: AuthenticationData &
 TU29 & Quizzipedia:: Client:: ModelClient:: Users:: NoRole & 
 \begin{itemize}
 \item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
-\item \method{getQuizProfile () : AnswerQuiz}
+\item \method{getQuizProfileList () : AnswerQuiz}
 \item \method{loadProfileQuiz () : void}
 \item \method{removeQuizFromProfile (indexOfQuiz : int) : void}
 \end{itemize} \\
@@ -388,7 +389,7 @@ TU30 & Quizzipedia:: Client:: ModelClient:: Users:: Student &
 TU31 & Quizzipedia:: Client:: ModelClient:: Users:: Teacher & 
 \begin{itemize}
 \item \method{addQuiz (newQuiz : Quiz) : void}
-\item \method{getOwnQuiz () : Quiz[]}
+\item \method{getOwnQuizList () : Quiz[]}
 \item \method{getQuizStatistics () : QuizStatistics}
 \item \method{getStudentsStatistics () : StudentsStatisticsQuiz}
 \item \method{removeQuiz (indexOfQuiz : int) : void}
@@ -408,8 +409,8 @@ TU33 & Quizzipedia:: Server:: ModelServer:: Organizations1:: Class1 &
 \item \method{getName () : String}
 \item \method{getStudents () : String[]}
 \item \method{getTeachers () : String[]}
-\item \method{removeStudent (studentMail : String) : void}
-\item \method{removeTeacher (teacherMail : String) : void}
+\item \method{removeStudent () : void}
+\item \method{removeTeacher () : void}
 \end{itemize} \\
 TU34 & Quizzipedia:: Server:: ModelServer:: Organizations1:: Institution1 & 
 \begin{itemize}
@@ -417,17 +418,17 @@ TU34 & Quizzipedia:: Server:: ModelServer:: Organizations1:: Institution1 &
 \item \method{acceptRequestRole (role : String) : void}
 \item \method{addClass  (objectClass : Class) : void}
 \item \method{getClass () : Class[]}
-\item \method{getCLassList () : ClassList}
+\item \method{getClassRequestsList () : ClassList}
 \item \method{getDirector () : Director}
 \item \method{getName () : String}
-\item \method{getRoleList () : RoleList}
+\item \method{getRoleRequestsList () : RoleList}
 \item \method{getStudents () : String[]}
 \item \method{getTeachers () : String[]}
 \item \method{getTopics () : Topics}
 \item \method{removeClass (indexOfClass : int) : void}
 \item \method{removeClassRequest (indexOfRequest : int) : void}
-\item \method{removeStudent (studentMail : String) : void}
-\item \method{removeTeacher (teacherMail : String) : void}
+\item \method{removeStudent () : void}
+\item \method{removeTeacher () : void}
 \item \method{setDirector (objectDirector : Director) : void}
 \item \method{setName (newName : String) : void}
 \end{itemize} \\
@@ -448,11 +449,11 @@ TU37 & Quizzipedia:: Server:: ModelServer:: Requests1:: RequestRole2 &
 \end{itemize} \\
 TU38 & Quizzipedia:: Server:: ModelServer:: Requests1:: RoleList1 & 
 \begin{itemize}
-\item \method{acceptStudent () : void}
-\item \method{acceptTeacher () : void}
+\item \method{acceptStudentRoleRequest () : void}
+\item \method{acceptTeacherRoleRequest () : void}
 \item \method{addRoleList (mailUser : String, message : String, role : String) : void}
-\item \method{removeStudent () : void}
-\item \method{removeTeacher () : void}
+\item \method{removeStudentRoleRequest () : void}
+\item \method{removeTeacherRoleRequest () : void}
 \end{itemize} \\
 TU39 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerColumn1 & 
 \begin{itemize}
@@ -495,7 +496,7 @@ TU44 & Quizzipedia:: Server:: ModelServer:: Services1:: Answers1:: AnswerQuiz1 &
 \begin{itemize}
 \item \method{addAnswer (answer : AnswerQuestion) : void}
 \item \method{check () : bool}
-\item \method{getAnswerQuestion () : AnswerQuestion}
+\item \method{getAnswerQuestionList () : AnswerQuestion}
 \item \method{getDate () : Date}
 \item \method{getQuiz () : Quiz}
 \item \method{removeAnswer (indexOfAnswer : int) : void}
@@ -593,6 +594,7 @@ TU55 & Quizzipedia:: Server:: ModelServer:: Services1:: Quiz1 &
 \item \method{removeQuestion (indexOfQuestion : int) : void}
 \item \method{removeTopic (indexOfTopic : int) : void}
 \item \method{setDescription (newDescr : String) : void}
+\item \method{setDifficulty (difficulty : int) : void}
 \item \method{setTitle (newTitle : String) : void}
 \end{itemize} \\
 TU56 & Quizzipedia:: Server:: ModelServer:: Services1:: Topics1 & 
@@ -613,16 +615,16 @@ TU58 & Quizzipedia:: Server:: ModelServer:: Statistics1:: QuizStatistics1 &
 \end{itemize} \\
 TU59 & Quizzipedia:: Server:: ModelServer:: Statistics1:: StudentsStatisticsQuiz1 & 
 \begin{itemize}
-\item \method{getResults () : double[]}
-\item \method{getStudents () : Student[]}
+\item \method{getResultsList () : double[]}
+\item \method{getStudentsList () : Student[]}
 \end{itemize} \\
 TU6 & Quizzipedia:: Client:: ModelClient:: Requests:: RoleList & 
 \begin{itemize}
-\item \method{acceptStudent () : void}
-\item \method{acceptTeacher () : void}
+\item \method{acceptStudentRoleRequest () : void}
+\item \method{acceptTeacherRoleRequest () : void}
 \item \method{addRoleList (mailUser : String, message : String, role : String) : void}
-\item \method{removeStudent () : void}
-\item \method{removeTeacher () : void}
+\item \method{removeStudentRoleRequest () : void}
+\item \method{removeTeacherRoleRequest () : void}
 \end{itemize} \\
 TU60 & Quizzipedia:: Server:: ModelServer:: Users1:: AuthenticationData1 & 
 \begin{itemize}
@@ -639,7 +641,7 @@ TU61 & Quizzipedia:: Server:: ModelServer:: Users1:: Director1 &
 TU62 & Quizzipedia:: Server:: ModelServer:: Users1:: NoRole1 & 
 \begin{itemize}
 \item \method{addQuizToProfile (quiz : AnswerQuiz) : void}
-\item \method{getQuizProfile () : AnswerQuiz}
+\item \method{getQuizProfileList () : AnswerQuiz}
 \item \method{loadProfileQuiz () : void}
 \item \method{removeQuizFromProfile (indexOfQuiz : int) : void}
 \end{itemize} \\
@@ -653,7 +655,7 @@ TU63 & Quizzipedia:: Server:: ModelServer:: Users1:: Student1 &
 TU64 & Quizzipedia:: Server:: ModelServer:: Users1:: Teacher1 & 
 \begin{itemize}
 \item \method{addQuiz (newQuiz : Quiz) : void}
-\item \method{getOwnQuiz () : Quiz[]}
+\item \method{getOwnQuizList () : Quiz[]}
 \item \method{getQuizStatistics () : QuizStatistics}
 \item \method{getStudentsStatistics () : StudentsStatisticsQuiz}
 \item \method{removeQuiz (indexOfQuiz : int) : void}
@@ -768,7 +770,7 @@ TU85 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: InClassAdder &
 \end{itemize} \\
 TU86 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: StudentsClassFetcher & 
 \begin{itemize}
-\item \method{getStudents (className : String) : JSON}
+\item \method{getStudents () : JSON}
 \end{itemize} \\
 TU87 & Quizzipedia:: Server:: ControllerServer:: ClassManager:: TeachersClassFetcher & 
 \begin{itemize}
