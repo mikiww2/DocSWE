@@ -16,11 +16,11 @@
 \setcounter{tocdepth}{5}
 
 \def\NOME{Piano di Progetto}
-\def\VERSIONE{4.0}
-\def\DATA{13.05.2016}
-\def\REDATTORE{Giacomo Beltrame \\ & Simone Boccato \\ & Michela De Bortoli}
-\def\VERIFICATORE{Rudy Berton}
-\def\RESPONSABILE{Giacomo Beltrame}
+\def\VERSIONE{5.0}
+\def\DATA{14.06.2016}
+\def\REDATTORE{Rudy Berton \\ & Vassilikì Menarin}
+\def\VERIFICATORE{Miki Violetto}
+\def\RESPONSABILE{Simone Boccato}
 \def\USO{Esterno}
 \def\DISTRIBUZIONE{\COMMITTENTE \\ & \CARDIN \\ & \PROPONENTE}
 
@@ -201,7 +201,7 @@
 		\item \bold{Contenimento:} nel caso in cui il rischio, nonostante le misure adottate, dovesse comunque insorgere viene già deciso come agire per contenerlo.
 	\end{itemize}
 	
-	Nell'\hyperref[Attualizzazione dei rischi]{Appendice A} sono riportati i rischi che si sono effettivamente verificati e come il gruppo li ha gestiti.
+	Nella sezione successiva sono riportati i rischi che si sono effettivamente verificati e come il gruppo li ha gestiti.
 	Di seguito la tabella con i rischi individuati, divisi a seconda del livello di appartenenza:
 	
 	\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}}
@@ -400,6 +400,219 @@
 	
 	\myparagraph {Contenimento}
 	Ogni qualvolta il committente solleverà perplessità si cercherà una soluzione ottimale per le parti; inoltre sono stati fissati incontri per mostrare la documentazione anche al proponente. Il gruppo provvederà a correggere gli errori eventualmente segnalati.
+	
+		\section{Attualizzazione dei rischi} \label{Attualizzazione dei rischi}
+		Vengono di seguito indicati i rischi che si sono attualizzati nelle varie attività e come il gruppo li ha superati. Un elenco completo con descrizione dei possibili rischi è presente nella \hyperref[Analisi dei rischi]{sezione 4}.
+		
+		\subsection{Analisi dei requisiti}
+		
+		\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
+			%{\centering\arraybackslash}p{2 cm}}
+			%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
+			
+			
+			\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
+			\endfirsthead
+			
+			\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
+			\cellcolor{P} & Guasti \gl{hardware} & No \\
+			\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti \gl{software} & No \\
+			\hline
+			
+			\cellcolor{D} & Problemi personali dei membri & \bold{Sì} \\
+			\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
+			\hline
+			
+			\cellcolor{P} & Problemi di \gl{versionamento} & \bold{Sì} \\
+			\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
+			\hline
+			
+			\rowcolor{D}
+			Strumenti & Mancante o insufficiente conoscenza degli strumenti & \bold{Sì} \\	
+			\hline	
+			
+			\rowcolor{P}
+			Requisiti & Errata comprensione dei requisiti & \bold{Sì}\\
+			\hline
+			
+			\rowcolor{white}  
+			\caption{Attualizzazione dei rischi nell'attività di analisi dei requisiti}	    	
+			
+		\end{tabella}
+		
+		\subsubsection{Problemi personali dei membri}
+		I membri del gruppo hanno avuto dei problemi famigliari mentre altri sono stati impossibilitati a lavorare per malattia. La pianificazione ha permesso di rispettare comunque le scadenze; i membri hanno tempestivamente informato il responsabile e, quando malati, il carico di lavoro è stato ripartito per non rallentare troppo i lavori.
+		
+		\subsubsection{Problemi di versionamento}
+		I membri hanno avuto dei problemi a individuare la corretta versione dei documenti, soprattutto quando questi erano modificati da più persone. Il problema è stato più spiccato all'inizio, prima che il gruppo prendesse dimestichezza con \gl{tracker}, ed è stato definitivamente risolto appena i membri hanno imparato a usarlo correttamente.
+		
+		\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
+		Come specificato nella sottosezione recedente, i membri hanno avuto una difficoltà iniziale ad usare \gl{tracker}. Questo problema, di cui si era comunque tenuto conto, è stato risolto nelle fasi iniziali grazie agli amministratori, che hanno fornito precise istruzioni e regole per il corretto utilizzo dello strumento in questione.
+		
+		\subsubsection{Errata comprensione dei requisiti}
+		Dopo la presentazione del capitolato in aula e in seguito a un primo incontro con il committente, il gruppo ha cominciato a lavorare alla raccolta dei requisiti. Sono emerse delle incomprensioni e dei dubbi sulla correttezza dei requisiti individuati. Avendo programmato un secondo incontro col committente, questi problemi sono stati chiariti e, sul totale, si è rilevato un leggero ritardo nella stesura dell'\doc{Analisi dei requisiti}, comunque compensata dalla fase di \gl{slack} predisposta.
+		
+		\subsection{Raffinamento dei requisiti}
+		
+		\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
+			%{\centering\arraybackslash}p{2 cm}}
+			%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
+			
+			
+			\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
+			\endfirsthead
+			
+			\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
+			\cellcolor{P} & Guasti \gl{hardware} & No \\
+			\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti \gl{software} & No \\
+			\hline
+			
+			\cellcolor{D} & Problemi personali dei membri & No \\
+			\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
+			\hline
+			
+			\cellcolor{P} & Problemi di \gl{versionamento} & No \\
+			\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
+			\hline
+			
+			\rowcolor{D}
+			Strumenti & Mancante o insufficiente conoscenza degli strumenti & No \\	
+			\hline	
+			
+			\rowcolor{P}
+			Requisiti & Errata comprensione dei requisiti & No\\
+			\hline
+			
+			\rowcolor{white}  
+			\caption{Attualizzazione dei rischi nell'attività di progettazione architetturale}	    	
+			
+		\end{tabella}
+		
+		Data la breve durata dell'attività e la sua semplicità non si sono presentati problemi.
+		
+		\subsection{Progettazione architetturale}
+		
+		\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
+			%{\centering\arraybackslash}p{2 cm}}
+			%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
+			
+			
+			\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
+			\endfirsthead
+			
+			\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
+			\cellcolor{P} & Guasti \gl{hardware} & No \\
+			\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti \gl{software} & No \\
+			\hline
+			
+			\cellcolor{D} & Problemi personali dei membri & \bold{Sì} \\
+			\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
+			\hline
+			
+			\cellcolor{P} & Problemi di \gl{versionamento} & No \\
+			\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
+			\hline
+			
+			\rowcolor{D}
+			Strumenti & Mancante o insufficiente conoscenza degli strumenti & \bold{Sì} \\	
+			\hline	
+			
+			\rowcolor{P}
+			Requisiti & Errata comprensione dei requisiti & No\\
+			\hline
+			
+			\rowcolor{white}  
+			\caption{Attualizzazione dei rischi nell'attività di progettazione architetturale}	    	
+			
+		\end{tabella}
+		
+		\subsubsection{Problemi personali dei membri}
+		Due membri del gruppo sono stati impossibilitati a lavorare per problemi di salute. La pianificazione ha permesso di rispettare comunque le scadenze, i membri hanno tempestivamente informato il responsabile che ha ridistribuito il carico di ore per rimanere dentro le scadenze. Ciò ha permesso di finire il lavoro ma il ritardo accumulato ha portato ad una mancata riunione con il proponente.
+		
+		\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
+		Nelle prime fasi di progettazione sono sorti problemi per la scarsa conoscenza con \gl{StarUML} per quanto riguarda la creazione dei diagrammi di attività e \gl{package}. I problemi sono stati risolti nel tempo tramite lettura di guide dedicate da parte dei \italics{Progettisti}.
+		
+		\subsection{Progettazione di dettaglio e codifica}
+		
+		\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
+			%{\centering\arraybackslash}p{2 cm}}
+			%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
+			
+			
+			\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
+			\endfirsthead
+			
+			\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
+			\cellcolor{P} & Guasti \gl{hardware} & No \\
+			\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti \gl{software} & \bold{Sì} \\
+			\hline
+			
+			\cellcolor{D} & Problemi personali dei membri & No \\
+			\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
+			\hline
+			
+			\cellcolor{P} & Problemi di \gl{versionamento} & No \\
+			\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
+			\hline
+			
+			\rowcolor{D}
+			Strumenti & Mancante o insufficiente conoscenza degli strumenti & \bold{Sì} \\	
+			\hline	
+			
+			\rowcolor{P}
+			Requisiti & Errata comprensione dei requisiti & No\\
+			\hline
+			
+			\rowcolor{white}  
+			\caption{Attualizzazione dei rischi nell'attività di progettazione di dettaglio e codifica}	    	
+			
+		\end{tabella}
+		
+		\subsubsection{Malfunzionamenti software}
+		Si sono presentate delle incongruenze tra le varie versioni delle tecnologie scelte. Nel caso più grave questo ha portato alla riscrittura di alcune parti di codice a causa dell'utilizzo di metodi divenuti obsoleti nelle versioni scelte e che rendevano il funzionamento del prodotto instabile. L'\italics{Amministratore} ha provveduto tempestivamente a fare aggiornare i \gl{software} dei membri coinvolti. La celerità di questa azione non ha portato a ritardi.
+		
+		\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
+		Alcuni membri non erano a conoscenza dei meccanismi di automatizzazione offerti dall'\gl{IDE} scelto per la codifica.
+		L'\italics{Amministratore} ha provveduto a configurare ed illustrare tali meccanismi ai membri interessati. La risoluzione tempestiva di questo problema non ha portato ulteriori ritardi.
+			
+	\subsection{Validazione}
+			
+			\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
+				%{\centering\arraybackslash}p{2 cm}}
+				%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
+				
+				
+				\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
+				\endfirsthead
+				
+				\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
+				\cellcolor{P} & Guasti \gl{hardware} & No \\
+				\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti \gl{software} & No \\
+				\hline
+				
+				\cellcolor{D} & Problemi personali dei membri & No \\
+				\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
+				\hline
+				
+				\cellcolor{P} & Problemi di \gl{versionamento} & No \\
+				\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
+				\hline
+				
+				\rowcolor{D}
+				Strumenti & Mancante o insufficiente conoscenza degli strumenti & \bold{Si} \\	
+				\hline	
+				
+				\rowcolor{P}
+				Requisiti & Errata comprensione dei requisiti & No\\
+				\hline
+				
+				\rowcolor{white}  
+				\caption{Attualizzazione dei rischi nell'attività di validazione}	    	
+				
+			\end{tabella}
+			
+	\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
+	Il \italics{Verificatore} ha dovuto imparare ad utilizzare gli strumenti per la scrittura ed esecuzione dei test in modo autonomo. Essendo Karma, Jasmine, Mocha e Should.js strumenti nuovi ha inizialmente avuto difficoltà nella loro configurazione nel proprio computer; l'\italics{Amministratore} per questo lo ha aiutato evitando un eccessivo ritardo nelle tempistiche.
 	
 	\newpage
 	\section {Pianificazione}\label{Pianificazione}
@@ -746,7 +959,7 @@
 	
 	\newpage
 	\section{Consuntivo e preventivo a finire}
-	Eventuali errori di pianificazione rilevati dai consuntivi di periodo sono da imputare a rischi emersi negli stessi. Per un dettaglio dei rischi affrontati vedere l'\hyperref[Attualizzazione dei rischi]{appendice} dedicata.
+	Eventuali errori di pianificazione rilevati dai consuntivi di periodo sono da imputare a rischi emersi negli stessi. Per un dettaglio dei rischi affrontati vedere la \hyperref[Attualizzazione dei rischi]{sezione} dedicata.
 	\subsection{Attività di progettazione architetturale}
 	
 	\subsubsection {Consuntivo di periodo}
@@ -849,183 +1062,108 @@
 	\subsubsection{Preventivo a finire}
 	Durante questa attività ci sono stati dei problemi di entità lieve che riguardano i vari strumenti utilizzati dal gruppo. Questo non ha portato a variazioni sul totale orario e quindi il gruppo non ritiene di dover modificare la pianificazione futura. Il \italics{Responsabile} ha variato il carico di ore per persona portando il bilancio di questa attività in positivo di €46, tenendo conto del bilancio della fase precedente di -€35, il bilancio finale attuale è di -35 + 46 = \bold{+€11}.
 	
+	\subsection{Attività di validazione}
+	\subsubsection{Consuntivo di periodo}
+	Vengono di seguito riportati i costi effettivi sostenuti in questa attività.
+	
+		\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c}
+			
+			\color{white} \bold{Nome} & \color{white} \bold{Responsabile} &\color{white} \bold{Amm} & \color{white} \bold{An} & \color{white} \bold{Pt} & \color{white} \bold{Pr} & \color{white} \bold{Ver} & \color{white} \bold{Ore totali persona} \\
+			\endfirsthead
+			Giacomo Beltrame & 0 & 0 & 0 & 13(-7) & 0(+5) & 7 & 20(-2)\\
+			Rudy Berton & 15(+3) & 0 & 0 & 0 & 13 & 0 & 28(+3)\\
+			Simone Boccato & 10 & 0 & 0 & 0 & 0 & 11 & 21\\
+			Michela De Bortoli & 0 & 0 & 0 & 10(-3) & 0(+2) & 12(-1) & 22(-2)\\
+			Vassilikì Menarin & 0 & 11(-2) & 0 & 10(-4) & 0(+6) & 0 & 21\\
+			Filippo Tesser & 0 & 0 & 0 & 0 & 10 & 14 & 24\\
+			Miki Violetto & 0 & 0 & 0 & 12 & 0 & 12(-4) & 24(-4)\\   
+			
+			\rowcolor{white}  
+			\caption{Prospetto orario attività di validazione}	    	
+			
+		\end{tabella}
+		
+		Segue una tabella che illustra come questi cambiamenti impattino i ruoli e i costi:
+		
+		\begin{tabella}{l!{\VRule}c!{\VRule}c}
+				
+				\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
+				\endfirsthead
+				Responsabile & 25(+3) & € 750(+90) \\
+				Amministratore & 11(-2) & € 220(-40)\\
+				Analista & 0 & € 0 \\
+				Progettista & 45(-14) & € 990(-308) \\
+				Programmatore & 23(+13) & € 345(+195) \\
+				Verificatore & 56(-5) & € 840(-75)\\
+				Totale & 160(-8) & € 3145(-138)\\
+				
+				\rowcolor{white}  
+				\caption{Prospetto economico attività di validazione}	    	
+				
+			\end{tabella}
+			
+			
+			\subsubsection{Conclusioni}
+			L'unico problema da riportare in questa fase  riguarda l'utilizzo e la relativa installazione degli strumenti per svolgere l'attività di validazione, per questo è aumentato l'impegno del Responsabile in questa attività.
+			Il Responsabile ha deciso inoltre di modificare alcune ore di lavoro per far fronte ad esigenze di organizzazione senza però sforare il totale orario del gruppo. Questa variazione di
+			carico di lavoro ha portato una diminuzione del budget quantificabile con € 138.
+	
+	
+	\section{Consuntivo finale}
+	
+	Viene di seguito riportato, in formato tabellare, il consuntivo finale del progetto, indicante le spese
+	effettivamente sopportate, sia per ruolo che per membro.
+	
+	\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c!{\VRule}c}
+			
+			\color{white} \bold{Nome} & \color{white} \bold{Responsabile} &\color{white} \bold{Amm} & \color{white} \bold{An} & \color{white} \bold{Pt} & \color{white} \bold{Pr} & \color{white} \bold{Ver} & \color{white} \bold{Ore totali persona} \\
+			\endfirsthead
+			Giacomo Beltrame & 13 & 0 & 13 & 26 & 24 & 25 & 101\\
+			Rudy Berton & 18 & 9 & 0 & 30 & 13 & 33 & 103\\
+			Simone Boccato & 10 & 6 & 0 & 27 & 25 & 33 & 101\\
+			Michela De Bortoli & 9 & 10 & 0 & 40 & 27 & 11 & 97\\
+			Vassilikì Menarin & 0 & 9 & 7 & 21 & 32 & 31 & 100\\
+			Filippo Tesser & 10 & 0 & 8 & 20 & 25 & 40 & 103\\
+			Miki Violetto & 0 & 7 & 0 & 38 & 26 & 27 & 98\\ 
+			 & & & & & & & \\
+			Preventivo per ruolo & 58 & 44 & 26 & 209 & 163 & 212 & 712\\
+			Consuntivo per ruolo & 60 & 41 & 28 & 202 & 172 & 200 & 703\\
+			
+			\rowcolor{white}  
+			\caption{Prospetto orario rendicontato finale }	    	
+			
+		\end{tabella}
+	
+	
+		\begin{tabella}{l!{\VRule}c!{\VRule}c}
+			
+			\color{white} \bold{Ruolo} & \color{white} \bold{Ore} &\color{white} \bold{Spese} \\
+			\endfirsthead
+			Responsabile & 60 & € 1800 \\
+			Amministratore & 41 & € 820\\
+			Analista & 28 & € 700 \\
+			Progettista & 202 & € 4444\\
+			Programmatore & 172 & € 2580 \\
+			Verificatore & 200 & € 3000\\
+			& & \\
+			Totale Preventivo & 712 & € 13493\\
+			Totale Consuntivo & 703 & € 13344\\
+			Differenza & &  € -149\\
+			
+			\rowcolor{white}  
+			\caption{Prospetto economico rendicontato finale}	    	
+			
+		\end{tabella}
+	
+	
+	\subsection{Conclusioni}
+	Come si può vedere, durante il progetto alcuni ruoli sono stati sottostimati mentre altri sono stati sovrastimati. Tale discrepanza è stata progressivamente appianata durante le singole attività, portando ad un risparmio finale di € 149, che verrà detratto	dal costo finale del progetto imputato al proponente.
+	Il prezzo si è quindi abbassato alla cifra di € 13344.
+	
+
+	
 	\newpage
 	\appendix
-	\section{Attualizzazione dei rischi} \label{Attualizzazione dei rischi}
-	Vengono di seguito indicati i rischi che si sono attualizzati nelle varie attività e come il gruppo li ha superati. Un elenco completo con descrizione dei possibili rischi è presente nella \hyperref[Analisi dei rischi]{sezione 4}.
-	
-	\subsection{Analisi dei requisiti}
-	
-	\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
-		%{\centering\arraybackslash}p{2 cm}}
-		%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
-		
-		
-		\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
-		\endfirsthead
-		
-		\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
-		\cellcolor{P} & Guasti \gl{hardware} & No \\
-		\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti \gl{software} & No \\
-		\hline
-		
-		\cellcolor{D} & Problemi personali dei membri & \bold{Sì} \\
-		\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
-		\hline
-		
-		\cellcolor{P} & Problemi di \gl{versionamento} & \bold{Sì} \\
-		\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
-		\hline
-		
-		\rowcolor{D}
-		Strumenti & Mancante o insufficiente conoscenza degli strumenti & \bold{Sì} \\	
-		\hline	
-		
-		\rowcolor{P}
-		Requisiti & Errata comprensione dei requisiti & \bold{Sì}\\
-		\hline
-		
-		\rowcolor{white}  
-		\caption{Attualizzazione dei rischi nell'attività di analisi dei requisiti}	    	
-		
-	\end{tabella}
-	
-	\subsubsection{Problemi personali dei membri}
-	I membri del gruppo hanno avuto dei problemi famigliari mentre altri sono stati impossibilitati a lavorare per malattia. La pianificazione ha permesso di rispettare comunque le scadenze; i membri hanno tempestivamente informato il responsabile e, quando malati, il carico di lavoro è stato ripartito per non rallentare troppo i lavori.
-	
-	\subsubsection{Problemi di versionamento}
-	I membri hanno avuto dei problemi a individuare la corretta versione dei documenti, soprattutto quando questi erano modificati da più persone. Il problema è stato più spiccato all'inizio, prima che il gruppo prendesse dimestichezza con \gl{tracker}, ed è stato definitivamente risolto appena i membri hanno imparato a usarlo correttamente.
-	
-	\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
-	Come specificato nella sottosezione recedente, i membri hanno avuto una difficoltà iniziale ad usare \gl{tracker}. Questo problema, di cui si era comunque tenuto conto, è stato risolto nelle fasi iniziali grazie agli amministratori, che hanno fornito precise istruzioni e regole per il corretto utilizzo dello strumento in questione.
-	
-	\subsubsection{Errata comprensione dei requisiti}
-	Dopo la presentazione del capitolato in aula e in seguito a un primo incontro con il committente, il gruppo ha cominciato a lavorare alla raccolta dei requisiti. Sono emerse delle incomprensioni e dei dubbi sulla correttezza dei requisiti individuati. Avendo programmato un secondo incontro col committente, questi problemi sono stati chiariti e, sul totale, si è rilevato un leggero ritardo nella stesura dell'\doc{Analisi dei requisiti}, comunque compensata dalla fase di \gl{slack} predisposta.
-	
-	\subsection{Raffinamento dei requisiti}
-	
-	\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
-		%{\centering\arraybackslash}p{2 cm}}
-		%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
-		
-		
-		\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
-		\endfirsthead
-		
-		\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
-		\cellcolor{P} & Guasti \gl{hardware} & No \\
-		\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti \gl{software} & No \\
-		\hline
-		
-		\cellcolor{D} & Problemi personali dei membri & No \\
-		\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
-		\hline
-		
-		\cellcolor{P} & Problemi di \gl{versionamento} & No \\
-		\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
-		\hline
-		
-		\rowcolor{D}
-		Strumenti & Mancante o insufficiente conoscenza degli strumenti & No \\	
-		\hline	
-		
-		\rowcolor{P}
-		Requisiti & Errata comprensione dei requisiti & No\\
-		\hline
-		
-		\rowcolor{white}  
-		\caption{Attualizzazione dei rischi nell'attività di progettazione architetturale}	    	
-		
-	\end{tabella}
-	
-	Data la breve durata dell'attività e la sua semplicità non si sono presentati problemi.
-	
-	\subsection{Progettazione architetturale}
-	
-	\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
-		%{\centering\arraybackslash}p{2 cm}}
-		%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
-		
-		
-		\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
-		\endfirsthead
-		
-		\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
-		\cellcolor{P} & Guasti \gl{hardware} & No \\
-		\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti \gl{software} & No \\
-		\hline
-		
-		\cellcolor{D} & Problemi personali dei membri & \bold{Sì} \\
-		\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
-		\hline
-		
-		\cellcolor{P} & Problemi di \gl{versionamento} & No \\
-		\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
-		\hline
-		
-		\rowcolor{D}
-		Strumenti & Mancante o insufficiente conoscenza degli strumenti & \bold{Sì} \\	
-		\hline	
-		
-		\rowcolor{P}
-		Requisiti & Errata comprensione dei requisiti & No\\
-		\hline
-		
-		\rowcolor{white}  
-		\caption{Attualizzazione dei rischi nell'attività di progettazione architetturale}	    	
-		
-	\end{tabella}
-	
-	\subsubsection{Problemi personali dei membri}
-	Due membri del gruppo sono stati impossibilitati a lavorare per problemi di salute. La pianificazione ha permesso di rispettare comunque le scadenze, i membri hanno tempestivamente informato il responsabile che ha ridistribuito il carico di ore per rimanere dentro le scadenze. Ciò ha permesso di finire il lavoro ma il ritardo accumulato ha portato ad una mancata riunione con il proponente.
-	
-	\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
-	Nelle prime fasi di progettazione sono sorti problemi per la scarsa conoscenza con \gl{StarUML} per quanto riguarda la creazione dei diagrammi di attività e \gl{package}. I problemi sono stati risolti nel tempo tramite lettura di guide dedicate da parte dei \italics{Progettisti}.
-	
-	\subsection{Progettazione di dettaglio e codifica}
-	
-	\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{3 cm}}
-		%{\centering\arraybackslash}p{2 cm}}
-		%{l!{\VRule} p{20px} l ! {\VRule}  l !{\VRule}l}
-		
-		
-		\color{white} \bold{Livello} & \color{white} \bold{Tipologia} & \color{white} \bold{Rischio presentatosi} \\
-		\endfirsthead
-		
-		\cellcolor{P} & Scarsa conoscenza delle tecnologie & No \\
-		\cellcolor{P} & Guasti \gl{hardware} & No \\
-		\multirow{-3}{*}{\cellcolor{P}Tecnologico}	& Malfunzionamenti \gl{software} & \bold{Sì} \\
-		\hline
-		
-		\cellcolor{D} & Problemi personali dei membri & No \\
-		\multirow{-2}{*}{\cellcolor{D}Personale} & Problemi interni tra i membri & No \\
-		\hline
-		
-		\cellcolor{P} & Problemi di \gl{versionamento} & No \\
-		\multirow{-2}{*}{\cellcolor{P}Organizzativo} & Errata valutazione dei costi & No \\
-		\hline
-		
-		\rowcolor{D}
-		Strumenti & Mancante o insufficiente conoscenza degli strumenti & \bold{Sì} \\	
-		\hline	
-		
-		\rowcolor{P}
-		Requisiti & Errata comprensione dei requisiti & No\\
-		\hline
-		
-		\rowcolor{white}  
-		\caption{Attualizzazione dei rischi nell'attività di progettazione di dettaglio e codifica}	    	
-		
-	\end{tabella}
-	
-	\subsubsection{Malfunzionamenti software}
-	Si sono presentate delle incongruenze tra le varie versioni delle tecnologie scelte. Nel caso più grave questo ha portato alla riscrittura di alcune parti di codice a causa dell'utilizzo di metodi divenuti obsoleti nelle versioni scelte e che rendevano il funzionamento del prodotto instabile. L'\italics{Amministratore} ha provveduto tempestivamente a fare aggiornare i \gl{software} dei membri coinvolti. La celerità di questa azione non ha portato a ritardi.
-	
-	\subsubsection{Mancante o insufficiente conoscenza degli strumenti}
-	Alcuni membri non erano a conoscenza dei meccanismi di automatizzazione offerti dall'\gl{IDE} scelto per la codifica.
-	L'\italics{Amministratore} ha provveduto a configurare ed illustrare tali meccanismi ai membri interessati. La risoluzione tempestiva di questo problema non ha portato ulteriori ritardi.
-		
-	\newpage
 	\section{Attività di investimento} \label{Investimento}
 	Le attività di Analisi dei requisiti utente e di Raffinamento dei requisiti non sono a carico del committente e rappresentano l'investimento iniziale del gruppo. Si è scelto di riscrivere comunque, in questa appendice, i prospetti economici e orari delle fasi in questione per completezza e offrire al committente maggiori informazioni sull'operato del gruppo. Per il preventivo delle fasi rendicontate si veda la \hyperref[Preventivo] {Sezione 6}.
 	
