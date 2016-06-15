@@ -88,16 +88,24 @@ Internet Explorer
 internet explorer
 iOS
 ios
+Jasmine
+jasmine
 Java
 java
 JavaScript
 javascript
 JetBrains
 jetbrains
+JSHint
+jshint
+JsMeter
+jsmeter
 JSON
 json
 JVM
 jvm
+Karma
+karma
 LaTex
 latex
 Linguaggio di markup
@@ -108,6 +116,8 @@ Middleware
 middleware
 Milestone
 milestone
+Mocha
+mocha
 Modello incrementale
 modello incrementale
 MongoDB
@@ -160,6 +170,8 @@ Script
 script
 Server
 server
+Should.js
+should.js
 Slack
 slack
 Social
@@ -198,6 +210,10 @@ Versionamento
 versionamento
 W3C
 w3c
+W3C Css Validation Service
+w3c css validation service
+W3C Markup Validation Service
+w3c markup validation service
 Walkthrough 
 walkthrough 
 Web
