@@ -51,7 +51,7 @@
 	
 	\section{Introduzione}
 	\subsection{Scopo del documento}
-	Questo documento ha lo scopo di indicare e spiegare quali sono i comandi da eseguire per installare correttamente l'applicativo Quizzipedia, come creare nuove tipologie di domande ed integrarle nel sistema e come amministrare gli enti all'interno del proprio server.
+	Questo documento ha lo scopo di indicare e spiegare quali sono i comandi da eseguire per installare correttamente l'applicativo Quizzipedia, come creare nuove tipologie di domande ed integrarle nel sistema e come amministrare gli enti all'interno del proprio \gl{server}.
 	
 	\subsection{Scopo del prodotto}
 	\SCOPO
@@ -76,7 +76,7 @@
 	Per poter avviare Quizzipedia è richiesta l'installazione dei seguenti \gl{software}.
 	
 	\subsection{Sistema operativo}
-	Per poter avviare il server è richiesta una versione Linux \gl{LTS} a 64bit.
+	Per poter avviare il \gl{server} è richiesta una versione Linux \gl{LTS} a 64bit.
 	
 	\subsection{Node.js e npm}
 	Scaricare e installare \gl{Node.js} e il package manager \gl{npm} da \url{https://nodejs.org/en/download/current/}.
@@ -95,7 +95,8 @@
 	\texttt{\$ mongo}
 
 	\subsection{Forever}
-	Scaricare e installare globalmente il modulo 'forever' utilizzando \gl{npm} con il seguente comando:
+	'Forever' è un modulo \gl{npm} che permette l'esecuzione continua di uno script \gl{JavaScript}.
+	Scaricare e installare globalmente questo modulo utilizzando \gl{npm} con il seguente comando:
 
 	\texttt{\$ npm install -g forever}
 	
@@ -137,17 +138,25 @@
 	in questo modo verranno installati automaticamente i moduli di \gl{Node.js} necessari per l'esecuzione del prodotto.
 	
 	\subsection{Configurazione}
-	mail del referente , cartella upload 
+	Nella directory "config" si trovano i seguenti file di configurazione:
+	\begin{itemize}
+		\item "email.js": contiene la email che verrà utilizzata per contattare il gestore del prodotto;
+		\item "database.js": contiene l'indirizzo del database a cui si connetterà l'applicativo, di default viene usato un database in locale;
+		\item "upload.js": contiene gli indirizzi delle cartelle che verranno usate per collezionare gli allegati inviati al \gl{server};
+		\item "server.js": contiene la porta sulla quale si vuole rendere reperibile Quizzipedia via \gl{browser} e la durata della sessione,
+		se viene specificata una porta inferiore a 1024 allora sarà necessario anteporre \texttt{sudo} al comando di avvio per autorizzare \gl{Node.js} ad utilizzare tale porta.
+	\end{itemize}
+	La modifica di questi valori è desiderabile ma non obbligatoria al funzionamento del prodotto.
 	
 	\subsection{Avvio}
 	
-	Per avviare Quizzipedia e mantenerlo in esecuzione, utilizzare il modulo \gl{npm} 'forever' precedentemente installato digitando il seguente comando dopo essersi spostati nella root di Quizzipedia:
-
-	\texttt{\$ PORT=porta forever start server.js}
-
-	Sostituire "porta" con il numero di porta sul quale si vuole rendere reperibile Quizzipedia via \gl{browser};\\
-	se non viene specificata verrà usata di default la 8080;\\
-	se viene specificata una porta inferiore a 1024 allora sarà necessario digitare il comando \texttt{sudo} seguito dal resto per autorizzare \gl{Node.js} ad utilizzare tale porta.
+	Per avviare Quizzipedia e mantenerlo in esecuzione, utilizzare i seguenti comandi dopo essersi spostati nella root di Quizzipedia:
+	\begin{itemize}
+		\item \texttt{mongod} per avviare \gl{mongoDB} nel caso venga utilizzato un database in locale,
+		\item \texttt{npm start} per avviare il \gl{server} senza utilizzare il modulo 'forever',
+		\item \texttt{npm run foreverStart} per avviare il \gl{server} utilizzando il modulo 'forever'.
+	\end{itemize}
+	Per terminare l'esecuzione di un \gl{server} avviato con 'forever' si utilizzi il comando \texttt{npm run foreverStop}.
 	
 	\newpage
 	
@@ -191,8 +200,8 @@
 	\begin{itemize}
 		\item type;
 		\item \begin{itemize}
-			\item title/arrayTitle (se la domanda è singola o in piu parti), che contiene stringhe o JSON,
-			\item correctAnswer/arrayAnswer (se la risposta è singola o in piu parti), che contiene stringhe o JSON,
+			\item title/arrayTitle (se la domanda è singola o in piu parti), che contiene stringhe o JSON, il nome del campo può variare in base al tipo di domanda, quindi occorre progettare il parser e il generator tenendo conto del nome del campo utilizzato,
+			\item correctAnswer/arrayAnswer (se la risposta è singola o in piu parti), che contiene stringhe o JSON, il nome del campo può variare in base al tipo di domanda, quindi occorre progettare il parser e il generator tenendo conto del nome del campo utilizzato,
 		\end{itemize}
 	\end{itemize}
 	Campo questionAttachment/answerAttachment è opzionale e contiene eventuali allegati con la seguente struttura:
@@ -277,13 +286,13 @@
 	
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{Img/screen_RecuperoPwd.png}
+		\includegraphics[scale=0.5]{Img/logo.png}
 		\caption{Schermata di creazione enti e nomina responsabili}
 	\end{figure}
 	
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[scale=0.5]{Img/screen_RecuperoPwd.png}
+		\includegraphics[scale=0.5]{Img/logo.png}
 		\caption{Schermata di segnalazioni e richieste}
 	\end{figure}
 	
