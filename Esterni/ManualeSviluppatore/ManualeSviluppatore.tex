@@ -277,18 +277,25 @@
 		\item dentro la "variable part" di createQuestionBase aggiungere la direttiva relativa alla pagina html creata al punto 1.
 	\end{itemize}
 	
-	\subsection{SVOLGIMENTO DOMANDA}
+	\subsection{CtrlQuizExec}
+	Si trova al percorso \centra{public/quiz\_execution/CtrlQuizExec.html}
+	È il componente che si occupa di gestire lo svolgimento di quiz lato client.
+	Qualora si volesse implementare una nuova tipologia è quindi fondamentale seguire il seguente procedimento:
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	
 	
 	\subsection{Manuale Utente}
 	Una volta inserito un nuovo tipo di domanda sarà opportuno inserire una sua descrizione adeguata in appendice al \doc{Manuale Utente}.
 	
 	\newpage
-	\section{Account SuperAdmin} %DA FINIRE
+	\section{Account SuperAdmin}
 	Una volta installato il prodotto viene creato di default un account SuperAdmin che permette di creare enti e l'account responsabile associato. 
 	\\ Le credenziali di login per SuperAdmin sono:
 	\begin{description}
 		\item[Username] SuperAdmin,
-		\item[Password] la password sarà generata random alla prima installazione e sarà reperibile nel file \texttt{config/superadmin.js}.
+		\item[Password] la password sarà generata random alla prima installazione e sarà reperibile nel file \texttt{config/admin.txt}.
 	\end{description}
 	Una volta loggato con le credenziali si troverà un form speciale che permette l'inserimento nel database di enti, account responsabili associati e una pagina che permette di vedere le varie segnalazioni e richieste inoltrate dagli utenti che utilizzano il form "Segnalazione e richieste". Seguono degli screenshot di queste pagine.
 	
@@ -304,7 +311,7 @@
 		\caption{Schermata di segnalazioni e richieste}
 	\end{figure}
 	
-	ATTENZIONE: utilizzare con l'account SuperAdmin è l'unico metodo per creare enti e nominare responsabili, ed è quindi un passo obbligatorio per rendere fruibile al pubblico il prodotto dopo il primo avvio.
+	ATTENZIONE: utilizzare l'account SuperAdmin è l'unico metodo per creare enti e nominare responsabili, e quindi almeno un accesso è obbligatorio per rendere fruibile al pubblico il prodotto dopo il primo avvio (dopo che qualche utente avrà inoltrato richiesta di creazione ente).
 	
 	\section{Segnalazione di problemi d'uso}
 	Nel caso si verificassero dei problemi d'uso di entità più grave è possibile contattare il team Vault-Tech tramite email \centra{vaulttech.swe@gmail.com}
