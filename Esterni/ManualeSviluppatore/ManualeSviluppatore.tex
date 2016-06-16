@@ -80,7 +80,7 @@
 	
 	
 	\subsection{Node.js e npm}
-	Scaricare da browser e installare \gl{Node.js} e il package manager \gl{npm} da\\ \url{https://nodejs.org/en/download/current/}.\\
+	Scaricare da \gl{browser} e installare \gl{Node.js} e il package manager \gl{npm} da\\ \url{https://nodejs.org/en/download/current/}.\\
 	\\Oppure da riga di comando con il comando\\ \texttt{\$ wget https://nodejs.org/download/release/v6.0.0/node-v6.0.0-linux-x64.tar.xz} \\e \\ \texttt{\$ tar -C /usr/local --strip-components 1 -xJf node-v6.0.0-linux-x64.tar.xz} \\(dopo essersi posizionati nella cartella dove è stato scaricato ).
 	
 	Verificare che sia visibile la versione installata con i seguenti comandi:
@@ -125,7 +125,7 @@
 	
 	\subsection{Ottenere Quizzipedia}
 	\subsubsection{Download da browser}
-	Reperire il progetto Quizzipedia è possibile recandosi con qualunque \gl{browser} all'indirizzo \url{http://github.com/vault-tech/Quizzipedia}.
+	Reperire il progetto Quizzipedia è possibile recandosi con qualunque \gl{browser} all'indirizzo\\ \url{http://github.com/vault-tech/Quizzipedia}.\\
 	A questo punto è possibile scaricare il codice sorgente con l'apposito tasto \texttt{Download ZIP}.
 
 	\subsubsection{Download da riga di comando}
@@ -206,8 +206,8 @@
 	\label{qson}
 	La struttura JSON delle domande deve seguire questa gerarchia:
 	\begin{itemize}
-		\item type;
-		\item \begin{itemize}
+		\item type: stringa che indica il tipo;
+		\item question:\begin{itemize}
 			\item title/arrayTitle (se la domanda è singola o in piu parti), che contiene stringhe o JSON, il nome del campo può variare in base al tipo di domanda, quindi occorre progettare il parser e il generator tenendo conto del nome del campo utilizzato,
 			\item correctAnswer/arrayAnswer (se la risposta è singola o in piu parti), che contiene stringhe o JSON, il nome del campo può variare in base al tipo di domanda, quindi occorre progettare il parser e il generator tenendo conto del nome del campo utilizzato,
 		\end{itemize}
@@ -271,20 +271,31 @@
 	È il componente che si occupa di mostrare la creazione dei vari tipi di domande.
 	Qualora si volesse implementare una nuova tipologia è quindi fondamentale seguire il seguente procedimento:
 	\begin{itemize}
-		\item creare una pagina html con il nome della domanda che conterrà solo il codice per rappresentare a video la struttura della domanda, e salvare il file html nella directory public/question\_creation;
+		\item creare una pagina html con il nome della domanda che conterrà solo il codice per rappresentare a schermo la struttura della domanda durante la sua creazione, e salvare il file html nella directory public/question\_creation;
 		\item creare una direttiva \gl{angular} di tipo elemento che esegue il fetch del path della pagina html precedentemente creata, e salvare il file js nella directory public/question\_creation;
 		\item dentro createQuestionBase inserire tanti tag \texttt{src} quanti sono i file js appena creati (direttiva e factory);
 		\item dentro la "variable part" di createQuestionBase aggiungere la direttiva relativa alla pagina html creata al punto 1.
 	\end{itemize}
 	
 	\subsection{CtrlQuizExec}
-	Si trova al percorso \centra{public/quiz\_execution/CtrlQuizExec.html}
+	Si trova al percorso \centra{public/quiz\_execution/CtrlQuizExec.js}
 	È il componente che si occupa di gestire lo svolgimento di quiz lato client.
 	Qualora si volesse implementare una nuova tipologia è quindi fondamentale seguire il seguente procedimento:
 	\begin{itemize}
-		\item 
+		\item inserire nel ciclo \texttt{for} del metodo \texttt{loadQuizQuestions} una inizializzazione del campo dati per salvare le risposte dell'utente (dentro un array o JSON) durante lo svolgimento;
+		\item aggiungere nella factory della domanda il metodo che verifica per la veridicità di una risposta a quella data domanda;
+		\item aggiungere all'interno del metodo \texttt{saveQuiz} uno statement per controllare la correttezza di una risposta data al tipo di domanda, utilizzando il metodo aggiunto nel factory al punto precedente.
 	\end{itemize}
-	
+
+	\subsection{quizExec}
+	Si trova al percorso \centra{public/quiz\_execution/quizExec.html}
+	È il componente che si occupa di mostrare lo svolgimento di quiz per i vari tipi di domande.
+	Qualora si volesse implementare una nuova tipologia è quindi fondamentale seguire il seguente procedimento:
+	\begin{itemize}
+		\item creare una pagina html con il nome della domanda che conterrà solo il codice per rappresentare a schermo la struttura della domanda durante il suo svolgimento, e salvare il file html nella directory public/quiz\_execution;
+		\item inserire nel file \texttt{quizExecDirectives.js} il codice angular per creare la direttiva che va a caricare la pagina html che rappresenta la grafica della domanda;
+		\item successivamente va aggiunto il caricamento di tale direttiva nel file, sotto le direttive delle altre domande già presenti.
+	\end{itemize}
 	
 	\subsection{Manuale Utente}
 	Una volta inserito un nuovo tipo di domanda sarà opportuno inserire una sua descrizione adeguata in appendice al \doc{Manuale Utente}.
@@ -292,12 +303,8 @@
 	\newpage
 	\section{Account SuperAdmin}
 	Una volta installato il prodotto viene creato di default un account SuperAdmin che permette di creare enti e l'account responsabile associato. 
-	\\ Le credenziali di login per SuperAdmin sono:
-	\begin{description}
-		\item[Username] SuperAdmin,
-		\item[Password] la password sarà generata random alla prima installazione e sarà reperibile nel file \texttt{config/admin.txt}.
-	\end{description}
-	Una volta loggato con le credenziali si troverà un form speciale che permette l'inserimento nel database di enti, account responsabili associati e una pagina che permette di vedere le varie segnalazioni e richieste inoltrate dagli utenti che utilizzano il form "Segnalazione e richieste". Seguono degli screenshot di queste pagine.
+	\\ Le credenziali di login per SuperAdmin sono reperibili dopo aver avviato il \gl{server} nel file \texttt{config/admin.txt} o a terminale.\\
+	Dopo aver loggato con le credenziali si troverà un form speciale che permette l'inserimento nel database di enti, account responsabili associati e una pagina che permette di vedere le varie segnalazioni e richieste inoltrate dagli utenti che utilizzano il form "Segnalazione e richieste". Seguono degli screenshot di queste pagine.
 	
 	\begin{figure}[!h]
 		\centering
@@ -314,7 +321,7 @@
 	ATTENZIONE: utilizzare l'account SuperAdmin è l'unico metodo per creare enti e nominare responsabili, e quindi almeno un accesso è obbligatorio per rendere fruibile al pubblico il prodotto dopo il primo avvio (dopo che qualche utente avrà inoltrato richiesta di creazione ente).
 	
 	\section{Segnalazione di problemi d'uso}
-	Nel caso si verificassero dei problemi d'uso di entità più grave è possibile contattare il team Vault-Tech tramite email \centra{vaulttech.swe@gmail.com}
+	Nel caso si verificassero dei problemi d'uso di entità più grave è possibile contattare il team Vault-Tech tramite email: \centra{vaulttech.swe@gmail.com}
 	
 	
 	\newpage
