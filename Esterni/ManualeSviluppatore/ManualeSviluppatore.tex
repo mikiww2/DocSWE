@@ -76,23 +76,31 @@
 	Per poter avviare Quizzipedia è richiesta l'installazione dei seguenti \gl{software}.
 	
 	\subsection{Sistema operativo}
-	Per poter avviare il \gl{server} è richiesta una versione Linux \gl{LTS} a 64bit.
+	Per poter avviare il \gl{server} è richiesta una versione Linux \gl{LTS} a 64bit. \\È necessario disporre dei privilegi di superuser per installare i vari software necessari.
+	
 	
 	\subsection{Node.js e npm}
-	Scaricare e installare \gl{Node.js} e il package manager \gl{npm} da \url{https://nodejs.org/en/download/current/}.
+	Scaricare da browser e installare \gl{Node.js} e il package manager \gl{npm} da\\ \url{https://nodejs.org/en/download/current/}.\\
+	\\Oppure da riga di comando con il comando\\ \texttt{\$ wget https://nodejs.org/download/release/v6.0.0/node-v6.0.0-linux-x64.tar.xz} \\e \\ \texttt{\$ tar -C /usr/local --strip-components 1 -xJf node-v6.0.0-linux-x64.tar.xz} \\(dopo essersi posizionati nella cartella dove è stato scaricato ).
 	
 	Verificare che sia visibile la versione installata con i seguenti comandi:
 	
 	\texttt{\$ node -v}
 	
 	\texttt{\$ npm -v}
+	
+	In caso di problemi nell'installazione si consultino le guide nei riferimenti.
 
 	\subsection{MongoDB}
-	Scaricare e installare \gl{MongoDB} da \url{https://www.mongodb.com/download-center}.
+	Scaricare e installare \gl{MongoDB} da\\ \url{https://www.mongodb.com/download-center}.\\
+	\\Oppure da riga di comando con il comando\\
+	\texttt{\$ apt-get install mongodb}
 	
 	Per avviare \gl{MongoDB} sarà necessario dare il seguente comando:
 	
-	\texttt{\$ mongod}
+	\texttt{\$ mongo}
+	
+	In caso di problemi nell'installazione si consultino le guide nei riferimenti.
 
 	\subsection{Forever}
 	'Forever' è un modulo \gl{npm} che permette l'esecuzione continua di uno script \gl{JavaScript}.
@@ -138,7 +146,7 @@
 	in questo modo verranno installati automaticamente i moduli di \gl{Node.js} necessari per l'esecuzione del prodotto.
 	
 	\subsection{Configurazione}
-	Nella directory "config" si trovano i seguenti file di configurazione:
+	Nella cartella \texttt{config} si trovano i seguenti file di configurazione:
 	\begin{itemize}
 		\item "email.js": contiene la email che verrà utilizzata per contattare il gestore del prodotto;
 		\item "database.js": contiene l'indirizzo del database a cui si connetterà l'applicativo, di default viene usato un database in locale;
@@ -152,11 +160,11 @@
 	
 	Per avviare Quizzipedia e mantenerlo in esecuzione, utilizzare i seguenti comandi da terminale dopo essersi spostati nella root di Quizzipedia:
 	\begin{itemize}
-		\item \texttt{mongo} per avviare \gl{mongoDB} nel caso venga utilizzato un database in locale,
-		\item \texttt{npm start} per avviare il \gl{server} senza utilizzare il modulo 'forever',
-		\item \texttt{npm run foreverStart} per avviare il \gl{server} utilizzando il modulo 'forever'.
+		\item \texttt{\$ mongo} per avviare \gl{mongoDB} nel caso venga utilizzato un database in locale,
+		\item \texttt{\$ npm start} per avviare il \gl{server} senza utilizzare il modulo 'forever',
+		\item \texttt{\$ npm run foreverStart} per avviare il \gl{server} utilizzando il modulo 'forever'.
 	\end{itemize}
-	Per terminare l'esecuzione di un \gl{server} avviato con 'forever' si utilizzi il comando \texttt{npm run foreverStop}.
+	Per terminare l'esecuzione di un \gl{server} avviato con 'forever' si utilizzi il comando \texttt{\$ npm run foreverStop}.
 	
 	\newpage
 	
