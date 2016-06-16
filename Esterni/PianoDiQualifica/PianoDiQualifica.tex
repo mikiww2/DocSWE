@@ -16,11 +16,11 @@
 \setcounter{tocdepth}{5}
 
 \def\NOME{Piano di Qualifica}
-\def\VERSIONE{4.0}
-\def\DATA{13.05.2016}
-\def\REDATTORE{Rudy Berton}
-\def\VERIFICATORE{Filippo Tesser \\ & Vassilikì Menarin}
-\def\RESPONSABILE{Giacomo Beltrame}
+\def\VERSIONE{5.0}
+\def\DATA{13.06.2016}
+\def\REDATTORE{Rudy Berton \\ & Vassilikì Menarin}
+\def\VERIFICATORE{Giacomo Beltrame}
+\def\RESPONSABILE{Rudy Berton}
 \def\USO{Esterno}
 \def\DISTRIBUZIONE{\COMMITTENTE \\ & \CARDIN \\ & \PROPONENTE}
 
@@ -750,7 +750,7 @@ Sono stati segnalati, dai \italics{Verificatori}, diversi errori di forma che no
 	\multirow{-2}{*}{\cellcolor{P} Documenti} & Errori Concettuali & Ottimale \\ & Errori di Forma & Accettabile \\
 	\hline
 		
-
+	\rowcolor{white}
 	\caption{Riassunto del Resoconto delle sottoattività di verifica - Attività di Analisi requisiti utente}	    	
 	
 \end{tabella}
@@ -917,7 +917,7 @@ Avendo consolidato le norme descritte nel documento \doc{Norme di progetto} il g
 	\multirow{-2}{*}{\cellcolor{P} Documenti} & Errori Concettuali & Ottimale \\ & Errori di Forma & Ottimale \\
 	\hline
 		
-
+	\rowcolor{white}
 	\caption{Riassunto del Resoconto delle sottoattività di verifica - Attività di Progettazione architetturale}	     	
 	
 \end{tabella}
@@ -1139,8 +1139,323 @@ L'implementazione delle classi stabilite nel documento \doc{Definizione di Prodo
 	\multirow{-2}{*}{\cellcolor{P} Codice} &  Campi dati per classe & Accettabile \\
 	\hline
 	
-	
+		\rowcolor{white}
 	\caption{Riassunto del Resoconto delle sottoattività di verifica - Attività di Progettazione di dettaglio e codifica}	     	
+	
+\end{tabella}
+
+%--------------------------------------------------------------------------------------------
+
+\newpage
+\section{Attività di Validazione \\\large{resoconto~delle~sottoattività~di~verifica}}
+
+
+\subsection{Verifica dei processi}
+\subsubsection{Documentazione}
+\myparagraph{Schedule Variance}
+Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di stesura di ogni documento:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Analisi dei Requisiti v5.0 & -1 & Ottimale \\
+	Norme di Progetto v5.0 & -1 & Ottimale \\
+	Piano di Progetto v5.0 &  0 &  Ottimale\\
+	Piano di Qualifica v5.0 & 0 & Ottimale \\
+	Glossario v4.0 & -3 & Ottimale\\	
+	Specifica Tecnica v3.0 & -2 & Ottimale \\
+	Definizione di Prodotto v2.0 & -1  & Ottimale \\
+	Manuale Utente v2.0 & -3 & Ottimale \\
+	Manuale Sviluppatore v2.0 & -4 & Ottimale \\
+	\rowcolor{white}  
+	\caption{Esiti della Schedule Variance - Attività di Validazione}	    	
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\begin{description}
+	\item{\bold{Schedule Variance finale:}} -15 giorni.
+	\\Per quanto riguarda la stesura della documentazione in questa attività, la pianificazione iniziale si è rilevata sovrastimata dal momento che sono stati risparmiati 15 giorni. Ciò è considerato ragionevole poichè in questa attività il focus non era incentrato sui documenti, bensì sulla scrittura conclusiva del codice e sul collaudo finale.
+\end{description}
+
+
+\myparagraph{Cost Variance}
+Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui tempi di stesura di ogni documento:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Processo di documentazione & -3 \% & Ottimale\\
+	\rowcolor{white}  
+	\caption{Esiti della Cost Variance - Attività di Validazione}	   	
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\\Le risorse individuate inizialmente per la stesura dei documenti si sono rivelate ben superiori alla reale necessità. Per questo tali risorse sono state impegnate in altri campi.
+
+\newpage
+\myparagraph{Capability Maturity Model}
+Dedicando maggior attenzione alla codifica e validazione piuttosto che alla documentazione, il livello di \gl{CMM} raggiunto in questa attività rimane il terzo. Ciononostante il risultato ottenuto da tale metrica rientra nella soglia di accettabilità prestabilita.
+
+\subsubsection{Verifica}
+\myparagraph{Schedule Variance}
+Vengono riportati di seguito i valori ottenuti calcolando la Schedule Variance sui tempi di verifica per ogni documento:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+		Analisi dei Requisiti v5.0 & -2 & Ottimale \\
+		Norme di Progetto v5.0 & -2 & Ottimale \\
+		Piano di Progetto v5.0 &  0 &  Ottimale\\
+		Piano di Qualifica v5.0 & -1 & Ottimale \\
+		Glossario v4.0 & -4 & Ottimale\\	
+		Specifica Tecnica v3.0 & -1 & Ottimale \\
+		Definizione di Prodotto v2.0 & -2 & Ottimale \\
+		Manuale Utente v2.0 & -1 & Ottimale \\
+		Manuale Sviluppatore v2.0 & -3 & Ottimale \\
+	\rowcolor{white}  
+	\caption{Esiti della Schedule Variance - Attività di Validazione}	    	
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\begin{description}
+	\item{\bold{Schedule Variance finale:}} -16 giorni.
+	\\In questa attività non avendo nessun nuovo documento scritto, ma solo alcuni incrementi ai documenti già presenti il processo di verifica è risultato molto veloce portandoci a risparmiare 16 giorni rispetto a quanto pianificato.
+\end{description}
+
+\myparagraph{Cost Variance}
+Vengono riportati di seguito i valori ottenuti calcolando la Cost Variance sui tempi impiegati nel processo di verifica:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Processo di verifica & -3\% & Ottimale\\
+	\rowcolor{white}  
+	\caption{Esiti della Cost Variance - Attività di Validazione}	  
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\\L'uso di risorse per il processo di verifica si è rivelato più che sufficiente per tale compito portando ad un abbassamento dei costi previsti in precedenza.
+\newpage
+\myparagraph{Capability Maturity Model}
+Per il processo di verifica il \gl{team} ha incrementato la propria capacità di eseguire azioni di verifica al materiale prodotto, anche attraverso verifiche automatiche. Ciononostante il livello di Maturity in tale attività rimane al livello 3 come nella precedente attività.
+
+\subsubsection{Codifica}
+\myparagraph{Schedule Variance}
+Viene riportata di seguito il valore ottenuto calcolando la Schedule Variance sui tempi di codifica:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+		Processo di codifica: & +3 & Accettabile \\
+	\rowcolor{white}  
+	\caption{Esiti della Schedule Variance - Attività di Validazione}	    	
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\begin{description}
+	\item{\bold{Schedule Variance finale:}} +3 giorni.
+	\\In questa attività il gruppo ha portato a termine la scrittura del codice e dei test che verificheranno l'intero prodotto. C'è stato un prolungamento delle tempistiche riguardanti la scrittura di codice a causa di molte segnalazioni d'errore emesse dagli strumenti/framework utilizzati per codificare, errori che hanno necessitato una correzione prima di poter continuare con la codifica. In ogni caso il valore ottenuto da tale metrica risulta accettabile.
+\end{description}
+
+\myparagraph{Cost Variance}
+Viene riportato di seguito il valore ottenuto calcolando la Cost Variance sui tempi di codifica:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Processo di verifica & 2\% & Accettabile\\
+	\rowcolor{white}  
+	\caption{Esiti della Cost Variance - Attività di Validazione}	  
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\\L'uso di risorse per il processo di codifica è risultato sottostimato rispetto a quanto pianificato pertanto si è necessitato un maggior numero di risorse che ha portato ad un innalzamento della Cost Variance. Il valore ottenuto comunque rimane all'interno della soglia di accettabilità.
+
+\subsubsection{Validazione}
+\myparagraph{Schedule Variance}
+Viene riportata di seguito il valore ottenuto calcolando la Schedule Variance sui tempi di validazione:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Documento} & \color{white} \bold{SV in giorni} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+		Processo di codifica: & +1 & Accettabile \\
+	\rowcolor{white}  
+	\caption{Esiti della Schedule Variance - Attività di Validazione}	    	
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\begin{description}
+	\item{\bold{Schedule Variance finale:}} +1 giorni.
+	\\Il processo di validazione ha necessitato di un giorno in più di quanto già pianificato per garantire al prodotto l'assenza di possibili bug o fallimenti. Il valore ottenuto da tale metrica risulta ad ogni modo accettabile.
+\end{description}
+
+\myparagraph{Cost Variance}
+Viene riportato di seguito il valore ottenuto calcolando la Cost Variance sui tempi di validazione:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Processo} & \color{white} \bold{CV} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Processo di verifica & 0\% & Ottimale\\
+	\rowcolor{white}  
+	\caption{Esiti della Cost Variance - Attività di Validazione}	  
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\\Per il processo di validazione le risorse disposte precedentemente sono state più che sufficienti.
+
+\subsection{Verifica dei prodotti}
+\subsubsection{Documenti}
+\myparagraph{Errori ortografici}
+ Vengono riportati di seguito i valori ottenuti riguardanti la verifica degli errori ortografici:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Documento} & \color{white} \bold{Errori ortografici} &\color{white} \bold{Giudizio} \\
+	\endfirsthead
+		Analisi dei Requisiti v5.0 & 0 \% & Ottimale \\
+		Norme di Progetto v5.0 & 1 \% & Accettabile \\
+		Piano di Progetto v5.0 &  0 \% &  Ottimale \\
+		Piano di Qualifica v5.0 & 0 \% & Ottimale \\
+		Glossario v4.0 & 0 \% & Ottimale\\	
+		Specifica Tecnica v3.0 & 0 \% & Ottimale \\
+		Definizione di Prodotto v2.0 & 0 \% & Ottimale \\
+		Manuale Utente v2.0 & 2 \% & Accettabile \\
+		Manuale Sviluppatore v2.0 & 1 \% & Accettabile\\
+	\rowcolor{white}  
+	\caption{Esiti degli Errori Ortografici - Attività di Validazione}	    	
+\end{tabella}
+
+\bold{Considerazioni finali:}
+\\Nella documentazione sono pochi gli errori segnalati che hanno necessitato un'ulteriore segnalazione affinchè fossero corretti. Proprio per questo i valori se non risultano ottimali, rientrano comunque largamente all'interno della soglia di accettabilit.
+
+\myparagraph{Indice Gulpease}
+Ogni documento è stato sottoposto ad uno \gl{script} che ne calcolasse l'\gl{Indice Gulpease} per valutarne il grado di leggibilità.
+\newline Di seguito vengono presentati i dati raccolti:
+\begin{tabella}{l!{\VRule}c!{\VRule}c!{\VRule}}
+	
+	\color{white} \bold{Documento} & \color{white} \bold{\gl{Indice Gulpease}} & \color{white} \bold{Giudizio} \\
+	\endfirsthead
+	Analisi dei Requisiti v5.0 & 77 & Ottimale \\
+	Norme di Progetto v5.0 & 92 & Ottimale \\
+	Piano di Progetto v5.0 &  82 &  Ottimale\\
+	Piano di Qualifica v 5.0 & 84 & Ottimale \\
+	Glossario v4.0 & 75 & Ottimale\\	
+	Specifica Tecnica v3.0 & 62 & Accettabile \\
+	Definizione di Prodotto v2.0 & 56 & Accettabile \\
+	Manuale Utente v2.0 & 80 & Ottimale \\
+	Manuale Sviluppatore v2.0 & 81 & Ottimale \\
+	\rowcolor{white}  
+	\caption{Esiti dell'\gl{Indice Gulpease} - Attività di Validazione}	    	
+\end{tabella}
+\bold{Considerazioni finali:} la misura dell'Indice di Gulpease ha rivelato che i documenti prodotti in questa attività presentano un buon grado di leggibilità, addirittura ottimo per gran parte dei documenti.
+
+\myparagraph{Errori Concettuali}
+Come avvenuto nell'attività precedente anche in questa non sono stati riscontrati degli errori concettuali durante la sottoattività di verifica dei documenti. Pertanto viene raggiunta per tale metrica il valore ottimale.
+
+\myparagraph{Errori di forma}
+Oramai assimilate perfettamente le norme stilate fin dall'inizio delle attività per tale progetto, il gruppo non ha prodotto alcun errore di forma durante la stesura della documentazione. Viene in questo modo raggiunto un valore ottimale per la metrica in questione.
+
+% % % Arrivato qui -------------------------
+\subsubsection{Codice}
+Di seguito vengono riportati i riscontri di alcune metriche utilizzate per giudicare il codice scritto dal \gl{team}.
+
+\myparagraph{Linee di codice per metodo}
+Il numero di statement nella maggioranza dei file contenenti il codice sorgente rispettano la soglia di accettabilità di 60. Alcuni però sforano tale limite, soprattutto i file riguardanti il controller che deve gestire molte funzioni. Per questo non è possibile ritenere completamente soddisfatta tale metrica, ottenendo un risultato non accettabile.
+
+\myparagraph{Parametri formali per metodo}
+I metodi presenti in ogni file di codice definiscono una lista di parametri formali minore di 6, per cui si rientra pienamente nella soglia di accettabilità per tale metrica.
+
+\myparagraph{Campi dati per classe}
+L'implementazione delle classi stabilite nel documento \doc{Definizione di Prodotto} ha portato ad avere un numero di attributi inferiore a dieci. Solo in alcuni casi ci sono state classi con un valore ottimale di campi dati inferiore a cinque. Per questo la metrica rientra nella soglia di accettabilità ma non rispecchia il valore ottimale.
+
+\myparagraph{Complessità ciclomatica}
+Il codice sorgente presenta una complessità ciclomatica accettabile per quasi tutti i file con un valore minore o uguale a 10 come definito dalla metrica, grazie all'utilizzo di alcuni strumenti per calcolarla. Nei controller che presentano una struttura più corposa però tale valore aumenta andando fuori dalla soglia di accettabilità. Per questo motivo la metrica non è possibile ritenerla superata al 100 \%, ottenendo un valore non accettabile.
+
+\myparagraph{Copertura del codice}
+La copertura del codice, che indica la percentuale degli statement eseguiti correttamente durante lo svolgimento dei test, ha presentato un valore molto soddisfacente, segnale di una buona qualità in gran parte del codice scritto. Il valore ottenuto è del 90 \%, valore rientrante nella soglia di accettabilità.
+
+
+\myparagraph{Livello di annidamento}
+L'applicazione di tale metrica ha presentato un valore minore di 4 in tutto il codice analizzato; tale valore rientra pertanto nella soglia di accettabilità stabilita. Tale valore ottenuto ha un riscontro positivo anche nel buon valore ottenuto dalla metrica della copertura del codice descritta appena sopra.
+
+\myparagraph{Grado di accoppiamento}
+Il grado di accoppiamento maggiore riscontrato nel codice analizzato ha presentato un valore pari a 6 per entrambi gli indici Ca e Ce; tali valori pur rientrando nella soglia di accettabilità non sono sufficienti per essere ottimali.
+\\ Per come è stata strutturata l'architettura del prodotto è ragionevole aver ottenuto tali valori nel grado di accoppiamento.
+
+\myparagraph{Grado di instabilità}
+Dai risultati ottenuti con l'applicazione della metrica Grado di accoppiamento precedente è stato possibile ottenere per la metrica in questione un risultato pari al 50\%, valore ottimale di instabilità che indica pertanto la scarsa possibilità di cambiare altre componenti presenti nel sistema qualora una subisca una modifica.
+
+
+\subsubsection{Prodotto software}
+
+\myparagraph{Requisiti rispettati}
+A prodotto concluso, è possibile affermare che tutti i requisiti obbligatori sono stati soddisfatti al 100 \%. Sono stati inoltre soddisfatti solo alcuni requisiti desiderabili.
+\\ Per questo il risultato ottenuto da tale metrica rientra nella soglia di accettabilità ma non in quella ottimale.
+
+
+\myparagraph{Output attesi}
+Il numero di esecuzioni avvenute con successo ottenendo un output uguale a quello atteso è pari al 98 \%, limite inferiore della soglia di accettabilità. Garantire il 100 \% per tale metrica avrebbe richiesto una maggiore quantità di tempo e denaro non possibili per tale progetto. 
+
+\myparagraph{Validazione Web}
+Attraverso l'uso di strumenti per la validazione web, reperibili online (si vedano le \doc{Norme di Progetto}), le pagine Html analizzate hanno presentato in media 6 errori, ed un valore massimo pari a 9, rientrando pertanto all'interno della soglia di accettabilità. Tali errori non sempre sono dovuti all'uso scorretto della sintassi Html, ma piuttosto dall'uso di framework esterni (ad esempio Bootstrap) che il validatore non riconosce.
+
+\myparagraph{Grado di efficienza}
+L'uso del prodotto ha presentato un'attesa nei tempi, durante una transizione, pari a 2/3 secondi, qualora avvenga un refresh della pagina web che deve caricare una mole di dati sostanziosa. Il valore dipende poi dalla connessione utilizzata, dal browser e dalla potenza del pc adoperato. Tale valore comunque rientra pienamente nella soglia di accettabilità.
+
+\myparagraph{Anomalie insufficienti}
+La maggior parte delle anomalie riscontrate attraverso l'uso del prodotto sono state prontamente corrette dal team. Solo qualche problema a livello grafico, dopo esser stato segnalato, non è stato subito corretto necessitando una nuova segnalazione a chi di dovere. Pertanto il valore ottenuto da tale metrica è del 5 \%, rientrante nella soglia di accettabilità.
+
+\newpage
+\subsection {Sommario del resoconto delle sottoattività di verifica}
+
+\begin{tabella}{l!{\VRule}>{\centering\arraybackslash}p{6 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}!{\VRule}>{\centering\arraybackslash}p{2 cm}}
+	
+	
+	
+	\color{white} \bold{Verifica} & \color{white} \bold{Metrica} & \color{white} \bold{Giudizio finale} \\
+	\endfirsthead
+	
+	\cellcolor{P} & Schedule Variance & Ottimale\\
+	\cellcolor{P} & Cost Variance & Ottimale \\
+	\multirow{-3}{*}{\cellcolor{P}Processo di Documentazione} & Capability Maturity Model & Accettabile \\
+	\hline
+	
+	\cellcolor{D} & Schedule Variance & Ottimale \\
+	\cellcolor{D} & Cost Variance & Ottimale \\
+	\multirow{-2}{*}{\cellcolor{D}Processo di Verifica} & Capability Maturity Model & Accettabile \\
+	\hline
+	
+	\cellcolor{P} & Schedule Variance & Accettabile \\
+	\multirow{-2}{*}{\cellcolor{P}Processo di Codifica} & Cost Variance & Accettabile \\
+	\hline
+		
+		\cellcolor{D} & Schedule Variance & Accettabile \\
+		\multirow{-2}{*}{\cellcolor{D}Processo di Validazione} & Cost Variance & Ottimale \\
+		\hline
+			
+			
+	\cellcolor{P} & Errori Ortografici & Accettabile\\
+	\cellcolor{P} & \gl{Indice Gulpease} & Accettabile \\
+	\multirow{-2}{*}{\cellcolor{P} Documenti} & Errori Concettuali & Ottimale \\
+	\cellcolor{P} &  Errori di Forma & Ottimale \\
+	\hline
+	
+	\cellcolor{D} & Linee di codice per metodo & Non accettabile \\
+	\cellcolor{D} & Parametri formali per metodo & Accettabile\\
+	\cellcolor{D} &  Campi dati per classe & Accettabile \\
+	\cellcolor{D} & Complessità ciclomatica & Non accettabile \\
+	\multirow{-2}{*}{\cellcolor{D} Codice}  & Copertura del codice & Accettabile \\
+	\cellcolor{D} & Livello di annidamento & Accettabile \\
+	\cellcolor{D} & Grado di accoppiamento & Accettabile \\
+	\cellcolor{D} & Grado di instabilità & Ottimale \\
+	\hline
+	
+	\cellcolor{P} & Requisiti rispettati & Accettabile\\
+		\cellcolor{P} & Output attesi & Accettabile \\
+		\multirow{-2}{*}{\cellcolor{P} Prodotto software} & Validazione web & Accettabile \\
+		\cellcolor{P} &  Grado di efficienza & Accettabile \\
+		\cellcolor{P} & Anomalie insufficienti & Accettabile \\
+		\hline
+	\rowcolor{white} 
+	\caption{Riassunto del Resoconto delle sottoattività di verifica - Attività di Validazione}	     	
 	
 \end{tabella}
 
